@@ -26,10 +26,10 @@
     self.tableView.frame = CGRectMake(0, 0, 320, 300);
     self.headerView.frame = CGRectMake(0, 0, 320, 300);
     
-    _scrollView = [[ResidentScrollView alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 600)];
+    _scrollView = [[ResidentScrollView alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 400)];
     _scrollView.backgroundColor = [[UIColor redColor]colorWithAlphaComponent:0.3];
     [self.view addSubview:_scrollView];
-    [_scrollView showResident:self.tableView headerView:self.headerView residentHeight:130];
+    [_scrollView showResident:self.tableView headerView:self.headerView residentHeight:30];
     
     
 }
