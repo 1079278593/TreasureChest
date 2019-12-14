@@ -100,6 +100,8 @@
 		3A5BE155239D40190076DD48 /* NSFileHandle+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5BE152239D40190076DD48 /* NSFileHandle+RACSupport.m */; };
 		3AEB5A8E239B79AA006153EF /* ResidentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AEB5A8D239B79AA006153EF /* ResidentScrollView.m */; };
 		A6C586D47720AEE2572C2089 /* Pods_TreasureChestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 151883209E4EA7452FC9FB39 /* Pods_TreasureChestTests.framework */; };
+		B296887A239DDBFA00C3C0BC /* UIViewController+CurrentController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2968878239DDBFA00C3C0BC /* UIViewController+CurrentController.m */; };
+		B296887E239DDC0C00C3C0BC /* FormsView.m in Sources */ = {isa = PBXBuildFile; fileRef = B296887D239DDC0C00C3C0BC /* FormsView.m */; };
 		B2B835F22397D21E00A562DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B835F12397D21E00A562DB /* AppDelegate.m */; };
 		B2B835F82397D21E00A562DB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B835F72397D21E00A562DB /* ViewController.m */; };
 		B2B835FB2397D21E00A562DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B835F92397D21E00A562DB /* Main.storyboard */; };
@@ -316,6 +318,11 @@
 		3AEB5A8D239B79AA006153EF /* ResidentScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResidentScrollView.m; path = "Objective-C/ResidentScrollView/ResidentScrollView.m"; sourceTree = SOURCE_ROOT; };
 		45F9569ED75D189780E2138F /* Pods_TreasureChest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TreasureChest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B00091817AB5923D849AF05 /* Pods-TreasureChestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreasureChestTests.release.xcconfig"; path = "Target Support Files/Pods-TreasureChestTests/Pods-TreasureChestTests.release.xcconfig"; sourceTree = "<group>"; };
+		B2968876239DDBFA00C3C0BC /* DeviceMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceMacro.h; sourceTree = "<group>"; };
+		B2968878239DDBFA00C3C0BC /* UIViewController+CurrentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CurrentController.m"; sourceTree = "<group>"; };
+		B2968879239DDBFA00C3C0BC /* UIViewController+CurrentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CurrentController.h"; sourceTree = "<group>"; };
+		B296887C239DDC0C00C3C0BC /* FormsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormsView.h; sourceTree = "<group>"; };
+		B296887D239DDC0C00C3C0BC /* FormsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormsView.m; sourceTree = "<group>"; };
 		B2B835ED2397D21E00A562DB /* TreasureChest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreasureChest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B835F02397D21E00A562DB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B2B835F12397D21E00A562DB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -355,6 +362,8 @@
 		3A04254E239CC0D5009BC1C0 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				B2968877239DDBFA00C3C0BC /* Extension */,
+				B2968875239DDBFA00C3C0BC /* Macro */,
 				3A04254F239CC162009BC1C0 /* ReactiveObjC */,
 			);
 			path = Tool;
@@ -584,6 +593,33 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B2968875239DDBFA00C3C0BC /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				B2968876239DDBFA00C3C0BC /* DeviceMacro.h */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		B2968877239DDBFA00C3C0BC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B2968878239DDBFA00C3C0BC /* UIViewController+CurrentController.m */,
+				B2968879239DDBFA00C3C0BC /* UIViewController+CurrentController.h */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		B296887B239DDC0C00C3C0BC /* FormsView */ = {
+			isa = PBXGroup;
+			children = (
+				B296887C239DDC0C00C3C0BC /* FormsView.h */,
+				B296887D239DDC0C00C3C0BC /* FormsView.m */,
+			);
+			name = FormsView;
+			path = "Objective-C/FormsView";
+			sourceTree = SOURCE_ROOT;
+		};
 		B2B835E42397D21E00A562DB = {
 			isa = PBXGroup;
 			children = (
@@ -643,6 +679,7 @@
 		B2B836182397D3A600A562DB /* Objective-C */ = {
 			isa = PBXGroup;
 			children = (
+				B296887B239DDC0C00C3C0BC /* FormsView */,
 				3AEB5A8B239B7988006153EF /* ResidentScrollView */,
 			);
 			path = "Objective-C";
@@ -874,6 +911,7 @@
 				3A04262F239CC163009BC1C0 /* RACSignalSequence.m in Sources */,
 				3A04266B239CC163009BC1C0 /* NSObject+RACSelectorSignal.m in Sources */,
 				3A04263A239CC163009BC1C0 /* UIImagePickerController+RACSignalSupport.m in Sources */,
+				B296887A239DDBFA00C3C0BC /* UIViewController+CurrentController.m in Sources */,
 				3A042654239CC163009BC1C0 /* UISegmentedControl+RACSignalSupport.m in Sources */,
 				3A042630239CC163009BC1C0 /* RACUnarySequence.m in Sources */,
 				3A042634239CC163009BC1C0 /* NSString+RACSupport.m in Sources */,
@@ -902,6 +940,7 @@
 				3A042670239CC163009BC1C0 /* RACCompoundDisposable.m in Sources */,
 				3A5BE155239D40190076DD48 /* NSFileHandle+RACSupport.m in Sources */,
 				3A042622239CC163009BC1C0 /* UISwitch+RACSignalSupport.m in Sources */,
+				B296887E239DDC0C00C3C0BC /* FormsView.m in Sources */,
 				3A04266C239CC163009BC1C0 /* RACSubscriber.m in Sources */,
 				3A042665239CC163009BC1C0 /* UIButton+RACCommandSupport.m in Sources */,
 				3A04261D239CC163009BC1C0 /* NSObject+RACDescription.m in Sources */,
@@ -1082,7 +1121,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 68WRCFG276;
+				DEVELOPMENT_TEAM = BVSQGBFKQ5;
 				INFOPLIST_FILE = TreasureChest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1102,7 +1141,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 68WRCFG276;
+				DEVELOPMENT_TEAM = BVSQGBFKQ5;
 				INFOPLIST_FILE = TreasureChest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
