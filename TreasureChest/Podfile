@@ -1,6 +1,6 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
-source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '9.0'
+#source 'https://github.com/CocoaPods/Specs.git'
 
 target 'TreasureChest' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -12,8 +12,7 @@ target 'TreasureChest' do
   pod 'SDWebImage'
   pod 'AFNetworking'
   pod 'MJExtension'
-  pod 'MJRefresh'
-#  pod 'ReactiveObjC'
+  pod 'ReactiveObjC', '3.1.0'
   
   target 'TreasureChestTests' do
     inherit! :search_paths
