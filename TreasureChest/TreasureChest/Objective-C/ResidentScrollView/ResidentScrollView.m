@@ -7,8 +7,10 @@
 //
 
 #import "ResidentScrollView.h"
-#import <Masonry/Masonry.h>
-#import <ReactiveObjC.h>
+//#import <Masonry/Masonry.h>
+//#import <ReactiveObjC.h>
+#import "Masonry.h"
+#import "ReactiveObjC.h"
 
 @interface ResidentScrollView()<UIScrollViewDelegate>
 

@@ -7,7 +7,8 @@
 //
 
 #import "FormsView.h"
-#import <Masonry/Masonry.h>
+//#import <Masonry/Masonry.h>
+#import "Masonry.h"
 
 #define KSpacingWidth 15.0f
 #define KLabelHeight 20.0f
@@ -105,9 +106,9 @@
 }
 
 - (void)initItemLabels {
-    for (NSString *item in _leftItems) {
-        
-    }
+//    for (NSString *item in _leftItems) {
+//
+//    }
 }
 
 //更新titlesLabel
