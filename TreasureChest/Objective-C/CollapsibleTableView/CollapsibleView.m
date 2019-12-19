@@ -9,7 +9,7 @@
 #import "CollapsibleView.h"
 #import "CollapsibleViewCell.h"
 #import "CollapsibleViewModel.h"
-#import <ReactiveObjC.h>
+#import "ReactiveObjC.h"
 
 static NSString *CellIdentify = @"CellIdentify";
 

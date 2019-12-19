@@ -7,7 +7,7 @@
 //
 
 #import "CollapsibleViewModel.h"
-#import <MJExtension/MJExtension.h>
+#import "MJExtension.h"
 
 @implementation CollapsibleViewModel
 
