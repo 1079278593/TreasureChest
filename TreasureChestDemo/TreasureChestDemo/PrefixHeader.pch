@@ -1,0 +1,16 @@
+//
+//  PrefixHeader.pch
+//  TreasureChest
+//
+//  Created by xiao ming on 2019/12/19.
+//  Copyright © 2019 xiao ming. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "DeviceMacro.h"
+#import "UIView+Extension.h"
+#import "UIViewController+CurrentController.h"
+
+#endif /* PrefixHeader_pch */

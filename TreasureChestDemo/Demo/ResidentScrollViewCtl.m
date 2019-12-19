@@ -1,34 +1,46 @@
 //
-//  ViewController.m
+//  ResidentScrollViewCtl.m
 //  TreasureChest
 //
-//  Created by xiao ming on 2019/12/4.
+//  Created by xiao ming on 2019/12/19.
 //  Copyright © 2019 xiao ming. All rights reserved.
 //
 
-#import "ViewController.h"
 #import "ResidentScrollViewCtl.h"
-#import "DeviceMacro.h"
+#import <Masonry/Masonry.h>
+#import "ResidentScrollView.h"
 
-@interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface ResidentScrollViewCtl ()<UITableViewDelegate,UITableViewDataSource>
+
+@property(strong, nonatomic)UIView *headerView;
 @property(strong, nonatomic)UITableView *tableView;
-@property(strong, nonatomic)NSArray *datas;
+@property(strong, nonatomic)ResidentScrollView *scrollView;
+
 @end
 
-@implementation ViewController
+@implementation ResidentScrollViewCtl
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    self.datas = @[@"可驻留的ScrollView",@"待添加"];
-    self.tableView.frame = CGRectMake(0, 0, KScreenWidth, KScreenHeight);
+    self.automaticallyAdjustsScrollViewInsets = false;
+    
+    self.tableView.frame = CGRectMake(0, 0, KScreenWidth, 0);
+    self.headerView.frame = CGRectMake(0, 0, KScreenWidth, 300);
+    
+    _scrollView = [[ResidentScrollView alloc]initWithFrame:CGRectMake(0, 64+10, KScreenWidth, KScreenHeight-64)];
+    _scrollView.backgroundColor = [[UIColor redColor]colorWithAlphaComponent:0.3];
+    [self.view addSubview:_scrollView];
+    [_scrollView showResident:self.tableView headerView:self.headerView residentHeight:130];
+    
+    
 }
 
 #pragma mark - table
 /********************** tableview ****************************/
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.datas count];
+    return 10;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -41,38 +53,10 @@
     if(!cell){
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentify];
     }
+    cell.backgroundColor = [[UIColor blueColor]colorWithAlphaComponent:0.3];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    cell.textLabel.text = self.datas[indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
     return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    switch (indexPath.row) {
-        case 0:
-        {
-            ResidentScrollViewCtl *controller = [[ResidentScrollViewCtl alloc]init];
-            [self.navigationController pushViewController:controller animated:true];
-//            [self presentViewController:controller animated:true completion:nil];
-        }
-            break;
-        case 1:
-        {
-            
-        }
-            break;
-        case 2:
-        {
-            
-        }
-            break;
-        case 3:
-        {
-            
-        }
-            break;
-        default:
-            break;
-    }
 }
 /********************** tableview ****************************/
 
@@ -82,9 +66,19 @@
         _tableView = [[UITableView alloc]init];
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        [self.view addSubview:_tableView];
+//        [self.view addSubview:_tableView];
+        
     }
     return _tableView;
 }
 
+- (UIView *)headerView {
+    if (_headerView == nil) {
+        _headerView = [[UIView alloc]init];
+//        [self.view addSubview:_headerView];
+    }
+    return _headerView;
+}
+
 @end
+

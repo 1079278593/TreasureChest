@@ -20,6 +20,12 @@
 		3AE550E223A9189F001D989E /* ResidentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE550D923A9189F001D989E /* ResidentScrollView.m */; };
 		3AE550E323A9189F001D989E /* UIViewController+CurrentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE550DC23A9189F001D989E /* UIViewController+CurrentController.m */; };
 		B2506CEC23AB48E60034A472 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B2506CEB23AB48E60034A472 /* UIView+Extension.m */; };
+		B2506CF923AB5B370034A472 /* CollapsibleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2506CF823AB5B370034A472 /* CollapsibleViewModel.m */; };
+		B2506CFC23AB5B4D0034A472 /* CollapsibleView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2506CFB23AB5B4D0034A472 /* CollapsibleView.m */; };
+		B2506CFF23AB5B690034A472 /* CollapsibleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2506CFE23AB5B690034A472 /* CollapsibleViewCell.m */; };
+		B2506D0223AB5BA80034A472 /* CollapsibleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2506D0123AB5BA80034A472 /* CollapsibleModel.m */; };
+		B2506D0623AB65A90034A472 /* ResidentScrollViewCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = B2506D0523AB65A90034A472 /* ResidentScrollViewCtl.m */; };
+		B2506D0923AB83080034A472 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2506D0823AB83080034A472 /* BaseViewController.m */; };
 		B2B8360D2397D22000A562DB /* TreasureChestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B8360C2397D22000A562DB /* TreasureChestTests.m */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +64,19 @@
 		9917950E93D1701D7E817740 /* Pods-TreasureChestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreasureChestTests.debug.xcconfig"; path = "Target Support Files/Pods-TreasureChestTests/Pods-TreasureChestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B2506CEA23AB48E60034A472 /* UIView+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		B2506CEB23AB48E60034A472 /* UIView+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		B2506CF723AB5B370034A472 /* CollapsibleViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollapsibleViewModel.h; sourceTree = "<group>"; };
+		B2506CF823AB5B370034A472 /* CollapsibleViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollapsibleViewModel.m; sourceTree = "<group>"; };
+		B2506CFA23AB5B4D0034A472 /* CollapsibleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollapsibleView.h; sourceTree = "<group>"; };
+		B2506CFB23AB5B4D0034A472 /* CollapsibleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollapsibleView.m; sourceTree = "<group>"; };
+		B2506CFD23AB5B690034A472 /* CollapsibleViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollapsibleViewCell.h; sourceTree = "<group>"; };
+		B2506CFE23AB5B690034A472 /* CollapsibleViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollapsibleViewCell.m; sourceTree = "<group>"; };
+		B2506D0023AB5BA80034A472 /* CollapsibleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollapsibleModel.h; sourceTree = "<group>"; };
+		B2506D0123AB5BA80034A472 /* CollapsibleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollapsibleModel.m; sourceTree = "<group>"; };
+		B2506D0423AB65A90034A472 /* ResidentScrollViewCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResidentScrollViewCtl.h; sourceTree = "<group>"; };
+		B2506D0523AB65A90034A472 /* ResidentScrollViewCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResidentScrollViewCtl.m; sourceTree = "<group>"; };
+		B2506D0723AB83080034A472 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		B2506D0823AB83080034A472 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		B2506D0A23AB84330034A472 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		B2B835ED2397D21E00A562DB /* TreasureChest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreasureChest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B836082397D22000A562DB /* TreasureChestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TreasureChestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B8360C2397D22000A562DB /* TreasureChestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TreasureChestTests.m; sourceTree = "<group>"; };
@@ -93,11 +112,14 @@
 				3A40234723A62ED100BDB4E3 /* AppDelegate.m */,
 				3A40234923A62ED100BDB4E3 /* ViewController.h */,
 				3A40234123A62ED100BDB4E3 /* ViewController.m */,
+				B2506D0723AB83080034A472 /* BaseViewController.h */,
+				B2506D0823AB83080034A472 /* BaseViewController.m */,
 				3A40234223A62ED100BDB4E3 /* LaunchScreen.storyboard */,
 				3A40234423A62ED100BDB4E3 /* Main.storyboard */,
 				3A40234623A62ED100BDB4E3 /* main.m */,
 				3A40234823A62ED100BDB4E3 /* Info.plist */,
 				3AE550EA23A91A93001D989E /* TreasureChest-Bridging-Header.h */,
+				B2506D0A23AB84330034A472 /* PrefixHeader.pch */,
 				3A40234023A62ED100BDB4E3 /* Assets.xcassets */,
 			);
 			path = TreasureChestDemo;
@@ -125,6 +147,7 @@
 		3AE550D323A9189F001D989E /* Objective-C */ = {
 			isa = PBXGroup;
 			children = (
+				B2506CED23AB565E0034A472 /* CollapsibleTableView */,
 				3AE550D423A9189F001D989E /* FormsView */,
 				3AE550D723A9189F001D989E /* ResidentScrollView */,
 			);
@@ -177,11 +200,36 @@
 			path = Macro;
 			sourceTree = "<group>";
 		};
+		B2506CED23AB565E0034A472 /* CollapsibleTableView */ = {
+			isa = PBXGroup;
+			children = (
+				B2506CFA23AB5B4D0034A472 /* CollapsibleView.h */,
+				B2506CFB23AB5B4D0034A472 /* CollapsibleView.m */,
+				B2506CFD23AB5B690034A472 /* CollapsibleViewCell.h */,
+				B2506CFE23AB5B690034A472 /* CollapsibleViewCell.m */,
+				B2506CF723AB5B370034A472 /* CollapsibleViewModel.h */,
+				B2506CF823AB5B370034A472 /* CollapsibleViewModel.m */,
+				B2506D0023AB5BA80034A472 /* CollapsibleModel.h */,
+				B2506D0123AB5BA80034A472 /* CollapsibleModel.m */,
+			);
+			path = CollapsibleTableView;
+			sourceTree = "<group>";
+		};
+		B2506D0323AB63E40034A472 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				B2506D0423AB65A90034A472 /* ResidentScrollViewCtl.h */,
+				B2506D0523AB65A90034A472 /* ResidentScrollViewCtl.m */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
 		B2B835E42397D21E00A562DB = {
 			isa = PBXGroup;
 			children = (
 				3AE550CF23A9189F001D989E /* TreasureChest */,
 				3A40233E23A62ED100BDB4E3 /* TreasureChestDemo */,
+				B2506D0323AB63E40034A472 /* Demo */,
 				B2B8360B2397D22000A562DB /* TreasureChestTests */,
 				B2B835EE2397D21E00A562DB /* Products */,
 				D3EB552CDB5DF92A98C9E524 /* Frameworks */,
@@ -395,14 +443,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2506D0223AB5BA80034A472 /* CollapsibleModel.m in Sources */,
 				3A40235C23A62ED100BDB4E3 /* main.m in Sources */,
 				3AE550E023A9189F001D989E /* TmpScrollView.swift in Sources */,
 				3A40235923A62ED100BDB4E3 /* ViewController.m in Sources */,
 				3AE550E123A9189F001D989E /* FormsView.m in Sources */,
+				B2506D0923AB83080034A472 /* BaseViewController.m in Sources */,
 				3A40235D23A62ED100BDB4E3 /* AppDelegate.m in Sources */,
 				3AE550E323A9189F001D989E /* UIViewController+CurrentController.m in Sources */,
 				B2506CEC23AB48E60034A472 /* UIView+Extension.m in Sources */,
+				B2506D0623AB65A90034A472 /* ResidentScrollViewCtl.m in Sources */,
+				B2506CFC23AB5B4D0034A472 /* CollapsibleView.m in Sources */,
+				B2506CFF23AB5B690034A472 /* CollapsibleViewCell.m in Sources */,
 				3AE550E223A9189F001D989E /* ResidentScrollView.m in Sources */,
+				B2506CF923AB5B370034A472 /* CollapsibleViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,6 +616,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68WRCFG276;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/TreasureChestDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = TreasureChestDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -586,6 +642,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68WRCFG276;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/TreasureChestDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = TreasureChestDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
