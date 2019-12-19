@@ -19,6 +19,7 @@
 		3AE550E123A9189F001D989E /* FormsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE550D623A9189F001D989E /* FormsView.m */; };
 		3AE550E223A9189F001D989E /* ResidentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE550D923A9189F001D989E /* ResidentScrollView.m */; };
 		3AE550E323A9189F001D989E /* UIViewController+CurrentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE550DC23A9189F001D989E /* UIViewController+CurrentController.m */; };
+		B2506CEC23AB48E60034A472 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B2506CEB23AB48E60034A472 /* UIView+Extension.m */; };
 		B2B8360D2397D22000A562DB /* TreasureChestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B8360C2397D22000A562DB /* TreasureChestTests.m */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,8 @@
 		638953CAA103423AF26CD14F /* Pods-TreasureChestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreasureChestTests.release.xcconfig"; path = "Target Support Files/Pods-TreasureChestTests/Pods-TreasureChestTests.release.xcconfig"; sourceTree = "<group>"; };
 		6D4EBD1FDA94DC25A9D6341F /* Pods_TreasureChest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TreasureChest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9917950E93D1701D7E817740 /* Pods-TreasureChestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreasureChestTests.debug.xcconfig"; path = "Target Support Files/Pods-TreasureChestTests/Pods-TreasureChestTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B2506CEA23AB48E60034A472 /* UIView+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		B2506CEB23AB48E60034A472 /* UIView+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		B2B835ED2397D21E00A562DB /* TreasureChest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreasureChest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B836082397D22000A562DB /* TreasureChestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TreasureChestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B8360C2397D22000A562DB /* TreasureChestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TreasureChestTests.m; sourceTree = "<group>"; };
@@ -160,6 +163,8 @@
 			children = (
 				3AE550DC23A9189F001D989E /* UIViewController+CurrentController.m */,
 				3AE550DD23A9189F001D989E /* UIViewController+CurrentController.h */,
+				B2506CEA23AB48E60034A472 /* UIView+Extension.h */,
+				B2506CEB23AB48E60034A472 /* UIView+Extension.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -396,6 +401,7 @@
 				3AE550E123A9189F001D989E /* FormsView.m in Sources */,
 				3A40235D23A62ED100BDB4E3 /* AppDelegate.m in Sources */,
 				3AE550E323A9189F001D989E /* UIViewController+CurrentController.m in Sources */,
+				B2506CEC23AB48E60034A472 /* UIView+Extension.m in Sources */,
 				3AE550E223A9189F001D989E /* ResidentScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
