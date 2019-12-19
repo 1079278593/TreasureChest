@@ -1,5 +1,5 @@
 //
-//  ResidentScrollViewCtl.h
+//  CollapsibleViewCtl.h
 //  TreasureChest
 //
 //  Created by xiao ming on 2019/12/19.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ResidentScrollViewCtl : BaseViewController
+@interface CollapsibleViewCtl : BaseViewController
 
 @end
 

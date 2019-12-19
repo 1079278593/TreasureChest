@@ -22,9 +22,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.automaticallyAdjustsScrollViewInsets = false;
     
     self.tableView.frame = CGRectMake(0, 0, KScreenWidth, 0);
     self.headerView.frame = CGRectMake(0, 0, KScreenWidth, 300);

@@ -26,6 +26,16 @@
 		B2506D0223AB5BA80034A472 /* CollapsibleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2506D0123AB5BA80034A472 /* CollapsibleModel.m */; };
 		B2506D0623AB65A90034A472 /* ResidentScrollViewCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = B2506D0523AB65A90034A472 /* ResidentScrollViewCtl.m */; };
 		B2506D0923AB83080034A472 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2506D0823AB83080034A472 /* BaseViewController.m */; };
+		B2506D0D23AB88310034A472 /* CollapsibleViewCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = B2506D0C23AB88310034A472 /* CollapsibleViewCtl.m */; };
+		B2506D0F23AB8AFA0034A472 /* TestData.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2506D0E23AB8AFA0034A472 /* TestData.plist */; };
+		B2506D1323ABA12D0034A472 /* options_none_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2506D1123ABA12C0034A472 /* options_none_icon@2x.png */; };
+		B2506D1423ABA12D0034A472 /* options_none_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2506D1223ABA12D0034A472 /* options_none_icon@3x.png */; };
+		B2506D1723ABA1370034A472 /* options_selected_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2506D1523ABA1370034A472 /* options_selected_icon@2x.png */; };
+		B2506D1823ABA1370034A472 /* options_selected_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2506D1623ABA1370034A472 /* options_selected_icon@3x.png */; };
+		B2506D1B23ABA1410034A472 /* select_down_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2506D1923ABA1410034A472 /* select_down_icon@3x.png */; };
+		B2506D1C23ABA1410034A472 /* select_down_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2506D1A23ABA1410034A472 /* select_down_icon@2x.png */; };
+		B2506D1F23ABA1480034A472 /* select_top_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2506D1D23ABA1480034A472 /* select_top_icon@3x.png */; };
+		B2506D2023ABA1480034A472 /* select_top_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2506D1E23ABA1480034A472 /* select_top_icon@2x.png */; };
 		B2B8360D2397D22000A562DB /* TreasureChestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B8360C2397D22000A562DB /* TreasureChestTests.m */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +87,17 @@
 		B2506D0723AB83080034A472 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		B2506D0823AB83080034A472 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		B2506D0A23AB84330034A472 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		B2506D0B23AB88310034A472 /* CollapsibleViewCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollapsibleViewCtl.h; sourceTree = "<group>"; };
+		B2506D0C23AB88310034A472 /* CollapsibleViewCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollapsibleViewCtl.m; sourceTree = "<group>"; };
+		B2506D0E23AB8AFA0034A472 /* TestData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestData.plist; sourceTree = "<group>"; };
+		B2506D1123ABA12C0034A472 /* options_none_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "options_none_icon@2x.png"; sourceTree = "<group>"; };
+		B2506D1223ABA12D0034A472 /* options_none_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "options_none_icon@3x.png"; sourceTree = "<group>"; };
+		B2506D1523ABA1370034A472 /* options_selected_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "options_selected_icon@2x.png"; sourceTree = "<group>"; };
+		B2506D1623ABA1370034A472 /* options_selected_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "options_selected_icon@3x.png"; sourceTree = "<group>"; };
+		B2506D1923ABA1410034A472 /* select_down_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select_down_icon@3x.png"; sourceTree = "<group>"; };
+		B2506D1A23ABA1410034A472 /* select_down_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select_down_icon@2x.png"; sourceTree = "<group>"; };
+		B2506D1D23ABA1480034A472 /* select_top_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select_top_icon@3x.png"; sourceTree = "<group>"; };
+		B2506D1E23ABA1480034A472 /* select_top_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select_top_icon@2x.png"; sourceTree = "<group>"; };
 		B2B835ED2397D21E00A562DB /* TreasureChest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreasureChest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B836082397D22000A562DB /* TreasureChestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TreasureChestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B8360C2397D22000A562DB /* TreasureChestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TreasureChestTests.m; sourceTree = "<group>"; };
@@ -211,6 +232,7 @@
 				B2506CF823AB5B370034A472 /* CollapsibleViewModel.m */,
 				B2506D0023AB5BA80034A472 /* CollapsibleModel.h */,
 				B2506D0123AB5BA80034A472 /* CollapsibleModel.m */,
+				B2506D1023ABA10F0034A472 /* Resource */,
 			);
 			path = CollapsibleTableView;
 			sourceTree = "<group>";
@@ -220,8 +242,26 @@
 			children = (
 				B2506D0423AB65A90034A472 /* ResidentScrollViewCtl.h */,
 				B2506D0523AB65A90034A472 /* ResidentScrollViewCtl.m */,
+				B2506D0B23AB88310034A472 /* CollapsibleViewCtl.h */,
+				B2506D0C23AB88310034A472 /* CollapsibleViewCtl.m */,
 			);
 			path = Demo;
+			sourceTree = "<group>";
+		};
+		B2506D1023ABA10F0034A472 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				B2506D1123ABA12C0034A472 /* options_none_icon@2x.png */,
+				B2506D1223ABA12D0034A472 /* options_none_icon@3x.png */,
+				B2506D1523ABA1370034A472 /* options_selected_icon@2x.png */,
+				B2506D1623ABA1370034A472 /* options_selected_icon@3x.png */,
+				B2506D1A23ABA1410034A472 /* select_down_icon@2x.png */,
+				B2506D1923ABA1410034A472 /* select_down_icon@3x.png */,
+				B2506D1E23ABA1480034A472 /* select_top_icon@2x.png */,
+				B2506D1D23ABA1480034A472 /* select_top_icon@3x.png */,
+				B2506D0E23AB8AFA0034A472 /* TestData.plist */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		B2B835E42397D21E00A562DB = {
@@ -359,9 +399,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2506D1F23ABA1480034A472 /* select_top_icon@3x.png in Resources */,
+				B2506D2023ABA1480034A472 /* select_top_icon@2x.png in Resources */,
+				B2506D1B23ABA1410034A472 /* select_down_icon@3x.png in Resources */,
+				B2506D1C23ABA1410034A472 /* select_down_icon@2x.png in Resources */,
+				B2506D1323ABA12D0034A472 /* options_none_icon@2x.png in Resources */,
 				3A40235B23A62ED100BDB4E3 /* Main.storyboard in Resources */,
 				3A40235823A62ED100BDB4E3 /* Assets.xcassets in Resources */,
+				B2506D1423ABA12D0034A472 /* options_none_icon@3x.png in Resources */,
+				B2506D0F23AB8AFA0034A472 /* TestData.plist in Resources */,
 				3A40235A23A62ED100BDB4E3 /* LaunchScreen.storyboard in Resources */,
+				B2506D1823ABA1370034A472 /* options_selected_icon@3x.png in Resources */,
+				B2506D1723ABA1370034A472 /* options_selected_icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +500,7 @@
 				B2506D0923AB83080034A472 /* BaseViewController.m in Sources */,
 				3A40235D23A62ED100BDB4E3 /* AppDelegate.m in Sources */,
 				3AE550E323A9189F001D989E /* UIViewController+CurrentController.m in Sources */,
+				B2506D0D23AB88310034A472 /* CollapsibleViewCtl.m in Sources */,
 				B2506CEC23AB48E60034A472 /* UIView+Extension.m in Sources */,
 				B2506D0623AB65A90034A472 /* ResidentScrollViewCtl.m in Sources */,
 				B2506CFC23AB5B4D0034A472 /* CollapsibleView.m in Sources */,

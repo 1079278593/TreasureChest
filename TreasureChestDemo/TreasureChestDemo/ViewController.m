@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "ResidentScrollViewCtl.h"
-#import "DeviceMacro.h"
+#import "CollapsibleViewCtl.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(strong, nonatomic)UITableView *tableView;
@@ -19,10 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.datas = @[@"可驻留的ScrollView",@"待添加"];
-    self.tableView.frame = CGRectMake(0, 0, KScreenWidth, KScreenHeight);
+
+    self.datas = @[@"可驻留的ScrollView",@"可折叠tableView"];
+    self.tableView.frame = CGRectMake(0, 64, KScreenWidth, KScreenHeight);
 }
 
 #pragma mark - table
@@ -52,12 +51,12 @@
         {
             ResidentScrollViewCtl *controller = [[ResidentScrollViewCtl alloc]init];
             [self.navigationController pushViewController:controller animated:true];
-//            [self presentViewController:controller animated:true completion:nil];
         }
             break;
         case 1:
         {
-            
+            CollapsibleViewCtl *controller = [[CollapsibleViewCtl alloc]init];
+            [self.navigationController pushViewController:controller animated:true];
         }
             break;
         case 2:

@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CollapsibleModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CollapsibleViewCell : UITableViewCell
+
+/** 菜单项模型 */
+@property (nonatomic, strong) CollapsibleModel *menuItem;
 
 @end
 

@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CollapsibleModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CollapsibleViewModel : NSObject
+
+@property (nonatomic, strong) NSMutableArray<CollapsibleModel *> *datas;
 
 @end
 
