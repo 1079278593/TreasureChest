@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "TreasureChest"
-  spec.version      = "1.0.3"
+  spec.version      = "1.0.4"
   spec.summary      = "这是一个程序员的“百宝箱”"
 
   # This description is used to generate tags and improve search results.
@@ -137,6 +137,7 @@ Pod::Spec.new do |spec|
   # spec.dependency "JSONKit", "~> 1.4"
   spec.dependency "ReactiveObjC", "3.1.0"
   spec.dependency "Masonry"
+  spec.dependency "MJExtension"
 
   spec.swift_version = "4.0"
 end
