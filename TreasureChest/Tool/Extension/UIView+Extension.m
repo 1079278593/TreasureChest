@@ -131,34 +131,21 @@
     return self.frame.size;
 }
 
-/**
- 设置圆角
- */
+- (void)circle
+{
+    [self setCornerRadius:self.height * 0.5];
+}
+
 - (void)setCornerRadius:(CGFloat)cornerRadius
 {
     self.layer.cornerRadius = cornerRadius;
     self.layer.masksToBounds = YES;
 }
 
-/**
- 设置边框
-
- @param color 颜色
- @param width 宽度
- */
 - (void)setBorder:(UIColor *)color width:(CGFloat)width
 {
-    
     self.layer.borderColor = color.CGColor;
     self.layer.borderWidth = width;
-}
-
-/**
- 设置成圆
- */
-- (void)cornerRadius
-{
-    [self setCornerRadius:self.height * 0.5];
 }
 
 /**

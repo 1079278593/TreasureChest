@@ -24,13 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) CGFloat height;
 @property (nonatomic, assign) CGSize size;
 
-///设置圆角
+- (void)circle;
 - (void)setCornerRadius:(CGFloat)cornerRadius;
-
-///设置成圆
-- (void)cornerRadius;
-
-///设置边框
 - (void)setBorder:(UIColor *)color width:(CGFloat)width;
 
 ///可视化获取视图
