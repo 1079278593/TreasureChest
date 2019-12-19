@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "TreasureChest"
-  spec.version      = "1.0.1"
+  spec.version      = "1.0.3"
   spec.summary      = "这是一个程序员的“百宝箱”"
 
   # This description is used to generate tags and improve search results.
