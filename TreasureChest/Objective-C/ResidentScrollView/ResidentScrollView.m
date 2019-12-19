@@ -28,7 +28,6 @@
         self.userInteractionEnabled = true;
         self.scrollEnabled = false;
         self.delegate = self;
-//        self.layer.masksToBounds = false;
         [self initView];
     }
     return self;
@@ -52,60 +51,52 @@
     CGFloat pointY = CGRectGetMaxY(newFrame);
     self.contentSize = CGSizeMake(self.frame.size.width, pointY);
     
-    [self yd_bindViewModel];
+    [self bindViewModel];
 }
 
 - (void)initView {
-    
-    
 }
 
-- (void)yd_bindViewModel
+- (void)bindViewModel
 {
     @weakify(self);
     [RACObserve(self.tableView, contentOffset) subscribeNext:^(id  _Nullable x) {
         @strongify(self);
         CGPoint newOffset = [x CGPointValue];
         if (newOffset.x == 0 && newOffset.y == 0) {
-            
+            return ;
+        }
+        
+        if (self.contentOffset.y >= self.residentHeight) {
+            if (newOffset.y > 0) {
+            }else{
+                self.tableView.contentOffset = CGPointZero;
+                CGPoint offset = self.contentOffset;
+                self.contentOffset = CGPointMake(offset.x, offset.y + newOffset.y);
+            }
         }else {
+            //偏移量【0~residentHeight】之间的区域
+            CGPoint offset = self.contentOffset;
+            CGFloat suitableY = offset.y + newOffset.y;
+            suitableY = MIN(suitableY, self.residentHeight);
+            suitableY = MAX(0, suitableY);
+            self.contentOffset = CGPointMake(offset.x, suitableY);
             
-            if (self.contentOffset.y >= self.residentHeight) {
+            if ((self.contentOffset.y + newOffset.y) >= self.residentHeight) {
                 
-                if (newOffset.y > 0) {
-
-//                    NSLog(@" > 0, newOffset:%f",newOffset.y);
-                }else{
-//                    NSLog(@"< 0, newOffset:%f",newOffset.y);
-                    self.tableView.contentOffset = CGPointZero;
-                    CGPoint offset = self.contentOffset;
-                    self.contentOffset = CGPointMake(offset.x, offset.y + newOffset.y);
-
-                    
-                }
             }else {
-                //移动整个scrollView阶段，tableview不动
-                if (newOffset.y < 0 && self.contentOffset.y <= 0) {
+                if (self.contentOffset.y == 0 && newOffset.y < 0) {
                     
                 }else {
                     self.tableView.contentOffset = CGPointZero;
-                    CGPoint offset = self.contentOffset;
-                    CGFloat suitableY = offset.y + newOffset.y;
-                    suitableY = MIN(suitableY, self.residentHeight);
-                    suitableY = MAX(0, suitableY);
-                    self.contentOffset = CGPointMake(offset.x, suitableY);
                 }
                 
             }
-            
         }
-        
-        
-        
     }];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    NSLog(@"%f",scrollView.contentOffset.y);
+
 }
 @end
