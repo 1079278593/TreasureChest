@@ -39,9 +39,7 @@
     self.residentHeight = height;
     
     [self addSubview:self.headerView];
-    headerView.backgroundColor = [UIColor yellowColor];
     [self addSubview:self.tableView];
-    contentView.backgroundColor = [UIColor blueColor];
     
     CGRect newFrame = contentView.frame;
     newFrame.origin.y = headerView.frame.size.height;
