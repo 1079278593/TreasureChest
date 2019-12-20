@@ -37,6 +37,7 @@
 		B2506D1C23ABA1410034A472 /* select_down_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2506D1A23ABA1410034A472 /* select_down_icon@2x.png */; };
 		B2506D1F23ABA1480034A472 /* select_top_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2506D1D23ABA1480034A472 /* select_top_icon@3x.png */; };
 		B2506D2023ABA1480034A472 /* select_top_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2506D1E23ABA1480034A472 /* select_top_icon@2x.png */; };
+		B27B780723AC61A50083E6AE /* XMNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B27B780623AC61A50083E6AE /* XMNetworking.m */; };
 		B2B8360D2397D22000A562DB /* TreasureChestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B8360C2397D22000A562DB /* TreasureChestTests.m */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +101,8 @@
 		B2506D1A23ABA1410034A472 /* select_down_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select_down_icon@2x.png"; sourceTree = "<group>"; };
 		B2506D1D23ABA1480034A472 /* select_top_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select_top_icon@3x.png"; sourceTree = "<group>"; };
 		B2506D1E23ABA1480034A472 /* select_top_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select_top_icon@2x.png"; sourceTree = "<group>"; };
+		B27B780523AC61A50083E6AE /* XMNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMNetworking.h; sourceTree = "<group>"; };
+		B27B780623AC61A50083E6AE /* XMNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMNetworking.m; sourceTree = "<group>"; };
 		B2B835ED2397D21E00A562DB /* TreasureChest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreasureChest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B836082397D22000A562DB /* TreasureChestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TreasureChestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B8360C2397D22000A562DB /* TreasureChestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TreasureChestTests.m; sourceTree = "<group>"; };
@@ -170,6 +173,7 @@
 		3AE550D323A9189F001D989E /* Objective-C */ = {
 			isa = PBXGroup;
 			children = (
+				B27B783923ACCF0A0083E6AE /* TabScrollView */,
 				B2506CED23AB565E0034A472 /* CollapsibleTableView */,
 				3AE550D423A9189F001D989E /* FormsView */,
 				3AE550D723A9189F001D989E /* ResidentScrollView */,
@@ -198,6 +202,7 @@
 		3AE550DA23A9189F001D989E /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				B27B780423AC61600083E6AE /* AFNetworking */,
 				3AE550DB23A9189F001D989E /* Extension */,
 				3AE550DE23A9189F001D989E /* Macro */,
 			);
@@ -264,6 +269,22 @@
 				B2506D0E23AB8AFA0034A472 /* TestData.plist */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		B27B780423AC61600083E6AE /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				B27B780523AC61A50083E6AE /* XMNetworking.h */,
+				B27B780623AC61A50083E6AE /* XMNetworking.m */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		B27B783923ACCF0A0083E6AE /* TabScrollView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TabScrollView;
 			sourceTree = "<group>";
 		};
 		B2B835E42397D21E00A562DB = {
@@ -502,6 +523,7 @@
 				3A40235923A62ED100BDB4E3 /* ViewController.m in Sources */,
 				3AE550E123A9189F001D989E /* FormsView.m in Sources */,
 				B2506D0923AB83080034A472 /* BaseViewController.m in Sources */,
+				B27B780723AC61A50083E6AE /* XMNetworking.m in Sources */,
 				3A40235D23A62ED100BDB4E3 /* AppDelegate.m in Sources */,
 				3AE550E323A9189F001D989E /* UIViewController+CurrentController.m in Sources */,
 				B2506D0D23AB88310034A472 /* CollapsibleViewCtl.m in Sources */,

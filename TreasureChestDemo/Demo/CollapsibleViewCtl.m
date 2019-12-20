@@ -8,7 +8,6 @@
 
 #import "CollapsibleViewCtl.h"
 #import "CollapsibleView.h"
-#import "STNetUtil.h"
 
 @interface CollapsibleViewCtl ()
 
@@ -55,17 +54,7 @@
 
 - (void)requestData {
     
-    //url和parameter隐藏在STNetUtil,STNetUtil实体是存在桌面，不会发布到GitHub。
     
-    [STNetUtil post:nil content:nil success:^(RespondModel *respondModel) {
-        if([respondModel.status isEqualToString:@"0"]){
-            NSLog(@"%@",respondModel.data);
-        }else{
-//            weakSelf.failMsg = respondModel.msg;
-        }
-    } failure:^(int errorCode) {
-//        weakSelf.failMsg = [NSString stringWithFormat:MSG_ERROR,errorCode];
-    }];
 }
 
 @end

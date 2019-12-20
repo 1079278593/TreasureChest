@@ -13,5 +13,6 @@
 #import "UIView+Extension.h"
 #import "UIViewController+CurrentController.h"
 #import <ReactiveObjC.h>
+#import <MJExtension/MJExtension.h>
 
 #endif /* PrefixHeader_pch */

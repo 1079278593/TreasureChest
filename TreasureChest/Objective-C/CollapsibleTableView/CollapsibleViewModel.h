@@ -13,8 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CollapsibleViewModel : NSObject
 
-//@property (nonatomic, strong) NSMutableArray<CollapsibleModel *> *datas;
-
 ///完整的整个数据结构
 @property (nonatomic, strong) NSMutableArray<CollapsibleModel *> *rootItems;
 ///当前需要展示的数据
@@ -26,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)resetVisibleItems;
 - (void)assemblyVisibleItems:(NSArray<CollapsibleModel *> *)menuItems index:(NSInteger)index;
+
 @end
 
 NS_ASSUME_NONNULL_END

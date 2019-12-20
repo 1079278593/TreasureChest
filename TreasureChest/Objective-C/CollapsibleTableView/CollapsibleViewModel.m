@@ -11,20 +11,19 @@
 
 @interface CollapsibleViewModel()
 
-
-
 @end
 
 @implementation CollapsibleViewModel
 
 - (instancetype)init {
     if(self == [super init]){
-        [self requestData];
+        [self requestPlistData];
     }
     return self;
 }
 
-- (void)requestData {
+//测试数据
+- (void)requestPlistData {
    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"TestData" ofType:@"plist"];
     NSArray *date = [NSArray arrayWithContentsOfFile:filePath];
     self.rootItems = [CollapsibleModel mj_objectArrayWithKeyValuesArray:date];
@@ -37,7 +36,7 @@
     // 清空当前所有展示项
     [self.currentItems removeAllObjects];
     
-    // 重新添加需要展示项, 并设置层级, 初始化0
+    // 重新添加需要展示项, 并设置层级, root层级为0
     [self assemblyVisibleItems:self.rootItems index:0];
 }
 
