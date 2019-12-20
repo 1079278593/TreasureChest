@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "ResidentScrollViewCtl.h"
 #import "CollapsibleViewCtl.h"
+#import "TabScrollViewCtl.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(strong, nonatomic)UITableView *tableView;
@@ -20,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.datas = @[@"可驻留的ScrollView",@"可折叠tableView"];
+    self.datas = @[@"可驻留的ScrollView",@"可折叠tableView",@"tabScrollView"];
     self.tableView.frame = CGRectMake(0, 64, KScreenWidth, KScreenHeight);
 }
 
@@ -61,7 +62,8 @@
             break;
         case 2:
         {
-            
+            TabScrollViewCtl *controller = [[TabScrollViewCtl alloc]init];
+            [self.navigationController pushViewController:controller animated:true];
         }
             break;
         case 3:

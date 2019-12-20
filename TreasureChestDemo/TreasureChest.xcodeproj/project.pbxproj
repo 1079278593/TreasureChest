@@ -38,6 +38,9 @@
 		B2506D1F23ABA1480034A472 /* select_top_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2506D1D23ABA1480034A472 /* select_top_icon@3x.png */; };
 		B2506D2023ABA1480034A472 /* select_top_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2506D1E23ABA1480034A472 /* select_top_icon@2x.png */; };
 		B27B780723AC61A50083E6AE /* XMNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B27B780623AC61A50083E6AE /* XMNetworking.m */; };
+		B27B784223ACD6D70083E6AE /* TabScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B27B784123ACD6D70083E6AE /* TabScrollView.m */; };
+		B27B784523ACD7C00083E6AE /* TabTitleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B27B784423ACD7C00083E6AE /* TabTitleScrollView.m */; };
+		B27B784823ACE22A0083E6AE /* TabScrollViewCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = B27B784723ACE22A0083E6AE /* TabScrollViewCtl.m */; };
 		B2B8360D2397D22000A562DB /* TreasureChestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B8360C2397D22000A562DB /* TreasureChestTests.m */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +106,12 @@
 		B2506D1E23ABA1480034A472 /* select_top_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select_top_icon@2x.png"; sourceTree = "<group>"; };
 		B27B780523AC61A50083E6AE /* XMNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMNetworking.h; sourceTree = "<group>"; };
 		B27B780623AC61A50083E6AE /* XMNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMNetworking.m; sourceTree = "<group>"; };
+		B27B784023ACD6D70083E6AE /* TabScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabScrollView.h; sourceTree = "<group>"; };
+		B27B784123ACD6D70083E6AE /* TabScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabScrollView.m; sourceTree = "<group>"; };
+		B27B784323ACD7C00083E6AE /* TabTitleScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabTitleScrollView.h; sourceTree = "<group>"; };
+		B27B784423ACD7C00083E6AE /* TabTitleScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabTitleScrollView.m; sourceTree = "<group>"; };
+		B27B784623ACE22A0083E6AE /* TabScrollViewCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabScrollViewCtl.h; sourceTree = "<group>"; };
+		B27B784723ACE22A0083E6AE /* TabScrollViewCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabScrollViewCtl.m; sourceTree = "<group>"; };
 		B2B835ED2397D21E00A562DB /* TreasureChest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreasureChest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B836082397D22000A562DB /* TreasureChestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TreasureChestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B8360C2397D22000A562DB /* TreasureChestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TreasureChestTests.m; sourceTree = "<group>"; };
@@ -251,6 +260,8 @@
 				B2506D0523AB65A90034A472 /* ResidentScrollViewCtl.m */,
 				B2506D0B23AB88310034A472 /* CollapsibleViewCtl.h */,
 				B2506D0C23AB88310034A472 /* CollapsibleViewCtl.m */,
+				B27B784623ACE22A0083E6AE /* TabScrollViewCtl.h */,
+				B27B784723ACE22A0083E6AE /* TabScrollViewCtl.m */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -283,6 +294,10 @@
 		B27B783923ACCF0A0083E6AE /* TabScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				B27B784023ACD6D70083E6AE /* TabScrollView.h */,
+				B27B784123ACD6D70083E6AE /* TabScrollView.m */,
+				B27B784323ACD7C00083E6AE /* TabTitleScrollView.h */,
+				B27B784423ACD7C00083E6AE /* TabTitleScrollView.m */,
 			);
 			path = TabScrollView;
 			sourceTree = "<group>";
@@ -517,8 +532,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B27B784823ACE22A0083E6AE /* TabScrollViewCtl.m in Sources */,
 				B2506D0223AB5BA80034A472 /* CollapsibleModel.m in Sources */,
 				3A40235C23A62ED100BDB4E3 /* main.m in Sources */,
+				B27B784523ACD7C00083E6AE /* TabTitleScrollView.m in Sources */,
 				3AE550E023A9189F001D989E /* TmpScrollView.swift in Sources */,
 				3A40235923A62ED100BDB4E3 /* ViewController.m in Sources */,
 				3AE550E123A9189F001D989E /* FormsView.m in Sources */,
@@ -526,6 +543,7 @@
 				B27B780723AC61A50083E6AE /* XMNetworking.m in Sources */,
 				3A40235D23A62ED100BDB4E3 /* AppDelegate.m in Sources */,
 				3AE550E323A9189F001D989E /* UIViewController+CurrentController.m in Sources */,
+				B27B784223ACD6D70083E6AE /* TabScrollView.m in Sources */,
 				B2506D0D23AB88310034A472 /* CollapsibleViewCtl.m in Sources */,
 				B2506CEC23AB48E60034A472 /* UIView+Extension.m in Sources */,
 				B2506D0623AB65A90034A472 /* ResidentScrollViewCtl.m in Sources */,
