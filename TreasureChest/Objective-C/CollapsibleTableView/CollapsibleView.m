@@ -51,6 +51,8 @@ static NSString *CellIdentify = @"CellIdentify";
     @weakify(self);
     [[RACObserve(self.viewModel, datas) ignore:nil] subscribeNext:^(id  _Nullable x) {
         @strongify(self);
+        self.menuItems = x;
+        [self setupRowCount];
         [self.tableView reloadData];
     }];
 }
@@ -68,7 +70,7 @@ static NSString *CellIdentify = @"CellIdentify";
 
 #pragma mark - tableView delegate
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [_viewModel.datas count];
+    return self.latestShowMenuItems.count;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -76,19 +78,53 @@ static NSString *CellIdentify = @"CellIdentify";
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSString *cellIdentify = @"cellIdentify";
-    CollapsibleViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentify];
-    if(!cell){
-        cell = [[CollapsibleViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentify];
-    }
-    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    [cell setMenuItem:_viewModel.datas[indexPath.row]];
-//    cell.textLabel.text = @"3424";
+    CollapsibleViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentify forIndexPath:indexPath];
+    cell.menuItem = self.latestShowMenuItems[indexPath.row];
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    CollapsibleModel *menuItem = self.latestShowMenuItems[indexPath.row];
+    if (!menuItem.isCanUnfold) return;
     
+    self.oldShowMenuItems = [NSMutableArray arrayWithArray:self.latestShowMenuItems];
+    
+    // 设置展开闭合
+    menuItem.isUnfold = !menuItem.isUnfold;
+    // 更新被点击cell的箭头指向
+    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:(UITableViewRowAnimationAutomatic)];
+    
+    // 设置需要展开的新数据
+    [self setupRowCount];
+    
+    // 判断老数据和新数据的数量, 来进行展开和闭合动画
+    // 定义一个数组, 用于存放需要展开闭合的indexPath
+    NSMutableArray<NSIndexPath *> *indexPaths = @[].mutableCopy;
+    
+    // 如果 老数据 比 新数据 多, 那么就需要进行闭合操作
+    if (self.oldShowMenuItems.count > self.latestShowMenuItems.count) {
+        // 遍历oldShowMenuItems, 找出多余的老数据对应的indexPath
+        for (int i = 0; i < self.oldShowMenuItems.count; i++) {
+            // 当新数据中 没有对应的item时
+            if (![self.latestShowMenuItems containsObject:self.oldShowMenuItems[i]]) {
+                NSIndexPath *subIndexPath = [NSIndexPath indexPathForRow:i inSection:indexPath.section];
+                [indexPaths addObject:subIndexPath];
+            }
+        }
+        // 移除找到的多余indexPath
+        [self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:(UITableViewRowAnimationTop)];
+    }else {
+        // 此时 新数据 比 老数据 多, 进行展开操作
+        // 遍历 latestShowMenuItems, 找出 oldShowMenuItems 中没有的选项, 就是需要新增的indexPath
+        for (int i = 0; i < self.latestShowMenuItems.count; i++) {
+            if (![self.oldShowMenuItems containsObject:self.latestShowMenuItems[i]]) {
+                NSIndexPath *subIndexPath = [NSIndexPath indexPathForRow:i inSection:indexPath.section];
+                [indexPaths addObject:subIndexPath];
+            }
+        }
+        // 插入找到新添加的indexPath
+        [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:(UITableViewRowAnimationTop)];
+    }
 }
 #pragma mark - select refresh
 #pragma mark - < 添加可以展示的选项 >
