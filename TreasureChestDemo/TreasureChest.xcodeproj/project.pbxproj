@@ -41,6 +41,8 @@
 		B27B784223ACD6D70083E6AE /* TabScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B27B784123ACD6D70083E6AE /* TabScrollView.m */; };
 		B27B784523ACD7C00083E6AE /* TabTitleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B27B784423ACD7C00083E6AE /* TabTitleScrollView.m */; };
 		B27B784823ACE22A0083E6AE /* TabScrollViewCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = B27B784723ACE22A0083E6AE /* TabScrollViewCtl.m */; };
+		B27B784B23ADB2080083E6AE /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = B27B784A23ADB2080083E6AE /* UIColor+Hex.m */; };
+		B27B784E23ADB4080083E6AE /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = B27B784D23ADB4080083E6AE /* UIImage+Color.m */; };
 		B2B8360D2397D22000A562DB /* TreasureChestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B8360C2397D22000A562DB /* TreasureChestTests.m */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +114,10 @@
 		B27B784423ACD7C00083E6AE /* TabTitleScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabTitleScrollView.m; sourceTree = "<group>"; };
 		B27B784623ACE22A0083E6AE /* TabScrollViewCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabScrollViewCtl.h; sourceTree = "<group>"; };
 		B27B784723ACE22A0083E6AE /* TabScrollViewCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabScrollViewCtl.m; sourceTree = "<group>"; };
+		B27B784923ADB2080083E6AE /* UIColor+Hex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		B27B784A23ADB2080083E6AE /* UIColor+Hex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		B27B784C23ADB4080083E6AE /* UIImage+Color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
+		B27B784D23ADB4080083E6AE /* UIImage+Color.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
 		B2B835ED2397D21E00A562DB /* TreasureChest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreasureChest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B836082397D22000A562DB /* TreasureChestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TreasureChestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B8360C2397D22000A562DB /* TreasureChestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TreasureChestTests.m; sourceTree = "<group>"; };
@@ -225,6 +231,10 @@
 				3AE550DD23A9189F001D989E /* UIViewController+CurrentController.h */,
 				B2506CEA23AB48E60034A472 /* UIView+Extension.h */,
 				B2506CEB23AB48E60034A472 /* UIView+Extension.m */,
+				B27B784923ADB2080083E6AE /* UIColor+Hex.h */,
+				B27B784A23ADB2080083E6AE /* UIColor+Hex.m */,
+				B27B784C23ADB4080083E6AE /* UIImage+Color.h */,
+				B27B784D23ADB4080083E6AE /* UIImage+Color.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -539,7 +549,9 @@
 				3AE550E023A9189F001D989E /* TmpScrollView.swift in Sources */,
 				3A40235923A62ED100BDB4E3 /* ViewController.m in Sources */,
 				3AE550E123A9189F001D989E /* FormsView.m in Sources */,
+				B27B784B23ADB2080083E6AE /* UIColor+Hex.m in Sources */,
 				B2506D0923AB83080034A472 /* BaseViewController.m in Sources */,
+				B27B784E23ADB4080083E6AE /* UIImage+Color.m in Sources */,
 				B27B780723AC61A50083E6AE /* XMNetworking.m in Sources */,
 				3A40235D23A62ED100BDB4E3 /* AppDelegate.m in Sources */,
 				3AE550E323A9189F001D989E /* UIViewController+CurrentController.m in Sources */,
@@ -709,7 +721,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 68WRCFG276;
+				DEVELOPMENT_TEAM = BVSQGBFKQ5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TreasureChestDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = TreasureChestDemo/Info.plist;
@@ -735,7 +747,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 68WRCFG276;
+				DEVELOPMENT_TEAM = BVSQGBFKQ5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TreasureChestDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = TreasureChestDemo/Info.plist;

@@ -26,6 +26,7 @@
     
     _tabScrollView = [[TabScrollView alloc]initWithFrame:CGRectMake(0, 64, KScreenWidth, KScreenHeight-64) contents:@[tmpView1,tmpView2,tmpView3,tmpView4] titles:@[@"title1",@"title2",@"title3",@"title4"]];
     [self.view addSubview:_tabScrollView];
+    [_tabScrollView.titleScrollView addViewShadow];
 }
 
 

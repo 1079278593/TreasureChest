@@ -9,7 +9,7 @@
 #import "TabScrollView.h"
 #import <Masonry/Masonry.h>
 
-@interface TabScrollView()<UIScrollViewDelegate>
+@interface TabScrollView()<UIScrollViewDelegate,TabTitleScrollViewDelegate>
 
 @property(strong, nonatomic)NSArray *views;
 @property(strong, nonatomic)NSArray *titles;
@@ -37,7 +37,7 @@
     CGFloat height = CGRectGetHeight(self.frame);
     
     _titleScrollView = [[TabTitleScrollView alloc]initWithFrame:CGRectMake(0, 0, width, titleHeght) titles:self.titles];
-    [self addSubview:_titleScrollView];
+    _titleScrollView.delegate = self;
     
     _contentScrollView = [[UIScrollView alloc]init];
     _contentScrollView.showsVerticalScrollIndicator = NO;
@@ -49,6 +49,7 @@
     [self addSubview:_contentScrollView];
     
     [self initScrollViewContents];
+    [self addSubview:_titleScrollView];
 }
 
 - (void)initScrollViewContents {
@@ -59,8 +60,26 @@
         UIView *view = _views[i];
         view.frame = CGRectMake(width * i, 0, width, height);
         [_contentScrollView addSubview:view];
-        view.backgroundColor = [[UIColor redColor]colorWithAlphaComponent:0.3+i*0.05];
+//        view.backgroundColor = [[UIColor redColor]colorWithAlphaComponent:0.3+i*0.05];
     }
+}
+
+#pragma mark - scrollview delegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat ratio = scrollView.contentOffset.x / scrollView.contentSize.width;
+    [_titleScrollView offsetXRatio:ratio];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    CGFloat ratio = scrollView.contentOffset.x / scrollView.contentSize.width;
+    [_titleScrollView refreshSelectedWithRatio:ratio];
+}
+
+#pragma mark - title scrollview delegate
+- (void)tabButtonSelectedIndex:(NSInteger)index {
+    CGPoint offset = _contentScrollView.contentOffset;
+    offset.x = index * CGRectGetWidth(_contentScrollView.frame);
+    [_contentScrollView setContentOffset:offset animated:true];
 }
 
 @end

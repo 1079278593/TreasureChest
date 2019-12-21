@@ -14,5 +14,6 @@
 #import "UIViewController+CurrentController.h"
 #import <ReactiveObjC.h>
 #import <MJExtension/MJExtension.h>
+#import "UIColor+Hex.h"
 
 #endif /* PrefixHeader_pch */

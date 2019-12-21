@@ -8,14 +8,18 @@
 
 #import "TabTitleScrollView.h"
 
-static CGFloat buttonWidth = 95.0;
+static CGFloat buttonWidth = 65.0;
 static CGFloat buttonPaddingWidth = 35.0;
+static NSString *backgroudColorString = @"007AFF";
+static NSString *cursorViewColorString = @"ffffff";
 
 @interface TabTitleScrollView()<UIScrollViewDelegate>
 
 @property(strong, nonatomic)NSArray *titles;
 @property(strong, nonatomic)NSMutableArray <UIButton *> *titleButtons;
 @property(strong, nonatomic)UIScrollView *contentScrollView;
+@property(strong, nonatomic)UIView *cursorLineView;
+@property(assign, nonatomic)CGFloat cursorOffsetX;
 
 @end
 
@@ -31,11 +35,27 @@ static CGFloat buttonPaddingWidth = 35.0;
 }
 
 - (void)initView {
+    self.backgroundColor = [UIColor hexColor:backgroudColorString];
+    [self initScrollView];
+    [self initScrollViewContents];
     
+    _cursorLineView = [[UIView alloc]init];
+    _cursorLineView.frame = CGRectMake(0, 0, 20, 3);
+    _cursorLineView.backgroundColor = [UIColor hexColor:cursorViewColorString];
+    [_contentScrollView addSubview:_cursorLineView];
+    
+    if ([_titleButtons count] > 0) {
+        UIButton *firstButton = _titleButtons[0];
+        _cursorLineView.center = CGPointMake(firstButton.center.x, CGRectGetMaxY(firstButton.frame)-CGRectGetHeight(_cursorLineView.frame)/2.0);
+        _cursorOffsetX = CGRectGetMinX(_cursorLineView.frame);
+    }
+    
+}
+
+- (void)initScrollView {
     CGFloat width = CGRectGetWidth(self.frame);
     CGFloat height = CGRectGetHeight(self.frame);
     CGFloat pageWidth = buttonWidth + buttonPaddingWidth;
-    
     _contentScrollView = [[UIScrollView alloc]init];
     _contentScrollView.showsVerticalScrollIndicator = NO;
     _contentScrollView.showsHorizontalScrollIndicator = NO;
@@ -43,12 +63,9 @@ static CGFloat buttonPaddingWidth = 35.0;
     _contentScrollView.frame = CGRectMake(0, 0, width, height);
     _contentScrollView.contentSize = CGSizeMake(pageWidth*_titles.count, CGRectGetHeight(_contentScrollView.frame));
     [self addSubview:_contentScrollView];
-
-    [self initScrollViewContents];
 }
 
 - (void)initScrollViewContents {
-
     CGFloat height = CGRectGetHeight(_contentScrollView.frame);
     CGFloat pageWidth = buttonWidth + buttonPaddingWidth;
     
@@ -56,7 +73,8 @@ static CGFloat buttonPaddingWidth = 35.0;
         NSString *title = _titles[i];
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button setTitle:title forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        button.titleLabel.font = [UIFont systemFontOfSize:15];
         button.frame = CGRectMake(15 + pageWidth*i, 0, buttonWidth, height);
         [_contentScrollView addSubview:button];
         button.tag = i;
@@ -67,7 +85,53 @@ static CGFloat buttonPaddingWidth = 35.0;
 }
 
 - (void)buttonEvent:(UIButton *)button {
-    NSLog(@"title button tag:%ld",(long)button.tag);
+    if (button.isSelected) { return; }
+    
+    for (int i = 0; i<_titleButtons.count; i++) {
+        UIButton *button = _titleButtons[i];
+        button.selected = false;
+        button.titleLabel.font = [UIFont systemFontOfSize:15];
+    }
+    
+    button.selected = true;
+    button.titleLabel.font = [UIFont boldSystemFontOfSize:15];
+
+    if ([self.delegate respondsToSelector:@selector(tabButtonSelectedIndex:)]) {
+        [self.delegate tabButtonSelectedIndex:button.tag];
+    }
+}
+
+
+#pragma mark - public method
+- (void)offsetXRatio:(CGFloat)ratio {
+    CGRect cursorFrame = _cursorLineView.frame;
+    cursorFrame.origin.x = _cursorOffsetX+(_contentScrollView.contentSize.width * ratio);
+    _cursorLineView.frame = cursorFrame;
+}
+
+- (void)refreshSelectedWithRatio:(CGFloat)ratio {
+    CGFloat pageRatio = 1.0/_titles.count;
+    NSInteger nextIndex = MIN((ratio / pageRatio), _titles.count-1);
+    [self buttonEvent:_titleButtons[nextIndex]];
+}
+
+- (void)addViewShadow {
+    self.layer.shadowOffset = CGSizeMake(1, 1);
+    self.layer.shadowRadius = 8;
+    self.layer.shadowOpacity = 0.6;
+    self.layer.shadowColor = [UIColor hexColor:backgroudColorString].CGColor;
+}
+
+- (void)changeCursorLineViewColor:(UIColor *)color {
+    _cursorLineView.backgroundColor = color;
+}
+
+- (void)changeBackgroundColor:(UIColor *)color {
+    self.backgroundColor = color;
+}
+
+- (void)changeTitleSelectedColor:(UIColor *)selectedColor normalColor:(UIColor *)normalColor {
+    
 }
 
 @end
