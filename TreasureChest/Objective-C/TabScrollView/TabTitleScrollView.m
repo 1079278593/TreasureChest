@@ -8,8 +8,7 @@
 
 #import "TabTitleScrollView.h"
 
-static CGFloat buttonWidth = 65.0;
-static CGFloat buttonPaddingWidth = 35.0;
+static NSInteger maxCount = 4;
 static NSString *backgroudColorString = @"007AFF";
 static NSString *cursorViewColorString = @"ffffff";
 
@@ -20,6 +19,7 @@ static NSString *cursorViewColorString = @"ffffff";
 @property(strong, nonatomic)UIScrollView *contentScrollView;
 @property(strong, nonatomic)UIView *cursorLineView;
 @property(assign, nonatomic)CGFloat cursorOffsetX;
+@property(assign, nonatomic)CGFloat buttonWidth;
 
 @end
 
@@ -55,19 +55,19 @@ static NSString *cursorViewColorString = @"ffffff";
 - (void)initScrollView {
     CGFloat width = CGRectGetWidth(self.frame);
     CGFloat height = CGRectGetHeight(self.frame);
-    CGFloat pageWidth = buttonWidth + buttonPaddingWidth;
+    _buttonWidth = width/MIN(_titles.count, maxCount);
+    
     _contentScrollView = [[UIScrollView alloc]init];
     _contentScrollView.showsVerticalScrollIndicator = NO;
     _contentScrollView.showsHorizontalScrollIndicator = NO;
     _contentScrollView.delegate = self;
     _contentScrollView.frame = CGRectMake(0, 0, width, height);
-    _contentScrollView.contentSize = CGSizeMake(pageWidth*_titles.count, CGRectGetHeight(_contentScrollView.frame));
+    _contentScrollView.contentSize = CGSizeMake(_buttonWidth*_titles.count, CGRectGetHeight(_contentScrollView.frame));
     [self addSubview:_contentScrollView];
 }
 
 - (void)initScrollViewContents {
     CGFloat height = CGRectGetHeight(_contentScrollView.frame);
-    CGFloat pageWidth = buttonWidth + buttonPaddingWidth;
     
     for (int i = 0; i<_titles.count; i++) {
         NSString *title = _titles[i];
@@ -75,11 +75,11 @@ static NSString *cursorViewColorString = @"ffffff";
         [button setTitle:title forState:UIControlStateNormal];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         button.titleLabel.font = [UIFont systemFontOfSize:15];
-        button.frame = CGRectMake(15 + pageWidth*i, 0, buttonWidth, height);
+        button.frame = CGRectMake(_buttonWidth*i, 0, _buttonWidth, height);
         [_contentScrollView addSubview:button];
         button.tag = i;
         [button addTarget:self action:@selector(buttonEvent:) forControlEvents:UIControlEventTouchUpInside];
-        
+
         [_titleButtons addObject:button];
     }
 }
@@ -113,6 +113,10 @@ static NSString *cursorViewColorString = @"ffffff";
     CGFloat pageRatio = 1.0/_titles.count;
     NSInteger nextIndex = MIN((ratio / pageRatio), _titles.count-1);
     [self buttonEvent:_titleButtons[nextIndex]];
+    
+    //如果游标出了屏幕，需要偏移
+//    CGFloat offsetX = pageRatio * _contentScrollView.contentSize.width;
+//    if ()
 }
 
 - (void)addViewShadow {
