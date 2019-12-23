@@ -44,6 +44,8 @@
 		B27B784B23ADB2080083E6AE /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = B27B784A23ADB2080083E6AE /* UIColor+Hex.m */; };
 		B27B784E23ADB4080083E6AE /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = B27B784D23ADB4080083E6AE /* UIImage+Color.m */; };
 		B2B8360D2397D22000A562DB /* TreasureChestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B8360C2397D22000A562DB /* TreasureChestTests.m */; };
+		B2DD689023B08C8500106F4F /* XMLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DD688F23B08C8500106F4F /* XMLabel.m */; };
+		B2DD689423B08EF100106F4F /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DD689323B08EF100106F4F /* UIButton+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +124,10 @@
 		B2B836082397D22000A562DB /* TreasureChestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TreasureChestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B8360C2397D22000A562DB /* TreasureChestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TreasureChestTests.m; sourceTree = "<group>"; };
 		B2B8360E2397D22000A562DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2DD688E23B08C8500106F4F /* XMLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMLabel.h; sourceTree = "<group>"; };
+		B2DD688F23B08C8500106F4F /* XMLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMLabel.m; sourceTree = "<group>"; };
+		B2DD689223B08EF100106F4F /* UIButton+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
+		B2DD689323B08EF100106F4F /* UIButton+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extension.m"; sourceTree = "<group>"; };
 		C748618DC627A1695BA6E142 /* Pods_TreasureChestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TreasureChestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D70F62B455C105A44C448481 /* Pods-TreasureChest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreasureChest.debug.xcconfig"; path = "Target Support Files/Pods-TreasureChest/Pods-TreasureChest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -188,6 +194,8 @@
 		3AE550D323A9189F001D989E /* Objective-C */ = {
 			isa = PBXGroup;
 			children = (
+				B2DD689123B08D5200106F4F /* XMButton */,
+				B2DD688D23B08C4B00106F4F /* XMLabel */,
 				B27B783923ACCF0A0083E6AE /* TabScrollView */,
 				B2506CED23AB565E0034A472 /* CollapsibleTableView */,
 				3AE550D423A9189F001D989E /* FormsView */,
@@ -235,6 +243,8 @@
 				B27B784A23ADB2080083E6AE /* UIColor+Hex.m */,
 				B27B784C23ADB4080083E6AE /* UIImage+Color.h */,
 				B27B784D23ADB4080083E6AE /* UIImage+Color.m */,
+				B2DD689223B08EF100106F4F /* UIButton+Extension.h */,
+				B2DD689323B08EF100106F4F /* UIButton+Extension.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -342,6 +352,22 @@
 				B2B8360E2397D22000A562DB /* Info.plist */,
 			);
 			path = TreasureChestTests;
+			sourceTree = "<group>";
+		};
+		B2DD688D23B08C4B00106F4F /* XMLabel */ = {
+			isa = PBXGroup;
+			children = (
+				B2DD688E23B08C8500106F4F /* XMLabel.h */,
+				B2DD688F23B08C8500106F4F /* XMLabel.m */,
+			);
+			path = XMLabel;
+			sourceTree = "<group>";
+		};
+		B2DD689123B08D5200106F4F /* XMButton */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = XMButton;
 			sourceTree = "<group>";
 		};
 		D3EB552CDB5DF92A98C9E524 /* Frameworks */ = {
@@ -546,6 +572,7 @@
 				B2506D0223AB5BA80034A472 /* CollapsibleModel.m in Sources */,
 				3A40235C23A62ED100BDB4E3 /* main.m in Sources */,
 				B27B784523ACD7C00083E6AE /* TabTitleScrollView.m in Sources */,
+				B2DD689423B08EF100106F4F /* UIButton+Extension.m in Sources */,
 				3AE550E023A9189F001D989E /* TmpScrollView.swift in Sources */,
 				3A40235923A62ED100BDB4E3 /* ViewController.m in Sources */,
 				3AE550E123A9189F001D989E /* FormsView.m in Sources */,
@@ -553,6 +580,7 @@
 				B2506D0923AB83080034A472 /* BaseViewController.m in Sources */,
 				B27B784E23ADB4080083E6AE /* UIImage+Color.m in Sources */,
 				B27B780723AC61A50083E6AE /* XMNetworking.m in Sources */,
+				B2DD689023B08C8500106F4F /* XMLabel.m in Sources */,
 				3A40235D23A62ED100BDB4E3 /* AppDelegate.m in Sources */,
 				3AE550E323A9189F001D989E /* UIViewController+CurrentController.m in Sources */,
 				B27B784223ACD6D70083E6AE /* TabScrollView.m in Sources */,
