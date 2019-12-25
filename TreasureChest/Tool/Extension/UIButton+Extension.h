@@ -15,12 +15,20 @@ typedef NS_ENUM(NSInteger, ButtonImageLayout){
     ImageLayoutRight
 };
 
+typedef NS_ENUM(NSInteger, ButtonAlignment) {
+    ButtonAlignmentLeft     = 0,
+    ButtonAlignmentRight    = 1,
+    ButtonAlignmentUp       = 2,
+    ButtonAlignmentDown     = 3,
+    ButtonAlignmentCenter     = 4,
+};
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIButton (Extension)
 
 ///padding是水平方向的，title和image的间距
-- (void)imageAlignment:(ButtonImageLayout)style padding:(CGFloat)padding;
+- (void)imageAlignment:(ButtonImageLayout)style centerPadding:(CGFloat)padding;
 
 @end
 

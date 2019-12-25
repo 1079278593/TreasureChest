@@ -10,8 +10,7 @@
 #import "ResidentScrollViewCtl.h"
 #import "CollapsibleViewCtl.h"
 #import "TabScrollViewCtl.h"
-#import "UIButton+Extension.h"
-#import "XMLabel.h"
+#import "PearlsPackageCtl.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(strong, nonatomic)UITableView *tableView;
@@ -23,26 +22,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.datas = @[@"可驻留的ScrollView",@"可折叠tableView",@"tabScrollView"];
+    self.datas = @[@"可驻留的ScrollView",@"可折叠tableView",@"tabScrollView",@"各种小控件：button、label"];
     self.tableView.frame = CGRectMake(0, 64, KScreenWidth, KScreenHeight);
     
-    UIButton *button = [[UIButton alloc]init];
-    button.layer.borderWidth = 1;
-    button.frame = CGRectMake(20, 200, 100, 40);
-    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [button setImage:[UIImage imageNamed:@"options_selected_icon"] forState:UIControlStateNormal];
-    [button setTitle:@"t范德萨" forState:UIControlStateNormal];
-    [self.view addSubview:button];
-    [button imageAlignment:ImageLayoutRight padding:1];
     
-    XMLabel *label = [[XMLabel alloc]init];
-    label.layer.borderWidth = 1;
-    label.text = @"fdsafsdf";
-    label.textColor = [UIColor blackColor];
-    label.frame = CGRectMake(20, 260, 100, 100);
-    label.textAlignment = NSTextAlignmentRight;
-    label.verticalAlignment = VerticalAlignmentBottom;
-    [self.view addSubview:label];
 }
 
 #pragma mark - table
@@ -88,7 +71,8 @@
             break;
         case 3:
         {
-            
+            PearlsPackageCtl *controller = [[PearlsPackageCtl alloc]init];
+            [self.navigationController pushViewController:controller animated:true];
         }
             break;
         default:
