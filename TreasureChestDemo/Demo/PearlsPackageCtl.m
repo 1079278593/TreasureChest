@@ -44,35 +44,35 @@
     UIButton *button1 = [self getButton];
     button1.frame = CGRectMake(20, 150, 160, 40);
     [self.view addSubview:button1];
-    [button1 imageAlignment:ImageLayoutLeft centerPadding:10];
+    [button1 imageLayout:ImageLayoutLeft centerPadding:10];
     
     //图片在右
     UIButton *button2 = [self getButton];
     button2.frame = CGRectMake(20, 200, 160, 40);
     [self.view addSubview:button2];
-    [button2 imageAlignment:ImageLayoutRight centerPadding:10];
+    [button2 imageLayout:ImageLayoutRight centerPadding:10];
     
     //图片在上
     UIButton *button3 = [self getButton];
     button3.frame = CGRectMake(20, 250, 160, 80);
     [self.view addSubview:button3];
-    [button3 imageAlignment:ImageLayoutTop centerPadding:10];
+    [button3 imageLayout:ImageLayoutTop centerPadding:10];
     
     //图片在下
     UIButton *button4 = [self getButton];
     button4.frame = CGRectMake(20, 350, 160, 80);
     [self.view addSubview:button4];
-    [button4 imageAlignment:ImageLayoutBottom centerPadding:10];
+    [button4 imageLayout:ImageLayoutBottom centerPadding:10];
     
-    button1.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    button2.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    button3.contentVerticalAlignment = UIControlContentVerticalAlignmentTop;
-    button4.contentVerticalAlignment = UIControlContentVerticalAlignmentTop;
-    
-    button1.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
-    button2.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
-    button3.contentVerticalAlignment = UIControlContentVerticalAlignmentBottom;
-    button4.contentVerticalAlignment = UIControlContentVerticalAlignmentBottom;
+//    button1.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+//    button2.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+//    button3.contentVerticalAlignment = UIControlContentVerticalAlignmentTop;
+//    button4.contentVerticalAlignment = UIControlContentVerticalAlignmentTop;
+//    
+//    button1.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+//    button2.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+//    button3.contentVerticalAlignment = UIControlContentVerticalAlignmentBottom;
+//    button4.contentVerticalAlignment = UIControlContentVerticalAlignmentBottom;
 }
 
 - (UIButton *)getButton {
