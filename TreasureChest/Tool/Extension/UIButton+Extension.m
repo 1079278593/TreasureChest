@@ -27,7 +27,7 @@
  //局限：image的尺寸过大，可能会有问题
  */
 
-- (void)imageAlignment:(ButtonImageLayout)style centerPadding:(CGFloat)padding {
+- (void)imageLayout:(ButtonImageLayout)style centerPadding:(CGFloat)padding {
 
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     

@@ -27,8 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIButton (Extension)
 
-///padding是水平方向的，title和image的间距
-- (void)imageAlignment:(ButtonImageLayout)style centerPadding:(CGFloat)padding;
+///padding是title和image的间距。
+- (void)imageLayout:(ButtonImageLayout)style centerPadding:(CGFloat)padding;
 
 @end
 
