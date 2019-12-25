@@ -13,7 +13,7 @@
 /**
  前提：系统默认图片左、label右的布局。
  核心思路是：根据‘前提’去取消偏移，达到自己希望的布局。
- 注意：这个方法调用的时机，必须在title、image、frame设置之后。(这里做适配，让其可以不用考虑调用时机)
+ 注意：这个方法调用的时机，必须在title、image、frame设置之后。(思考：让其可以不用考虑调用时机)
  
  注意：控制imageView和titleLabel的间距时，edgeInsets是否起作用，会受到contentHorizontalAlignment影响。
  1. 如果是UIControlContentHorizontalAlignmentRight，imageEdgeInsets和titleEdgeInsets只有right分量起作用。
@@ -24,7 +24,7 @@
         edgeInsets设置根据两个元素的布局，取二者的中间的方向。比如图片在上，那就设置图片的bottom，
         以及label的top。
  
- //局限：image的尺寸过大，可能会有问题
+ //局限：image的尺寸过大，会有问题
  */
 
 - (void)imageLayout:(ButtonImageLayout)style centerPadding:(CGFloat)padding {
