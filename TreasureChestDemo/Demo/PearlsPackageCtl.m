@@ -80,7 +80,7 @@
     button.layer.borderWidth = 1;
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [button setImage:[UIImage imageNamed:@"options_selected_icon"] forState:UIControlStateNormal];
-//    [button setImage:[UIImage imageNamed:@"testIcon1"] forState:UIControlStateNormal];//过大图片
+//    [button setImage:[UIImage imageNamed:@"testIcon2"] forState:UIControlStateNormal];//过大图片
     [button setTitle:@"t范德萨" forState:UIControlStateNormal];
     return button;
 }
