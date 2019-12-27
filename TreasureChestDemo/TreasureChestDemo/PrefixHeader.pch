@@ -15,5 +15,7 @@
 #import <ReactiveObjC.h>
 #import <MJExtension/MJExtension.h>
 #import "UIColor+Hex.h"
+#import "UILabel+TextSize.h"
+#import "NSString+TextSize.h"
 
 #endif /* PrefixHeader_pch */

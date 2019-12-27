@@ -16,137 +16,117 @@
 
 @property(strong, nonatomic)NSArray <NSString *> *leftTitles;
 @property(strong, nonatomic)NSArray <NSString *> *rightTitles;
-@property(strong, nonatomic)NSArray <NSString *> *leftItems;
-@property(strong, nonatomic)NSArray <NSString *> *rightItems;
 
 @property(strong, nonatomic)NSMutableArray <UILabel *> *leftTitleLabels;
 @property(strong, nonatomic)NSMutableArray <UILabel *> *rightTitleLabels;
-@property(strong, nonatomic)NSMutableArray <UILabel *> *leftItemLabels;
-@property(strong, nonatomic)NSMutableArray <UILabel *> *rightItemLabels;
+
+@property(assign, nonatomic)CGFloat totalHeight;
 
 @end
 
 @implementation FormsView
 
-- (instancetype)initWithLeftTitles:(NSArray *)leftTitles leftItems:(NSArray *)leftItems {
-    if(self == [super init]){
+- (instancetype)initWithFrame:(CGRect)frame leftTitles:(NSArray *)leftTitles {
+    if(self == [super initWithFrame:frame]){
         _leftTitles = leftTitles;
-        _leftItems = leftItems;
+        _leftTitleLabels = [NSMutableArray arrayWithCapacity:0];
+        _rightTitleLabels = [NSMutableArray arrayWithCapacity:0];
         [self initView];
     }
     return self;
 }
 
+#pragma mark - < public >
+- (void)updateLeftTitles:(NSArray *)leftTitles rightTitles:(NSArray *)rightTitles {
+    [self updateLeftTitles:leftTitles];
+    [self updateRightTitles:rightTitles];
+}
+
+- (void)updateLeftTitles:(NSArray *)leftTitles {
+    _leftTitles = leftTitles;
+    [self refreshLabels:self.leftTitleLabels titles:leftTitles];
+    [self refreshHeight];
+}
+
+- (void)updateRightTitles:(NSArray *)rightTitles {
+    _rightTitles = rightTitles;
+    [self refreshLabels:self.rightTitleLabels titles:rightTitles];
+    [self refreshHeight];
+}
+
+- (CGFloat)getFormsHeight {
+    return self.totalHeight;
+}
+
+#pragma mark - < 刷新 >
+- (void)refreshLabels:(NSArray *)labels titles:(NSArray *)titles {
+    for (int i = 0; i<titles.count; i++) {
+        UILabel *label = labels[i];
+        label.text = titles[i];
+    }
+}
+
+- (void)refreshHeight {
+
+    self.totalHeight = 0;
+    
+    CGFloat viewWidth = self.width;
+    CGFloat leftWidth = 120;
+    CGFloat rightWidth = viewWidth - leftWidth - 15*2;
+      
+    UIView *cursorView = [[UIView alloc]init];
+    [self addSubview:cursorView];
+    cursorView.frame = CGRectZero;
+      
+    for (int i = 0; i<_leftTitles.count; i++) {
+        UILabel *leftLabel = self.leftTitleLabels[i];
+        CGFloat height = [leftLabel.text sizeWithMaxWidth:leftWidth font:leftLabel.font].height;
+        height = MAX(height, 20);
+        leftLabel.frame = CGRectMake(15, cursorView.bottom+15, leftWidth, height);
+    
+        UILabel *rightLabel = self.rightTitleLabels[i];
+        height = [rightLabel.text sizeWithMaxWidth:rightWidth font:rightLabel.font].height;
+        height = MAX(height, 20);
+        rightLabel.frame = CGRectMake(leftLabel.right, leftLabel.y, rightWidth, height);
+        
+        cursorView = CGRectGetMaxY(leftLabel.frame) > CGRectGetMaxY(rightLabel.frame) ? leftLabel : rightLabel;
+        
+        self.totalHeight = cursorView.bottom;
+    }
+}
+
+#pragma mark - < init view >
 - (void)initView {
-    
     [self initTitleLabels];
-    
-    UIView *breakLine = [[UIView alloc]init];
-    breakLine.backgroundColor = [UIColor lightGrayColor];
-    [self addSubview:breakLine];
-    
-//    [self initItemLabels];
+    [self updateLeftTitles:_leftTitles];
 }
 
 - (void)initTitleLabels {
     if (_leftTitles.count == 0) {
         return;
     }
-    
-    UIView *cursorView = [[UIView alloc]init];
-    [self addSubview:cursorView];
-    cursorView.frame = CGRectZero;
-    
     for (int i = 0; i<_leftTitles.count; i++) {
-        NSString *title = _leftTitles[i];
-        
-        UIView *containerView = [[UIView alloc]init];
-        [self addSubview:containerView];
-        [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.equalTo(self);
-            make.top.equalTo(cursorView.mas_bottom);
-        }];
-        containerView.backgroundColor = [[UIColor blueColor]colorWithAlphaComponent:0.1+0.1*i];
-        
-        UILabel *leftLabel = [self getLabel];// [[UILabel alloc]init];
-        leftLabel.textAlignment = NSTextAlignmentLeft;
-        leftLabel.text = title;
-        [self addSubview:leftLabel];
-        [leftLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(containerView).offset(KSpacingWidth);
-            make.top.equalTo(containerView).offset(KSpacingWidth);
-            make.width.equalTo(@150);
-            make.height.equalTo(@KLabelHeight);
-        }];
-        
+        UILabel *leftLabel = [self getLabel];
         UILabel *rightLabel = [self getLabel];
         rightLabel.textAlignment = NSTextAlignmentRight;
-        rightLabel.text = @"";
-        [self addSubview:rightLabel];
-        [rightLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(leftLabel.mas_right);
-            make.top.equalTo(leftLabel);
-            make.right.equalTo(containerView).offset(-KSpacingWidth);
-            make.bottom.equalTo(leftLabel);
-        }];
-        if (i == 1) {
-            leftLabel.text = @"代发费第三方士大夫士大夫士大夫士大夫三大法师法士大夫撒发斯蒂芬斯蒂芬打法胜多负少的";
-            [leftLabel mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.height.equalTo(@44);
-            }];
-        }
         
-        [containerView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.bottom.equalTo(rightLabel);
-        }];
+        [self.leftTitleLabels addObject:leftLabel];
+        [self.rightTitleLabels addObject:rightLabel];
         
-        cursorView = containerView;
+        rightLabel.backgroundColor = [[UIColor blueColor]colorWithAlphaComponent:0.1+0.1*i];
     }
 }
 
-- (void)initItemLabels {
-//    for (NSString *item in _leftItems) {
-//
-//    }
-}
-
-//更新titlesLabel
-- (void)updateTitles:(NSArray *)leftTitles rightTitles:(NSArray *)rightTitles {
-    [self updateLeftTitles:leftTitles];
-    [self updateRightTitles:rightTitles];
-}
-
-- (void)updateLeftTitles:(NSArray *)leftTitles {
-    
-}
-
-- (void)updateRightTitles:(NSArray *)rightTitles {
-    
-}
-
-//更新itemsLabel
-- (void)updateItems:(NSArray *)leftItems rightItems:(NSArray *)rightItems {
-    [self updateLeftItems:leftItems];
-    [self updateRightItems:rightItems];
-}
-
-- (void)updateLeftItems:(NSArray *)leftItems {
-    
-}
-
-- (void)updateRightItems:(NSArray *)rightItems {
-    
-}
-
-#pragma mark - private method
 - (UILabel *)getLabel {
     UILabel *label = [[UILabel alloc]init];
-    label.textAlignment = NSTextAlignmentLeft;
     label.numberOfLines = 0;
+    label.textAlignment = NSTextAlignmentLeft;
     label.lineBreakMode = NSLineBreakByWordWrapping;
-    
-    
+    label.font = [UIFont systemFontOfSize:14];
+    [self addSubview:label];
     return label;
 }
+
+
 
 @end

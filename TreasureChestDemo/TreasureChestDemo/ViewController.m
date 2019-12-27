@@ -11,6 +11,7 @@
 #import "CollapsibleViewCtl.h"
 #import "TabScrollViewCtl.h"
 #import "PearlsPackageCtl.h"
+#import "FormsViewCtl.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(strong, nonatomic)UITableView *tableView;
@@ -22,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.datas = @[@"可驻留的ScrollView",@"可折叠tableView",@"tabScrollView",@"各种小控件：button、label"];
+    self.datas = @[@"可驻留的ScrollView",@"可折叠tableView",@"tabScrollView",@"各种小控件：button、label",@"自定义表单"];
     self.tableView.frame = CGRectMake(0, 64, KScreenWidth, KScreenHeight);
     
     
@@ -72,6 +73,12 @@
         case 3:
         {
             PearlsPackageCtl *controller = [[PearlsPackageCtl alloc]init];
+            [self.navigationController pushViewController:controller animated:true];
+        }
+            break;
+        case 4:
+        {
+            FormsViewCtl *controller = [[FormsViewCtl alloc]init];
             [self.navigationController pushViewController:controller animated:true];
         }
             break;

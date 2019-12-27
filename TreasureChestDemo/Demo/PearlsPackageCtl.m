@@ -42,13 +42,13 @@
     
     //图片在左
     UIButton *button1 = [self getButton];
-    button1.frame = CGRectMake(20, 150, 160, 40);
+    button1.frame = CGRectMake(20, 150, 260, 40);
     [self.view addSubview:button1];
     [button1 imageLayout:ImageLayoutLeft centerPadding:10];
     
     //图片在右
     UIButton *button2 = [self getButton];
-    button2.frame = CGRectMake(20, 200, 160, 40);
+    button2.frame = CGRectMake(20, 200, 260, 40);
     [self.view addSubview:button2];
     [button2 imageLayout:ImageLayoutRight centerPadding:10];
     
@@ -81,7 +81,7 @@
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [button setImage:[UIImage imageNamed:@"options_selected_icon"] forState:UIControlStateNormal];
 //    [button setImage:[UIImage imageNamed:@"testIcon2"] forState:UIControlStateNormal];//过大图片
-    [button setTitle:@"t范德萨" forState:UIControlStateNormal];
+    [button setTitle:@"2019年12月26日19:26:21" forState:UIControlStateNormal];
     return button;
 }
 

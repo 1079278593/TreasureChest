@@ -43,6 +43,9 @@
 		B27B784823ACE22A0083E6AE /* TabScrollViewCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = B27B784723ACE22A0083E6AE /* TabScrollViewCtl.m */; };
 		B27B784B23ADB2080083E6AE /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = B27B784A23ADB2080083E6AE /* UIColor+Hex.m */; };
 		B27B784E23ADB4080083E6AE /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = B27B784D23ADB4080083E6AE /* UIImage+Color.m */; };
+		B2830EFC23B5E7DB0049AE99 /* FormsViewCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = B2830EFB23B5E7DB0049AE99 /* FormsViewCtl.m */; };
+		B2830EFF23B5F8600049AE99 /* NSString+TextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = B2830EFE23B5F8600049AE99 /* NSString+TextSize.m */; };
+		B2830F0223B5F8890049AE99 /* UILabel+TextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = B2830F0123B5F8890049AE99 /* UILabel+TextSize.m */; };
 		B2B8360D2397D22000A562DB /* TreasureChestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B8360C2397D22000A562DB /* TreasureChestTests.m */; };
 		B2DD689023B08C8500106F4F /* XMLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DD688F23B08C8500106F4F /* XMLabel.m */; };
 		B2DD689423B08EF100106F4F /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DD689323B08EF100106F4F /* UIButton+Extension.m */; };
@@ -122,6 +125,12 @@
 		B27B784A23ADB2080083E6AE /* UIColor+Hex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		B27B784C23ADB4080083E6AE /* UIImage+Color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
 		B27B784D23ADB4080083E6AE /* UIImage+Color.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
+		B2830EFA23B5E7DB0049AE99 /* FormsViewCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FormsViewCtl.h; sourceTree = "<group>"; };
+		B2830EFB23B5E7DB0049AE99 /* FormsViewCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FormsViewCtl.m; sourceTree = "<group>"; };
+		B2830EFD23B5F8600049AE99 /* NSString+TextSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+TextSize.h"; sourceTree = "<group>"; };
+		B2830EFE23B5F8600049AE99 /* NSString+TextSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+TextSize.m"; sourceTree = "<group>"; };
+		B2830F0023B5F8890049AE99 /* UILabel+TextSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+TextSize.h"; sourceTree = "<group>"; };
+		B2830F0123B5F8890049AE99 /* UILabel+TextSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+TextSize.m"; sourceTree = "<group>"; };
 		B2B835ED2397D21E00A562DB /* TreasureChest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreasureChest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B836082397D22000A562DB /* TreasureChestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TreasureChestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B8360C2397D22000A562DB /* TreasureChestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TreasureChestTests.m; sourceTree = "<group>"; };
@@ -250,6 +259,10 @@
 				B27B784D23ADB4080083E6AE /* UIImage+Color.m */,
 				B2DD689223B08EF100106F4F /* UIButton+Extension.h */,
 				B2DD689323B08EF100106F4F /* UIButton+Extension.m */,
+				B2830EFD23B5F8600049AE99 /* NSString+TextSize.h */,
+				B2830EFE23B5F8600049AE99 /* NSString+TextSize.m */,
+				B2830F0023B5F8890049AE99 /* UILabel+TextSize.h */,
+				B2830F0123B5F8890049AE99 /* UILabel+TextSize.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -289,6 +302,8 @@
 				B27B784723ACE22A0083E6AE /* TabScrollViewCtl.m */,
 				B2DD68A323B2FCDF00106F4F /* PearlsPackageCtl.h */,
 				B2DD68A423B2FCDF00106F4F /* PearlsPackageCtl.m */,
+				B2830EFA23B5E7DB0049AE99 /* FormsViewCtl.h */,
+				B2830EFB23B5E7DB0049AE99 /* FormsViewCtl.m */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -572,6 +587,7 @@
 			files = (
 				B27B784823ACE22A0083E6AE /* TabScrollViewCtl.m in Sources */,
 				B2506D0223AB5BA80034A472 /* CollapsibleModel.m in Sources */,
+				B2830EFC23B5E7DB0049AE99 /* FormsViewCtl.m in Sources */,
 				3A40235C23A62ED100BDB4E3 /* main.m in Sources */,
 				B27B784523ACD7C00083E6AE /* TabTitleScrollView.m in Sources */,
 				B2DD689423B08EF100106F4F /* UIButton+Extension.m in Sources */,
@@ -583,6 +599,7 @@
 				B27B784E23ADB4080083E6AE /* UIImage+Color.m in Sources */,
 				B27B780723AC61A50083E6AE /* XMNetworking.m in Sources */,
 				B2DD689023B08C8500106F4F /* XMLabel.m in Sources */,
+				B2830F0223B5F8890049AE99 /* UILabel+TextSize.m in Sources */,
 				3A40235D23A62ED100BDB4E3 /* AppDelegate.m in Sources */,
 				3AE550E323A9189F001D989E /* UIViewController+CurrentController.m in Sources */,
 				B2DD68A223B2FC7D00106F4F /* XMSelectedButton.m in Sources */,
@@ -590,6 +607,7 @@
 				B2506D0D23AB88310034A472 /* CollapsibleViewCtl.m in Sources */,
 				B2506CEC23AB48E60034A472 /* UIView+Extension.m in Sources */,
 				B2506D0623AB65A90034A472 /* ResidentScrollViewCtl.m in Sources */,
+				B2830EFF23B5F8600049AE99 /* NSString+TextSize.m in Sources */,
 				B2DD68A523B2FCDF00106F4F /* PearlsPackageCtl.m in Sources */,
 				B2506CFC23AB5B4D0034A472 /* CollapsibleView.m in Sources */,
 				B2506CFF23AB5B690034A472 /* CollapsibleViewCell.m in Sources */,
