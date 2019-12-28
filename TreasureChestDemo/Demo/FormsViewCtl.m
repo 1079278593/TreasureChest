@@ -23,8 +23,9 @@
 - (void)initView {
     NSArray *leftTitles = @[@"1dsafdsfsdafdsfsdfsdfsdfssd111",@"2",@"3",@"4",@"5",@"6"];
     
-    _formsView = [[FormsView alloc]initWithFrame:CGRectMake(0, 100, KScreenWidth, KScreenHeight - 110) leftTitles:leftTitles];
+    _formsView = [[FormsView alloc]initWithFrame:CGRectMake(0, 100, KScreenWidth, KScreenHeight - 110) count:leftTitles.count];
     [self.view addSubview:_formsView];
+    [_formsView updateLeftTitles:leftTitles];
     [_formsView updateRightTitles:@[@"1",@"2",@"1dsafdsfsdafdsfsdfsdfsdfssd111dfsafsdfsdfsdfsdfsdf222",@"4",@"5"]];
 }
 

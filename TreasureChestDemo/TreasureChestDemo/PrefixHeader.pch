@@ -17,5 +17,6 @@
 #import "UIColor+Hex.h"
 #import "UILabel+TextSize.h"
 #import "NSString+TextSize.h"
+#import <Masonry/Masonry.h>
 
 #endif /* PrefixHeader_pch */

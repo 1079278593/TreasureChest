@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FormsView : UIView
 
-- (instancetype)initWithFrame:(CGRect)frame leftTitles:(NSArray *)leftTitles;
+- (instancetype)initWithFrame:(CGRect)frame count:(NSInteger)count;
 
 - (void)updateLeftTitles:(NSArray *)leftTitles rightTitles:(NSArray *)rightTitles;
 - (void)updateLeftTitles:(NSArray *)leftTitles;

@@ -21,14 +21,15 @@
 @property(strong, nonatomic)NSMutableArray <UILabel *> *rightTitleLabels;
 
 @property(assign, nonatomic)CGFloat totalHeight;
+@property(assign, nonatomic)NSInteger count;
 
 @end
 
 @implementation FormsView
 
-- (instancetype)initWithFrame:(CGRect)frame leftTitles:(NSArray *)leftTitles {
+- (instancetype)initWithFrame:(CGRect)frame count:(NSInteger)count {
     if(self == [super initWithFrame:frame]){
-        _leftTitles = leftTitles;
+        _count = count;
         _leftTitleLabels = [NSMutableArray arrayWithCapacity:0];
         _rightTitleLabels = [NSMutableArray arrayWithCapacity:0];
         [self initView];
@@ -98,21 +99,17 @@
 #pragma mark - < init view >
 - (void)initView {
     [self initTitleLabels];
-    [self updateLeftTitles:_leftTitles];
 }
 
 - (void)initTitleLabels {
-    if (_leftTitles.count == 0) {
-        return;
-    }
-    for (int i = 0; i<_leftTitles.count; i++) {
+    for (int i = 0; i<self.count; i++) {
         UILabel *leftLabel = [self getLabel];
         UILabel *rightLabel = [self getLabel];
         rightLabel.textAlignment = NSTextAlignmentRight;
         
         [self.leftTitleLabels addObject:leftLabel];
         [self.rightTitleLabels addObject:rightLabel];
-        
+    
         rightLabel.backgroundColor = [[UIColor blueColor]colorWithAlphaComponent:0.1+0.1*i];
     }
 }
@@ -126,7 +123,5 @@
     [self addSubview:label];
     return label;
 }
-
-
 
 @end
