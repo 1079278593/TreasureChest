@@ -47,4 +47,14 @@
     [self.view addSubview:_collapsibleView];
     
 }
+
+- (void)allBtnClick:(UIButton *)button {
+    [self requestData];
+}
+
+- (void)requestData {
+    
+    
+}
+
 @end

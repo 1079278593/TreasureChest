@@ -12,12 +12,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CollapsibleModel : NSObject
 
-/** 名字 */
-@property (nonatomic, strong) NSString *name;
-/** 子层 */
 @property (nonatomic, strong) NSArray<CollapsibleModel *> *subs;
 
+@property(copy, nonatomic)NSString *contactUser;
+@property(copy, nonatomic)NSString *mchId;
+@property(copy, nonatomic)NSString *mchName;
+@property(copy, nonatomic)NSString *posId;
+@property(copy, nonatomic)NSString *posName;
+@property(assign, nonatomic)NSInteger mchType;
+
 #pragma mark - < 辅助属性 >
+/** 名字 */
+@property (nonatomic, strong) NSString *name;
 
 /** 是否选中 */
 @property (nonatomic, assign) BOOL isSelected;

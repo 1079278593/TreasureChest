@@ -15,21 +15,6 @@ static NSString *CellIdentify = @"CellIdentify";
 
 @interface CollapsibleView()<UITableViewDelegate,UITableViewDataSource>
 
-/** 菜单项 */
-@property (nonatomic, strong) NSMutableArray<CollapsibleModel *> *menuItems;
-
-/** 当前需要展示的数据 */
-@property (nonatomic, strong) NSMutableArray<CollapsibleModel *> *latestShowMenuItems;
-
-/** 以前需要展示的数据 */
-@property (nonatomic, strong) NSMutableArray<CollapsibleModel *> *oldShowMenuItems;
-
-/** 已经选中的选项, 用于回调 */
-@property (nonatomic, strong) NSMutableArray<CollapsibleModel *> *selectedMenuItems;
-
-/** 全选按钮 */
-@property (nonatomic, strong) UIButton *allBtn;
-
 @property(strong, nonatomic)UITableView *tableView;
 @property(strong, nonatomic)CollapsibleViewModel *viewModel;
 
@@ -49,8 +34,9 @@ static NSString *CellIdentify = @"CellIdentify";
     _viewModel = [[CollapsibleViewModel alloc]init];
     
     @weakify(self);
-    [[RACObserve(self.viewModel, datas) ignore:nil] subscribeNext:^(id  _Nullable x) {
+    [[RACObserve(self.viewModel, rootItems) ignore:nil] subscribeNext:^(id  _Nullable x) {
         @strongify(self);
+        [self.viewModel resetVisibleItems];
         [self.tableView reloadData];
     }];
 }
@@ -68,7 +54,7 @@ static NSString *CellIdentify = @"CellIdentify";
 
 #pragma mark - tableView delegate
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [_viewModel.datas count];
+    return _viewModel.currentItems.count;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -76,69 +62,51 @@ static NSString *CellIdentify = @"CellIdentify";
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSString *cellIdentify = @"cellIdentify";
-    CollapsibleViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentify];
-    if(!cell){
-        cell = [[CollapsibleViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentify];
-    }
-    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    [cell setMenuItem:_viewModel.datas[indexPath.row]];
-//    cell.textLabel.text = @"3424";
+    CollapsibleViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentify forIndexPath:indexPath];
+    cell.menuItem = _viewModel.currentItems[indexPath.row];
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    CollapsibleModel *menuItem = _viewModel.currentItems[indexPath.row];
+    if (!menuItem.isCanUnfold) return;
+    menuItem.isUnfold = !menuItem.isUnfold; //设置展开闭合
     
-}
-#pragma mark - select refresh
-#pragma mark - < 添加可以展示的选项 >
-
-- (void)setupRowCount
-{
-    // 清空当前所有展示项
-    [self.latestShowMenuItems removeAllObjects];
+    // 更新被点击cell，这个方法会直接跳转(cellForRowAtIndexPath、以及其他delegate函数)，去更新cell代码。
+    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:(UITableViewRowAnimationAutomatic)];
     
-    // 重新添加需要展示项, 并设置层级, 初始化0
-    [self setupRouCountWithMenuItems:self.menuItems index:0];
+    [self.viewModel resetVisibleItems];
+    
+    [self startCellAnimation:indexPath];
 }
 
-/**
- 将需要展示的选项添加到latestShowMenuItems中, 此方法使用递归添加所有需要展示的层级到latestShowMenuItems中
-
- @param menuItems 需要添加到latestShowMenuItems中的数据
- @param index 层级, 即当前添加的数据属于第几层
- */
-- (void)setupRouCountWithMenuItems:(NSArray<CollapsibleModel *> *)menuItems index:(NSInteger)index
-{
-    for (int i = 0; i < menuItems.count; i++) {
-        CollapsibleModel *item = menuItems[i];
-        // 设置层级
-        item.index = index;
-        // 将选项添加到数组中
-        [self.latestShowMenuItems addObject:item];
-        // 判断该选项的是否能展开, 并且已经需要展开
-        if (item.isCanUnfold && item.isUnfold) {
-            // 当需要展开子集的时候, 添加子集到数组, 并设置子集层级
-            [self setupRouCountWithMenuItems:item.subs index:index + 1];
+- (void)startCellAnimation:(NSIndexPath *)indexPath {
+    // 判断老数据和新数据的数量, 来进行展开和闭合动画
+    // 定义一个数组, 用于存放需要展开闭合的indexPath
+    NSMutableArray<NSIndexPath *> *indexPaths = @[].mutableCopy;
+    
+    // 如果 老数据 比 新数据 多, 那么就需要进行闭合操作
+    if (_viewModel.lastedItems.count > _viewModel.currentItems.count) {
+        // 遍历lastedItems, 找出多余的老数据对应的indexPath
+        for (int i = 0; i < _viewModel.lastedItems.count; i++) {
+            // 当新数据中 没有对应的item时
+            if (![_viewModel.currentItems containsObject:_viewModel.lastedItems[i]]) {
+                NSIndexPath *subIndexPath = [NSIndexPath indexPathForRow:i inSection:indexPath.section];
+                [indexPaths addObject:subIndexPath];
+            }
         }
+        [self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:(UITableViewRowAnimationTop)];
+    }else {
+        // 此时 新数据 比 老数据 多, 进行展开操作
+        // 遍历 currentItems, 找出 lastedItems 中没有的选项, 就是需要新增的indexPath
+        for (int i = 0; i < _viewModel.currentItems.count; i++) {
+            if (![_viewModel.lastedItems containsObject:_viewModel.currentItems[i]]) {
+                NSIndexPath *subIndexPath = [NSIndexPath indexPathForRow:i inSection:indexPath.section];
+                [indexPaths addObject:subIndexPath];
+            }
+        }
+        [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:(UITableViewRowAnimationTop)];
     }
-}
-
-#pragma mark - getter and setter
-- (NSMutableArray<CollapsibleModel *> *)latestShowMenuItems
-{
-    if (!_latestShowMenuItems) {
-        self.latestShowMenuItems = [[NSMutableArray alloc] init];
-    }
-    return _latestShowMenuItems;
-}
-
-- (NSMutableArray<CollapsibleModel *> *)selectedMenuItems
-{
-    if (!_selectedMenuItems) {
-        self.selectedMenuItems = [[NSMutableArray alloc] init];
-    }
-    return _selectedMenuItems;
 }
 
 @end
