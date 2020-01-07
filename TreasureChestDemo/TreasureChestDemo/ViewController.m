@@ -12,6 +12,7 @@
 #import "TabScrollViewCtl.h"
 #import "PearlsPackageCtl.h"
 #import "FormsViewCtl.h"
+#import "ShapeViewCtl.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(strong, nonatomic)UITableView *tableView;
@@ -22,10 +23,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.datas = @[@"可驻留的ScrollView",@"可折叠tableView",@"tabScrollView",@"各种小控件：button、label",@"自定义表单"];
+    self.datas = [self getCellDatas];
     self.tableView.frame = CGRectMake(0, 64, KScreenWidth, KScreenHeight);
     
+    [NSDecimalNumber isAGreaterThanB:@323.434432432 valueB:@323.4340000005];
     
 }
 
@@ -51,41 +52,16 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    switch (indexPath.row) {
-        case 0:
-        {
-            ResidentScrollViewCtl *controller = [[ResidentScrollViewCtl alloc]init];
-            [self.navigationController pushViewController:controller animated:true];
-        }
-            break;
-        case 1:
-        {
-            CollapsibleViewCtl *controller = [[CollapsibleViewCtl alloc]init];
-            [self.navigationController pushViewController:controller animated:true];
-        }
-            break;
-        case 2:
-        {
-            TabScrollViewCtl *controller = [[TabScrollViewCtl alloc]init];
-            [self.navigationController pushViewController:controller animated:true];
-        }
-            break;
-        case 3:
-        {
-            PearlsPackageCtl *controller = [[PearlsPackageCtl alloc]init];
-            [self.navigationController pushViewController:controller animated:true];
-        }
-            break;
-        case 4:
-        {
-            FormsViewCtl *controller = [[FormsViewCtl alloc]init];
-            [self.navigationController pushViewController:controller animated:true];
-        }
-            break;
-        default:
-            break;
-    }
+    [self jumpMethod:indexPath.row];
 }
+
+- (void)jumpMethod:(NSInteger)index {
+    NSArray *classArrays = [self getClassNames];
+    Class NameClass = NSClassFromString(classArrays[index]);
+    UIViewController *controller = [[NameClass alloc]init];
+    [self.navigationController pushViewController:controller animated:true];
+}
+
 /********************** tableview ****************************/
 
 #pragma mark - getter and setter
@@ -97,6 +73,28 @@
         [self.view addSubview:_tableView];
     }
     return _tableView;
+}
+
+- (NSArray *)getCellDatas {
+    NSArray *datas = @[@"可驻留的ScrollView",
+                       @"可折叠tableView",
+                       @"tabScrollView",
+                       @"各种小控件：button、label",
+                       @"自定义表单",
+                       @"各种形状",
+                    ];
+    return datas;
+}
+
+- (NSArray *)getClassNames {
+    NSArray *classArrays = @[NSStringFromClass([ResidentScrollViewCtl class]),
+                             NSStringFromClass([CollapsibleViewCtl class]),
+                             NSStringFromClass([TabScrollViewCtl class]),
+                             NSStringFromClass([PearlsPackageCtl class]),
+                             NSStringFromClass([FormsViewCtl class]),
+                             NSStringFromClass([ShapeViewCtl class]),
+                            ];
+    return classArrays;
 }
 
 @end

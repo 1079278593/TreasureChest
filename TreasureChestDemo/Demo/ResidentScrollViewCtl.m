@@ -12,7 +12,7 @@
 
 @interface ResidentScrollViewCtl ()<UITableViewDelegate,UITableViewDataSource>
 
-@property(strong, nonatomic)UIView *headerView;
+@property(strong, nonatomic)UIImageView *headerView;
 @property(strong, nonatomic)UITableView *tableView;
 @property(strong, nonatomic)ResidentScrollView *scrollView;
 
@@ -26,7 +26,7 @@
     self.tableView.frame = CGRectMake(0, 0, KScreenWidth, 0);
     self.headerView.frame = CGRectMake(0, 0, KScreenWidth, 300);
     
-    _scrollView = [[ResidentScrollView alloc]initWithFrame:CGRectMake(0, 64+10, KScreenWidth, KScreenHeight-64)];
+    _scrollView = [[ResidentScrollView alloc]initWithFrame:CGRectMake(0, 64, KScreenWidth, KScreenHeight-64)];
     _scrollView.backgroundColor = [[UIColor redColor]colorWithAlphaComponent:0.3];
     [self.view addSubview:_scrollView];
     [_scrollView showResident:self.tableView headerView:self.headerView residentHeight:130];
@@ -69,9 +69,10 @@
     return _tableView;
 }
 
-- (UIView *)headerView {
+- (UIImageView *)headerView {
     if (_headerView == nil) {
-        _headerView = [[UIView alloc]init];
+        _headerView = [[UIImageView alloc]init];
+        _headerView.image = [UIImage imageNamed:@"testIcon2"];
 //        [self.view addSubview:_headerView];
     }
     return _headerView;
