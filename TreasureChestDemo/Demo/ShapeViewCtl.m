@@ -38,7 +38,7 @@
     
     XMDashLineView *dashLine = [[XMDashLineView alloc]init];
     dashLine.frame = CGRectMake(10, _circleView.bottom + 50, KScreenWidth - 20, 3);
-    dashLine.lengthArray = @[@24,@15,@3,@8];
+    dashLine.lengthArray = @[@24,@15,@3];
     [self.view addSubview:dashLine];
 }
 

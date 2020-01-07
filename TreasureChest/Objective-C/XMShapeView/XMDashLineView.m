@@ -40,20 +40,16 @@
     
     CGPoint endPoint = CGPointMake(rect.size.width, 0);
     CGFloat lineWidth = self.lineWidth;
+    UIColor *color = self.strokeColor;
     
     CGContextRef context = UIGraphicsGetCurrentContext();
-
-    CGContextSetLineWidth(context, lineWidth);//1.1 设置线条的宽度
-
-    CGContextSetLineCap(context,kCGLineCapButt);//1.2 设置线条的起始点样式
-
+    CGContextSetLineWidth(context, lineWidth);
+    CGContextSetLineCap(context,kCGLineCapButt);
     CGContextSetLineDash(context, 0, lengths, _dashCount);
+    [color set];
 
-    [[UIColor redColor] set];//1.4 设置颜色
-dfasfds待完善：颜色、或者其他。
     CGContextMoveToPoint(context, 0, 0);
     CGContextAddLineToPoint(context, endPoint.x, endPoint.y);
-    
     CGContextStrokePath(context);//3.绘制
 }
 
