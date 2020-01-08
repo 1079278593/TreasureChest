@@ -1318,6 +1318,7 @@ CFTypeID CFRunLoopGetTypeID(void) {
     return __kCFRunLoopTypeID;
 }
 
+#pragma mark - runloop create 行数：1321
 static CFRunLoopRef __CFRunLoopCreate(pthread_t t) {
     CFRunLoopRef loop = NULL;
     CFRunLoopModeRef rlm;
@@ -2319,6 +2320,7 @@ static void __CFRunLoopTimeoutCancel(void *arg) {
     free(context);
 }
 
+
 static void __CFRunLoopTimeout(void *arg) {
     struct __timeout_context *context = (struct __timeout_context *)arg;
     context->termTSR = 0ULL;
@@ -2326,6 +2328,9 @@ static void __CFRunLoopTimeout(void *arg) {
     CFRunLoopWakeUp(context->rl);
     // The interval is DISPATCH_TIME_FOREVER, so this won't fire again
 }
+
+#pragma mark - 第2331行
+#pragma mark 这里run
 
 /* rl, rlm are locked on entrance and exit */
 static int32_t __CFRunLoopRun(CFRunLoopRef rl, CFRunLoopModeRef rlm, CFTimeInterval seconds, Boolean stopAfterHandle, CFRunLoopModeRef previousMode) {
@@ -2647,7 +2652,6 @@ static int32_t __CFRunLoopRun(CFRunLoopRef rl, CFRunLoopModeRef rlm, CFTimeInter
 }
 
 #pragma mark -
-#pragma mark 这里run
 
 SInt32 CFRunLoopRunSpecific(CFRunLoopRef rl, CFStringRef modeName, CFTimeInterval seconds, Boolean returnAfterSourceHandled) {     /* DOES CALLOUT */
     CHECK_FOR_FORK();

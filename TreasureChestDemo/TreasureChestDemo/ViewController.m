@@ -13,6 +13,7 @@
 #import "PearlsPackageCtl.h"
 #import "FormsViewCtl.h"
 #import "ShapeViewCtl.h"
+#import "DictionaryMainCtl.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(strong, nonatomic)UITableView *tableView;
@@ -25,9 +26,6 @@
     [super viewDidLoad];
     self.datas = [self getCellDatas];
     self.tableView.frame = CGRectMake(0, 64, KScreenWidth, KScreenHeight);
-    
-    [NSDecimalNumber isAGreaterThanB:@323.434432432 valueB:@323.4340000005];
-    
 }
 
 #pragma mark - table
@@ -82,6 +80,7 @@
                        @"各种小控件：button、label",
                        @"自定义表单",
                        @"各种形状",
+                       @"字典、数据库",
                     ];
     return datas;
 }
@@ -93,6 +92,7 @@
                              NSStringFromClass([PearlsPackageCtl class]),
                              NSStringFromClass([FormsViewCtl class]),
                              NSStringFromClass([ShapeViewCtl class]),
+                             NSStringFromClass([DictionaryMainCtl class]),
                             ];
     return classArrays;
 }

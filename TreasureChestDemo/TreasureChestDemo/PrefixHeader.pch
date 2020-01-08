@@ -26,4 +26,7 @@
 #import "UIViewController+CurrentController.h"
 
 
+#pragma mark - <  >
+#import "FMDBManager.h"
+
 #endif /* PrefixHeader_pch */

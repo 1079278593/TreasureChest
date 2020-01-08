@@ -1,0 +1,86 @@
+//
+//  DictionaryMainCtl.m
+//  TreasureChest
+//
+//  Created by xiao ming on 2020/1/8.
+//  Copyright © 2020 xiao ming. All rights reserved.
+//
+
+#import "DictionaryMainCtl.h"
+#import "FMDictManager.h"
+
+@interface DictionaryMainCtl ()<UITableViewDelegate,UITableViewDataSource>
+
+@property(strong, nonatomic)NSMutableArray *datas;
+@property(strong, nonatomic)UITableView *tableView;
+@property(strong, nonatomic)UITextField *textField;
+
+@end
+
+@implementation DictionaryMainCtl
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    _datas = [NSMutableArray arrayWithCapacity:0];
+    [self initView];
+}
+
+- (void)initView {
+    
+    _textField = [[UITextField alloc]init];
+    _textField.placeholder = @"输入关键词";
+    _textField.layer.borderWidth = 1;
+    _textField.frame = CGRectMake(20, 65, KScreenWidth-40, 44);
+    [_textField addTarget:self action:@selector(textDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [self.view addSubview:_textField];
+    
+    
+    self.tableView.backgroundColor = [[UIColor redColor]colorWithAlphaComponent:0.3];
+    self.tableView.frame = CGRectMake(0, 110, KScreenWidth, KScreenHeight);
+}
+
+- (void)textDidChange:(UITextField *)textField {
+    NSLog(@"输入：%@",textField.text);
+    if ([textField.text isEqualToString:@"good"]) {
+        [[FMDictManager sharedManager]requestWithKeywords:textField.text];
+    }
+    
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [[FMDictManager sharedManager]requestTotalCount];
+}
+
+#pragma mark - < table >
+- (UITableView *)tableView {
+    if (_tableView == nil) {
+        _tableView = [[UITableView alloc]init];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+        _tableView.rowHeight = 45;
+        [self.view addSubview:_tableView];
+    }
+    return _tableView;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return _datas.count;
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    cell.textLabel.text = _datas[indexPath.row];
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+}
+@end
+

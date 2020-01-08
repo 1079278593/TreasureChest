@@ -2,5 +2,26 @@
 源码地址：
 https://opensource.apple.com/tarballs/CF/
 
-深入理解runloop：
+提示：在这个文件的文件下有CoreFundation的部分源码文件，但是没有拖到项目中，因为会冲突。
+
+
+
+---------------------------------------关于Runloop---------------------------------------
+
+1. 深入理解runloop：
 https://blog.ibireme.com/2015/05/18/runloop/
+
+2. runloop源码解读：
+https://juejin.im/post/5aaa15d36fb9a028d82b7d83
+
+3 .CHECK_FOR_FORK()
+https://www.jianshu.com/p/5674ef48fe1e
+
+也就是说，当通过 fork 启动一个新进程的时候，你必须要接着调用一个 exec 或类似的函数。而依赖于 Core Founadtion / Cocoa / Core Data 框架的应用,必须调用 exec 函数,否则这些框架也许不能正确的工作。
+所以为了保证安全，使用 CHECK_FOR_FORK 进行检查。
+
+
+
+
+
+

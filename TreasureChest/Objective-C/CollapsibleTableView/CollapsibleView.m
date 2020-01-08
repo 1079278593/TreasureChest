@@ -42,17 +42,23 @@ static NSString *CellIdentify = @"CellIdentify";
 }
 
 - (void)initView {
-    _tableView = [[UITableView alloc]init];
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
-    _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
-    _tableView.rowHeight = 45;
-    [self.tableView registerClass:[CollapsibleViewCell class] forCellReuseIdentifier:CellIdentify];
-    _tableView.frame = CGRectMake(0, 0, KScreenWidth, KScreenHeight);
-    [self addSubview:_tableView];
+    self.tableView.frame = CGRectMake(0, 0, KScreenWidth, KScreenHeight);
 }
 
-#pragma mark - tableView delegate
+#pragma mark - < table >
+- (UITableView *)tableView {
+    if (_tableView == nil) {
+        _tableView = [[UITableView alloc]init];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+        _tableView.rowHeight = 45;
+        [_tableView registerClass:[CollapsibleViewCell class] forCellReuseIdentifier:CellIdentify];
+        [self addSubview:_tableView];
+    }
+    return _tableView;
+}
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return _viewModel.currentItems.count;
 }
@@ -80,6 +86,7 @@ static NSString *CellIdentify = @"CellIdentify";
     [self startCellAnimation:indexPath];
 }
 
+#pragma mark - < private method >
 - (void)startCellAnimation:(NSIndexPath *)indexPath {
     // 判断老数据和新数据的数量, 来进行展开和闭合动画
     // 定义一个数组, 用于存放需要展开闭合的indexPath
