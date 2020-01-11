@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)requestTotalCount;
 - (void)requestWithKeywords:(NSString *)keywords;//英文
 
+@property(strong, nonatomic)NSMutableArray *results;
+
 @end
 
 NS_ASSUME_NONNULL_END

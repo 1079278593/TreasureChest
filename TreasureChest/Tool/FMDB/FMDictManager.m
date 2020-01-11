@@ -16,8 +16,6 @@ static FMDictManager *manager = nil;
 @property(strong, nonatomic) FMDatabaseQueue *dataBaseQueue;
 @property(strong, nonatomic)NSString *tableName;
 
-@property(strong, nonatomic)NSMutableArray *results;
-
 @end
 
 @implementation FMDictManager
@@ -119,6 +117,7 @@ NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE word LIKE '%
         while ([result next]) {
             [_results addObject:result.resultDictionary];
         }
+        [FMDictManager sharedManager].results = _results;
         NSLog(@"allDict:%@ \n keywords:%@ count: %lu ",_results,keywords,(unsigned long)_results.count);
     }];
 }

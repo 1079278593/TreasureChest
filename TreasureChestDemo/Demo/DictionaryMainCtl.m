@@ -14,6 +14,7 @@
 @property(strong, nonatomic)NSMutableArray *datas;
 @property(strong, nonatomic)UITableView *tableView;
 @property(strong, nonatomic)UITextField *textField;
+@property(strong, nonatomic)UITextView *dictShowTextView;
 
 @end
 
@@ -26,6 +27,20 @@
     [self initView];
     [FMDictManager sharedManager];
     [FMDBManager sharedManager];
+    
+    [self bindModel];
+}
+
+- (void)bindModel {
+    @weakify(self);
+    [[RACObserve([FMDictManager sharedManager], results) ignore:nil] subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        if ([FMDictManager sharedManager].results.count > 0) {
+            NSDictionary *dic = [FMDictManager sharedManager].results[0];
+            self.dictShowTextView.text = [NSString stringWithFormat:@"%@",dic];
+        }
+        
+    }];
 }
 
 - (void)initView {
@@ -40,6 +55,12 @@
     
     self.tableView.backgroundColor = [[UIColor redColor]colorWithAlphaComponent:0.3];
     self.tableView.frame = CGRectMake(0, 110, KScreenWidth, KScreenHeight);
+    
+    _dictShowTextView = [[UITextView alloc]init];
+    _dictShowTextView.layer.borderWidth = 1;
+    _dictShowTextView.frame = CGRectMake(0, 110, KScreenWidth, KScreenHeight);
+    [self.view addSubview:_dictShowTextView];
+    
 }
 
 - (void)textDidChange:(UITextField *)textField {
