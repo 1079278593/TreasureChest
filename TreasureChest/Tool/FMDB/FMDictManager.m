@@ -92,7 +92,9 @@ NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE word LIKE '%
 - (void)requestWithKeywords:(NSString *)keywords {
     [_results removeAllObjects];
     [self.dataBaseQueue inTransaction:^(FMDatabase * _Nonnull db, BOOL * _Nonnull rollback) {
-        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE word MATCH '%@*' AND (frq>0 OR bnc>0) ORDER BY frq DESC, bnc DESC LIMIT 10",self.tableName,keywords];
+        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE word MATCH '%@*' ORDER BY frq DESC, bnc DESC LIMIT 10",self.tableName,keywords];
+//        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE sw MATCH '%@*' AND (frq>0 OR bnc>0) ORDER BY frq DESC, bnc DESC LIMIT 10",self.tableName,keywords];
+//        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE word = '%@'",self.tableName,keywords];
         if (keywords.length == 1) {
             sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE word = '%@'",self.tableName,keywords];
         }
