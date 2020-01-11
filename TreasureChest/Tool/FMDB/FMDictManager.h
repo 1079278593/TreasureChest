@@ -7,13 +7,17 @@
 //
 
 #import "FMDBManager.h"
+#import <FMDB.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FMDictManager : FMDBManager
+@interface FMDictManager : NSObject
+
++ (instancetype)sharedManager;
 
 - (void)requestTotalCount;
-- (void)requestWithKeywords:(NSString *)keywords;
+- (void)requestWithKeywords:(NSString *)keywords;//英文
+- (void)requestWithTranslation:(NSString *)keywords;//中文
 
 @end
 

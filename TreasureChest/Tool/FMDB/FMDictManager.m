@@ -7,6 +7,7 @@
 //
 
 #import "FMDictManager.h"
+#import "FMDBMacro.h"
 
 static FMDictManager *manager = nil;
 
@@ -14,6 +15,8 @@ static FMDictManager *manager = nil;
 
 @property(strong, nonatomic) FMDatabaseQueue *dataBaseQueue;
 @property(strong, nonatomic)NSString *tableName;
+
+@property(strong, nonatomic)NSMutableArray *results;
 
 @end
 
@@ -29,46 +32,92 @@ static FMDictManager *manager = nil;
 
 - (instancetype)init {
     if(self == [super init]){
-//        [self initDataBaseQueue:@"dict_4million.db"];
-        [self initDataBaseQueue:@"/Users/xiaoming/Desktop/ECDICT-master/dict_4million.db"];
-        self.tableName = @"stardict";
+        _results = [NSMutableArray arrayWithCapacity:0];
+        [self initDataBaseQueue];
     }
     return self;
 }
 
-- (void)initDataBaseQueue:(NSString *)path {
-//    NSString *docPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
-//    NSString *path = [docPath stringByAppendingPathComponent:dataBaseName];
-    
-    _dataBaseQueue = [FMDatabaseQueue databaseQueueWithPath:path];
+- (void)initDataBaseQueue {
+    self.tableName = DictTableName;
+    NSString *path = DatabasePath(DictSuperDatabaseName);
+//    NSString *path = @"/Users/xiaoming/Desktop/ECDICT-master/dict_0.77million.db";
+    self.dataBaseQueue = [FMDatabaseQueue databaseQueueWithPath:path];
 }
 
 #pragma mark - <  >
 - (void)requestTotalCount {
     [self.dataBaseQueue inTransaction:^(FMDatabase * _Nonnull db, BOOL * _Nonnull rollback) {
         NSString *sql = [NSString stringWithFormat:@"SELECT COUNT(*) FROM %@;",self.tableName];
+//        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM '%@' WHERE word MATCH 'acryl';",self.tableName];
+//        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM '%@' WHERE rowid = '12';",self.tableName];
+//        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM '%@' WHERE translation MATCH '压克力';",self.tableName];
         FMResultSet *result = [db executeQuery:sql];
         while ([result next]) {
             NSString *count = result[@"COUNT(*)"];
-            NSLog(@"count: %@ resultDictionary: %@",count,result.resultDictionary);
+            NSLog(@"%@: count: %@ \n resultDictionary: %@",self.tableName,count,result.resultDictionary);
         }
     }];
 }
 
+/**
+ 参考：https://www.sqlite.org/fts3.html
+   FTS tables 支持3种查询：
+1. SELECT * FROM tableName WHERE docs MATCH 'lin*';   （含有：lin开头的）
+1.1 SELECT * FROM docs WHERE body MATCH 'title: ^lin*'; （FTS4版本）
+
+ 
+2.
+-- Query for all documents that contain the phrase "linux applications".
+SELECT * FROM docs WHERE docs MATCH '"linux applications"';
+
+-- Query for all documents that contain a phrase that matches "lin* app*". As well as
+-- "linux applications", this will match common phrases such as "linoleum appliances"
+-- or "link apprentice".
+SELECT * FROM docs WHERE docs MATCH '"lin* app*"';
+
+
+3.
+-- Search for a document that contains the terms "sqlite" and "database" with
+-- not more than 10 intervening terms. This matches the only document in
+-- table docs (since there are only six terms between "SQLite" and "database"
+-- in the document).
+SELECT * FROM docs WHERE docs MATCH 'sqlite NEAR database';
+                   
+//------------筛选前几个
+NSString *sql = [NSString stringWithFormat:@"SELECT top 10 * FROM %@ WHERE word LIKE '%%%@%%' ORDER BY frq DESC;",self.tableName,keywords];//desc降序
+NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE word LIKE '%%%@%%' LIMIT 0,10;",self.tableName,keywords];//取第0~10条数据
+*/
+//
 - (void)requestWithKeywords:(NSString *)keywords {
+    [_results removeAllObjects];
     [self.dataBaseQueue inTransaction:^(FMDatabase * _Nonnull db, BOOL * _Nonnull rollback) {
-//        NSString *sql = [NSString stringWithFormat:@"SELECT top 10 * FROM %@ WHERE word LIKE '%%%@%%' ORDER BY frq DESC;",self.tableName,keywords];//desc降序
-//        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE word LIKE '%%%@%%' LIMIT 0,10;",self.tableName,keywords];//取第0~10条数据
-        
-        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE word MATCH '%@';",self.tableName,keywords];
-        FMResultSet *result = [db executeQuery:sql];
-        int count = 0;
-        while ([result next]) {
-            count++;
-            NSLog(@"resultDictionary: %@",result.resultDictionary);
+        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE word MATCH '%@*' AND (frq>0 OR bnc>0) ORDER BY frq DESC, bnc DESC LIMIT 10",self.tableName,keywords];
+        if (keywords.length == 1) {
+            sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE word = '%@'",self.tableName,keywords];
         }
-        NSLog(@"count: %d",count);
+        
+        FMResultSet *result = [db executeQuery:sql];
+        while ([result next]) {
+            if ([result[@"word"] caseInsensitiveCompare:keywords] == NSOrderedSame) {
+                [_results insertObject:result.resultDictionary atIndex:0];
+            }else {
+                [_results addObject:result.resultDictionary];
+            }
+        }
+        NSLog(@"allDict:%@ \n keywords:%@ count: %lu ",_results,keywords,(unsigned long)_results.count);
     }];
 }
 
+- (void)requestWithTranslation:(NSString *)keywords {
+    [_results removeAllObjects];
+    [self.dataBaseQueue inTransaction:^(FMDatabase * _Nonnull db, BOOL * _Nonnull rollback) {
+        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE translation MATCH '%@*' AND (frq>0 OR bnc>0) ORDER BY frq DESC, bnc DESC LIMIT 10",self.tableName,keywords];
+        FMResultSet *result = [db executeQuery:sql];
+        while ([result next]) {
+            [_results addObject:result.resultDictionary];
+        }
+        NSLog(@"allDict:%@ \n keywords:%@ count: %lu ",_results,keywords,(unsigned long)_results.count);
+    }];
+}
 @end

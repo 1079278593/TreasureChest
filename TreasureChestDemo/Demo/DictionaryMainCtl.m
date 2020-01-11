@@ -24,6 +24,8 @@
     
     _datas = [NSMutableArray arrayWithCapacity:0];
     [self initView];
+    [FMDictManager sharedManager];
+    [FMDBManager sharedManager];
 }
 
 - (void)initView {
@@ -41,15 +43,13 @@
 }
 
 - (void)textDidChange:(UITextField *)textField {
-    NSLog(@"输入：%@",textField.text);
-    if ([textField.text isEqualToString:@"good"]) {
-        [[FMDictManager sharedManager]requestWithKeywords:textField.text];
-    }
-    
+    [[FMDictManager sharedManager]requestWithKeywords:textField.text];
+//    [[FMDictManager sharedManager]requestWithTranslation:textField.text];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [[FMDictManager sharedManager]requestTotalCount];
+//    [[FMDBManager sharedManager]startCopy];
 }
 
 #pragma mark - < table >
