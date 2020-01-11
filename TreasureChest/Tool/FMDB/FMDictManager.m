@@ -40,7 +40,7 @@ static FMDictManager *manager = nil;
 
 - (void)initDataBaseQueue {
     self.tableName = DictTableName;
-    NSString *path = DatabasePath(DictSuperDatabaseName);
+    NSString *path = DatabasePath(DictNormalDatabaseName);//DictNormalDatabaseName  //DictSuperDatabaseName
 //    NSString *path = @"/Users/xiaoming/Desktop/ECDICT-master/dict_0.77million.db";
     self.dataBaseQueue = [FMDatabaseQueue databaseQueueWithPath:path];
 }

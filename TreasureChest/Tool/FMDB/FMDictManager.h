@@ -17,7 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)requestTotalCount;
 - (void)requestWithKeywords:(NSString *)keywords;//英文
-- (void)requestWithTranslation:(NSString *)keywords;//中文
 
 @end
 

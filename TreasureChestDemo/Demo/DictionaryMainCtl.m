@@ -48,8 +48,8 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [[FMDictManager sharedManager]requestTotalCount];
-//    [[FMDBManager sharedManager]startCopy];
+//    [[FMDictManager sharedManager]requestTotalCount];
+    [[FMDBManager sharedManager]startCopy];
 }
 
 #pragma mark - < table >

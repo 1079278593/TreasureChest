@@ -85,31 +85,32 @@ static FMDBManager *manager = nil;
     while ([result next]) {
         NSString *rid = result[@"id"];
         [self printProgress:rid];
-        
-        [self.targetDataBaseQueue inTransaction:^(FMDatabase * _Nonnull db, BOOL * _Nonnull rollback) {
-            NSString *word = result[@"word"];
-            NSString *sw = result[@"sw"];
-            NSString *phonetic = result[@"phonetic"];
-            NSString *definition = result[@"definition"];
-            NSString *translation = result[@"translation"];
-            NSString *pos = result[@"pos"];
-            NSString *collins = result[@"collins"];
-            NSString *oxford = result[@"oxford"];
-            NSString *tag = result[@"tag"];
-            NSString *bnc = result[@"bnc"];
-            
-            NSString *frq = result[@"frq"];
-            NSString *exchange = result[@"exchange"];
-            NSString *detail = result[@"detail"];
-            NSString *audio = result[@"audio"];
-            NSString *sql = [NSString stringWithFormat:@"INSERT INTO %@ (word,sw,phonetic,definition,translation,pos,collins,oxford,tag,bnc,frq,exchange,detail,audio) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",tableName];
-            NSArray *values = @[word,sw,phonetic,definition,translation,pos,collins,oxford,tag,bnc,frq,exchange,detail,audio];
-            BOOL flag = [db executeUpdate:sql withArgumentsInArray:values];//有特殊字符可以用‘withArgumentsInArray’方式。(比如：')
+        @autoreleasepool {
+            [self.targetDataBaseQueue inTransaction:^(FMDatabase * _Nonnull db, BOOL * _Nonnull rollback) {
+                NSString *word = result[@"word"];
+                NSString *sw = result[@"sw"];
+                NSString *phonetic = result[@"phonetic"];
+                NSString *definition = result[@"definition"];
+                NSString *translation = result[@"translation"];
+                NSString *pos = result[@"pos"];
+                NSString *collins = result[@"collins"];
+                NSString *oxford = result[@"oxford"];
+                NSString *tag = result[@"tag"];
+                NSString *bnc = result[@"bnc"];
+                
+                NSString *frq = result[@"frq"];
+                NSString *exchange = result[@"exchange"];
+                NSString *detail = result[@"detail"];
+                NSString *audio = result[@"audio"];
+                NSString *sql = [NSString stringWithFormat:@"INSERT INTO %@ (word,sw,phonetic,definition,translation,pos,collins,oxford,tag,bnc,frq,exchange,detail,audio) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",tableName];
+                NSArray *values = @[word,sw,phonetic,definition,translation,pos,collins,oxford,tag,bnc,frq,exchange,detail,audio];
+                BOOL flag = [db executeUpdate:sql withArgumentsInArray:values];//有特殊字符可以用‘withArgumentsInArray’方式。(比如：')
 
-            if (!flag) {
-                [NSString stringWithFormat:@"插入错误,id：%@",rid];
-            }
-        }];
+                if (!flag) {
+                    [NSString stringWithFormat:@"插入错误,id：%@",rid];
+                }
+            }];
+        }
     }
 }
 
