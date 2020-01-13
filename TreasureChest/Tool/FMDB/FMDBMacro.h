@@ -12,6 +12,7 @@
 #define DictSuperDatabaseName @"dict_4million.db"
 #define DictNormalDatabaseName @"dict_3million.db"
 #define DictSmallDatabaseName @"dict_1million.db"   //0.77million
+//#define DictSmallDatabaseName @"dict_1million.db"   //0.77million
 
 #define DictTableName @"DictTable"
 

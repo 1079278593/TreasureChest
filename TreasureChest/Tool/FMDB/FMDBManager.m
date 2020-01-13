@@ -42,12 +42,14 @@ static FMDBManager *manager = nil;
 }
 
 - (void)initDataBaseQueue {
+    NSString *databaseName = DictSmallDatabaseName;
+    
     //源数据
-    NSString *originPath = @"/Users/xiaoming/Desktop/ECDICT-master/dict_3million.db";
+    NSString *originPath = [NSString stringWithFormat:@"/Users/ming/Desktop/ECDICT-master/%@",databaseName];
     _originDataBaseQueue = [FMDatabaseQueue databaseQueueWithPath:originPath];
     
     //目标数据:从源数据拷贝
-    NSString *targetPath = DatabasePath(DictNormalDatabaseName);
+    NSString *targetPath = DatabasePath(databaseName);
     _targetDataBaseQueue = [FMDatabaseQueue databaseQueueWithPath:targetPath];
     [self createVirtualTable:_targetDataBaseQueue tableName:DictTableName];
 }

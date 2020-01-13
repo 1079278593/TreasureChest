@@ -16,6 +16,9 @@
 @property(strong, nonatomic)UITextField *textField;
 @property(strong, nonatomic)UITextView *dictShowTextView;
 
+@property(strong, nonatomic)FMDBManager *ftsDictManager;
+@property(strong, nonatomic)FMDictManager *dictQueryManager;
+
 @end
 
 @implementation DictionaryMainCtl
@@ -25,17 +28,17 @@
     
     _datas = [NSMutableArray arrayWithCapacity:0];
     [self initView];
-    [FMDictManager sharedManager];
-    [FMDBManager sharedManager];
+    self.dictQueryManager = [FMDictManager sharedManager];
+//    self.ftsDictManager = [FMDBManager sharedManager];
     
     [self bindModel];
 }
 
 - (void)bindModel {
     @weakify(self);
-    [[RACObserve([FMDictManager sharedManager], results) ignore:nil] subscribeNext:^(id  _Nullable x) {
+    [[RACObserve(self.dictQueryManager, results) ignore:nil] subscribeNext:^(id  _Nullable x) {
         @strongify(self);
-        if ([FMDictManager sharedManager].results.count > 0) {
+        if (self.dictQueryManager.results.count > 0) {
             NSDictionary *dic = [FMDictManager sharedManager].results[0];
             self.dictShowTextView.text = [NSString stringWithFormat:@"%@",dic];
         }
@@ -64,13 +67,13 @@
 }
 
 - (void)textDidChange:(UITextField *)textField {
-    [[FMDictManager sharedManager]requestWithKeywords:textField.text];
+    [self.dictQueryManager requestWithKeywords:textField.text];
 //    [[FMDictManager sharedManager]requestWithTranslation:textField.text];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [[FMDictManager sharedManager]requestTotalCount];
-    [[FMDBManager sharedManager]startCopy];
+//    [self.dictQueryManager requestTotalCount];
+//    [self.ftsDictManager startCopy];
 }
 
 #pragma mark - < table >
