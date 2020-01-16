@@ -9,9 +9,16 @@
 #ifndef FMDBMacro_h
 #define FMDBMacro_h
 
-#define DictSuperDatabaseName @"dict_4million.db"
-#define DictNormalDatabaseName @"dict_3million.db"
-#define DictSmallDatabaseName @"dict_1million.db"   //0.77million
+#define SuperDictName @"dict_4million"
+#define NormalDictName @"dict_3million"
+#define SmallDictName @"dict_1million"
+
+#define DictSuperDatabaseName [NSString stringWithFormat:@"%@.db",SuperDictName]
+#define DictNormalDatabaseName [NSString stringWithFormat:@"%@.db",NormalDictName]
+#define DictSmallDatabaseName [NSString stringWithFormat:@"%@.db",SmallDictName]
+
+//#define DictSuperDatabaseName @"dict_4million.db"
+//#define DictNormalDatabaseName @"dict_3million.db"
 //#define DictSmallDatabaseName @"dict_1million.db"   //0.77million
 
 #define DictTableName @"DictTable"

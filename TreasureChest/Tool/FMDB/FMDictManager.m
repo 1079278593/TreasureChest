@@ -38,7 +38,7 @@ static FMDictManager *manager = nil;
 
 - (void)initDataBaseQueue {
     self.tableName = DictTableName;
-    NSString *path = DatabasePath(DictSmallDatabaseName);//DictNormalDatabaseName  //DictSuperDatabaseName //DictSmallDatabaseName
+    NSString *path = DatabasePath(DictNormalDatabaseName);//DictNormalDatabaseName  //DictSuperDatabaseName //DictSmallDatabaseName
 //    NSString *path = @"/Users/xiaoming/Desktop/ECDICT-master/dict_0.77million.db";
     self.dataBaseQueue = [FMDatabaseQueue databaseQueueWithPath:path];
 }
@@ -104,18 +104,6 @@ NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE word LIKE '%
             }else {
                 [_results addObject:result.resultDictionary];
             }
-        }
-        NSLog(@"allDict:%@ \n keywords:%@ count: %lu ",_results,keywords,(unsigned long)_results.count);
-    }];
-}
-
-- (void)requestWithTranslation:(NSString *)keywords {
-    [_results removeAllObjects];
-    [self.dataBaseQueue inTransaction:^(FMDatabase * _Nonnull db, BOOL * _Nonnull rollback) {
-        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE translation MATCH '%@*' AND (frq>0 OR bnc>0) ORDER BY frq DESC, bnc DESC LIMIT 10",self.tableName,keywords];
-        FMResultSet *result = [db executeQuery:sql];
-        while ([result next]) {
-            [_results addObject:result.resultDictionary];
         }
         self.results = _results;
         NSLog(@"allDict:%@ \n keywords:%@ count: %lu ",_results,keywords,(unsigned long)_results.count);

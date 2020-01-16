@@ -43,9 +43,9 @@ static FMDBManager *manager = nil;
 
 - (void)initDataBaseQueue {
     NSString *databaseName = DictSmallDatabaseName;
-    
     //源数据
-    NSString *originPath = [NSString stringWithFormat:@"/Users/ming/Desktop/ECDICT-master/%@",databaseName];
+//    NSString *originPath = [NSString stringWithFormat:@"/Users/ming/Desktop/ECDICT-master/%@",databaseName];
+    NSString *originPath = [NSString stringWithFormat:@"/Users/xiaoming/Desktop/ECDICT-master/%@",databaseName];
     _originDataBaseQueue = [FMDatabaseQueue databaseQueueWithPath:originPath];
     
     //目标数据:从源数据拷贝
