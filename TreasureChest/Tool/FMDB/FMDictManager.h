@@ -8,17 +8,17 @@
 
 #import "FMDBManager.h"
 #import <FMDB.h>
+#import "DictionaryMainModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FMDictManager : NSObject
 
-+ (instancetype)sharedManager;
+@property(strong, nonatomic)NSMutableArray<DictionaryMainModel*> *datas;
 
++ (instancetype)sharedManager;
 - (void)requestTotalCount;
 - (void)requestWithKeywords:(NSString *)keywords;//英文
-
-@property(strong, nonatomic)NSMutableArray *results;
 
 @end
 

@@ -8,15 +8,17 @@
 
 #import "DictionaryMainCtl.h"
 #import "FMDictManager.h"
+#import "DictionaryMainCell.h"
 
 @interface DictionaryMainCtl ()<UITableViewDelegate,UITableViewDataSource>
 
-@property(strong, nonatomic)NSMutableArray *datas;
-@property(strong, nonatomic)UITableView *tableView;
-@property(strong, nonatomic)UITextField *textField;
-
 @property(strong, nonatomic)FMDBManager *ftsDictManager;
 @property(strong, nonatomic)FMDictManager *dictQueryManager;
+@property(strong, nonatomic)NSMutableArray *datas;
+
+@property(strong, nonatomic)UITextField *textField;
+@property(strong, nonatomic)UITableView *tableView;
+@property(strong, nonatomic)UILabel *totalCountLabel;
 
 @end
 
@@ -36,9 +38,9 @@
 - (void)bindModel {
     
     @weakify(self);
-    [[RACObserve(self.dictQueryManager, results) skip:1] subscribeNext:^(id  _Nullable x) {
+    [[RACObserve(self.dictQueryManager, datas) skip:1] subscribeNext:^(id  _Nullable x) {
         @strongify(self);
-        self.datas = self.dictQueryManager.results;
+        self.datas = self.dictQueryManager.datas;
         [self.tableView reloadData];
     }];
 }
@@ -60,6 +62,18 @@
         make.right.equalTo(_textField);
         make.height.equalTo(@0.5);
     }];
+
+    
+    UIView *breakLine1 = [[UIView alloc]init];
+    breakLine1.backgroundColor = [UIColor lightGrayColor];;
+    [self.view addSubview:breakLine1];
+    [breakLine1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_textField);
+        make.top.equalTo(_textField.mas_bottom).offset(-2);
+        make.right.equalTo(_textField);
+        make.height.equalTo(@0.5);
+    }];
+    
     
     self.tableView.frame = CGRectMake(0, 110, KScreenWidth, 350);
 
@@ -73,18 +87,18 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //    [self.dictQueryManager requestTotalCount];
-    [self.ftsDictManager startCopy];
+//    [self.ftsDictManager startCopy];
 }
 
-#pragma mark - < table >
+#pragma mark - < table >do
 - (UITableView *)tableView {
     if (_tableView == nil) {
         _tableView = [[UITableView alloc]init];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
-        _tableView.rowHeight = 300;
-        [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
+        _tableView.rowHeight = 55;
+        [_tableView registerClass:[DictionaryMainCell class] forCellReuseIdentifier:NSStringFromClass([DictionaryMainCell class])];
         [self.view addSubview:_tableView];
     }
     return _tableView;
@@ -99,13 +113,8 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class])];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@",_datas[indexPath.row]];
-    cell.textLabel.numberOfLines = 0;
-    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    cell.textLabel.layer.borderWidth = 1;
-    cell.textLabel.font = [UIFont systemFontOfSize:12];
-//    cell.textLabel.text = @"dsaf";
+    DictionaryMainCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([DictionaryMainCell class])];
+    cell.model = _datas[indexPath.row];
     return cell;
 }
 

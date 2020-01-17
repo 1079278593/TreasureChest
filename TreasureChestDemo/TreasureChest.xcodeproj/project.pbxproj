@@ -56,6 +56,8 @@
 		B2BC387D23C037B100D5B9C6 /* XMCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2BC387C23C037B100D5B9C6 /* XMCircleView.m */; };
 		B2BC388023C0385600D5B9C6 /* ShapeViewCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = B2BC387F23C0385600D5B9C6 /* ShapeViewCtl.m */; };
 		B2BC388323C03E1100D5B9C6 /* XMDashLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2BC388223C03E1100D5B9C6 /* XMDashLineView.m */; };
+		B2D1BCC723D165E10000B413 /* DictionaryMainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D1BCC623D165E10000B413 /* DictionaryMainCell.m */; };
+		B2D1BCCA23D18F0F0000B413 /* DictionaryMainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D1BCC923D18F0F0000B413 /* DictionaryMainModel.m */; };
 		B2DD689023B08C8500106F4F /* XMLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DD688F23B08C8500106F4F /* XMLabel.m */; };
 		B2DD689423B08EF100106F4F /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DD689323B08EF100106F4F /* UIButton+Extension.m */; };
 		B2DD68A223B2FC7D00106F4F /* XMSelectedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DD68A123B2FC7D00106F4F /* XMSelectedButton.m */; };
@@ -162,6 +164,11 @@
 		B2BC387F23C0385600D5B9C6 /* ShapeViewCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShapeViewCtl.m; sourceTree = "<group>"; };
 		B2BC388123C03E1100D5B9C6 /* XMDashLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMDashLineView.h; sourceTree = "<group>"; };
 		B2BC388223C03E1100D5B9C6 /* XMDashLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMDashLineView.m; sourceTree = "<group>"; };
+		B2D1BCC523D165E10000B413 /* DictionaryMainCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DictionaryMainCell.h; sourceTree = "<group>"; };
+		B2D1BCC623D165E10000B413 /* DictionaryMainCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DictionaryMainCell.m; sourceTree = "<group>"; };
+		B2D1BCC823D18F0F0000B413 /* DictionaryMainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DictionaryMainModel.h; sourceTree = "<group>"; };
+		B2D1BCC923D18F0F0000B413 /* DictionaryMainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DictionaryMainModel.m; sourceTree = "<group>"; };
+		B2D1BCCC23D1A06E0000B413 /* ColorMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorMacro.h; sourceTree = "<group>"; };
 		B2DD688E23B08C8500106F4F /* XMLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMLabel.h; sourceTree = "<group>"; };
 		B2DD688F23B08C8500106F4F /* XMLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMLabel.m; sourceTree = "<group>"; };
 		B2DD689223B08EF100106F4F /* UIButton+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
@@ -310,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				3AE550DF23A9189F001D989E /* DeviceMacro.h */,
+				B2D1BCCC23D1A06E0000B413 /* ColorMacro.h */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -353,8 +361,7 @@
 				B2830EFB23B5E7DB0049AE99 /* FormsViewCtl.m */,
 				B2BC387E23C0385600D5B9C6 /* ShapeViewCtl.h */,
 				B2BC387F23C0385600D5B9C6 /* ShapeViewCtl.m */,
-				B2AA0F4523C5BB1300BEBA27 /* DictionaryMainCtl.h */,
-				B2AA0F4623C5BB1300BEBA27 /* DictionaryMainCtl.m */,
+				B2D1BCC423D1658F0000B413 /* DemoView */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -451,6 +458,19 @@
 				B2BC388223C03E1100D5B9C6 /* XMDashLineView.m */,
 			);
 			path = XMShapeView;
+			sourceTree = "<group>";
+		};
+		B2D1BCC423D1658F0000B413 /* DemoView */ = {
+			isa = PBXGroup;
+			children = (
+				B2AA0F4523C5BB1300BEBA27 /* DictionaryMainCtl.h */,
+				B2AA0F4623C5BB1300BEBA27 /* DictionaryMainCtl.m */,
+				B2D1BCC523D165E10000B413 /* DictionaryMainCell.h */,
+				B2D1BCC623D165E10000B413 /* DictionaryMainCell.m */,
+				B2D1BCC823D18F0F0000B413 /* DictionaryMainModel.h */,
+				B2D1BCC923D18F0F0000B413 /* DictionaryMainModel.m */,
+			);
+			path = DemoView;
 			sourceTree = "<group>";
 		};
 		B2DD689F23B2FB6C00106F4F /* PearlsPackage */ = {
@@ -675,6 +695,7 @@
 				3AE550E123A9189F001D989E /* FormsView.m in Sources */,
 				B27B784B23ADB2080083E6AE /* UIColor+Hex.m in Sources */,
 				B2506D0923AB83080034A472 /* BaseViewController.m in Sources */,
+				B2D1BCCA23D18F0F0000B413 /* DictionaryMainModel.m in Sources */,
 				B27B784E23ADB4080083E6AE /* UIImage+Color.m in Sources */,
 				B2BC387323BD976200D5B9C6 /* NSDecimalNumber+Extension.m in Sources */,
 				B27B780723AC61A50083E6AE /* XMNetworking.m in Sources */,
@@ -688,6 +709,7 @@
 				B27B784223ACD6D70083E6AE /* TabScrollView.m in Sources */,
 				B2506D0D23AB88310034A472 /* CollapsibleViewCtl.m in Sources */,
 				B2AA0F4A23C5D12A00BEBA27 /* FMDictManager.m in Sources */,
+				B2D1BCC723D165E10000B413 /* DictionaryMainCell.m in Sources */,
 				B2506CEC23AB48E60034A472 /* UIView+Extension.m in Sources */,
 				B2506D0623AB65A90034A472 /* ResidentScrollViewCtl.m in Sources */,
 				B2BC388023C0385600D5B9C6 /* ShapeViewCtl.m in Sources */,

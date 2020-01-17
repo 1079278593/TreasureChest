@@ -30,7 +30,7 @@ static FMDictManager *manager = nil;
 
 - (instancetype)init {
     if(self == [super init]){
-        _results = [NSMutableArray arrayWithCapacity:0];
+        _datas = [NSMutableArray arrayWithCapacity:0];
         [self initDataBaseQueue];
     }
     return self;
@@ -38,7 +38,7 @@ static FMDictManager *manager = nil;
 
 - (void)initDataBaseQueue {
     self.tableName = DictTableName;
-    NSString *path = DatabasePath(DictNormalDatabaseName);//DictNormalDatabaseName  //DictSuperDatabaseName //DictSmallDatabaseName
+    NSString *path = DatabasePath(DictSmallDatabaseName);//DictNormalDatabaseName  //DictSuperDatabaseName //DictSmallDatabaseName
 //    NSString *path = @"/Users/xiaoming/Desktop/ECDICT-master/dict_0.77million.db";
     self.dataBaseQueue = [FMDatabaseQueue databaseQueueWithPath:path];
 }
@@ -88,25 +88,29 @@ NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE word LIKE '%
 */
 //
 - (void)requestWithKeywords:(NSString *)keywords {
-    [_results removeAllObjects];
-    [self.dataBaseQueue inTransaction:^(FMDatabase * _Nonnull db, BOOL * _Nonnull rollback) {
-        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE word MATCH '%@*' ORDER BY frq DESC, bnc DESC LIMIT 10",self.tableName,keywords];
-//        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE sw MATCH '%@*' AND (frq>0 OR bnc>0) ORDER BY frq DESC, bnc DESC LIMIT 10",self.tableName,keywords];
-//        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE word = '%@'",self.tableName,keywords];
-        if (keywords.length == 1) {
-            sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE word = '%@'",self.tableName,keywords];
-        }
-        
-        FMResultSet *result = [db executeQuery:sql];
-        while ([result next]) {
-            if ([result[@"word"] caseInsensitiveCompare:keywords] == NSOrderedSame) {
-                [_results insertObject:result.resultDictionary atIndex:0];
-            }else {
-                [_results addObject:result.resultDictionary];
+    @weakify(self);
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        @strongify(self);
+        [self.dataBaseQueue inTransaction:^(FMDatabase * _Nonnull db, BOOL * _Nonnull rollback) {
+            NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE word MATCH '%@*' AND (frq > 0 OR bnc > 0) ORDER BY (frq+bnc) ASC",self.tableName,keywords];
+            if ([keywords containsString:@" "]) {
+                sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE word MATCH '%@*' ORDER BY (frq+bnc) ASC LIMIT 10",self.tableName,keywords];
             }
-        }
-        self.results = _results;
-        NSLog(@"allDict:%@ \n keywords:%@ count: %lu ",_results,keywords,(unsigned long)_results.count);
-    }];
+            NSMutableArray *results = [NSMutableArray arrayWithCapacity:0];
+            FMResultSet *result = [db executeQuery:sql];
+            while ([result next]) {
+//                if ([result[@"word"] caseInsensitiveCompare:keywords] == NSOrderedSame) {
+//                    [self.results insertObject:result.resultDictionary atIndex:0];
+//                }else {
+                    [results addObject:result.resultDictionary];
+//                }
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.datas = [DictionaryMainModel mj_objectArrayWithKeyValuesArray:results];
+            });
+        }];
+    });
+    
+    
 }
 @end
