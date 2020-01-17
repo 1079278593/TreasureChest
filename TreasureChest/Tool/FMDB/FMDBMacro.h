@@ -23,7 +23,12 @@
 
 #define DictTableName @"DictTable"
 
-#define DatabasePath(DatabaseName) [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:DatabaseName]
+/**
+ Documents：应用中用户数据可以放在这里，iTunes备份和恢复的时候会包括此目录
+ tmp：存放临时文件，iTunes不会备份和恢复此目录，此目录下文件可能会在应用退出后删除
+ Library/Caches：存放缓存文件，iTunes不会备份此目录，此目录下文件不会在应用退出删除
+ */
+#define DatabasePath(DatabaseName) [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:DatabaseName]
 
 
 #endif /* FMDBMacro_h */

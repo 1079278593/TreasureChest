@@ -40,14 +40,14 @@
     _phoneticLabel = [[UILabel alloc]init];
     _phoneticLabel.textAlignment = NSTextAlignmentLeft;
     _phoneticLabel.font = [UIFont systemFontOfSize:14];
-    _phoneticLabel.textColor = KTextMainColor;
+    _phoneticLabel.textColor = KTextSecondColor;
     [self addSubview:_phoneticLabel];
     _phoneticLabel.frame = CGRectMake(_wordLabel.x, _wordLabel.bottom+5, 0, 15);
     
     _translationLabel = [[UILabel alloc]init];
     _translationLabel.textAlignment = NSTextAlignmentLeft;
     _translationLabel.font = [UIFont systemFontOfSize:12];
-    _translationLabel.textColor = KTextMainColor;
+    _translationLabel.textColor = KTextSecondColor;
     [self addSubview:_translationLabel];
     _translationLabel.frame = CGRectMake(_phoneticLabel.right, _phoneticLabel.y, 0, _phoneticLabel.height);
     
@@ -79,11 +79,11 @@
 
 - (void)refreshView {
     self.wordLabel.text = self.model.word;
-    self.phoneticLabel.text = self.model.phonetic;
+    self.phoneticLabel.text = [NSString stringWithFormat:@"[%@]",self.model.phonetic];
     self.translationLabel.text = self.model.translation;
     
     self.phoneticLabel.width = [self.phoneticLabel.text sizeWithMaxWidth:200 font:self.phoneticLabel.font].width;
-    self.translationLabel.x = self.phoneticLabel.right;
+    self.translationLabel.x = self.phoneticLabel.right + 10;
     self.translationLabel.width = KScreenWidth - self.phoneticLabel.right - 15 - 20;
 }
 @end

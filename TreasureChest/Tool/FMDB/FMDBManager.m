@@ -42,6 +42,8 @@ static FMDBManager *manager = nil;
 }
 
 - (void)initDataBaseQueue {
+    
+    return;
     NSString *databaseName = DictSmallDatabaseName;
     //源数据
 //    NSString *originPath = [NSString stringWithFormat:@"/Users/ming/Desktop/ECDICT-master/%@",databaseName];
