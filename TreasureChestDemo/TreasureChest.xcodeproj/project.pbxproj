@@ -50,6 +50,7 @@
 		B2830EFC23B5E7DB0049AE99 /* FormsViewCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = B2830EFB23B5E7DB0049AE99 /* FormsViewCtl.m */; };
 		B2830EFF23B5F8600049AE99 /* NSString+TextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = B2830EFE23B5F8600049AE99 /* NSString+TextSize.m */; };
 		B2830F0223B5F8890049AE99 /* UILabel+TextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = B2830F0123B5F8890049AE99 /* UILabel+TextSize.m */; };
+		B28472332403C3AA00C1194F /* URLSessionTaskCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = B28472322403C3AA00C1194F /* URLSessionTaskCtl.m */; };
 		B2AA0F4423C586CE00BEBA27 /* FMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AA0F4323C586CE00BEBA27 /* FMDBManager.m */; };
 		B2AA0F4723C5BB1300BEBA27 /* DictionaryMainCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AA0F4623C5BB1300BEBA27 /* DictionaryMainCtl.m */; };
 		B2AA0F4A23C5D12A00BEBA27 /* FMDictManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AA0F4923C5D12A00BEBA27 /* FMDictManager.m */; };
@@ -153,6 +154,8 @@
 		B2830EFE23B5F8600049AE99 /* NSString+TextSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+TextSize.m"; sourceTree = "<group>"; };
 		B2830F0023B5F8890049AE99 /* UILabel+TextSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+TextSize.h"; sourceTree = "<group>"; };
 		B2830F0123B5F8890049AE99 /* UILabel+TextSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+TextSize.m"; sourceTree = "<group>"; };
+		B28472312403C3AA00C1194F /* URLSessionTaskCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLSessionTaskCtl.h; sourceTree = "<group>"; };
+		B28472322403C3AA00C1194F /* URLSessionTaskCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLSessionTaskCtl.m; sourceTree = "<group>"; };
 		B2AA0F4223C586CE00BEBA27 /* FMDBManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDBManager.h; sourceTree = "<group>"; };
 		B2AA0F4323C586CE00BEBA27 /* FMDBManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDBManager.m; sourceTree = "<group>"; };
 		B2AA0F4523C5BB1300BEBA27 /* DictionaryMainCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DictionaryMainCtl.h; sourceTree = "<group>"; };
@@ -391,6 +394,7 @@
 				B2830EFB23B5E7DB0049AE99 /* FormsViewCtl.m */,
 				B2BC387E23C0385600D5B9C6 /* ShapeViewCtl.h */,
 				B2BC387F23C0385600D5B9C6 /* ShapeViewCtl.m */,
+				B28472302403C1B100C1194F /* URLSessionTaskDemo */,
 				B24A85F524037CE400D1EECA /* VideoPlayerDemo */,
 				B2D1BCC423D1658F0000B413 /* DictDemoView */,
 			);
@@ -431,6 +435,15 @@
 				B27B784423ACD7C00083E6AE /* TabTitleScrollView.m */,
 			);
 			path = TabScrollView;
+			sourceTree = "<group>";
+		};
+		B28472302403C1B100C1194F /* URLSessionTaskDemo */ = {
+			isa = PBXGroup;
+			children = (
+				B28472312403C3AA00C1194F /* URLSessionTaskCtl.h */,
+				B28472322403C3AA00C1194F /* URLSessionTaskCtl.m */,
+			);
+			path = URLSessionTaskDemo;
 			sourceTree = "<group>";
 		};
 		B2AA0F4123C5869F00BEBA27 /* FMDB */ = {
@@ -747,6 +760,7 @@
 				B2506D0623AB65A90034A472 /* ResidentScrollViewCtl.m in Sources */,
 				B2BC388023C0385600D5B9C6 /* ShapeViewCtl.m in Sources */,
 				B2830EFF23B5F8600049AE99 /* NSString+TextSize.m in Sources */,
+				B28472332403C3AA00C1194F /* URLSessionTaskCtl.m in Sources */,
 				B2BC387A23C0337A00D5B9C6 /* BaseShapeView.m in Sources */,
 				B2DD68A523B2FCDF00106F4F /* PearlsPackageCtl.m in Sources */,
 				B2506CFC23AB5B4D0034A472 /* CollapsibleView.m in Sources */,
