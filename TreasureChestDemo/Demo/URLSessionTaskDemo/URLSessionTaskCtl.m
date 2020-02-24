@@ -71,10 +71,10 @@
 - (void)loadBtnEvent:(UIButton *)button {
     if (button.selected) {
         [self.dataTask suspend];
-        [self.loadButton setTitle:@"暂停状态" forState:UIControlStateNormal];
+        [self.loadButton setTitle:@"暂停中" forState:UIControlStateNormal];
     }else {
         [self.dataTask resume];
-        [self.loadButton setTitle:@"下载状态" forState:UIControlStateNormal];
+        [self.loadButton setTitle:@"下载中" forState:UIControlStateNormal];
     }
     
     button.selected = !button.selected;
@@ -109,7 +109,9 @@
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error{
     [self.fileHandle closeFile];
     self.fileHandle = nil;
+    self.slider.value = 1;
     NSLog(@"didCompleteWithError:%@",_fullPath);
+    
 }
 
 
@@ -119,12 +121,13 @@
         NSString *url = @"https://gss3.baidu.com/6LZ0ej3k1Qd3ote6lo7D0j9wehsv/tieba-smallvideo-transcode/32099007_049d90cbaf0d8e06cabcb198ce36b4eb_52d6d309_2.mp4";
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
         NSDictionary *fileDict = [[NSFileManager defaultManager] attributesOfItemAtPath:self.fullPath error:nil];
+        self.currentSize = [[fileDict valueForKey:@"NSFileSize"] integerValue];
         NSString *range = [NSString stringWithFormat:@"bytes=%zd-",self.currentSize];
         [request setValue:range forHTTPHeaderField:@"Range"];
         NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:[NSOperationQueue mainQueue]];
         _dataTask = [session dataTaskWithRequest:request];
         
-        self.currentSize = [[fileDict valueForKey:@"NSFileSize"] integerValue];
+        
     }
     return _dataTask;
 }
