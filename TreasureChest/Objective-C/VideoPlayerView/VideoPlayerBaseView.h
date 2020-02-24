@@ -24,10 +24,12 @@ typedef void (^ProgressBlock)(CGFloat progress);
 @property(nonatomic, copy)ProgressBlock progressBlock;
 
 - (void)setupPlayer:(NSString *)mediaPath;
+- (CGFloat)videoDuration;
 - (void)startPlay;
-- (void)startPlayAtTime:(CGFloat)second;
+- (void)startPlayAtSecond:(CGFloat)second;
 - (void)pausePlay;
 - (void)stopPlay;
+- (void)playerSeekAtSecond:(CGFloat)second;
 
 @end
 

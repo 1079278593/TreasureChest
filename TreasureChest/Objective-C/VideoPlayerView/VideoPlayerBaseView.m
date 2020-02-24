@@ -30,6 +30,7 @@
 
 - (void)dealloc {
     [self removeObservers];
+    [self.player removeTimeObserver:self];
 }
 
 #pragma mark - < public >
@@ -40,13 +41,16 @@
     [self.player replaceCurrentItemWithPlayerItem:self.playerItme];
     [(AVPlayerLayer *)self.layer setPlayer:self.player];
     [self addObservers];
-    [self.player play];
+}
+
+- (CGFloat)videoDuration {
+    return [self mediaDurationWithPlayerItem:self.playerItme];
 }
 
 #pragma mark < paly or pause >
-- (void)startPlayAtTime:(CGFloat)second {
-    CMTime time = [self secondToCMTime:second];
-    [self playerSeekAtTime:time];
+- (void)startPlayAtSecond:(CGFloat)second {
+    
+    [self playerSeekAtSecond:second];
     [self startPlay];
 }
 
@@ -60,18 +64,34 @@
 
 - (void)stopPlay {
     [self.player pause];
-    [self playerSeekAtTime:kCMTimeZero];
+    [self playerSeekAtSecond:0];
+}
+
+- (void)playerSeekAtSecond:(CGFloat)second {
+    CMTime time = [self secondToCMTime:second];
+    [self.player seekToTime:time toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero];
 }
 
 #pragma mark - < observer >
 - (void)removeObservers {
     [NSNotificationCenter.defaultCenter removeObserver:self name:@"AVPlayerItemDidPlayToEndTimeNotification" object:nil];
     [NSNotificationCenter.defaultCenter removeObserver:self name:@"AVPlayerItemPlaybackStalledNotification" object:nil];
+    
 }
 
 - (void)addObservers {
     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(playerFinished:) name:@"AVPlayerItemDidPlayToEndTimeNotification" object:nil];
     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(playerInterrupt:) name:@"AVPlayerItemPlaybackStalledNotification" object:nil];
+    
+    @weakify(self);
+    [self.player addPeriodicTimeObserverForInterval:CMTimeMake(1, 1) queue:NULL usingBlock:^(CMTime time) {
+        @strongify(self);
+        CGFloat currentSecond = CMTimeGetSeconds(time);
+        CGFloat duration = [self videoDuration];
+        if (self.progressBlock) {
+            self.progressBlock(currentSecond/duration);
+        }
+    }];
 }
 
 - (void)playerFinished:(NSNotification *)notification {
@@ -85,10 +105,6 @@
 }
 
 #pragma mark - < time >
-- (void)playerSeekAtTime:(CMTime)time {
-    [self.player seekToTime:time toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero];
-}
-
 - (CMTime)secondToCMTime:(CGFloat)second {
     return CMTimeMakeWithSeconds(second, self.playerItme.duration.timescale);
 }

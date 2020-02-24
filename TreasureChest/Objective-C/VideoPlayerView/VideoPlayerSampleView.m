@@ -21,6 +21,7 @@
 - (instancetype)init {
     if(self == [super init]){
         [self initView];
+        [self blockMethod];
     }
     return self;
 }
@@ -32,25 +33,59 @@
         make.edges.equalTo(self);
     }];
     
+    NSString *path = @"/Users/xiaoming/Downloads/haizeiwang.mp4";
+    [self.playerView setupPlayer:path];
+    
+    
     self.playButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.playButton addTarget:self action:@selector(playBtnEvent:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.playButton];
     [self.playButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self);
+        make.left.bottom.equalTo(self);
         make.width.height.equalTo(@50);
     }];
     self.playButton.layer.borderWidth = 1;
+    
+    self.slider = [[UISlider alloc]init];
+    self.slider.tintColor = [UIColor redColor];
+    [self.slider addTarget:self action:@selector(sliderEvent:) forControlEvents:UIControlEventValueChanged];
+    [self.slider addTarget:self action:@selector(sliderTouchUP:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:self.slider];
+    [self.slider mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.playButton.mas_right);
+        make.right.equalTo(self).offset(-30);
+        make.bottom.equalTo(self);
+        make.height.equalTo(@30);
+    }];
 }
 
 - (void)playBtnEvent:(UIButton *)button {
-    NSString *path = @"/Users/xiaoming/Downloads/haizeiwang.mp4";
-    [self.playerView setupPlayer:path];
     
-    double delayInSeconds = 1.2;
-    dispatch_time_t dismissTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-    dispatch_after(dismissTime, dispatch_get_main_queue(), ^(void){
-        [self.playerView startPlayAtTime:230];
-    });
+    if (button.selected) {
+        [self.playerView pausePlay];
+    }else {
+        [self.playerView startPlay];
+    }
+    button.selected = !button.selected;
 }
 
+- (void)sliderEvent:(UISlider *)slider {
+    NSLog(@"%f",slider.value);
+    [self.playerView stopPlay];
+    CGFloat videoDuration = [self.playerView videoDuration];
+    [self.playerView playerSeekAtSecond:(videoDuration*slider.value)];
+}
+
+- (void)sliderTouchUP:(UISlider *)slider {
+    [self.playerView startPlay];
+}
+
+#pragma mark - <  >
+- (void)blockMethod {
+    @weakify(self)
+    self.playerView.progressBlock = ^(CGFloat progress) {
+        @strongify(self)
+        self.slider.value = progress;
+    };
+}
 @end
