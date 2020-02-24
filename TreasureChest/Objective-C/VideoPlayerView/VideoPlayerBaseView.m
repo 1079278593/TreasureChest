@@ -11,6 +11,7 @@
 @interface VideoPlayerBaseView()
 
 @property(nonatomic, strong)NSString *mediaPath;
+@property(nonatomic, assign)id timeObserver;
 
 @end
 
@@ -30,7 +31,7 @@
 
 - (void)dealloc {
     [self removeObservers];
-    [self.player removeTimeObserver:self];
+    [self.player removeTimeObserver:_timeObserver];
 }
 
 #pragma mark - < public >
@@ -84,7 +85,7 @@
     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(playerInterrupt:) name:@"AVPlayerItemPlaybackStalledNotification" object:nil];
     
     @weakify(self);
-    [self.player addPeriodicTimeObserverForInterval:CMTimeMake(1, 1) queue:NULL usingBlock:^(CMTime time) {
+    self.timeObserver = [self.player addPeriodicTimeObserverForInterval:CMTimeMake(1, 1) queue:NULL usingBlock:^(CMTime time) {
         @strongify(self);
         CGFloat currentSecond = CMTimeGetSeconds(time);
         CGFloat duration = [self videoDuration];
