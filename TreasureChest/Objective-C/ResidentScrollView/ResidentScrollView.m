@@ -12,8 +12,8 @@
 
 @interface ResidentScrollView()<UIScrollViewDelegate>
 
-@property(strong, nonatomic)UIView *headerView;
-@property(strong, nonatomic)UITableView *tableView;
+@property(nonatomic, strong)UIView *headerView;
+@property(nonatomic, strong)UITableView *tableView;
 @property(assign, nonatomic)CGFloat residentHeight;
 
 @end

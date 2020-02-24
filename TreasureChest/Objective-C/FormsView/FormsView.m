@@ -14,11 +14,11 @@
 
 @interface FormsView()
 
-@property(strong, nonatomic)NSArray <NSString *> *leftTitles;
-@property(strong, nonatomic)NSArray <NSString *> *rightTitles;
+@property(nonatomic, strong)NSArray <NSString *> *leftTitles;
+@property(nonatomic, strong)NSArray <NSString *> *rightTitles;
 
-@property(strong, nonatomic)NSMutableArray <UILabel *> *leftTitleLabels;
-@property(strong, nonatomic)NSMutableArray <UILabel *> *rightTitleLabels;
+@property(nonatomic, strong)NSMutableArray <UILabel *> *leftTitleLabels;
+@property(nonatomic, strong)NSMutableArray <UILabel *> *rightTitleLabels;
 
 @property(assign, nonatomic)CGFloat totalHeight;
 @property(assign, nonatomic)NSInteger count;

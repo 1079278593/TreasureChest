@@ -12,13 +12,13 @@
 
 @interface DictionaryMainCtl ()<UITableViewDelegate,UITableViewDataSource>
 
-@property(strong, nonatomic)FMDBManager *ftsDictManager;
-@property(strong, nonatomic)FMDictManager *dictQueryManager;
-@property(strong, nonatomic)NSMutableArray *datas;
+@property(nonatomic, strong)FMDBManager *ftsDictManager;
+@property(nonatomic, strong)FMDictManager *dictQueryManager;
+@property(nonatomic, strong)NSMutableArray *datas;
 
-@property(strong, nonatomic)UITextField *textField;
-@property(strong, nonatomic)UITableView *tableView;
-@property(strong, nonatomic)UILabel *totalCountLabel;
+@property(nonatomic, strong)UITextField *textField;
+@property(nonatomic, strong)UITableView *tableView;
+@property(nonatomic, strong)UILabel *totalCountLabel;
 
 @end
 

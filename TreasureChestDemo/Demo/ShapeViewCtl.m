@@ -12,7 +12,7 @@
 
 @interface ShapeViewCtl ()
 
-@property(strong, nonatomic)XMCircleView *circleView;
+@property(nonatomic, strong)XMCircleView *circleView;
 
 @end
 

@@ -9,7 +9,7 @@
 #import "FormsViewCtl.h"
 #import "FormsView.h"
 @interface FormsViewCtl ()
-@property(strong, nonatomic)FormsView *formsView;
+@property(nonatomic, strong)FormsView *formsView;
 @end
 
 @implementation FormsViewCtl

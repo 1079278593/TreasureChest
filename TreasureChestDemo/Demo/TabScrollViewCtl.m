@@ -10,7 +10,7 @@
 #import "TabScrollView.h"
 
 @interface TabScrollViewCtl ()
-@property(strong, nonatomic)TabScrollView *tabScrollView;
+@property(nonatomic, strong)TabScrollView *tabScrollView;
 @end
 
 @implementation TabScrollViewCtl

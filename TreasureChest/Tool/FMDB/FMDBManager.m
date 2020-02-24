@@ -13,8 +13,8 @@ static FMDBManager *manager = nil;
 
 @interface FMDBManager()
 
-@property(strong, nonatomic) FMDatabaseQueue *originDataBaseQueue;
-@property(strong, nonatomic) FMDatabaseQueue *targetDataBaseQueue;
+@property(nonatomic, strong) FMDatabaseQueue *originDataBaseQueue;
+@property(nonatomic, strong) FMDatabaseQueue *targetDataBaseQueue;
 
 @property(assign, nonatomic)int progress;
 @property(assign, nonatomic)int totalCount;

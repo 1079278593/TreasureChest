@@ -13,8 +13,8 @@ static FMDictManager *manager = nil;
 
 @interface FMDictManager()
 
-@property(strong, nonatomic) FMDatabaseQueue *dataBaseQueue;
-@property(strong, nonatomic)NSString *tableName;
+@property(nonatomic, strong) FMDatabaseQueue *dataBaseQueue;
+@property(nonatomic, strong)NSString *tableName;
 
 @end
 

@@ -11,20 +11,20 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DictionaryMainModel : NSObject
-@property(strong, nonatomic)NSString *word;
-@property(strong, nonatomic)NSString *sw;
-@property(strong, nonatomic)NSString *phonetic;
-@property(strong, nonatomic)NSString *definition;
-@property(strong, nonatomic)NSString *translation;
-@property(strong, nonatomic)NSString *pos;
-@property(strong, nonatomic)NSString *collins;
-@property(strong, nonatomic)NSString *oxford;
-@property(strong, nonatomic)NSString *tag;
-@property(strong, nonatomic)NSString *bnc;
-@property(strong, nonatomic)NSString *frq;
-@property(strong, nonatomic)NSString *exchange;
-@property(strong, nonatomic)NSString *detail;
-@property(strong, nonatomic)NSString *audio;
+@property(nonatomic, strong)NSString *word;
+@property(nonatomic, strong)NSString *sw;
+@property(nonatomic, strong)NSString *phonetic;
+@property(nonatomic, strong)NSString *definition;
+@property(nonatomic, strong)NSString *translation;
+@property(nonatomic, strong)NSString *pos;
+@property(nonatomic, strong)NSString *collins;
+@property(nonatomic, strong)NSString *oxford;
+@property(nonatomic, strong)NSString *tag;
+@property(nonatomic, strong)NSString *bnc;
+@property(nonatomic, strong)NSString *frq;
+@property(nonatomic, strong)NSString *exchange;
+@property(nonatomic, strong)NSString *detail;
+@property(nonatomic, strong)NSString *audio;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DictionaryMainCell : UITableViewCell
 
-@property(strong, nonatomic)DictionaryMainModel *model;
+@property(nonatomic, strong)DictionaryMainModel *model;
 
 @end
 

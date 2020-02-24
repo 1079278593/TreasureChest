@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FMDictManager : NSObject
 
-@property(strong, nonatomic)NSMutableArray<DictionaryMainModel*> *datas;
+@property(nonatomic, strong)NSMutableArray<DictionaryMainModel*> *datas;
 
 + (instancetype)sharedManager;
 - (void)requestTotalCount;

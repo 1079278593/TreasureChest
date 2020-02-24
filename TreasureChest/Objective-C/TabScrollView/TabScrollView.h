@@ -13,8 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TabScrollView : UIView
 
-@property(strong, nonatomic)TabTitleScrollView *titleScrollView;
-@property(strong, nonatomic)UIScrollView *contentScrollView;
+@property(nonatomic, strong)TabTitleScrollView *titleScrollView;
+@property(nonatomic, strong)UIScrollView *contentScrollView;
 
 - (instancetype)initWithFrame:(CGRect)frame contents:(NSArray *)views titles:(NSArray *)titles;
 

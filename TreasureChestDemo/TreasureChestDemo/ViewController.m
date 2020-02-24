@@ -14,10 +14,11 @@
 #import "FormsViewCtl.h"
 #import "ShapeViewCtl.h"
 #import "DictionaryMainCtl.h"
+#import "VideoPlayerCtl.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property(strong, nonatomic)UITableView *tableView;
-@property(strong, nonatomic)NSArray *datas;
+@property(nonatomic, strong)UITableView *tableView;
+@property(nonatomic, strong)NSArray *datas;
 @end
 
 @implementation ViewController
@@ -81,6 +82,7 @@
                        @"自定义表单",
                        @"各种形状",
                        @"字典、数据库",
+                       @"视频播放",
                     ];
     return datas;
 }
@@ -93,6 +95,7 @@
                              NSStringFromClass([FormsViewCtl class]),
                              NSStringFromClass([ShapeViewCtl class]),
                              NSStringFromClass([DictionaryMainCtl class]),
+                             NSStringFromClass([VideoPlayerCtl class]),
                             ];
     return classArrays;
 }

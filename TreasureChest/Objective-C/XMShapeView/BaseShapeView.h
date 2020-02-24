@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BaseShapeView : UIView
 
 @property(assign, nonatomic)CGFloat lineWidth;
-@property(strong, nonatomic)UIColor *strokeColor;
+@property(nonatomic, strong)UIColor *strokeColor;
 
 @end
 

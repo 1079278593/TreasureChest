@@ -21,6 +21,9 @@
 		3AE550E223A9189F001D989E /* ResidentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE550D923A9189F001D989E /* ResidentScrollView.m */; };
 		3AE550E323A9189F001D989E /* UIViewController+CurrentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE550DC23A9189F001D989E /* UIViewController+CurrentController.m */; };
 		B243E16423C4557C00B37519 /* CoreFundationReadme in Resources */ = {isa = PBXBuildFile; fileRef = B243E16323C4557C00B37519 /* CoreFundationReadme */; };
+		B24A85F824037D0500D1EECA /* VideoPlayerCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = B24A85F724037D0500D1EECA /* VideoPlayerCtl.m */; };
+		B24A85FB24039EB000D1EECA /* VideoPlayerBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = B24A85FA24039EB000D1EECA /* VideoPlayerBaseView.m */; };
+		B24A85FE24039F1300D1EECA /* VideoPlayerSampleView.m in Sources */ = {isa = PBXBuildFile; fileRef = B24A85FD24039F1300D1EECA /* VideoPlayerSampleView.m */; };
 		B2506CEC23AB48E60034A472 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B2506CEB23AB48E60034A472 /* UIView+Extension.m */; };
 		B2506CF923AB5B370034A472 /* CollapsibleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2506CF823AB5B370034A472 /* CollapsibleViewModel.m */; };
 		B2506CFC23AB5B4D0034A472 /* CollapsibleView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2506CFB23AB5B4D0034A472 /* CollapsibleView.m */; };
@@ -100,6 +103,12 @@
 		9917950E93D1701D7E817740 /* Pods-TreasureChestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreasureChestTests.debug.xcconfig"; path = "Target Support Files/Pods-TreasureChestTests/Pods-TreasureChestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B202155323C95C9200AEC527 /* FMDBMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDBMacro.h; sourceTree = "<group>"; };
 		B243E16323C4557C00B37519 /* CoreFundationReadme */ = {isa = PBXFileReference; lastKnownFileType = text; path = CoreFundationReadme; sourceTree = "<group>"; };
+		B24A85F624037D0500D1EECA /* VideoPlayerCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoPlayerCtl.h; sourceTree = "<group>"; };
+		B24A85F724037D0500D1EECA /* VideoPlayerCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerCtl.m; sourceTree = "<group>"; };
+		B24A85F924039EB000D1EECA /* VideoPlayerBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoPlayerBaseView.h; sourceTree = "<group>"; };
+		B24A85FA24039EB000D1EECA /* VideoPlayerBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerBaseView.m; sourceTree = "<group>"; };
+		B24A85FC24039F1300D1EECA /* VideoPlayerSampleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoPlayerSampleView.h; sourceTree = "<group>"; };
+		B24A85FD24039F1300D1EECA /* VideoPlayerSampleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerSampleView.m; sourceTree = "<group>"; };
 		B2506CEA23AB48E60034A472 /* UIView+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		B2506CEB23AB48E60034A472 /* UIView+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		B2506CF723AB5B370034A472 /* CollapsibleViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollapsibleViewModel.h; sourceTree = "<group>"; };
@@ -251,6 +260,7 @@
 		3AE550D323A9189F001D989E /* Objective-C */ = {
 			isa = PBXGroup;
 			children = (
+				B24A85EE24035B3900D1EECA /* VideoPlayerView */,
 				B2BC387723C0334F00D5B9C6 /* XMShapeView */,
 				B2DD689F23B2FB6C00106F4F /* PearlsPackage */,
 				B27B783923ACCF0A0083E6AE /* TabScrollView */,
@@ -330,6 +340,26 @@
 			path = "CF-1151.16-源码研究";
 			sourceTree = "<group>";
 		};
+		B24A85EE24035B3900D1EECA /* VideoPlayerView */ = {
+			isa = PBXGroup;
+			children = (
+				B24A85F924039EB000D1EECA /* VideoPlayerBaseView.h */,
+				B24A85FA24039EB000D1EECA /* VideoPlayerBaseView.m */,
+				B24A85FC24039F1300D1EECA /* VideoPlayerSampleView.h */,
+				B24A85FD24039F1300D1EECA /* VideoPlayerSampleView.m */,
+			);
+			path = VideoPlayerView;
+			sourceTree = "<group>";
+		};
+		B24A85F524037CE400D1EECA /* VideoPlayerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				B24A85F624037D0500D1EECA /* VideoPlayerCtl.h */,
+				B24A85F724037D0500D1EECA /* VideoPlayerCtl.m */,
+			);
+			path = VideoPlayerDemo;
+			sourceTree = "<group>";
+		};
 		B2506CED23AB565E0034A472 /* CollapsibleTableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -361,7 +391,8 @@
 				B2830EFB23B5E7DB0049AE99 /* FormsViewCtl.m */,
 				B2BC387E23C0385600D5B9C6 /* ShapeViewCtl.h */,
 				B2BC387F23C0385600D5B9C6 /* ShapeViewCtl.m */,
-				B2D1BCC423D1658F0000B413 /* DemoView */,
+				B24A85F524037CE400D1EECA /* VideoPlayerDemo */,
+				B2D1BCC423D1658F0000B413 /* DictDemoView */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -460,7 +491,7 @@
 			path = XMShapeView;
 			sourceTree = "<group>";
 		};
-		B2D1BCC423D1658F0000B413 /* DemoView */ = {
+		B2D1BCC423D1658F0000B413 /* DictDemoView */ = {
 			isa = PBXGroup;
 			children = (
 				B2AA0F4523C5BB1300BEBA27 /* DictionaryMainCtl.h */,
@@ -470,7 +501,7 @@
 				B2D1BCC823D18F0F0000B413 /* DictionaryMainModel.h */,
 				B2D1BCC923D18F0F0000B413 /* DictionaryMainModel.m */,
 			);
-			path = DemoView;
+			path = DictDemoView;
 			sourceTree = "<group>";
 		};
 		B2DD689F23B2FB6C00106F4F /* PearlsPackage */ = {
@@ -693,7 +724,9 @@
 				3AE550E023A9189F001D989E /* TmpScrollView.swift in Sources */,
 				3A40235923A62ED100BDB4E3 /* ViewController.m in Sources */,
 				3AE550E123A9189F001D989E /* FormsView.m in Sources */,
+				B24A85F824037D0500D1EECA /* VideoPlayerCtl.m in Sources */,
 				B27B784B23ADB2080083E6AE /* UIColor+Hex.m in Sources */,
+				B24A85FB24039EB000D1EECA /* VideoPlayerBaseView.m in Sources */,
 				B2506D0923AB83080034A472 /* BaseViewController.m in Sources */,
 				B2D1BCCA23D18F0F0000B413 /* DictionaryMainModel.m in Sources */,
 				B27B784E23ADB4080083E6AE /* UIImage+Color.m in Sources */,
@@ -721,6 +754,7 @@
 				3AE550E223A9189F001D989E /* ResidentScrollView.m in Sources */,
 				B2AA0F4423C586CE00BEBA27 /* FMDBManager.m in Sources */,
 				B2506CF923AB5B370034A472 /* CollapsibleViewModel.m in Sources */,
+				B24A85FE24039F1300D1EECA /* VideoPlayerSampleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

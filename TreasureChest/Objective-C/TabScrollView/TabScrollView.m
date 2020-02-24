@@ -11,8 +11,8 @@
 
 @interface TabScrollView()<UIScrollViewDelegate,TabTitleScrollViewDelegate>
 
-@property(strong, nonatomic)NSArray *views;
-@property(strong, nonatomic)NSArray *titles;
+@property(nonatomic, strong)NSArray *views;
+@property(nonatomic, strong)NSArray *titles;
 
 @end
 

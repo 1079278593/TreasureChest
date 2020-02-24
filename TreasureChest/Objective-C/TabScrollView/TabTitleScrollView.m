@@ -14,10 +14,10 @@ static NSString *cursorViewColorString = @"ffffff";
 
 @interface TabTitleScrollView()<UIScrollViewDelegate>
 
-@property(strong, nonatomic)NSArray *titles;
-@property(strong, nonatomic)NSMutableArray <UIButton *> *titleButtons;
-@property(strong, nonatomic)UIScrollView *contentScrollView;
-@property(strong, nonatomic)UIView *cursorLineView;
+@property(nonatomic, strong)NSArray *titles;
+@property(nonatomic, strong)NSMutableArray <UIButton *> *titleButtons;
+@property(nonatomic, strong)UIScrollView *contentScrollView;
+@property(nonatomic, strong)UIView *cursorLineView;
 @property(assign, nonatomic)CGFloat cursorOffsetX;
 @property(assign, nonatomic)CGFloat buttonWidth;
 

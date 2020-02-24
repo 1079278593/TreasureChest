@@ -12,9 +12,9 @@
 
 @interface ResidentScrollViewCtl ()<UITableViewDelegate,UITableViewDataSource>
 
-@property(strong, nonatomic)UIImageView *headerView;
-@property(strong, nonatomic)UITableView *tableView;
-@property(strong, nonatomic)ResidentScrollView *scrollView;
+@property(nonatomic, strong)UIImageView *headerView;
+@property(nonatomic, strong)UITableView *tableView;
+@property(nonatomic, strong)ResidentScrollView *scrollView;
 
 @end
 

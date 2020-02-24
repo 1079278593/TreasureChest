@@ -10,10 +10,10 @@
 
 @interface DictionaryMainCell()
 
-@property(strong, nonatomic)UILabel *wordLabel;
-@property(strong, nonatomic)UILabel *phoneticLabel;
-@property(strong, nonatomic)UILabel *translationLabel;
-@property(strong, nonatomic)UIImageView *arrowView;
+@property(nonatomic, strong)UILabel *wordLabel;
+@property(nonatomic, strong)UILabel *phoneticLabel;
+@property(nonatomic, strong)UILabel *translationLabel;
+@property(nonatomic, strong)UIImageView *arrowView;
 
 @end
 

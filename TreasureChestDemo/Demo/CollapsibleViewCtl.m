@@ -11,7 +11,7 @@
 
 @interface CollapsibleViewCtl ()
 
-@property(strong, nonatomic)CollapsibleView *collapsibleView;
+@property(nonatomic, strong)CollapsibleView *collapsibleView;
 
 @end
 

@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
  2. lengths = {10,5}    phase = 8    结果：绘制10-8，跳过5，绘制10....
  
  */
-@property(strong, nonatomic)NSArray <NSNumber *>*lengthArray;
+@property(nonatomic, strong)NSArray <NSNumber *>*lengthArray;
 
 @end
 

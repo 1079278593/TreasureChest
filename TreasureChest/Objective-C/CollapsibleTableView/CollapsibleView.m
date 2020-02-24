@@ -15,8 +15,8 @@ static NSString *CellIdentify = @"CellIdentify";
 
 @interface CollapsibleView()<UITableViewDelegate,UITableViewDataSource>
 
-@property(strong, nonatomic)UITableView *tableView;
-@property(strong, nonatomic)CollapsibleViewModel *viewModel;
+@property(nonatomic, strong)UITableView *tableView;
+@property(nonatomic, strong)CollapsibleViewModel *viewModel;
 
 @end
 

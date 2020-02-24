@@ -18,8 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface XMSelectedButton : UIButton
 
 @property(assign, nonatomic)SelectedButtonAlignment alignment;
-@property(strong, nonatomic)UILabel *selectedLabel;
-@property(strong, nonatomic)UIImageView *iconImageView;
+@property(nonatomic, strong)UILabel *selectedLabel;
+@property(nonatomic, strong)UIImageView *iconImageView;
 
 - (void)showWithText:(NSString *)text;
 
