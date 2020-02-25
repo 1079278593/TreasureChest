@@ -4,7 +4,26 @@
 //
 //  Created by xiao ming on 2020/2/25.
 //  Copyright © 2020 xiao ming. All rights reserved.
-//
+//  断点下载
+
+/**
+参考：https://blog.csdn.net/samuelandkevin/article/details/88787798
+ 
+1. 关于Range:
+  bytes=0-499 ,从0到499的头500个字节
+  bytes=500-999,从500到999的第二个500字节
+  bytes=500- ,从500字节以后的所有字节
+  bytes=-500, 最后500个字节
+  bytes=500-599,800-899 同时指定几个范围
+
+2. NSURLSession有三种任务类型:
+  NSURLSessionDataTask : 普通的GET\POST请求
+  NSURLSessionDownloadTask : 文件下载
+  NSURLSessionUploadTask : 文件上传
+ 
+*/
+
+
 
 #import <Foundation/Foundation.h>
 
@@ -17,25 +36,10 @@ typedef void(^DownloadFail)(void);
 
 @property (nonatomic, copy)DownloadFail failBlock;
 @property (nonatomic, copy)DownloadProgress progressBlock;
-@property (nonatomic, strong) NSURLSessionDataTask *dataTask;
+@property(nonatomic, strong)NSURLSessionDownloadTask *downloadTask;
 
-- (void)setupDataTask:(NSString *)urlPath localPath:(NSString *)localPath;
+- (void)setupTask:(NSString *)urlPath localPath:(NSString *)localPath;
 
 @end
 
 NS_ASSUME_NONNULL_END
-
-/**
-参考：https://www.jianshu.com/p/227e7c8b4858
-
-
-1. 断点下载和离线断点下载区别：
-1.1 断点下载是从内存中取出当前下载数据的 Size ，然后设置请求头的 Range
-1.2 离线断点下载是从沙盒中取出已下载的数据的 Size ，然后设置请求头的 Range
-
-2. 使用的task分别是：
-2.1 断点下载：       NSURLSessionDownloadTask
-2.2 离线断点下载：NSURLSessionDataTask
-
-
-*/

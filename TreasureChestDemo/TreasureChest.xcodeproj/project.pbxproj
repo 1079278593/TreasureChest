@@ -54,6 +54,8 @@
 		B28472372404B8EE00C1194F /* URLDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = B28472362404B8EE00C1194F /* URLDownloadTask.m */; };
 		B284723A2404B90300C1194F /* URLUploadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = B28472392404B90300C1194F /* URLUploadTask.m */; };
 		B284723E2404F5A600C1194F /* ServerMockCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = B284723D2404F5A600C1194F /* ServerMockCtl.m */; };
+		B284724124051E2D00C1194F /* URLOfflineDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = B284724024051E2D00C1194F /* URLOfflineDownloadTask.m */; };
+		B28472442405286B00C1194F /* URLSampleDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = B28472432405286B00C1194F /* URLSampleDownloadTask.m */; };
 		B2AA0F4423C586CE00BEBA27 /* FMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AA0F4323C586CE00BEBA27 /* FMDBManager.m */; };
 		B2AA0F4723C5BB1300BEBA27 /* DictionaryMainCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AA0F4623C5BB1300BEBA27 /* DictionaryMainCtl.m */; };
 		B2AA0F4A23C5D12A00BEBA27 /* FMDictManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AA0F4923C5D12A00BEBA27 /* FMDictManager.m */; };
@@ -165,6 +167,10 @@
 		B28472392404B90300C1194F /* URLUploadTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLUploadTask.m; sourceTree = "<group>"; };
 		B284723C2404F5A600C1194F /* ServerMockCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServerMockCtl.h; sourceTree = "<group>"; };
 		B284723D2404F5A600C1194F /* ServerMockCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServerMockCtl.m; sourceTree = "<group>"; };
+		B284723F24051E2D00C1194F /* URLOfflineDownloadTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLOfflineDownloadTask.h; sourceTree = "<group>"; };
+		B284724024051E2D00C1194F /* URLOfflineDownloadTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLOfflineDownloadTask.m; sourceTree = "<group>"; };
+		B28472422405286B00C1194F /* URLSampleDownloadTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLSampleDownloadTask.h; sourceTree = "<group>"; };
+		B28472432405286B00C1194F /* URLSampleDownloadTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLSampleDownloadTask.m; sourceTree = "<group>"; };
 		B2AA0F4223C586CE00BEBA27 /* FMDBManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDBManager.h; sourceTree = "<group>"; };
 		B2AA0F4323C586CE00BEBA27 /* FMDBManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDBManager.m; sourceTree = "<group>"; };
 		B2AA0F4523C5BB1300BEBA27 /* DictionaryMainCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DictionaryMainCtl.h; sourceTree = "<group>"; };
@@ -462,8 +468,12 @@
 			children = (
 				B28472352404B8EE00C1194F /* URLDownloadTask.h */,
 				B28472362404B8EE00C1194F /* URLDownloadTask.m */,
+				B284723F24051E2D00C1194F /* URLOfflineDownloadTask.h */,
+				B284724024051E2D00C1194F /* URLOfflineDownloadTask.m */,
 				B28472382404B90300C1194F /* URLUploadTask.h */,
 				B28472392404B90300C1194F /* URLUploadTask.m */,
+				B28472422405286B00C1194F /* URLSampleDownloadTask.h */,
+				B28472432405286B00C1194F /* URLSampleDownloadTask.m */,
 			);
 			path = DownloadUpload;
 			sourceTree = "<group>";
@@ -787,6 +797,7 @@
 				B27B784223ACD6D70083E6AE /* TabScrollView.m in Sources */,
 				B2506D0D23AB88310034A472 /* CollapsibleViewCtl.m in Sources */,
 				B2AA0F4A23C5D12A00BEBA27 /* FMDictManager.m in Sources */,
+				B28472442405286B00C1194F /* URLSampleDownloadTask.m in Sources */,
 				B2D1BCC723D165E10000B413 /* DictionaryMainCell.m in Sources */,
 				B2506CEC23AB48E60034A472 /* UIView+Extension.m in Sources */,
 				B2506D0623AB65A90034A472 /* ResidentScrollViewCtl.m in Sources */,
@@ -794,6 +805,7 @@
 				B2830EFF23B5F8600049AE99 /* NSString+TextSize.m in Sources */,
 				B28472332403C3AA00C1194F /* URLSessionTaskCtl.m in Sources */,
 				B28472372404B8EE00C1194F /* URLDownloadTask.m in Sources */,
+				B284724124051E2D00C1194F /* URLOfflineDownloadTask.m in Sources */,
 				B2BC387A23C0337A00D5B9C6 /* BaseShapeView.m in Sources */,
 				B2DD68A523B2FCDF00106F4F /* PearlsPackageCtl.m in Sources */,
 				B284723A2404B90300C1194F /* URLUploadTask.m in Sources */,

@@ -8,13 +8,11 @@
 
 #import "URLDownloadTask.h"
 
+@interface URLDownloadTask()<NSURLSessionDownloadDelegate>
 
-
-@interface URLDownloadTask()<NSURLSessionDelegate>
-
-@property (nonatomic, assign) NSInteger totalSize;
-@property (nonatomic, assign) NSInteger currentSize;
-@property (nonatomic, strong) NSFileHandle *fileHandle;
+@property(nonatomic, strong)NSData *resumeData;
+@property(nonatomic, strong)NSURLSession *session;
+@property(nonatomic, strong)NSString *destinationFullPath;
 
 @end
 
@@ -27,63 +25,61 @@
     return self;
 }
 
-- (void)setupDataTask:(NSString *)urlPath localPath:(NSString *)localPath {
+#pragma mark - < public >
+- (void)setupTask:(NSString *)urlPath localPath:(NSString *)localPath {
+    self.destinationFullPath = localPath;
     
-    NSDictionary *fileDict = [[NSFileManager defaultManager] attributesOfItemAtPath:localPath error:nil];
-    self.currentSize = [[fileDict valueForKey:@"NSFileSize"] integerValue];
-    if (self.currentSize == 0) {
-        [[NSFileManager defaultManager] createFileAtPath:localPath contents:nil attributes:nil];
-    }
-    self.fileHandle = [NSFileHandle fileHandleForWritingAtPath:localPath];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlPath]];
+    self.session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:[NSOperationQueue mainQueue]];
+    NSURLSessionDownloadTask *downloadTask = [self.session downloadTaskWithRequest:request];
+    [downloadTask resume];
+    self.downloadTask = downloadTask;
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlPath]];
-    NSString *range = [NSString stringWithFormat:@"bytes=%zd-",self.currentSize];
-    [request setValue:range forHTTPHeaderField:@"Range"];
-    
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:[NSOperationQueue mainQueue]];
-    self.dataTask = [session dataTaskWithRequest:request];
 }
 
 #pragma mark - < delegate >
-//1.接收服务器的响应，completionHandler回调传给系统（默认取消该请求：NSURLSessionResponseCancel）
--(void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler{
-    self.totalSize = response.expectedContentLength+self.currentSize;
-    if (self.totalSize <= self.currentSize) {
-        completionHandler(NSURLSessionResponseCancel);//cancel会触发didCompleteWithError
+
+/**
+ * 写数据
+ * @param bytesWritten 本次写入数据大小
+ * @param totalBytesWritten 下载数据总大小
+ * @param totalBytesExpectedToWrite 文件总大小
+ */
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite {
+    NSLog(@"%.2f%%",100.0 *totalBytesWritten/totalBytesExpectedToWrite);
+}
+
+/**
+* 恢复下载
+* @param fileOffset 恢复从哪里位置下载
+* @param expectedTotalBytes 文件总大小
+*/
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didResumeAtOffset:(int64_t)fileOffset expectedTotalBytes:(int64_t)expectedTotalBytes {
+    
+}
+
+/**
+ * 下载完成
+ * @param location 文件临时存储路径
+ */
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location{
+//    NSString *fullPath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:downloadTask.response.suggestedFilename];
+    BOOL flag = [[NSFileManager defaultManager] moveItemAtURL:location toURL:[NSURL fileURLWithPath:self.destinationFullPath] error:nil];
+    if (flag) {
+        NSLog(@"成功：移动到目标目录：%@",self.destinationFullPath);
     }else {
-        completionHandler(NSURLSessionResponseAllow);
+        NSLog(@"失败：源目录%@",location);
     }
 }
 
-- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data{
-    [self.fileHandle seekToEndOfFile];
-    [self.fileHandle writeData:data];
-    self.currentSize += data.length;
-    CGFloat progress = 1.0 * self.currentSize / self.totalSize;
-    if (self.progressBlock) {
-        self.progressBlock(progress);
-    }
-    NSLog(@"%.2f %%",100.0*progress);
-}
-
+/**
+ * 请求结束
+ */
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error{
-    [self.fileHandle closeFile];
-    self.fileHandle = nil;
-
-    if (error != nil) {
-        NSLog(@"did Completed With Error: %@",error.localizedDescription);
-        if (self.totalSize <= self.currentSize) {
-            //已经完成下载
-            if (self.progressBlock) {
-                self.progressBlock(1);
-            }
-        }else {
-            if (self.failBlock) {
-                self.failBlock();
-            }
-        }
+    if (error == nil) {
+        NSLog(@"成功");
     }else {
-        //成功
+        NSLog(@"下载失败：%@",error.localizedDescription);
     }
 }
 

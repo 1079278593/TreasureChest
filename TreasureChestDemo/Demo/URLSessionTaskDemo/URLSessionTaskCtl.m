@@ -8,8 +8,11 @@
 
 #import "URLSessionTaskCtl.h"
 #import "URLDownloadTask.h"
+#import "URLOfflineDownloadTask.h"
 #import "VideoPlayerSampleView.h"
 
+#define VIDEOURL1 @"http://video.yuntoo.com/dist/ab7b54f3-8df0-4678-babc-15a6e4f642b7.mp4"
+#define VIDEOURL2 @"https://gss3.baidu.com/6LZ0ej3k1Qd3ote6lo7D0j9wehsv/tieba-smallvideo-transcode/32099007_049d90cbaf0d8e06cabcb198ce36b4eb_52d6d309_2.mp4"
 @interface URLSessionTaskCtl ()
 
 @property(nonatomic, strong)UIImageView *resourceCover;
@@ -18,6 +21,7 @@
 @property(nonatomic, strong)UISlider *slider;
 
 @property(nonatomic, strong)NSString *destinationFullPath;
+@property(nonatomic, strong)URLOfflineDownloadTask *offlineDownloadTask;
 @property(nonatomic, strong)URLDownloadTask *downloadTask;
 @property(nonatomic, strong)VideoPlayerSampleView *videoView;
 
@@ -30,15 +34,18 @@
     
     [self initView];
     
+    //方式1：离线断点
     self.destinationFileName = @"1234.mp4";
-    NSString *url = @"https://gss3.baidu.com/6LZ0ej3k1Qd3ote6lo7D0j9wehsv/tieba-smallvideo-transcode/32099007_049d90cbaf0d8e06cabcb198ce36b4eb_52d6d309_2.mp4";
     _destinationFullPath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:self.destinationFileName];
+//    self.offlineDownloadTask = [[URLOfflineDownloadTask alloc]init];
+//    [self.offlineDownloadTask setupTask:VIDEOURL2 localPath:_destinationFullPath];
+//    [self blockCall];
+    
+    
+    //方式2：
     self.downloadTask = [[URLDownloadTask alloc]init];
-    [self.downloadTask setupDataTask:url localPath:_destinationFullPath];
+    [self.downloadTask setupTask:VIDEOURL2 localPath:_destinationFullPath];
     
-    [self blockCall];
-    
-    self.videoView.hidden = true;
 }
 
 - (void)initView {
@@ -99,14 +106,15 @@
         make.right.equalTo(self.view).offset(-10);
         make.height.equalTo(@230);
     }];
+    self.videoView.hidden = true;
 }
 
 - (void)loadBtnEvent:(UIButton *)button {
     if (button.selected) {
-        [self.downloadTask.dataTask suspend];
+        [self.offlineDownloadTask.dataTask suspend];
         [self.loadButton setTitle:@"暂停中" forState:UIControlStateNormal];
     }else {
-        [self.downloadTask.dataTask resume];
+        [self.offlineDownloadTask.dataTask resume];
         [self.loadButton setTitle:@"下载中" forState:UIControlStateNormal];
     }
     
@@ -119,7 +127,7 @@
 
 - (void)blockCall {
     @weakify(self);
-    self.downloadTask.progressBlock = ^(CGFloat progress) {
+    self.offlineDownloadTask.progressBlock = ^(CGFloat progress) {
         @strongify(self)
         self.slider.value = progress;
         
@@ -129,7 +137,7 @@
         }
     };
     
-    self.downloadTask.failBlock = ^{
+    self.offlineDownloadTask.failBlock = ^{
         
     };
 }
