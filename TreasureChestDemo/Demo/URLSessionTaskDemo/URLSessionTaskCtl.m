@@ -7,13 +7,19 @@
 //
 
 #import "URLSessionTaskCtl.h"
+#import "URLDownloadTask.h"
+#import "VideoPlayerSampleView.h"
 
-@interface URLSessionTaskCtl ()<NSURLSessionDelegate>
+@interface URLSessionTaskCtl ()
 
 @property(nonatomic, strong)UIImageView *resourceCover;
 @property(nonatomic, strong)UIButton *loadButton;
 @property(nonatomic, strong)UIButton *cancelButton;
 @property(nonatomic, strong)UISlider *slider;
+
+@property(nonatomic, strong)NSString *destinationFullPath;
+@property(nonatomic, strong)URLDownloadTask *downloadTask;
+@property(nonatomic, strong)VideoPlayerSampleView *videoView;
 
 @end
 
@@ -21,6 +27,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self initView];
+    
+    self.destinationFileName = @"1234.mp4";
+    NSString *url = @"https://gss3.baidu.com/6LZ0ej3k1Qd3ote6lo7D0j9wehsv/tieba-smallvideo-transcode/32099007_049d90cbaf0d8e06cabcb198ce36b4eb_52d6d309_2.mp4";
+    _destinationFullPath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:self.destinationFileName];
+    self.downloadTask = [[URLDownloadTask alloc]init];
+    [self.downloadTask setupDataTask:url localPath:_destinationFullPath];
+    
+    [self blockCall];
+    
+    self.videoView.hidden = true;
+}
+
+- (void)initView {
     
     self.resourceCover = [[UIImageView alloc]init];
     self.resourceCover.image = [UIImage imageNamed:@"testIcon2"];
@@ -66,14 +87,26 @@
         make.right.equalTo(self.view).offset(-40);
         make.height.equalTo(@30);
     }];
+    
+    self.videoView = [[VideoPlayerSampleView alloc]init];
+    self.videoView.frame = CGRectMake(0, 64, KScreenWidth, 300);
+    self.videoView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.videoView.layer.borderWidth = 1;
+    [self.view addSubview:self.videoView];
+    [self.videoView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.loadButton.mas_bottom).offset(40);
+        make.left.equalTo(self.view).offset(10);
+        make.right.equalTo(self.view).offset(-10);
+        make.height.equalTo(@230);
+    }];
 }
 
 - (void)loadBtnEvent:(UIButton *)button {
     if (button.selected) {
-        [self.dataTask suspend];
+        [self.downloadTask.dataTask suspend];
         [self.loadButton setTitle:@"暂停中" forState:UIControlStateNormal];
     }else {
-        [self.dataTask resume];
+        [self.downloadTask.dataTask resume];
         [self.loadButton setTitle:@"下载中" forState:UIControlStateNormal];
     }
     
@@ -84,59 +117,20 @@
     
 }
 
-#pragma mark - < delegate >
-//1.接收服务器的响应，默认取消该请求
-//completionHandler 回调 传给系统
--(void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler{
-    if (self.currentSize == 0) {
-        [[NSFileManager defaultManager] createFileAtPath:self.fullPath contents:nil attributes:nil];
-    }
-    self.fileHandle = [NSFileHandle fileHandleForWritingAtPath:_fullPath];
-    self.totalSize = response.expectedContentLength+self.currentSize;
-    completionHandler(NSURLSessionResponseAllow);
-}
-
-//2.收到返回数据，多次调用
-- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data{
-    [self.fileHandle seekToEndOfFile];
-    [self.fileHandle writeData:data];
-    self.currentSize += data.length;
-    CGFloat progress = 1.0 * self.currentSize / self.totalSize;
-    self.slider.value = progress;
-    NSLog(@"%.2f %%",100.0*progress);
-}
-//3.请求结束或失败时调用
-- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error{
-    [self.fileHandle closeFile];
-    self.fileHandle = nil;
-    self.slider.value = 1;
-    NSLog(@"didCompleteWithError:%@",_fullPath);
+- (void)blockCall {
+    @weakify(self);
+    self.downloadTask.progressBlock = ^(CGFloat progress) {
+        @strongify(self)
+        self.slider.value = progress;
+        
+        if (progress >= 1) {
+            self.videoView.hidden = false;
+            [self.videoView setupPlayer:self.destinationFullPath];
+        }
+    };
     
-}
-
-
-#pragma mark - < getter and setter >
--(NSURLSessionDataTask *)dataTask{
-    if (_dataTask == nil) {
-        NSString *url = @"https://gss3.baidu.com/6LZ0ej3k1Qd3ote6lo7D0j9wehsv/tieba-smallvideo-transcode/32099007_049d90cbaf0d8e06cabcb198ce36b4eb_52d6d309_2.mp4";
-        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
-        NSDictionary *fileDict = [[NSFileManager defaultManager] attributesOfItemAtPath:self.fullPath error:nil];
-        self.currentSize = [[fileDict valueForKey:@"NSFileSize"] integerValue];
-        NSString *range = [NSString stringWithFormat:@"bytes=%zd-",self.currentSize];
-        [request setValue:range forHTTPHeaderField:@"Range"];
-        NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:[NSOperationQueue mainQueue]];
-        _dataTask = [session dataTaskWithRequest:request];
+    self.downloadTask.failBlock = ^{
         
-        
-    }
-    return _dataTask;
+    };
 }
-
--(NSString *)fullPath{
-    if (_fullPath == nil) {
-        _fullPath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"1234.mp4"];
-    }
-    return _fullPath;
-}
-
 @end

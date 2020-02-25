@@ -16,6 +16,7 @@
 #import "DictionaryMainCtl.h"
 #import "VideoPlayerCtl.h"
 #import "URLSessionTaskCtl.h"
+#import "ServerMockCtl.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic, strong)UITableView *tableView;
@@ -85,6 +86,7 @@
                        @"字典、数据库",
                        @"视频播放",
                        @"上传-下载",
+                       @"Mock服务端接口",
                     ];
     return datas;
 }
@@ -99,6 +101,7 @@
                              NSStringFromClass([DictionaryMainCtl class]),
                              NSStringFromClass([VideoPlayerCtl class]),
                              NSStringFromClass([URLSessionTaskCtl class]),
+                             NSStringFromClass([ServerMockCtl class]),
                             ];
     return classArrays;
 }

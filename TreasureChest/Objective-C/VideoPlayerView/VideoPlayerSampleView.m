@@ -33,10 +33,6 @@
         make.edges.equalTo(self);
     }];
     
-    NSString *path = @"/Users/xiaoming/Downloads/haizeiwang.mp4";
-    [self.playerView setupPlayer:path];
-    
-    
     self.playButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.playButton addTarget:self action:@selector(playBtnEvent:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.playButton];
@@ -59,6 +55,13 @@
     }];
 }
 
+#pragma mark - < public method >
+- (void)setupPlayer:(NSString *)mediaPath {
+//    NSString *path = @"/Users/xiaoming/Downloads/haizeiwang.mp4";
+    [self.playerView setupPlayer:mediaPath];
+}
+
+#pragma mark - < button event >
 - (void)playBtnEvent:(UIButton *)button {
     
     if (button.selected) {

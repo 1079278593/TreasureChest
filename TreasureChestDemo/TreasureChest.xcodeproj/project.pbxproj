@@ -51,6 +51,9 @@
 		B2830EFF23B5F8600049AE99 /* NSString+TextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = B2830EFE23B5F8600049AE99 /* NSString+TextSize.m */; };
 		B2830F0223B5F8890049AE99 /* UILabel+TextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = B2830F0123B5F8890049AE99 /* UILabel+TextSize.m */; };
 		B28472332403C3AA00C1194F /* URLSessionTaskCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = B28472322403C3AA00C1194F /* URLSessionTaskCtl.m */; };
+		B28472372404B8EE00C1194F /* URLDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = B28472362404B8EE00C1194F /* URLDownloadTask.m */; };
+		B284723A2404B90300C1194F /* URLUploadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = B28472392404B90300C1194F /* URLUploadTask.m */; };
+		B284723E2404F5A600C1194F /* ServerMockCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = B284723D2404F5A600C1194F /* ServerMockCtl.m */; };
 		B2AA0F4423C586CE00BEBA27 /* FMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AA0F4323C586CE00BEBA27 /* FMDBManager.m */; };
 		B2AA0F4723C5BB1300BEBA27 /* DictionaryMainCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AA0F4623C5BB1300BEBA27 /* DictionaryMainCtl.m */; };
 		B2AA0F4A23C5D12A00BEBA27 /* FMDictManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AA0F4923C5D12A00BEBA27 /* FMDictManager.m */; };
@@ -156,6 +159,12 @@
 		B2830F0123B5F8890049AE99 /* UILabel+TextSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+TextSize.m"; sourceTree = "<group>"; };
 		B28472312403C3AA00C1194F /* URLSessionTaskCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLSessionTaskCtl.h; sourceTree = "<group>"; };
 		B28472322403C3AA00C1194F /* URLSessionTaskCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLSessionTaskCtl.m; sourceTree = "<group>"; };
+		B28472352404B8EE00C1194F /* URLDownloadTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLDownloadTask.h; sourceTree = "<group>"; };
+		B28472362404B8EE00C1194F /* URLDownloadTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLDownloadTask.m; sourceTree = "<group>"; };
+		B28472382404B90300C1194F /* URLUploadTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLUploadTask.h; sourceTree = "<group>"; };
+		B28472392404B90300C1194F /* URLUploadTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLUploadTask.m; sourceTree = "<group>"; };
+		B284723C2404F5A600C1194F /* ServerMockCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServerMockCtl.h; sourceTree = "<group>"; };
+		B284723D2404F5A600C1194F /* ServerMockCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServerMockCtl.m; sourceTree = "<group>"; };
 		B2AA0F4223C586CE00BEBA27 /* FMDBManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDBManager.h; sourceTree = "<group>"; };
 		B2AA0F4323C586CE00BEBA27 /* FMDBManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDBManager.m; sourceTree = "<group>"; };
 		B2AA0F4523C5BB1300BEBA27 /* DictionaryMainCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DictionaryMainCtl.h; sourceTree = "<group>"; };
@@ -263,6 +272,7 @@
 		3AE550D323A9189F001D989E /* Objective-C */ = {
 			isa = PBXGroup;
 			children = (
+				B28472342404B88E00C1194F /* DownloadUpload */,
 				B24A85EE24035B3900D1EECA /* VideoPlayerView */,
 				B2BC387723C0334F00D5B9C6 /* XMShapeView */,
 				B2DD689F23B2FB6C00106F4F /* PearlsPackage */,
@@ -394,6 +404,7 @@
 				B2830EFB23B5E7DB0049AE99 /* FormsViewCtl.m */,
 				B2BC387E23C0385600D5B9C6 /* ShapeViewCtl.h */,
 				B2BC387F23C0385600D5B9C6 /* ShapeViewCtl.m */,
+				B284723B2404F58A00C1194F /* ServerMock */,
 				B28472302403C1B100C1194F /* URLSessionTaskDemo */,
 				B24A85F524037CE400D1EECA /* VideoPlayerDemo */,
 				B2D1BCC423D1658F0000B413 /* DictDemoView */,
@@ -444,6 +455,26 @@
 				B28472322403C3AA00C1194F /* URLSessionTaskCtl.m */,
 			);
 			path = URLSessionTaskDemo;
+			sourceTree = "<group>";
+		};
+		B28472342404B88E00C1194F /* DownloadUpload */ = {
+			isa = PBXGroup;
+			children = (
+				B28472352404B8EE00C1194F /* URLDownloadTask.h */,
+				B28472362404B8EE00C1194F /* URLDownloadTask.m */,
+				B28472382404B90300C1194F /* URLUploadTask.h */,
+				B28472392404B90300C1194F /* URLUploadTask.m */,
+			);
+			path = DownloadUpload;
+			sourceTree = "<group>";
+		};
+		B284723B2404F58A00C1194F /* ServerMock */ = {
+			isa = PBXGroup;
+			children = (
+				B284723C2404F5A600C1194F /* ServerMockCtl.h */,
+				B284723D2404F5A600C1194F /* ServerMockCtl.m */,
+			);
+			path = ServerMock;
 			sourceTree = "<group>";
 		};
 		B2AA0F4123C5869F00BEBA27 /* FMDB */ = {
@@ -743,6 +774,7 @@
 				B2506D0923AB83080034A472 /* BaseViewController.m in Sources */,
 				B2D1BCCA23D18F0F0000B413 /* DictionaryMainModel.m in Sources */,
 				B27B784E23ADB4080083E6AE /* UIImage+Color.m in Sources */,
+				B284723E2404F5A600C1194F /* ServerMockCtl.m in Sources */,
 				B2BC387323BD976200D5B9C6 /* NSDecimalNumber+Extension.m in Sources */,
 				B27B780723AC61A50083E6AE /* XMNetworking.m in Sources */,
 				B2DD689023B08C8500106F4F /* XMLabel.m in Sources */,
@@ -761,8 +793,10 @@
 				B2BC388023C0385600D5B9C6 /* ShapeViewCtl.m in Sources */,
 				B2830EFF23B5F8600049AE99 /* NSString+TextSize.m in Sources */,
 				B28472332403C3AA00C1194F /* URLSessionTaskCtl.m in Sources */,
+				B28472372404B8EE00C1194F /* URLDownloadTask.m in Sources */,
 				B2BC387A23C0337A00D5B9C6 /* BaseShapeView.m in Sources */,
 				B2DD68A523B2FCDF00106F4F /* PearlsPackageCtl.m in Sources */,
+				B284723A2404B90300C1194F /* URLUploadTask.m in Sources */,
 				B2506CFC23AB5B4D0034A472 /* CollapsibleView.m in Sources */,
 				B2506CFF23AB5B690034A472 /* CollapsibleViewCell.m in Sources */,
 				3AE550E223A9189F001D989E /* ResidentScrollView.m in Sources */,

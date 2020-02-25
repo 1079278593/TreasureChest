@@ -25,6 +25,8 @@
     playerView.layer.borderColor = [UIColor lightGrayColor].CGColor;
     playerView.layer.borderWidth = 1;
     
+    NSString *path = @"/Users/xiaoming/Downloads/haizeiwang.mp4";
+    [playerView setupPlayer:path];
 }
 
 
