@@ -14,11 +14,7 @@
 @property(nonatomic, assign)NSInteger totalSize;
 @property(nonatomic, assign)NSInteger currentSize;
 @property(nonatomic, strong)NSFileHandle *fileHandle;
-
-
-@property(nonatomic, strong)NSData *resumeData;
-@property(nonatomic, strong)NSURLSession *session;
-
+@property (nonatomic, strong)NSURLSessionDataTask *dataTask;
 
 @end
 
@@ -47,6 +43,14 @@
     
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:[NSOperationQueue mainQueue]];
     self.dataTask = [session dataTaskWithRequest:request];
+}
+
+- (void)pauseDownload {
+    [self.dataTask suspend];
+}
+
+- (void)continueDownload {
+    [self.dataTask resume];
 }
 
 #pragma mark - < NSURLSessionDelegate >

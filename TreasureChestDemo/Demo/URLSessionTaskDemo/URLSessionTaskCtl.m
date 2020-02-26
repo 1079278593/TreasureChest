@@ -33,19 +33,9 @@
     [super viewDidLoad];
     
     [self initView];
-    
-    //方式1：离线断点
-    self.destinationFileName = @"1234.mp4";
-    _destinationFullPath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:self.destinationFileName];
-//    self.offlineDownloadTask = [[URLOfflineDownloadTask alloc]init];
-//    [self.offlineDownloadTask setupTask:VIDEOURL2 localPath:_destinationFullPath];
-//    [self blockCall];
-    
-    
-    //方式2：
-    self.downloadTask = [[URLDownloadTask alloc]init];
-    [self.downloadTask setupTask:VIDEOURL2 localPath:_destinationFullPath];
-    
+    [self downloadConfig];
+    [self downloadBlockCall];
+    [self offlineDownloadBlockCall];
 }
 
 - (void)initView {
@@ -109,23 +99,51 @@
     self.videoView.hidden = true;
 }
 
+#pragma mark - <  >
+- (void)downloadConfig {
+    
+    self.destinationFileName = @"1234.mp4";
+    _destinationFullPath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:self.destinationFileName];
+    NSLog(@"目标目录：%@",_destinationFullPath);
+    
+    //方式1：离线断点
+//    self.offlineDownloadTask = [[URLOfflineDownloadTask alloc]init];
+//    [self.offlineDownloadTask setupTask:VIDEOURL2 localPath:_destinationFullPath];
+        
+    //方式2：
+    self.downloadTask = [[URLDownloadTask alloc]init];
+    [self.downloadTask setupTask:VIDEOURL2 localPath:_destinationFullPath];
+    
+    //方式3：简单方式
+//    self.downloadTask = [[URLDownloadTask alloc]init];
+//    [self.downloadTask easyDownload:VIDEOURL2 localPath:_destinationFullPath];
+}
+
+#pragma mark - < button event >
 - (void)loadBtnEvent:(UIButton *)button {
+    //1
+//    if (button.selected) {
+//        [self.offlineDownloadTask pauseDownload];
+//    }else {
+//        [self.offlineDownloadTask continueDownload];
+//    }
+    
+    //2
     if (button.selected) {
-        [self.offlineDownloadTask.dataTask suspend];
-        [self.loadButton setTitle:@"暂停中" forState:UIControlStateNormal];
+        [self.downloadTask pauseDownload];
     }else {
-        [self.offlineDownloadTask.dataTask resume];
-        [self.loadButton setTitle:@"下载中" forState:UIControlStateNormal];
+        [self.downloadTask continueDownload];
     }
     
+    [button setTitle:(button.selected ? @"暂停中" : @"下载中") forState:UIControlStateNormal];
     button.selected = !button.selected;
 }
 
 - (void)cancelBtnEvent:(UIButton *)button {
-    
+    [self.downloadTask stopDownload];
 }
 
-- (void)blockCall {
+- (void)offlineDownloadBlockCall {
     @weakify(self);
     self.offlineDownloadTask.progressBlock = ^(CGFloat progress) {
         @strongify(self)
@@ -141,4 +159,22 @@
         
     };
 }
+
+- (void)downloadBlockCall {
+    @weakify(self);
+    self.downloadTask.progressBlock = ^(CGFloat progress) {
+        @strongify(self)
+        self.slider.value = progress;
+        
+        if (progress >= 1) {
+            self.videoView.hidden = false;
+            [self.videoView setupPlayer:self.destinationFullPath];
+        }
+    };
+    
+    self.downloadTask.failBlock = ^{
+        
+    };
+}
+
 @end

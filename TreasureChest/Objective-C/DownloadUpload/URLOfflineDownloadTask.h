@@ -33,9 +33,10 @@ typedef void(^DownloadFail)(void);
 
 @property (nonatomic, copy)DownloadFail failBlock;
 @property (nonatomic, copy)DownloadProgress progressBlock;
-@property (nonatomic, strong)NSURLSessionDataTask *dataTask;
 
 - (void)setupTask:(NSString *)urlPath localPath:(NSString *)localPath;
+- (void)pauseDownload;
+- (void)continueDownload;
 
 @end
 
