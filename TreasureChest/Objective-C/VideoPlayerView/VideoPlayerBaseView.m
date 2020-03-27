@@ -12,6 +12,8 @@
 
 @property(nonatomic, strong)NSString *mediaPath;
 @property(nonatomic, assign)id timeObserver;
+@property(nonatomic, assign)CGFloat progressRatio;
+@property(nonatomic, strong)UIActivityIndicatorView *activityView;
 
 @end
 
@@ -20,6 +22,7 @@
 - (instancetype)init {
     if(self == [super init]){
         self.player = [[AVPlayer alloc]init];
+        [self bindRACModel];
     }
     return self;
 }
@@ -29,15 +32,19 @@
     return [AVPlayerLayer class];
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    self.activityView.center = self.center;
+}
+
 - (void)dealloc {
-    [self removeObservers];
     [self.player removeTimeObserver:_timeObserver];
+    [self.playerItme removeObserver:self forKeyPath:@"status"];
 }
 
 #pragma mark - < public >
 - (void)setupPlayer:(NSString *)mediaPath {
     self.mediaPath = mediaPath;
-    [self removeObservers];
     self.playerItme = [self setupPlayerItemWithPath:mediaPath];
     [self.player replaceCurrentItemWithPlayerItem:self.playerItme];
     [(AVPlayerLayer *)self.layer setPlayer:self.player];
@@ -74,25 +81,33 @@
 }
 
 #pragma mark - < observer >
-- (void)removeObservers {
-    [NSNotificationCenter.defaultCenter removeObserver:self name:@"AVPlayerItemDidPlayToEndTimeNotification" object:nil];
-    [NSNotificationCenter.defaultCenter removeObserver:self name:@"AVPlayerItemPlaybackStalledNotification" object:nil];
-    
+- (void)bindRACModel {
+    @weakify(self);
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:@"AVPlayerItemDidPlayToEndTimeNotification" object:nil] subscribeNext:^(id x) {
+        @strongify(self);
+        if (self.progressRatio >= 1) {
+            if (self.finishBlock) {
+                self.finishBlock();
+            }
+            [self stopPlay];
+        }
+    }];
 }
 
 - (void)addObservers {
-    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(playerFinished:) name:@"AVPlayerItemDidPlayToEndTimeNotification" object:nil];
-    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(playerInterrupt:) name:@"AVPlayerItemPlaybackStalledNotification" object:nil];
-    
     @weakify(self);
     self.timeObserver = [self.player addPeriodicTimeObserverForInterval:CMTimeMake(1, 1) queue:NULL usingBlock:^(CMTime time) {
         @strongify(self);
         CGFloat currentSecond = CMTimeGetSeconds(time);
         CGFloat duration = [self videoDuration];
+        self.progressRatio = currentSecond/duration;
         if (self.progressBlock) {
-            self.progressBlock(currentSecond/duration);
+            self.progressBlock(self.progressRatio);
         }
     }];
+    
+    //其实AVPlayerItem和AVPlayer 都有status 属性的，而且可以使用KVO监听。建议用AVPlayerItem
+    [self.playerItme addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew  context:nil];
 }
 
 - (void)playerFinished:(NSNotification *)notification {
@@ -101,8 +116,38 @@
     }
 }
 
-- (void)playerInterrupt:(NSNotification *)notification {
+- (void)observeValueForKeyPath:(nullable NSString *)keyPath ofObject:(nullable id)object change:(nullable NSDictionary<NSString*, id> *)change context:(nullable void *)context {
+
+    if ([keyPath isEqualToString:@"status"]) {
+        AVPlayerItemStatus status = [change[NSKeyValueChangeNewKey]intValue];   //取出status的新值
+        switch (status) {
+            case AVPlayerItemStatusReadyToPlay:
+            {
+                [self.activityView stopAnimating];
+                if (self.preparedBlock) {
+                    self.preparedBlock();
+                }
+            }
+                break;
+            case AVPlayerItemStatusUnknown:
+            {
+//                [LCProgressHUD showFailure:@"视频格式不支持"];
+            }
+                break;
+            case AVPlayerItemStatusFailed:
+            {
+//                [LCProgressHUD showFailure:@"视频初始化失败"];
+            }
+                break;
+                
+            default:
+                break;
+        }
+    } else if ([keyPath isEqualToString:@"loadedTimeRanges"]) {
     
+    } else if ([keyPath isEqualToString:@"playbackBufferEmpty"]) {
+        
+    }
 }
 
 #pragma mark - < time >
@@ -131,5 +176,15 @@
     }
     return [[AVPlayerItem alloc]initWithURL:url];
 }
- 
+
+- (UIActivityIndicatorView *)activityView {
+    if (_activityView == nil) {
+        _activityView = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        [self addSubview:_activityView];
+        [_activityView startAnimating];
+        [_activityView setHidesWhenStopped:YES];
+    }
+    return _activityView;
+}
+
 @end

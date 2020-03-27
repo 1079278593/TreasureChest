@@ -156,4 +156,61 @@
     return [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil].firstObject;
 }
 
+- (UIViewController *)viewControllers_old {
+    UIViewController *result = nil;
+    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+    //app默认windowLevel是UIWindowLevelNormal，如果不是，找到它
+    if (window.windowLevel != UIWindowLevelNormal) {
+        NSArray *windows = [[UIApplication sharedApplication] windows];
+        for(UIWindow * tmpWin in windows) {
+            if (tmpWin.windowLevel == UIWindowLevelNormal) {
+                window = tmpWin;
+                break;
+            }
+        }
+    }
+    id nextResponder = nil;
+    UIViewController *appRootVC = window.rootViewController;
+    //1、通过present弹出VC，appRootVC.presentedViewController不为nil
+    if (appRootVC.presentedViewController) {
+        nextResponder = appRootVC.presentedViewController;
+    }else{
+        //2、通过navigationcontroller弹出VC
+//        NSLog(@"subviews == %@",[window subviews]);
+        UIView *frontView = [[window subviews] objectAtIndex:0];
+        nextResponder = [frontView nextResponder];
+    }
+    //1、tabBarController
+    if ([nextResponder isKindOfClass:[UITabBarController class]]){
+        UITabBarController * tabbar = (UITabBarController *)nextResponder;
+        UINavigationController * nav = (UINavigationController *)tabbar.viewControllers[tabbar.selectedIndex];
+        //或者 UINavigationController * nav = tabbar.selectedViewController;
+        result = nav.childViewControllers.lastObject;
+    }else if ([nextResponder isKindOfClass:[UINavigationController class]]){
+        //2、navigationController
+        UIViewController * nav = (UIViewController *)nextResponder;
+        result = nav.childViewControllers.lastObject;
+    }else if ([nextResponder isKindOfClass:[UIWindow class]]) {//这个判断是因为此项目弹出登录方式导致
+        result = [(UIWindow *)nextResponder rootViewController];
+        if ([result isKindOfClass:[UINavigationController class]]) {
+            result = result.childViewControllers.lastObject;
+        }
+    }else{//3、viewControler
+        result = nextResponder;
+    }
+    return result;
+}
+
+//改良版
+- (UIViewController*)viewController {
+    // 遍历响应者链。返回第一个找到视图控制器
+    UIResponder *responder = self;
+    while ((responder = [responder nextResponder])){
+        if ([responder isKindOfClass: [UIViewController class]]){
+            return (UIViewController *)responder;
+        }
+    }
+    return nil;
+}
+
 @end

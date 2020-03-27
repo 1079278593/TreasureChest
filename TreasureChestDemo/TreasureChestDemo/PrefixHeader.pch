@@ -14,7 +14,7 @@
 #import <ReactiveObjC.h>
 #import <Masonry/Masonry.h>
 #import <MJExtension/MJExtension.h>
-
+#import <UIImageView+WebCache.h>
 
 #pragma mark - < category >
 #import "UIColor+Hex.h"
@@ -23,11 +23,8 @@
 #import "UIView+Extension.h"
 #import "NSDecimalNumber+Extension.h"
 
-
-#import "UIViewController+CurrentController.h"
-
-
 #pragma mark - <  >
 #import "FMDBManager.h"
+#import "RegularOperate.h"
 
 #endif /* PrefixHeader_pch */

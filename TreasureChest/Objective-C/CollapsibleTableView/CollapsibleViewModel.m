@@ -24,7 +24,7 @@
 
 //测试数据
 - (void)requestPlistData {
-   NSString *filePath = [[NSBundle mainBundle] pathForResource:@"TestData" ofType:@"plist"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"TestData" ofType:@"plist"];
     NSArray *date = [NSArray arrayWithContentsOfFile:filePath];
     self.rootItems = [CollapsibleModel mj_objectArrayWithKeyValuesArray:date];
 }

@@ -11,6 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void (^PreparedBlock)(void);
 typedef void (^FinishBlock)(void);
 typedef void (^ProgressBlock)(CGFloat progress);
 
@@ -20,6 +21,7 @@ typedef void (^ProgressBlock)(CGFloat progress);
 @property(nonatomic, strong)AVPlayer *player;
 @property(nonatomic, strong)AVPlayerItem *playerItme;
 
+@property(nonatomic, copy)PreparedBlock preparedBlock;
 @property(nonatomic, copy)FinishBlock finishBlock;
 @property(nonatomic, copy)ProgressBlock progressBlock;
 

@@ -30,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///可视化获取视图
 + (instancetype)viewForNib;
+- (UIViewController *)viewController;
 
 @end
 
