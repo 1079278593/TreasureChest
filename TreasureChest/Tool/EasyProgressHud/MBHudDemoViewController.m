@@ -105,7 +105,27 @@
 }
 
 - (void)reloadMethod_progress {
+    //这里while循环方式，取消后会出现问题。需要在具体使用时去处理，这里只做demo。
     [EasyProgress showProgress:@"取消"];
+    dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
+        float progress = 0.0f;
+            while (progress < 1.0f) {
+        //        if (self.canceled) break;
+                progress += 0.01f;
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    [EasyProgress shareInstance].activityHud.progress = progress;
+//                    if  (progress > 0.5) {
+//                        [EasyProgress hide];
+//                    }
+                });
+                usleep(50000);
+            }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [EasyProgress hide];
+        });
+    });
 }
 
 - (void)indeterminateExample {

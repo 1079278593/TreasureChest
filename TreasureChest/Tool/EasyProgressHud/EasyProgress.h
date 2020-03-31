@@ -9,15 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "MBProgressHUD.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface EasyProgress : NSObject
 
 @property(nonatomic, strong)MBProgressHUD *hud;
 @property(nonatomic, strong)MBProgressHUD *progressHud;
 
 @property(nonatomic, strong)NSMutableArray<MBProgressHUD*> *huds;
-@property(nonatomic, strong)MBProgressHUD *activityHud;
+@property(nonatomic, strong)MBProgressHUD *activityHud;//只有需要调用hide()方式关闭的，才会激活(赋值)这个属性。自动隐藏的不赋值这个。
 
 + (instancetype)shareInstance;
 
@@ -42,5 +40,3 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)hide;
 
 @end
-
-NS_ASSUME_NONNULL_END

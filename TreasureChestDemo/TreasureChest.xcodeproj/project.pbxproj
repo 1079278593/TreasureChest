@@ -397,10 +397,10 @@
 		B215CC352431BE410017BFD9 /* EasyProgressHud */ = {
 			isa = PBXGroup;
 			children = (
-				B215CC362431BEA30017BFD9 /* EasyProgress.h */,
-				B215CC372431BEA30017BFD9 /* EasyProgress.m */,
 				B215CC3A2431BEBC0017BFD9 /* MBHudDemoViewController.h */,
 				B215CC392431BEBC0017BFD9 /* MBHudDemoViewController.m */,
+				B215CC362431BEA30017BFD9 /* EasyProgress.h */,
+				B215CC372431BEA30017BFD9 /* EasyProgress.m */,
 				B215CC3C2431BEC80017BFD9 /* MBProgressHUD.h */,
 				B215CC3D2431BEC80017BFD9 /* MBProgressHUD.m */,
 				B215CC3F2431F5190017BFD9 /* Resources */,
