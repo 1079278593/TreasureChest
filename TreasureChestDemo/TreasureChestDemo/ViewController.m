@@ -17,6 +17,7 @@
 #import "VideoPlayerCtl.h"
 #import "URLSessionTaskCtl.h"
 #import "ServerMockCtl.h"
+#import "MBHudDemoViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic, strong)UITableView *tableView;
@@ -87,6 +88,7 @@
                        @"视频播放",
                        @"上传-下载",
                        @"Mock服务端接口",
+                       @"HUD效果",
                     ];
     return datas;
 }
@@ -102,6 +104,7 @@
                              NSStringFromClass([VideoPlayerCtl class]),
                              NSStringFromClass([URLSessionTaskCtl class]),
                              NSStringFromClass([ServerMockCtl class]),
+                             NSStringFromClass([MBHudDemoViewController class]),
                             ];
     return classArrays;
 }
