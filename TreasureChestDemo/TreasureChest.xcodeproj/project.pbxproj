@@ -29,6 +29,7 @@
 		B215CC492431F5290017BFD9 /* hud_error.png in Resources */ = {isa = PBXBuildFile; fileRef = B215CC432431F5290017BFD9 /* hud_error.png */; };
 		B215CC4A2431F5290017BFD9 /* hud_success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B215CC442431F5290017BFD9 /* hud_success@2x.png */; };
 		B215CC4B2431F5290017BFD9 /* hud_info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B215CC452431F5290017BFD9 /* hud_info@2x.png */; };
+		B23DDC272435D3D600743BC1 /* UIImageView+VideoCover.m in Sources */ = {isa = PBXBuildFile; fileRef = B23DDC262435D3D600743BC1 /* UIImageView+VideoCover.m */; };
 		B243E16423C4557C00B37519 /* CoreFundationReadme in Resources */ = {isa = PBXBuildFile; fileRef = B243E16323C4557C00B37519 /* CoreFundationReadme */; };
 		B24A85F824037D0500D1EECA /* VideoPlayerCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = B24A85F724037D0500D1EECA /* VideoPlayerCtl.m */; };
 		B24A85FB24039EB000D1EECA /* VideoPlayerBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = B24A85FA24039EB000D1EECA /* VideoPlayerBaseView.m */; };
@@ -133,6 +134,8 @@
 		B215CC432431F5290017BFD9 /* hud_error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hud_error.png; sourceTree = "<group>"; };
 		B215CC442431F5290017BFD9 /* hud_success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hud_success@2x.png"; sourceTree = "<group>"; };
 		B215CC452431F5290017BFD9 /* hud_info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hud_info@2x.png"; sourceTree = "<group>"; };
+		B23DDC252435D3D500743BC1 /* UIImageView+VideoCover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+VideoCover.h"; sourceTree = "<group>"; };
+		B23DDC262435D3D600743BC1 /* UIImageView+VideoCover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+VideoCover.m"; sourceTree = "<group>"; };
 		B243E16323C4557C00B37519 /* CoreFundationReadme */ = {isa = PBXFileReference; lastKnownFileType = text; path = CoreFundationReadme; sourceTree = "<group>"; };
 		B24A85F624037D0500D1EECA /* VideoPlayerCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoPlayerCtl.h; sourceTree = "<group>"; };
 		B24A85F724037D0500D1EECA /* VideoPlayerCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerCtl.m; sourceTree = "<group>"; };
@@ -372,6 +375,8 @@
 				B2830F0123B5F8890049AE99 /* UILabel+TextSize.m */,
 				B2BC387123BD976200D5B9C6 /* NSDecimalNumber+Extension.h */,
 				B2BC387223BD976200D5B9C6 /* NSDecimalNumber+Extension.m */,
+				B23DDC252435D3D500743BC1 /* UIImageView+VideoCover.h */,
+				B23DDC262435D3D600743BC1 /* UIImageView+VideoCover.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -898,6 +903,7 @@
 				B215CC3B2431BEBC0017BFD9 /* MBHudDemoViewController.m in Sources */,
 				B2AA0F4A23C5D12A00BEBA27 /* FMDictManager.m in Sources */,
 				B2D1BCC723D165E10000B413 /* DictionaryMainCell.m in Sources */,
+				B23DDC272435D3D600743BC1 /* UIImageView+VideoCover.m in Sources */,
 				B2506CEC23AB48E60034A472 /* UIView+Extension.m in Sources */,
 				B2506D0623AB65A90034A472 /* ResidentScrollViewCtl.m in Sources */,
 				B2BC388023C0385600D5B9C6 /* ShapeViewCtl.m in Sources */,
