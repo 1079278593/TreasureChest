@@ -298,6 +298,8 @@
 		3AE550CF23A9189F001D989E /* TreasureChest */ = {
 			isa = PBXGroup;
 			children = (
+				3AE550DE23A9189F001D989E /* Macro */,
+				3AE550DB23A9189F001D989E /* Extension */,
 				3AE550D023A9189F001D989E /* Swift */,
 				3AE550D323A9189F001D989E /* Objective-C */,
 				3AE550DA23A9189F001D989E /* Tool */,
@@ -317,14 +319,13 @@
 		3AE550D323A9189F001D989E /* Objective-C */ = {
 			isa = PBXGroup;
 			children = (
-				B28472342404B88E00C1194F /* DownloadUpload */,
+				B2DD689F23B2FB6C00106F4F /* PearlsPackage */,
 				B24A85EE24035B3900D1EECA /* VideoPlayerView */,
 				B2BC387723C0334F00D5B9C6 /* XMShapeView */,
 				B27B783923ACCF0A0083E6AE /* TabScrollView */,
 				B2506CED23AB565E0034A472 /* CollapsibleTableView */,
 				3AE550D423A9189F001D989E /* FormsView */,
 				3AE550D723A9189F001D989E /* ResidentScrollView */,
-				B2DD689F23B2FB6C00106F4F /* PearlsPackage */,
 			);
 			path = "Objective-C";
 			sourceTree = "<group>";
@@ -350,9 +351,8 @@
 		3AE550DA23A9189F001D989E /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				B28472342404B88E00C1194F /* DownloadUpload */,
 				B215CC352431BE410017BFD9 /* EasyProgressHud */,
-				3AE550DE23A9189F001D989E /* Macro */,
-				3AE550DB23A9189F001D989E /* Extension */,
 				B2B6B1A52408E68100187850 /* Regular */,
 				B2AA0F4123C5869F00BEBA27 /* FMDB */,
 				B27B780423AC61600083E6AE /* AFNetworking */,
