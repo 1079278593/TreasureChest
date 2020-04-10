@@ -87,6 +87,11 @@
 		B2BC387D23C037B100D5B9C6 /* XMCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2BC387C23C037B100D5B9C6 /* XMCircleView.m */; };
 		B2BC388023C0385600D5B9C6 /* ShapeViewCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = B2BC387F23C0385600D5B9C6 /* ShapeViewCtl.m */; };
 		B2BC388323C03E1100D5B9C6 /* XMDashLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2BC388223C03E1100D5B9C6 /* XMDashLineView.m */; };
+		B2C4592F2440524F00117BD7 /* UIBezierPath+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C459252440524F00117BD7 /* UIBezierPath+Geometry.m */; };
+		B2C459302440524F00117BD7 /* CuvbicCurveGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C459272440524F00117BD7 /* CuvbicCurveGeometry.m */; };
+		B2C459312440524F00117BD7 /* QuadCurveGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C459282440524F00117BD7 /* QuadCurveGeometry.m */; };
+		B2C459322440524F00117BD7 /* LineGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C459292440524F00117BD7 /* LineGeometry.m */; };
+		B2C459332440524F00117BD7 /* VectorGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C4592A2440524F00117BD7 /* VectorGeometry.m */; };
 		B2C94627242B383C00DC6FC1 /* UIColor+UIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C94626242B383C00DC6FC1 /* UIColor+UIImage.m */; };
 		B2D1BCC723D165E10000B413 /* DictionaryMainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D1BCC623D165E10000B413 /* DictionaryMainCell.m */; };
 		B2D1BCCA23D18F0F0000B413 /* DictionaryMainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D1BCC923D18F0F0000B413 /* DictionaryMainModel.m */; };
@@ -251,6 +256,16 @@
 		B2BC387F23C0385600D5B9C6 /* ShapeViewCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShapeViewCtl.m; sourceTree = "<group>"; };
 		B2BC388123C03E1100D5B9C6 /* XMDashLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMDashLineView.h; sourceTree = "<group>"; };
 		B2BC388223C03E1100D5B9C6 /* XMDashLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMDashLineView.m; sourceTree = "<group>"; };
+		B2C459252440524F00117BD7 /* UIBezierPath+Geometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+Geometry.m"; sourceTree = "<group>"; };
+		B2C459262440524F00117BD7 /* VectorGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VectorGeometry.h; sourceTree = "<group>"; };
+		B2C459272440524F00117BD7 /* CuvbicCurveGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CuvbicCurveGeometry.m; sourceTree = "<group>"; };
+		B2C459282440524F00117BD7 /* QuadCurveGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuadCurveGeometry.m; sourceTree = "<group>"; };
+		B2C459292440524F00117BD7 /* LineGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineGeometry.m; sourceTree = "<group>"; };
+		B2C4592A2440524F00117BD7 /* VectorGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VectorGeometry.m; sourceTree = "<group>"; };
+		B2C4592B2440524F00117BD7 /* UIBezierPath+Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+Geometry.h"; sourceTree = "<group>"; };
+		B2C4592C2440524F00117BD7 /* QuadCurveGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadCurveGeometry.h; sourceTree = "<group>"; };
+		B2C4592D2440524F00117BD7 /* CuvbicCurveGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CuvbicCurveGeometry.h; sourceTree = "<group>"; };
+		B2C4592E2440524F00117BD7 /* LineGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineGeometry.h; sourceTree = "<group>"; };
 		B2C94625242B383C00DC6FC1 /* UIColor+UIImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+UIImage.h"; sourceTree = "<group>"; };
 		B2C94626242B383C00DC6FC1 /* UIColor+UIImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+UIImage.m"; sourceTree = "<group>"; };
 		B2D1BCC523D165E10000B413 /* DictionaryMainCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DictionaryMainCell.h; sourceTree = "<group>"; };
@@ -490,6 +505,7 @@
 				B2169E0424404863002CFE3E /* VideoRecorderCtl.m */,
 				B2169E07244048EB002CFE3E /* DrawingBoardView.h */,
 				B2169E08244048EB002CFE3E /* DrawingBoardView.m */,
+				B2C458F424404D4B00117BD7 /* DrawView */,
 			);
 			path = VideoRecorderDemo;
 			sourceTree = "<group>";
@@ -704,6 +720,31 @@
 				B2BC388223C03E1100D5B9C6 /* XMDashLineView.m */,
 			);
 			path = XMShapeView;
+			sourceTree = "<group>";
+		};
+		B2C458F424404D4B00117BD7 /* DrawView */ = {
+			isa = PBXGroup;
+			children = (
+				B2C459242440524F00117BD7 /* UIBezierPath+Geometry */,
+			);
+			path = DrawView;
+			sourceTree = "<group>";
+		};
+		B2C459242440524F00117BD7 /* UIBezierPath+Geometry */ = {
+			isa = PBXGroup;
+			children = (
+				B2C459252440524F00117BD7 /* UIBezierPath+Geometry.m */,
+				B2C459262440524F00117BD7 /* VectorGeometry.h */,
+				B2C459272440524F00117BD7 /* CuvbicCurveGeometry.m */,
+				B2C459282440524F00117BD7 /* QuadCurveGeometry.m */,
+				B2C459292440524F00117BD7 /* LineGeometry.m */,
+				B2C4592A2440524F00117BD7 /* VectorGeometry.m */,
+				B2C4592B2440524F00117BD7 /* UIBezierPath+Geometry.h */,
+				B2C4592C2440524F00117BD7 /* QuadCurveGeometry.h */,
+				B2C4592D2440524F00117BD7 /* CuvbicCurveGeometry.h */,
+				B2C4592E2440524F00117BD7 /* LineGeometry.h */,
+			);
+			path = "UIBezierPath+Geometry";
 			sourceTree = "<group>";
 		};
 		B2D1BCC423D1658F0000B413 /* DictDemoView */ = {
@@ -947,6 +988,7 @@
 				B2055290240756980034310A /* ProductOptionViewFlowLayout.m in Sources */,
 				B27B784523ACD7C00083E6AE /* TabTitleScrollView.m in Sources */,
 				B293B5A5242C4FE6009F5887 /* CheckAuthorization.m in Sources */,
+				B2C459332440524F00117BD7 /* VectorGeometry.m in Sources */,
 				B2AA0F4723C5BB1300BEBA27 /* DictionaryMainCtl.m in Sources */,
 				B2DD689423B08EF100106F4F /* UIButton+Extension.m in Sources */,
 				3AE550E023A9189F001D989E /* TmpScrollView.swift in Sources */,
@@ -960,9 +1002,11 @@
 				B2169DFF24401E2B002CFE3E /* AudioMixWithVideo.m in Sources */,
 				B2D1BCCA23D18F0F0000B413 /* DictionaryMainModel.m in Sources */,
 				B284723E2404F5A600C1194F /* ServerMockCtl.m in Sources */,
+				B2C459312440524F00117BD7 /* QuadCurveGeometry.m in Sources */,
 				B2BC387323BD976200D5B9C6 /* NSDecimalNumber+Extension.m in Sources */,
 				B27B780723AC61A50083E6AE /* XMNetworking.m in Sources */,
 				B2DD689023B08C8500106F4F /* XMLabel.m in Sources */,
+				B2C459322440524F00117BD7 /* LineGeometry.m in Sources */,
 				B2BC387D23C037B100D5B9C6 /* XMCircleView.m in Sources */,
 				B2830F0223B5F8890049AE99 /* UILabel+TextSize.m in Sources */,
 				3A40235D23A62ED100BDB4E3 /* AppDelegate.m in Sources */,
@@ -983,6 +1027,7 @@
 				B2BC388023C0385600D5B9C6 /* ShapeViewCtl.m in Sources */,
 				B2830EFF23B5F8600049AE99 /* NSString+TextSize.m in Sources */,
 				B28472332403C3AA00C1194F /* URLSessionTaskCtl.m in Sources */,
+				B2C4592F2440524F00117BD7 /* UIBezierPath+Geometry.m in Sources */,
 				B28472372404B8EE00C1194F /* URLDownloadTask.m in Sources */,
 				B284724124051E2D00C1194F /* URLOfflineDownloadTask.m in Sources */,
 				B2BC387A23C0337A00D5B9C6 /* BaseShapeView.m in Sources */,
@@ -997,6 +1042,7 @@
 				B2169DFD24401E2B002CFE3E /* AudioMixWithAudio.m in Sources */,
 				B2AA0F4423C586CE00BEBA27 /* FMDBManager.m in Sources */,
 				B286A9B3242D8DF900E575BF /* EasyAlertView.m in Sources */,
+				B2C459302440524F00117BD7 /* CuvbicCurveGeometry.m in Sources */,
 				B2506CF923AB5B370034A472 /* CollapsibleViewModel.m in Sources */,
 				B24A85FE24039F1300D1EECA /* VideoPlayerSampleView.m in Sources */,
 				B2B6B1A82408E71C00187850 /* RegularOperate.m in Sources */,
