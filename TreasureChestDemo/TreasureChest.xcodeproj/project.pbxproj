@@ -29,6 +29,14 @@
 		B215CC492431F5290017BFD9 /* hud_error.png in Resources */ = {isa = PBXBuildFile; fileRef = B215CC432431F5290017BFD9 /* hud_error.png */; };
 		B215CC4A2431F5290017BFD9 /* hud_success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B215CC442431F5290017BFD9 /* hud_success@2x.png */; };
 		B215CC4B2431F5290017BFD9 /* hud_info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B215CC452431F5290017BFD9 /* hud_info@2x.png */; };
+		B2169DE724401B4F002CFE3E /* AudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2169DE524401B4F002CFE3E /* AudioRecorder.m */; };
+		B2169DE824401B4F002CFE3E /* ScreenRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2169DE624401B4F002CFE3E /* ScreenRecorder.m */; };
+		B2169DFD24401E2B002CFE3E /* AudioMixWithAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = B2169DF724401E2A002CFE3E /* AudioMixWithAudio.m */; };
+		B2169DFE24401E2B002CFE3E /* MediaMixtureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2169DF824401E2A002CFE3E /* MediaMixtureManager.m */; };
+		B2169DFF24401E2B002CFE3E /* AudioMixWithVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = B2169DFB24401E2B002CFE3E /* AudioMixWithVideo.m */; };
+		B2169E0224402573002CFE3E /* AudioRecorderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2169E0124402573002CFE3E /* AudioRecorderModel.m */; };
+		B2169E0524404863002CFE3E /* VideoRecorderCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = B2169E0424404863002CFE3E /* VideoRecorderCtl.m */; };
+		B2169E09244048EB002CFE3E /* DrawingBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2169E08244048EB002CFE3E /* DrawingBoardView.m */; };
 		B23DDC272435D3D600743BC1 /* UIImageView+VideoCover.m in Sources */ = {isa = PBXBuildFile; fileRef = B23DDC262435D3D600743BC1 /* UIImageView+VideoCover.m */; };
 		B243E16423C4557C00B37519 /* CoreFundationReadme in Resources */ = {isa = PBXBuildFile; fileRef = B243E16323C4557C00B37519 /* CoreFundationReadme */; };
 		B24A85F824037D0500D1EECA /* VideoPlayerCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = B24A85F724037D0500D1EECA /* VideoPlayerCtl.m */; };
@@ -135,6 +143,22 @@
 		B215CC432431F5290017BFD9 /* hud_error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hud_error.png; sourceTree = "<group>"; };
 		B215CC442431F5290017BFD9 /* hud_success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hud_success@2x.png"; sourceTree = "<group>"; };
 		B215CC452431F5290017BFD9 /* hud_info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hud_info@2x.png"; sourceTree = "<group>"; };
+		B2169DE324401B4F002CFE3E /* AudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioRecorder.h; sourceTree = "<group>"; };
+		B2169DE424401B4F002CFE3E /* ScreenRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenRecorder.h; sourceTree = "<group>"; };
+		B2169DE524401B4F002CFE3E /* AudioRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioRecorder.m; sourceTree = "<group>"; };
+		B2169DE624401B4F002CFE3E /* ScreenRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenRecorder.m; sourceTree = "<group>"; };
+		B2169DF724401E2A002CFE3E /* AudioMixWithAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioMixWithAudio.m; sourceTree = "<group>"; };
+		B2169DF824401E2A002CFE3E /* MediaMixtureManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaMixtureManager.m; sourceTree = "<group>"; };
+		B2169DF924401E2A002CFE3E /* AudioMixWithVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioMixWithVideo.h; sourceTree = "<group>"; };
+		B2169DFA24401E2A002CFE3E /* AudioMixWithAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioMixWithAudio.h; sourceTree = "<group>"; };
+		B2169DFB24401E2B002CFE3E /* AudioMixWithVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioMixWithVideo.m; sourceTree = "<group>"; };
+		B2169DFC24401E2B002CFE3E /* MediaMixtureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaMixtureManager.h; sourceTree = "<group>"; };
+		B2169E0024402573002CFE3E /* AudioRecorderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioRecorderModel.h; sourceTree = "<group>"; };
+		B2169E0124402573002CFE3E /* AudioRecorderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioRecorderModel.m; sourceTree = "<group>"; };
+		B2169E0324404863002CFE3E /* VideoRecorderCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoRecorderCtl.h; sourceTree = "<group>"; };
+		B2169E0424404863002CFE3E /* VideoRecorderCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoRecorderCtl.m; sourceTree = "<group>"; };
+		B2169E07244048EB002CFE3E /* DrawingBoardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawingBoardView.h; sourceTree = "<group>"; };
+		B2169E08244048EB002CFE3E /* DrawingBoardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawingBoardView.m; sourceTree = "<group>"; };
 		B23DDC252435D3D500743BC1 /* UIImageView+VideoCover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+VideoCover.h"; sourceTree = "<group>"; };
 		B23DDC262435D3D600743BC1 /* UIImageView+VideoCover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+VideoCover.m"; sourceTree = "<group>"; };
 		B243E16323C4557C00B37519 /* CoreFundationReadme */ = {isa = PBXFileReference; lastKnownFileType = text; path = CoreFundationReadme; sourceTree = "<group>"; };
@@ -351,6 +375,7 @@
 		3AE550DA23A9189F001D989E /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				B2169DE124401AF7002CFE3E /* MediaRecorder */,
 				B28472342404B88E00C1194F /* DownloadUpload */,
 				B215CC352431BE410017BFD9 /* EasyProgressHud */,
 				B2B6B1A52408E68100187850 /* Regular */,
@@ -431,6 +456,44 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		B2169DE124401AF7002CFE3E /* MediaRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				B2169DE324401B4F002CFE3E /* AudioRecorder.h */,
+				B2169DE524401B4F002CFE3E /* AudioRecorder.m */,
+				B2169DE424401B4F002CFE3E /* ScreenRecorder.h */,
+				B2169DE624401B4F002CFE3E /* ScreenRecorder.m */,
+				B2169DF024401D2E002CFE3E /* MediaMix */,
+			);
+			path = MediaRecorder;
+			sourceTree = "<group>";
+		};
+		B2169DF024401D2E002CFE3E /* MediaMix */ = {
+			isa = PBXGroup;
+			children = (
+				B2169DFC24401E2B002CFE3E /* MediaMixtureManager.h */,
+				B2169DF824401E2A002CFE3E /* MediaMixtureManager.m */,
+				B2169DFA24401E2A002CFE3E /* AudioMixWithAudio.h */,
+				B2169DF724401E2A002CFE3E /* AudioMixWithAudio.m */,
+				B2169DF924401E2A002CFE3E /* AudioMixWithVideo.h */,
+				B2169DFB24401E2B002CFE3E /* AudioMixWithVideo.m */,
+				B2169E0024402573002CFE3E /* AudioRecorderModel.h */,
+				B2169E0124402573002CFE3E /* AudioRecorderModel.m */,
+			);
+			path = MediaMix;
+			sourceTree = "<group>";
+		};
+		B2169E06244048B7002CFE3E /* VideoRecorderDemo */ = {
+			isa = PBXGroup;
+			children = (
+				B2169E0324404863002CFE3E /* VideoRecorderCtl.h */,
+				B2169E0424404863002CFE3E /* VideoRecorderCtl.m */,
+				B2169E07244048EB002CFE3E /* DrawingBoardView.h */,
+				B2169E08244048EB002CFE3E /* DrawingBoardView.m */,
+			);
+			path = VideoRecorderDemo;
+			sourceTree = "<group>";
+		};
 		B243E07823C4552E00B37519 /* CF-1151.16-源码研究 */ = {
 			isa = PBXGroup;
 			children = (
@@ -490,6 +553,7 @@
 				B2830EFB23B5E7DB0049AE99 /* FormsViewCtl.m */,
 				B2BC387E23C0385600D5B9C6 /* ShapeViewCtl.h */,
 				B2BC387F23C0385600D5B9C6 /* ShapeViewCtl.m */,
+				B2169E06244048B7002CFE3E /* VideoRecorderDemo */,
 				B284723B2404F58A00C1194F /* ServerMock */,
 				B28472302403C1B100C1194F /* URLSessionTaskDemo */,
 				B24A85F524037CE400D1EECA /* VideoPlayerDemo */,
@@ -886,12 +950,14 @@
 				B2AA0F4723C5BB1300BEBA27 /* DictionaryMainCtl.m in Sources */,
 				B2DD689423B08EF100106F4F /* UIButton+Extension.m in Sources */,
 				3AE550E023A9189F001D989E /* TmpScrollView.swift in Sources */,
+				B2169DE724401B4F002CFE3E /* AudioRecorder.m in Sources */,
 				3A40235923A62ED100BDB4E3 /* ViewController.m in Sources */,
 				3AE550E123A9189F001D989E /* FormsView.m in Sources */,
 				B24A85F824037D0500D1EECA /* VideoPlayerCtl.m in Sources */,
 				B27B784B23ADB2080083E6AE /* UIColor+Hex.m in Sources */,
 				B24A85FB24039EB000D1EECA /* VideoPlayerBaseView.m in Sources */,
 				B2506D0923AB83080034A472 /* BaseViewController.m in Sources */,
+				B2169DFF24401E2B002CFE3E /* AudioMixWithVideo.m in Sources */,
 				B2D1BCCA23D18F0F0000B413 /* DictionaryMainModel.m in Sources */,
 				B284723E2404F5A600C1194F /* ServerMockCtl.m in Sources */,
 				B2BC387323BD976200D5B9C6 /* NSDecimalNumber+Extension.m in Sources */,
@@ -904,12 +970,15 @@
 				B2BC388323C03E1100D5B9C6 /* XMDashLineView.m in Sources */,
 				B2DD68A223B2FC7D00106F4F /* XMSelectedButton.m in Sources */,
 				B27B784223ACD6D70083E6AE /* TabScrollView.m in Sources */,
+				B2169DFE24401E2B002CFE3E /* MediaMixtureManager.m in Sources */,
 				B2506D0D23AB88310034A472 /* CollapsibleViewCtl.m in Sources */,
 				B215CC3B2431BEBC0017BFD9 /* MBHudDemoViewController.m in Sources */,
+				B2169E0224402573002CFE3E /* AudioRecorderModel.m in Sources */,
 				B2AA0F4A23C5D12A00BEBA27 /* FMDictManager.m in Sources */,
 				B2D1BCC723D165E10000B413 /* DictionaryMainCell.m in Sources */,
 				B23DDC272435D3D600743BC1 /* UIImageView+VideoCover.m in Sources */,
 				B2506CEC23AB48E60034A472 /* UIView+Extension.m in Sources */,
+				B2169E09244048EB002CFE3E /* DrawingBoardView.m in Sources */,
 				B2506D0623AB65A90034A472 /* ResidentScrollViewCtl.m in Sources */,
 				B2BC388023C0385600D5B9C6 /* ShapeViewCtl.m in Sources */,
 				B2830EFF23B5F8600049AE99 /* NSString+TextSize.m in Sources */,
@@ -918,12 +987,14 @@
 				B284724124051E2D00C1194F /* URLOfflineDownloadTask.m in Sources */,
 				B2BC387A23C0337A00D5B9C6 /* BaseShapeView.m in Sources */,
 				B2DD68A523B2FCDF00106F4F /* PearlsPackageCtl.m in Sources */,
+				B2169DE824401B4F002CFE3E /* ScreenRecorder.m in Sources */,
 				B284723A2404B90300C1194F /* URLUploadTask.m in Sources */,
 				B28491502436EC0B004ECE52 /* UILabel+Insets.m in Sources */,
 				B2506CFC23AB5B4D0034A472 /* CollapsibleView.m in Sources */,
 				B2506CFF23AB5B690034A472 /* CollapsibleViewCell.m in Sources */,
 				B2B6B1A42408E4FD00187850 /* NumberInputView.m in Sources */,
 				3AE550E223A9189F001D989E /* ResidentScrollView.m in Sources */,
+				B2169DFD24401E2B002CFE3E /* AudioMixWithAudio.m in Sources */,
 				B2AA0F4423C586CE00BEBA27 /* FMDBManager.m in Sources */,
 				B286A9B3242D8DF900E575BF /* EasyAlertView.m in Sources */,
 				B2506CF923AB5B370034A472 /* CollapsibleViewModel.m in Sources */,
@@ -931,6 +1002,7 @@
 				B2B6B1A82408E71C00187850 /* RegularOperate.m in Sources */,
 				B215CC382431BEA30017BFD9 /* EasyProgress.m in Sources */,
 				B2C94627242B383C00DC6FC1 /* UIColor+UIImage.m in Sources */,
+				B2169E0524404863002CFE3E /* VideoRecorderCtl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
