@@ -45,6 +45,8 @@
     path.lineJoinStyle = kCGLineCapRound;
 
     [path stroke];
+    
+    self.renderPath = nil;
 }
 
 #pragma mark - touchesEvent

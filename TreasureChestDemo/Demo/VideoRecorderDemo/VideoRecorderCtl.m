@@ -8,11 +8,16 @@
 
 #import "VideoRecorderCtl.h"
 #import "DrawingBoardView.h"
+#import <MSWeakTimer.h>
+#import "ScreenRecorder.h"
 
 @interface VideoRecorderCtl ()
 
 @property(nonatomic, strong)DrawingBoardView *drawView;
 @property(nonatomic, strong)UIButton *startRecordBtn;
+@property(nonatomic, strong)UILabel *timeLabel;
+@property(nonatomic, strong)MSWeakTimer *timer;
+@property(nonatomic, assign)int duration;
 
 @end
 
@@ -28,14 +33,51 @@
 - (void)startRecordBtnEvent:(UIButton *)button {
     if (!button.selected) {
         //开始录制
+        self.duration = 0;
+        self.timer = [MSWeakTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countdownEvent:) userInfo:nil repeats:YES dispatchQueue:dispatch_get_main_queue()];
+        [self.timer fire];
+        [[ScreenRecorder sharedInstance]startRecording];
+        [ScreenRecorder sharedInstance].recorderView = self.drawView;
+        [ScreenRecorder sharedInstance].finishBlock = ^(NSString *videoPath) {
+            
+        };
     }else {
         //结束录制
+        [self.timer invalidate];
+        [[ScreenRecorder sharedInstance]stopRecording];
     }
     button.selected = !button.selected;
 }
 
+- (void)countdownEvent:(MSWeakTimer *)timer {
+    self.duration++;
+    [self showTime];
+    NSLog(@"%@",self.timeLabel.text);
+}
+
+#pragma mark - < private >
+- (void)showTime {
+    NSString *min = [NSString stringWithFormat:@"%d",self.duration/60];
+    NSString *sec = [NSString stringWithFormat:@"%d",self.duration % 60];
+    self.timeLabel.text = [NSString stringWithFormat:@"%@:%@",[self suitable:min],[self suitable:sec]];
+}
+
+- (NSString *)suitable:(NSString *)value {
+    if (value.length == 1) {
+        return [NSString stringWithFormat:@"0%@",value];
+    }
+    return value;
+}
+
 #pragma mark - < init >
 - (void)initView {
+    
+    [self.view addSubview:self.timeLabel];
+    [self.timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.equalTo(self.view);
+        make.top.equalTo(@64);
+        make.height.equalTo(@(30));
+    }];
     
     [self.view addSubview:self.startRecordBtn];
     [self.startRecordBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -52,7 +94,7 @@
         make.left.equalTo(self.view).offset(10);
         make.right.equalTo(self.view).offset(-10);
         make.bottom.equalTo(self.startRecordBtn.mas_top).offset(-5);
-        make.top.equalTo(@64);
+        make.top.equalTo(self.timeLabel.mas_bottom).offset(3);
     }];
 }
 
@@ -68,5 +110,15 @@
         
     }
     return _startRecordBtn;
+}
+
+- (UILabel *)timeLabel {
+    if (_timeLabel == nil) {
+        _timeLabel = [[UILabel alloc]init];
+        _timeLabel.textAlignment = NSTextAlignmentCenter;
+        _timeLabel.font = [UIFont systemFontOfSize:13];
+        _timeLabel.textColor = [[UIColor redColor]colorWithAlphaComponent:0.85];
+    }
+    return _timeLabel;
 }
 @end

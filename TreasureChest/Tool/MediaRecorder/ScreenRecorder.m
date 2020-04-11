@@ -13,10 +13,19 @@
 #import <UIKit/UIKit.h>
 
 @interface ScreenRecorder ()
+
 @property (nonatomic, strong) AVAssetWriter *videoWriter;
 @property (nonatomic, strong) AVAssetWriterInput *videoWriterInput;
 @property (nonatomic, strong) AVAssetWriterInputPixelBufferAdaptor *avAdaptor;
 @property (nonatomic, strong) NSDictionary *outputBufferPoolAuxAttributes;
+
+@property (nonatomic, retain) dispatch_queue_t render_queue;
+@property (nonatomic, retain) dispatch_queue_t append_pixelBuffer_queue;
+@property (nonatomic, retain) dispatch_semaphore_t frameRenderingSemaphore;
+@property (nonatomic, retain) dispatch_semaphore_t pixelAppendSemaphore;
+
+@property (nonatomic, assign) CGColorSpaceRef rgbColorSpace;
+@property (nonatomic, assign) CVPixelBufferPoolRef outputBufferPool;
 
 @property (nonatomic, strong) CADisplayLink *displayLink;
 @property (nonatomic, strong) NSOperationQueue *queue;
@@ -29,6 +38,7 @@
 //1. recorder use frameRate
 @property (nonatomic, assign) NSInteger frameCount;
 @property (nonatomic, assign) NSTimeInterval duration;
+@property (nonatomic, assign) CGFloat scale;
 
 //2. recorder use time
 @property (nonatomic) CFTimeInterval previousStamp;
@@ -36,17 +46,7 @@
 
 @end
 
-@implementation ScreenRecorder {
-    dispatch_queue_t _render_queue;
-    dispatch_queue_t _append_pixelBuffer_queue;
-    dispatch_semaphore_t _frameRenderingSemaphore;
-    dispatch_semaphore_t _pixelAppendSemaphore;
-    
-    CGFloat _scale;
-    
-    CGColorSpaceRef _rgbColorSpace;
-    CVPixelBufferPoolRef _outputBufferPool;
-}
+@implementation ScreenRecorder
 
 #pragma mark - Life Cycle
 + (instancetype)sharedInstance {
@@ -100,20 +100,10 @@
     
     _isRecording = (self.videoWriter.status == AVAssetWriterStatusWriting);
     
-    
     //displaylink方式
     _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(recordRunloop)];
     [_displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
-    if ([[UIDevice currentDevice] systemVersion].floatValue >= 10) {
-        //10.0以上的设置方法
-        _displayLink.preferredFramesPerSecond = frameRate;
-    } else {
-        /**
-         10.0以下的系统
-         iOS设备的刷新频率事60HZ也就是每秒60次。那么每一次刷新的时间就是1/60秒 大概16.7毫秒。当我们的frameInterval值为1的时候我们需要保证的是 CADisplayLink调用的｀target｀的函数计算时间不应该大于 16.7否则就会出现严重的丢帧现象
-         */
-        _displayLink.frameInterval = 1;
-    }
+    _displayLink.preferredFramesPerSecond = frameRate;
     
     //NSOperationQueue方式
     if (!self.queue) {
@@ -124,8 +114,7 @@
     // 2.创建操作：使用 NSInvocationOperation 创建操作
     NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(recordRunloop) object:nil];
     [self.queue addOperation:operation];
-    
-    
+
 }
 
 - (void)stopRecording {
@@ -199,10 +188,12 @@
         self.frameCountBlock(self.frameCount);
     }
     
+    @weakify(self);
     // throttle the number of frames to prevent meltdown
     // technique gleaned from Brad Larson's answer here: http://stackoverflow.com/a/5956119
     dispatch_async(_render_queue, ^{
-        if (![_videoWriterInput isReadyForMoreMediaData]) return;
+        @strongify(self);
+        if (![self.videoWriterInput isReadyForMoreMediaData]) return;
         
         CMTime time;
         if (isRecordFramRate) {
@@ -219,104 +210,67 @@
                 self.validStamp += self.displayLink.timestamp - self.previousStamp;
                 self.previousStamp = self.displayLink.timestamp;
             }
-            //            self.duration = CMTimeGetSeconds(self.validStamp);
             time = CMTimeMakeWithSeconds(self.validStamp, 1000);
             NSLog(@"validStamp:%f", self.validStamp);
-            NSLog(@"displayLink timestamp:%f", _displayLink.timestamp);
+            NSLog(@"displayLink timestamp:%f", self.displayLink.timestamp);
         }
         
-        //获取bitmapContext：1.从outputPoolBuffer获取，2.如果设置代理，将会从delegate获取
         CVPixelBufferRef pixelBuffer = NULL;
-        //1.从outputPoolBuffer获取
         CGContextRef bitmapContext = [self bitmapContextFromBuffer:&pixelBuffer];
-        //2.从delegate获取
-        //        if (self.delegate) {
-        //            [self.delegate writeBackgroundFrameInContext:&bitmapContext];
-        //        }
-        
         // draw each window into the context (other windows include UIKeyboard, UIAlert)
         // FIX: UIKeyboard is currently only rendered correctly in portrait orientation
         dispatch_sync(dispatch_get_main_queue(), ^{
-            UIGraphicsPushContext(bitmapContext); //切换到bitmapContext
+            UIGraphicsPushContext(bitmapContext);
             {
                 //填充背景色
                 CGContextSetFillColorWithColor(bitmapContext, [UIColor whiteColor].CGColor);
-                CGContextFillRect(bitmapContext, CGRectMake(0, 0, _viewSize.width, _viewSize.height));
+                CGContextFillRect(bitmapContext, CGRectMake(0, 0, self.viewSize.width, self.viewSize.height));
                 
-                /**
-                 绘制方式：drawInContext、renderInContext、drawViewHierarchyInRect、CGContextDrawImage()
-                 */
                 CGFloat progressTime = self.validStamp;
                 if (isRecordFramRate) {
                     progressTime = (CGFloat) self.frameCount / frameRate;
                 }
                 
-                //1.根据image绘制
-                //                UIImage *image = nil;
-//                UIImage *image = [[WorkManager sharedWorkManager].exportingWork workSnapShootAtTime:progressTime];
-//                if (self.delegate) {
-//                    [self.delegate writeImage:&image withTime:progressTime];
-//                }
-//                [image drawInRect:CGRectMake(0, 0, _viewSize.width, _viewSize.height)]; //如果image为nil？
-                //2.从presentationLayer绘制
                 [self.recorderView.layer.presentationLayer renderInContext:bitmapContext];
-                //3.从view绘制
-                //                [((SceneView *)self.recorderView) previewWork:progressTime];
-                //                [self.recorderView drawViewHierarchyInRect:CGRectMake(0, 0, _viewSize.width, _viewSize.height) afterScreenUpdates:NO];
-                
-                if (progressTime > self.totalTime) {
-                    [self stopRecording];
-                }
             }
             
             UIGraphicsPopContext();
         });
         
-        // append pixelBuffer on a async dispatch_queue, the next frame is rendered whilst this one appends
-        // must not overwhelm the queue with pixelBuffers, therefore:
-        // check if _append_pixelBuffer_queue is ready
-        // if it’s not ready, release pixelBuffer and bitmapContext
-        if (dispatch_semaphore_wait(_pixelAppendSemaphore, DISPATCH_TIME_NOW) == 0) {
-            dispatch_async(_append_pixelBuffer_queue, ^{
+        if (dispatch_semaphore_wait(self.pixelAppendSemaphore, DISPATCH_TIME_NOW) == 0) {
+            dispatch_async(self.append_pixelBuffer_queue, ^{
                 if (self.isRecording && self.videoWriter) {
-                    BOOL success = [_avAdaptor appendPixelBuffer:pixelBuffer withPresentationTime:time];
+                    BOOL success = [self.avAdaptor appendPixelBuffer:pixelBuffer withPresentationTime:time];
                     if (!success) {
                         NSLog(@"Warning: Unable to write buffer to video");
                     }
                     CGContextRelease(bitmapContext);
                     CVPixelBufferUnlockBaseAddress(pixelBuffer, 0);
                     CVPixelBufferRelease(pixelBuffer);
-                    
-                    dispatch_semaphore_signal(_pixelAppendSemaphore);
+                    dispatch_semaphore_signal(self.pixelAppendSemaphore);
                 }
-                
             });
         } else {
             CGContextRelease(bitmapContext);
             CVPixelBufferUnlockBaseAddress(pixelBuffer, 0);
             CVPixelBufferRelease(pixelBuffer);
         }
-        
-        dispatch_semaphore_signal(_frameRenderingSemaphore);
+        dispatch_semaphore_signal(self.frameRenderingSemaphore);
     });
 }
 
 - (void)recordFinish;
 {
     NSLog(@"recordFinishWithSession");
+    @weakify(self)
     dispatch_async(_render_queue, ^{
-        dispatch_sync(_append_pixelBuffer_queue, ^{
-            
-            [_videoWriterInput markAsFinished];
-            [_videoWriter finishWritingWithCompletionHandler:^{
-                
-                void (^completion)(void) = ^() {
-                    [self resetRecorder];
-                    self.finishBlock(self.videoPath); //传出地址
-                };
-                
+        @strongify(self)
+        dispatch_sync(self.append_pixelBuffer_queue, ^{
+            [self.videoWriterInput markAsFinished];
+            [self.videoWriter finishWritingWithCompletionHandler:^{
                 if (self.videoURL) {
-                    completion();
+                    [self resetRecorder];
+                    self.finishBlock(self.videoPath);
                 }
             }];
         });

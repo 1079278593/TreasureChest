@@ -13,7 +13,7 @@ target 'TreasureChest' do
   pod 'AFNetworking'
   pod 'MJExtension'
   pod 'ReactiveObjC', '3.1.0'
-  
+  pod 'MSWeakTimer', '~> 1.1.0'
   pod 'MJRefresh', '3.2.0'
   
   target 'TreasureChestTests' do
