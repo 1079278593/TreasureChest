@@ -24,6 +24,8 @@
 @property (nonatomic, assign) CGPoint ctlPoint;
 @property (nonatomic, assign) CGFloat prePathLength;
 
+@property (nonatomic, strong) LOTAnimationView *lotView;
+
 @end
 
 @implementation DrawingBoardView
@@ -36,15 +38,6 @@
     return self;
 }
 
-- (void)initView {
-    
-    LOTAnimationView *animation = [LOTAnimationView animationNamed:@"Lottie"];
-    [self addSubview:animation];
-    [animation playWithCompletion:^(BOOL animationFinished) {
-      // Do Something
-    }];
-}
-
 - (void)drawRect:(CGRect)rect{
 
     [[UIColor redColor] set];
@@ -54,12 +47,12 @@
     path.lineWidth     = 5.f;
     path.lineCapStyle  = kCGLineCapRound;
     path.lineJoinStyle = kCGLineCapRound;
-    
+
     [path stroke];
-    
+
     self.renderPath = nil;
-    
-    
+
+
 }
 
 
@@ -109,7 +102,13 @@
 
 #pragma mark - < init >
 - (void)initView {
-    
+    self.lotView = [LOTAnimationView animationNamed:@"give_the_thumbs-up"];
+    self.lotView.loopAnimation = true;
+    self.lotView.frame = CGRectMake(0, 0, 100, 100);
+    [self addSubview:self.lotView];
+    [self.lotView playWithCompletion:^(BOOL animationFinished) {
+      // Do Something
+    }];
 }
 
 

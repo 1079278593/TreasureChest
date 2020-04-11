@@ -157,6 +157,7 @@
 		B2C459322440524F00117BD7 /* LineGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C459292440524F00117BD7 /* LineGeometry.m */; };
 		B2C459332440524F00117BD7 /* VectorGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C4592A2440524F00117BD7 /* VectorGeometry.m */; };
 		B2C94627242B383C00DC6FC1 /* UIColor+UIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C94626242B383C00DC6FC1 /* UIColor+UIImage.m */; };
+		B2CD39212441D5BE007D1B45 /* give_the_thumbs-up.json in Resources */ = {isa = PBXBuildFile; fileRef = B2CD39202441D5BE007D1B45 /* give_the_thumbs-up.json */; };
 		B2D1BCC723D165E10000B413 /* DictionaryMainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D1BCC623D165E10000B413 /* DictionaryMainCell.m */; };
 		B2D1BCCA23D18F0F0000B413 /* DictionaryMainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D1BCC923D18F0F0000B413 /* DictionaryMainModel.m */; };
 		B2DD689023B08C8500106F4F /* XMLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DD688F23B08C8500106F4F /* XMLabel.m */; };
@@ -466,6 +467,7 @@
 		B2C4592E2440524F00117BD7 /* LineGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineGeometry.h; sourceTree = "<group>"; };
 		B2C94625242B383C00DC6FC1 /* UIColor+UIImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+UIImage.h"; sourceTree = "<group>"; };
 		B2C94626242B383C00DC6FC1 /* UIColor+UIImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+UIImage.m"; sourceTree = "<group>"; };
+		B2CD39202441D5BE007D1B45 /* give_the_thumbs-up.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "give_the_thumbs-up.json"; sourceTree = "<group>"; };
 		B2D1BCC523D165E10000B413 /* DictionaryMainCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DictionaryMainCell.h; sourceTree = "<group>"; };
 		B2D1BCC623D165E10000B413 /* DictionaryMainCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DictionaryMainCell.m; sourceTree = "<group>"; };
 		B2D1BCC823D18F0F0000B413 /* DictionaryMainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DictionaryMainModel.h; sourceTree = "<group>"; };
@@ -1039,6 +1041,7 @@
 		B26FBD962441D062003DB3BE /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				B2CD39202441D5BE007D1B45 /* give_the_thumbs-up.json */,
 				B26FBD972441D06C003DB3BE /* elephant_jumping.json */,
 				B26FBD982441D06C003DB3BE /* perchick_tgsticker_sticker.json */,
 			);
@@ -1345,6 +1348,7 @@
 				3A40235B23A62ED100BDB4E3 /* Main.storyboard in Resources */,
 				3A40235823A62ED100BDB4E3 /* Assets.xcassets in Resources */,
 				B215CC4B2431F5290017BFD9 /* hud_info@2x.png in Resources */,
+				B2CD39212441D5BE007D1B45 /* give_the_thumbs-up.json in Resources */,
 				B215CC4A2431F5290017BFD9 /* hud_success@2x.png in Resources */,
 				B2506D1423ABA12D0034A472 /* options_none_icon@3x.png in Resources */,
 				B215CC492431F5290017BFD9 /* hud_error.png in Resources */,
