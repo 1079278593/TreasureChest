@@ -10,6 +10,9 @@
 #import "DrawingBoardView.h"
 #import <MSWeakTimer.h>
 #import "ScreenRecorder.h"
+#import "EasyGraphicsRender.h"
+#import "CheckAuthorization.h"
+#import <Photos/Photos.h>
 
 @interface VideoRecorderCtl ()
 
@@ -27,6 +30,20 @@
     [super viewDidLoad];
 
     [self initView];
+    
+    
+    EasyGraphicsRender *render = [[EasyGraphicsRender alloc]init];
+    [render runDrawingActions:^(__kindof UIGraphicsRendererContext * _Nonnull rendererContext) {
+        
+    } completionActions:^(__kindof UIGraphicsRendererContext * _Nonnull rendererContext) {
+        
+    } error:nil];
+    
+    [CheckAuthorization checkAlbumAuthorizationStatus:^(BOOL result) {
+        if (result) {
+        }else {
+        }
+    }];
 }
 
 #pragma mark - < event >
@@ -50,9 +67,28 @@
 }
 
 - (void)countdownEvent:(MSWeakTimer *)timer {
+    
+    
+    
     self.duration++;
     [self showTime];
     NSLog(@"%@",self.timeLabel.text);
+    
+    
+    CGFloat width = 2 * self.duration;
+    UIImage *tmp = [EasyGraphicsRender resizeImage:[UIImage imageNamed:@"bgPic"] size:CGSizeMake(width, width)];
+    [self saveToAlbum:tmp];
+}
+
+
+- (void)saveToAlbum:(UIImage *)image {
+    PHPhotoLibrary *photoLibrary = [PHPhotoLibrary sharedPhotoLibrary];
+    [photoLibrary performChanges:^{
+        [PHAssetChangeRequest creationRequestForAssetFromImage:image];
+    } completionHandler:^(BOOL success, NSError * _Nullable error) {
+        NSString *msg = success ? @"已经保存到相册" : @"未能保存视频到相册";
+        NSLog(@"%@",msg);
+    }];
 }
 
 #pragma mark - < private >

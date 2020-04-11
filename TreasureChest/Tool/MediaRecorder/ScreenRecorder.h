@@ -40,7 +40,7 @@ typedef void (^VideoFrameCountBlock)(NSInteger frameCount);
  *录制这个目标view
  */
 @property (nonatomic, strong)UIView *recorderView;
-
+@property (nonatomic, assign)CVPixelBufferRef recordPixelBuffer;
 
 /*
  *必须设置

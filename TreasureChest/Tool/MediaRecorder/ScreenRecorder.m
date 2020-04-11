@@ -277,6 +277,32 @@
     });
 }
 
+//- (CGContextRef)pixelBufferAfterRender {
+//    CVPixelBufferRef pixelBuffer = NULL;
+//    CGContextRef bitmapContext = [self bitmapContextFromBuffer:&pixelBuffer];
+//    // draw each window into the context (other windows include UIKeyboard, UIAlert)
+//    // FIX: UIKeyboard is currently only rendered correctly in portrait orientation
+//    dispatch_sync(dispatch_get_main_queue(), ^{
+//        UIGraphicsPushContext(bitmapContext);
+//        {
+//            //填充背景色
+//            CGContextSetFillColorWithColor(bitmapContext, [UIColor whiteColor].CGColor);
+//            CGContextFillRect(bitmapContext, CGRectMake(0, 0, self.viewSize.width, self.viewSize.height));
+//            
+//            CGFloat progressTime = self.validStamp;
+//            if (isRecordFramRate) {
+//                progressTime = (CGFloat) self.frameCount / frameRate;
+//            }
+//            
+//            [self.recorderView.layer.presentationLayer renderInContext:bitmapContext];
+//        }
+//        
+//        UIGraphicsPopContext();
+//    });
+//    
+//    return bitmapContext;
+//}
+
 - (CGContextRef)bitmapContextFromBuffer:(CVPixelBufferRef *)pixelBuffer {
     
     CVPixelBufferPoolCreatePixelBuffer(NULL, _outputBufferPool, pixelBuffer);

@@ -7,6 +7,8 @@
 //
 
 #import "DrawingBoardView.h"
+#import "Lottie.h"
+
 @interface DrawingBoardView (){
     CGPoint location,previousLocation;
     CGPoint previousMidPoint;
@@ -34,6 +36,15 @@
     return self;
 }
 
+- (void)initView {
+    
+    LOTAnimationView *animation = [LOTAnimationView animationNamed:@"Lottie"];
+    [self addSubview:animation];
+    [animation playWithCompletion:^(BOOL animationFinished) {
+      // Do Something
+    }];
+}
+
 - (void)drawRect:(CGRect)rect{
 
     [[UIColor redColor] set];
@@ -43,11 +54,14 @@
     path.lineWidth     = 5.f;
     path.lineCapStyle  = kCGLineCapRound;
     path.lineJoinStyle = kCGLineCapRound;
-
+    
     [path stroke];
     
     self.renderPath = nil;
+    
+    
 }
+
 
 #pragma mark - touchesEvent
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
