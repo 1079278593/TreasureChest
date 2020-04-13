@@ -102,7 +102,8 @@
 
 #pragma mark - < init >
 - (void)initView {
-    self.lotView = [LOTAnimationView animationNamed:@"give_the_thumbs-up"];
+//    self.lotView = [LOTAnimationView animationNamed:@"give_the_thumbs-up"];
+    self.lotView = [LOTAnimationView animationNamed:@"perchick_tgsticker_sticker"];
     self.lotView.loopAnimation = true;
     self.lotView.frame = CGRectMake(0, 0, 100, 100);
     [self addSubview:self.lotView];

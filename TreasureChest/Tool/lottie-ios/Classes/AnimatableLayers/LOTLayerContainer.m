@@ -204,13 +204,16 @@
 // MARK - Animation
 
 + (BOOL)needsDisplayForKey:(NSString *)key {
+    NSLog(@"needsDisplayForKey: %@",key);
   if ([key isEqualToString:@"currentFrame"]) {
     return YES;
   }
   return [super needsDisplayForKey:key];
 }
 
+#pragma mark - < 关键点 >
 - (id<CAAction>)actionForKey:(NSString *)event {
+    NSLog(@"actionForKey: %@",event);
   if ([event isEqualToString:@"currentFrame"]) {
     CABasicAnimation *theAnimation = [CABasicAnimation
                                       animationWithKeyPath:event];
@@ -231,7 +234,9 @@
   return self;
 }
 
+#pragma mark - < 循环点 >
 - (void)display {
+    NSLog(@"LOTLayerContainer: display");
   @synchronized(self) {
     LOTLayerContainer *presentation = self;
     if (self.animationKeys.count &&
