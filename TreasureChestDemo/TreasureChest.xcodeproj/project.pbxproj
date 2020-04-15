@@ -174,6 +174,76 @@
 			remoteGlobalIDString = B2B835EC2397D21E00A562DB;
 			remoteInfo = TreasureChest;
 		};
+		B2E869D624471D0B0085F7ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2E869C924471D0B0085F7ED /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A4FA15D44DF6BAC7550EDEED10862AA3;
+			remoteInfo = AFNetworking;
+		};
+		B2E869D824471D0B0085F7ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2E869C924471D0B0085F7ED /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A3A80BA70CFB7F75C5391BEBBBA8C9DA;
+			remoteInfo = FMDB;
+		};
+		B2E869DA24471D0B0085F7ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2E869C924471D0B0085F7ED /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1FFED36A657123030ABB700256D73F15;
+			remoteInfo = Masonry;
+		};
+		B2E869DC24471D0B0085F7ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2E869C924471D0B0085F7ED /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2B276B0A79173A1D6E83C9B4FB9A4A57;
+			remoteInfo = MJExtension;
+		};
+		B2E869DE24471D0B0085F7ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2E869C924471D0B0085F7ED /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E49D6D248DD1CEE584E6776B9164A1B2;
+			remoteInfo = MJRefresh;
+		};
+		B2E869E024471D0B0085F7ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2E869C924471D0B0085F7ED /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8E950E681365A41B93C3626C212A2891;
+			remoteInfo = MSWeakTimer;
+		};
+		B2E869E224471D0B0085F7ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2E869C924471D0B0085F7ED /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DA80161A4688122396096CEA2BFCFB0;
+			remoteInfo = "Pods-TreasureChest";
+		};
+		B2E869E424471D0B0085F7ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2E869C924471D0B0085F7ED /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E9E10A25DFFB5F68F5438CA4B93B7603;
+			remoteInfo = "Pods-TreasureChestTests";
+		};
+		B2E869E624471D0B0085F7ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2E869C924471D0B0085F7ED /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9621C6383F5733C35183B2DE886C7EC6;
+			remoteInfo = ReactiveObjC;
+		};
+		B2E869E824471D0B0085F7ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2E869C924471D0B0085F7ED /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B0B214D775196BA7CA8E17E53048A493;
+			remoteInfo = SDWebImage;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -481,6 +551,7 @@
 		B2DD68A123B2FC7D00106F4F /* XMSelectedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMSelectedButton.m; sourceTree = "<group>"; };
 		B2DD68A323B2FCDF00106F4F /* PearlsPackageCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PearlsPackageCtl.h; sourceTree = "<group>"; };
 		B2DD68A423B2FCDF00106F4F /* PearlsPackageCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PearlsPackageCtl.m; sourceTree = "<group>"; };
+		B2E869C924471D0B0085F7ED /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		C748618DC627A1695BA6E142 /* Pods_TreasureChestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TreasureChestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D70F62B455C105A44C448481 /* Pods-TreasureChest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreasureChest.debug.xcconfig"; path = "Target Support Files/Pods-TreasureChest/Pods-TreasureChest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1142,6 +1213,7 @@
 				B2B835EE2397D21E00A562DB /* Products */,
 				D3EB552CDB5DF92A98C9E524 /* Frameworks */,
 				F5015A66E03FBB1B52EA7E49 /* Pods */,
+				B2E869C924471D0B0085F7ED /* Pods.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1228,6 +1300,23 @@
 				B2DD68A123B2FC7D00106F4F /* XMSelectedButton.m */,
 			);
 			path = PearlsPackage;
+			sourceTree = "<group>";
+		};
+		B2E869CA24471D0B0085F7ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B2E869D724471D0B0085F7ED /* AFNetworking.framework */,
+				B2E869D924471D0B0085F7ED /* FMDB.framework */,
+				B2E869DB24471D0B0085F7ED /* Masonry.framework */,
+				B2E869DD24471D0B0085F7ED /* MJExtension.framework */,
+				B2E869DF24471D0B0085F7ED /* MJRefresh.framework */,
+				B2E869E124471D0B0085F7ED /* MSWeakTimer.framework */,
+				B2E869E324471D0B0085F7ED /* Pods_TreasureChest.framework */,
+				B2E869E524471D0B0085F7ED /* Pods_TreasureChestTests.framework */,
+				B2E869E724471D0B0085F7ED /* ReactiveObjC.framework */,
+				B2E869E924471D0B0085F7ED /* SDWebImage.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		D3EB552CDB5DF92A98C9E524 /* Frameworks */ = {
@@ -1321,6 +1410,12 @@
 			mainGroup = B2B835E42397D21E00A562DB;
 			productRefGroup = B2B835EE2397D21E00A562DB /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B2E869CA24471D0B0085F7ED /* Products */;
+					ProjectRef = B2E869C924471D0B0085F7ED /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				B2B835EC2397D21E00A562DB /* TreasureChest */,
@@ -1328,6 +1423,79 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B2E869D724471D0B0085F7ED /* AFNetworking.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AFNetworking.framework;
+			remoteRef = B2E869D624471D0B0085F7ED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B2E869D924471D0B0085F7ED /* FMDB.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FMDB.framework;
+			remoteRef = B2E869D824471D0B0085F7ED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B2E869DB24471D0B0085F7ED /* Masonry.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Masonry.framework;
+			remoteRef = B2E869DA24471D0B0085F7ED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B2E869DD24471D0B0085F7ED /* MJExtension.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MJExtension.framework;
+			remoteRef = B2E869DC24471D0B0085F7ED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B2E869DF24471D0B0085F7ED /* MJRefresh.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MJRefresh.framework;
+			remoteRef = B2E869DE24471D0B0085F7ED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B2E869E124471D0B0085F7ED /* MSWeakTimer.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MSWeakTimer.framework;
+			remoteRef = B2E869E024471D0B0085F7ED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B2E869E324471D0B0085F7ED /* Pods_TreasureChest.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_TreasureChest.framework;
+			remoteRef = B2E869E224471D0B0085F7ED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B2E869E524471D0B0085F7ED /* Pods_TreasureChestTests.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_TreasureChestTests.framework;
+			remoteRef = B2E869E424471D0B0085F7ED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B2E869E724471D0B0085F7ED /* ReactiveObjC.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ReactiveObjC.framework;
+			remoteRef = B2E869E624471D0B0085F7ED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B2E869E924471D0B0085F7ED /* SDWebImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SDWebImage.framework;
+			remoteRef = B2E869E824471D0B0085F7ED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B2B835EB2397D21E00A562DB /* Resources */ = {
