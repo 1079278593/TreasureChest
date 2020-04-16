@@ -2,11 +2,10 @@
 platform :ios, '10.0'
 source 'https://github.com/CocoaPods/Specs.git'
 
+#----------TreasureChest----------#
 target 'TreasureChest' do
-  # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for TreasureChest
   pod 'FMDB'
   pod 'Masonry'
   pod 'SDWebImage', '~> 3.7.5'
@@ -15,6 +14,29 @@ target 'TreasureChest' do
   pod 'ReactiveObjC', '3.1.0'
   pod 'MSWeakTimer', '~> 1.1.0'
   pod 'MJRefresh', '3.2.0'
+  
+  target 'TreasureChestTests' do
+    inherit! :search_paths
+  end
+
+end
+
+
+
+
+#----------TreasureChestSwiftDemo----------#
+target 'TreasureChest' do
+  use_frameworks!
+
+#  pod 'FMDB'
+#  pod 'Masonry'
+#  pod 'SDWebImage', '~> 3.7.5'
+#  pod 'AFNetworking'
+#  pod 'MJExtension'
+#  pod 'ReactiveObjC', '3.1.0'
+#  pod 'MSWeakTimer', '~> 1.1.0'
+#  pod 'MJRefresh', '3.2.0'
+  pod 'lottie-ios'
   
   target 'TreasureChestTests' do
     inherit! :search_paths
