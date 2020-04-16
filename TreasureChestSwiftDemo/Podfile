@@ -7,8 +7,8 @@ target 'TreasureChestSwiftDemo' do
   use_frameworks!
 
   # Pods for TreasureChestSwiftDemo
-  pod 'FMDB'
-  pod 'Masonry'
+#  pod 'FMDB'
+#  pod 'Masonry'
   #  pod 'SDWebImage', '~> 3.7.5'
   #  pod 'AFNetworking'
   #  pod 'MJExtension'
