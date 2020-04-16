@@ -24,7 +24,7 @@
 @property (nonatomic, assign) CGPoint ctlPoint;
 @property (nonatomic, assign) CGFloat prePathLength;
 
-@property (nonatomic, strong) LOTAnimationView *lotView;
+//@property (nonatomic, strong) LOTAnimationView *lotView;
 
 @end
 
@@ -103,13 +103,13 @@
 #pragma mark - < init >
 - (void)initView {
 //    self.lotView = [LOTAnimationView animationNamed:@"give_the_thumbs-up"];
-    self.lotView = [LOTAnimationView animationNamed:@"perchick_tgsticker_sticker"];
-    self.lotView.loopAnimation = true;
-    self.lotView.frame = CGRectMake(0, 0, 100, 100);
-    [self addSubview:self.lotView];
-    [self.lotView playWithCompletion:^(BOOL animationFinished) {
-      // Do Something
-    }];
+//    self.lotView = [LOTAnimationView animationNamed:@"perchick_tgsticker_sticker"];
+//    self.lotView.loopAnimation = true;
+//    self.lotView.frame = CGRectMake(0, 0, 100, 100);
+//    [self addSubview:self.lotView];
+//    [self.lotView playWithCompletion:^(BOOL animationFinished) {
+//
+//    }];
 }
 
 

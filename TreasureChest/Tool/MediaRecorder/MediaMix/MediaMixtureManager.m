@@ -41,7 +41,7 @@
     
     self.screenRecorder = [ScreenRecorder sharedInstance];
     self.videoMix = [AudioMixWithVideo sharedInstance];
-    [self addNotification];
+//    [self addNotification];
 }
 
 #pragma mark - Events

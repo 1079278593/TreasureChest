@@ -204,7 +204,7 @@
 // MARK - Animation
 
 + (BOOL)needsDisplayForKey:(NSString *)key {
-    NSLog(@"needsDisplayForKey: %@",key);
+//    NSLog(@"needsDisplayForKey: %@",key);
   if ([key isEqualToString:@"currentFrame"]) {
     return YES;
   }
@@ -212,6 +212,15 @@
 }
 
 #pragma mark - < 关键点 >
+/**
+ 我们把改变属性时CALayer自动应用的动画称作行为，当CALayer的属性被修改时候，它会调用-actionForKey:方法，传递属性的名称。剩下的操作都在CALayer的头文件中有详细的说明，实质上是如下几步：
+
+ 图层首先检测它是否有委托，并且是否实现CALayerDelegate协议指定的-actionForLayer:forKey方法。如果有，直接调用并返回结果。
+ 如果没有委托，或者委托没有实现-actionForLayer:forKey方法，图层接着检查包含属性名称对应行为映射的actions字典。
+ 如果actions字典没有包含对应的属性，那么图层接着在它的style字典接着搜索属性名。
+ 最后，如果在style里面也找不到对应的行为，那么图层将会直接调用定义了每个属性的标准行为的-defaultActionForKey:方法。
+ 所以一轮完整的搜索结束之后，-actionForKey:要么返回空（这种情况下将不会有动画发生），要么是CAAction协议对应的对象，最后CALayer拿这个结果去对先前和当前的值做动画。
+ */
 - (id<CAAction>)actionForKey:(NSString *)event {
     NSLog(@"actionForKey: %@",event);
   if ([event isEqualToString:@"currentFrame"]) {
@@ -236,7 +245,7 @@
 
 #pragma mark - < 循环点 >
 - (void)display {
-    NSLog(@"LOTLayerContainer: display");
+//    NSLog(@"LOTLayerContainer: display");
   @synchronized(self) {
     LOTLayerContainer *presentation = self;
     if (self.animationKeys.count &&
