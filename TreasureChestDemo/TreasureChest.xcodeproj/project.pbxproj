@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -43,7 +43,6 @@
 		B24A85FB24039EB000D1EECA /* VideoPlayerBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = B24A85FA24039EB000D1EECA /* VideoPlayerBaseView.m */; };
 		B24A85FE24039F1300D1EECA /* VideoPlayerSampleView.m in Sources */ = {isa = PBXBuildFile; fileRef = B24A85FD24039F1300D1EECA /* VideoPlayerSampleView.m */; };
 		B24BB3462441A7F300D5C7A6 /* EasyGraphicsRender.m in Sources */ = {isa = PBXBuildFile; fileRef = B24BB3452441A7F300D5C7A6 /* EasyGraphicsRender.m */; };
-		B24E7C7C242A15A50037A3CF /* TrainingStep.plist in Resources */ = {isa = PBXBuildFile; fileRef = B24E7C7B242A15A50037A3CF /* TrainingStep.plist */; };
 		B2506CEC23AB48E60034A472 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B2506CEB23AB48E60034A472 /* UIView+Extension.m */; };
 		B2506CF923AB5B370034A472 /* CollapsibleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2506CF823AB5B370034A472 /* CollapsibleViewModel.m */; };
 		B2506CFC23AB5B4D0034A472 /* CollapsibleView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2506CFB23AB5B4D0034A472 /* CollapsibleView.m */; };
@@ -239,8 +238,6 @@
 		B24A85FD24039F1300D1EECA /* VideoPlayerSampleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerSampleView.m; sourceTree = "<group>"; };
 		B24BB3442441A7F300D5C7A6 /* EasyGraphicsRender.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasyGraphicsRender.h; sourceTree = "<group>"; };
 		B24BB3452441A7F300D5C7A6 /* EasyGraphicsRender.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyGraphicsRender.m; sourceTree = "<group>"; };
-		B24BB34B2441C6C700D5C7A6 /* TreasureChest-Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TreasureChest-Swift.h"; sourceTree = "<group>"; };
-		B24E7C7B242A15A50037A3CF /* TrainingStep.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TrainingStep.plist; path = "../../../../../Library/Mobile Documents/com~apple~CloudDocs/TrainingStep.plist"; sourceTree = "<group>"; };
 		B2506CEA23AB48E60034A472 /* UIView+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		B2506CEB23AB48E60034A472 /* UIView+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		B2506CF723AB5B370034A472 /* CollapsibleViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollapsibleViewModel.h; sourceTree = "<group>"; };
@@ -521,15 +518,11 @@
 				3A40234723A62ED100BDB4E3 /* AppDelegate.m */,
 				3A40234923A62ED100BDB4E3 /* ViewController.h */,
 				3A40234123A62ED100BDB4E3 /* ViewController.m */,
-				B2506D0723AB83080034A472 /* BaseViewController.h */,
-				B2506D0823AB83080034A472 /* BaseViewController.m */,
 				3A40234223A62ED100BDB4E3 /* LaunchScreen.storyboard */,
 				3A40234423A62ED100BDB4E3 /* Main.storyboard */,
 				3A40234623A62ED100BDB4E3 /* main.m */,
 				3A40234823A62ED100BDB4E3 /* Info.plist */,
-				B24E7C7B242A15A50037A3CF /* TrainingStep.plist */,
 				3AE550EA23A91A93001D989E /* TreasureChest-Bridging-Header.h */,
-				B24BB34B2441C6C700D5C7A6 /* TreasureChest-Swift.h */,
 				B2506D0A23AB84330034A472 /* PrefixHeader.pch */,
 				B243E07823C4552E00B37519 /* CF-1151.16-源码研究 */,
 				3A40234023A62ED100BDB4E3 /* Assets.xcassets */,
@@ -540,6 +533,7 @@
 		3AE550CF23A9189F001D989E /* TreasureChest */ = {
 			isa = PBXGroup;
 			children = (
+				B21EF68624482F0600BEBB9E /* BaseClass */,
 				3AE550DE23A9189F001D989E /* Macro */,
 				3AE550DB23A9189F001D989E /* Extension */,
 				3AE550D023A9189F001D989E /* Swift */,
@@ -713,6 +707,15 @@
 				B2C459242440524F00117BD7 /* UIBezierPath+Geometry */,
 			);
 			path = VideoRecorderDemo;
+			sourceTree = "<group>";
+		};
+		B21EF68624482F0600BEBB9E /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				B2506D0723AB83080034A472 /* BaseViewController.h */,
+				B2506D0823AB83080034A472 /* BaseViewController.m */,
+			);
+			path = BaseClass;
 			sourceTree = "<group>";
 		};
 		B243E07823C4552E00B37519 /* CF-1151.16-源码研究 */ = {
@@ -1137,8 +1140,8 @@
 			children = (
 				3A99DE1623ABCB83002DDF23 /* TreasureChest.podspec */,
 				B2506D0323AB63E40034A472 /* Demo */,
-				3AE550CF23A9189F001D989E /* TreasureChest */,
 				3A40233E23A62ED100BDB4E3 /* TreasureChestDemo */,
+				3AE550CF23A9189F001D989E /* TreasureChest */,
 				B2B8360B2397D22000A562DB /* TreasureChestTests */,
 				B2B835EE2397D21E00A562DB /* Products */,
 				D0C5E07F76E7D30153DBC62C /* Pods */,
@@ -1334,7 +1337,6 @@
 				B2506D2023ABA1480034A472 /* select_top_icon@2x.png in Resources */,
 				B2506D1B23ABA1410034A472 /* select_down_icon@3x.png in Resources */,
 				B2506D1C23ABA1410034A472 /* select_down_icon@2x.png in Resources */,
-				B24E7C7C242A15A50037A3CF /* TrainingStep.plist in Resources */,
 				B26FBD9A2441D06C003DB3BE /* perchick_tgsticker_sticker.json in Resources */,
 				B215CC472431F5290017BFD9 /* hud_error@2x.png in Resources */,
 				B2506D1323ABA12D0034A472 /* options_none_icon@2x.png in Resources */,

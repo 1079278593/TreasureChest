@@ -5,7 +5,7 @@ inhibit_all_warnings!
 source 'https://github.com/CocoaPods/Specs.git'
 
 workspace ‘TreasureChest.xcworkspace’
-project ‘TreasureChestSwiftDemo/TreasureChestSwiftDemo.xcodeproj’
+#project ‘TreasureChestSwiftDemo/TreasureChestSwiftDemo.xcodeproj’
 
 abstract_target 'abstract_pod' do
   

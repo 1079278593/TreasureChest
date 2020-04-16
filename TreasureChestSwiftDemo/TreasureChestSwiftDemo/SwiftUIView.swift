@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Lottie
 
 struct SwiftUIView: View {
     var body: some View {
