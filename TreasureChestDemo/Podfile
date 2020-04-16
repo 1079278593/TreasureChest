@@ -2,9 +2,6 @@
 platform :ios, '10.0'
 source 'https://github.com/CocoaPods/Specs.git'
 
-
-
-#--------------下面是oc项目--------------#
 target 'TreasureChest' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
