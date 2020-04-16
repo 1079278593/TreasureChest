@@ -8,6 +8,6 @@
       location = "group:TreasureChestSwiftDemo/TreasureChestSwiftDemo.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:TreasureChestDemo/Pods/Pods.xcodeproj">
+      location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
