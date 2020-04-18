@@ -14,6 +14,7 @@
 #import "CheckAuthorization.h"
 #import <Photos/Photos.h>
 #import "Lottie.h"
+#import "TestLayerView.h"
 
 @interface VideoRecorderCtl ()
 
@@ -22,8 +23,12 @@
 @property(nonatomic, strong)UILabel *timeLabel;
 @property(nonatomic, strong)UISlider *slider;
 @property(nonatomic, strong)LOTAnimationView *lotView;
+@property(nonatomic, strong)TestLayerView *testLayerView;
+
 @property(nonatomic, strong)MSWeakTimer *timer;
 @property(nonatomic, assign)int duration;
+
+
 
 @end
 
@@ -33,7 +38,6 @@
     [super viewDidLoad];
 
     [self initView];
-    
     
     EasyGraphicsRender *render = [[EasyGraphicsRender alloc]init];
     [render runDrawingActions:^(__kindof UIGraphicsRendererContext * _Nonnull rendererContext) {
@@ -56,6 +60,7 @@
 }
 
 - (void)startRecordBtnEvent:(UIButton *)button {
+
     if (!button.selected) {
         //开始录制
         self.duration = 0;
@@ -152,7 +157,7 @@
     
     //    self.lotView = [LOTAnimationView animationNamed:@"give_the_thumbs-up"];
     self.lotView = [LOTAnimationView animationNamed:@"perchick_tgsticker_sticker"];
-//    self.lotView.loopAnimation = true;
+    self.lotView.loopAnimation = true;
 //    self.lotView.animationSpeed = 0;
 //    self.lotView.frame = CGRectMake(0, 0, 100, 100);
     [self.view addSubview:self.lotView];
@@ -165,6 +170,11 @@
         
     }];
     
+//    self.testLayerView.hidden = !true;
+    [self.view addSubview:self.testLayerView];
+    [self.testLayerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.drawView);
+    }];
 }
 
 - (UIButton *)startRecordBtn {
@@ -200,4 +210,12 @@
     }
     return _slider;
 }
+
+- (TestLayerView *)testLayerView {
+    if (_testLayerView == nil) {
+        _testLayerView = [[TestLayerView alloc]init];
+    }
+    return _testLayerView;
+}
+
 @end

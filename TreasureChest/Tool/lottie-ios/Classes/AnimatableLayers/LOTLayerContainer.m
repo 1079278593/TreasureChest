@@ -29,8 +29,10 @@
   LOTMaskContainer *_maskLayer;
 }
 
+#pragma mark - < 看这里 >
 @dynamic currentFrame;
 
+#pragma mark - < init >
 - (instancetype)initWithModel:(LOTLayer *)layer
                  inLayerGroup:(LOTLayerGroup *)layerGroup {
   self = [super init];
@@ -202,9 +204,25 @@
 #endif
 
 // MARK - Animation
+#pragma mark - < Animation >
+/**
+ 首先了解下layer自己的属性如何实现动画。
+ 1. layer首次加载时会调用 +(BOOL)needsDisplayForKey:(NSString *)key方法来判断当前指定的属性key改变是否需要重新绘制。
+ 2. 当Core Animartion中的key或者keypath等于+(BOOL)needsDisplayForKey:(NSString *)key 方法中指定的key，便会自动调用setNeedsDisplay方法，这样就会触发重绘，达到我们想要的效果。
 
+ layer方法响应链有两种:
+ 1. [layer setNeedDisplay] -> [layer displayIfNeed] -> [layer display] -> [layerDelegate displayLayer:]
+ 2. [layer setNeedDisplay] -> [layer displayIfNeed] -> [layer display] -> [layer drawInContext:] -> [layerDelegate drawLayer: inContext:]
+ 说明一下，如果layerDelegate实现了displayLayer:协议，之后layer就不会再调用自身的重绘代码。
+ 这里使用第二种方式来实现圆形进度条，将代码集成到layer中，降低耦合。
+ */
+
+/**
+ 1. 此方法只会在图层初始化的时候被调用一次。
+ 2. 代码中通过判断图层的属性名称来决定是否需要对对应的Core Animation动画执行UI重绘工作(本例中就是对自定义的progress属性进行处理)。
+ 3. [super needsDisplayForKey:key]; 这个父类方法默认的返回值是NO。
+ */
 + (BOOL)needsDisplayForKey:(NSString *)key {
-//    NSLog(@"needsDisplayForKey: %@",key);
   if ([key isEqualToString:@"currentFrame"]) {
     return YES;
   }
@@ -223,14 +241,13 @@
  */
 - (id<CAAction>)actionForKey:(NSString *)event {
     NSLog(@"actionForKey: %@",event);
-  if ([event isEqualToString:@"currentFrame"]) {
-    CABasicAnimation *theAnimation = [CABasicAnimation
-                                      animationWithKeyPath:event];
-    theAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
-    theAnimation.fromValue = [[self presentationLayer] valueForKey:event];
-    return theAnimation;
-  }
-  return [super actionForKey:event];
+    if ([event isEqualToString:@"currentFrame"]) {
+        CABasicAnimation *theAnimation = [CABasicAnimation animationWithKeyPath:event];
+        theAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+        theAnimation.fromValue = [[self presentationLayer] valueForKey:event];
+        return theAnimation;
+    }
+    return [super actionForKey:event];
 }
 
 - (id)initWithLayer:(id)layer {

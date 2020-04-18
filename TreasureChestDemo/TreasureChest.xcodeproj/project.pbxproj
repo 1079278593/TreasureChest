@@ -131,6 +131,8 @@
 		B2830EFC23B5E7DB0049AE99 /* FormsViewCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = B2830EFB23B5E7DB0049AE99 /* FormsViewCtl.m */; };
 		B2830EFF23B5F8600049AE99 /* NSString+TextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = B2830EFE23B5F8600049AE99 /* NSString+TextSize.m */; };
 		B2830F0223B5F8890049AE99 /* UILabel+TextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = B2830F0123B5F8890049AE99 /* UILabel+TextSize.m */; };
+		B283CEE92449B0D90021ABB5 /* TestActionKeyLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B283CEE82449B0D90021ABB5 /* TestActionKeyLayer.m */; };
+		B283CEED2449BB650021ABB5 /* TestActionProgressAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B283CEEC2449BB650021ABB5 /* TestActionProgressAction.m */; };
 		B28472332403C3AA00C1194F /* URLSessionTaskCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = B28472322403C3AA00C1194F /* URLSessionTaskCtl.m */; };
 		B28472372404B8EE00C1194F /* URLDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = B28472362404B8EE00C1194F /* URLDownloadTask.m */; };
 		B284723A2404B90300C1194F /* URLUploadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = B28472392404B90300C1194F /* URLUploadTask.m */; };
@@ -157,6 +159,8 @@
 		B2C459332440524F00117BD7 /* VectorGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C4592A2440524F00117BD7 /* VectorGeometry.m */; };
 		B2C94627242B383C00DC6FC1 /* UIColor+UIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C94626242B383C00DC6FC1 /* UIColor+UIImage.m */; };
 		B2CD39212441D5BE007D1B45 /* give_the_thumbs-up.json in Resources */ = {isa = PBXBuildFile; fileRef = B2CD39202441D5BE007D1B45 /* give_the_thumbs-up.json */; };
+		B2CE343E244AAEB9000A32EB /* TestGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CE343D244AAEB9000A32EB /* TestGradientLayer.m */; };
+		B2CE3441244AAFC9000A32EB /* TestLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CE3440244AAFC9000A32EB /* TestLayerView.m */; };
 		B2D1BCC723D165E10000B413 /* DictionaryMainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D1BCC623D165E10000B413 /* DictionaryMainCell.m */; };
 		B2D1BCCA23D18F0F0000B413 /* DictionaryMainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D1BCC923D18F0F0000B413 /* DictionaryMainModel.m */; };
 		B2DD689023B08C8500106F4F /* XMLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DD688F23B08C8500106F4F /* XMLabel.m */; };
@@ -411,6 +415,10 @@
 		B2830EFE23B5F8600049AE99 /* NSString+TextSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+TextSize.m"; sourceTree = "<group>"; };
 		B2830F0023B5F8890049AE99 /* UILabel+TextSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+TextSize.h"; sourceTree = "<group>"; };
 		B2830F0123B5F8890049AE99 /* UILabel+TextSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+TextSize.m"; sourceTree = "<group>"; };
+		B283CEE72449B0D90021ABB5 /* TestActionKeyLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestActionKeyLayer.h; sourceTree = "<group>"; };
+		B283CEE82449B0D90021ABB5 /* TestActionKeyLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestActionKeyLayer.m; sourceTree = "<group>"; };
+		B283CEEB2449BB650021ABB5 /* TestActionProgressAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestActionProgressAction.h; sourceTree = "<group>"; };
+		B283CEEC2449BB650021ABB5 /* TestActionProgressAction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestActionProgressAction.m; sourceTree = "<group>"; };
 		B28472312403C3AA00C1194F /* URLSessionTaskCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLSessionTaskCtl.h; sourceTree = "<group>"; };
 		B28472322403C3AA00C1194F /* URLSessionTaskCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLSessionTaskCtl.m; sourceTree = "<group>"; };
 		B28472352404B8EE00C1194F /* URLDownloadTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLDownloadTask.h; sourceTree = "<group>"; };
@@ -464,6 +472,10 @@
 		B2C94625242B383C00DC6FC1 /* UIColor+UIImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+UIImage.h"; sourceTree = "<group>"; };
 		B2C94626242B383C00DC6FC1 /* UIColor+UIImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+UIImage.m"; sourceTree = "<group>"; };
 		B2CD39202441D5BE007D1B45 /* give_the_thumbs-up.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "give_the_thumbs-up.json"; sourceTree = "<group>"; };
+		B2CE343C244AAEB9000A32EB /* TestGradientLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestGradientLayer.h; sourceTree = "<group>"; };
+		B2CE343D244AAEB9000A32EB /* TestGradientLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestGradientLayer.m; sourceTree = "<group>"; };
+		B2CE343F244AAFC9000A32EB /* TestLayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestLayerView.h; sourceTree = "<group>"; };
+		B2CE3440244AAFC9000A32EB /* TestLayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestLayerView.m; sourceTree = "<group>"; };
 		B2D1BCC523D165E10000B413 /* DictionaryMainCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DictionaryMainCell.h; sourceTree = "<group>"; };
 		B2D1BCC623D165E10000B413 /* DictionaryMainCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DictionaryMainCell.m; sourceTree = "<group>"; };
 		B2D1BCC823D18F0F0000B413 /* DictionaryMainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DictionaryMainModel.h; sourceTree = "<group>"; };
@@ -704,6 +716,7 @@
 				B24BB3442441A7F300D5C7A6 /* EasyGraphicsRender.h */,
 				B24BB3452441A7F300D5C7A6 /* EasyGraphicsRender.m */,
 				B2C458F424404D4B00117BD7 /* DrawView */,
+				B283CEEA2449BAFC0021ABB5 /* TestActionKey */,
 				B2C459242440524F00117BD7 /* UIBezierPath+Geometry */,
 			);
 			path = VideoRecorderDemo;
@@ -1073,6 +1086,19 @@
 			path = TabScrollView;
 			sourceTree = "<group>";
 		};
+		B283CEEA2449BAFC0021ABB5 /* TestActionKey */ = {
+			isa = PBXGroup;
+			children = (
+				B283CEE72449B0D90021ABB5 /* TestActionKeyLayer.h */,
+				B283CEE82449B0D90021ABB5 /* TestActionKeyLayer.m */,
+				B2CE343C244AAEB9000A32EB /* TestGradientLayer.h */,
+				B2CE343D244AAEB9000A32EB /* TestGradientLayer.m */,
+				B283CEEB2449BB650021ABB5 /* TestActionProgressAction.h */,
+				B283CEEC2449BB650021ABB5 /* TestActionProgressAction.m */,
+			);
+			path = TestActionKey;
+			sourceTree = "<group>";
+		};
 		B28472302403C1B100C1194F /* URLSessionTaskDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -1185,6 +1211,8 @@
 			children = (
 				B2169E07244048EB002CFE3E /* DrawingBoardView.h */,
 				B2169E08244048EB002CFE3E /* DrawingBoardView.m */,
+				B2CE343F244AAFC9000A32EB /* TestLayerView.h */,
+				B2CE3440244AAFC9000A32EB /* TestLayerView.m */,
 			);
 			path = DrawView;
 			sourceTree = "<group>";
@@ -1508,6 +1536,7 @@
 				B26FBD8B2441CDB8003DB3BE /* LOTAnimationTransitionController.m in Sources */,
 				B2BC388323C03E1100D5B9C6 /* XMDashLineView.m in Sources */,
 				B26FBD602441CDB8003DB3BE /* LOTTransformInterpolator.m in Sources */,
+				B283CEE92449B0D90021ABB5 /* TestActionKeyLayer.m in Sources */,
 				B26FBD722441CDB8003DB3BE /* LOTMask.m in Sources */,
 				B2DD68A223B2FC7D00106F4F /* XMSelectedButton.m in Sources */,
 				B26FBD642441CDB8003DB3BE /* LOTPathAnimator.m in Sources */,
@@ -1519,6 +1548,7 @@
 				B26FBD7E2441CDB8003DB3BE /* LOTShapeGroup.m in Sources */,
 				B26FBD842441CDB8003DB3BE /* LOTRadialGradientLayer.m in Sources */,
 				B26FBD662441CDB8003DB3BE /* LOTPolygonAnimator.m in Sources */,
+				B2CE3441244AAFC9000A32EB /* TestLayerView.m in Sources */,
 				B26FBD612441CDB8003DB3BE /* LOTArrayInterpolator.m in Sources */,
 				B26FBD852441CDB8003DB3BE /* UIColor+Expanded.m in Sources */,
 				B2AA0F4A23C5D12A00BEBA27 /* FMDictManager.m in Sources */,
@@ -1535,6 +1565,7 @@
 				B28472332403C3AA00C1194F /* URLSessionTaskCtl.m in Sources */,
 				B2C4592F2440524F00117BD7 /* UIBezierPath+Geometry.m in Sources */,
 				B28472372404B8EE00C1194F /* URLDownloadTask.m in Sources */,
+				B283CEED2449BB650021ABB5 /* TestActionProgressAction.m in Sources */,
 				B26FBD8F2441CDB8003DB3BE /* LOTInterpolatorCallback.m in Sources */,
 				B284724124051E2D00C1194F /* URLOfflineDownloadTask.m in Sources */,
 				B2BC387A23C0337A00D5B9C6 /* BaseShapeView.m in Sources */,
@@ -1556,6 +1587,7 @@
 				B286A9B3242D8DF900E575BF /* EasyAlertView.m in Sources */,
 				B2C459302440524F00117BD7 /* CuvbicCurveGeometry.m in Sources */,
 				B2506CF923AB5B370034A472 /* CollapsibleViewModel.m in Sources */,
+				B2CE343E244AAEB9000A32EB /* TestGradientLayer.m in Sources */,
 				B24A85FE24039F1300D1EECA /* VideoPlayerSampleView.m in Sources */,
 				B2B6B1A82408E71C00187850 /* RegularOperate.m in Sources */,
 				B26FBD7B2441CDB8003DB3BE /* LOTShapeRectangle.m in Sources */,
