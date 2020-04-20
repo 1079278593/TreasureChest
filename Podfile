@@ -44,6 +44,9 @@ abstract_target 'abstract_pod' do
   #  pod 'MSWeakTimer', '~> 1.1.0'
   #  pod 'MJRefresh', '3.2.0'
     pod 'lottie-ios'
+    pod 'SnapKit'
+    pod 'HandyJSON'
+    pod 'MBProgressHUD'
     
     target 'TreasureChestSwiftDemoTests' do
       inherit! :search_paths
