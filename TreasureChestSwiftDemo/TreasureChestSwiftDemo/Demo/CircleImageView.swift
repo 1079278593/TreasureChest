@@ -10,9 +10,9 @@ import SwiftUI
 import Lottie
 
 struct CircleImageView: View {
+    var image: Image
     var body: some View {
-        Image("icon300")//像素超过屏幕，布局会失效。
-        .aspectRatio(contentMode: .fit)
+        image
         .clipShape(Circle())
         .overlay(Circle().stroke(Color.white, lineWidth: 4))
         .shadow(radius: 10)
@@ -21,6 +21,6 @@ struct CircleImageView: View {
 
 struct CircleImageView_Previews: PreviewProvider {
     static var previews: some View {
-        CircleImageView()
+        CircleImageView(image: Image("icon300"))
     }
 }
