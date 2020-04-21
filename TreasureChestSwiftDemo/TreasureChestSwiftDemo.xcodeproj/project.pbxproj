@@ -207,10 +207,10 @@
 		B2059891244D7538007DA4DE /* Step100Detail */ = {
 			isa = PBXGroup;
 			children = (
+				B2059895244D7538007DA4DE /* Step100DetailController.swift */,
+				B2059894244D7538007DA4DE /* StepBaseView.swift */,
 				B2059892244D7538007DA4DE /* Step100DetailView.swift */,
 				B2059893244D7538007DA4DE /* Step101DetailView.swift */,
-				B2059894244D7538007DA4DE /* StepBaseView.swift */,
-				B2059895244D7538007DA4DE /* Step100DetailController.swift */,
 			);
 			path = Step100Detail;
 			sourceTree = "<group>";
