@@ -61,6 +61,7 @@
 		B2EEB996244EDD550047A2D4 /* MemoryKingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EEB995244EDD550047A2D4 /* MemoryKingView.swift */; };
 		B2EEB998244EE0840047A2D4 /* JumpToMemoryKing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EEB997244EE0840047A2D4 /* JumpToMemoryKing.swift */; };
 		B2EEB99A244EE24A0047A2D4 /* TrainingStep.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2EEB999244EE24A0047A2D4 /* TrainingStep.plist */; };
+		B2EEB99E244F03D70047A2D4 /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EEB99D244F03D70047A2D4 /* String+Size.swift */; };
 		DD4CBD254BFBE55C14A82988 /* Pods_abstract_pod_TreasureChestSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DABF7267F9B38C8F4FEFD93 /* Pods_abstract_pod_TreasureChestSwiftDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -137,6 +138,7 @@
 		B2EEB995244EDD550047A2D4 /* MemoryKingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryKingView.swift; sourceTree = "<group>"; };
 		B2EEB997244EE0840047A2D4 /* JumpToMemoryKing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JumpToMemoryKing.swift; sourceTree = "<group>"; };
 		B2EEB999244EE24A0047A2D4 /* TrainingStep.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TrainingStep.plist; path = "../../../../../Library/Mobile Documents/com~apple~CloudDocs/TrainingStep.plist"; sourceTree = "<group>"; };
+		B2EEB99D244F03D70047A2D4 /* String+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
 		E612488E9685FC592B64072D /* Pods-abstract_pod-TreasureChestSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-abstract_pod-TreasureChestSwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-abstract_pod-TreasureChestSwiftDemo/Pods-abstract_pod-TreasureChestSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -289,6 +291,7 @@
 		B2E8699B24471AC80085F7ED = {
 			isa = PBXGroup;
 			children = (
+				B2EEB99C244F038A0047A2D4 /* Tmp */,
 				B2402EC9244D41360043911A /* TreasureChestSwift */,
 				B2E869A624471AC80085F7ED /* TreasureChestSwiftDemo */,
 				B2E869BD24471AC90085F7ED /* TreasureChestSwiftDemoTests */,
@@ -381,6 +384,22 @@
 				B2EEB993244ED71E0047A2D4 /* hikeData.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		B2EEB99B244F03730047A2D4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B2EEB99D244F03D70047A2D4 /* String+Size.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		B2EEB99C244F038A0047A2D4 /* Tmp */ = {
+			isa = PBXGroup;
+			children = (
+				B2EEB99B244F03730047A2D4 /* Extension */,
+			);
+			path = Tmp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -573,6 +592,7 @@
 				B2E869AA24471AC80085F7ED /* SceneDelegate.swift in Sources */,
 				B2402ECB244D48E80043911A /* MapView.swift in Sources */,
 				B248E3512447F42D004F00B6 /* CircleImageView.swift in Sources */,
+				B2EEB99E244F03D70047A2D4 /* String+Size.swift in Sources */,
 				B20598A6244D7538007DA4DE /* Step100DetailController.swift in Sources */,
 				B20598AB244D7538007DA4DE /* PlistTrainingStepModel.swift in Sources */,
 				B2EEB98B244EA58A0047A2D4 /* HexagonParameters.swift in Sources */,
