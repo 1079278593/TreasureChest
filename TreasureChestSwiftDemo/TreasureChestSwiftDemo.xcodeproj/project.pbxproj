@@ -52,6 +52,7 @@
 		B2E869B124471AC90085F7ED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2E869B024471AC90085F7ED /* Preview Assets.xcassets */; };
 		B2E869B424471AC90085F7ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2E869B224471AC90085F7ED /* LaunchScreen.storyboard */; };
 		B2E869BF24471AC90085F7ED /* TreasureChestSwiftDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E869BE24471AC90085F7ED /* TreasureChestSwiftDemoTests.swift */; };
+		B2EEB988244EA46E0047A2D4 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EEB987244EA46E0047A2D4 /* Badge.swift */; };
 		DD4CBD254BFBE55C14A82988 /* Pods_abstract_pod_TreasureChestSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DABF7267F9B38C8F4FEFD93 /* Pods_abstract_pod_TreasureChestSwiftDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -119,6 +120,7 @@
 		B2E869BA24471AC90085F7ED /* TreasureChestSwiftDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TreasureChestSwiftDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2E869BE24471AC90085F7ED /* TreasureChestSwiftDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreasureChestSwiftDemoTests.swift; sourceTree = "<group>"; };
 		B2E869C024471AC90085F7ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2EEB987244EA46E0047A2D4 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		E612488E9685FC592B64072D /* Pods-abstract_pod-TreasureChestSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-abstract_pod-TreasureChestSwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-abstract_pod-TreasureChestSwiftDemo/Pods-abstract_pod-TreasureChestSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -253,13 +255,8 @@
 		B2402EC8244D40FF0043911A /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				B20598D8244DA05A007DA4DE /* LandmarkList.swift */,
-				B20598D6244D947B007DA4DE /* LandmarkRow.swift */,
-				B2E869AB24471AC80085F7ED /* LandmarkDetail.swift */,
-				B248E3502447F42D004F00B6 /* CircleImageView.swift */,
-				B2402ECA244D48E80043911A /* MapView.swift */,
-				B20598B6244D8DD1007DA4DE /* Models */,
-				B20598BB244D8E05007DA4DE /* Resources */,
+				B2EEB986244EA43E0047A2D4 /* Drawing_Animation */,
+				B2EEB985244EA42F0047A2D4 /* SwiftUI_Essentials */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -322,6 +319,28 @@
 				B2E869C024471AC90085F7ED /* Info.plist */,
 			);
 			path = TreasureChestSwiftDemoTests;
+			sourceTree = "<group>";
+		};
+		B2EEB985244EA42F0047A2D4 /* SwiftUI_Essentials */ = {
+			isa = PBXGroup;
+			children = (
+				B20598D8244DA05A007DA4DE /* LandmarkList.swift */,
+				B20598D6244D947B007DA4DE /* LandmarkRow.swift */,
+				B2E869AB24471AC80085F7ED /* LandmarkDetail.swift */,
+				B248E3502447F42D004F00B6 /* CircleImageView.swift */,
+				B2402ECA244D48E80043911A /* MapView.swift */,
+				B20598B6244D8DD1007DA4DE /* Models */,
+				B20598BB244D8E05007DA4DE /* Resources */,
+			);
+			path = SwiftUI_Essentials;
+			sourceTree = "<group>";
+		};
+		B2EEB986244EA43E0047A2D4 /* Drawing_Animation */ = {
+			isa = PBXGroup;
+			children = (
+				B2EEB987244EA46E0047A2D4 /* Badge.swift */,
+			);
+			path = Drawing_Animation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -526,6 +545,7 @@
 				B20598B5244D76A1007DA4DE /* GetController+Extension.swift in Sources */,
 				B20598AC244D7538007DA4DE /* PlistMemoryCodeModel.swift in Sources */,
 				B20598A4244D7538007DA4DE /* Step101DetailView.swift in Sources */,
+				B2EEB988244EA46E0047A2D4 /* Badge.swift in Sources */,
 				B20598DB244DB5C8007DA4DE /* UserData.swift in Sources */,
 				B20598B1244D7538007DA4DE /* TrainingStepUserDefaults.swift in Sources */,
 				B20598A5244D7538007DA4DE /* StepBaseView.swift in Sources */,
