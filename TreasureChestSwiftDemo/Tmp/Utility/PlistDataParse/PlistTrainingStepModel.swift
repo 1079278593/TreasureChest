@@ -10,8 +10,30 @@ import UIKit
 import HandyJSON
 
 class PlistTrainingStepModel: NSObject {
+    static public let sharedInstance = PlistTrainingStepModel()
+    static var rootStep: [TrainingRootStep] {
+        get {
+            return PlistTrainingStepModel.sharedInstance.getRootStep() ?? [TrainingRootStep]()
+        }
+    }
     
-    class func getTrainingStep() -> [TrainingRootStep]? {
+    private override init() {
+        super.init()
+    }
+    
+    ///index = 101、303这种
+    class func getTrainingStep(index: Int) -> TrainingStep {
+        let rootIndex = index/100 - 1
+        let trainingSteps = self.rootStep[rootIndex].trainingStep
+        for trainingStep in trainingSteps {
+            if trainingStep.index == index {
+                return trainingStep
+            }
+        }
+        return TrainingStep()
+    }
+    
+    private func getRootStep() -> [TrainingRootStep]? {
         if let path = Bundle.main.path(forResource: "TrainingStep", ofType: "plist"),
             let dict = NSDictionary(contentsOfFile: path) {
             let dictData = try? JSONSerialization.data(withJSONObject: dict, options: [])
@@ -20,6 +42,23 @@ class PlistTrainingStepModel: NSObject {
         }
         return nil
     }
+    
+//    public func groupStepWithIndex(index: Int) -> [TrainingStep] {
+//        if self.rootStep.count > index {
+//            return self.rootStep[index].trainingStep
+//        }
+//        return [TrainingStep]()
+//    }
+//
+//    public func detailStepWithIndex(groupIndex: Int, detailIndex: Int) -> [TrainingStepDetail] {
+//        if self.rootStep.count > groupIndex {
+//            let trainingStep = self.rootStep[groupIndex].trainingStep
+//            if (trainingStep.count > detailIndex) {
+//                return trainingStep[detailIndex].stepDetail
+//            }
+//        }
+//        return [TrainingStepDetail]()
+//    }
 }
 
 struct TrainingRootStep: HandyJSON {

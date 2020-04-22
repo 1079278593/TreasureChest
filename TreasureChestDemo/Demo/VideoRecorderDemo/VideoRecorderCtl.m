@@ -154,9 +154,8 @@
         make.height.equalTo(@(35));
     }];
     
-    
-    //    self.lotView = [LOTAnimationView animationNamed:@"give_the_thumbs-up"];
-    self.lotView = [LOTAnimationView animationNamed:@"perchick_tgsticker_sticker"];
+    NSArray *lottieArray = @[@"celebaration",@"donutLoader",@"foodDelivery",@"giftBox",@"rocket",@"thumbsUp"];
+    self.lotView = [LOTAnimationView animationNamed:lottieArray[1]];
     self.lotView.loopAnimation = true;
 //    self.lotView.animationSpeed = 0;
 //    self.lotView.frame = CGRectMake(0, 0, 100, 100);

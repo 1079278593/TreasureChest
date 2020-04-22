@@ -47,6 +47,9 @@ abstract_target 'abstract_pod' do
     pod 'SnapKit'
     pod 'HandyJSON'
     pod 'MBProgressHUD'
+    pod 'RxSwift'
+    pod 'RxCocoa'
+    pod 'Alamofire'
     
     target 'TreasureChestSwiftDemoTests' do
       inherit! :search_paths

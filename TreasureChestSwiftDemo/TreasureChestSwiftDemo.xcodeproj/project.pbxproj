@@ -7,17 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A448A10244F423200ED5BF8 /* MKNetWorking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4489F0244F423200ED5BF8 /* MKNetWorking.swift */; };
 		3A448A11244F423200ED5BF8 /* DateCovertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4489F1244F423200ED5BF8 /* DateCovertHelper.swift */; };
 		3A448A12244F423200ED5BF8 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4489F2244F423200ED5BF8 /* UIColor+Extension.swift */; };
 		3A448A13244F423200ED5BF8 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4489F3244F423200ED5BF8 /* SoundPlayer.swift */; };
-		3A448A14244F423200ED5BF8 /* StatisticalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4489F4244F423200ED5BF8 /* StatisticalEvent.swift */; };
 		3A448A15244F423200ED5BF8 /* VectorOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4489F5244F423200ED5BF8 /* VectorOperation.swift */; };
 		3A448A16244F423200ED5BF8 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4489F6244F423200ED5BF8 /* UIImage+Extension.swift */; };
 		3A448A17244F423200ED5BF8 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4489F7244F423200ED5BF8 /* Double+Extension.swift */; };
 		3A448A18244F423200ED5BF8 /* GetController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4489F8244F423200ED5BF8 /* GetController+Extension.swift */; };
-		3A448A19244F423200ED5BF8 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4489F9244F423200ED5BF8 /* UIView+Constraints.swift */; };
-		3A448A1A244F423200ED5BF8 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4489FA244F423200ED5BF8 /* UIViewController+Extension.swift */; };
+		3A448A19244F423200ED5BF8 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4489F9244F423200ED5BF8 /* UIView+Extension.swift */; };
 		3A448A1B244F423200ED5BF8 /* GlobalReleaseConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4489FB244F423200ED5BF8 /* GlobalReleaseConfig.swift */; };
 		3A448A1C244F423200ED5BF8 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4489FC244F423200ED5BF8 /* String+Extension.swift */; };
 		3A448A1D244F423200ED5BF8 /* GlobalConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4489FD244F423200ED5BF8 /* GlobalConfig.swift */; };
@@ -28,7 +25,6 @@
 		3A448A22244F423200ED5BF8 /* GlobalUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A448A03244F423200ED5BF8 /* GlobalUserDefaults.swift */; };
 		3A448A23244F423200ED5BF8 /* UIImageViewIBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A448A04244F423200ED5BF8 /* UIImageViewIBInspectable.swift */; };
 		3A448A24244F423200ED5BF8 /* QiKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A448A06244F423200ED5BF8 /* QiKeychainItem.m */; };
-		3A448A25244F423200ED5BF8 /* UMengManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A448A09244F423200ED5BF8 /* UMengManager.swift */; };
 		3A448A26244F423200ED5BF8 /* RotationViewVertices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A448A0A244F423200ED5BF8 /* RotationViewVertices.swift */; };
 		3A448A27244F423200ED5BF8 /* PlistTrainingStepModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A448A0C244F423200ED5BF8 /* PlistTrainingStepModel.swift */; };
 		3A448A28244F423200ED5BF8 /* PlistMemoryCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A448A0D244F423200ED5BF8 /* PlistMemoryCodeModel.swift */; };
@@ -38,20 +34,14 @@
 		B20598A3244D7538007DA4DE /* Step100DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2059892244D7538007DA4DE /* Step100DetailView.swift */; };
 		B20598A4244D7538007DA4DE /* Step101DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2059893244D7538007DA4DE /* Step101DetailView.swift */; };
 		B20598A5244D7538007DA4DE /* StepBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2059894244D7538007DA4DE /* StepBaseView.swift */; };
-		B20598A6244D7538007DA4DE /* Step100DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2059895244D7538007DA4DE /* Step100DetailController.swift */; };
+		B20598A6244D7538007DA4DE /* StepGroup100DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2059895244D7538007DA4DE /* StepGroup100DetailController.swift */; };
 		B20598A7244D7538007DA4DE /* StepGroup100Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2059896244D7538007DA4DE /* StepGroup100Controller.swift */; };
 		B20598A8244D7538007DA4DE /* TrainingStepController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2059897244D7538007DA4DE /* TrainingStepController.swift */; };
 		B20598A9244D7538007DA4DE /* TrainingStepEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2059898244D7538007DA4DE /* TrainingStepEnum.swift */; };
 		B20598AA244D7538007DA4DE /* TrainingStepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2059899244D7538007DA4DE /* TrainingStepCell.swift */; };
-		B20598AB244D7538007DA4DE /* PlistTrainingStepModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B205989B244D7538007DA4DE /* PlistTrainingStepModel.swift */; };
-		B20598AC244D7538007DA4DE /* PlistMemoryCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B205989C244D7538007DA4DE /* PlistMemoryCodeModel.swift */; };
-		B20598AD244D7538007DA4DE /* PlistMemoryTipsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B205989D244D7538007DA4DE /* PlistMemoryTipsModel.swift */; };
 		B20598AE244D7538007DA4DE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B205989F244D7538007DA4DE /* BaseViewController.swift */; };
 		B20598AF244D7538007DA4DE /* BaseNaviController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20598A0244D7538007DA4DE /* BaseNaviController.swift */; };
-		B20598B0244D7538007DA4DE /* GlobalConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20598A1244D7538007DA4DE /* GlobalConfig.swift */; };
-		B20598B1244D7538007DA4DE /* TrainingStepUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20598A2244D7538007DA4DE /* TrainingStepUserDefaults.swift */; };
 		B20598B4244D76A1007DA4DE /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20598B2244D76A1007DA4DE /* ProgressHUD.swift */; };
-		B20598B5244D76A1007DA4DE /* GetController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20598B3244D76A1007DA4DE /* GetController+Extension.swift */; };
 		B20598B9244D8DD1007DA4DE /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20598B7244D8DD1007DA4DE /* Data.swift */; };
 		B20598BA244D8DD1007DA4DE /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20598B8244D8DD1007DA4DE /* Landmark.swift */; };
 		B20598C9244D8E05007DA4DE /* turtlerock.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B20598BC244D8E05007DA4DE /* turtlerock.jpg */; };
@@ -70,8 +60,11 @@
 		B20598D7244D947B007DA4DE /* LandmarkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20598D6244D947B007DA4DE /* LandmarkRow.swift */; };
 		B20598D9244DA05A007DA4DE /* LandmarkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20598D8244DA05A007DA4DE /* LandmarkList.swift */; };
 		B20598DB244DB5C8007DA4DE /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20598DA244DB5C8007DA4DE /* UserData.swift */; };
+		B21D279D245055FF0000C8ED /* UIViewRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21D279C245055FF0000C8ED /* UIViewRender.swift */; };
 		B2402ECB244D48E80043911A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2402ECA244D48E80043911A /* MapView.swift */; };
 		B248E3512447F42D004F00B6 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248E3502447F42D004F00B6 /* CircleImageView.swift */; };
+		B25F5CC8245035FF004DD9AC /* thumbsUp.json in Resources */ = {isa = PBXBuildFile; fileRef = B25F5CC7245035FF004DD9AC /* thumbsUp.json */; };
+		B27E86832450265700AFB2E2 /* Step102DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E86822450265700AFB2E2 /* Step102DetailView.swift */; };
 		B2E869A824471AC80085F7ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E869A724471AC80085F7ED /* AppDelegate.swift */; };
 		B2E869AA24471AC80085F7ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E869A924471AC80085F7ED /* SceneDelegate.swift */; };
 		B2E869AC24471AC80085F7ED /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E869AB24471AC80085F7ED /* LandmarkDetail.swift */; };
@@ -104,17 +97,14 @@
 
 /* Begin PBXFileReference section */
 		22DAA52EB3A6DDAB810D5621 /* Pods-TreasureChestSwiftDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreasureChestSwiftDemoTests.release.xcconfig"; path = "Target Support Files/Pods-TreasureChestSwiftDemoTests/Pods-TreasureChestSwiftDemoTests.release.xcconfig"; sourceTree = "<group>"; };
-		3A4489F0244F423200ED5BF8 /* MKNetWorking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKNetWorking.swift; sourceTree = "<group>"; };
 		3A4489F1244F423200ED5BF8 /* DateCovertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCovertHelper.swift; sourceTree = "<group>"; };
 		3A4489F2244F423200ED5BF8 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		3A4489F3244F423200ED5BF8 /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
-		3A4489F4244F423200ED5BF8 /* StatisticalEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticalEvent.swift; sourceTree = "<group>"; };
 		3A4489F5244F423200ED5BF8 /* VectorOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorOperation.swift; sourceTree = "<group>"; };
 		3A4489F6244F423200ED5BF8 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		3A4489F7244F423200ED5BF8 /* Double+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		3A4489F8244F423200ED5BF8 /* GetController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GetController+Extension.swift"; sourceTree = "<group>"; };
-		3A4489F9244F423200ED5BF8 /* UIView+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
-		3A4489FA244F423200ED5BF8 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		3A4489F9244F423200ED5BF8 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		3A4489FB244F423200ED5BF8 /* GlobalReleaseConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalReleaseConfig.swift; sourceTree = "<group>"; };
 		3A4489FC244F423200ED5BF8 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		3A4489FD244F423200ED5BF8 /* GlobalConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConfig.swift; sourceTree = "<group>"; };
@@ -126,7 +116,6 @@
 		3A448A04244F423200ED5BF8 /* UIImageViewIBInspectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewIBInspectable.swift; sourceTree = "<group>"; };
 		3A448A06244F423200ED5BF8 /* QiKeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QiKeychainItem.m; sourceTree = "<group>"; };
 		3A448A07244F423200ED5BF8 /* QiKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QiKeychainItem.h; sourceTree = "<group>"; };
-		3A448A09244F423200ED5BF8 /* UMengManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UMengManager.swift; sourceTree = "<group>"; };
 		3A448A0A244F423200ED5BF8 /* RotationViewVertices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotationViewVertices.swift; sourceTree = "<group>"; };
 		3A448A0C244F423200ED5BF8 /* PlistTrainingStepModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistTrainingStepModel.swift; sourceTree = "<group>"; };
 		3A448A0D244F423200ED5BF8 /* PlistMemoryCodeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistMemoryCodeModel.swift; sourceTree = "<group>"; };
@@ -139,20 +128,14 @@
 		B2059892244D7538007DA4DE /* Step100DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step100DetailView.swift; sourceTree = "<group>"; };
 		B2059893244D7538007DA4DE /* Step101DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step101DetailView.swift; sourceTree = "<group>"; };
 		B2059894244D7538007DA4DE /* StepBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepBaseView.swift; sourceTree = "<group>"; };
-		B2059895244D7538007DA4DE /* Step100DetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step100DetailController.swift; sourceTree = "<group>"; };
+		B2059895244D7538007DA4DE /* StepGroup100DetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepGroup100DetailController.swift; sourceTree = "<group>"; };
 		B2059896244D7538007DA4DE /* StepGroup100Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepGroup100Controller.swift; sourceTree = "<group>"; };
 		B2059897244D7538007DA4DE /* TrainingStepController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingStepController.swift; sourceTree = "<group>"; };
 		B2059898244D7538007DA4DE /* TrainingStepEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingStepEnum.swift; sourceTree = "<group>"; };
 		B2059899244D7538007DA4DE /* TrainingStepCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingStepCell.swift; sourceTree = "<group>"; };
-		B205989B244D7538007DA4DE /* PlistTrainingStepModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistTrainingStepModel.swift; sourceTree = "<group>"; };
-		B205989C244D7538007DA4DE /* PlistMemoryCodeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistMemoryCodeModel.swift; sourceTree = "<group>"; };
-		B205989D244D7538007DA4DE /* PlistMemoryTipsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistMemoryTipsModel.swift; sourceTree = "<group>"; };
 		B205989F244D7538007DA4DE /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B20598A0244D7538007DA4DE /* BaseNaviController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNaviController.swift; sourceTree = "<group>"; };
-		B20598A1244D7538007DA4DE /* GlobalConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConfig.swift; sourceTree = "<group>"; };
-		B20598A2244D7538007DA4DE /* TrainingStepUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingStepUserDefaults.swift; sourceTree = "<group>"; };
 		B20598B2244D76A1007DA4DE /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
-		B20598B3244D76A1007DA4DE /* GetController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GetController+Extension.swift"; sourceTree = "<group>"; };
 		B20598B7244D8DD1007DA4DE /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		B20598B8244D8DD1007DA4DE /* Landmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
 		B20598BC244D8E05007DA4DE /* turtlerock.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = turtlerock.jpg; sourceTree = "<group>"; };
@@ -171,8 +154,11 @@
 		B20598D6244D947B007DA4DE /* LandmarkRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkRow.swift; sourceTree = "<group>"; };
 		B20598D8244DA05A007DA4DE /* LandmarkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkList.swift; sourceTree = "<group>"; };
 		B20598DA244DB5C8007DA4DE /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		B21D279C245055FF0000C8ED /* UIViewRender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewRender.swift; sourceTree = "<group>"; };
 		B2402ECA244D48E80043911A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		B248E3502447F42D004F00B6 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
+		B25F5CC7245035FF004DD9AC /* thumbsUp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = thumbsUp.json; sourceTree = "<group>"; };
+		B27E86822450265700AFB2E2 /* Step102DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step102DetailView.swift; sourceTree = "<group>"; };
 		B2E869A424471AC80085F7ED /* TreasureChestSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreasureChestSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2E869A724471AC80085F7ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2E869A924471AC80085F7ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -220,39 +206,21 @@
 		3A4489EE244F423200ED5BF8 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				3A4489EF244F423200ED5BF8 /* MKNetWorking */,
 				3A4489F1244F423200ED5BF8 /* DateCovertHelper.swift */,
-				3A4489F2244F423200ED5BF8 /* UIColor+Extension.swift */,
 				3A4489F3244F423200ED5BF8 /* SoundPlayer.swift */,
-				3A4489F4244F423200ED5BF8 /* StatisticalEvent.swift */,
 				3A4489F5244F423200ED5BF8 /* VectorOperation.swift */,
-				3A4489F6244F423200ED5BF8 /* UIImage+Extension.swift */,
-				3A4489F7244F423200ED5BF8 /* Double+Extension.swift */,
-				3A4489F8244F423200ED5BF8 /* GetController+Extension.swift */,
-				3A4489F9244F423200ED5BF8 /* UIView+Constraints.swift */,
-				3A4489FA244F423200ED5BF8 /* UIViewController+Extension.swift */,
 				3A4489FB244F423200ED5BF8 /* GlobalReleaseConfig.swift */,
-				3A4489FC244F423200ED5BF8 /* String+Extension.swift */,
 				3A4489FD244F423200ED5BF8 /* GlobalConfig.swift */,
 				3A4489FE244F423200ED5BF8 /* CheckAuthorization.swift */,
 				3A4489FF244F423200ED5BF8 /* ClockTimerConver.swift */,
-				3A448A00244F423200ED5BF8 /* AppUserDefaults */,
 				3A448A04244F423200ED5BF8 /* UIImageViewIBInspectable.swift */,
-				3A448A05244F423200ED5BF8 /* KeyChain */,
-				3A448A08244F423200ED5BF8 /* UMengManager */,
 				3A448A0A244F423200ED5BF8 /* RotationViewVertices.swift */,
+				B21D279C245055FF0000C8ED /* UIViewRender.swift */,
+				3A448A00244F423200ED5BF8 /* AppUserDefaults */,
+				3A448A05244F423200ED5BF8 /* KeyChain */,
 				3A448A0B244F423200ED5BF8 /* PlistDataParse */,
-				3A448A0F244F423200ED5BF8 /* UIView+Dashed.swift */,
 			);
 			path = Utility;
-			sourceTree = "<group>";
-		};
-		3A4489EF244F423200ED5BF8 /* MKNetWorking */ = {
-			isa = PBXGroup;
-			children = (
-				3A4489F0244F423200ED5BF8 /* MKNetWorking.swift */,
-			);
-			path = MKNetWorking;
 			sourceTree = "<group>";
 		};
 		3A448A00244F423200ED5BF8 /* AppUserDefaults */ = {
@@ -272,14 +240,6 @@
 				3A448A07244F423200ED5BF8 /* QiKeychainItem.h */,
 			);
 			path = KeyChain;
-			sourceTree = "<group>";
-		};
-		3A448A08244F423200ED5BF8 /* UMengManager */ = {
-			isa = PBXGroup;
-			children = (
-				3A448A09244F423200ED5BF8 /* UMengManager.swift */,
-			);
-			path = UMengManager;
 			sourceTree = "<group>";
 		};
 		3A448A0B244F423200ED5BF8 /* PlistDataParse */ = {
@@ -320,7 +280,6 @@
 				B2059898244D7538007DA4DE /* TrainingStepEnum.swift */,
 				B2059899244D7538007DA4DE /* TrainingStepCell.swift */,
 				B2059890244D7538007DA4DE /* StepGroup100 */,
-				B205989A244D7538007DA4DE /* PlistDataParse */,
 				B205989E244D7538007DA4DE /* tool */,
 			);
 			name = TrainingStep;
@@ -331,30 +290,22 @@
 			isa = PBXGroup;
 			children = (
 				B2059896244D7538007DA4DE /* StepGroup100Controller.swift */,
-				B2059891244D7538007DA4DE /* Step100Detail */,
+				B2059891244D7538007DA4DE /* StepGroup100Detail */,
 			);
 			path = StepGroup100;
 			sourceTree = "<group>";
 		};
-		B2059891244D7538007DA4DE /* Step100Detail */ = {
+		B2059891244D7538007DA4DE /* StepGroup100Detail */ = {
 			isa = PBXGroup;
 			children = (
-				B2059895244D7538007DA4DE /* Step100DetailController.swift */,
+				B2059895244D7538007DA4DE /* StepGroup100DetailController.swift */,
 				B2059894244D7538007DA4DE /* StepBaseView.swift */,
 				B2059892244D7538007DA4DE /* Step100DetailView.swift */,
 				B2059893244D7538007DA4DE /* Step101DetailView.swift */,
+				B27E86822450265700AFB2E2 /* Step102DetailView.swift */,
+				B25F5CC7245035FF004DD9AC /* thumbsUp.json */,
 			);
-			path = Step100Detail;
-			sourceTree = "<group>";
-		};
-		B205989A244D7538007DA4DE /* PlistDataParse */ = {
-			isa = PBXGroup;
-			children = (
-				B205989B244D7538007DA4DE /* PlistTrainingStepModel.swift */,
-				B205989C244D7538007DA4DE /* PlistMemoryCodeModel.swift */,
-				B205989D244D7538007DA4DE /* PlistMemoryTipsModel.swift */,
-			);
-			path = PlistDataParse;
+			path = StepGroup100Detail;
 			sourceTree = "<group>";
 		};
 		B205989E244D7538007DA4DE /* tool */ = {
@@ -362,9 +313,6 @@
 			children = (
 				B205989F244D7538007DA4DE /* BaseViewController.swift */,
 				B20598A0244D7538007DA4DE /* BaseNaviController.swift */,
-				B20598A1244D7538007DA4DE /* GlobalConfig.swift */,
-				B20598A2244D7538007DA4DE /* TrainingStepUserDefaults.swift */,
-				B20598B3244D76A1007DA4DE /* GetController+Extension.swift */,
 				B20598B2244D76A1007DA4DE /* ProgressHUD.swift */,
 			);
 			path = tool;
@@ -519,6 +467,13 @@
 		B2EEB99B244F03730047A2D4 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				3A4489F2244F423200ED5BF8 /* UIColor+Extension.swift */,
+				3A4489F6244F423200ED5BF8 /* UIImage+Extension.swift */,
+				3A4489F7244F423200ED5BF8 /* Double+Extension.swift */,
+				3A4489F8244F423200ED5BF8 /* GetController+Extension.swift */,
+				3A4489F9244F423200ED5BF8 /* UIView+Extension.swift */,
+				3A4489FC244F423200ED5BF8 /* String+Extension.swift */,
+				3A448A0F244F423200ED5BF8 /* UIView+Dashed.swift */,
 				B2EEB99D244F03D70047A2D4 /* String+Size.swift */,
 			);
 			path = Extension;
@@ -631,6 +586,7 @@
 				B20598CB244D8E05007DA4DE /* icybay.jpg in Resources */,
 				B20598CE244D8E05007DA4DE /* twinlake.jpg in Resources */,
 				B20598CD244D8E05007DA4DE /* hiddenlake.jpg in Resources */,
+				B25F5CC8245035FF004DD9AC /* thumbsUp.json in Resources */,
 				B2E869AE24471AC90085F7ED /* Assets.xcassets in Resources */,
 				B20598D5244D8E05007DA4DE /* rainbowlake.jpg in Resources */,
 				B20598D4244D8E05007DA4DE /* chilkoottrail.jpg in Resources */,
@@ -730,50 +686,42 @@
 				B248E3512447F42D004F00B6 /* CircleImageView.swift in Sources */,
 				3A448A29244F423200ED5BF8 /* PlistMemoryTipsModel.swift in Sources */,
 				B2EEB99E244F03D70047A2D4 /* String+Size.swift in Sources */,
-				B20598A6244D7538007DA4DE /* Step100DetailController.swift in Sources */,
-				3A448A19244F423200ED5BF8 /* UIView+Constraints.swift in Sources */,
-				B20598AB244D7538007DA4DE /* PlistTrainingStepModel.swift in Sources */,
+				B21D279D245055FF0000C8ED /* UIViewRender.swift in Sources */,
+				B20598A6244D7538007DA4DE /* StepGroup100DetailController.swift in Sources */,
+				3A448A19244F423200ED5BF8 /* UIView+Extension.swift in Sources */,
 				B2EEB98B244EA58A0047A2D4 /* HexagonParameters.swift in Sources */,
 				3A448A20244F423200ED5BF8 /* TrainingStepUserDefaults.swift in Sources */,
 				3A448A13244F423200ED5BF8 /* SoundPlayer.swift in Sources */,
 				3A448A1C244F423200ED5BF8 /* String+Extension.swift in Sources */,
 				B20598AE244D7538007DA4DE /* BaseViewController.swift in Sources */,
-				3A448A25244F423200ED5BF8 /* UMengManager.swift in Sources */,
 				3A448A16244F423200ED5BF8 /* UIImage+Extension.swift in Sources */,
 				B20598A9244D7538007DA4DE /* TrainingStepEnum.swift in Sources */,
-				3A448A14244F423200ED5BF8 /* StatisticalEvent.swift in Sources */,
 				B20598A8244D7538007DA4DE /* TrainingStepController.swift in Sources */,
 				3A448A28244F423200ED5BF8 /* PlistMemoryCodeModel.swift in Sources */,
 				3A448A27244F423200ED5BF8 /* PlistTrainingStepModel.swift in Sources */,
 				B20598BA244D8DD1007DA4DE /* Landmark.swift in Sources */,
 				B2E869AC24471AC80085F7ED /* LandmarkDetail.swift in Sources */,
 				B2EEB991244EC9720047A2D4 /* RotatedBadgeSymbol.swift in Sources */,
-				3A448A10244F423200ED5BF8 /* MKNetWorking.swift in Sources */,
 				B20598D7244D947B007DA4DE /* LandmarkRow.swift in Sources */,
 				B20598A3244D7538007DA4DE /* Step100DetailView.swift in Sources */,
 				B20598B9244D8DD1007DA4DE /* Data.swift in Sources */,
 				3A448A24244F423200ED5BF8 /* QiKeychainItem.m in Sources */,
-				B20598AD244D7538007DA4DE /* PlistMemoryTipsModel.swift in Sources */,
 				B20598D9244DA05A007DA4DE /* LandmarkList.swift in Sources */,
-				3A448A1A244F423200ED5BF8 /* UIViewController+Extension.swift in Sources */,
 				3A448A26244F423200ED5BF8 /* RotationViewVertices.swift in Sources */,
-				B20598B5244D76A1007DA4DE /* GetController+Extension.swift in Sources */,
-				B20598AC244D7538007DA4DE /* PlistMemoryCodeModel.swift in Sources */,
 				B20598A4244D7538007DA4DE /* Step101DetailView.swift in Sources */,
 				B2EEB996244EDD550047A2D4 /* MemoryKingView.swift in Sources */,
 				3A448A2A244F423200ED5BF8 /* UIView+Dashed.swift in Sources */,
 				B2EEB988244EA46E0047A2D4 /* BadgeBackground.swift in Sources */,
 				3A448A1B244F423200ED5BF8 /* GlobalReleaseConfig.swift in Sources */,
 				B20598DB244DB5C8007DA4DE /* UserData.swift in Sources */,
-				B20598B1244D7538007DA4DE /* TrainingStepUserDefaults.swift in Sources */,
 				3A448A21244F423200ED5BF8 /* TrainingConfigUserDefaults.swift in Sources */,
 				3A448A18244F423200ED5BF8 /* GetController+Extension.swift in Sources */,
 				B20598A5244D7538007DA4DE /* StepBaseView.swift in Sources */,
-				B20598B0244D7538007DA4DE /* GlobalConfig.swift in Sources */,
 				B2EEB998244EE0840047A2D4 /* JumpToMemoryKing.swift in Sources */,
 				B2EEB98F244EC6A30047A2D4 /* BadgeSymbol.swift in Sources */,
 				3A448A1D244F423200ED5BF8 /* GlobalConfig.swift in Sources */,
 				B20598AA244D7538007DA4DE /* TrainingStepCell.swift in Sources */,
+				B27E86832450265700AFB2E2 /* Step102DetailView.swift in Sources */,
 				B20598B4244D76A1007DA4DE /* ProgressHUD.swift in Sources */,
 				3A448A1E244F423200ED5BF8 /* CheckAuthorization.swift in Sources */,
 				3A448A15244F423200ED5BF8 /* VectorOperation.swift in Sources */,

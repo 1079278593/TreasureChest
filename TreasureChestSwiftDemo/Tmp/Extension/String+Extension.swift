@@ -18,4 +18,11 @@ extension String {
         }
         return isMatch
     }
+    
+    func spaceName() -> String {
+        //获取命名空间也就是项目名称(Swift中引入了命名空间的概念，转Class需要拼接命名空间)
+        let clsName = Bundle.main.infoDictionary!["CFBundleExecutable"] as? String
+        let className = clsName! + "." + self
+        return className
+    }
 }
