@@ -33,6 +33,16 @@ class PlistTrainingStepModel: NSObject {
         return TrainingStep()
     }
     
+    class func getNextIndex(index: Int) -> Int {
+        let rootIndex = index/Int(100) - 1
+        let endIndex = index % 100 + 1
+        let trainingSteps = self.rootStep[rootIndex].trainingStep
+        if endIndex > trainingSteps.count {
+            return (index/Int(100) + 1) * TrainingStepBase
+        }
+        return index
+    }
+    
     private func getRootStep() -> [TrainingRootStep]? {
         if let path = Bundle.main.path(forResource: "TrainingStep", ofType: "plist"),
             let dict = NSDictionary(contentsOfFile: path) {
