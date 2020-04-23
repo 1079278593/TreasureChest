@@ -64,7 +64,9 @@
 		B2402ECB244D48E80043911A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2402ECA244D48E80043911A /* MapView.swift */; };
 		B248E3512447F42D004F00B6 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248E3502447F42D004F00B6 /* CircleImageView.swift */; };
 		B25F5CC8245035FF004DD9AC /* thumbsUp.json in Resources */ = {isa = PBXBuildFile; fileRef = B25F5CC7245035FF004DD9AC /* thumbsUp.json */; };
+		B26F6E2624516D25005EAC38 /* thumbsUp1.json in Resources */ = {isa = PBXBuildFile; fileRef = B26F6E2524516D25005EAC38 /* thumbsUp1.json */; };
 		B27E86832450265700AFB2E2 /* Step102DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E86822450265700AFB2E2 /* Step102DetailView.swift */; };
+		B299BE52245130CC0096360D /* donutLoader.json in Resources */ = {isa = PBXBuildFile; fileRef = B299BE51245130CC0096360D /* donutLoader.json */; };
 		B2E869A824471AC80085F7ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E869A724471AC80085F7ED /* AppDelegate.swift */; };
 		B2E869AA24471AC80085F7ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E869A924471AC80085F7ED /* SceneDelegate.swift */; };
 		B2E869AC24471AC80085F7ED /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E869AB24471AC80085F7ED /* LandmarkDetail.swift */; };
@@ -158,7 +160,9 @@
 		B2402ECA244D48E80043911A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		B248E3502447F42D004F00B6 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		B25F5CC7245035FF004DD9AC /* thumbsUp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = thumbsUp.json; sourceTree = "<group>"; };
+		B26F6E2524516D25005EAC38 /* thumbsUp1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = thumbsUp1.json; sourceTree = "<group>"; };
 		B27E86822450265700AFB2E2 /* Step102DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step102DetailView.swift; sourceTree = "<group>"; };
+		B299BE51245130CC0096360D /* donutLoader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = donutLoader.json; sourceTree = "<group>"; };
 		B2E869A424471AC80085F7ED /* TreasureChestSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreasureChestSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2E869A724471AC80085F7ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2E869A924471AC80085F7ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -304,6 +308,8 @@
 				B2059893244D7538007DA4DE /* Step101DetailView.swift */,
 				B27E86822450265700AFB2E2 /* Step102DetailView.swift */,
 				B25F5CC7245035FF004DD9AC /* thumbsUp.json */,
+				B299BE51245130CC0096360D /* donutLoader.json */,
+				B26F6E2524516D25005EAC38 /* thumbsUp1.json */,
 			);
 			path = StepGroup100Detail;
 			sourceTree = "<group>";
@@ -577,6 +583,7 @@
 				B2EEB994244ED71E0047A2D4 /* hikeData.json in Resources */,
 				B20598D0244D8E05007DA4DE /* landmarkData.json in Resources */,
 				B20598C9244D8E05007DA4DE /* turtlerock.jpg in Resources */,
+				B299BE52245130CC0096360D /* donutLoader.json in Resources */,
 				B2E869B424471AC90085F7ED /* LaunchScreen.storyboard in Resources */,
 				B2EEB99A244EE24A0047A2D4 /* TrainingStep.plist in Resources */,
 				B20598CF244D8E05007DA4DE /* umbagog.jpg in Resources */,
@@ -590,6 +597,7 @@
 				B2E869AE24471AC90085F7ED /* Assets.xcassets in Resources */,
 				B20598D5244D8E05007DA4DE /* rainbowlake.jpg in Resources */,
 				B20598D4244D8E05007DA4DE /* chilkoottrail.jpg in Resources */,
+				B26F6E2624516D25005EAC38 /* thumbsUp1.json in Resources */,
 				B20598D2244D8E05007DA4DE /* charleyrivers.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

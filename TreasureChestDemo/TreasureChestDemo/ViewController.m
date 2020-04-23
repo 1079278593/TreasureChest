@@ -19,6 +19,7 @@
 #import "ServerMockCtl.h"
 #import "MBHudDemoViewController.h"
 #import "VideoRecorderCtl.h"
+#import "LottieAnimationsCtl.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic, strong)UITableView *tableView;
@@ -91,6 +92,7 @@
                        @"Mock服务端接口",
                        @"HUD效果",
                        @"视频录制-动画转视频",
+                       @"lottie资源展示",
                     ];
     return datas;
 }
@@ -108,6 +110,7 @@
                              NSStringFromClass([ServerMockCtl class]),
                              NSStringFromClass([MBHudDemoViewController class]),
                              NSStringFromClass([VideoRecorderCtl class]),
+                             NSStringFromClass([LottieAnimationsCtl class]),
                             ];
     return classArrays;
 }
