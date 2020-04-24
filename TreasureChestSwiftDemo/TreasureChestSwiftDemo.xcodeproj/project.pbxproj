@@ -90,6 +90,7 @@
 		B2B9363B245285C900A8E34E /* StepDetailView104.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B93635245285C900A8E34E /* StepDetailView104.swift */; };
 		B2B9363C245285C900A8E34E /* StepDetailView102.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B93636245285C900A8E34E /* StepDetailView102.swift */; };
 		B2B9363D245285C900A8E34E /* StepDetailView100.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B93637245285C900A8E34E /* StepDetailView100.swift */; };
+		B2B9363F2452C9A300A8E34E /* StepBaseVirtualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B9363E2452C9A300A8E34E /* StepBaseVirtualView.swift */; };
 		B2E869A824471AC80085F7ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E869A724471AC80085F7ED /* AppDelegate.swift */; };
 		B2E869AA24471AC80085F7ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E869A924471AC80085F7ED /* SceneDelegate.swift */; };
 		B2E869AC24471AC80085F7ED /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E869AB24471AC80085F7ED /* LandmarkDetail.swift */; };
@@ -210,6 +211,8 @@
 		B2B93635245285C900A8E34E /* StepDetailView104.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepDetailView104.swift; sourceTree = "<group>"; };
 		B2B93636245285C900A8E34E /* StepDetailView102.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepDetailView102.swift; sourceTree = "<group>"; };
 		B2B93637245285C900A8E34E /* StepDetailView100.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepDetailView100.swift; sourceTree = "<group>"; };
+		B2B9363E2452C9A300A8E34E /* StepBaseVirtualView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepBaseVirtualView.swift; sourceTree = "<group>"; };
+		B2B936432452CF0D00A8E34E /* TreasureChestSwiftDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TreasureChestSwiftDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		B2E869A424471AC80085F7ED /* TreasureChestSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreasureChestSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2E869A724471AC80085F7ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2E869A924471AC80085F7ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -351,6 +354,7 @@
 		B2059891244D7538007DA4DE /* StepGroupDetail */ = {
 			isa = PBXGroup;
 			children = (
+				B2B9363E2452C9A300A8E34E /* StepBaseVirtualView.swift */,
 				B2059894244D7538007DA4DE /* StepBaseView.swift */,
 				B2B9362F2452824A00A8E34E /* step1 */,
 				B2B936312452850E00A8E34E /* step2 */,
@@ -515,6 +519,7 @@
 				B2402EC8244D40FF0043911A /* Demo */,
 				B2E869AD24471AC90085F7ED /* Assets.xcassets */,
 				B2E869B224471AC90085F7ED /* LaunchScreen.storyboard */,
+				B2B936432452CF0D00A8E34E /* TreasureChestSwiftDemo-Bridging-Header.h */,
 				B2E869B524471AC90085F7ED /* Info.plist */,
 				B2E869AF24471AC90085F7ED /* Preview Content */,
 			);
@@ -802,6 +807,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2E869A824471AC80085F7ED /* AppDelegate.swift in Sources */,
+				B2B9363F2452C9A300A8E34E /* StepBaseVirtualView.swift in Sources */,
 				B2B9363C245285C900A8E34E /* StepDetailView102.swift in Sources */,
 				3A448A1F244F423200ED5BF8 /* ClockTimerConver.swift in Sources */,
 				3A448A12244F423200ED5BF8 /* UIColor+Extension.swift in Sources */,
