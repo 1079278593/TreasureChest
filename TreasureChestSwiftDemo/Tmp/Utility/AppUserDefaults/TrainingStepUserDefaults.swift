@@ -12,7 +12,7 @@ import HandyJSON
 fileprivate let TrainingStepUserDefaultsKey = "GlobalUserDefaultsKey"
 
 struct TrainingStepUserDefaults: HandyJSON {
-    var currentStep: Int = 100;    //当前的教程位置,初始为100(整数：防止精度问题)
+    var currentStep: Int = 0;    //当前的教程位置,初始为0
 }
 
 extension TrainingStepUserDefaults {
@@ -33,8 +33,8 @@ extension TrainingStepUserDefaults {
     }
 }
 
-extension TrainingStepUserDefaults {
-    public func islocking(rootIndex:Int, secondIndex:Int) ->Bool {
-        return self.currentStep < (rootIndex*TrainingStepBase + secondIndex)
-    }
-}
+//extension TrainingStepUserDefaults {
+//    public func islocking(rootIndex:Int, secondIndex:Int) ->Bool {
+//        return self.currentStep < (rootIndex*TrainingStepBase + secondIndex)
+//    }
+//}

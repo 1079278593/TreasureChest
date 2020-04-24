@@ -23,7 +23,7 @@ class PlistTrainingStepModel: NSObject {
     
     ///index = 101、303这种
     class func getTrainingStep(index: Int) -> TrainingStep {
-        let rootIndex = index/100 - 1
+        let rootIndex = index/TrainingStepBase
         let trainingSteps = self.rootStep[rootIndex].trainingStep
         for trainingStep in trainingSteps {
             if trainingStep.index == index {
@@ -34,11 +34,11 @@ class PlistTrainingStepModel: NSObject {
     }
     
     class func getNextIndex(index: Int) -> Int {
-        let rootIndex = index/Int(100) - 1
-        let endIndex = index % 100 + 1
+        let rootIndex = index/Int(TrainingStepBase)
+        let endIndex = index % TrainingStepBase + 1
         let trainingSteps = self.rootStep[rootIndex].trainingStep
         if endIndex > trainingSteps.count {
-            return (index/Int(100) + 1) * TrainingStepBase
+            return (index/Int(TrainingStepBase) + 1) * TrainingStepBase
         }
         return index
     }
@@ -52,23 +52,6 @@ class PlistTrainingStepModel: NSObject {
         }
         return nil
     }
-    
-//    public func groupStepWithIndex(index: Int) -> [TrainingStep] {
-//        if self.rootStep.count > index {
-//            return self.rootStep[index].trainingStep
-//        }
-//        return [TrainingStep]()
-//    }
-//
-//    public func detailStepWithIndex(groupIndex: Int, detailIndex: Int) -> [TrainingStepDetail] {
-//        if self.rootStep.count > groupIndex {
-//            let trainingStep = self.rootStep[groupIndex].trainingStep
-//            if (trainingStep.count > detailIndex) {
-//                return trainingStep[detailIndex].stepDetail
-//            }
-//        }
-//        return [TrainingStepDetail]()
-//    }
 }
 
 struct TrainingRootStep: HandyJSON {

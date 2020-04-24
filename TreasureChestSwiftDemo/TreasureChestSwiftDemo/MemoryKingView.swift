@@ -11,12 +11,12 @@ import UIKit
 
 struct MemoryKingView: UIViewControllerRepresentable {
     
-    func makeUIViewController(context: Context) -> TrainingStepController {
-        let pageViewController = TrainingStepController()
+    func makeUIViewController(context: Context) -> TrainingStepRootCtl {
+        let pageViewController = TrainingStepRootCtl()
         return pageViewController
     }
     
-    func updateUIViewController(_ uiViewController: TrainingStepController, context: Context) {
+    func updateUIViewController(_ uiViewController: TrainingStepRootCtl, context: Context) {
     }
     
 }
