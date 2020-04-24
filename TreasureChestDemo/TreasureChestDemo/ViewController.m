@@ -31,7 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.datas = [self getCellDatas];
-    self.tableView.frame = CGRectMake(0, 64, KScreenWidth, KScreenHeight);
+    self.tableView.frame = CGRectMake(0, 64, KScreenWidth, KScreenHeight-64);
 }
 
 #pragma mark - table

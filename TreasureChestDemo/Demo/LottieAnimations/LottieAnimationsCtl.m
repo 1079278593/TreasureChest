@@ -45,7 +45,9 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    LottieAnimationsCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([LottieAnimationsCell class]) forIndexPath:indexPath];
+    NSString *identifier = [NSString stringWithFormat:@"id_%ld",(long)indexPath.row];
+    [self.collectionView registerClass:[LottieAnimationsCell class] forCellWithReuseIdentifier:identifier];
+    LottieAnimationsCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     [cell refreshCell:self.datas[indexPath.row]];
     return cell;
 }
@@ -68,7 +70,7 @@
         _collectionView.backgroundColor = [UIColor clearColor];
         _collectionView.showsVerticalScrollIndicator = false;
         _collectionView.alwaysBounceVertical = true;//数据少时也能滚动
-        [_collectionView registerClass:[LottieAnimationsCell class] forCellWithReuseIdentifier:NSStringFromClass([LottieAnimationsCell class])];
+//        [_collectionView registerClass:[LottieAnimationsCell class] forCellWithReuseIdentifier:NSStringFromClass([LottieAnimationsCell class])];
     }
     return _collectionView;
 }
