@@ -51,6 +51,7 @@ abstract_target 'abstract_pod' do
     pod 'RxCocoa'
     pod 'Alamofire'
     pod 'MSWeakTimer'
+    pod 'Kingfisher'
     
     target 'TreasureChestSwiftDemoTests' do
       inherit! :search_paths
