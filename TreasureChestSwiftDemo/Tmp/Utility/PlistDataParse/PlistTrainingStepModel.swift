@@ -35,9 +35,9 @@ class PlistTrainingStepModel: NSObject {
     
     class func getNextIndex(index: Int) -> Int {
         let rootIndex = index/Int(TrainingStepBase)
-        let endIndex = index % TrainingStepBase + 1
+        let endIndex = index % TrainingStepBase
         let trainingSteps = self.rootStep[rootIndex].trainingStep
-        if endIndex > trainingSteps.count {
+        if endIndex > (trainingSteps.count-1) {
             return (index/Int(TrainingStepBase) + 1) * TrainingStepBase
         }
         return index
@@ -69,12 +69,18 @@ struct TrainingStep: HandyJSON {
 
 struct TrainingStepDetail: HandyJSON {
     var title = ""
-    var cancle = ""
-    var confirm = ""
+    var cancle = ""     //取消
+    var confirm = ""    //确认
+    var skip = ""       //跳过
     var describe = ""   //
     var picture = ""    //图片或者gif
     var audio = ""
     var video = ""
-    var options = ""    //需要根据"、"分割。比如："葡萄、柠檬、橙子"
     var duration:Float = 0.0    //限制点击，时间到了才能进行下一步。
+    var options = [TrainingStepOptions]()
+}
+
+struct TrainingStepOptions: HandyJSON {
+    var title = ""
+    var bundleName = ""
 }

@@ -29,7 +29,7 @@
 - (NSArray *)getDatas {
     NSString *bundlePath = [[ NSBundle mainBundle] pathForResource:@"lotties" ofType :@"bundle"];
     NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
-    NSArray *lotties = [bundle pathsForResourcesOfType:@"json" inDirectory:@""];
+    NSArray *lotties = [bundle pathsForResourcesOfType:@"" inDirectory:@""];
     return lotties;
 }
 

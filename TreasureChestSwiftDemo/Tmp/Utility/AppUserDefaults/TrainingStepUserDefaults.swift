@@ -33,8 +33,14 @@ extension TrainingStepUserDefaults {
     }
 }
 
-//extension TrainingStepUserDefaults {
-//    public func islocking(rootIndex:Int, secondIndex:Int) ->Bool {
-//        return self.currentStep < (rootIndex*TrainingStepBase + secondIndex)
-//    }
-//}
+extension TrainingStepUserDefaults {
+    static func saveWithIndex(nextStepIndex: Int) {
+        var trainingUserDefaults = TrainingStepUserDefaults.read
+        if nextStepIndex > trainingUserDefaults.currentStep {
+            trainingUserDefaults.currentStep = nextStepIndex
+            trainingUserDefaults.save()
+        }
+//        trainingUserDefaults.currentStep = 104
+//        trainingUserDefaults.save()
+    }
+}
