@@ -23,8 +23,10 @@
 #import "LexiconViewCtl.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
+
 @property(nonatomic, strong)UITableView *tableView;
 @property(nonatomic, strong)NSArray *datas;
+
 @end
 
 @implementation ViewController

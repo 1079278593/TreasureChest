@@ -28,6 +28,19 @@
 		3AD14A2D24615273004D54B8 /* words_medical.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A2124615273004D54B8 /* words_medical.txt */; };
 		3AD14A3124615354004D54B8 /* LexiconViewCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD14A3024615354004D54B8 /* LexiconViewCtl.m */; };
 		3AD14A3524615608004D54B8 /* Lexicon.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A3424615608004D54B8 /* Lexicon.plist */; };
+		3AD14A3824616A44004D54B8 /* LexiconFileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD14A3724616A44004D54B8 /* LexiconFileModel.m */; };
+		3AD14A3B24619735004D54B8 /* words_animals.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A3A24619735004D54B8 /* words_animals.plist */; };
+		3AD14A3D24619A44004D54B8 /* words_medical.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A3C24619A44004D54B8 /* words_medical.plist */; };
+		3AD14A3F24619AB1004D54B8 /* words_toponymy.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A3E24619AB1004D54B8 /* words_toponymy.plist */; };
+		3AD14A4124619BC6004D54B8 /* words_idiom.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A4024619BC6004D54B8 /* words_idiom.plist */; };
+		3AD14A4324619C19004D54B8 /* words_car.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A4224619C19004D54B8 /* words_car.plist */; };
+		3AD14A4524619C75004D54B8 /* words_law.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A4424619C74004D54B8 /* words_law.plist */; };
+		3AD14A4724619CB2004D54B8 /* words_professions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A4624619CB2004D54B8 /* words_professions.plist */; };
+		3AD14A4924619E1C004D54B8 /* words_finance.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A4824619E1C004D54B8 /* words_finance.plist */; };
+		3AD14A4B24619E7B004D54B8 /* words_foods.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A4A24619E7B004D54B8 /* words_foods.plist */; };
+		3AD14A4D24619EE2004D54B8 /* words_it.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A4C24619EE2004D54B8 /* words_it.plist */; };
+		3AD14A4F24619F2F004D54B8 /* words_famousperson.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A4E24619F2F004D54B8 /* words_famousperson.plist */; };
+		3AD14A5124619F83004D54B8 /* words_poem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A5024619F83004D54B8 /* words_poem.plist */; };
 		3AE550E123A9189F001D989E /* FormsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE550D623A9189F001D989E /* FormsView.m */; };
 		3AE550E223A9189F001D989E /* ResidentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE550D923A9189F001D989E /* ResidentScrollView.m */; };
 		3BEFF9DF0E12D318A440735F /* Pods_TreasureChestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140A460F1B11381DEED65D5B /* Pods_TreasureChestTests.framework */; };
@@ -221,6 +234,20 @@
 		3AD14A2F24615354004D54B8 /* LexiconViewCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LexiconViewCtl.h; sourceTree = "<group>"; };
 		3AD14A3024615354004D54B8 /* LexiconViewCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LexiconViewCtl.m; sourceTree = "<group>"; };
 		3AD14A3424615608004D54B8 /* Lexicon.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Lexicon.plist; sourceTree = "<group>"; };
+		3AD14A3624616A44004D54B8 /* LexiconFileModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LexiconFileModel.h; sourceTree = "<group>"; };
+		3AD14A3724616A44004D54B8 /* LexiconFileModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LexiconFileModel.m; sourceTree = "<group>"; };
+		3AD14A3A24619735004D54B8 /* words_animals.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = words_animals.plist; sourceTree = "<group>"; };
+		3AD14A3C24619A44004D54B8 /* words_medical.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = words_medical.plist; sourceTree = "<group>"; };
+		3AD14A3E24619AB1004D54B8 /* words_toponymy.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = words_toponymy.plist; sourceTree = "<group>"; };
+		3AD14A4024619BC6004D54B8 /* words_idiom.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = words_idiom.plist; sourceTree = "<group>"; };
+		3AD14A4224619C19004D54B8 /* words_car.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = words_car.plist; sourceTree = "<group>"; };
+		3AD14A4424619C74004D54B8 /* words_law.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = words_law.plist; sourceTree = "<group>"; };
+		3AD14A4624619CB2004D54B8 /* words_professions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = words_professions.plist; sourceTree = "<group>"; };
+		3AD14A4824619E1C004D54B8 /* words_finance.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = words_finance.plist; sourceTree = "<group>"; };
+		3AD14A4A24619E7B004D54B8 /* words_foods.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = words_foods.plist; sourceTree = "<group>"; };
+		3AD14A4C24619EE2004D54B8 /* words_it.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = words_it.plist; sourceTree = "<group>"; };
+		3AD14A4E24619F2F004D54B8 /* words_famousperson.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = words_famousperson.plist; sourceTree = "<group>"; };
+		3AD14A5024619F83004D54B8 /* words_poem.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = words_poem.plist; sourceTree = "<group>"; };
 		3AE550D523A9189F001D989E /* FormsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormsView.h; sourceTree = "<group>"; };
 		3AE550D623A9189F001D989E /* FormsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormsView.m; sourceTree = "<group>"; };
 		3AE550D823A9189F001D989E /* ResidentScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResidentScrollView.h; sourceTree = "<group>"; };
@@ -604,9 +631,31 @@
 			children = (
 				3AD14A2F24615354004D54B8 /* LexiconViewCtl.h */,
 				3AD14A3024615354004D54B8 /* LexiconViewCtl.m */,
+				3AD14A3624616A44004D54B8 /* LexiconFileModel.h */,
+				3AD14A3724616A44004D54B8 /* LexiconFileModel.m */,
 				3AD14A3424615608004D54B8 /* Lexicon.plist */,
+				3AD14A392461971C004D54B8 /* Resources */,
 			);
 			path = Lexicon;
+			sourceTree = "<group>";
+		};
+		3AD14A392461971C004D54B8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3AD14A3A24619735004D54B8 /* words_animals.plist */,
+				3AD14A3C24619A44004D54B8 /* words_medical.plist */,
+				3AD14A3E24619AB1004D54B8 /* words_toponymy.plist */,
+				3AD14A4024619BC6004D54B8 /* words_idiom.plist */,
+				3AD14A4224619C19004D54B8 /* words_car.plist */,
+				3AD14A4424619C74004D54B8 /* words_law.plist */,
+				3AD14A4624619CB2004D54B8 /* words_professions.plist */,
+				3AD14A4824619E1C004D54B8 /* words_finance.plist */,
+				3AD14A4A24619E7B004D54B8 /* words_foods.plist */,
+				3AD14A4C24619EE2004D54B8 /* words_it.plist */,
+				3AD14A4E24619F2F004D54B8 /* words_famousperson.plist */,
+				3AD14A5024619F83004D54B8 /* words_poem.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		3AE550CF23A9189F001D989E /* TreasureChest */ = {
@@ -1437,20 +1486,30 @@
 				3AD14A3524615608004D54B8 /* Lexicon.plist in Resources */,
 				3AD14A2424615273004D54B8 /* words_it.txt in Resources */,
 				B2506D1B23ABA1410034A472 /* select_down_icon@3x.png in Resources */,
+				3AD14A3D24619A44004D54B8 /* words_medical.plist in Resources */,
+				3AD14A4524619C75004D54B8 /* words_law.plist in Resources */,
 				B2506D1C23ABA1410034A472 /* select_down_icon@2x.png in Resources */,
 				B215CC472431F5290017BFD9 /* hud_error@2x.png in Resources */,
+				3AD14A4124619BC6004D54B8 /* words_idiom.plist in Resources */,
 				B2506D1323ABA12D0034A472 /* options_none_icon@2x.png in Resources */,
 				3A40235B23A62ED100BDB4E3 /* Main.storyboard in Resources */,
 				B26F6E24245149B8005EAC38 /* lotties.bundle in Resources */,
+				3AD14A4324619C19004D54B8 /* words_car.plist in Resources */,
 				3AD14A2924615273004D54B8 /* words_foods.txt in Resources */,
 				3A40235823A62ED100BDB4E3 /* Assets.xcassets in Resources */,
 				3AD14A2524615273004D54B8 /* words_car.txt in Resources */,
 				B215CC4B2431F5290017BFD9 /* hud_info@2x.png in Resources */,
+				3AD14A4D24619EE2004D54B8 /* words_it.plist in Resources */,
 				3AD14A2A24615273004D54B8 /* words_idiom.txt in Resources */,
+				3AD14A5124619F83004D54B8 /* words_poem.plist in Resources */,
+				3AD14A4F24619F2F004D54B8 /* words_famousperson.plist in Resources */,
 				3AD14A2C24615273004D54B8 /* words_animals.txt in Resources */,
 				3AD14A2824615273004D54B8 /* words_famousperson.txt in Resources */,
+				3AD14A4B24619E7B004D54B8 /* words_foods.plist in Resources */,
 				B215CC4A2431F5290017BFD9 /* hud_success@2x.png in Resources */,
+				3AD14A3F24619AB1004D54B8 /* words_toponymy.plist in Resources */,
 				B2506D1423ABA12D0034A472 /* options_none_icon@3x.png in Resources */,
+				3AD14A3B24619735004D54B8 /* words_animals.plist in Resources */,
 				3AD14A2B24615273004D54B8 /* words_law.txt in Resources */,
 				3AD14A2224615273004D54B8 /* words_finance.txt in Resources */,
 				B215CC492431F5290017BFD9 /* hud_error.png in Resources */,
@@ -1458,9 +1517,11 @@
 				3AD14A2324615273004D54B8 /* words_toponymy.txt in Resources */,
 				B2506D0F23AB8AFA0034A472 /* TestData.plist in Resources */,
 				3A40235A23A62ED100BDB4E3 /* LaunchScreen.storyboard in Resources */,
+				3AD14A4724619CB2004D54B8 /* words_professions.plist in Resources */,
 				B2506D1823ABA1370034A472 /* options_selected_icon@3x.png in Resources */,
 				3AD14A2724615273004D54B8 /* words_poem.txt in Resources */,
 				B2506D1723ABA1370034A472 /* options_selected_icon@2x.png in Resources */,
+				3AD14A4924619E1C004D54B8 /* words_finance.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1589,6 +1650,7 @@
 				B26FBD5F2441CDB8003DB3BE /* LOTValueInterpolator.m in Sources */,
 				B284723E2404F5A600C1194F /* ServerMockCtl.m in Sources */,
 				B26FBD782441CDB8003DB3BE /* LOTShapeGradientFill.m in Sources */,
+				3AD14A3824616A44004D54B8 /* LexiconFileModel.m in Sources */,
 				B2C459312440524F00117BD7 /* QuadCurveGeometry.m in Sources */,
 				B26FBD8A2441CDB8003DB3BE /* LOTAnimationView.m in Sources */,
 				B26FBD792441CDB8003DB3BE /* LOTAsset.m in Sources */,
