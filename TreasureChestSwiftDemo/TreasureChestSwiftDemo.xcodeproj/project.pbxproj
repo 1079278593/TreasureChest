@@ -65,7 +65,7 @@
 		3AA477212453F0140077062B /* StepBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA477042453F0140077062B /* StepBaseView.swift */; };
 		3AA477222453F0140077062B /* StepGroupDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA477052453F0140077062B /* StepGroupDetailController.swift */; };
 		3AA477232453F0140077062B /* StepGroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA477062453F0140077062B /* StepGroupController.swift */; };
-		3AA477242453F0140077062B /* TrainingStepEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA477072453F0140077062B /* TrainingStepEnum.swift */; };
+		3AA477242453F0140077062B /* TrainingStepConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA477072453F0140077062B /* TrainingStepConfig.swift */; };
 		3AA477252453F0140077062B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA477092453F0140077062B /* BaseViewController.swift */; };
 		3AA477262453F0140077062B /* BaseNaviController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4770A2453F0140077062B /* BaseNaviController.swift */; };
 		3AA477272453F0140077062B /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4770B2453F0140077062B /* ProgressHUD.swift */; };
@@ -206,7 +206,7 @@
 		3AA477042453F0140077062B /* StepBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepBaseView.swift; sourceTree = "<group>"; };
 		3AA477052453F0140077062B /* StepGroupDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepGroupDetailController.swift; sourceTree = "<group>"; };
 		3AA477062453F0140077062B /* StepGroupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepGroupController.swift; sourceTree = "<group>"; };
-		3AA477072453F0140077062B /* TrainingStepEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingStepEnum.swift; sourceTree = "<group>"; };
+		3AA477072453F0140077062B /* TrainingStepConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingStepConfig.swift; sourceTree = "<group>"; };
 		3AA477092453F0140077062B /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		3AA4770A2453F0140077062B /* BaseNaviController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNaviController.swift; sourceTree = "<group>"; };
 		3AA4770B2453F0140077062B /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
@@ -366,7 +366,7 @@
 			path = sound;
 			sourceTree = "<group>";
 		};
-		3A48E6C1245439B0007E759F /* picture */ = {
+		3A48E6C1245439B0007E759F /* stepPicture */ = {
 			isa = PBXGroup;
 			children = (
 				3A48E76E24546BD1007E759F /* thumbnail6.png */,
@@ -376,7 +376,7 @@
 				B2C7D2402456AE050043C556 /* 102 */,
 				3A48E6C224543F0E007E759F /* 101 */,
 			);
-			path = picture;
+			path = stepPicture;
 			sourceTree = "<group>";
 		};
 		3A48E6C224543F0E007E759F /* 101 */ = {
@@ -407,7 +407,7 @@
 		3AA476EB2453F0140077062B /* TrainingStep */ = {
 			isa = PBXGroup;
 			children = (
-				3AA477072453F0140077062B /* TrainingStepEnum.swift */,
+				3AA477072453F0140077062B /* TrainingStepConfig.swift */,
 				3AA4770C2453F0140077062B /* TrainingStepRootCtl.swift */,
 				3AA4770D2453F0140077062B /* TrainingStepRootCell.swift */,
 				3AA476EC2453F0140077062B /* StepGroup100 */,
@@ -562,7 +562,7 @@
 		B26F6E27245199AC005EAC38 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3A48E6C1245439B0007E759F /* picture */,
+				3A48E6C1245439B0007E759F /* stepPicture */,
 				3A48E6C0245439A5007E759F /* sound */,
 			);
 			path = Resources;
@@ -989,7 +989,7 @@
 				3A448A26244F423200ED5BF8 /* RotationViewVertices.swift in Sources */,
 				B2EEB996244EDD550047A2D4 /* MemoryKingView.swift in Sources */,
 				3AA477252453F0140077062B /* BaseViewController.swift in Sources */,
-				3AA477242453F0140077062B /* TrainingStepEnum.swift in Sources */,
+				3AA477242453F0140077062B /* TrainingStepConfig.swift in Sources */,
 				3A448A2A244F423200ED5BF8 /* UIView+Dashed.swift in Sources */,
 				3AA477282453F0140077062B /* TrainingStepRootCtl.swift in Sources */,
 				3AA477172453F0140077062B /* StepDetailView4.swift in Sources */,
