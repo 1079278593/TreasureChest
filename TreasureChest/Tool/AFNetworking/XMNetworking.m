@@ -53,7 +53,8 @@ static NSString *const BaseURL = @"https://www.";
                       failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure
 {
     
-    return [self.AFManager GET:URLString parameters:parameters progress:nil success:success failure:failure];
+//    return [self.AFManager GET:URLString parameters:parameters progress:nil success:success failure:failure];
+    return [self.AFManager GET:URLString parameters:parameters headers:nil progress:nil success:success failure:failure];
 }
 
 - (NSURLSessionDataTask *)POST:(NSString *)URLString
@@ -61,7 +62,8 @@ static NSString *const BaseURL = @"https://www.";
                        success:(void (^)(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject))success
                        failure:(void (^)(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error))failure
 {
-    return [self.AFManager POST:URLString parameters:parameters progress:nil success:success failure:failure];
+//    return [self.AFManager POST:URLString parameters:parameters progress:nil success:success failure:failure];
+    return [self.AFManager POST:URLString parameters:parameters headers:nil progress:nil success:success failure:failure];
 }
 
 - (NSURLSessionDataTask *)upload:(NSString *)URLString
@@ -74,7 +76,7 @@ static NSString *const BaseURL = @"https://www.";
                          success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
                          failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure
 {
-    NSURLSessionDataTask *task = [self.AFManager POST:URLString parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    NSURLSessionDataTask *task = [self.AFManager POST:URLString parameters:parameters headers:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         [formData appendPartWithFileURL:[NSURL URLWithString:filePath] name:name fileName:fileName mimeType:mimeType error:nil];
     } progress:uploadProgress success:success failure:failure];
     
@@ -91,7 +93,7 @@ static NSString *const BaseURL = @"https://www.";
                          success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
                          failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure
 {
-    NSURLSessionDataTask *task = [self.AFManager POST:URLString parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    NSURLSessionDataTask *task = [self.AFManager POST:URLString parameters:parameters headers:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         [formData appendPartWithFileData:fileData name:name fileName:fileName mimeType:mimeType];
     } progress:uploadProgress success:success failure:failure];
     

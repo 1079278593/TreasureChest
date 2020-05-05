@@ -20,6 +20,7 @@
 #import "MBHudDemoViewController.h"
 #import "VideoRecorderCtl.h"
 #import "LottieAnimationsCtl.h"
+#import "LexiconViewCtl.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic, strong)UITableView *tableView;
@@ -93,6 +94,7 @@
                        @"HUD效果",
                        @"视频录制-动画转视频",
                        @"lottie资源展示",
+                       @"中文词库",
                     ];
     return datas;
 }
@@ -111,6 +113,7 @@
                              NSStringFromClass([MBHudDemoViewController class]),
                              NSStringFromClass([VideoRecorderCtl class]),
                              NSStringFromClass([LottieAnimationsCtl class]),
+                             NSStringFromClass([LexiconViewCtl class]),
                             ];
     return classArrays;
 }

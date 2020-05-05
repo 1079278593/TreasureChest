@@ -14,7 +14,20 @@
 		3A40235C23A62ED100BDB4E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A40234623A62ED100BDB4E3 /* main.m */; };
 		3A40235D23A62ED100BDB4E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A40234723A62ED100BDB4E3 /* AppDelegate.m */; };
 		3A99DE1723ABCB83002DDF23 /* TreasureChest.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 3A99DE1623ABCB83002DDF23 /* TreasureChest.podspec */; };
-		3AE550E023A9189F001D989E /* TmpScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE550D223A9189F001D989E /* TmpScrollView.swift */; };
+		3AD14A2224615273004D54B8 /* words_finance.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A1624615273004D54B8 /* words_finance.txt */; };
+		3AD14A2324615273004D54B8 /* words_toponymy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A1724615273004D54B8 /* words_toponymy.txt */; };
+		3AD14A2424615273004D54B8 /* words_it.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A1824615273004D54B8 /* words_it.txt */; };
+		3AD14A2524615273004D54B8 /* words_car.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A1924615273004D54B8 /* words_car.txt */; };
+		3AD14A2624615273004D54B8 /* words_professions.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A1A24615273004D54B8 /* words_professions.txt */; };
+		3AD14A2724615273004D54B8 /* words_poem.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A1B24615273004D54B8 /* words_poem.txt */; };
+		3AD14A2824615273004D54B8 /* words_famousperson.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A1C24615273004D54B8 /* words_famousperson.txt */; };
+		3AD14A2924615273004D54B8 /* words_foods.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A1D24615273004D54B8 /* words_foods.txt */; };
+		3AD14A2A24615273004D54B8 /* words_idiom.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A1E24615273004D54B8 /* words_idiom.txt */; };
+		3AD14A2B24615273004D54B8 /* words_law.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A1F24615273004D54B8 /* words_law.txt */; };
+		3AD14A2C24615273004D54B8 /* words_animals.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A2024615273004D54B8 /* words_animals.txt */; };
+		3AD14A2D24615273004D54B8 /* words_medical.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A2124615273004D54B8 /* words_medical.txt */; };
+		3AD14A3124615354004D54B8 /* LexiconViewCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD14A3024615354004D54B8 /* LexiconViewCtl.m */; };
+		3AD14A3524615608004D54B8 /* Lexicon.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A3424615608004D54B8 /* Lexicon.plist */; };
 		3AE550E123A9189F001D989E /* FormsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE550D623A9189F001D989E /* FormsView.m */; };
 		3AE550E223A9189F001D989E /* ResidentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE550D923A9189F001D989E /* ResidentScrollView.m */; };
 		3BEFF9DF0E12D318A440735F /* Pods_TreasureChestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140A460F1B11381DEED65D5B /* Pods_TreasureChestTests.framework */; };
@@ -193,7 +206,21 @@
 		3A40234823A62ED100BDB4E3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A40234923A62ED100BDB4E3 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		3A99DE1623ABCB83002DDF23 /* TreasureChest.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TreasureChest.podspec; path = ../TreasureChest.podspec; sourceTree = "<group>"; };
-		3AE550D223A9189F001D989E /* TmpScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TmpScrollView.swift; sourceTree = "<group>"; };
+		3AD14A1624615273004D54B8 /* words_finance.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words_finance.txt; sourceTree = "<group>"; };
+		3AD14A1724615273004D54B8 /* words_toponymy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words_toponymy.txt; sourceTree = "<group>"; };
+		3AD14A1824615273004D54B8 /* words_it.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words_it.txt; sourceTree = "<group>"; };
+		3AD14A1924615273004D54B8 /* words_car.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words_car.txt; sourceTree = "<group>"; };
+		3AD14A1A24615273004D54B8 /* words_professions.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words_professions.txt; sourceTree = "<group>"; };
+		3AD14A1B24615273004D54B8 /* words_poem.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words_poem.txt; sourceTree = "<group>"; };
+		3AD14A1C24615273004D54B8 /* words_famousperson.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words_famousperson.txt; sourceTree = "<group>"; };
+		3AD14A1D24615273004D54B8 /* words_foods.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words_foods.txt; sourceTree = "<group>"; };
+		3AD14A1E24615273004D54B8 /* words_idiom.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words_idiom.txt; sourceTree = "<group>"; };
+		3AD14A1F24615273004D54B8 /* words_law.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words_law.txt; sourceTree = "<group>"; };
+		3AD14A2024615273004D54B8 /* words_animals.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words_animals.txt; sourceTree = "<group>"; };
+		3AD14A2124615273004D54B8 /* words_medical.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words_medical.txt; sourceTree = "<group>"; };
+		3AD14A2F24615354004D54B8 /* LexiconViewCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LexiconViewCtl.h; sourceTree = "<group>"; };
+		3AD14A3024615354004D54B8 /* LexiconViewCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LexiconViewCtl.m; sourceTree = "<group>"; };
+		3AD14A3424615608004D54B8 /* Lexicon.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Lexicon.plist; sourceTree = "<group>"; };
 		3AE550D523A9189F001D989E /* FormsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormsView.h; sourceTree = "<group>"; };
 		3AE550D623A9189F001D989E /* FormsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormsView.m; sourceTree = "<group>"; };
 		3AE550D823A9189F001D989E /* ResidentScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResidentScrollView.h; sourceTree = "<group>"; };
@@ -538,10 +565,48 @@
 				3A40234823A62ED100BDB4E3 /* Info.plist */,
 				3AE550EA23A91A93001D989E /* TreasureChest-Bridging-Header.h */,
 				B2506D0A23AB84330034A472 /* PrefixHeader.pch */,
+				3AD14A1424615264004D54B8 /* Resources */,
 				B243E07823C4552E00B37519 /* CF-1151.16-源码研究 */,
 				3A40234023A62ED100BDB4E3 /* Assets.xcassets */,
 			);
 			path = TreasureChestDemo;
+			sourceTree = "<group>";
+		};
+		3AD14A1424615264004D54B8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3AD14A1524615273004D54B8 /* lexicon */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3AD14A1524615273004D54B8 /* lexicon */ = {
+			isa = PBXGroup;
+			children = (
+				3AD14A1624615273004D54B8 /* words_finance.txt */,
+				3AD14A1724615273004D54B8 /* words_toponymy.txt */,
+				3AD14A1824615273004D54B8 /* words_it.txt */,
+				3AD14A1924615273004D54B8 /* words_car.txt */,
+				3AD14A1A24615273004D54B8 /* words_professions.txt */,
+				3AD14A1B24615273004D54B8 /* words_poem.txt */,
+				3AD14A1C24615273004D54B8 /* words_famousperson.txt */,
+				3AD14A1D24615273004D54B8 /* words_foods.txt */,
+				3AD14A1E24615273004D54B8 /* words_idiom.txt */,
+				3AD14A1F24615273004D54B8 /* words_law.txt */,
+				3AD14A2024615273004D54B8 /* words_animals.txt */,
+				3AD14A2124615273004D54B8 /* words_medical.txt */,
+			);
+			path = lexicon;
+			sourceTree = "<group>";
+		};
+		3AD14A2E2461532E004D54B8 /* Lexicon */ = {
+			isa = PBXGroup;
+			children = (
+				3AD14A2F24615354004D54B8 /* LexiconViewCtl.h */,
+				3AD14A3024615354004D54B8 /* LexiconViewCtl.m */,
+				3AD14A3424615608004D54B8 /* Lexicon.plist */,
+			);
+			path = Lexicon;
 			sourceTree = "<group>";
 		};
 		3AE550CF23A9189F001D989E /* TreasureChest */ = {
@@ -550,20 +615,11 @@
 				B21EF68624482F0600BEBB9E /* BaseClass */,
 				3AE550DE23A9189F001D989E /* Macro */,
 				3AE550DB23A9189F001D989E /* Extension */,
-				3AE550D023A9189F001D989E /* Swift */,
 				3AE550D323A9189F001D989E /* Objective-C */,
 				3AE550DA23A9189F001D989E /* Tool */,
 			);
 			name = TreasureChest;
 			path = ../TreasureChest;
-			sourceTree = "<group>";
-		};
-		3AE550D023A9189F001D989E /* Swift */ = {
-			isa = PBXGroup;
-			children = (
-				3AE550D223A9189F001D989E /* TmpScrollView.swift */,
-			);
-			path = Swift;
 			sourceTree = "<group>";
 		};
 		3AE550D323A9189F001D989E /* Objective-C */ = {
@@ -798,6 +854,7 @@
 				B28472302403C1B100C1194F /* URLSessionTaskDemo */,
 				B24A85F524037CE400D1EECA /* VideoPlayerDemo */,
 				B2D1BCC423D1658F0000B413 /* DictDemoView */,
+				3AD14A2E2461532E004D54B8 /* Lexicon */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -1372,24 +1429,37 @@
 			files = (
 				B2506D1F23ABA1480034A472 /* select_top_icon@3x.png in Resources */,
 				B243E16423C4557C00B37519 /* CoreFundationReadme in Resources */,
+				3AD14A2624615273004D54B8 /* words_professions.txt in Resources */,
 				3A99DE1723ABCB83002DDF23 /* TreasureChest.podspec in Resources */,
+				3AD14A2D24615273004D54B8 /* words_medical.txt in Resources */,
 				B215CC482431F5290017BFD9 /* hud_info.png in Resources */,
 				B2506D2023ABA1480034A472 /* select_top_icon@2x.png in Resources */,
+				3AD14A3524615608004D54B8 /* Lexicon.plist in Resources */,
+				3AD14A2424615273004D54B8 /* words_it.txt in Resources */,
 				B2506D1B23ABA1410034A472 /* select_down_icon@3x.png in Resources */,
 				B2506D1C23ABA1410034A472 /* select_down_icon@2x.png in Resources */,
 				B215CC472431F5290017BFD9 /* hud_error@2x.png in Resources */,
 				B2506D1323ABA12D0034A472 /* options_none_icon@2x.png in Resources */,
 				3A40235B23A62ED100BDB4E3 /* Main.storyboard in Resources */,
 				B26F6E24245149B8005EAC38 /* lotties.bundle in Resources */,
+				3AD14A2924615273004D54B8 /* words_foods.txt in Resources */,
 				3A40235823A62ED100BDB4E3 /* Assets.xcassets in Resources */,
+				3AD14A2524615273004D54B8 /* words_car.txt in Resources */,
 				B215CC4B2431F5290017BFD9 /* hud_info@2x.png in Resources */,
+				3AD14A2A24615273004D54B8 /* words_idiom.txt in Resources */,
+				3AD14A2C24615273004D54B8 /* words_animals.txt in Resources */,
+				3AD14A2824615273004D54B8 /* words_famousperson.txt in Resources */,
 				B215CC4A2431F5290017BFD9 /* hud_success@2x.png in Resources */,
 				B2506D1423ABA12D0034A472 /* options_none_icon@3x.png in Resources */,
+				3AD14A2B24615273004D54B8 /* words_law.txt in Resources */,
+				3AD14A2224615273004D54B8 /* words_finance.txt in Resources */,
 				B215CC492431F5290017BFD9 /* hud_error.png in Resources */,
 				B215CC462431F5290017BFD9 /* hud_success.png in Resources */,
+				3AD14A2324615273004D54B8 /* words_toponymy.txt in Resources */,
 				B2506D0F23AB8AFA0034A472 /* TestData.plist in Resources */,
 				3A40235A23A62ED100BDB4E3 /* LaunchScreen.storyboard in Resources */,
 				B2506D1823ABA1370034A472 /* options_selected_icon@3x.png in Resources */,
+				3AD14A2724615273004D54B8 /* words_poem.txt in Resources */,
 				B2506D1723ABA1370034A472 /* options_selected_icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1492,7 +1562,6 @@
 				B2C459332440524F00117BD7 /* VectorGeometry.m in Sources */,
 				B2AA0F4723C5BB1300BEBA27 /* DictionaryMainCtl.m in Sources */,
 				B2DD689423B08EF100106F4F /* UIButton+Extension.m in Sources */,
-				3AE550E023A9189F001D989E /* TmpScrollView.swift in Sources */,
 				B26FBD7A2441CDB8003DB3BE /* LOTShapeRepeater.m in Sources */,
 				B2169DE724401B4F002CFE3E /* AudioRecorder.m in Sources */,
 				3A40235923A62ED100BDB4E3 /* ViewController.m in Sources */,
@@ -1596,6 +1665,7 @@
 				3AE550E223A9189F001D989E /* ResidentScrollView.m in Sources */,
 				B2169DFD24401E2B002CFE3E /* AudioMixWithAudio.m in Sources */,
 				B2AA0F4423C586CE00BEBA27 /* FMDBManager.m in Sources */,
+				3AD14A3124615354004D54B8 /* LexiconViewCtl.m in Sources */,
 				B286A9B3242D8DF900E575BF /* EasyAlertView.m in Sources */,
 				B2C459302440524F00117BD7 /* CuvbicCurveGeometry.m in Sources */,
 				B2506CF923AB5B370034A472 /* CollapsibleViewModel.m in Sources */,
@@ -1816,7 +1886,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D3C69371B8FAD615F1E233D7 /* Pods-TreasureChestTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TreasureChestTests/Info.plist;
@@ -1837,7 +1906,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 060FD3C655ABBD95AB81CCF8 /* Pods-TreasureChestTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TreasureChestTests/Info.plist;
