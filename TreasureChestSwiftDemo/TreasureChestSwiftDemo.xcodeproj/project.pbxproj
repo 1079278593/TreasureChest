@@ -107,6 +107,22 @@
 		B26F6E492451A0B4005EAC38 /* sound_eat.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B26F6E482451A0B4005EAC38 /* sound_eat.m4a */; };
 		B26F6E6C2451AC85005EAC38 /* sound_victoryMogic.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B26F6E6B2451AC85005EAC38 /* sound_victoryMogic.m4a */; };
 		B26F6E6E2451AD5C005EAC38 /* sound_victoryCheers.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B26F6E6D2451AD5C005EAC38 /* sound_victoryCheers.m4a */; };
+		B2A45B4824625E9E00C44856 /* Step4OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A45B4724625E9E00C44856 /* Step4OptionsView.swift */; };
+		B2A45B4B2462613500C44856 /* StepOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A45B4A2462613500C44856 /* StepOptionsCell.swift */; };
+		B2A45B5A246264B900C44856 /* words_medical.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2A45B4D246264B900C44856 /* words_medical.plist */; };
+		B2A45B5B246264B900C44856 /* words_foods.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2A45B4E246264B900C44856 /* words_foods.plist */; };
+		B2A45B5C246264B900C44856 /* words_law.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2A45B4F246264B900C44856 /* words_law.plist */; };
+		B2A45B5D246264B900C44856 /* words_car.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2A45B50246264B900C44856 /* words_car.plist */; };
+		B2A45B5E246264B900C44856 /* words_finance.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2A45B51246264B900C44856 /* words_finance.plist */; };
+		B2A45B5F246264B900C44856 /* words_professions.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2A45B52246264B900C44856 /* words_professions.plist */; };
+		B2A45B60246264B900C44856 /* words_toponymy.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2A45B53246264B900C44856 /* words_toponymy.plist */; };
+		B2A45B61246264B900C44856 /* Lexicon.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2A45B54246264B900C44856 /* Lexicon.plist */; };
+		B2A45B62246264B900C44856 /* words_it.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2A45B55246264B900C44856 /* words_it.plist */; };
+		B2A45B63246264B900C44856 /* words_poem.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2A45B56246264B900C44856 /* words_poem.plist */; };
+		B2A45B64246264B900C44856 /* words_animals.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2A45B57246264B900C44856 /* words_animals.plist */; };
+		B2A45B65246264B900C44856 /* words_idiom.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2A45B58246264B900C44856 /* words_idiom.plist */; };
+		B2A45B66246264B900C44856 /* words_famousperson.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2A45B59246264B900C44856 /* words_famousperson.plist */; };
+		B2A45B682462651400C44856 /* StepOptionsBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A45B672462651400C44856 /* StepOptionsBaseView.swift */; };
 		B2C7D2492456AE050043C556 /* peach.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B2C7D2412456AE050043C556 /* peach.bundle */; };
 		B2C7D24A2456AE050043C556 /* grapes.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B2C7D2422456AE050043C556 /* grapes.bundle */; };
 		B2C7D24B2456AE050043C556 /* passionfruit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B2C7D2432456AE050043C556 /* passionfruit.bundle */; };
@@ -252,6 +268,22 @@
 		B26F6E482451A0B4005EAC38 /* sound_eat.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound_eat.m4a; sourceTree = "<group>"; };
 		B26F6E6B2451AC85005EAC38 /* sound_victoryMogic.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound_victoryMogic.m4a; sourceTree = "<group>"; };
 		B26F6E6D2451AD5C005EAC38 /* sound_victoryCheers.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound_victoryCheers.m4a; sourceTree = "<group>"; };
+		B2A45B4724625E9E00C44856 /* Step4OptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step4OptionsView.swift; sourceTree = "<group>"; };
+		B2A45B4A2462613500C44856 /* StepOptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepOptionsCell.swift; sourceTree = "<group>"; };
+		B2A45B4D246264B900C44856 /* words_medical.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = words_medical.plist; path = ../../../../TreasureChestDemo/Demo/Lexicon/Resources/words_medical.plist; sourceTree = "<group>"; };
+		B2A45B4E246264B900C44856 /* words_foods.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = words_foods.plist; path = ../../../../TreasureChestDemo/Demo/Lexicon/Resources/words_foods.plist; sourceTree = "<group>"; };
+		B2A45B4F246264B900C44856 /* words_law.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = words_law.plist; path = ../../../../TreasureChestDemo/Demo/Lexicon/Resources/words_law.plist; sourceTree = "<group>"; };
+		B2A45B50246264B900C44856 /* words_car.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = words_car.plist; path = ../../../../TreasureChestDemo/Demo/Lexicon/Resources/words_car.plist; sourceTree = "<group>"; };
+		B2A45B51246264B900C44856 /* words_finance.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = words_finance.plist; path = ../../../../TreasureChestDemo/Demo/Lexicon/Resources/words_finance.plist; sourceTree = "<group>"; };
+		B2A45B52246264B900C44856 /* words_professions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = words_professions.plist; path = ../../../../TreasureChestDemo/Demo/Lexicon/Resources/words_professions.plist; sourceTree = "<group>"; };
+		B2A45B53246264B900C44856 /* words_toponymy.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = words_toponymy.plist; path = ../../../../TreasureChestDemo/Demo/Lexicon/Resources/words_toponymy.plist; sourceTree = "<group>"; };
+		B2A45B54246264B900C44856 /* Lexicon.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Lexicon.plist; path = ../../../../TreasureChestDemo/Demo/Lexicon/Lexicon.plist; sourceTree = "<group>"; };
+		B2A45B55246264B900C44856 /* words_it.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = words_it.plist; path = ../../../../TreasureChestDemo/Demo/Lexicon/Resources/words_it.plist; sourceTree = "<group>"; };
+		B2A45B56246264B900C44856 /* words_poem.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = words_poem.plist; path = ../../../../TreasureChestDemo/Demo/Lexicon/Resources/words_poem.plist; sourceTree = "<group>"; };
+		B2A45B57246264B900C44856 /* words_animals.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = words_animals.plist; path = ../../../../TreasureChestDemo/Demo/Lexicon/Resources/words_animals.plist; sourceTree = "<group>"; };
+		B2A45B58246264B900C44856 /* words_idiom.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = words_idiom.plist; path = ../../../../TreasureChestDemo/Demo/Lexicon/Resources/words_idiom.plist; sourceTree = "<group>"; };
+		B2A45B59246264B900C44856 /* words_famousperson.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = words_famousperson.plist; path = ../../../../TreasureChestDemo/Demo/Lexicon/Resources/words_famousperson.plist; sourceTree = "<group>"; };
+		B2A45B672462651400C44856 /* StepOptionsBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepOptionsBaseView.swift; sourceTree = "<group>"; };
 		B2B936432452CF0D00A8E34E /* TreasureChestSwiftDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TreasureChestSwiftDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		B2C7D2412456AE050043C556 /* peach.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = peach.bundle; sourceTree = "<group>"; };
 		B2C7D2422456AE050043C556 /* grapes.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = grapes.bundle; sourceTree = "<group>"; };
@@ -486,7 +518,7 @@
 				3AA4770A2453F0140077062B /* BaseNaviController.swift */,
 				3AA4770B2453F0140077062B /* ProgressHUD.swift */,
 				3AA4772F24540B8A0077062B /* GifImageView.swift */,
-				B2C7D2512456D3510043C556 /* Step2OptionsView.swift */,
+				B2A45B49246260FF00C44856 /* StepOptionsViews */,
 			);
 			path = tool;
 			sourceTree = "<group>";
@@ -562,6 +594,7 @@
 		B26F6E27245199AC005EAC38 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B2A45B4C246264A500C44856 /* tmp_plist */,
 				3A48E6C1245439B0007E759F /* stepPicture */,
 				3A48E6C0245439A5007E759F /* sound */,
 			);
@@ -581,6 +614,37 @@
 				B26F6E3C24519E8A005EAC38 /* victoryMagic.mp3 */,
 			);
 			path = soundSourceFile;
+			sourceTree = "<group>";
+		};
+		B2A45B49246260FF00C44856 /* StepOptionsViews */ = {
+			isa = PBXGroup;
+			children = (
+				B2A45B672462651400C44856 /* StepOptionsBaseView.swift */,
+				B2A45B4A2462613500C44856 /* StepOptionsCell.swift */,
+				B2C7D2512456D3510043C556 /* Step2OptionsView.swift */,
+				B2A45B4724625E9E00C44856 /* Step4OptionsView.swift */,
+			);
+			path = StepOptionsViews;
+			sourceTree = "<group>";
+		};
+		B2A45B4C246264A500C44856 /* tmp_plist */ = {
+			isa = PBXGroup;
+			children = (
+				B2A45B54246264B900C44856 /* Lexicon.plist */,
+				B2A45B57246264B900C44856 /* words_animals.plist */,
+				B2A45B50246264B900C44856 /* words_car.plist */,
+				B2A45B59246264B900C44856 /* words_famousperson.plist */,
+				B2A45B51246264B900C44856 /* words_finance.plist */,
+				B2A45B4E246264B900C44856 /* words_foods.plist */,
+				B2A45B58246264B900C44856 /* words_idiom.plist */,
+				B2A45B55246264B900C44856 /* words_it.plist */,
+				B2A45B4F246264B900C44856 /* words_law.plist */,
+				B2A45B4D246264B900C44856 /* words_medical.plist */,
+				B2A45B56246264B900C44856 /* words_poem.plist */,
+				B2A45B52246264B900C44856 /* words_professions.plist */,
+				B2A45B53246264B900C44856 /* words_toponymy.plist */,
+			);
+			path = tmp_plist;
 			sourceTree = "<group>";
 		};
 		B2C7D2402456AE050043C556 /* 102 */ = {
@@ -810,12 +874,15 @@
 				3A48E71D24543F11007E759F /* strawberry1.gif in Resources */,
 				B26F6E4524519E8A005EAC38 /* PotatoChips1.wav in Resources */,
 				3A48E72224543F11007E759F /* z_strawberry3.gif in Resources */,
+				B2A45B5B246264B900C44856 /* words_foods.plist in Resources */,
 				3AA4770E2453F0140077062B /* thumbsUp.json in Resources */,
 				B2C7D24D2456AE050043C556 /* Mango.bundle in Resources */,
 				B20598CC244D8E05007DA4DE /* lakemcdonald.jpg in Resources */,
 				3A48E71E24543F11007E759F /* strawberry3.gif in Resources */,
 				B26F6E4624519E8A005EAC38 /* PotatoChips2.wav in Resources */,
 				B20598CA244D8E05007DA4DE /* silversalmoncreek.jpg in Resources */,
+				B2A45B65246264B900C44856 /* words_idiom.plist in Resources */,
+				B2A45B5E246264B900C44856 /* words_finance.plist in Resources */,
 				B26F6E4724519E8A005EAC38 /* eat1.mp3 in Resources */,
 				B2C7D24E2456AE050043C556 /* lemon.bundle in Resources */,
 				B2EEB994244ED71E0047A2D4 /* hikeData.json in Resources */,
@@ -828,9 +895,12 @@
 				3A48E71C24543F11007E759F /* strawberry0.gif in Resources */,
 				3A48E76B24546B88007E759F /* thumbnail28.png in Resources */,
 				B26F6E6C2451AC85005EAC38 /* sound_victoryMogic.m4a in Resources */,
+				B2A45B5F246264B900C44856 /* words_professions.plist in Resources */,
 				B26F6E4324519E8A005EAC38 /* victoryCheers.wav in Resources */,
 				B2E869B424471AC90085F7ED /* LaunchScreen.storyboard in Resources */,
 				B2C7D2492456AE050043C556 /* peach.bundle in Resources */,
+				B2A45B5C246264B900C44856 /* words_law.plist in Resources */,
+				B2A45B66246264B900C44856 /* words_famousperson.plist in Resources */,
 				B20598CF244D8E05007DA4DE /* umbagog.jpg in Resources */,
 				3AA4772B2453F0760077062B /* TrainingStep.plist in Resources */,
 				3AA4770F2453F0140077062B /* donutLoader.json in Resources */,
@@ -840,7 +910,9 @@
 				B20598D1244D8E05007DA4DE /* chincoteague.jpg in Resources */,
 				B26F6E4124519E8A005EAC38 /* carrot.wav in Resources */,
 				B2E869B124471AC90085F7ED /* Preview Assets.xcassets in Resources */,
+				B2A45B64246264B900C44856 /* words_animals.plist in Resources */,
 				B20598CB244D8E05007DA4DE /* icybay.jpg in Resources */,
+				B2A45B5A246264B900C44856 /* words_medical.plist in Resources */,
 				3A48E71F24543F11007E759F /* strawberry2.gif in Resources */,
 				B20598CE244D8E05007DA4DE /* twinlake.jpg in Resources */,
 				B2C7D2502456AE050043C556 /* orange.bundle in Resources */,
@@ -854,8 +926,13 @@
 				3A48E77124546BEA007E759F /* thumbnail9.png in Resources */,
 				3A48E76F24546BD1007E759F /* thumbnail6.png in Resources */,
 				B2C7D24C2456AE050043C556 /* waxberry.bundle in Resources */,
+				B2A45B63246264B900C44856 /* words_poem.plist in Resources */,
 				B26F6E6E2451AD5C005EAC38 /* sound_victoryCheers.m4a in Resources */,
+				B2A45B60246264B900C44856 /* words_toponymy.plist in Resources */,
 				3A48E72324543F11007E759F /* z_strawberry2.gif in Resources */,
+				B2A45B5D246264B900C44856 /* words_car.plist in Resources */,
+				B2A45B61246264B900C44856 /* Lexicon.plist in Resources */,
+				B2A45B62246264B900C44856 /* words_it.plist in Resources */,
 				B20598D4244D8E05007DA4DE /* chilkoottrail.jpg in Resources */,
 				B20598D2244D8E05007DA4DE /* charleyrivers.jpg in Resources */,
 			);
@@ -947,6 +1024,7 @@
 				3A448A12244F423200ED5BF8 /* UIColor+Extension.swift in Sources */,
 				3A448A23244F423200ED5BF8 /* UIImageViewIBInspectable.swift in Sources */,
 				3AA4772E2454040D0077062B /* StepDetailView200.swift in Sources */,
+				B2A45B4824625E9E00C44856 /* Step4OptionsView.swift in Sources */,
 				3AA477132453F0140077062B /* StepDetailView104.swift in Sources */,
 				B2EEB98D244EC6770047A2D4 /* Badge.swift in Sources */,
 				B2E869AA24471AC80085F7ED /* SceneDelegate.swift in Sources */,
@@ -962,6 +1040,7 @@
 				B2EEB99E244F03D70047A2D4 /* String+Size.swift in Sources */,
 				B21D279D245055FF0000C8ED /* UIViewRender.swift in Sources */,
 				3A448A19244F423200ED5BF8 /* UIView+Extension.swift in Sources */,
+				B2A45B682462651400C44856 /* StepOptionsBaseView.swift in Sources */,
 				3AA4771D2453F0140077062B /* StepDetailView1.swift in Sources */,
 				B2EEB98B244EA58A0047A2D4 /* HexagonParameters.swift in Sources */,
 				3A448A20244F423200ED5BF8 /* TrainingStepUserDefaults.swift in Sources */,
@@ -981,6 +1060,7 @@
 				B20598D7244D947B007DA4DE /* LandmarkRow.swift in Sources */,
 				3AA477272453F0140077062B /* ProgressHUD.swift in Sources */,
 				3AA477112453F0140077062B /* StepDetailView101.swift in Sources */,
+				B2A45B4B2462613500C44856 /* StepOptionsCell.swift in Sources */,
 				3AA477152453F0140077062B /* StepDetailView100.swift in Sources */,
 				3AA477232453F0140077062B /* StepGroupController.swift in Sources */,
 				B20598B9244D8DD1007DA4DE /* Data.swift in Sources */,

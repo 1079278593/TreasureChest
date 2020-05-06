@@ -81,6 +81,7 @@ struct TrainingStepDetail: HandyJSON {
 }
 
 struct TrainingStepOptions: HandyJSON {
-    var title = ""
-    var bundleName = ""
+    var name = ""
+    var fileName = ""
+    var selected: Bool = false
 }
