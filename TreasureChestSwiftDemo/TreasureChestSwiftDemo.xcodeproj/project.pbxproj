@@ -107,6 +107,12 @@
 		B26F6E492451A0B4005EAC38 /* sound_eat.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B26F6E482451A0B4005EAC38 /* sound_eat.m4a */; };
 		B26F6E6C2451AC85005EAC38 /* sound_victoryMogic.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B26F6E6B2451AC85005EAC38 /* sound_victoryMogic.m4a */; };
 		B26F6E6E2451AD5C005EAC38 /* sound_victoryCheers.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B26F6E6D2451AD5C005EAC38 /* sound_victoryCheers.m4a */; };
+		B279700B2463ABF600AE4AFD /* PlistChineseWordsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B279700A2463ABF600AE4AFD /* PlistChineseWordsModel.swift */; };
+		B279700D2463EF0D00AE4AFD /* Step4TrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B279700C2463EF0D00AE4AFD /* Step4TrainingView.swift */; };
+		B279700F2463EF6C00AE4AFD /* Step4TrainingViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B279700E2463EF6C00AE4AFD /* Step4TrainingViewCell.swift */; };
+		B27970112463FA8300AE4AFD /* linkIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B27970102463FA8300AE4AFD /* linkIcon.png */; };
+		B2797013246403F100AE4AFD /* Step4TrainingCtl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2797012246403F100AE4AFD /* Step4TrainingCtl.swift */; };
+		B27970152464183200AE4AFD /* Step4CheckingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27970142464183200AE4AFD /* Step4CheckingView.swift */; };
 		B2A45B4824625E9E00C44856 /* Step4OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A45B4724625E9E00C44856 /* Step4OptionsView.swift */; };
 		B2A45B4B2462613500C44856 /* StepOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A45B4A2462613500C44856 /* StepOptionsCell.swift */; };
 		B2A45B5A246264B900C44856 /* words_medical.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2A45B4D246264B900C44856 /* words_medical.plist */; };
@@ -268,6 +274,12 @@
 		B26F6E482451A0B4005EAC38 /* sound_eat.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound_eat.m4a; sourceTree = "<group>"; };
 		B26F6E6B2451AC85005EAC38 /* sound_victoryMogic.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound_victoryMogic.m4a; sourceTree = "<group>"; };
 		B26F6E6D2451AD5C005EAC38 /* sound_victoryCheers.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound_victoryCheers.m4a; sourceTree = "<group>"; };
+		B279700A2463ABF600AE4AFD /* PlistChineseWordsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistChineseWordsModel.swift; sourceTree = "<group>"; };
+		B279700C2463EF0D00AE4AFD /* Step4TrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step4TrainingView.swift; sourceTree = "<group>"; };
+		B279700E2463EF6C00AE4AFD /* Step4TrainingViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step4TrainingViewCell.swift; sourceTree = "<group>"; };
+		B27970102463FA8300AE4AFD /* linkIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkIcon.png; sourceTree = "<group>"; };
+		B2797012246403F100AE4AFD /* Step4TrainingCtl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step4TrainingCtl.swift; sourceTree = "<group>"; };
+		B27970142464183200AE4AFD /* Step4CheckingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step4CheckingView.swift; sourceTree = "<group>"; };
 		B2A45B4724625E9E00C44856 /* Step4OptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step4OptionsView.swift; sourceTree = "<group>"; };
 		B2A45B4A2462613500C44856 /* StepOptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepOptionsCell.swift; sourceTree = "<group>"; };
 		B2A45B4D246264B900C44856 /* words_medical.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = words_medical.plist; path = ../../../../TreasureChestDemo/Demo/Lexicon/Resources/words_medical.plist; sourceTree = "<group>"; };
@@ -380,6 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				3A448A0C244F423200ED5BF8 /* PlistTrainingStepModel.swift */,
+				B279700A2463ABF600AE4AFD /* PlistChineseWordsModel.swift */,
 				3A448A0D244F423200ED5BF8 /* PlistMemoryCodeModel.swift */,
 				3A448A0E244F423200ED5BF8 /* PlistMemoryTipsModel.swift */,
 			);
@@ -619,10 +632,15 @@
 		B2A45B49246260FF00C44856 /* StepOptionsViews */ = {
 			isa = PBXGroup;
 			children = (
+				B27970102463FA8300AE4AFD /* linkIcon.png */,
 				B2A45B672462651400C44856 /* StepOptionsBaseView.swift */,
 				B2A45B4A2462613500C44856 /* StepOptionsCell.swift */,
 				B2C7D2512456D3510043C556 /* Step2OptionsView.swift */,
 				B2A45B4724625E9E00C44856 /* Step4OptionsView.swift */,
+				B2797012246403F100AE4AFD /* Step4TrainingCtl.swift */,
+				B279700C2463EF0D00AE4AFD /* Step4TrainingView.swift */,
+				B279700E2463EF6C00AE4AFD /* Step4TrainingViewCell.swift */,
+				B27970142464183200AE4AFD /* Step4CheckingView.swift */,
 			);
 			path = StepOptionsViews;
 			sourceTree = "<group>";
@@ -904,6 +922,7 @@
 				B20598CF244D8E05007DA4DE /* umbagog.jpg in Resources */,
 				3AA4772B2453F0760077062B /* TrainingStep.plist in Resources */,
 				3AA4770F2453F0140077062B /* donutLoader.json in Resources */,
+				B27970112463FA8300AE4AFD /* linkIcon.png in Resources */,
 				3A48E72024543F11007E759F /* z_tstrawberry6.gif in Resources */,
 				B20598D3244D8E05007DA4DE /* stmarylake.jpg in Resources */,
 				B26F6E4424519E8A005EAC38 /* victoryMagic.mp3 in Resources */,
@@ -1017,6 +1036,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AA477222453F0140077062B /* StepGroupDetailController.swift in Sources */,
+				B279700D2463EF0D00AE4AFD /* Step4TrainingView.swift in Sources */,
 				B2E869A824471AC80085F7ED /* AppDelegate.swift in Sources */,
 				3AA4771A2453F0140077062B /* StepDetailView0.swift in Sources */,
 				3A448A1F244F423200ED5BF8 /* ClockTimerConver.swift in Sources */,
@@ -1025,6 +1045,7 @@
 				3A448A23244F423200ED5BF8 /* UIImageViewIBInspectable.swift in Sources */,
 				3AA4772E2454040D0077062B /* StepDetailView200.swift in Sources */,
 				B2A45B4824625E9E00C44856 /* Step4OptionsView.swift in Sources */,
+				B27970152464183200AE4AFD /* Step4CheckingView.swift in Sources */,
 				3AA477132453F0140077062B /* StepDetailView104.swift in Sources */,
 				B2EEB98D244EC6770047A2D4 /* Badge.swift in Sources */,
 				B2E869AA24471AC80085F7ED /* SceneDelegate.swift in Sources */,
@@ -1041,6 +1062,7 @@
 				B21D279D245055FF0000C8ED /* UIViewRender.swift in Sources */,
 				3A448A19244F423200ED5BF8 /* UIView+Extension.swift in Sources */,
 				B2A45B682462651400C44856 /* StepOptionsBaseView.swift in Sources */,
+				B279700B2463ABF600AE4AFD /* PlistChineseWordsModel.swift in Sources */,
 				3AA4771D2453F0140077062B /* StepDetailView1.swift in Sources */,
 				B2EEB98B244EA58A0047A2D4 /* HexagonParameters.swift in Sources */,
 				3A448A20244F423200ED5BF8 /* TrainingStepUserDefaults.swift in Sources */,
@@ -1054,6 +1076,7 @@
 				B20598BA244D8DD1007DA4DE /* Landmark.swift in Sources */,
 				B2E869AC24471AC80085F7ED /* LandmarkDetail.swift in Sources */,
 				3AA477212453F0140077062B /* StepBaseView.swift in Sources */,
+				B2797013246403F100AE4AFD /* Step4TrainingCtl.swift in Sources */,
 				B2EEB991244EC9720047A2D4 /* RotatedBadgeSymbol.swift in Sources */,
 				3AA4771E2453F0140077062B /* StepDetailView3.swift in Sources */,
 				3AA477192453F0140077062B /* StepDetailView2.swift in Sources */,
@@ -1063,6 +1086,7 @@
 				B2A45B4B2462613500C44856 /* StepOptionsCell.swift in Sources */,
 				3AA477152453F0140077062B /* StepDetailView100.swift in Sources */,
 				3AA477232453F0140077062B /* StepGroupController.swift in Sources */,
+				B279700F2463EF6C00AE4AFD /* Step4TrainingViewCell.swift in Sources */,
 				B20598B9244D8DD1007DA4DE /* Data.swift in Sources */,
 				3A448A24244F423200ED5BF8 /* QiKeychainItem.m in Sources */,
 				B20598D9244DA05A007DA4DE /* LandmarkList.swift in Sources */,
