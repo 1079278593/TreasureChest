@@ -35,14 +35,6 @@ abstract_target 'abstract_pod' do
   target 'TreasureChestSwiftDemo' do
     project ‘TreasureChestSwiftDemo/TreasureChestSwiftDemo.xcodeproj’
 
-  #  pod 'FMDB'
-  #  pod 'Masonry'
-  #  pod 'SDWebImage', '~> 3.7.5'
-  #  pod 'AFNetworking'
-  #  pod 'MJExtension'
-  #  pod 'ReactiveObjC', '3.1.0'
-  #  pod 'MSWeakTimer', '~> 1.1.0'
-  #  pod 'MJRefresh', '3.2.0'
     pod 'lottie-ios'
     pod 'SnapKit'
     pod 'HandyJSON'

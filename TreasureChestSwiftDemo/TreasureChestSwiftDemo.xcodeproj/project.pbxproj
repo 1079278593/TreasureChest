@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -107,6 +107,9 @@
 		B26F6E492451A0B4005EAC38 /* sound_eat.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B26F6E482451A0B4005EAC38 /* sound_eat.m4a */; };
 		B26F6E6C2451AC85005EAC38 /* sound_victoryMogic.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B26F6E6B2451AC85005EAC38 /* sound_victoryMogic.m4a */; };
 		B26F6E6E2451AD5C005EAC38 /* sound_victoryCheers.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B26F6E6D2451AD5C005EAC38 /* sound_victoryCheers.m4a */; };
+		B2757CFB24650AFE00C4EEB1 /* StringMetric in Frameworks */ = {isa = PBXBuildFile; productRef = B2757CFA24650AFE00C4EEB1 /* StringMetric */; };
+		B2757CFE2465655A00C4EEB1 /* stars.json in Resources */ = {isa = PBXBuildFile; fileRef = B2757CFC2465655A00C4EEB1 /* stars.json */; };
+		B2757CFF2465655A00C4EEB1 /* success_lumina.json in Resources */ = {isa = PBXBuildFile; fileRef = B2757CFD2465655A00C4EEB1 /* success_lumina.json */; };
 		B279700B2463ABF600AE4AFD /* PlistChineseWordsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B279700A2463ABF600AE4AFD /* PlistChineseWordsModel.swift */; };
 		B279700D2463EF0D00AE4AFD /* Step4TrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B279700C2463EF0D00AE4AFD /* Step4TrainingView.swift */; };
 		B279700F2463EF6C00AE4AFD /* Step4TrainingViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B279700E2463EF6C00AE4AFD /* Step4TrainingViewCell.swift */; };
@@ -274,6 +277,8 @@
 		B26F6E482451A0B4005EAC38 /* sound_eat.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound_eat.m4a; sourceTree = "<group>"; };
 		B26F6E6B2451AC85005EAC38 /* sound_victoryMogic.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound_victoryMogic.m4a; sourceTree = "<group>"; };
 		B26F6E6D2451AD5C005EAC38 /* sound_victoryCheers.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound_victoryCheers.m4a; sourceTree = "<group>"; };
+		B2757CFC2465655A00C4EEB1 /* stars.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = stars.json; path = "../../../../../../Desktop/GitHub/TreasureChest/TreasureChest/Tool/lottie-ios/Resource/lotties.bundle/stars.json"; sourceTree = "<group>"; };
+		B2757CFD2465655A00C4EEB1 /* success_lumina.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = success_lumina.json; path = "../../../../../../Desktop/GitHub/TreasureChest/TreasureChest/Tool/lottie-ios/Resource/lotties.bundle/success_lumina.json"; sourceTree = "<group>"; };
 		B279700A2463ABF600AE4AFD /* PlistChineseWordsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistChineseWordsModel.swift; sourceTree = "<group>"; };
 		B279700C2463EF0D00AE4AFD /* Step4TrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step4TrainingView.swift; sourceTree = "<group>"; };
 		B279700E2463EF6C00AE4AFD /* Step4TrainingViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step4TrainingViewCell.swift; sourceTree = "<group>"; };
@@ -335,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD4CBD254BFBE55C14A82988 /* Pods_abstract_pod_TreasureChestSwiftDemo.framework in Frameworks */,
+				B2757CFB24650AFE00C4EEB1 /* StringMetric in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +482,8 @@
 		3AA476ED2453F0140077062B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B2757CFC2465655A00C4EEB1 /* stars.json */,
+				B2757CFD2465655A00C4EEB1 /* success_lumina.json */,
 				3AA476EE2453F0140077062B /* thumbsUp.json */,
 				3AA476EF2453F0140077062B /* donutLoader.json */,
 			);
@@ -822,6 +830,9 @@
 			dependencies = (
 			);
 			name = TreasureChestSwiftDemo;
+			packageProductDependencies = (
+				B2757CFA24650AFE00C4EEB1 /* StringMetric */,
+			);
 			productName = TreasureChestSwiftDemo;
 			productReference = B2E869A424471AC80085F7ED /* TreasureChestSwiftDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -873,6 +884,9 @@
 				Base,
 			);
 			mainGroup = B2E8699B24471AC80085F7ED;
+			packageReferences = (
+				B2757CF924650AFE00C4EEB1 /* XCRemoteSwiftPackageReference "StringMetric.swift" */,
+			);
 			productRefGroup = B2E869A524471AC80085F7ED /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -917,6 +931,7 @@
 				B26F6E4324519E8A005EAC38 /* victoryCheers.wav in Resources */,
 				B2E869B424471AC90085F7ED /* LaunchScreen.storyboard in Resources */,
 				B2C7D2492456AE050043C556 /* peach.bundle in Resources */,
+				B2757CFE2465655A00C4EEB1 /* stars.json in Resources */,
 				B2A45B5C246264B900C44856 /* words_law.plist in Resources */,
 				B2A45B66246264B900C44856 /* words_famousperson.plist in Resources */,
 				B20598CF244D8E05007DA4DE /* umbagog.jpg in Resources */,
@@ -924,6 +939,7 @@
 				3AA4770F2453F0140077062B /* donutLoader.json in Resources */,
 				B27970112463FA8300AE4AFD /* linkIcon.png in Resources */,
 				3A48E72024543F11007E759F /* z_tstrawberry6.gif in Resources */,
+				B2757CFF2465655A00C4EEB1 /* success_lumina.json in Resources */,
 				B20598D3244D8E05007DA4DE /* stmarylake.jpg in Resources */,
 				B26F6E4424519E8A005EAC38 /* victoryMagic.mp3 in Resources */,
 				B20598D1244D8E05007DA4DE /* chincoteague.jpg in Resources */,
@@ -1380,6 +1396,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B2757CF924650AFE00C4EEB1 /* XCRemoteSwiftPackageReference "StringMetric.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/autozimu/StringMetric.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B2757CFA24650AFE00C4EEB1 /* StringMetric */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2757CF924650AFE00C4EEB1 /* XCRemoteSwiftPackageReference "StringMetric.swift" */;
+			productName = StringMetric;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B2E8699C24471AC80085F7ED /* Project object */;
 }
