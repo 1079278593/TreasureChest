@@ -240,6 +240,7 @@
         if (dispatch_semaphore_wait(self.pixelAppendSemaphore, DISPATCH_TIME_NOW) == 0) {
             dispatch_async(self.append_pixelBuffer_queue, ^{
                 if (self.isRecording && self.videoWriter) {
+                    //想办法直接给数据，减少render
                     BOOL success = [self.avAdaptor appendPixelBuffer:pixelBuffer withPresentationTime:time];
                     if (!success) {
                         NSLog(@"Warning: Unable to write buffer to video");
