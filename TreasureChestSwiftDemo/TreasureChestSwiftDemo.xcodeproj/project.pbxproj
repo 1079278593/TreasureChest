@@ -677,10 +677,10 @@
 		B20922A92469209700075F3E /* TrainingStep */ = {
 			isa = PBXGroup;
 			children = (
-				B20922AA2469209800075F3E /* StepGroup100 */,
 				B20922D22469209800075F3E /* TrainingStepConfig.swift */,
 				B20922D32469209800075F3E /* TrainingStepRootCtl.swift */,
 				B20922D42469209800075F3E /* TrainingStepRootCell.swift */,
+				B20922AA2469209800075F3E /* StepGroup100 */,
 			);
 			name = TrainingStep;
 			path = "../../../../../Library/Mobile Documents/com~apple~CloudDocs/MemoryKing/Controller/CodeController/TrainingStep";
@@ -689,10 +689,10 @@
 		B20922AA2469209800075F3E /* StepGroup100 */ = {
 			isa = PBXGroup;
 			children = (
-				B20922AB2469209800075F3E /* Resources */,
-				B20922B02469209800075F3E /* StepGroupDetail */,
 				B20922D02469209800075F3E /* StepGroupDetailController.swift */,
 				B20922D12469209800075F3E /* StepGroupController.swift */,
+				B20922B02469209800075F3E /* StepGroupDetail */,
+				B20922AB2469209800075F3E /* Resources */,
 			);
 			path = StepGroup100;
 			sourceTree = "<group>";
@@ -711,12 +711,12 @@
 		B20922B02469209800075F3E /* StepGroupDetail */ = {
 			isa = PBXGroup;
 			children = (
-				B20922B12469209800075F3E /* step3 */,
-				B20922B32469209800075F3E /* step2 */,
 				B20922BA2469209800075F3E /* StepBaseVirtualView.swift */,
-				B20922BB2469209800075F3E /* StepOptionsViews */,
-				B20922C42469209800075F3E /* step1 */,
 				B20922CF2469209800075F3E /* StepBaseView.swift */,
+				B20922C42469209800075F3E /* step1 */,
+				B20922B32469209800075F3E /* step2 */,
+				B20922B12469209800075F3E /* step3 */,
+				B20922BB2469209800075F3E /* StepOptionsViews */,
 			);
 			path = StepGroupDetail;
 			sourceTree = "<group>";
@@ -760,16 +760,16 @@
 		B20922C42469209800075F3E /* step1 */ = {
 			isa = PBXGroup;
 			children = (
-				B20922C52469209800075F3E /* StepDetailView4.swift */,
-				B20922C62469209800075F3E /* StepDetailView6.swift */,
-				B20922C72469209800075F3E /* StepDetailView2.swift */,
 				B20922C82469209800075F3E /* StepDetailView0.swift */,
-				B20922C92469209800075F3E /* StepDetailView7.swift */,
-				B20922CA2469209800075F3E /* StepDetailView5.swift */,
 				B20922CB2469209800075F3E /* StepDetailView1.swift */,
+				B20922C72469209800075F3E /* StepDetailView2.swift */,
 				B20922CC2469209800075F3E /* StepDetailView3.swift */,
-				B20922CD2469209800075F3E /* StepDetailView9.swift */,
+				B20922C52469209800075F3E /* StepDetailView4.swift */,
+				B20922CA2469209800075F3E /* StepDetailView5.swift */,
+				B20922C62469209800075F3E /* StepDetailView6.swift */,
+				B20922C92469209800075F3E /* StepDetailView7.swift */,
 				B20922CE2469209800075F3E /* StepDetailView8.swift */,
+				B20922CD2469209800075F3E /* StepDetailView9.swift */,
 			);
 			path = step1;
 			sourceTree = "<group>";
@@ -1030,9 +1030,11 @@
 		B20924752469218500075F3E /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				B20924782469218500075F3E /* DateCovertHelper.swift */,
+				B209248A2469218500075F3E /* AppUserDefaults */,
+				B20924952469218500075F3E /* PlistDataParse */,
 				B20924792469218500075F3E /* UIColor+Extension.swift */,
 				B209247A2469218500075F3E /* SoundPlayer.swift */,
+				B20924782469218500075F3E /* DateCovertHelper.swift */,
 				B209247C2469218500075F3E /* UIViewRender.swift */,
 				B209247D2469218500075F3E /* UIView+Extension.swift */,
 				B209247E2469218500075F3E /* VectorOperation.swift */,
@@ -1046,10 +1048,8 @@
 				B20924872469218500075F3E /* GlobalConfig.swift */,
 				B20924882469218500075F3E /* CheckAuthorization.swift */,
 				B20924892469218500075F3E /* ClockTimerConver.swift */,
-				B209248A2469218500075F3E /* AppUserDefaults */,
 				B209248E2469218500075F3E /* UIImageViewIBInspectable.swift */,
 				B20924942469218500075F3E /* RotationViewVertices.swift */,
-				B20924952469218500075F3E /* PlistDataParse */,
 				B209249A2469218500075F3E /* UIView+Dashed.swift */,
 			);
 			name = Utility;
