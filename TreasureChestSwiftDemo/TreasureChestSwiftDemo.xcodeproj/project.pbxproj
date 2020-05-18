@@ -250,6 +250,7 @@
 		B20925A62469224900075F3E /* BaseNaviController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20925A32469224900075F3E /* BaseNaviController.swift */; };
 		B20925AA2469252000075F3E /* StatisticalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20925A92469252000075F3E /* StatisticalEvent.swift */; };
 		B2402ECB244D48E80043911A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2402ECA244D48E80043911A /* MapView.swift */; };
+		B240AE46246AB796009AFECF /* Step4LevelAndCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B240AE45246AB795009AFECF /* Step4LevelAndCountView.swift */; };
 		B248E3512447F42D004F00B6 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248E3502447F42D004F00B6 /* CircleImageView.swift */; };
 		B26F6E4024519E8A005EAC38 /* score.wav in Resources */ = {isa = PBXBuildFile; fileRef = B26F6E3824519E89005EAC38 /* score.wav */; };
 		B26F6E4124519E8A005EAC38 /* carrot.wav in Resources */ = {isa = PBXBuildFile; fileRef = B26F6E3924519E89005EAC38 /* carrot.wav */; };
@@ -539,6 +540,7 @@
 		B20925A32469224900075F3E /* BaseNaviController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseNaviController.swift; path = "../../../../../../Library/Mobile Documents/com~apple~CloudDocs/MemoryKing/MemoryKing/BaseNaviController.swift"; sourceTree = "<group>"; };
 		B20925A92469252000075F3E /* StatisticalEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticalEvent.swift; sourceTree = "<group>"; };
 		B2402ECA244D48E80043911A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		B240AE45246AB795009AFECF /* Step4LevelAndCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step4LevelAndCountView.swift; sourceTree = "<group>"; };
 		B248E3502447F42D004F00B6 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		B26F6E3624519E2F005EAC38 /* sound_score.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound_score.m4a; sourceTree = "<group>"; };
 		B26F6E3824519E89005EAC38 /* score.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = score.wav; sourceTree = "<group>"; };
@@ -748,6 +750,7 @@
 				B20922BC2469209800075F3E /* Step4TrainingCtl.swift */,
 				B20922BD2469209800075F3E /* Step4TrainingViewCell.swift */,
 				B20922BE2469209800075F3E /* Step4OptionsView.swift */,
+				B240AE45246AB795009AFECF /* Step4LevelAndCountView.swift */,
 				B20922BF2469209800075F3E /* Step4CheckingView.swift */,
 				B20922C02469209800075F3E /* Step4TrainingView.swift */,
 				B20922C12469209800075F3E /* StepOptionsBaseView.swift */,
@@ -1555,6 +1558,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B240AE46246AB796009AFECF /* Step4LevelAndCountView.swift in Sources */,
 				B20925872469218600075F3E /* UIViewRender.swift in Sources */,
 				B20925762469218600075F3E /* CountdownView.swift in Sources */,
 				B209259B2469218600075F3E /* RotationViewVertices.swift in Sources */,
