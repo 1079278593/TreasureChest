@@ -26,5 +26,6 @@
 #pragma mark - <  >
 #import "FMDBManager.h"
 #import "RegularOperate.h"
+#import "EasyProgress.h"
 
 #endif /* PrefixHeader_pch */

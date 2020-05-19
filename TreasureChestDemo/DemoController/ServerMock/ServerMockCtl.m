@@ -26,7 +26,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    self.navigationController.navigationBarHidden = true;
+//    self.navigationController.navigationBarHidden = true;
 }
 
 - (void)initView {
@@ -43,7 +43,7 @@
 }
 
 - (void)showBtnEvent:(UIButton *)button {
-    
+    [EasyProgress showMessage:@"待完善"];
 }
 
 @end
