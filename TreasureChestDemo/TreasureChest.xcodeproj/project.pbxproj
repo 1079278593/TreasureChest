@@ -882,7 +882,7 @@
 			path = CollapsibleTableView;
 			sourceTree = "<group>";
 		};
-		B2506D0323AB63E40034A472 /* Demo */ = {
+		B2506D0323AB63E40034A472 /* DemoController */ = {
 			isa = PBXGroup;
 			children = (
 				B2506D0423AB65A90034A472 /* ResidentScrollViewCtl.h */,
@@ -905,7 +905,7 @@
 				B2D1BCC423D1658F0000B413 /* DictDemoView */,
 				3AD14A2E2461532E004D54B8 /* Lexicon */,
 			);
-			path = Demo;
+			path = DemoController;
 			sourceTree = "<group>";
 		};
 		B2506D1023ABA10F0034A472 /* Resource */ = {
@@ -1283,8 +1283,8 @@
 			isa = PBXGroup;
 			children = (
 				3A99DE1623ABCB83002DDF23 /* TreasureChest.podspec */,
-				B2506D0323AB63E40034A472 /* Demo */,
 				3A40233E23A62ED100BDB4E3 /* TreasureChestDemo */,
+				B2506D0323AB63E40034A472 /* DemoController */,
 				3AE550CF23A9189F001D989E /* TreasureChest */,
 				B2B8360B2397D22000A562DB /* TreasureChestTests */,
 				B2B835EE2397D21E00A562DB /* Products */,
