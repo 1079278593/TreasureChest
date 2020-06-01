@@ -1351,6 +1351,8 @@ static CFRunLoopRef __CFRunLoopCreate(pthread_t t) {
     return loop;
 }
 
+#pragma mark - 无论是 CFRunLoopGetMain 还是 CFRunLoopGetCurrent ，两者调用了 CFRunLoopGet0
+
 static CFMutableDictionaryRef __CFRunLoops = NULL;
 static CFLock_t loopsLock = CFLockInit;
 
@@ -1365,7 +1367,9 @@ CF_EXPORT CFRunLoopRef _CFRunLoopGet0(pthread_t t) {
         __CFUnlock(&loopsLock);
 	CFMutableDictionaryRef dict = CFDictionaryCreateMutable(kCFAllocatorSystemDefault, 0, NULL, &kCFTypeDictionaryValueCallBacks);
 	CFRunLoopRef mainLoop = __CFRunLoopCreate(pthread_main_thread_np());
+    //对dict操作，将pthread_main_thread_np()作为key，将mainLoop作为value
 	CFDictionarySetValue(dict, pthreadPointer(pthread_main_thread_np()), mainLoop);
+    //比较__CFRunLoops是否为null，如果为null（第一次创建）了,就把dict赋值给__CFRunLoops。如果不为null，就释放掉dict。
 	if (!OSAtomicCompareAndSwapPtrBarrier(NULL, dict, (void * volatile *)&__CFRunLoops)) {
 	    CFRelease(dict);
 	}
@@ -2652,6 +2656,16 @@ static int32_t __CFRunLoopRun(CFRunLoopRef rl, CFRunLoopModeRef rlm, CFTimeInter
 }
 
 #pragma mark -
+/**
+ 1.通过 runloop 的 modeName 查找当前 mode。因为 CFRunLoopFindMode 的 create 参数为 false , 如果没找到，直接为 null ，不会创建新的 mode.
+ 2.如果当前 mode 为空，函数结束，返回 CFRunLoopRunFinished
+ （这里比较奇怪的是 Boolean did = false 直接写死了，后面又根据 did 来判断，应该还有一段代码是决定kCFRunLoopRunHandledSource的结果，被苹果隐藏了没有开源出来。）
+ 3.如果当前 mode 存在，做一些赋值操作 .
+ 4.向观察者发送 kCFRunLoopEntry 的消息，即将进入 RunLoop .
+ 5.进入 CFRunLoopRun 函数，在这里做一系列观察和操作。
+ 6.向观察者发送 kCFRunLoopExit 的消息,即将退出 RunLoop .
+
+ */
 
 SInt32 CFRunLoopRunSpecific(CFRunLoopRef rl, CFStringRef modeName, CFTimeInterval seconds, Boolean returnAfterSourceHandled) {     /* DOES CALLOUT */
     CHECK_FOR_FORK();
@@ -2659,6 +2673,7 @@ SInt32 CFRunLoopRunSpecific(CFRunLoopRef rl, CFStringRef modeName, CFTimeInterva
     __CFRunLoopLock(rl);
     CFRunLoopModeRef currentMode = __CFRunLoopFindMode(rl, modeName, false);
     if (NULL == currentMode || __CFRunLoopModeIsEmpty(rl, currentMode, rl->_currentMode)) {
+    //是系统开发者用来切换的开关？(比如我自己常用isDebug来控制一些东西)
 	Boolean did = false;
 	if (currentMode) __CFRunLoopModeUnlock(currentMode);
 	__CFRunLoopUnlock(rl);
@@ -2680,6 +2695,7 @@ SInt32 CFRunLoopRunSpecific(CFRunLoopRef rl, CFStringRef modeName, CFTimeInterva
     return result;
 }
 
+#prama mark DefaultMode 启动。主线程的RunLoop调用函数，就是使用了 CFRunLoopRun
 void CFRunLoopRun(void) {	/* DOES CALLOUT */
     int32_t result;
     do {
@@ -2688,6 +2704,7 @@ void CFRunLoopRun(void) {	/* DOES CALLOUT */
     } while (kCFRunLoopRunStopped != result && kCFRunLoopRunFinished != result);
 }
 
+#pragma mark 指定 Mode 启动，允许设置RunLoop超时时间
 SInt32 CFRunLoopRunInMode(CFStringRef modeName, CFTimeInterval seconds, Boolean returnAfterSourceHandled) {     /* DOES CALLOUT */
     CHECK_FOR_FORK();
     return CFRunLoopRunSpecific(CFRunLoopGetCurrent(), modeName, seconds, returnAfterSourceHandled);
