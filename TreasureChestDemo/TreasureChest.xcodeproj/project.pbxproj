@@ -14,6 +14,7 @@
 		3A40235C23A62ED100BDB4E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A40234623A62ED100BDB4E3 /* main.m */; };
 		3A40235D23A62ED100BDB4E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A40234723A62ED100BDB4E3 /* AppDelegate.m */; };
 		3A99DE1723ABCB83002DDF23 /* TreasureChest.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 3A99DE1623ABCB83002DDF23 /* TreasureChest.podspec */; };
+		3ACF5DBA247E0EED008ACB52 /* NSObject+Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACF5DB9247E0EED008ACB52 /* NSObject+Model.m */; };
 		3AD14A2224615273004D54B8 /* words_finance.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A1624615273004D54B8 /* words_finance.txt */; };
 		3AD14A2324615273004D54B8 /* words_toponymy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A1724615273004D54B8 /* words_toponymy.txt */; };
 		3AD14A2424615273004D54B8 /* words_it.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A1824615273004D54B8 /* words_it.txt */; };
@@ -219,6 +220,8 @@
 		3A40234823A62ED100BDB4E3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A40234923A62ED100BDB4E3 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		3A99DE1623ABCB83002DDF23 /* TreasureChest.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TreasureChest.podspec; path = ../TreasureChest.podspec; sourceTree = "<group>"; };
+		3ACF5DB8247E0EED008ACB52 /* NSObject+Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Model.h"; sourceTree = "<group>"; };
+		3ACF5DB9247E0EED008ACB52 /* NSObject+Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Model.m"; sourceTree = "<group>"; };
 		3AD14A1624615273004D54B8 /* words_finance.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words_finance.txt; sourceTree = "<group>"; };
 		3AD14A1724615273004D54B8 /* words_toponymy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words_toponymy.txt; sourceTree = "<group>"; };
 		3AD14A1824615273004D54B8 /* words_it.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words_it.txt; sourceTree = "<group>"; };
@@ -739,6 +742,8 @@
 				B2BC387223BD976200D5B9C6 /* NSDecimalNumber+Extension.m */,
 				B23DDC252435D3D500743BC1 /* UIImageView+VideoCover.h */,
 				B23DDC262435D3D600743BC1 /* UIImageView+VideoCover.m */,
+				3ACF5DB8247E0EED008ACB52 /* NSObject+Model.h */,
+				3ACF5DB9247E0EED008ACB52 /* NSObject+Model.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1738,6 +1743,7 @@
 				B215CC382431BEA30017BFD9 /* EasyProgress.m in Sources */,
 				B26FBD762441CDB8003DB3BE /* LOTShapeStar.m in Sources */,
 				B2C94627242B383C00DC6FC1 /* UIColor+UIImage.m in Sources */,
+				3ACF5DBA247E0EED008ACB52 /* NSObject+Model.m in Sources */,
 				B2169E0524404863002CFE3E /* VideoRecorderCtl.m in Sources */,
 				B26FBD8E2441CDB8003DB3BE /* LOTAnimatedControl.m in Sources */,
 			);
