@@ -21,6 +21,7 @@
 #import "VideoRecorderCtl.h"
 #import "LottieAnimationsCtl.h"
 #import "LexiconViewCtl.h"
+#import "BrushDrawController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -83,7 +84,8 @@
 }
 
 - (NSArray *)getCellDatas {
-    NSArray *datas = @[@"可驻留的ScrollView",
+    NSArray *datas = @[@"笔刷绘制",
+                       @"可驻留的ScrollView",
                        @"可折叠tableView",
                        @"tabScrollView",
                        @"各种小控件：button、label",
@@ -102,7 +104,9 @@
 }
 
 - (NSArray *)getClassNames {
-    NSArray *classArrays = @[NSStringFromClass([ResidentScrollViewCtl class]),
+    NSArray *classArrays = @[
+                             NSStringFromClass([BrushDrawController class]),
+                             NSStringFromClass([ResidentScrollViewCtl class]),
                              NSStringFromClass([CollapsibleViewCtl class]),
                              NSStringFromClass([TabScrollViewCtl class]),
                              NSStringFromClass([PearlsPackageCtl class]),

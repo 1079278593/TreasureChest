@@ -45,6 +45,8 @@
 		3AE550E123A9189F001D989E /* FormsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE550D623A9189F001D989E /* FormsView.m */; };
 		3AE550E223A9189F001D989E /* ResidentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE550D923A9189F001D989E /* ResidentScrollView.m */; };
 		3BEFF9DF0E12D318A440735F /* Pods_TreasureChestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140A460F1B11381DEED65D5B /* Pods_TreasureChestTests.framework */; };
+		A9FFC32F24C7DE6800881404 /* BrushDrawController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FFC32E24C7DE6700881404 /* BrushDrawController.m */; };
+		A9FFC33224C7DEC900881404 /* BrushDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FFC33124C7DEC900881404 /* BrushDrawView.m */; };
 		AE908028BC8135F3E1A005A0 /* Pods_abstract_pod_TreasureChest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D467FA7759BEC599ED70F55C /* Pods_abstract_pod_TreasureChest.framework */; };
 		B2055290240756980034310A /* ProductOptionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B205528F240756980034310A /* ProductOptionViewFlowLayout.m */; };
 		B215CC382431BEA30017BFD9 /* EasyProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = B215CC372431BEA30017BFD9 /* EasyProgress.m */; };
@@ -257,6 +259,10 @@
 		3AE550D923A9189F001D989E /* ResidentScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResidentScrollView.m; sourceTree = "<group>"; };
 		3AE550DF23A9189F001D989E /* DeviceMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceMacro.h; sourceTree = "<group>"; };
 		3AE550EA23A91A93001D989E /* TreasureChest-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TreasureChest-Bridging-Header.h"; sourceTree = "<group>"; };
+		A9FFC32D24C7DE6700881404 /* BrushDrawController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrushDrawController.h; sourceTree = "<group>"; };
+		A9FFC32E24C7DE6700881404 /* BrushDrawController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrushDrawController.m; sourceTree = "<group>"; };
+		A9FFC33024C7DEC900881404 /* BrushDrawView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrushDrawView.h; sourceTree = "<group>"; };
+		A9FFC33124C7DEC900881404 /* BrushDrawView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrushDrawView.m; sourceTree = "<group>"; };
 		B202155323C95C9200AEC527 /* FMDBMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDBMacro.h; sourceTree = "<group>"; };
 		B205528E240756980034310A /* ProductOptionViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductOptionViewFlowLayout.h; sourceTree = "<group>"; };
 		B205528F240756980034310A /* ProductOptionViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductOptionViewFlowLayout.m; sourceTree = "<group>"; };
@@ -757,6 +763,17 @@
 			path = Macro;
 			sourceTree = "<group>";
 		};
+		A9FFC32C24C7DE3800881404 /* BrushDrawing */ = {
+			isa = PBXGroup;
+			children = (
+				A9FFC32D24C7DE6700881404 /* BrushDrawController.h */,
+				A9FFC32E24C7DE6700881404 /* BrushDrawController.m */,
+				A9FFC33024C7DEC900881404 /* BrushDrawView.h */,
+				A9FFC33124C7DEC900881404 /* BrushDrawView.m */,
+			);
+			path = BrushDrawing;
+			sourceTree = "<group>";
+		};
 		B205528D240754770034310A /* ProductOptionItemsView */ = {
 			isa = PBXGroup;
 			children = (
@@ -902,6 +919,7 @@
 				B2830EFB23B5E7DB0049AE99 /* FormsViewCtl.m */,
 				B2BC387E23C0385600D5B9C6 /* ShapeViewCtl.h */,
 				B2BC387F23C0385600D5B9C6 /* ShapeViewCtl.m */,
+				A9FFC32C24C7DE3800881404 /* BrushDrawing */,
 				B299BE5824513D340096360D /* LottieAnimations */,
 				B2169E06244048B7002CFE3E /* VideoRecorderDemo */,
 				B284723B2404F58A00C1194F /* ServerMock */,
@@ -1635,9 +1653,11 @@
 				B26FBD922441CDB8003DB3BE /* LOTBezierData.m in Sources */,
 				B26FBD6F2441CDB8003DB3BE /* UIColor.m in Sources */,
 				3AE550E123A9189F001D989E /* FormsView.m in Sources */,
+				A9FFC33224C7DEC900881404 /* BrushDrawView.m in Sources */,
 				B24A85F824037D0500D1EECA /* VideoPlayerCtl.m in Sources */,
 				B26FBD832441CDB8003DB3BE /* LOTBezierPath.m in Sources */,
 				B26FBD822441CDB8003DB3BE /* CGGeometry+LOTAdditions.m in Sources */,
+				A9FFC32F24C7DE6800881404 /* BrushDrawController.m in Sources */,
 				B27B784B23ADB2080083E6AE /* UIColor+Hex.m in Sources */,
 				B24A85FB24039EB000D1EECA /* VideoPlayerBaseView.m in Sources */,
 				B2506D0923AB83080034A472 /* BaseViewController.m in Sources */,
