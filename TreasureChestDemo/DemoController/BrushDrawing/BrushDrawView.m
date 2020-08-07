@@ -100,9 +100,12 @@
     self.endPoint = [[touches anyObject] locationInView:self];
     UIGraphicsPushContext(_drawContext);
     {
-        for (int i = 0; i<13; i++) {//可以一次添加多个，绘制一次。
+        for (int i = 0; i<1; i++) {//可以一次添加多个，绘制一次。
             CGContextMoveToPoint(_drawContext, _startPoint.x+i*2, _startPoint.y+i*2);//设置Path的起点
             CGContextAddLineToPoint(_drawContext, _endPoint.x+i*2, _endPoint.y+i*2);
+            
+//            CGContextMoveToPoint(_drawContext, _endPoint.x+i*2, _endPoint.y+i*2);
+            CGContextAddLineToPoint(_drawContext, _endPoint.x+10, _endPoint.y+18);
             CGContextSetStrokeColorWithColor(_drawContext, [UIColor redColor].CGColor);
 //            CGContextSetBlendMode(_drawContext, kCGBlendModeClear);
             CGContextStrokePath(_drawContext);//一定要画了，不然这个函数CGContextSetStrokeColorWithColor，会把所有线条变成一个颜色

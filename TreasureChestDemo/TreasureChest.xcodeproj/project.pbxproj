@@ -45,6 +45,7 @@
 		3AE550E123A9189F001D989E /* FormsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE550D623A9189F001D989E /* FormsView.m */; };
 		3AE550E223A9189F001D989E /* ResidentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE550D923A9189F001D989E /* ResidentScrollView.m */; };
 		3BEFF9DF0E12D318A440735F /* Pods_TreasureChestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140A460F1B11381DEED65D5B /* Pods_TreasureChestTests.framework */; };
+		A9CA834D24DBE03C00771EE2 /* EllipsePointsView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9CA834C24DBE03C00771EE2 /* EllipsePointsView.m */; };
 		A9FFC32F24C7DE6800881404 /* BrushDrawController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FFC32E24C7DE6700881404 /* BrushDrawController.m */; };
 		A9FFC33224C7DEC900881404 /* BrushDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FFC33124C7DEC900881404 /* BrushDrawView.m */; };
 		AE908028BC8135F3E1A005A0 /* Pods_abstract_pod_TreasureChest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D467FA7759BEC599ED70F55C /* Pods_abstract_pod_TreasureChest.framework */; };
@@ -259,6 +260,8 @@
 		3AE550D923A9189F001D989E /* ResidentScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResidentScrollView.m; sourceTree = "<group>"; };
 		3AE550DF23A9189F001D989E /* DeviceMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceMacro.h; sourceTree = "<group>"; };
 		3AE550EA23A91A93001D989E /* TreasureChest-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TreasureChest-Bridging-Header.h"; sourceTree = "<group>"; };
+		A9CA834B24DBE03C00771EE2 /* EllipsePointsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EllipsePointsView.h; sourceTree = "<group>"; };
+		A9CA834C24DBE03C00771EE2 /* EllipsePointsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EllipsePointsView.m; sourceTree = "<group>"; };
 		A9FFC32D24C7DE6700881404 /* BrushDrawController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrushDrawController.h; sourceTree = "<group>"; };
 		A9FFC32E24C7DE6700881404 /* BrushDrawController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrushDrawController.m; sourceTree = "<group>"; };
 		A9FFC33024C7DEC900881404 /* BrushDrawView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrushDrawView.h; sourceTree = "<group>"; };
@@ -770,6 +773,8 @@
 				A9FFC32E24C7DE6700881404 /* BrushDrawController.m */,
 				A9FFC33024C7DEC900881404 /* BrushDrawView.h */,
 				A9FFC33124C7DEC900881404 /* BrushDrawView.m */,
+				A9CA834B24DBE03C00771EE2 /* EllipsePointsView.h */,
+				A9CA834C24DBE03C00771EE2 /* EllipsePointsView.m */,
 			);
 			path = BrushDrawing;
 			sourceTree = "<group>";
@@ -1732,6 +1737,7 @@
 				B299BE5B24513D570096360D /* LottieAnimationsCell.m in Sources */,
 				B28472332403C3AA00C1194F /* URLSessionTaskCtl.m in Sources */,
 				B2C4592F2440524F00117BD7 /* UIBezierPath+Geometry.m in Sources */,
+				A9CA834D24DBE03C00771EE2 /* EllipsePointsView.m in Sources */,
 				B28472372404B8EE00C1194F /* URLDownloadTask.m in Sources */,
 				B283CEED2449BB650021ABB5 /* TestActionProgressAction.m in Sources */,
 				B26FBD8F2441CDB8003DB3BE /* LOTInterpolatorCallback.m in Sources */,
