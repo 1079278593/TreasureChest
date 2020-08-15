@@ -95,24 +95,29 @@
     
 }
 
+//这个试图在一条线段有多个颜色
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     NSLog(@"touchesEnded");
     self.endPoint = [[touches anyObject] locationInView:self];
     UIGraphicsPushContext(_drawContext);
     {
-        for (int i = 0; i<1; i++) {//可以一次添加多个，绘制一次。
-            CGContextMoveToPoint(_drawContext, _startPoint.x+i*2, _startPoint.y+i*2);//设置Path的起点
-            CGContextAddLineToPoint(_drawContext, _endPoint.x+i*2, _endPoint.y+i*2);
+        for (int i = 0; i<3; i++) {//可以一次添加多个，绘制一次。
+            UIBezierPath *path = [UIBezierPath bezierPath];
+            [path moveToPoint:CGPointMake(_startPoint.x+i*12, _startPoint.y+i*12)];
+            [path addLineToPoint:CGPointMake(_endPoint.x+i*12, _endPoint.y+i*12)];
+            [path setLineWidth:2];
+//            [[UIColor redColor]setStroke];
+            [[UIColor colorWithRed:(255-i*140)/255.0 green:0 blue:0 alpha:1] setStroke];
+            [path stroke];
             
-//            CGContextMoveToPoint(_drawContext, _endPoint.x+i*2, _endPoint.y+i*2);
-            CGContextAddLineToPoint(_drawContext, _endPoint.x+10, _endPoint.y+18);
-            CGContextSetStrokeColorWithColor(_drawContext, [UIColor redColor].CGColor);
-//            CGContextSetBlendMode(_drawContext, kCGBlendModeClear);
-            CGContextStrokePath(_drawContext);//一定要画了，不然这个函数CGContextSetStrokeColorWithColor，会把所有线条变成一个颜色
+            [path addLineToPoint:CGPointMake(_endPoint.x+i*12 + 33, _endPoint.y+i*12 + 13)];
+            [[UIColor colorWithRed:0 green:(255-i*140)/255.0 blue:0 alpha:1] setStroke];
+            [path stroke];
+            
         }
         CGImageRef imageRef = CGBitmapContextCreateImage(_drawContext);
-//        self.drawingImage = [UIImage imageWithCGImage:imageRef];
-        self.maskLayer.contents = (__bridge id _Nullable)(imageRef);
+        self.drawingImage = [UIImage imageWithCGImage:imageRef];
+//        self.maskLayer.contents = (__bridge id _Nullable)(imageRef);
         CGImageRelease(imageRef);//释放
     }
     UIGraphicsPopContext();
@@ -124,5 +129,38 @@
 //    self.image = (__bridge UIImage * _Nullable)(CGBitmapContextCreateImage(_drawContext));
     
 }
+
+/** 用这个
+ - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+     NSLog(@"touchesEnded");
+     self.endPoint = [[touches anyObject] locationInView:self];
+     UIGraphicsPushContext(_drawContext);
+     {
+         for (int i = 0; i<1; i++) {//可以一次添加多个，绘制一次。
+             CGContextMoveToPoint(_drawContext, _startPoint.x+i*2, _startPoint.y+i*2);//设置Path的起点
+             CGContextAddLineToPoint(_drawContext, _endPoint.x+i*2, _endPoint.y+i*2);
+             
+ //            CGContextMoveToPoint(_drawContext, _endPoint.x+i*2, _endPoint.y+i*2);
+             CGContextAddLineToPoint(_drawContext, _endPoint.x+10, _endPoint.y+18);
+             CGContextSetStrokeColorWithColor(_drawContext, [UIColor redColor].CGColor);
+ //            CGContextSetBlendMode(_drawContext, kCGBlendModeClear);
+             CGContextStrokePath(_drawContext);//一定要画了，不然这个函数CGContextSetStrokeColorWithColor，会把所有线条变成一个颜色
+         }
+         CGImageRef imageRef = CGBitmapContextCreateImage(_drawContext);
+ //        self.drawingImage = [UIImage imageWithCGImage:imageRef];
+         self.maskLayer.contents = (__bridge id _Nullable)(imageRef);
+         CGImageRelease(imageRef);//释放
+     }
+     UIGraphicsPopContext();
+     
+     dispatch_async(dispatch_get_main_queue(), ^{
+         self.image = self.drawingImage;
+     });
+     
+ //    self.image = (__bridge UIImage * _Nullable)(CGBitmapContextCreateImage(_drawContext));
+     
+ }
+ */
+
 
 @end

@@ -45,6 +45,7 @@
 		3AE550E123A9189F001D989E /* FormsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE550D623A9189F001D989E /* FormsView.m */; };
 		3AE550E223A9189F001D989E /* ResidentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE550D923A9189F001D989E /* ResidentScrollView.m */; };
 		3BEFF9DF0E12D318A440735F /* Pods_TreasureChestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140A460F1B11381DEED65D5B /* Pods_TreasureChestTests.framework */; };
+		A91C062F24E7B49D00E9F5B6 /* MediaRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = A91C062E24E7B49D00E9F5B6 /* MediaRecorder.m */; };
 		A9CA834D24DBE03C00771EE2 /* EllipsePointsView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9CA834C24DBE03C00771EE2 /* EllipsePointsView.m */; };
 		A9FFC32F24C7DE6800881404 /* BrushDrawController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FFC32E24C7DE6700881404 /* BrushDrawController.m */; };
 		A9FFC33224C7DEC900881404 /* BrushDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FFC33124C7DEC900881404 /* BrushDrawView.m */; };
@@ -260,6 +261,8 @@
 		3AE550D923A9189F001D989E /* ResidentScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResidentScrollView.m; sourceTree = "<group>"; };
 		3AE550DF23A9189F001D989E /* DeviceMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceMacro.h; sourceTree = "<group>"; };
 		3AE550EA23A91A93001D989E /* TreasureChest-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TreasureChest-Bridging-Header.h"; sourceTree = "<group>"; };
+		A91C062D24E7B49D00E9F5B6 /* MediaRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaRecorder.h; sourceTree = "<group>"; };
+		A91C062E24E7B49D00E9F5B6 /* MediaRecorder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MediaRecorder.m; sourceTree = "<group>"; };
 		A9CA834B24DBE03C00771EE2 /* EllipsePointsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EllipsePointsView.h; sourceTree = "<group>"; };
 		A9CA834C24DBE03C00771EE2 /* EllipsePointsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EllipsePointsView.m; sourceTree = "<group>"; };
 		A9FFC32D24C7DE6700881404 /* BrushDrawController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrushDrawController.h; sourceTree = "<group>"; };
@@ -766,6 +769,15 @@
 			path = Macro;
 			sourceTree = "<group>";
 		};
+		A91C062C24E7945600E9F5B6 /* NewRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				A91C062D24E7B49D00E9F5B6 /* MediaRecorder.h */,
+				A91C062E24E7B49D00E9F5B6 /* MediaRecorder.m */,
+			);
+			path = NewRecorder;
+			sourceTree = "<group>";
+		};
 		A9FFC32C24C7DE3800881404 /* BrushDrawing */ = {
 			isa = PBXGroup;
 			children = (
@@ -818,6 +830,7 @@
 		B2169DE124401AF7002CFE3E /* MediaRecorder */ = {
 			isa = PBXGroup;
 			children = (
+				A91C062C24E7945600E9F5B6 /* NewRecorder */,
 				B2169DE324401B4F002CFE3E /* AudioRecorder.h */,
 				B2169DE524401B4F002CFE3E /* AudioRecorder.m */,
 				B2169DE424401B4F002CFE3E /* ScreenRecorder.h */,
@@ -1635,6 +1648,7 @@
 				B2506D0223AB5BA80034A472 /* CollapsibleModel.m in Sources */,
 				B299BE5724513C510096360D /* LottieAnimationsCtl.m in Sources */,
 				B26FBD772441CDB8003DB3BE /* LOTShapeTrimPath.m in Sources */,
+				A91C062F24E7B49D00E9F5B6 /* MediaRecorder.m in Sources */,
 				B26FBD6D2441CDB8003DB3BE /* LOTRepeaterRenderer.m in Sources */,
 				B26FBD682441CDB8003DB3BE /* LOTRoundedRectAnimator.m in Sources */,
 				B26FBD912441CDB8003DB3BE /* LOTKeyframe.m in Sources */,

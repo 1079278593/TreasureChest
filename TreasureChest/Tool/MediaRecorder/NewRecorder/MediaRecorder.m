@@ -1,51 +1,54 @@
 //
-//  ScreenRecorder.m
-//  helloLaihua
+//  MediaRecorder.m
+//  TreasureChest
 //
-//  Created by 小明 on 2017/8/31.
-//  Copyright © 2017年 laihua. All rights reserved.
+//  Created by jf 小明 2020/8/15.
+//  Copyright © 2020 xiao ming. All rights reserved.
 //
 
-#import "ScreenRecorder.h"
+#import "MediaRecorder.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <QuartzCore/QuartzCore.h>
 
-@interface ScreenRecorder ()
+@interface MediaRecorder ()
 
-@property (nonatomic, strong) AVAssetWriter *videoWriter;
-@property (nonatomic, strong) AVAssetWriterInput *videoWriterInput;
-@property (nonatomic, strong) AVAssetWriterInputPixelBufferAdaptor *avAdaptor;
-@property (nonatomic, strong) NSDictionary *outputBufferPoolAuxAttributes;
+@property(nonatomic, strong)AVAssetWriter *videoWriter;
+@property(nonatomic, strong)AVAssetWriterInput *videoWriterInput;
+@property(nonatomic, strong)AVAssetWriterInputPixelBufferAdaptor *avAdaptor;
+@property(nonatomic, strong)NSDictionary *outputBufferPoolAuxAttributes;
 
-@property (nonatomic, retain) dispatch_queue_t render_queue;
-@property (nonatomic, retain) dispatch_queue_t append_pixelBuffer_queue;
-@property (nonatomic, retain) dispatch_semaphore_t frameRenderingSemaphore;
-@property (nonatomic, retain) dispatch_semaphore_t pixelAppendSemaphore;
+@property(nonatomic, retain)dispatch_queue_t render_queue;
+@property(nonatomic, retain)dispatch_queue_t append_pixelBuffer_queue;
+@property(nonatomic, retain)dispatch_semaphore_t frameRenderingSemaphore;
+@property(nonatomic, retain)dispatch_semaphore_t pixelAppendSemaphore;
 
-@property (nonatomic, assign) CGColorSpaceRef rgbColorSpace;
-@property (nonatomic, assign) CVPixelBufferPoolRef outputBufferPool;
+@property(nonatomic, assign)CGColorSpaceRef rgbColorSpace;
+@property(nonatomic, assign)CVPixelBufferPoolRef outputBufferPool;
 
-@property (nonatomic, strong) CADisplayLink *displayLink;
-//@property (nonatomic, strong) NSOperationQueue *queue;
+@property(nonatomic, strong)CADisplayLink *displayLink;
 
-@property (nonatomic, strong) NSString *videoPath;
-@property (nonatomic, strong) NSURL *videoURL;
-@property (nonatomic, assign) BOOL isRecording;
-@property (nonatomic, assign) BOOL isPauseRecording;
+@property(nonatomic, strong)NSString *videoPath;
+@property(nonatomic, strong)NSURL *videoURL;      //videoPath的URL形式
+@property(nonatomic, assign)BOOL isRecording;
 
-//1. recorder use frameRate
-@property (nonatomic, assign) NSInteger frameCount;
-@property (nonatomic, assign) NSTimeInterval duration;
-@property (nonatomic, assign) CGFloat scale;
+@property(nonatomic, weak)UIView *recorderView;     //因为是单例，所以强引用会导致无法释放
+@property(nonatomic, assign)CGFloat totalTime;      //录制总时间
+@property(nonatomic, assign)CGSize resolution;      //分辨率，一般是recorderView的size
+@property(nonatomic, assign)CGFloat scale;          //分辨率倍数
 
-//2. recorder use time
+/*
+ * CMTime的scale，默认给1000。
+ CMTime定义是一个C语言的结构体，CMTime是以分数的形式表示时间，value表示分子，timescale表示分母。
+ 但是由于浮点型数据计算很容易导致精度的丢失，在一些要求高精度的应用场景显然不适合，于是苹果在Core Media框架中定义了CMTime数据类型作为时间的格式
+ */
+@property(nonatomic, assign)int timeScale;
 @property (nonatomic) CFTimeInterval previousStamp;
 @property (nonatomic) CFTimeInterval validStamp;
 
 @end
 
-@implementation ScreenRecorder
+@implementation MediaRecorder
 
 #pragma mark - Life Cycle
 + (instancetype)sharedInstance {
@@ -60,15 +63,6 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-         _viewSize = [UIApplication sharedApplication].delegate.window.bounds.size;//设置视频尺寸
-        _scale = [UIScreen mainScreen].scale;
-        _scale = 1.5;
-        // record half size resolution for retina iPads
-        if ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) && _scale > 1) {
-            _scale = 1.0;
-        }
-        
-        //semaphore set
         _append_pixelBuffer_queue = dispatch_queue_create("VideoRecorder_appendQueue", DISPATCH_QUEUE_SERIAL);
         _render_queue = dispatch_queue_create("VideoRecorder_renderQueue", DISPATCH_QUEUE_SERIAL);
         dispatch_set_target_queue(_render_queue, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0));
@@ -79,89 +73,59 @@
 }
 
 #pragma mark - Video Record Events
-- (void)startRecording {
-    if (_isRecording) {
-        return;
+- (void)startWithRecorderView:(UIView *)recorderView {
+    [self startWithRecorderView:recorderView videoDuration:CGFLOAT_MAX];
+}
+
+- (void)startWithRecorderView:(UIView *)recorderView videoDuration:(CGFloat)duration {
+    self.recorderView = recorderView;
+    self.totalTime = duration;
+    _resolution = recorderView.size;//设置视频尺寸
+    
+    _timeScale = 1000;
+    _scale = [UIScreen mainScreen].scale;
+    _scale = 1; //先设置成1
+    if ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) && _scale > 1) {
+        _scale = 1.0;// record half size resolution for retina iPads
     }
     
-    NSFileManager *fm = [NSFileManager defaultManager];
-    if ([fm fileExistsAtPath:self.videoPath]) {
-        if (![fm removeItemAtPath:self.videoPath error:nil]) {
-            NSLog(@"remove screenVideo failed.");
-        }
-    }
+    NSAssert(_isRecording == NO, @"Is exist an recorder now，please wait until this recorder finish");
+    NSAssert((_recorderView != nil || _resolution.width > 0 || _resolution.height > 0), @"Your should provide an correct view");
     
-    if (self.recorderView.frame.size.width > 0) {
-        _viewSize = self.recorderView.frame.size;
-    }
-    
+    [self removeVideoFromPath:self.videoPath];
     [self recorderAttributeSetting];
-    
+    [self startRecording];
+}
+
+- (void)startRecording {
     _isRecording = (self.videoWriter.status == AVAssetWriterStatusWriting);
-    
-    //displaylink方式
     _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(recordRunloop)];
     [_displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
     _displayLink.preferredFramesPerSecond = frameRate;
-    
-    //NSOperationQueue方式
-//    if (!self.queue) {
-//        //1.创建队列
-//        self.queue = [[NSOperationQueue alloc] init];
-//    }
-//    
-//    // 2.创建操作：使用 NSInvocationOperation 创建操作
-//    NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(recordRunloop) object:nil];
-//    [self.queue addOperation:operation];
-
 }
 
 - (void)stopRecording {
-    if (!_isRecording) {
-        return;
-    }
+    if (!_isRecording) return;//或者给个‘提示’
     [self recordFinish];
     [_displayLink removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
 }
 
-- (void)pauseRecording {
-    [self pauseLayer:self.recorderView.layer];
-    _isPauseRecording = YES;
-}
-
-- (void)resumeRecording {
-    [self resumeLayer:self.recorderView.layer];
-    _isPauseRecording = NO;
-}
-
-- (void)forceStopRecording {
-    NSLog(@"forceStopRecording");
-    [self resetRecorder];
-    [_displayLink removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
-    
-    [_videoWriterInput markAsFinished];
-    [_videoWriter finishWritingWithCompletionHandler:^{
-        
-    }];
-}
-#pragma mark - layer animation pause/resume
-- (void)pauseLayer:(CALayer *)layer {
-    CFTimeInterval pausedTime = [layer convertTime:CACurrentMediaTime() fromLayer:nil];
-    NSLog(@"暂停layer动画，paused time:%f", pausedTime);
-    layer.speed = 0.0;
-    layer.timeOffset = pausedTime;
-}
-
-//继续layer上面的动画
-- (void)resumeLayer:(CALayer *)layer {
-    CFTimeInterval pausedTime = [layer timeOffset];
-    layer.speed = 1.0;
-    layer.timeOffset = 0.0;
-    layer.beginTime = 0.0;
-    CFTimeInterval timeSincePause = [layer convertTime:CACurrentMediaTime() fromLayer:nil] - pausedTime;
-    layer.beginTime = timeSincePause;
-    NSLog(@"pause time:%f", pausedTime);
-    NSLog(@"恢复layer动画,begin time:%f", timeSincePause);
+- (void)recordFinish;
+{
+    NSLog(@"recordFinishWithSession");
+    @weakify(self)
+    dispatch_async(_render_queue, ^{
+        @strongify(self)
+        dispatch_sync(self.append_pixelBuffer_queue, ^{
+            [self.videoWriterInput markAsFinished];
+            [self.videoWriter finishWritingWithCompletionHandler:^{
+                if (self.videoURL) {
+                    [self resetRecorder];
+                    self.finishBlock(self.videoPath);
+                }
+            }];
+        });
+    });
 }
 
 #pragma mark - recording
@@ -172,19 +136,8 @@
         return;
     }
     
-    if (self.isPauseRecording) {
-        //如果是暂停中，需要实时得到最新的时间戳。
-        self.previousStamp = self.displayLink.timestamp;
-        return;
-    }
-    
     if (dispatch_semaphore_wait(_frameRenderingSemaphore, DISPATCH_TIME_NOW) != 0) {
         return;
-    }
-    
-    //将当期帧数传递出去
-    if (self.frameCountBlock) {
-        self.frameCountBlock(self.frameCount);
     }
     
     @weakify(self);
@@ -195,25 +148,18 @@
         if (![self.videoWriterInput isReadyForMoreMediaData]) return;
         
         CMTime time;
-        if (isRecordFramRate) {
-            //按照帧数:(第几帧,每秒帧数)
-            self.frameCount++;
-            time = CMTimeMake(self.frameCount, (int32_t) frameRate);
-            NSLog(@"frame count:%ld", (long) self.frameCount);
-            NSLog(@"video duration:%f", (self.frameCount / (float) frameRate));
+        //按照时间:(第几秒,时间尺度：首选的时间尺度"每秒的帧数")！
+        if (self.previousStamp == 0) {
+            self.previousStamp = self.displayLink.timestamp;
         } else {
-            //按照时间:(第几秒,时间尺度：首选的时间尺度"每秒的帧数")！
-            if (self.previousStamp == 0) {
-                self.previousStamp = self.displayLink.timestamp;
-            } else {
-                self.validStamp += self.displayLink.timestamp - self.previousStamp;
-                self.previousStamp = self.displayLink.timestamp;
-            }
-            time = CMTimeMakeWithSeconds(self.validStamp, 1000);
-            NSLog(@"validStamp:%f", self.validStamp);
-            NSLog(@"displayLink timestamp:%f", self.displayLink.timestamp);
+            self.validStamp += self.displayLink.timestamp - self.previousStamp;
+            self.previousStamp = self.displayLink.timestamp;
         }
+        time = CMTimeMakeWithSeconds(self.validStamp, self.timeScale);
+        NSLog(@"validStamp:%f", self.validStamp);
+        NSLog(@"displayLink timestamp:%f", self.displayLink.timestamp);
         
+        //-----------
         CVPixelBufferRef pixelBuffer = NULL;
         CGContextRef bitmapContext = [self bitmapContextFromBuffer:&pixelBuffer];
         // draw each window into the context (other windows include UIKeyboard, UIAlert)
@@ -221,18 +167,10 @@
         dispatch_sync(dispatch_get_main_queue(), ^{
             UIGraphicsPushContext(bitmapContext);
             {
-                //填充背景色
                 CGContextSetFillColorWithColor(bitmapContext, [UIColor whiteColor].CGColor);
-                CGContextFillRect(bitmapContext, CGRectMake(0, 0, self.viewSize.width, self.viewSize.height));
-                
-                CGFloat progressTime = self.validStamp;
-                if (isRecordFramRate) {
-                    progressTime = (CGFloat) self.frameCount / frameRate;
-                }
-                
+                CGContextFillRect(bitmapContext, CGRectMake(0, 0, self.resolution.width, self.resolution.height));
                 [self.recorderView.layer.presentationLayer renderInContext:bitmapContext];
             }
-            
             UIGraphicsPopContext();
         });
         
@@ -259,50 +197,6 @@
     });
 }
 
-- (void)recordFinish;
-{
-    NSLog(@"recordFinishWithSession");
-    @weakify(self)
-    dispatch_async(_render_queue, ^{
-        @strongify(self)
-        dispatch_sync(self.append_pixelBuffer_queue, ^{
-            [self.videoWriterInput markAsFinished];
-            [self.videoWriter finishWritingWithCompletionHandler:^{
-                if (self.videoURL) {
-                    [self resetRecorder];
-                    self.finishBlock(self.videoPath);
-                }
-            }];
-        });
-    });
-}
-
-//- (CGContextRef)pixelBufferAfterRender {
-//    CVPixelBufferRef pixelBuffer = NULL;
-//    CGContextRef bitmapContext = [self bitmapContextFromBuffer:&pixelBuffer];
-//    // draw each window into the context (other windows include UIKeyboard, UIAlert)
-//    // FIX: UIKeyboard is currently only rendered correctly in portrait orientation
-//    dispatch_sync(dispatch_get_main_queue(), ^{
-//        UIGraphicsPushContext(bitmapContext);
-//        {
-//            //填充背景色
-//            CGContextSetFillColorWithColor(bitmapContext, [UIColor whiteColor].CGColor);
-//            CGContextFillRect(bitmapContext, CGRectMake(0, 0, self.viewSize.width, self.viewSize.height));
-//            
-//            CGFloat progressTime = self.validStamp;
-//            if (isRecordFramRate) {
-//                progressTime = (CGFloat) self.frameCount / frameRate;
-//            }
-//            
-//            [self.recorderView.layer.presentationLayer renderInContext:bitmapContext];
-//        }
-//        
-//        UIGraphicsPopContext();
-//    });
-//    
-//    return bitmapContext;
-//}
-
 - (CGContextRef)bitmapContextFromBuffer:(CVPixelBufferRef *)pixelBuffer {
     
     CVPixelBufferPoolCreatePixelBuffer(NULL, _outputBufferPool, pixelBuffer);
@@ -316,7 +210,7 @@
                                           8, CVPixelBufferGetBytesPerRow(*pixelBuffer), _rgbColorSpace,
                                           kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst);
     CGContextScaleCTM(bitmapContext, _scale, _scale);
-    CGAffineTransform flipVertical = CGAffineTransformMake(1, 0, 0, -1, 0, _viewSize.height);
+    CGAffineTransform flipVertical = CGAffineTransformMake(1, 0, 0, -1, 0, _resolution.height);
     
     CGContextConcatCTM(bitmapContext, flipVertical);
     
@@ -331,25 +225,22 @@
     _rgbColorSpace = CGColorSpaceCreateDeviceRGB();
     NSDictionary *bufferAttributes = @{(id) kCVPixelBufferPixelFormatTypeKey : @(kCVPixelFormatType_32BGRA),
                                        (id) kCVPixelBufferCGBitmapContextCompatibilityKey : @YES,
-                                       (id) kCVPixelBufferWidthKey : @(_viewSize.width * _scale),
-                                       (id) kCVPixelBufferHeightKey : @(_viewSize.height * _scale),
-                                       (id) kCVPixelBufferBytesPerRowAlignmentKey : @(_viewSize.width * _scale * 4)
+                                       (id) kCVPixelBufferWidthKey : @(_resolution.width * _scale),
+                                       (id) kCVPixelBufferHeightKey : @(_resolution.height * _scale),
+                                       (id) kCVPixelBufferBytesPerRowAlignmentKey : @(_resolution.width * _scale * 4)
                                        };
     
     _outputBufferPool = NULL;
     CVPixelBufferPoolCreate(NULL, NULL, (__bridge CFDictionaryRef)(bufferAttributes), &_outputBufferPool);
     
-    //必须删除了这个文件，如果存在这个文件，无法开始新的录制
-    [self removeVideoFromPath:self.videoPath];
-    
     NSParameterAssert(self.videoWriter);
     
-    NSInteger pixelNumber = _viewSize.width * _viewSize.height * _scale;
+    NSInteger pixelNumber = _resolution.width * _resolution.height * _scale;
     NSDictionary *videoCompression = @{ AVVideoAverageBitRateKey : @(pixelNumber * 11.4) }; //11.4视频平均压缩率，值10.1相当于AVCaptureSessionPresetHigh，数值越大，显示越精细，当前7.5
     
     NSDictionary *videoSettings = @{AVVideoCodecKey : AVVideoCodecH264,
-                                    AVVideoWidthKey : [NSNumber numberWithInt:_viewSize.width * _scale],
-                                    AVVideoHeightKey : [NSNumber numberWithInt:_viewSize.height * _scale],
+                                    AVVideoWidthKey : [NSNumber numberWithInt:_resolution.width * _scale],
+                                    AVVideoHeightKey : [NSNumber numberWithInt:_resolution.height * _scale],
                                     AVVideoCompressionPropertiesKey : videoCompression};
     
     _videoWriterInput = [AVAssetWriterInput assetWriterInputWithMediaType:AVMediaTypeVideo outputSettings:videoSettings];
@@ -363,7 +254,7 @@
     [self.videoWriter addInput:_videoWriterInput];
     
     [self.videoWriter startWriting];
-    [self.videoWriter startSessionAtSourceTime:CMTimeMake(0, 1000)];
+    [self.videoWriter startSessionAtSourceTime:CMTimeMake(0, _timeScale)];
 }
 
 ///根据device的orientation返回transform，设置视频方向
@@ -382,14 +273,13 @@
         default:
             videoTransform = CGAffineTransformIdentity;
     }
-    if (self.expireDirection) {
+    if (self.isDeviceOrientation) {
         videoTransform = CGAffineTransformIdentity;
     }
-    //    NSLog(@"视频录制方向%d",[UIDevice currentDevice].orientation);
     return videoTransform;
 }
 
-///根据path删除视频文件
+///根据path删除上次录制的视频文件
 - (void)removeVideoFromPath:(NSString *)filePath {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if ([fileManager fileExistsAtPath:filePath]) {
@@ -424,12 +314,7 @@
     CVPixelBufferPoolRelease(_outputBufferPool);
     
     _isRecording = NO;
-    _isPauseRecording = NO;
-    
-    //1.帧方式
-    self.frameCount = 0;
-    self.duration = 0; //这个可以不设置，用于观察时间
-    
+
     //2.时间戳方式
     self.previousStamp = 0;
     self.validStamp = 0;
@@ -437,7 +322,6 @@
 
 #pragma mark - Getters and Setters
 - (AVAssetWriter *)videoWriter {
-    
     if (_videoWriter == nil) {
         NSError *error = nil;
         _videoWriter = [[AVAssetWriter alloc] initWithURL:self.videoURL fileType:AVFileTypeQuickTimeMovie error:&error];

@@ -10,6 +10,7 @@
 #import "DrawingBoardView.h"
 #import <MSWeakTimer.h>
 #import "ScreenRecorder.h"
+#import "MediaRecorder.h"
 #import "EasyGraphicsRender.h"
 #import "CheckAuthorization.h"
 #import <Photos/Photos.h>
@@ -60,22 +61,8 @@
 }
 
 - (void)startRecordBtnEvent:(UIButton *)button {
-
-    if (!button.selected) {
-        //开始录制
-        self.duration = 0;
-        self.timer = [MSWeakTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countdownEvent:) userInfo:nil repeats:YES dispatchQueue:dispatch_get_main_queue()];
-        [self.timer fire];
-        [[ScreenRecorder sharedInstance]startRecording];
-        [ScreenRecorder sharedInstance].recorderView = self.lotView;
-        [ScreenRecorder sharedInstance].finishBlock = ^(NSString *videoPath) {
-            NSLog(@"录制完成，视频沙盒地址：%@",videoPath);
-        };
-    }else {
-        //结束录制
-        [self.timer invalidate];
-        [[ScreenRecorder sharedInstance]stopRecording];
-    }
+//    [self screenRecorder_old:button];
+    [self mediaRecorder_new:button];
     button.selected = !button.selected;
 }
 
@@ -93,6 +80,42 @@
 //    [self saveToAlbum:tmp];
 }
 
+- (void)screenRecorder_old:(UIButton *)button {
+    if (!button.selected) {
+        //开始录制
+        self.duration = 0;
+        self.timer = [MSWeakTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countdownEvent:) userInfo:nil repeats:YES dispatchQueue:dispatch_get_main_queue()];
+        [self.timer fire];
+        [[ScreenRecorder sharedInstance]startRecording];
+        [ScreenRecorder sharedInstance].recorderView = self.lotView;
+        [ScreenRecorder sharedInstance].finishBlock = ^(NSString *videoPath) {
+            NSLog(@"录制完成，视频沙盒地址：%@",videoPath);
+        };
+    }else {
+        //结束录制
+        [self.timer invalidate];
+        [[ScreenRecorder sharedInstance]stopRecording];
+    }
+}
+
+//整理后的录制类
+- (void)mediaRecorder_new:(UIButton *)button {
+    if (!button.selected) {
+        //开始录制
+        self.duration = 0;
+        self.timer = [MSWeakTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countdownEvent:) userInfo:nil repeats:YES dispatchQueue:dispatch_get_main_queue()];
+        [self.timer fire];
+        
+        [[MediaRecorder sharedInstance] startWithRecorderView:self.view];
+        [MediaRecorder sharedInstance].finishBlock = ^(NSString *videoPath) {
+            NSLog(@"录制完成，视频沙盒地址：%@",videoPath);
+        };
+    }else {
+        //结束录制
+        [self.timer invalidate];
+        [[MediaRecorder sharedInstance]stopRecording];
+    }
+}
 
 - (void)saveToAlbum:(UIImage *)image {
     PHPhotoLibrary *photoLibrary = [PHPhotoLibrary sharedPhotoLibrary];
@@ -116,6 +139,13 @@
         return [NSString stringWithFormat:@"0%@",value];
     }
     return value;
+}
+
+- (NSArray *)getLottiesPath {
+    NSString *bundlePath = [[ NSBundle mainBundle] pathForResource:@"lotties" ofType :@"bundle"];
+    NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
+    NSArray *lotties = [bundle pathsForResourcesOfType:@"" inDirectory:@""];
+    return lotties;
 }
 
 #pragma mark - < init >
@@ -154,8 +184,7 @@
         make.height.equalTo(@(35));
     }];
     
-    NSArray *lottieArray = @[@"celebaration",@"donutLoader",@"foodDelivery",@"giftBox",@"rocket",@"thumbsUp"];
-    self.lotView = [LOTAnimationView animationNamed:lottieArray[1]];
+    self.lotView = [[LOTAnimationView alloc]initWithContentsOfURL:[NSURL fileURLWithPath:[self getLottiesPath][0]]];
     self.lotView.loopAnimation = true;
 //    self.lotView.animationSpeed = 0;
 //    self.lotView.frame = CGRectMake(0, 0, 100, 100);
