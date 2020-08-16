@@ -15,11 +15,11 @@ abstract_target 'abstract_pod' do
 
     pod 'FMDB'
     pod 'Masonry'
-    pod 'SDWebImage', '~> 3.7.5'
+    pod 'SDWebImage'
     pod 'AFNetworking'
     pod 'MJExtension'
     pod 'ReactiveObjC', '3.1.0'
-    pod 'MSWeakTimer', '~> 1.1.0'
+    pod 'MSWeakTimer'
     pod 'MJRefresh', '3.2.0'
     
     target 'TreasureChestTests' do
