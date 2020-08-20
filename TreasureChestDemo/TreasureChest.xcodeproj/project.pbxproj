@@ -46,6 +46,14 @@
 		3AE550E223A9189F001D989E /* ResidentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE550D923A9189F001D989E /* ResidentScrollView.m */; };
 		3BEFF9DF0E12D318A440735F /* Pods_TreasureChestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140A460F1B11381DEED65D5B /* Pods_TreasureChestTests.framework */; };
 		A91C062F24E7B49D00E9F5B6 /* MediaRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = A91C062E24E7B49D00E9F5B6 /* MediaRecorder.m */; };
+		A923238124EBB4A100B2CDE1 /* UIImageView+LBBlurredImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A923237F24EBB4A100B2CDE1 /* UIImageView+LBBlurredImage.m */; };
+		A923238224EBB4A100B2CDE1 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = A923238024EBB4A100B2CDE1 /* UIImage+ImageEffects.m */; };
+		A983CE2D24EE5CC200213D35 /* OpenGLPixelBufferView.m in Sources */ = {isa = PBXBuildFile; fileRef = A983CE2724EE5CC200213D35 /* OpenGLPixelBufferView.m */; };
+		A983CE2E24EE5CC200213D35 /* OpenGLPixelBufferView.m in Sources */ = {isa = PBXBuildFile; fileRef = A983CE2724EE5CC200213D35 /* OpenGLPixelBufferView.m */; };
+		A983CE2F24EE5CC200213D35 /* ShaderUtilities.c in Sources */ = {isa = PBXBuildFile; fileRef = A983CE2824EE5CC200213D35 /* ShaderUtilities.c */; };
+		A983CE3024EE5CC200213D35 /* ShaderUtilities.c in Sources */ = {isa = PBXBuildFile; fileRef = A983CE2824EE5CC200213D35 /* ShaderUtilities.c */; };
+		A983CE3124EE5CC200213D35 /* matrix.c in Sources */ = {isa = PBXBuildFile; fileRef = A983CE2B24EE5CC200213D35 /* matrix.c */; };
+		A983CE3224EE5CC200213D35 /* matrix.c in Sources */ = {isa = PBXBuildFile; fileRef = A983CE2B24EE5CC200213D35 /* matrix.c */; };
 		A9CA834D24DBE03C00771EE2 /* EllipsePointsView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9CA834C24DBE03C00771EE2 /* EllipsePointsView.m */; };
 		A9FFC32F24C7DE6800881404 /* BrushDrawController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FFC32E24C7DE6700881404 /* BrushDrawController.m */; };
 		A9FFC33224C7DEC900881404 /* BrushDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FFC33124C7DEC900881404 /* BrushDrawView.m */; };
@@ -263,6 +271,16 @@
 		3AE550EA23A91A93001D989E /* TreasureChest-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TreasureChest-Bridging-Header.h"; sourceTree = "<group>"; };
 		A91C062D24E7B49D00E9F5B6 /* MediaRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaRecorder.h; sourceTree = "<group>"; };
 		A91C062E24E7B49D00E9F5B6 /* MediaRecorder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MediaRecorder.m; sourceTree = "<group>"; };
+		A923237D24EBB4A100B2CDE1 /* UIImageView+LBBlurredImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LBBlurredImage.h"; sourceTree = "<group>"; };
+		A923237E24EBB4A100B2CDE1 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		A923237F24EBB4A100B2CDE1 /* UIImageView+LBBlurredImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LBBlurredImage.m"; sourceTree = "<group>"; };
+		A923238024EBB4A100B2CDE1 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		A983CE2724EE5CC200213D35 /* OpenGLPixelBufferView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLPixelBufferView.m; sourceTree = "<group>"; };
+		A983CE2824EE5CC200213D35 /* ShaderUtilities.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ShaderUtilities.c; sourceTree = "<group>"; };
+		A983CE2924EE5CC200213D35 /* matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = matrix.h; sourceTree = "<group>"; };
+		A983CE2A24EE5CC200213D35 /* OpenGLPixelBufferView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLPixelBufferView.h; sourceTree = "<group>"; };
+		A983CE2B24EE5CC200213D35 /* matrix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = matrix.c; sourceTree = "<group>"; };
+		A983CE2C24EE5CC200213D35 /* ShaderUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderUtilities.h; sourceTree = "<group>"; };
 		A9CA834B24DBE03C00771EE2 /* EllipsePointsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EllipsePointsView.h; sourceTree = "<group>"; };
 		A9CA834C24DBE03C00771EE2 /* EllipsePointsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EllipsePointsView.m; sourceTree = "<group>"; };
 		A9FFC32D24C7DE6700881404 /* BrushDrawController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrushDrawController.h; sourceTree = "<group>"; };
@@ -689,6 +707,7 @@
 		3AE550D323A9189F001D989E /* Objective-C */ = {
 			isa = PBXGroup;
 			children = (
+				A983CE2624EE5CC200213D35 /* OpenGLPixelBufferView */,
 				B2DD689F23B2FB6C00106F4F /* PearlsPackage */,
 				B24A85EE24035B3900D1EECA /* VideoPlayerView */,
 				B2BC387723C0334F00D5B9C6 /* XMShapeView */,
@@ -756,6 +775,7 @@
 				B23DDC262435D3D600743BC1 /* UIImageView+VideoCover.m */,
 				3ACF5DB8247E0EED008ACB52 /* NSObject+Model.h */,
 				3ACF5DB9247E0EED008ACB52 /* NSObject+Model.m */,
+				A923237C24EBB4A100B2CDE1 /* BlurredImage */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -776,6 +796,30 @@
 				A91C062E24E7B49D00E9F5B6 /* MediaRecorder.m */,
 			);
 			path = NewRecorder;
+			sourceTree = "<group>";
+		};
+		A923237C24EBB4A100B2CDE1 /* BlurredImage */ = {
+			isa = PBXGroup;
+			children = (
+				A923237D24EBB4A100B2CDE1 /* UIImageView+LBBlurredImage.h */,
+				A923237F24EBB4A100B2CDE1 /* UIImageView+LBBlurredImage.m */,
+				A923237E24EBB4A100B2CDE1 /* UIImage+ImageEffects.h */,
+				A923238024EBB4A100B2CDE1 /* UIImage+ImageEffects.m */,
+			);
+			path = BlurredImage;
+			sourceTree = "<group>";
+		};
+		A983CE2624EE5CC200213D35 /* OpenGLPixelBufferView */ = {
+			isa = PBXGroup;
+			children = (
+				A983CE2924EE5CC200213D35 /* matrix.h */,
+				A983CE2B24EE5CC200213D35 /* matrix.c */,
+				A983CE2A24EE5CC200213D35 /* OpenGLPixelBufferView.h */,
+				A983CE2724EE5CC200213D35 /* OpenGLPixelBufferView.m */,
+				A983CE2C24EE5CC200213D35 /* ShaderUtilities.h */,
+				A983CE2824EE5CC200213D35 /* ShaderUtilities.c */,
+			);
+			path = OpenGLPixelBufferView;
 			sourceTree = "<group>";
 		};
 		A9FFC32C24C7DE3800881404 /* BrushDrawing */ = {
@@ -1651,6 +1695,7 @@
 				A91C062F24E7B49D00E9F5B6 /* MediaRecorder.m in Sources */,
 				B26FBD6D2441CDB8003DB3BE /* LOTRepeaterRenderer.m in Sources */,
 				B26FBD682441CDB8003DB3BE /* LOTRoundedRectAnimator.m in Sources */,
+				A983CE2F24EE5CC200213D35 /* ShaderUtilities.c in Sources */,
 				B26FBD912441CDB8003DB3BE /* LOTKeyframe.m in Sources */,
 				B2830EFC23B5E7DB0049AE99 /* FormsViewCtl.m in Sources */,
 				3A40235C23A62ED100BDB4E3 /* main.m in Sources */,
@@ -1658,6 +1703,7 @@
 				B26FBD952441CDB8003DB3BE /* LOTMaskContainer.m in Sources */,
 				B26FBD692441CDB8003DB3BE /* LOTRenderGroup.m in Sources */,
 				B26FBD8C2441CDB8003DB3BE /* LOTKeypath.m in Sources */,
+				A983CE2D24EE5CC200213D35 /* OpenGLPixelBufferView.m in Sources */,
 				B2055290240756980034310A /* ProductOptionViewFlowLayout.m in Sources */,
 				B27B784523ACD7C00083E6AE /* TabTitleScrollView.m in Sources */,
 				B26FBD6A2441CDB8003DB3BE /* LOTGradientFillRender.m in Sources */,
@@ -1671,11 +1717,13 @@
 				B26FBD862441CDB8003DB3BE /* LOTAnimationCache.m in Sources */,
 				B26FBD922441CDB8003DB3BE /* LOTBezierData.m in Sources */,
 				B26FBD6F2441CDB8003DB3BE /* UIColor.m in Sources */,
+				A983CE3124EE5CC200213D35 /* matrix.c in Sources */,
 				3AE550E123A9189F001D989E /* FormsView.m in Sources */,
 				A9FFC33224C7DEC900881404 /* BrushDrawView.m in Sources */,
 				B24A85F824037D0500D1EECA /* VideoPlayerCtl.m in Sources */,
 				B26FBD832441CDB8003DB3BE /* LOTBezierPath.m in Sources */,
 				B26FBD822441CDB8003DB3BE /* CGGeometry+LOTAdditions.m in Sources */,
+				A923238224EBB4A100B2CDE1 /* UIImage+ImageEffects.m in Sources */,
 				A9FFC32F24C7DE6800881404 /* BrushDrawController.m in Sources */,
 				B27B784B23ADB2080083E6AE /* UIColor+Hex.m in Sources */,
 				B24A85FB24039EB000D1EECA /* VideoPlayerBaseView.m in Sources */,
@@ -1777,6 +1825,7 @@
 				B2C459302440524F00117BD7 /* CuvbicCurveGeometry.m in Sources */,
 				B2506CF923AB5B370034A472 /* CollapsibleViewModel.m in Sources */,
 				B2CE343E244AAEB9000A32EB /* TestGradientLayer.m in Sources */,
+				A923238124EBB4A100B2CDE1 /* UIImageView+LBBlurredImage.m in Sources */,
 				B24A85FE24039F1300D1EECA /* VideoPlayerSampleView.m in Sources */,
 				B2B6B1A82408E71C00187850 /* RegularOperate.m in Sources */,
 				B26FBD7B2441CDB8003DB3BE /* LOTShapeRectangle.m in Sources */,
@@ -1793,7 +1842,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A983CE2E24EE5CC200213D35 /* OpenGLPixelBufferView.m in Sources */,
 				B2B8360D2397D22000A562DB /* TreasureChestTests.m in Sources */,
+				A983CE3224EE5CC200213D35 /* matrix.c in Sources */,
+				A983CE3024EE5CC200213D35 /* ShaderUtilities.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

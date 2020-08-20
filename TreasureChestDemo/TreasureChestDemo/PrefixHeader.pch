@@ -9,6 +9,9 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+//将头文件的引用放在下面，为了避免将其认为是C文件，因为项目中用了c文件。
+#ifdef __OBJC__
+
 #import "DeviceMacro.h"
 #import "ColorMacro.h"
 #import <ReactiveObjC.h>
@@ -27,5 +30,8 @@
 #import "FMDBManager.h"
 #import "RegularOperate.h"
 #import "EasyProgress.h"
+
+#endif
+
 
 #endif /* PrefixHeader_pch */

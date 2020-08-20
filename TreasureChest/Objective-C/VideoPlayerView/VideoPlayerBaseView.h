@@ -25,6 +25,8 @@ typedef void (^ProgressBlock)(CGFloat progress);
 @property(nonatomic, copy)FinishBlock finishBlock;
 @property(nonatomic, copy)ProgressBlock progressBlock;
 
+@property(nonatomic, strong)UIActivityIndicatorView *activityView;
+
 - (void)setupPlayer:(NSString *)mediaPath;
 - (CGFloat)videoDuration;
 - (void)startPlay;

@@ -13,7 +13,6 @@
 @property(nonatomic, strong)NSString *mediaPath;
 @property(nonatomic, assign)id timeObserver;
 @property(nonatomic, assign)CGFloat progressRatio;
-@property(nonatomic, strong)UIActivityIndicatorView *activityView;
 
 @end
 
@@ -172,6 +171,8 @@
 - (AVPlayerItem *)setupPlayerItemWithPath:(NSString *)path {
     NSURL *url = [[NSURL alloc]initFileURLWithPath:path];
     if ([path containsString:@"http"]) {
+        //path如果有中文就要特殊处理
+        //path = [path stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
         url = [[NSURL alloc]initWithString:path];
     }
     return [[AVPlayerItem alloc]initWithURL:url];
