@@ -197,7 +197,7 @@ enum {
 		goto bail;
 	}
 	
-	_frame = glueGetUniformLocation( _program, "videoframe" );
+	_frame = glueGetUniformLocation( _program, "videoframe" );//videoframe：着色器中的采样器。
 	
 bail:
 	if ( ! success ) {
@@ -275,6 +275,7 @@ bail:
 	size_t frameWidth = CVPixelBufferGetWidth( pixelBuffer );
 	size_t frameHeight = CVPixelBufferGetHeight( pixelBuffer );
     CVOpenGLESTextureRef texture = NULL;
+    //从CVImageBufferRef创建一个CVOpenGLESTextureRef
     CVReturn err = CVOpenGLESTextureCacheCreateTextureFromImage( kCFAllocatorDefault,
                                                                 _textureCache,
                                                                 pixelBuffer,
@@ -300,7 +301,7 @@ bail:
 	
 	glUseProgram( _program );
     glActiveTexture( GL_TEXTURE0 );
-	glBindTexture( CVOpenGLESTextureGetTarget( texture ), CVOpenGLESTextureGetName( texture ) );
+	glBindTexture( CVOpenGLESTextureGetTarget( texture ), CVOpenGLESTextureGetName( texture ) );//可以替换其它的纹理，这里是cvpixelBuffer生成的
 	glUniform1i( _frame, 0 );
     
     // Set texture parameters
@@ -312,7 +313,7 @@ bail:
 	glVertexAttribPointer( ATTRIB_VERTEX, 2, GL_FLOAT, 0, 0, squareVertices );
 	glEnableVertexAttribArray( ATTRIB_VERTEX );
 	
-    // Preserve aspect ratio; fill layer bounds
+    // Preserve aspect ratio; fill layer bounds(保持长宽比;填充图层边界)
     CGSize textureSamplingSize;
     CGSize cropScaleAmount = CGSizeMake( self.bounds.size.width / (float)frameWidth, self.bounds.size.height / (float)frameHeight );
     if ( cropScaleAmount.height > cropScaleAmount.width ) {
@@ -326,6 +327,8 @@ bail:
     
 	// Perform a vertical flip by swapping the top left and the bottom left coordinate.
 	// CVPixelBuffers have a top left origin and OpenGL has a bottom left origin.
+    //通过交换左上角和左下角坐标来执行垂直翻转。
+    // CVPixelBuffers有一个左上的原点，OpenGL有一个左下的原点。
     GLfloat passThroughTextureVertices[] = {
         ( 1.0 - textureSamplingSize.width ) / 2.0, ( 1.0 + textureSamplingSize.height ) / 2.0, // top left
         ( 1.0 + textureSamplingSize.width ) / 2.0, ( 1.0 + textureSamplingSize.height ) / 2.0, // top right
