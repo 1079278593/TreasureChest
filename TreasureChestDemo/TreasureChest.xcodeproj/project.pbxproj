@@ -54,6 +54,7 @@
 		A983CE3024EE5CC200213D35 /* ShaderUtilities.c in Sources */ = {isa = PBXBuildFile; fileRef = A983CE2824EE5CC200213D35 /* ShaderUtilities.c */; };
 		A983CE3124EE5CC200213D35 /* matrix.c in Sources */ = {isa = PBXBuildFile; fileRef = A983CE2B24EE5CC200213D35 /* matrix.c */; };
 		A983CE3224EE5CC200213D35 /* matrix.c in Sources */ = {isa = PBXBuildFile; fileRef = A983CE2B24EE5CC200213D35 /* matrix.c */; };
+		A991633025306570005454BA /* DetectFaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = A991632F25306570005454BA /* DetectFaceController.m */; };
 		A9CA834D24DBE03C00771EE2 /* EllipsePointsView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9CA834C24DBE03C00771EE2 /* EllipsePointsView.m */; };
 		A9FFC32F24C7DE6800881404 /* BrushDrawController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FFC32E24C7DE6700881404 /* BrushDrawController.m */; };
 		A9FFC33224C7DEC900881404 /* BrushDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FFC33124C7DEC900881404 /* BrushDrawView.m */; };
@@ -281,6 +282,8 @@
 		A983CE2A24EE5CC200213D35 /* OpenGLPixelBufferView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLPixelBufferView.h; sourceTree = "<group>"; };
 		A983CE2B24EE5CC200213D35 /* matrix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = matrix.c; sourceTree = "<group>"; };
 		A983CE2C24EE5CC200213D35 /* ShaderUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderUtilities.h; sourceTree = "<group>"; };
+		A991632E25306570005454BA /* DetectFaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetectFaceController.h; sourceTree = "<group>"; };
+		A991632F25306570005454BA /* DetectFaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetectFaceController.m; sourceTree = "<group>"; };
 		A9CA834B24DBE03C00771EE2 /* EllipsePointsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EllipsePointsView.h; sourceTree = "<group>"; };
 		A9CA834C24DBE03C00771EE2 /* EllipsePointsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EllipsePointsView.m; sourceTree = "<group>"; };
 		A9FFC32D24C7DE6700881404 /* BrushDrawController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrushDrawController.h; sourceTree = "<group>"; };
@@ -981,6 +984,8 @@
 				B2830EFB23B5E7DB0049AE99 /* FormsViewCtl.m */,
 				B2BC387E23C0385600D5B9C6 /* ShapeViewCtl.h */,
 				B2BC387F23C0385600D5B9C6 /* ShapeViewCtl.m */,
+				A991632E25306570005454BA /* DetectFaceController.h */,
+				A991632F25306570005454BA /* DetectFaceController.m */,
 				A9FFC32C24C7DE3800881404 /* BrushDrawing */,
 				B299BE5824513D340096360D /* LottieAnimations */,
 				B2169E06244048B7002CFE3E /* VideoRecorderDemo */,
@@ -1829,6 +1834,7 @@
 				B24A85FE24039F1300D1EECA /* VideoPlayerSampleView.m in Sources */,
 				B2B6B1A82408E71C00187850 /* RegularOperate.m in Sources */,
 				B26FBD7B2441CDB8003DB3BE /* LOTShapeRectangle.m in Sources */,
+				A991633025306570005454BA /* DetectFaceController.m in Sources */,
 				B215CC382431BEA30017BFD9 /* EasyProgress.m in Sources */,
 				B26FBD762441CDB8003DB3BE /* LOTShapeStar.m in Sources */,
 				B2C94627242B383C00DC6FC1 /* UIColor+UIImage.m in Sources */,
@@ -2002,7 +2008,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TreasureChestDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = TreasureChestDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2030,7 +2036,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TreasureChestDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = TreasureChestDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -22,6 +22,7 @@
 #import "LottieAnimationsCtl.h"
 #import "LexiconViewCtl.h"
 #import "BrushDrawController.h"
+#import "DetectFaceController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -82,9 +83,10 @@
     }
     return _tableView;
 }
-
+///可以用个plist配置，读取即可
 - (NSArray *)getCellDatas {
     NSArray *datas = @[@"笔刷绘制",
+                       @"特征点识别",
                        @"可驻留的ScrollView",
                        @"可折叠tableView",
                        @"tabScrollView",
@@ -106,6 +108,7 @@
 - (NSArray *)getClassNames {
     NSArray *classArrays = @[
                              NSStringFromClass([BrushDrawController class]),
+                             NSStringFromClass([DetectFaceController class]),
                              NSStringFromClass([ResidentScrollViewCtl class]),
                              NSStringFromClass([CollapsibleViewCtl class]),
                              NSStringFromClass([TabScrollViewCtl class]),
