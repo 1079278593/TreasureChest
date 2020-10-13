@@ -1,24 +1,24 @@
 //
-//  DetectFaceController.m
+//  DetectImageController.m
 //  TreasureChest
 //
-//  Created by jf on 2020/10/9.
+//  Created by jf on 2020/10/13.
 //  Copyright © 2020 xiao ming. All rights reserved.
 //
 
-#import "DetectFaceController.h"
+#import "DetectImageController.h"
 #import <Vision/Vision.h>
 
 typedef void(^CompletionHandler)(VNRequest * _Nullable request, NSError * _Nullable error);
 
-@interface DetectFaceController ()
+@interface DetectImageController ()
 
 @property(nonatomic, strong)UIImageView *imageView;
 @property(nonatomic, strong)UIButton *button;
 
 @end
 
-@implementation DetectFaceController
+@implementation DetectImageController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
