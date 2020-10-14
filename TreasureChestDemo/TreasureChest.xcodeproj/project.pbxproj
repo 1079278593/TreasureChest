@@ -48,6 +48,7 @@
 		A91C062F24E7B49D00E9F5B6 /* MediaRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = A91C062E24E7B49D00E9F5B6 /* MediaRecorder.m */; };
 		A923238124EBB4A100B2CDE1 /* UIImageView+LBBlurredImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A923237F24EBB4A100B2CDE1 /* UIImageView+LBBlurredImage.m */; };
 		A923238224EBB4A100B2CDE1 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = A923238024EBB4A100B2CDE1 /* UIImage+ImageEffects.m */; };
+		A928348F2536947700810734 /* FacePointPathLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A928348E2536947700810734 /* FacePointPathLayer.m */; };
 		A983CE2D24EE5CC200213D35 /* OpenGLPixelBufferView.m in Sources */ = {isa = PBXBuildFile; fileRef = A983CE2724EE5CC200213D35 /* OpenGLPixelBufferView.m */; };
 		A983CE2E24EE5CC200213D35 /* OpenGLPixelBufferView.m in Sources */ = {isa = PBXBuildFile; fileRef = A983CE2724EE5CC200213D35 /* OpenGLPixelBufferView.m */; };
 		A983CE2F24EE5CC200213D35 /* ShaderUtilities.c in Sources */ = {isa = PBXBuildFile; fileRef = A983CE2824EE5CC200213D35 /* ShaderUtilities.c */; };
@@ -279,6 +280,8 @@
 		A923237E24EBB4A100B2CDE1 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		A923237F24EBB4A100B2CDE1 /* UIImageView+LBBlurredImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LBBlurredImage.m"; sourceTree = "<group>"; };
 		A923238024EBB4A100B2CDE1 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		A928348D2536947700810734 /* FacePointPathLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FacePointPathLayer.h; sourceTree = "<group>"; };
+		A928348E2536947700810734 /* FacePointPathLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FacePointPathLayer.m; sourceTree = "<group>"; };
 		A983CE2724EE5CC200213D35 /* OpenGLPixelBufferView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLPixelBufferView.m; sourceTree = "<group>"; };
 		A983CE2824EE5CC200213D35 /* ShaderUtilities.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ShaderUtilities.c; sourceTree = "<group>"; };
 		A983CE2924EE5CC200213D35 /* matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = matrix.h; sourceTree = "<group>"; };
@@ -852,6 +855,8 @@
 				A99F70272535AAD200A136E1 /* CameraController.m */,
 				A99F70262535AAD200A136E1 /* CameraPreview.h */,
 				A99F70282535AAD200A136E1 /* CameraPreview.m */,
+				A928348D2536947700810734 /* FacePointPathLayer.h */,
+				A928348E2536947700810734 /* FacePointPathLayer.m */,
 			);
 			path = CameraController;
 			sourceTree = "<group>";
@@ -1771,6 +1776,7 @@
 				A9FFC32F24C7DE6800881404 /* BrushDrawController.m in Sources */,
 				B27B784B23ADB2080083E6AE /* UIColor+Hex.m in Sources */,
 				B24A85FB24039EB000D1EECA /* VideoPlayerBaseView.m in Sources */,
+				A928348F2536947700810734 /* FacePointPathLayer.m in Sources */,
 				B2506D0923AB83080034A472 /* BaseViewController.m in Sources */,
 				B26FBD802441CDB8003DB3BE /* LOTShapeTransform.m in Sources */,
 				B26FBD872441CDB8003DB3BE /* LOTComposition.m in Sources */,
