@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  videoPreviewRect 是由 AVCaptureVideoPreviewLayer的方法：rectForMetadataOutputRectOfInterest转换而来。已经将设备的旋转考虑在内
  
+ faceObservations的数量：人脸数量
  */
 - (void)refreshWithLandmarkResults:(NSArray <VNFaceObservation *> *)faceObservations videoPreviewRect:(CGRect)videoPreviewRect;
 

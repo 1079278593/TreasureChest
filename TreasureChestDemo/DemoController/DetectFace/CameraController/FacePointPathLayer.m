@@ -61,14 +61,14 @@
     if (landmarks == nil) {
         return;
     }
-    
-    // Landmarks地标是相对的，并且在‘face bounds’内是归一化的
+
+    // Landmarks是相对的，并且在‘face bounds’内是归一化的
     CGAffineTransform affineTransform = CGAffineTransformMakeTranslation(faceBounds.origin.x, faceBounds.origin.y);
     affineTransform = CGAffineTransformScale(affineTransform, faceBounds.size.width, faceBounds.size.height);
     
     // 在画路径时，把眉毛和线当作开放区域。
     NSMutableArray <VNFaceLandmarkRegion2D *> *openLandmarkRegions = [NSMutableArray arrayWithCapacity:0];
-    [openLandmarkRegions addObject:landmarks.leftEyebrow];
+    [openLandmarkRegions addObject:landmarks.leftEyebrow];//NSLog(@"leftEyebrow：%@",NSStringFromCGPoint(landmarks.leftEyebrow.normalizedPoints[0]));
     [openLandmarkRegions addObject:landmarks.rightEyebrow];
     [openLandmarkRegions addObject:landmarks.faceContour];
     [openLandmarkRegions addObject:landmarks.noseCrest];
@@ -141,7 +141,7 @@
     CGAffineTransform affineTransform = CGAffineTransformMakeRotation([self radiansForDegrees:rotation]);
     affineTransform = CGAffineTransformScale(affineTransform, scaleX, -scaleY);
     [self setAffineTransform:affineTransform];
-    self.position = CGPointMake(KScreenWidth/2.0, KScreenHeight/2.0);
+    self.position = CGPointMake(KScreenWidth/2.0, KScreenHeight/2.0);//这里要求preview是全屏，否则数据不对。
 }
 
 - (CGFloat)radiansForDegrees:(CGFloat)degrees {
@@ -154,6 +154,7 @@
     CGPoint captureDeviceBoundsCenterPoint = CGPointMake(captureDeviceBounds.size.width/2.0, captureDeviceBounds.size.height/2.0);
     CGPoint normalizedCenterPoint = CGPointMake(0.5, 0.5);
     
+    self.bounds = captureDeviceBounds;
     self.anchorPoint = normalizedCenterPoint;
     
     CAShapeLayer *faceRectangleShapeLayer = [[CAShapeLayer alloc]init];
@@ -163,7 +164,7 @@
     faceRectangleShapeLayer.position = captureDeviceBoundsCenterPoint;
     faceRectangleShapeLayer.fillColor = nil;
     faceRectangleShapeLayer.strokeColor  = [[UIColor greenColor]colorWithAlphaComponent:0.7].CGColor;
-    faceRectangleShapeLayer.lineWidth = 5;
+    faceRectangleShapeLayer.lineWidth = 3;
     faceRectangleShapeLayer.shadowOpacity = 0.7;
     faceRectangleShapeLayer.shadowRadius = 5;
     
@@ -174,7 +175,7 @@
     faceLandmarksShapeLayer.position = captureDeviceBoundsCenterPoint;
     faceLandmarksShapeLayer.fillColor = nil;
     faceLandmarksShapeLayer.strokeColor  = [[UIColor yellowColor]colorWithAlphaComponent:0.7].CGColor;
-    faceLandmarksShapeLayer.lineWidth = 3;
+    faceLandmarksShapeLayer.lineWidth = 1;
     faceLandmarksShapeLayer.shadowOpacity = 0.7;
     faceLandmarksShapeLayer.shadowRadius = 5;
     

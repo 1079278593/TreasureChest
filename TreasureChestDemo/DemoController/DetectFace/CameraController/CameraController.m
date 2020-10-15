@@ -11,6 +11,7 @@
 #import <Vision/Vision.h>
 #import "CameraPreview.h"
 #import "FacePointPathLayer.h"
+#import "FacePointsView.h"
 
 API_AVAILABLE(ios(11.0))
 @interface CameraController () <AVCaptureVideoDataOutputSampleBufferDelegate,AVCaptureMetadataOutputObjectsDelegate> {
@@ -25,10 +26,9 @@ API_AVAILABLE(ios(11.0))
 @property(nonatomic, strong)AVCaptureDevice *videoDevice;
 @property(nonatomic, strong)AVCaptureConnection *videoConnection;
 
-@property(nonatomic, assign)CGSize captureDeviceResolution;
 @property(nonatomic, strong)UIView *rootPreview;
 @property(nonatomic, strong)CameraPreview *cameraPreview;
-@property(nonatomic, strong)FacePointPathLayer *overlayLayer;
+@property(nonatomic, strong)FacePointPathLayer *overlayLayer;       //path 遮罩
 
 // Vision requests
 @property(nonatomic, strong)NSMutableArray <VNDetectFaceRectanglesRequest *> *detectionRequests;
@@ -110,6 +110,7 @@ API_AVAILABLE(ios(11.0))
     videoOut.alwaysDiscardsLateVideoFrames = YES;//如果录制的话，还是不希望有丢帧的情况(可以改成NO)。
     [videoOut setSampleBufferDelegate:self queue:bufferQueue];
     videoOut.videoSettings = @{(id)kCVPixelBufferPixelFormatTypeKey : @(kCVPixelFormatType_32BGRA)};
+//    videoOut.videoSettings = @{(id)kCVPixelBufferPixelFormatTypeKey : @(kCVPixelFormatType_420YpCbCr8BiPlanarFullRange)};
     if ([_captureSession canAddOutput:videoOut]) {
         [_captureSession addOutput:videoOut];
     }
@@ -130,11 +131,9 @@ API_AVAILABLE(ios(11.0))
 //    }else {
 //        _captureSession.sessionPreset = AVCaptureSessionPresetLow;//先用这个低分辨率做算法相关。AVCaptureSessionPresetMedium
 //        _captureSession.sessionPreset = AVCaptureSessionPresetMedium;
-        _captureSession.sessionPreset = AVCaptureSessionPreset640x480;
+//        _captureSession.sessionPreset = AVCaptureSessionPreset640x480;
+        _captureSession.sessionPreset = AVCaptureSessionPreset1280x720;
 //    }
-    
-    [self setResolution32BGRAFormat:videoDevice];
-//    self.captureDeviceResolution = CGSizeMake(640, 480);
     
     /*
     * CMTime的scale，默认给1000。
@@ -180,76 +179,113 @@ API_AVAILABLE(ios(11.0))
 
 #pragma mark - < delegate >
 - (void)captureOutput:(AVCaptureOutput *)output didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
-    CFTimeInterval startTime = CACurrentMediaTime();
-    
-    NSMutableDictionary *requestHandlerOptions = [NSMutableDictionary dictionaryWithCapacity:0];
-    CFTypeRef cameraIntrinsicData = CMGetAttachment(sampleBuffer, kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix, nil);
-    if (cameraIntrinsicData != nil) {
-        requestHandlerOptions[@"cameraIntrinsics"] = CFBridgingRelease(cameraIntrinsicData);
-    }
+//    CFTimeInterval startTime = CACurrentMediaTime();
+ 
     CVImageBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
-    if (pixelBuffer == nil) {
-        return;
-    }
+    if (pixelBuffer == nil) { return; }
+    
+    
     
     CGImagePropertyOrientation exifOrientation = [self exifOrientationForCurrentDeviceOrientation];
     NSMutableArray <VNTrackObjectRequest *> *requests = self.trackingRequests;
     
-    if (requests.count == 0) {
-        // 未检测到跟踪对象，执行初始检测
-        VNImageRequestHandler *imageRequestHandler = [[VNImageRequestHandler alloc]initWithCVPixelBuffer:pixelBuffer
-                                                                                             orientation:exifOrientation
-                                                                                                 options:requestHandlerOptions];
-        if (self.detectionRequests.count == 0) {
-            return;
-        }
+    
+    
+    // --------------1.判断是否需要检测
+    if (requests.count == 0) { // 未检测到跟踪对象，执行初始检测
+        VNImageRequestHandler *imageRequestHandler = [[VNImageRequestHandler alloc]initWithCVPixelBuffer:pixelBuffer orientation:exifOrientation options:[NSDictionary new]];
+        if (self.detectionRequests.count == 0) { return; }
         NSError *error = nil;
         [imageRequestHandler performRequests:self.detectionRequests error:&error];
-        if (error) {
-            NSLog(@"Failed to perform FaceRectangleRequest: %@", error);
-        }
+        if (error) { NSLog(@"Failed to perform FaceRectangleRequest: %@", error); }
         return;
     }
     
-    // 处理单一图片使用 VNImageRequestHandler，处理图片序列使用 VNSequenceRequestHandler
-    // 如果我们使用的是 VNImageRequestHandler，那么在初始化时就提供需要处理的图片，初始化以后使用 perform(_:) 方法执行我们的 Request
-    NSError *error = nil;
-    [self.sequenceRequestHandler performRequests:requests onCVPixelBuffer:pixelBuffer error:&error];//这里是追踪人脸。
-    if (error) {
-        NSLog(@"Failed to perform SequenceRequest: %@", error);
-    }
     
-    // --------------设置下一轮跟踪。
+    
+    /*
+     * 这里是追踪人脸。
+     * 处理单一图片使用 VNImageRequestHandler，处理图片序列使用 VNSequenceRequestHandler
+     * VNSequenceRequestHandler执行performRequests后，将结果写入VNTrackObjectRequest的results属性中
+     */
+    NSError *error = nil;
+    [self.sequenceRequestHandler performRequests:requests onCVPixelBuffer:pixelBuffer orientation:exifOrientation error:&error];
+    if (error) { NSLog(@"Failed to perform SequenceRequest: %@", error); }
+    
+    
+
+    // --------------2.设置下一轮跟踪。
     NSMutableArray <VNTrackObjectRequest *> *newTrackingRequests = [NSMutableArray arrayWithCapacity:0];
     for (VNTrackObjectRequest *trackingRequest in requests) {
+        if (trackingRequest.results.count == 0) { return; }
+        if (![trackingRequest.results[0] isKindOfClass:[VNDetectedObjectObservation class]]) { return; }
         
-        if (trackingRequest.results.count == 0) {
-            return;
-        }
-        if (![trackingRequest.results[0] isKindOfClass:[VNDetectedObjectObservation class]]) {
-            return;
-        }
         VNDetectedObjectObservation *observation = trackingRequest.results[0];
         if (!trackingRequest.isLastFrame) {
-            if (observation.confidence > 0.3) {//跟踪一段时间后，置信值会降低。
+            if (observation.confidence > 0.3) {//跟踪一段时间后，置信值会变化。
                 trackingRequest.inputObservation = observation;
             }else {
                 [trackingRequest setLastFrame:true];
             }
             [newTrackingRequests addObject:trackingRequest];
+            NSLog(@"observation.boundingBox %@",NSStringFromCGRect(observation.boundingBox));
         }
     }
     self.trackingRequests = newTrackingRequests;
+    if (newTrackingRequests.count == 0) { return; }// 跟踪结果为空
     
-    if (newTrackingRequests.count == 0) {
-        return;// 跟踪结果为空
-    }
     
-    // --------------在检测到的人脸中，进行人脸landmark跟踪
+    
+    
+    // --------------3.在跟踪的人脸中，进行人脸landmark检测
+    [self faceLandmarkRequestFromTrackedRequest:newTrackingRequests pixelBuffer:pixelBuffer];
+    
+    
+    
+    
+//    CFTimeInterval inferenceTime = (CACurrentMediaTime() - startTime) * 1000;NSLog(@"duration: %f",inferenceTime);
+}
+
+#pragma mark - < face: detect and tracking >
+- (void)prepareVisionRequest {
+    
+    NSMutableArray <VNTrackObjectRequest *> *requests = [NSMutableArray arrayWithCapacity:0];
+    
+    //这里会被回调，在执行这个函数后：imageRequestHandler.perform(self.detectionRequests)
+    VNDetectFaceRectanglesRequest *faceDetectionRequest = [[VNDetectFaceRectanglesRequest alloc]initWithCompletionHandler:^(VNRequest * _Nonnull request, NSError * _Nullable error) {
+        NSLog(@"prepareVisionRequest ：人脸检测");//尝试改成其他方案寻找人脸框，然后用这个框生成：VNFaceObservation。（不过也只是初始更快了，中间的跟踪还是一样的速度，可以作为一个优化项）
+        if (error) {
+            NSLog(@"FaceDetection error: %@",error.description);
+        }
+        //人脸位置检测：数组results代表检测到多少张人脸
+        VNDetectFaceRectanglesRequest *faceDetectionRequest = (VNDetectFaceRectanglesRequest *)request;
+        NSArray <VNFaceObservation *>*results = faceDetectionRequest.results;
+        if (faceDetectionRequest == nil || results.count == 0) {
+            return;
+        }
+        NSLog(@"detect count :%lu",(unsigned long)results.count);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // 将观察结果添加到跟踪列表
+            for (VNFaceObservation *observation in results) {
+                NSLog(@"detect %@",NSStringFromCGRect(observation.boundingBox));
+                VNTrackObjectRequest *faceTrackingRequest = [[VNTrackObjectRequest alloc]initWithDetectedObjectObservation:observation];
+                [requests addObject:faceTrackingRequest];
+            }
+            self.trackingRequests = requests;
+        });
+    }];
+
+    // 开始检测。找到脸，然后跟踪它。
+    self.detectionRequests = [NSMutableArray arrayWithObject:faceDetectionRequest];
+    self.sequenceRequestHandler = [[VNSequenceRequestHandler alloc]init];
+}
+
+- (void)faceLandmarkRequestFromTrackedRequest:(NSMutableArray <VNTrackObjectRequest *> *)trackingRequests pixelBuffer:(CVImageBufferRef)pixelBuffer {
+    CGImagePropertyOrientation exifOrientation = [self exifOrientationForCurrentDeviceOrientation];
     NSMutableArray <VNDetectFaceLandmarksRequest *> *faceLandmarkRequests = [NSMutableArray arrayWithCapacity:0];
     
     // 对被跟踪的人脸进行landmark检测
-    for (VNTrackObjectRequest *trackingRequest in newTrackingRequests) {
+    for (VNTrackObjectRequest *trackingRequest in trackingRequests) {
         //创建request，等待perform
         VNDetectFaceLandmarksRequest *faceLandmarksRequest = [[VNDetectFaceLandmarksRequest alloc]initWithCompletionHandler:^(VNRequest * _Nonnull request, NSError * _Nullable error) {
             if (error) {
@@ -261,10 +297,13 @@ API_AVAILABLE(ios(11.0))
                 return;
             }
             
+            //赋值分辨率
+//            self.resolution = CGSizeMake(CVPixelBufferGetWidth(pixelBuffer), CVPixelBufferGetHeight(pixelBuffer));
+            
             dispatch_async(dispatch_get_main_queue(), ^{
                 //更新UI
-                NSLog(@"更新UI");
-//                NSLog(@"results: %f %@",results[0].boundingBox.size.width,results[0].landmarks.leftEye);
+//                NSLog(@"更新UI");
+//                NSLog(@"results: %f %@",results[0].boundingBox.size.width,results[0].landmarks.leftEy
                 [self drawFaceObservations:results];
             });
         }];
@@ -284,52 +323,16 @@ API_AVAILABLE(ios(11.0))
         // 继续追踪检测到的面部标志。
         [faceLandmarkRequests addObject:faceLandmarksRequest];
         
-        VNImageRequestHandler *imageRequestHandler = [[VNImageRequestHandler alloc] initWithCVPixelBuffer:pixelBuffer orientation:exifOrientation options:requestHandlerOptions];
+        VNImageRequestHandler *imageRequestHandler = [[VNImageRequestHandler alloc] initWithCVPixelBuffer:pixelBuffer orientation:exifOrientation options:[NSDictionary new]];
         NSError *error = nil;
         [imageRequestHandler performRequests:faceLandmarkRequests error:&error];
         if (error) {
             NSLog(@"Failed to perform FaceLandmarkRequest: %@", error);
         }
     }
-    CFTimeInterval inferenceTime = (CACurrentMediaTime() - startTime) * 1000;NSLog(@"duration: %f",inferenceTime);
 }
 
-- (void)captureOutput:(AVCaptureOutput *)output didOutputMetadataObjects:(NSArray<__kindof AVMetadataObject *> *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
-}
-
-#pragma mark - < private >
-- (void)prepareVisionRequest {
-    NSMutableArray <VNTrackObjectRequest *> *requests = [NSMutableArray arrayWithCapacity:0];
-    
-    //这里会被回调，在执行这个函数后：imageRequestHandler.perform(self.detectionRequests)
-    VNDetectFaceRectanglesRequest *faceDetectionRequest = [[VNDetectFaceRectanglesRequest alloc]initWithCompletionHandler:^(VNRequest * _Nonnull request, NSError * _Nullable error) {
-        NSLog(@"prepareVisionRequest ：人脸检测");//尝试改成其他方案寻找人脸框，然后用这个框生成：VNFaceObservation。（不过也只是初始更快了，中间的跟踪还是一样的速度，可以作为一个优化项）
-        if (error) {
-            NSLog(@"FaceDetection error: %@",error.description);
-        }
-        //人脸位置检测
-        VNDetectFaceRectanglesRequest *faceDetectionRequest = (VNDetectFaceRectanglesRequest *)request;
-        NSArray <VNFaceObservation *>*results = faceDetectionRequest.results;
-        if (faceDetectionRequest == nil || results.count == 0) {
-            return;
-        }
-        dispatch_async(dispatch_get_main_queue(), ^{
-            // 将观察结果添加到跟踪列表
-            for (VNFaceObservation *observation in results) {
-                VNTrackObjectRequest *faceTrackingRequest = [[VNTrackObjectRequest alloc]initWithDetectedObjectObservation:observation];
-                [requests addObject:faceTrackingRequest];
-            }
-            self.trackingRequests = requests;
-        });
-    }];
-    
-    
-    // 开始检测。找到脸，然后跟踪它。
-    self.detectionRequests = [NSMutableArray arrayWithObject:faceDetectionRequest];
-    self.sequenceRequestHandler = [[VNSequenceRequestHandler alloc]init];
-}
-
-//更新特征点的overlayer
+#pragma mark 绘制：特征点的overlayer
 - (void)drawFaceObservations:(NSArray <VNFaceObservation *> *)faceObservations {
     CGRect videoPreviewRect = [self.cameraPreview.previewLayer rectForMetadataOutputRectOfInterest:CGRectMake(0, 0, 1, 1)];
     [self.overlayLayer refreshWithLandmarkResults:faceObservations videoPreviewRect:videoPreviewRect];
@@ -364,9 +367,11 @@ API_AVAILABLE(ios(11.0))
 }
 
 - (void)setupVisionDrawingLayers {
-    CGRect captureDeviceBounds = CGRectMake(0, 0, self.captureDeviceResolution.width, self.captureDeviceResolution.height);
-    self.overlayLayer = [[FacePointPathLayer alloc] initWithDeviceResolution:self.captureDeviceResolution];
-    self.overlayLayer.bounds = captureDeviceBounds;
+    CGSize size = self.rootPreview.size;
+    
+    ///路径遮罩
+    self.overlayLayer = [[FacePointPathLayer alloc] initWithDeviceResolution:size];
+    self.overlayLayer.position = CGPointMake(self.rootPreview.width/2.0, self.rootPreview.height/2.0);
     [self.rootPreview.layer addSublayer:self.overlayLayer];
 }
 
@@ -415,7 +420,7 @@ API_AVAILABLE(ios(11.0))
     }
     
     if (highestResolutionFormat != nil) {
-        self.captureDeviceResolution = CGSizeMake(highestResolutionDimensions.width, highestResolutionDimensions.height);
+        CGSize deviceResolution = CGSizeMake(highestResolutionDimensions.width, highestResolutionDimensions.height);
     }
 }
 

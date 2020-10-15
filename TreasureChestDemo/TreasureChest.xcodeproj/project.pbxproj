@@ -59,6 +59,8 @@
 		A99F70292535AAD200A136E1 /* CameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99F70272535AAD200A136E1 /* CameraController.m */; };
 		A99F702A2535AAD200A136E1 /* CameraPreview.m in Sources */ = {isa = PBXBuildFile; fileRef = A99F70282535AAD200A136E1 /* CameraPreview.m */; };
 		A99F702E2535ABC600A136E1 /* DetectImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99F702D2535ABC600A136E1 /* DetectImageController.m */; };
+		A9C7CF0525372631002ECCFF /* DSViewTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CF0425372631002ECCFF /* DSViewTool.m */; };
+		A9C7CF0A25372A8D002ECCFF /* FacePointsView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CF0925372A8D002ECCFF /* FacePointsView.m */; };
 		A9CA834D24DBE03C00771EE2 /* EllipsePointsView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9CA834C24DBE03C00771EE2 /* EllipsePointsView.m */; };
 		A9FFC32F24C7DE6800881404 /* BrushDrawController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FFC32E24C7DE6700881404 /* BrushDrawController.m */; };
 		A9FFC33224C7DEC900881404 /* BrushDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FFC33124C7DEC900881404 /* BrushDrawView.m */; };
@@ -296,6 +298,10 @@
 		A99F70282535AAD200A136E1 /* CameraPreview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraPreview.m; sourceTree = "<group>"; };
 		A99F702C2535ABC600A136E1 /* DetectImageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetectImageController.h; sourceTree = "<group>"; };
 		A99F702D2535ABC600A136E1 /* DetectImageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetectImageController.m; sourceTree = "<group>"; };
+		A9C7CF0325372631002ECCFF /* DSViewTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSViewTool.h; sourceTree = "<group>"; };
+		A9C7CF0425372631002ECCFF /* DSViewTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSViewTool.m; sourceTree = "<group>"; };
+		A9C7CF0825372A8D002ECCFF /* FacePointsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FacePointsView.h; sourceTree = "<group>"; };
+		A9C7CF0925372A8D002ECCFF /* FacePointsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FacePointsView.m; sourceTree = "<group>"; };
 		A9CA834B24DBE03C00771EE2 /* EllipsePointsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EllipsePointsView.h; sourceTree = "<group>"; };
 		A9CA834C24DBE03C00771EE2 /* EllipsePointsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EllipsePointsView.m; sourceTree = "<group>"; };
 		A9FFC32D24C7DE6700881404 /* BrushDrawController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrushDrawController.h; sourceTree = "<group>"; };
@@ -855,8 +861,12 @@
 				A99F70272535AAD200A136E1 /* CameraController.m */,
 				A99F70262535AAD200A136E1 /* CameraPreview.h */,
 				A99F70282535AAD200A136E1 /* CameraPreview.m */,
+				A9C7CF0825372A8D002ECCFF /* FacePointsView.h */,
+				A9C7CF0925372A8D002ECCFF /* FacePointsView.m */,
 				A928348D2536947700810734 /* FacePointPathLayer.h */,
 				A928348E2536947700810734 /* FacePointPathLayer.m */,
+				A9C7CF0325372631002ECCFF /* DSViewTool.h */,
+				A9C7CF0425372631002ECCFF /* DSViewTool.m */,
 			);
 			path = CameraController;
 			sourceTree = "<group>";
@@ -1738,11 +1748,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B27B784823ACE22A0083E6AE /* TabScrollViewCtl.m in Sources */,
+				A9C7CF0525372631002ECCFF /* DSViewTool.m in Sources */,
 				B2506D0223AB5BA80034A472 /* CollapsibleModel.m in Sources */,
 				B299BE5724513C510096360D /* LottieAnimationsCtl.m in Sources */,
 				B26FBD772441CDB8003DB3BE /* LOTShapeTrimPath.m in Sources */,
 				A91C062F24E7B49D00E9F5B6 /* MediaRecorder.m in Sources */,
 				B26FBD6D2441CDB8003DB3BE /* LOTRepeaterRenderer.m in Sources */,
+				A9C7CF0A25372A8D002ECCFF /* FacePointsView.m in Sources */,
 				B26FBD682441CDB8003DB3BE /* LOTRoundedRectAnimator.m in Sources */,
 				A983CE2F24EE5CC200213D35 /* ShaderUtilities.c in Sources */,
 				B26FBD912441CDB8003DB3BE /* LOTKeyframe.m in Sources */,
