@@ -156,6 +156,41 @@ GLint glueGetUniformLocation(GLuint program, const GLchar *uniformName)
 
 
 /* Convenience wrapper that compiles, links, enumerates uniforms and attribs */
+GLint glueOnlyCreateProgram(const GLchar *vertSource, const GLchar *fragSource, GLuint *program)
+{
+    GLuint vertShader = 0, fragShader = 0, prog = 0, status = 1;
+    // Create shader program
+    prog = glCreateProgram();
+    
+    // Create and compile vertex shader
+    status *= glueCompileShader(GL_VERTEX_SHADER, 1, &vertSource, &vertShader);
+    
+    // Create and compile fragment shader
+    status *= glueCompileShader(GL_FRAGMENT_SHADER, 1, &fragSource, &fragShader);
+    
+    // Attach vertex shader to program
+    glAttachShader(prog, vertShader);
+    
+    // Attach fragment shader to program
+    glAttachShader(prog, fragShader);
+    
+    // Link program
+    status *= glueLinkProgram(prog);
+    
+    if (status)
+    {
+        *program = prog;
+    }
+    
+    // Release vertex and fragment shaders
+    if (vertShader)
+        glDeleteShader(vertShader);
+    if (fragShader)
+        glDeleteShader(fragShader);
+    
+    return status;
+}
+    
 GLint glueCreateProgram(const GLchar *vertSource, const GLchar *fragSource,
                         GLsizei attribNameCt, const GLchar **attribNames, 
                         const GLint *attribLocations,

@@ -9,11 +9,13 @@
 #import "DetectFaceController.h"
 #import "DetectImageController.h"
 #import "CameraController.h"
+#import "OpenGLController.h"
 
 @interface DetectFaceController ()
 
 @property(nonatomic, strong)UIButton *imageButton;
 @property(nonatomic, strong)UIButton *cameraButton;
+@property(nonatomic, strong)UIButton *openGLButton;
 
 @end
 
@@ -40,6 +42,11 @@
     [self.navigationController pushViewController:controller animated:YES];
 }
 
+- (void)openGLButtonEvent:(UIButton *)button {
+    OpenGLController *controller = [[OpenGLController alloc]init];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
 #pragma mark - < init view >
 - (void)initView {
     _imageButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -62,6 +69,18 @@
     [_cameraButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
         make.top.equalTo(self.imageButton.mas_bottom).offset(10);
+        make.width.equalTo(@100);
+        make.height.equalTo(@45);
+    }];
+    
+    _openGLButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_openGLButton setTitle:@"openGL" forState:UIControlStateNormal];
+    [_openGLButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_openGLButton addTarget:self action:@selector(openGLButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_openGLButton];
+    [_openGLButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(self.cameraButton.mas_bottom).offset(10);
         make.width.equalTo(@100);
         make.height.equalTo(@45);
     }];

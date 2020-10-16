@@ -1,8 +1,7 @@
-
 /*
-     File: ShaderUtilities.h
- Abstract: Shader compiler and linker utilities
-  Version: 2.1
+     File: fileUtil.h
+ Abstract: Functions for loading source files.
+  Version: 1.13
  
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
  Inc. ("Apple") in consideration of your agreement to the following
@@ -46,25 +45,10 @@
  
  */
 
+#ifndef FILEUTIL_H
+#define FILEUTIL_H
 
-#ifndef RosyWriter_ShaderUtilities_h
-#define RosyWriter_ShaderUtilities_h
-    
-#include <OpenGLES/ES2/gl.h>
-#include <OpenGLES/ES2/glext.h>
+const char *pathForResource(const char *name);
+char *readFile(const char *name);
 
-GLint glueCompileShader(GLenum target, GLsizei count, const GLchar **sources, GLuint *shader);
-GLint glueLinkProgram(GLuint program);
-GLint glueValidateProgram(GLuint program);
-GLint glueGetUniformLocation(GLuint program, const GLchar *name);
-
-/* Shader Conveniences */
-GLint glueOnlyCreateProgram(const GLchar *vertSource, const GLchar *fragSource,GLuint *program);
-GLint glueCreateProgram(const GLchar *vertSource, const GLchar *fragSource,
-                        GLsizei attribNameCt, const GLchar **attribNames, 
-                        const GLint *attribLocations,
-                        GLsizei uniformNameCt, const GLchar **uniformNames,
-                        GLint *uniformLocations,
-                        GLuint *program);
-
-#endif
+#endif /* FILEUTIL_H */
