@@ -11,25 +11,28 @@
 #import <OpenGLES/ES2/gl.h>
 #import "fileUtil.h"
 #import "ShaderUtilities.h"
+#import "TextureDataManager.h"
 
 ///每行代表[x, y,   s,t]。两个三角形组成正方向
 GLfloat squareVertexData[] = {
-     0.5f,0.5f,  1.0f,1.0f,
-    -0.5f,0.5f,  0.0f,1.0f,
-    0.5f,-0.5f,  1.0f,0.0f,
-    0.5f,-0.5f,  1.0f,0.0f,
-    -0.5f,0.5f,  0.0f,1.0f,
-   -0.5f,-0.5f,  0.0f,0.0f
+     0.5f,0.5f,  1.0f,1.0f,     //右上
+    -0.5f,0.5f,  0.0f,1.0f,     //左上
+    0.5f,-0.5f,  1.0f,0.0f,     //右下
+    
+    0.5f,-0.5f,  1.0f,0.0f,     //右下
+    -0.5f,0.5f,  0.0f,1.0f,     //左上
+   -0.5f,-0.5f,  0.0f,0.0f      //左下
 };
 
 enum {
     ATTRIB_Position,
-//    ATTRIB_Texturecoordinate,
+    ATTRIB_TexCoord,
     NUM_ATTRIBS
 };
 
 enum {
-    UNIFORM_VertexColor,
+//    UNIFORM_VertexColor,
+    UNIFORM_SampleTexture,
     NUM_UNIFORMS
 };
 
@@ -38,6 +41,7 @@ enum {
     GLuint program;
     GLint uniform[NUM_UNIFORMS];
     GLfloat brushColor[4];
+    GLuint textureId;
     
     GLint backingWidth;
     GLint backingHeight;
@@ -67,7 +71,6 @@ enum {
         if ([self initContext]) {
             [self initGL];
             [self setupShaders];
-            
         }
     }
     return self;
@@ -77,22 +80,39 @@ enum {
     [super layoutSubviews];
     [self setUpViewport];
     [self erase];
-    [self drawTriangle];
 }
 
 #pragma mark - < public >
 - (void)drawTriangle {
+    
     GLuint buffer;
     glGenBuffers(1, &buffer);
     glBindBuffer(GL_ARRAY_BUFFER, buffer);
     glBufferData(GL_ARRAY_BUFFER, sizeof(squareVertexData), squareVertexData, GL_DYNAMIC_DRAW);
     
-    glEnableVertexAttribArray(ATTRIB_Position);
     glVertexAttribPointer(ATTRIB_Position, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 4, NULL);
+    glVertexAttribPointer(ATTRIB_TexCoord, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 4, NULL+2*sizeof(GLfloat));
+    
+    glEnableVertexAttribArray(ATTRIB_Position);
+    glEnableVertexAttribArray(ATTRIB_TexCoord);
+    
+    // Bind the texture
+    glActiveTexture ( GL_TEXTURE0 );
+    glBindTexture ( GL_TEXTURE_2D, textureId );
+    // Set the sampler texture unit to 0
+    glUniform1i ( uniform[UNIFORM_SampleTexture], 0 );
+    
     glDrawArrays(GL_TRIANGLES, 0, 3);
     
     //EACAGLContext 渲染OpenGL绘制好的图像到EACAGLLayer
     [context presentRenderbuffer:GL_RENDERBUFFER];
+}
+
+- (void)showTextureTriangle {
+//    [self genTextureWithImage:[UIImage imageNamed:@"face3"]];
+//    [self drawTriangle];
+        
+    [self tmpDrawImage];
 }
 
 #pragma mark - < OpenGL 初始化设置 >
@@ -169,10 +189,11 @@ enum {
     GLchar *attribUsed[NUM_ATTRIBS];
     GLint attrib[NUM_ATTRIBS];
     GLchar *attribName[NUM_ATTRIBS] = {
-        "position","texturecoordinate",
+        "position","texCoord",
     };
     const GLchar *uniformName[NUM_UNIFORMS] = {
-        "vertexColor",
+//        "vertexColor",
+        "sampleTexture",
     };
     
     // 自动分配已知的自然属性
@@ -227,7 +248,7 @@ enum {
     [context presentRenderbuffer:GL_RENDERBUFFER];
 }
 
-#pragma mark 设置颜色
+#pragma mark - < helper >
 - (void)setUniformColor:(UIColor *)newColor {
     CGFloat newRed, newGreen, newBlue, newAlpha;
     [newColor getRed:&newRed green:&newGreen blue:&newBlue alpha:&newAlpha];
@@ -235,10 +256,71 @@ enum {
     brushColor[1] = newGreen;
     brushColor[2] = newBlue;
     brushColor[3] = 1;
-    glUniform4fv(uniform[UNIFORM_VertexColor], 1, brushColor);
+//    glUniform4fv(uniform[UNIFORM_VertexColor], 1, brushColor);
+}
+
+- (GLuint)createTextureWithImage:(UIImage *)image {
+    GLuint textureId;
+    
+    void *pixels = [TextureDataManager texturesDataWithImage:image isFlip:YES];
+    
+    int width = image.size.width;
+    int height = image.size.height;
+    
+    // Use tightly packed data
+    glPixelStorei ( GL_UNPACK_ALIGNMENT, 1 );
+    glGenTextures(1, &textureId);
+    glBindTexture(GL_TEXTURE_2D, textureId);
+    
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    
+    // Load the texture
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
+
+    // 结束后要做清理
+    glBindTexture(GL_TEXTURE_2D, 0); //解绑
+    
+    return textureId;
+}
+
+GLuint CreateSimpleTexture2D( )
+{
+   // Texture object handle
+   GLuint textureId;
+
+   // 2x2 Image, 3 bytes per pixel (R, G, B)
+   GLubyte pixels[4 * 3] =
+   {
+      155,   0,   0, // Red
+        0, 25,   0, // Green
+        0,   0, 255, // Blue
+      255, 255,   0  // Yellow
+   };
+
+   // Use tightly packed data
+   glPixelStorei ( GL_UNPACK_ALIGNMENT, 1 );
+
+   // Generate a texture object
+   glGenTextures ( 1, &textureId );
+
+   // Bind the texture object
+   glBindTexture ( GL_TEXTURE_2D, textureId );
+
+   // Load the texture
+   glTexImage2D ( GL_TEXTURE_2D, 0, GL_RGB, 2, 2, 0, GL_RGB, GL_UNSIGNED_BYTE, pixels );
+
+   // Set the filtering mode
+   glTexParameteri ( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST );
+   glTexParameteri ( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST );
+
+   return textureId;
 }
 
 #pragma mark - < private >
+#pragma mark < 简单三角形 >
 - (void)tmpTriangel {
     glUseProgram(program);
     
@@ -268,4 +350,51 @@ enum {
     //EACAGLContext 渲染OpenGL绘制好的图像到EACAGLLayer
     [context presentRenderbuffer:GL_RENDERBUFFER];
 }
+
+#pragma mark < 简单图片 >
+
+- (void)tmpDrawImage {
+
+//    textureId = CreateSimpleTexture2D();
+    textureId = [self createTextureWithImage:[UIImage imageNamed:@"128"]];///这里要改，到时可能是网络数据。：face3
+    
+    GLfloat vVertices[] = { -0.5f,  0.5f, 0.0f,  // Position 0   左上
+                             0.0f,  1.0f,        // TexCoord 0
+                            -0.5f, -0.5f, 0.0f,  // Position 1   左下
+                             0.0f,  0.0f,        // TexCoord 1
+                             0.5f, -0.5f, 0.0f,  // Position 2   右下
+                             1.0f,  0.0f,        // TexCoord 2
+                             0.5f,  0.5f, 0.0f,  // Position 3   右上
+                             1.0f,  1.0f         // TexCoord 3
+                          };
+    GLushort indices[] = { 0, 1, 2, 0, 2, 3 };
+    
+    GLuint buffer;
+    glGenBuffers(1, &buffer);
+    glBindBuffer(GL_ARRAY_BUFFER, buffer);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vVertices), vVertices, GL_DYNAMIC_DRAW);
+    
+    
+    glUseProgram ( program );
+
+    
+    glVertexAttribPointer ( ATTRIB_Position, 3, GL_FLOAT, GL_FALSE, 5 * sizeof ( GLfloat ), NULL );
+    glVertexAttribPointer ( ATTRIB_TexCoord, 2, GL_FLOAT, GL_FALSE, 5 * sizeof ( GLfloat ), NULL+3*sizeof(GLfloat));
+    glEnableVertexAttribArray ( ATTRIB_Position );
+    glEnableVertexAttribArray ( ATTRIB_TexCoord );
+
+    // Bind the texture
+    glActiveTexture ( GL_TEXTURE0 );
+    glBindTexture ( GL_TEXTURE_2D, textureId );
+
+    // Set the sampler texture unit to 0
+    glUniform1i ( UNIFORM_SampleTexture, 0 );
+
+    glDrawElements ( GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices );
+    
+    //EACAGLContext 渲染OpenGL绘制好的图像到EACAGLLayer
+    [context presentRenderbuffer:GL_RENDERBUFFER];
+}
+
+
 @end

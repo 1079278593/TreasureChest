@@ -55,6 +55,7 @@
 		A949C28625393FA700CF09A5 /* point.vsh in Resources */ = {isa = PBXBuildFile; fileRef = A949C28425393FA700CF09A5 /* point.vsh */; };
 		A949C28D25393FEA00CF09A5 /* OpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = A949C28C25393FEA00CF09A5 /* OpenGLView.m */; };
 		A949C2A0253948B100CF09A5 /* fileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A949C29E253948B100CF09A5 /* fileUtil.m */; };
+		A949C2C92539C61300CF09A5 /* TextureDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A949C2C82539C61300CF09A5 /* TextureDataManager.m */; };
 		A983CE2D24EE5CC200213D35 /* OpenGLPixelBufferView.m in Sources */ = {isa = PBXBuildFile; fileRef = A983CE2724EE5CC200213D35 /* OpenGLPixelBufferView.m */; };
 		A983CE2E24EE5CC200213D35 /* OpenGLPixelBufferView.m in Sources */ = {isa = PBXBuildFile; fileRef = A983CE2724EE5CC200213D35 /* OpenGLPixelBufferView.m */; };
 		A983CE2F24EE5CC200213D35 /* ShaderUtilities.c in Sources */ = {isa = PBXBuildFile; fileRef = A983CE2824EE5CC200213D35 /* ShaderUtilities.c */; };
@@ -299,6 +300,8 @@
 		A949C28C25393FEA00CF09A5 /* OpenGLView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenGLView.m; sourceTree = "<group>"; };
 		A949C29E253948B100CF09A5 /* fileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fileUtil.m; sourceTree = "<group>"; };
 		A949C29F253948B100CF09A5 /* fileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileUtil.h; sourceTree = "<group>"; };
+		A949C2C72539C61300CF09A5 /* TextureDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureDataManager.h; sourceTree = "<group>"; };
+		A949C2C82539C61300CF09A5 /* TextureDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextureDataManager.m; sourceTree = "<group>"; };
 		A983CE2724EE5CC200213D35 /* OpenGLPixelBufferView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLPixelBufferView.m; sourceTree = "<group>"; };
 		A983CE2824EE5CC200213D35 /* ShaderUtilities.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ShaderUtilities.c; sourceTree = "<group>"; };
 		A983CE2924EE5CC200213D35 /* matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = matrix.h; sourceTree = "<group>"; };
@@ -877,6 +880,8 @@
 				A983CE2824EE5CC200213D35 /* ShaderUtilities.c */,
 				A983CE2A24EE5CC200213D35 /* OpenGLPixelBufferView.h */,
 				A983CE2724EE5CC200213D35 /* OpenGLPixelBufferView.m */,
+				A949C2C72539C61300CF09A5 /* TextureDataManager.h */,
+				A949C2C82539C61300CF09A5 /* TextureDataManager.m */,
 			);
 			path = OpenGLPixelBufferView;
 			sourceTree = "<group>";
@@ -1897,6 +1902,7 @@
 				B2AA0F4A23C5D12A00BEBA27 /* FMDictManager.m in Sources */,
 				B26FBD742441CDB8003DB3BE /* LOTAssetGroup.m in Sources */,
 				B26FBD7D2441CDB8003DB3BE /* LOTShapePath.m in Sources */,
+				A949C2C92539C61300CF09A5 /* TextureDataManager.m in Sources */,
 				B2D1BCC723D165E10000B413 /* DictionaryMainCell.m in Sources */,
 				B23DDC272435D3D600743BC1 /* UIImageView+VideoCover.m in Sources */,
 				B2506CEC23AB48E60034A472 /* UIView+Extension.m in Sources */,

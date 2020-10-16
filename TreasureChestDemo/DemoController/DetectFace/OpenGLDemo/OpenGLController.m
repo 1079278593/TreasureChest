@@ -11,16 +11,21 @@
 
 @interface OpenGLController ()
 
+@property(nonatomic, strong)OpenGLView *openGLView;
+
 @end
 
 @implementation OpenGLController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    OpenGLView *openGLView = [[OpenGLView alloc]initWithFrame:self.view.bounds];
-    [self.view addSubview:openGLView];
+    _openGLView = [[OpenGLView alloc]initWithFrame:self.view.bounds];
+    [self.view addSubview:_openGLView];
     
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [_openGLView showTextureTriangle];
+}
 
 @end

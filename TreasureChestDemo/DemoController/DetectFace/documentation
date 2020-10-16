@@ -7,3 +7,9 @@ https://www.jianshu.com/p/5d298ec853ea
 
 绘制纹理
 https://blog.csdn.net/enghou123/article/details/71158348
+
+图片加载流程
+https://www.jianshu.com/p/300647f00b4c
+
+纹理翻转策略（1.解压时翻转；2.设置旋转矩阵统一变量；3.顶点和纹理映射关系颠倒）
+https://www.jianshu.com/p/14577842f4d1

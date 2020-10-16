@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface OpenGLView : UIView
 
+- (void)showTextureTriangle;
+
 @end
 
 NS_ASSUME_NONNULL_END
