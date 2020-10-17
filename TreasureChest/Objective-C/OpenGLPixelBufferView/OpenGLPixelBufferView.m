@@ -112,14 +112,15 @@ enum {
     self = [super initWithFrame:frame];
     if ( self )
 	{
-		// On iOS8 and later we use the native scale of the screen as our content scale factor.
-		// This allows us to render to the exact pixel resolution of the screen which avoids additional scaling and GPU rendering work.
-		// For example the iPhone 6 Plus appears to UIKit as a 736 x 414 pt screen with a 3x scale factor (2208 x 1242 virtual pixels).
-		// But the native pixel dimensions are actually 1920 x 1080.
-		// Since we are streaming 1080p buffers from the camera we can render to the iPhone 6 Plus screen at 1:1 with no additional scaling if we set everything up correctly.
-		// Using the native scale of the screen also allows us to render at full quality when using the display zoom feature on iPhone 6/6 Plus.
-		
-		// Only try to compile this code if we are using the 8.0 or later SDK.
+		/*
+         * 在iOS8上，之后我们使用屏幕的原生缩放作为内容缩放因子。
+         * 这允许我们渲染到屏幕的精确像素分辨率，从而避免额外的缩放和GPU渲染工作。
+         * 例如，iPhone 6 Plus在UIKit中显示为一个736 x 414 pt的屏幕，其比例系数为3倍(虚拟像素为2208 x 1242)。
+         * 但是本机像素尺寸实际上是1920 x 1080。
+         * 因为我们从相机流媒体1080p缓冲区，我们可以渲染到iPhone 6 Plus屏幕在1:1没有额外的缩放，如果我们设置一切正确。
+         * 在使用iPhone 6/6 Plus的显示缩放功能时，使用屏幕的原生比例还可以让我们以全质量渲染。
+         * 只有在使用8.0或更高版本的SDK时才尝试编译此代码。
+         */
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
 		if ( [UIScreen instancesRespondToSelector:@selector(nativeScale)] )
 		{

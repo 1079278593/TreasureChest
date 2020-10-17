@@ -358,16 +358,32 @@ GLuint CreateSimpleTexture2D( )
 //    textureId = CreateSimpleTexture2D();
     textureId = [self createTextureWithImage:[UIImage imageNamed:@"128"]];///这里要改，到时可能是网络数据。：face3
     
-    GLfloat vVertices[] = { -0.5f,  0.5f, 0.0f,  // Position 0   左上
-                             0.0f,  1.0f,        // TexCoord 0
-                            -0.5f, -0.5f, 0.0f,  // Position 1   左下
-                             0.0f,  0.0f,        // TexCoord 1
-                             0.5f, -0.5f, 0.0f,  // Position 2   右下
-                             1.0f,  0.0f,        // TexCoord 2
-                             0.5f,  0.5f, 0.0f,  // Position 3   右上
-                             1.0f,  1.0f         // TexCoord 3
+    GLfloat vVertices[] = {
+                            -0.5f, -0.5f, 0.0f,  // bottom left
+                             0.10f,  0.20f,
+                             0.5f, -0.5f, 0.0f,  // bottom right
+                             1.0f,  0.9f,
+                            -0.5f,  0.5f, 0.0f,  // top left
+                             0.20f,  0.50f,
+                            
+                            -0.5f,  0.5f, 0.0f,  // top left
+                             0.20f,  0.50f,
+                             0.5f,  0.5f, 0.0f,  // top right
+                             1.0f,  1.0f,
+                            0.5f, -0.5f, 0.0f,  // bottom right
+                            1.0f,  0.9f,
                           };
-    GLushort indices[] = { 0, 1, 2, 0, 2, 3 };
+    
+//    GLfloat vVertices[] = { -0.5f,  0.5f, 0.0f,  // Position 0   左上
+//                             0.20f,  0.50f,        // TexCoord 0
+//                            -0.5f, -0.5f, 0.0f,  // Position 1   左下
+//                             0.10f,  0.20f,        // TexCoord 1
+//                             0.5f, -0.5f, 0.0f,  // Position 2   右下
+//                             1.0f,  0.9f,        // TexCoord 2
+//                             0.5f,  0.5f, 0.0f,  // Position 3   右上
+//                             1.0f,  1.0f         // TexCoord 3
+//                          };//纹理随机取点
+//    GLushort indices[] = { 0, 1, 2, 0, 2, 3 };
     
     GLuint buffer;
     glGenBuffers(1, &buffer);
@@ -390,7 +406,8 @@ GLuint CreateSimpleTexture2D( )
     // Set the sampler texture unit to 0
     glUniform1i ( UNIFORM_SampleTexture, 0 );
 
-    glDrawElements ( GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices );
+//    glDrawElements ( GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices );
+    glDrawArrays(GL_TRIANGLES, 0, 6);
     
     //EACAGLContext 渲染OpenGL绘制好的图像到EACAGLLayer
     [context presentRenderbuffer:GL_RENDERBUFFER];
