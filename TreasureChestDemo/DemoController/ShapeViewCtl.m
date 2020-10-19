@@ -9,7 +9,6 @@
 #import "ShapeViewCtl.h"
 #import "XMCircleView.h"
 #import "XMDashLineView.h"
-#import <OAStackView.h>
 
 @interface ShapeViewCtl ()
 

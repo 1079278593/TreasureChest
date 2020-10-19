@@ -21,7 +21,7 @@ abstract_target 'abstract_pod' do
     pod 'ReactiveObjC', '3.1.0'
     pod 'MSWeakTimer'
     pod 'MJRefresh', '3.2.0'
-    pod 'OAStackView'
+#    pod 'OAStackView'
     
     target 'TreasureChestTests' do
       inherit! :search_paths
