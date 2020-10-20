@@ -55,7 +55,6 @@
     CGAffineTransform affineTransform = CGAffineTransformMakeTranslation(faceBounds.origin.x, faceBounds.origin.y);
     affineTransform = CGAffineTransformScale(affineTransform, faceBounds.size.width, faceBounds.size.height);
     
-    // 在画路径时，把眉毛和线当作开放区域。
     NSMutableArray <VNFaceLandmarkRegion2D *> *openLandmarkRegions = [NSMutableArray arrayWithCapacity:0];
     [openLandmarkRegions addObject:landmarks.faceContour];  //脸部下部分轮廓
     [openLandmarkRegions addObject:landmarks.leftEyebrow];  //左眉毛
