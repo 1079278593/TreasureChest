@@ -23,6 +23,7 @@
 #import "LexiconViewCtl.h"
 #import "BrushDrawController.h"
 #import "DetectFaceController.h"
+#import "AutoSizeTableController.h"//改成放到配置表
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -86,6 +87,7 @@
 ///可以用个plist配置，读取即可
 - (NSArray *)getCellDatas {
     NSArray *datas = @[@"笔刷绘制",
+                       @"自适应高度",
                        @"特征点识别",
                        @"可驻留的ScrollView",
                        @"可折叠tableView",
@@ -108,6 +110,7 @@
 - (NSArray *)getClassNames {
     NSArray *classArrays = @[
                              NSStringFromClass([BrushDrawController class]),
+                             NSStringFromClass([AutoSizeTableController class]),
                              NSStringFromClass([DetectFaceController class]),
                              NSStringFromClass([ResidentScrollViewCtl class]),
                              NSStringFromClass([CollapsibleViewCtl class]),

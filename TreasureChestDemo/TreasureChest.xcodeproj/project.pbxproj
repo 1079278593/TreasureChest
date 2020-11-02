@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A2E0A36254ED94F00471A41 /* AutoSizeTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E0A35254ED94F00471A41 /* AutoSizeTableController.m */; };
+		3A2E0A44254EDABD00471A41 /* AutoSizeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E0A43254EDABD00471A41 /* AutoSizeCell.m */; };
+		3A2E0A4B254EDAD300471A41 /* AutoSizeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E0A4A254EDAD300471A41 /* AutoSizeModel.m */; };
+		3A2E0A50254EFC0800471A41 /* AutoSizeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E0A4F254EFC0800471A41 /* AutoSizeView.m */; };
 		3A40235823A62ED100BDB4E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A40234023A62ED100BDB4E3 /* Assets.xcassets */; };
 		3A40235923A62ED100BDB4E3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A40234123A62ED100BDB4E3 /* ViewController.m */; };
 		3A40235A23A62ED100BDB4E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A40234223A62ED100BDB4E3 /* LaunchScreen.storyboard */; };
@@ -236,6 +240,14 @@
 		060FD3C655ABBD95AB81CCF8 /* Pods-TreasureChestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreasureChestTests.release.xcconfig"; path = "Target Support Files/Pods-TreasureChestTests/Pods-TreasureChestTests.release.xcconfig"; sourceTree = "<group>"; };
 		140A460F1B11381DEED65D5B /* Pods_TreasureChestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TreasureChestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A0365CAA1A7ACEC130D7959 /* Pods-abstract_pod-TreasureChest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-abstract_pod-TreasureChest.debug.xcconfig"; path = "Target Support Files/Pods-abstract_pod-TreasureChest/Pods-abstract_pod-TreasureChest.debug.xcconfig"; sourceTree = "<group>"; };
+		3A2E0A34254ED94F00471A41 /* AutoSizeTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoSizeTableController.h; sourceTree = "<group>"; };
+		3A2E0A35254ED94F00471A41 /* AutoSizeTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoSizeTableController.m; sourceTree = "<group>"; };
+		3A2E0A42254EDABD00471A41 /* AutoSizeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoSizeCell.h; sourceTree = "<group>"; };
+		3A2E0A43254EDABD00471A41 /* AutoSizeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoSizeCell.m; sourceTree = "<group>"; };
+		3A2E0A49254EDAD300471A41 /* AutoSizeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoSizeModel.h; sourceTree = "<group>"; };
+		3A2E0A4A254EDAD300471A41 /* AutoSizeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoSizeModel.m; sourceTree = "<group>"; };
+		3A2E0A4E254EFC0800471A41 /* AutoSizeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoSizeView.h; sourceTree = "<group>"; };
+		3A2E0A4F254EFC0800471A41 /* AutoSizeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoSizeView.m; sourceTree = "<group>"; };
 		3A40233F23A62ED100BDB4E3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3A40234023A62ED100BDB4E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A40234123A62ED100BDB4E3 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -649,6 +661,21 @@
 				D467FA7759BEC599ED70F55C /* Pods_abstract_pod_TreasureChest.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3A2E0A41254EDA9800471A41 /* AutoSizeTableView */ = {
+			isa = PBXGroup;
+			children = (
+				3A2E0A34254ED94F00471A41 /* AutoSizeTableController.h */,
+				3A2E0A35254ED94F00471A41 /* AutoSizeTableController.m */,
+				3A2E0A42254EDABD00471A41 /* AutoSizeCell.h */,
+				3A2E0A43254EDABD00471A41 /* AutoSizeCell.m */,
+				3A2E0A4E254EFC0800471A41 /* AutoSizeView.h */,
+				3A2E0A4F254EFC0800471A41 /* AutoSizeView.m */,
+				3A2E0A49254EDAD300471A41 /* AutoSizeModel.h */,
+				3A2E0A4A254EDAD300471A41 /* AutoSizeModel.m */,
+			);
+			path = AutoSizeTableView;
 			sourceTree = "<group>";
 		};
 		3A40233E23A62ED100BDB4E3 /* TreasureChestDemo */ = {
@@ -1084,6 +1111,7 @@
 				B2830EFB23B5E7DB0049AE99 /* FormsViewCtl.m */,
 				B2BC387E23C0385600D5B9C6 /* ShapeViewCtl.h */,
 				B2BC387F23C0385600D5B9C6 /* ShapeViewCtl.m */,
+				3A2E0A41254EDA9800471A41 /* AutoSizeTableView */,
 				A99F70232535AAA700A136E1 /* DetectFace */,
 				A9FFC32C24C7DE3800881404 /* BrushDrawing */,
 				B299BE5824513D340096360D /* LottieAnimations */,
@@ -1799,6 +1827,7 @@
 				A9C7CF0525372631002ECCFF /* DSViewTool.m in Sources */,
 				B2506D0223AB5BA80034A472 /* CollapsibleModel.m in Sources */,
 				B299BE5724513C510096360D /* LottieAnimationsCtl.m in Sources */,
+				3A2E0A50254EFC0800471A41 /* AutoSizeView.m in Sources */,
 				B26FBD772441CDB8003DB3BE /* LOTShapeTrimPath.m in Sources */,
 				A91C062F24E7B49D00E9F5B6 /* MediaRecorder.m in Sources */,
 				B26FBD6D2441CDB8003DB3BE /* LOTRepeaterRenderer.m in Sources */,
@@ -1824,6 +1853,7 @@
 				B2169DE724401B4F002CFE3E /* AudioRecorder.m in Sources */,
 				3A40235923A62ED100BDB4E3 /* ViewController.m in Sources */,
 				B26FBD862441CDB8003DB3BE /* LOTAnimationCache.m in Sources */,
+				3A2E0A44254EDABD00471A41 /* AutoSizeCell.m in Sources */,
 				B26FBD922441CDB8003DB3BE /* LOTBezierData.m in Sources */,
 				B26FBD6F2441CDB8003DB3BE /* UIColor.m in Sources */,
 				A983CE3124EE5CC200213D35 /* matrix.c in Sources */,
@@ -1872,6 +1902,7 @@
 				B2C459322440524F00117BD7 /* LineGeometry.m in Sources */,
 				B2BC387D23C037B100D5B9C6 /* XMCircleView.m in Sources */,
 				B26FBD6E2441CDB8003DB3BE /* UIBezierPath.m in Sources */,
+				3A2E0A4B254EDAD300471A41 /* AutoSizeModel.m in Sources */,
 				B26FBD932441CDB8003DB3BE /* LOTLayerContainer.m in Sources */,
 				B26FBD942441CDB8003DB3BE /* LOTCompositionContainer.m in Sources */,
 				B26FBD6C2441CDB8003DB3BE /* LOTFillRenderer.m in Sources */,
@@ -1945,6 +1976,7 @@
 				A923238124EBB4A100B2CDE1 /* UIImageView+LBBlurredImage.m in Sources */,
 				B24A85FE24039F1300D1EECA /* VideoPlayerSampleView.m in Sources */,
 				B2B6B1A82408E71C00187850 /* RegularOperate.m in Sources */,
+				3A2E0A36254ED94F00471A41 /* AutoSizeTableController.m in Sources */,
 				B26FBD7B2441CDB8003DB3BE /* LOTShapeRectangle.m in Sources */,
 				A991633025306570005454BA /* DetectFaceController.m in Sources */,
 				B215CC382431BEA30017BFD9 /* EasyProgress.m in Sources */,
@@ -2116,7 +2148,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = D67536M5X6;
+				DEVELOPMENT_TEAM = 68WRCFG276;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TreasureChestDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = TreasureChestDemo/Info.plist;
@@ -2144,7 +2176,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = BVSQGBFKQ5;
+				DEVELOPMENT_TEAM = 68WRCFG276;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TreasureChestDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = TreasureChestDemo/Info.plist;

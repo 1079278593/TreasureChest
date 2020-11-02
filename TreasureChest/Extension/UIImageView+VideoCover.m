@@ -55,7 +55,7 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             SDImageCache * cache =  [SDImageCache sharedImageCache];
-            [cache storeImage:thumbnailImage forKey:videoURL.absoluteString toDisk:YES];
+//            [cache storeImage:thumbnailImage forKey:videoURL.absoluteString toDisk:YES];
             self.image = thumbnailImage;
             completeBlock(thumbnailImage);
         });
