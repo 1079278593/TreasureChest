@@ -7,28 +7,13 @@
 //
 
 #import "ViewController.h"
-#import "ResidentScrollViewCtl.h"
-#import "CollapsibleViewCtl.h"
-#import "TabScrollViewCtl.h"
-#import "PearlsPackageCtl.h"
-#import "FormsViewCtl.h"
-#import "ShapeViewCtl.h"
-#import "DictionaryMainCtl.h"
-#import "VideoPlayerCtl.h"
-#import "URLSessionTaskCtl.h"
-#import "ServerMockCtl.h"
-#import "MBHudDemoViewController.h"
-#import "VideoRecorderCtl.h"
-#import "LottieAnimationsCtl.h"
-#import "LexiconViewCtl.h"
-#import "BrushDrawController.h"
-#import "DetectFaceController.h"
-#import "AutoSizeTableController.h"//改成放到配置表
+
+#import "ControllersModel.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic, strong)UITableView *tableView;
-@property(nonatomic, strong)NSArray *datas;
+@property(nonatomic, strong)NSArray <ControllersModel *> *datas;
 
 @end
 
@@ -36,7 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.datas = [self getCellDatas];
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"Controllers" ofType:@"plist"];
+    self.datas = [ControllersModel mj_objectArrayWithFile:path];
     self.tableView.frame = CGRectMake(0, 64, KScreenWidth, KScreenHeight-64);
 }
 
@@ -57,7 +43,7 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentify];
     }
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    cell.textLabel.text = self.datas[indexPath.row];
+    cell.textLabel.text = self.datas[indexPath.row].classTitle;
     return cell;
 }
 
@@ -66,8 +52,7 @@
 }
 
 - (void)jumpMethod:(NSInteger)index {
-    NSArray *classArrays = [self getClassNames];
-    Class NameClass = NSClassFromString(classArrays[index]);
+    Class NameClass = NSClassFromString(self.datas[index].className);
     UIViewController *controller = [[NameClass alloc]init];
     [self.navigationController pushViewController:controller animated:true];
 }
@@ -83,51 +68,6 @@
         [self.view addSubview:_tableView];
     }
     return _tableView;
-}
-///可以用个plist配置，读取即可
-- (NSArray *)getCellDatas {
-    NSArray *datas = @[@"笔刷绘制",
-                       @"自适应高度",
-                       @"特征点识别",
-                       @"可驻留的ScrollView",
-                       @"可折叠tableView",
-                       @"tabScrollView",
-                       @"各种小控件：button、label",
-                       @"自定义表单",
-                       @"各种形状",
-                       @"字典、数据库",
-                       @"视频播放",
-                       @"上传-下载",
-                       @"Mock服务端接口",
-                       @"HUD效果",
-                       @"视频录制-动画转视频",
-                       @"lottie资源展示",
-                       @"中文词库",
-                    ];
-    return datas;
-}
-
-- (NSArray *)getClassNames {
-    NSArray *classArrays = @[
-                             NSStringFromClass([BrushDrawController class]),
-                             NSStringFromClass([AutoSizeTableController class]),
-                             NSStringFromClass([DetectFaceController class]),
-                             NSStringFromClass([ResidentScrollViewCtl class]),
-                             NSStringFromClass([CollapsibleViewCtl class]),
-                             NSStringFromClass([TabScrollViewCtl class]),
-                             NSStringFromClass([PearlsPackageCtl class]),
-                             NSStringFromClass([FormsViewCtl class]),
-                             NSStringFromClass([ShapeViewCtl class]),
-                             NSStringFromClass([DictionaryMainCtl class]),
-                             NSStringFromClass([VideoPlayerCtl class]),
-                             NSStringFromClass([URLSessionTaskCtl class]),
-                             NSStringFromClass([ServerMockCtl class]),
-                             NSStringFromClass([MBHudDemoViewController class]),
-                             NSStringFromClass([VideoRecorderCtl class]),
-                             NSStringFromClass([LottieAnimationsCtl class]),
-                             NSStringFromClass([LexiconViewCtl class]),
-                            ];
-    return classArrays;
 }
 
 @end
