@@ -7,6 +7,7 @@
 //
 
 #import "TestController.h"
+#import "RMRectProgressView.h"
 
 @interface TestController ()
 
@@ -19,6 +20,8 @@
 
 @property(nonatomic, strong)UIButton *button;
 
+@property(nonatomic, strong)RMRectProgressView *progressView;
+
 @end
 
 @implementation TestController
@@ -26,12 +29,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initView];
-    _button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_button setTitle:@"切换按钮" forState:UIControlStateNormal];
-    [_button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [_button addTarget:self action:@selector(buttonEvent:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_button];
-    _button.frame = CGRectMake(220, 120, 90, 44);
+    
+    CGRect frame = CGRectMake(_containerViewB.right+10, _containerViewB.y, 100, 100);
+    self.progressView = [[RMRectProgressView alloc]initWithFrame:frame];
+    self.progressView.layer.cornerRadius = 5;
+    
+    self.progressView.backgroundColor = [UIColor lightGrayColor];
+    self.progressView.progress = 0.9;
+    [self.view addSubview:self.progressView];
 }
 
 #pragma mark - < event >
@@ -70,6 +75,14 @@
     _viewBsub1View.layer.borderWidth = 1;
     _viewBsub1View.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.3];
     [_containerViewB addSubview:_viewBsub1View];
+    
+    
+    _button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_button setTitle:@"切换按钮" forState:UIControlStateNormal];
+    [_button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_button addTarget:self action:@selector(buttonEvent:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_button];
+    _button.frame = CGRectMake(220, 120, 90, 44);
 }
 
 @end
