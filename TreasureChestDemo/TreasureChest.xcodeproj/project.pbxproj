@@ -51,6 +51,7 @@
 		3BEFF9DF0E12D318A440735F /* Pods_TreasureChestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140A460F1B11381DEED65D5B /* Pods_TreasureChestTests.framework */; };
 		A918EC102555517F00C5964D /* Controllers.plist in Resources */ = {isa = PBXBuildFile; fileRef = A918EC0F2555517F00C5964D /* Controllers.plist */; };
 		A918EC162555551B00C5964D /* ControllersModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A918EC152555551B00C5964D /* ControllersModel.m */; };
+		A918EC392555671E00C5964D /* TestController.m in Sources */ = {isa = PBXBuildFile; fileRef = A918EC382555671E00C5964D /* TestController.m */; };
 		A91C062F24E7B49D00E9F5B6 /* MediaRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = A91C062E24E7B49D00E9F5B6 /* MediaRecorder.m */; };
 		A923238124EBB4A100B2CDE1 /* UIImageView+LBBlurredImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A923237F24EBB4A100B2CDE1 /* UIImageView+LBBlurredImage.m */; };
 		A923238224EBB4A100B2CDE1 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = A923238024EBB4A100B2CDE1 /* UIImage+ImageEffects.m */; };
@@ -300,6 +301,8 @@
 		A918EC0F2555517F00C5964D /* Controllers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Controllers.plist; sourceTree = "<group>"; };
 		A918EC142555551B00C5964D /* ControllersModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControllersModel.h; sourceTree = "<group>"; };
 		A918EC152555551B00C5964D /* ControllersModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ControllersModel.m; sourceTree = "<group>"; };
+		A918EC372555671E00C5964D /* TestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestController.h; sourceTree = "<group>"; };
+		A918EC382555671E00C5964D /* TestController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestController.m; sourceTree = "<group>"; };
 		A91C062D24E7B49D00E9F5B6 /* MediaRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaRecorder.h; sourceTree = "<group>"; };
 		A91C062E24E7B49D00E9F5B6 /* MediaRecorder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MediaRecorder.m; sourceTree = "<group>"; };
 		A923237D24EBB4A100B2CDE1 /* UIImageView+LBBlurredImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LBBlurredImage.h"; sourceTree = "<group>"; };
@@ -1115,6 +1118,8 @@
 		B2506D0323AB63E40034A472 /* DemoController */ = {
 			isa = PBXGroup;
 			children = (
+				A918EC372555671E00C5964D /* TestController.h */,
+				A918EC382555671E00C5964D /* TestController.m */,
 				B2506D0423AB65A90034A472 /* ResidentScrollViewCtl.h */,
 				B2506D0523AB65A90034A472 /* ResidentScrollViewCtl.m */,
 				B2506D0B23AB88310034A472 /* CollapsibleViewCtl.h */,
@@ -1875,6 +1880,7 @@
 				B26FBD6F2441CDB8003DB3BE /* UIColor.m in Sources */,
 				A983CE3124EE5CC200213D35 /* matrix.c in Sources */,
 				3AE550E123A9189F001D989E /* FormsView.m in Sources */,
+				A918EC392555671E00C5964D /* TestController.m in Sources */,
 				A9FFC33224C7DEC900881404 /* BrushDrawView.m in Sources */,
 				B24A85F824037D0500D1EECA /* VideoPlayerCtl.m in Sources */,
 				B26FBD832441CDB8003DB3BE /* LOTBezierPath.m in Sources */,

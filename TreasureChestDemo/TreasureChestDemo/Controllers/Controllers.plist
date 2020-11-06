@@ -4,6 +4,12 @@
 <array>
 	<dict>
 		<key>className</key>
+		<string>TestController</string>
+		<key>classTitle</key>
+		<string>TEST</string>
+	</dict>
+	<dict>
+		<key>className</key>
 		<string>BrushDrawController</string>
 		<key>classTitle</key>
 		<string>笔刷绘制</string>
