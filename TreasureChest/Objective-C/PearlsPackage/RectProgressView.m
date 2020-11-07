@@ -1,23 +1,25 @@
 //
-//  RMRectProgressView.m
-//  RemoApp
+//  RectProgressView.m
+//  TreasureChest
 //
-//  Created by RemoMac on 2018/10/8.
-//  Copyright © 2018 Remo. All rights reserved.
+//  Created by jf on 2020/11/7.
+//  Copyright © 2020 xiao ming. All rights reserved.
 //
 
-#import "RMRectProgressView.h"
+#import "RectProgressView.h"
 
-@interface RMRectProgressView()
+@interface RectProgressView()
 
 @property(nonatomic,strong)CAShapeLayer *cycleBackLayer;
 @property(nonatomic,strong)CAShapeLayer *cycleFrontLayer;
 @property(nonatomic,strong)CABasicAnimation *animation;
+
+@property(nonatomic,assign)CGFloat progress;
 @property(nonatomic,assign)CGSize cycleSize;
 
 @end
 
-@implementation RMRectProgressView
+@implementation RectProgressView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -27,36 +29,32 @@
         _cycleSize = frame.size;
     
         self.cycleBackLayer.frame = CGRectMake(0, 0, _cycleSize.width, _cycleSize.height);
-        self.cycleBackLayer.path = [self getPath:_cycleSize].CGPath;
+        self.cycleBackLayer.path = [self roundCornerPath:_cycleSize].CGPath;
         
         self.cycleFrontLayer.frame = CGRectMake(0, 0, _cycleSize.width, _cycleSize.height);
-        self.cycleFrontLayer.path = [self getPath:_cycleSize].CGPath;
+        self.cycleFrontLayer.path = [self roundCornerPath:_cycleSize].CGPath;
     }
     return self;
 }
 
 #pragma mark - < public >
-- (void)setProgress:(CGFloat)progress {
-    self.animation.fromValue  = [NSNumber numberWithFloat:_progress];
-    _progress = progress;
-    _animation.toValue = [NSNumber numberWithFloat:progress];
+- (void)startAnimation:(CGFloat)start endProgress:(CGFloat)end {
+    [self startAnimation:start endProgress:end duration:1];
+}
+
+- (void)startAnimation:(CGFloat)start endProgress:(CGFloat)end duration:(CGFloat)duration {
+    self.animation.fromValue  = [NSNumber numberWithFloat:start];
+    _animation.toValue = [NSNumber numberWithFloat:end];
+    _animation.duration = duration;
     
-    if (progress == 1) {
-        _animation.duration = 0.01;
-    }else{
-        _animation.duration = 1.5;
-    }
     _animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
     _animation.fillMode = kCAFillModeForwards;
     _animation.removedOnCompletion = NO;
     [self.cycleFrontLayer addAnimation:_animation forKey:@"strokeEndAnimation"];
 }
 
-#pragma mark - < private >
-
-- (UIBezierPath *)getPath:(CGSize)size {
+- (UIBezierPath *)roundCornerPath:(CGSize)size {
     CGFloat cornerRadius = KCycelLineCornerRadius;
-    
     UIBezierPath *path = [[UIBezierPath alloc]init];
     [path moveToPoint:CGPointMake(size.width/2, 0)];
     [path addLineToPoint:CGPointMake(size.width-cornerRadius, 0)];
@@ -104,4 +102,3 @@
 }
 
 @end
-

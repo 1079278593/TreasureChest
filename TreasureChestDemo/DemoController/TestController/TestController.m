@@ -7,7 +7,7 @@
 //
 
 #import "TestController.h"
-#import "RMRectProgressView.h"
+#import "RectProgressView.h"
 
 @interface TestController ()
 
@@ -20,7 +20,7 @@
 
 @property(nonatomic, strong)UIButton *button;
 
-@property(nonatomic, strong)RMRectProgressView *progressView;
+@property(nonatomic, strong)RectProgressView *progressView;
 
 @end
 
@@ -31,11 +31,11 @@
     [self initView];
     
     CGRect frame = CGRectMake(_containerViewB.right+10, _containerViewB.y, 100, 100);
-    self.progressView = [[RMRectProgressView alloc]initWithFrame:frame];
+    self.progressView = [[RectProgressView alloc]initWithFrame:frame];
     self.progressView.layer.cornerRadius = 5;
     
     self.progressView.backgroundColor = [UIColor lightGrayColor];
-    self.progressView.progress = 0.9;
+    [self.progressView startAnimation:0 endProgress:1 duration:15];
     [self.view addSubview:self.progressView];
 }
 
