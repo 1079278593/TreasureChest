@@ -8,6 +8,7 @@
 
 #import "TestController.h"
 #import "RectProgressView.h"
+#import "UIView+RoundProgress.h"
 
 @interface TestController ()
 
@@ -34,9 +35,12 @@
     self.progressView = [[RectProgressView alloc]initWithFrame:frame];
     self.progressView.layer.cornerRadius = 5;
     
-    self.progressView.backgroundColor = [UIColor lightGrayColor];
+    self.progressView.backgroundColor = self.containerViewB.backgroundColor;
     [self.progressView startAnimation:0 endProgress:1 duration:15];
     [self.view addSubview:self.progressView];
+    
+    self.containerViewB.layer.cornerRadius = 5;
+    [self.containerViewB startAnimation:0 endProgress:1 duration:12];
 }
 
 #pragma mark - < event >

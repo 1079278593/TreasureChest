@@ -15,7 +15,6 @@
 @property(nonatomic,strong)CABasicAnimation *animation;
 
 @property(nonatomic,assign)CGFloat progress;
-@property(nonatomic,assign)CGSize cycleSize;
 
 @end
 
@@ -24,15 +23,13 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setBackgroundColor:[UIColor clearColor]];
-        _progress = 0.0f;
-        _cycleSize = frame.size;
-    
-        self.cycleBackLayer.frame = CGRectMake(0, 0, _cycleSize.width, _cycleSize.height);
-        self.cycleBackLayer.path = [self roundCornerPath:_cycleSize].CGPath;
+        CGSize size = frame.size;
         
-        self.cycleFrontLayer.frame = CGRectMake(0, 0, _cycleSize.width, _cycleSize.height);
-        self.cycleFrontLayer.path = [self roundCornerPath:_cycleSize].CGPath;
+        self.cycleBackLayer.frame = CGRectMake(0, 0, size.width, size.height);
+        self.cycleBackLayer.path = [self roundCornerPath:size].CGPath;
+        
+        self.cycleFrontLayer.frame = CGRectMake(0, 0, size.width, size.height);
+        self.cycleFrontLayer.path = [self roundCornerPath:size].CGPath;
     }
     return self;
 }
@@ -76,7 +73,6 @@
         _cycleFrontLayer.lineWidth = KCycleLineWidth;
         _cycleFrontLayer.strokeColor = KCycelLineColor.CGColor;
         _cycleFrontLayer.fillColor = [UIColor clearColor].CGColor;
-        _cycleFrontLayer.lineJoin = kCALineJoinRound;
         [self.layer addSublayer:_cycleFrontLayer];
     }
     return _cycleFrontLayer;
@@ -88,7 +84,6 @@
         _cycleBackLayer.lineWidth = KCycleLineWidth;
         _cycleBackLayer.strokeColor = [UIColor hexColor:@"#FFF031"].CGColor;
         _cycleBackLayer.fillColor = [UIColor clearColor].CGColor;
-        _cycleBackLayer.lineJoin = kCALineJoinRound;
         [self.layer addSublayer:_cycleBackLayer];
     }
     return _cycleBackLayer;
