@@ -54,7 +54,7 @@
 }
 
 - (id<CAAction>)actionForKey:(NSString *)event{
-    NSLog(@"TestActionKeyLayer. actionForKey: %@",event);
+//    NSLog(@"TestActionKeyLayer. actionForKey: %@",event);
     return [super actionForKey:event];
 }
 

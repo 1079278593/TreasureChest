@@ -36,6 +36,8 @@
 
 - (void)initView {
     self.layer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"bgPic1"].CGImage);
+    
+    //maskLayer加到topImageView的masK。maskLayer有颜色部分将显示被masK遮挡的底层原本颜色。
     self.maskLayer = [CAShapeLayer layer];
     self.maskLayer.frame = self.bounds;
 //    [self.layer setMask:self.maskLayer];
@@ -96,6 +98,7 @@
 }
 
 //这个试图在一条线段有多个颜色
+/**
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     NSLog(@"touchesEnded");
     self.endPoint = [[touches anyObject] locationInView:self];
@@ -130,7 +133,9 @@
     
 }
 
-/** 用这个
+ */
+
+// /** 用这个
  - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
      NSLog(@"touchesEnded");
      self.endPoint = [[touches anyObject] locationInView:self];
@@ -160,7 +165,7 @@
  //    self.image = (__bridge UIImage * _Nullable)(CGBitmapContextCreateImage(_drawContext));
      
  }
- */
+// */
 
 
 @end

@@ -43,8 +43,8 @@
     
     [self.contentView addSubview:self.lotView];
     [self.lotView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.right.equalTo(self.contentView);
-        make.width.height.equalTo(@(120));
+        make.left.right.top.height.equalTo(self.contentView);
+//        make.height.equalTo(@(120));
     }];
     
     self.nameLabel.text = [[path componentsSeparatedByString:@"/"]lastObject];

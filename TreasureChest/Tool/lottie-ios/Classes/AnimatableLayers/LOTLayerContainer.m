@@ -240,7 +240,7 @@
  所以一轮完整的搜索结束之后，-actionForKey:要么返回空（这种情况下将不会有动画发生），要么是CAAction协议对应的对象，最后CALayer拿这个结果去对先前和当前的值做动画。
  */
 - (id<CAAction>)actionForKey:(NSString *)event {
-    NSLog(@"actionForKey: %@",event);
+//    NSLog(@"actionForKey: %@",event);
     if ([event isEqualToString:@"currentFrame"]) {
         CABasicAnimation *theAnimation = [CABasicAnimation animationWithKeyPath:event];
         theAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
