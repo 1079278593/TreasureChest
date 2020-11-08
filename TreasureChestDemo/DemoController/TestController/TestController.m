@@ -9,19 +9,15 @@
 #import "TestController.h"
 #import "RectProgressView.h"
 #import "UIView+RoundProgress.h"
+#import "UIView+HollowOut.h"
 
 @interface TestController ()
 
-@property(nonatomic, strong)UIView *containerViewA;
-@property(nonatomic, strong)UIView *viewAsub1View;
-@property(nonatomic, strong)UIView *viewAsub2View;
-
-@property(nonatomic, strong)UIView *containerViewB;
-@property(nonatomic, strong)UIView *viewBsub1View;
-
 @property(nonatomic, strong)UIButton *button;
 
-@property(nonatomic, strong)RectProgressView *progressView;
+@property(nonatomic, strong)UIImageView *bgImgView;
+@property(nonatomic, strong)UIImageView *frontImgView;
+
 
 @end
 
@@ -29,57 +25,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initView];
-    
-    CGRect frame = CGRectMake(_containerViewB.right+10, _containerViewB.y, 100, 100);
-    self.progressView = [[RectProgressView alloc]initWithFrame:frame];
-    self.progressView.layer.cornerRadius = 5;
-    
-    self.progressView.backgroundColor = self.containerViewB.backgroundColor;
-    [self.progressView startAnimation:0 endProgress:1 duration:15];
-    [self.view addSubview:self.progressView];
-    
-    self.containerViewB.layer.cornerRadius = 5;
-    [self.containerViewB startAnimation:0 endProgress:1 duration:12];
-}
-
-#pragma mark - < event >
-- (void)buttonEvent:(UIButton *)button {
-    UIView *targetView = button.selected ? self.containerViewA : self.containerViewB;
-    [targetView addSubview:_viewBsub1View];
-    
-    button.selected = !button.selected;
-    
-}
-
-#pragma mark - < init view >
-- (void)initView {
-    
-    //-----------containerViewA-----------
-    _containerViewA = [[UIView alloc]initWithFrame:CGRectMake(10, 70, 200, 200)];
-    _containerViewA.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.3];
-    [self.view addSubview:_containerViewA];
-    
-    _viewAsub1View = [[UIView alloc]initWithFrame:CGRectMake(0, 80, 60, 60)];
-    _viewAsub1View.layer.borderWidth = 1;
-    [_containerViewA addSubview:_viewAsub1View];
-    
-    _viewAsub2View = [[UIView alloc]initWithFrame:CGRectMake(100, 0, 60, 60)];
-    _viewAsub2View.layer.borderWidth = 1;
-    [_containerViewA addSubview:_viewAsub2View];
-    
-    
-    //-----------containerViewB-----------
-    _containerViewB = [[UIView alloc]initWithFrame:CGRectMake(10, 280, 200, 200)];
-    _containerViewB.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.3];
-    [self.view addSubview:_containerViewB];
-    
-    
-    _viewBsub1View = [[UIView alloc]initWithFrame:CGRectMake(20, 60, 60, 60)];
-    _viewBsub1View.layer.borderWidth = 1;
-    _viewBsub1View.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.3];
-    [_containerViewB addSubview:_viewBsub1View];
-    
     
     _button = [UIButton buttonWithType:UIButtonTypeCustom];
     [_button setTitle:@"切换按钮" forState:UIControlStateNormal];
@@ -87,6 +32,29 @@
     [_button addTarget:self action:@selector(buttonEvent:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_button];
     _button.frame = CGRectMake(220, 120, 90, 44);
+    
+    [self initView];
+}
+
+#pragma mark - < event >
+- (void)buttonEvent:(UIButton *)button {
+    
+    
+    button.selected = !button.selected;
+    
+}
+
+#pragma mark - < init view >
+- (void)initView {
+    _bgImgView = [[UIImageView alloc]init];
+    _bgImgView.image = [UIImage imageNamed:@"bgPic"];
+    [self.view addSubview:_bgImgView];
+    _bgImgView.frame = self.view.bounds;
+    
+    _frontImgView = [[UIImageView alloc]initWithFrame:self.view.bounds];
+    _frontImgView.image = [UIImage imageNamed:@"bgPic1"];
+    [self.view addSubview:_frontImgView];
+    [_frontImgView hollowOutWithRect:CGRectMake(100, 230, 100, 40)];
 }
 
 @end
