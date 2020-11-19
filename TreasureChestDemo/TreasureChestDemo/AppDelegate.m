@@ -54,8 +54,8 @@
     //初始化一个后台任务BackgroundTask，这个后台任务的作用就是告诉系统当前app在后台有任务处理，需要时间
     UIApplication*  app = [UIApplication sharedApplication];
     self.bgTask = [app beginBackgroundTaskWithExpirationHandler:^{
-    [app endBackgroundTask:self.bgTask];
-    self.bgTask = UIBackgroundTaskInvalid;
+        [app endBackgroundTask:self.bgTask];
+        self.bgTask = UIBackgroundTaskInvalid;
     }];
     //开启定时器 不断向系统请求后台任务执行的时间
     self.timer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(applyForMoreTime) userInfo:nil repeats:YES];

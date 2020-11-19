@@ -37,6 +37,7 @@
 
 - (void)refreshCell:(NSString *)path {
     self.lotView = [[LOTAnimationView alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path]];
+    _lotView.contentMode = UIViewContentModeScaleAspectFit;
     [self.lotView playWithCompletion:^(BOOL animationFinished) {
         
     }];
@@ -44,6 +45,7 @@
     [self.contentView addSubview:self.lotView];
     [self.lotView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.height.equalTo(self.contentView);
+        
 //        make.height.equalTo(@(120));
     }];
     

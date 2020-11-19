@@ -36,7 +36,7 @@
 
 #pragma mark - < delegate >
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 6;//太卡，展示6个
+    return 7;//太卡，展示6个
     return self.datas.count;
 }
 
@@ -44,7 +44,8 @@
 //    CGFloat width = (KScreenWidth - 4*10)/3.0;
 //    return CGSizeMake(width, 150);
     CGFloat width = (KScreenWidth - 4*10)/1.0;
-    return CGSizeMake(width, width/(1080/600.0));
+//    return CGSizeMake(width, width/(1080/600.0));
+    return CGSizeMake(width, 300);
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
