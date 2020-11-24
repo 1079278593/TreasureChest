@@ -65,6 +65,7 @@
 		A949C28D25393FEA00CF09A5 /* OpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = A949C28C25393FEA00CF09A5 /* OpenGLView.m */; };
 		A949C2A0253948B100CF09A5 /* fileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A949C29E253948B100CF09A5 /* fileUtil.m */; };
 		A949C2C92539C61300CF09A5 /* TextureDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A949C2C82539C61300CF09A5 /* TextureDataManager.m */; };
+		A9590C0B256B592E00A1CBD4 /* IDETextKeyBindingSet.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9590C0A256B592E00A1CBD4 /* IDETextKeyBindingSet.plist */; };
 		A983CE2D24EE5CC200213D35 /* OpenGLPixelBufferView.m in Sources */ = {isa = PBXBuildFile; fileRef = A983CE2724EE5CC200213D35 /* OpenGLPixelBufferView.m */; };
 		A983CE2E24EE5CC200213D35 /* OpenGLPixelBufferView.m in Sources */ = {isa = PBXBuildFile; fileRef = A983CE2724EE5CC200213D35 /* OpenGLPixelBufferView.m */; };
 		A983CE2F24EE5CC200213D35 /* ShaderUtilities.c in Sources */ = {isa = PBXBuildFile; fileRef = A983CE2824EE5CC200213D35 /* ShaderUtilities.c */; };
@@ -330,6 +331,7 @@
 		A949C29F253948B100CF09A5 /* fileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileUtil.h; sourceTree = "<group>"; };
 		A949C2C72539C61300CF09A5 /* TextureDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureDataManager.h; sourceTree = "<group>"; };
 		A949C2C82539C61300CF09A5 /* TextureDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextureDataManager.m; sourceTree = "<group>"; };
+		A9590C0A256B592E00A1CBD4 /* IDETextKeyBindingSet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = IDETextKeyBindingSet.plist; sourceTree = "<group>"; };
 		A983CE2724EE5CC200213D35 /* OpenGLPixelBufferView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLPixelBufferView.m; sourceTree = "<group>"; };
 		A983CE2824EE5CC200213D35 /* ShaderUtilities.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ShaderUtilities.c; sourceTree = "<group>"; };
 		A983CE2924EE5CC200213D35 /* matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = matrix.h; sourceTree = "<group>"; };
@@ -708,10 +710,10 @@
 				3A40234223A62ED100BDB4E3 /* LaunchScreen.storyboard */,
 				3A40234423A62ED100BDB4E3 /* Main.storyboard */,
 				3A40234623A62ED100BDB4E3 /* main.m */,
-				A918EC13255554FF00C5964D /* Controllers */,
 				3A40234823A62ED100BDB4E3 /* Info.plist */,
 				3AE550EA23A91A93001D989E /* TreasureChest-Bridging-Header.h */,
 				B2506D0A23AB84330034A472 /* PrefixHeader.pch */,
+				A918EC13255554FF00C5964D /* Controllers */,
 				3AD14A1424615264004D54B8 /* Resources */,
 				B243E07823C4552E00B37519 /* CF-1151.16-源码研究 */,
 				3A40234023A62ED100BDB4E3 /* Assets.xcassets */,
@@ -733,6 +735,7 @@
 		3AD14A1424615264004D54B8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A9590C09256B590100A1CBD4 /* 快捷键的拷贝 */,
 				3AD14A1524615273004D54B8 /* lexicon */,
 			);
 			path = Resources;
@@ -947,6 +950,14 @@
 				A949C28325393FA700CF09A5 /* point.fsh */,
 			);
 			path = Shaders;
+			sourceTree = "<group>";
+		};
+		A9590C09256B590100A1CBD4 /* 快捷键的拷贝 */ = {
+			isa = PBXGroup;
+			children = (
+				A9590C0A256B592E00A1CBD4 /* IDETextKeyBindingSet.plist */,
+			);
+			path = "快捷键的拷贝";
 			sourceTree = "<group>";
 		};
 		A983CE2624EE5CC200213D35 /* OpenGLPixelBufferView */ = {
@@ -1792,6 +1803,7 @@
 				3AD14A2824615273004D54B8 /* words_famousperson.txt in Resources */,
 				3AD14A4B24619E7B004D54B8 /* words_foods.plist in Resources */,
 				B215CC4A2431F5290017BFD9 /* hud_success@2x.png in Resources */,
+				A9590C0B256B592E00A1CBD4 /* IDETextKeyBindingSet.plist in Resources */,
 				3AD14A3F24619AB1004D54B8 /* words_toponymy.plist in Resources */,
 				B2506D1423ABA12D0034A472 /* options_none_icon@3x.png in Resources */,
 				3AD14A3B24619735004D54B8 /* words_animals.plist in Resources */,
