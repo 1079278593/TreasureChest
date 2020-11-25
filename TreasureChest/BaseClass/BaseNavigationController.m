@@ -3,11 +3,10 @@
 //  cigarette
 //
 //  Created by xiao ming on 2020/1/9.
-//  Copyright © 2020 by.huang. All rights reserved.
+//  Copyright © 2019 xiao ming. All rights reserved.
 //
 
 #import "BaseNavigationController.h"
-#import "RetailPage.h"
 
 @interface BaseNavigationController () <UINavigationControllerDelegate,UIGestureRecognizerDelegate>
 
@@ -47,9 +46,6 @@
         if([self respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
             self.interactivePopGestureRecognizer.enabled = NO;
         }
-    }
-    if([viewController isKindOfClass:[RetailPage class]]){
-        self.interactivePopGestureRecognizer.enabled = NO;
     }
 }
 
