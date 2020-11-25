@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A1174C9256E5F5C00D6F382 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1174C8256E5F5C00D6F382 /* BaseNavigationController.m */; };
 		3A2E0A36254ED94F00471A41 /* AutoSizeTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E0A35254ED94F00471A41 /* AutoSizeTableController.m */; };
 		3A2E0A44254EDABD00471A41 /* AutoSizeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E0A43254EDABD00471A41 /* AutoSizeCell.m */; };
 		3A2E0A4B254EDAD300471A41 /* AutoSizeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E0A4A254EDAD300471A41 /* AutoSizeModel.m */; };
@@ -248,6 +249,8 @@
 		060FD3C655ABBD95AB81CCF8 /* Pods-TreasureChestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreasureChestTests.release.xcconfig"; path = "Target Support Files/Pods-TreasureChestTests/Pods-TreasureChestTests.release.xcconfig"; sourceTree = "<group>"; };
 		140A460F1B11381DEED65D5B /* Pods_TreasureChestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TreasureChestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A0365CAA1A7ACEC130D7959 /* Pods-abstract_pod-TreasureChest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-abstract_pod-TreasureChest.debug.xcconfig"; path = "Target Support Files/Pods-abstract_pod-TreasureChest/Pods-abstract_pod-TreasureChest.debug.xcconfig"; sourceTree = "<group>"; };
+		3A1174C7256E5F5B00D6F382 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		3A1174C8256E5F5C00D6F382 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		3A2E0A34254ED94F00471A41 /* AutoSizeTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoSizeTableController.h; sourceTree = "<group>"; };
 		3A2E0A35254ED94F00471A41 /* AutoSizeTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoSizeTableController.m; sourceTree = "<group>"; };
 		3A2E0A42254EDABD00471A41 /* AutoSizeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoSizeCell.h; sourceTree = "<group>"; };
@@ -1123,6 +1126,8 @@
 			children = (
 				B2506D0723AB83080034A472 /* BaseViewController.h */,
 				B2506D0823AB83080034A472 /* BaseViewController.m */,
+				3A1174C7256E5F5B00D6F382 /* BaseNavigationController.h */,
+				3A1174C8256E5F5C00D6F382 /* BaseNavigationController.m */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -1920,6 +1925,7 @@
 				B26FBD692441CDB8003DB3BE /* LOTRenderGroup.m in Sources */,
 				B26FBD8C2441CDB8003DB3BE /* LOTKeypath.m in Sources */,
 				A983CE2D24EE5CC200213D35 /* OpenGLPixelBufferView.m in Sources */,
+				3A1174C9256E5F5C00D6F382 /* BaseNavigationController.m in Sources */,
 				B2055290240756980034310A /* ProductOptionViewFlowLayout.m in Sources */,
 				B27B784523ACD7C00083E6AE /* TabTitleScrollView.m in Sources */,
 				B26FBD6A2441CDB8003DB3BE /* LOTGradientFillRender.m in Sources */,
