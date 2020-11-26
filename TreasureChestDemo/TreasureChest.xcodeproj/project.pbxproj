@@ -59,6 +59,7 @@
 		A923238124EBB4A100B2CDE1 /* UIImageView+LBBlurredImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A923237F24EBB4A100B2CDE1 /* UIImageView+LBBlurredImage.m */; };
 		A923238224EBB4A100B2CDE1 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = A923238024EBB4A100B2CDE1 /* UIImage+ImageEffects.m */; };
 		A928348F2536947700810734 /* FacePointPathLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A928348E2536947700810734 /* FacePointPathLayer.m */; };
+		A9377450256E97EA0085FF21 /* 1.bytes in Resources */ = {isa = PBXBuildFile; fileRef = A937744F256E97EA0085FF21 /* 1.bytes */; };
 		A949C26C2539359800CF09A5 /* OpenGLController.m in Sources */ = {isa = PBXBuildFile; fileRef = A949C26B2539359800CF09A5 /* OpenGLController.m */; };
 		A949C2702539391000CF09A5 /* documentation in Resources */ = {isa = PBXBuildFile; fileRef = A949C26F2539391000CF09A5 /* documentation */; };
 		A949C28525393FA700CF09A5 /* point.fsh in Resources */ = {isa = PBXBuildFile; fileRef = A949C28325393FA700CF09A5 /* point.fsh */; };
@@ -323,6 +324,7 @@
 		A923238024EBB4A100B2CDE1 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		A928348D2536947700810734 /* FacePointPathLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FacePointPathLayer.h; sourceTree = "<group>"; };
 		A928348E2536947700810734 /* FacePointPathLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FacePointPathLayer.m; sourceTree = "<group>"; };
+		A937744F256E97EA0085FF21 /* 1.bytes */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.bytes; sourceTree = "<group>"; };
 		A949C26A2539359800CF09A5 /* OpenGLController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGLController.h; sourceTree = "<group>"; };
 		A949C26B2539359800CF09A5 /* OpenGLController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenGLController.m; sourceTree = "<group>"; };
 		A949C26F2539391000CF09A5 /* documentation */ = {isa = PBXFileReference; lastKnownFileType = text; path = documentation; sourceTree = "<group>"; };
@@ -738,6 +740,7 @@
 		3AD14A1424615264004D54B8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A937744F256E97EA0085FF21 /* 1.bytes */,
 				A9590C09256B590100A1CBD4 /* 快捷键的拷贝 */,
 				3AD14A1524615273004D54B8 /* lexicon */,
 			);
@@ -1808,6 +1811,7 @@
 				3AD14A2824615273004D54B8 /* words_famousperson.txt in Resources */,
 				3AD14A4B24619E7B004D54B8 /* words_foods.plist in Resources */,
 				B215CC4A2431F5290017BFD9 /* hud_success@2x.png in Resources */,
+				A9377450256E97EA0085FF21 /* 1.bytes in Resources */,
 				A9590C0B256B592E00A1CBD4 /* IDETextKeyBindingSet.plist in Resources */,
 				3AD14A3F24619AB1004D54B8 /* words_toponymy.plist in Resources */,
 				B2506D1423ABA12D0034A472 /* options_none_icon@3x.png in Resources */,

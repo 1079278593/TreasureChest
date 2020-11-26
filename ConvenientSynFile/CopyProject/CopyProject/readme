@@ -1,0 +1,4 @@
+新创建的oc项目：
+1. 去掉Scene等内容、拷贝AppDelegate的内容。
+2. Info.plist中，删除：Application Scene Manifest
+
