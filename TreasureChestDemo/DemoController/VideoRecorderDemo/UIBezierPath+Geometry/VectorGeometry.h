@@ -1,8 +1,8 @@
 //
 //  VectorGeometry.h
 //
-//  Created by 李林 on 2018/1/8.
-//  Copyright © 2018年 iLaihua. All rights reserved.
+//  Created by  on 2018/1/8.
+//  Copyright © 2018年 . All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
