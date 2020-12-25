@@ -52,6 +52,7 @@
 		3AE550E123A9189F001D989E /* FormsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE550D623A9189F001D989E /* FormsView.m */; };
 		3AE550E223A9189F001D989E /* ResidentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE550D923A9189F001D989E /* ResidentScrollView.m */; };
 		3BEFF9DF0E12D318A440735F /* Pods_TreasureChestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140A460F1B11381DEED65D5B /* Pods_TreasureChestTests.framework */; };
+		A90ECEE2259577EB005E3EF0 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = A90ECEE1259577EB005E3EF0 /* TestView.m */; };
 		A918EC102555517F00C5964D /* Controllers.plist in Resources */ = {isa = PBXBuildFile; fileRef = A918EC0F2555517F00C5964D /* Controllers.plist */; };
 		A918EC162555551B00C5964D /* ControllersModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A918EC152555551B00C5964D /* ControllersModel.m */; };
 		A918EC392555671E00C5964D /* TestController.m in Sources */ = {isa = PBXBuildFile; fileRef = A918EC382555671E00C5964D /* TestController.m */; };
@@ -311,6 +312,8 @@
 		3AE550D923A9189F001D989E /* ResidentScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResidentScrollView.m; sourceTree = "<group>"; };
 		3AE550DF23A9189F001D989E /* DeviceMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceMacro.h; sourceTree = "<group>"; };
 		3AE550EA23A91A93001D989E /* TreasureChest-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TreasureChest-Bridging-Header.h"; sourceTree = "<group>"; };
+		A90ECEE0259577EB005E3EF0 /* TestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
+		A90ECEE1259577EB005E3EF0 /* TestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
 		A918EC0F2555517F00C5964D /* Controllers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Controllers.plist; sourceTree = "<group>"; };
 		A918EC142555551B00C5964D /* ControllersModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControllersModel.h; sourceTree = "<group>"; };
 		A918EC152555551B00C5964D /* ControllersModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ControllersModel.m; sourceTree = "<group>"; };
@@ -913,6 +916,8 @@
 			children = (
 				A918EC372555671E00C5964D /* TestController.h */,
 				A918EC382555671E00C5964D /* TestController.m */,
+				A90ECEE0259577EB005E3EF0 /* TestView.h */,
+				A90ECEE1259577EB005E3EF0 /* TestView.m */,
 			);
 			path = TestController;
 			sourceTree = "<group>";
@@ -2042,6 +2047,7 @@
 				B2C4592F2440524F00117BD7 /* UIBezierPath+Geometry.m in Sources */,
 				A9CA834D24DBE03C00771EE2 /* EllipsePointsView.m in Sources */,
 				B28472372404B8EE00C1194F /* URLDownloadTask.m in Sources */,
+				A90ECEE2259577EB005E3EF0 /* TestView.m in Sources */,
 				B283CEED2449BB650021ABB5 /* TestActionProgressAction.m in Sources */,
 				B26FBD8F2441CDB8003DB3BE /* LOTInterpolatorCallback.m in Sources */,
 				B284724124051E2D00C1194F /* URLOfflineDownloadTask.m in Sources */,

@@ -10,6 +10,7 @@
 #import "RectProgressView.h"
 #import "UIView+RoundProgress.h"
 #import "UIView+HollowOut.h"
+#import "TestView.h"
 
 @interface TestController ()
 
@@ -35,6 +36,15 @@
     [_button addTarget:self action:@selector(buttonEvent:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_button];
     _button.frame = CGRectMake(220, 120, 90, 44);
+    
+    TestView *testView = [[TestView alloc]init];
+    testView.userInteractionEnabled = YES;
+    testView.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.4];
+    [self.view addSubview:testView];
+    [testView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(_button);
+        make.width.height.equalTo(@(100));
+    }];
 }
 
 #pragma mark - < event >
