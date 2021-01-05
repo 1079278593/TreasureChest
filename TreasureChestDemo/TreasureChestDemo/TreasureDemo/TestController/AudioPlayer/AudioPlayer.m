@@ -67,8 +67,8 @@ static AudioPlayer *manager = nil;
 #pragma mark - < player >
 - (void)playSound:(NSString *)filePath {
     
-//    [self systemSoundId:filePath];
-//    return;
+    [self systemSoundId:filePath];
+    return;
     
 
     [self getSystemVolumSlider].value = 1;
@@ -88,24 +88,12 @@ static AudioPlayer *manager = nil;
 }
 
 #pragma mark - < priavte >
+///在没有其他媒体播放干扰情况下，这个配置是最大声的
 - (void)deviceSetActive {
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
-    NSError *error;
-//    [audioSession setActive:NO error:&error]; //让我的App占用听筒或扬声器
-    if (error) {
-        NSLog(@"声音设置1：%@",error);
-    }
-
     [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
-    [audioSession setMode:AVAudioSessionModeVoiceChat error:nil];
     [audioSession overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:nil];//设置为公放模式(可以考虑听筒)
-    if (self.players.count == 0) {
-        [audioSession setActive:YES error:&error]; //让我的App占用听筒或扬声器
-    }
-    
-    if (error) {
-        NSLog(@"声音设置2：%@",error);
-    }
+    [audioSession setActive:YES error:nil]; //让我的App占用听筒或扬声器
 }
 
 - (NSMutableArray<AVPlayer *> *)players {
@@ -162,6 +150,7 @@ static AudioPlayer *manager = nil;
     [player play];
 }
 
+///必须开启铃音，不然听不到
 - (void)systemSoundId:(NSString *)filePath {
     //播放test.wav文件
     //当soundIDTest == kSystemSoundID_Vibrate的时候为震动

@@ -43,7 +43,8 @@
 
 #pragma mark - < event >
 - (void)buttonEvent:(UIButton *)button {
-    
+//    [[AudioPlayer shareInstance] playSound:@"gamePrepare" fileType:@"mp3"];
+    [[AudioPlayer shareInstance] playSound:@"做的很棒" fileType:@"wav"];
 }
 
 

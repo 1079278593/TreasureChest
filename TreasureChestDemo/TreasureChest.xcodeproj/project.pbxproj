@@ -1165,8 +1165,8 @@
 			isa = PBXGroup;
 			children = (
 				A94EF7B225A40FFF00CB769D /* start.mp3 */,
-				A94EF7B325A40FFF00CB769D /* oldAudio */,
 				A94EF7CB25A40FFF00CB769D /* gamePrepare.mp3 */,
+				A94EF7B325A40FFF00CB769D /* oldAudio */,
 				A94EF7CC25A40FFF00CB769D /* SpyAudio */,
 				A94EF7E025A40FFF00CB769D /* GuessAudio */,
 			);
