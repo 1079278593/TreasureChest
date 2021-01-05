@@ -70,6 +70,63 @@
 		A949C2A0253948B100CF09A5 /* fileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A949C29E253948B100CF09A5 /* fileUtil.m */; };
 		A949C2C92539C61300CF09A5 /* TextureDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A949C2C82539C61300CF09A5 /* TextureDataManager.m */; };
 		A94EF7A825A40D2400CB769D /* AudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A94EF7A725A40D2400CB769D /* AudioPlayer.m */; };
+		A94EF7AE25A40F8A00CB769D /* PixelsOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = A94EF7AD25A40F8A00CB769D /* PixelsOperator.m */; };
+		A94EF7ED25A40FFF00CB769D /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7B225A40FFF00CB769D /* start.mp3 */; };
+		A94EF7EE25A40FFF00CB769D /* 开始投票.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7B425A40FFF00CB769D /* 开始投票.m4a */; };
+		A94EF7EF25A40FFF00CB769D /* 5号玩家开始比划.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7B525A40FFF00CB769D /* 5号玩家开始比划.m4a */; };
+		A94EF7F025A40FFF00CB769D /* 叮.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7B625A40FFF00CB769D /* 叮.mp3 */; };
+		A94EF7F125A40FFF00CB769D /* 1号玩家发言.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7B725A40FFF00CB769D /* 1号玩家发言.m4a */; };
+		A94EF7F225A40FFF00CB769D /* 6号玩家发言.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7B825A40FFF00CB769D /* 6号玩家发言.m4a */; };
+		A94EF7F325A40FFF00CB769D /* 答对了.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7B925A40FFF00CB769D /* 答对了.mp3 */; };
+		A94EF7F425A40FFF00CB769D /* 2号玩家开始比划.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7BA25A40FFF00CB769D /* 2号玩家开始比划.m4a */; };
+		A94EF7F525A40FFF00CB769D /* 做的很棒.wav in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7BB25A40FFF00CB769D /* 做的很棒.wav */; };
+		A94EF7F625A40FFF00CB769D /* 失败.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7BC25A40FFF00CB769D /* 失败.mp3 */; };
+		A94EF7F725A40FFF00CB769D /* 再接再厉.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7BD25A40FFF00CB769D /* 再接再厉.mp3 */; };
+		A94EF7F825A40FFF00CB769D /* 1号玩家开始比划.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7BE25A40FFF00CB769D /* 1号玩家开始比划.m4a */; };
+		A94EF7F925A40FFF00CB769D /* 2号玩家发言.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7BF25A40FFF00CB769D /* 2号玩家发言.m4a */; };
+		A94EF7FA25A40FFF00CB769D /* 3号玩家发言.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7C025A40FFF00CB769D /* 3号玩家发言.m4a */; };
+		A94EF7FB25A40FFF00CB769D /* 完美搭档.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7C125A40FFF00CB769D /* 完美搭档.mp3 */; };
+		A94EF7FC25A40FFF00CB769D /* 4号玩家开始比划.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7C225A40FFF00CB769D /* 4号玩家开始比划.m4a */; };
+		A94EF7FD25A40FFF00CB769D /* 获胜.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7C325A40FFF00CB769D /* 获胜.mp3 */; };
+		A94EF7FE25A40FFF00CB769D /* pk发言.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7C425A40FFF00CB769D /* pk发言.m4a */; };
+		A94EF7FF25A40FFF00CB769D /* 游戏开始.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7C525A40FFF00CB769D /* 游戏开始.m4a */; };
+		A94EF80025A40FFF00CB769D /* gamePrepare_old.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7C625A40FFF00CB769D /* gamePrepare_old.mp3 */; };
+		A94EF80125A4100000CB769D /* 3号玩家开始比划.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7C725A40FFF00CB769D /* 3号玩家开始比划.m4a */; };
+		A94EF80225A4100000CB769D /* 6号玩家开始比划.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7C825A40FFF00CB769D /* 6号玩家开始比划.m4a */; };
+		A94EF80325A4100000CB769D /* 5号玩家发言.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7C925A40FFF00CB769D /* 5号玩家发言.m4a */; };
+		A94EF80425A4100000CB769D /* 4号玩家发言.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7CA25A40FFF00CB769D /* 4号玩家发言.m4a */; };
+		A94EF80525A4100000CB769D /* gamePrepare.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7CB25A40FFF00CB769D /* gamePrepare.mp3 */; };
+		A94EF80625A4100000CB769D /* 5out.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7CD25A40FFF00CB769D /* 5out.mp3 */; };
+		A94EF80725A4100000CB769D /* 6say.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7CE25A40FFF00CB769D /* 6say.mp3 */; };
+		A94EF80825A4100000CB769D /* 4say.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7CF25A40FFF00CB769D /* 4say.mp3 */; };
+		A94EF80925A4100000CB769D /* noout.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7D025A40FFF00CB769D /* noout.mp3 */; };
+		A94EF80A25A4100000CB769D /* startpk.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7D125A40FFF00CB769D /* startpk.mp3 */; };
+		A94EF80B25A4100000CB769D /* startvote.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7D225A40FFF00CB769D /* startvote.mp3 */; };
+		A94EF80C25A4100000CB769D /* 3out.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7D325A40FFF00CB769D /* 3out.mp3 */; };
+		A94EF80D25A4100000CB769D /* 1out.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7D425A40FFF00CB769D /* 1out.mp3 */; };
+		A94EF80E25A4100000CB769D /* pingpiao.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7D525A40FFF00CB769D /* pingpiao.mp3 */; };
+		A94EF80F25A4100000CB769D /* 2say.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7D625A40FFF00CB769D /* 2say.mp3 */; };
+		A94EF81025A4100000CB769D /* manWinner.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7D725A40FFF00CB769D /* manWinner.mp3 */; };
+		A94EF81125A4100000CB769D /* 10s_countdown.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7D825A40FFF00CB769D /* 10s_countdown.mp3 */; };
+		A94EF81225A4100000CB769D /* 4out.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7D925A40FFF00CB769D /* 4out.mp3 */; };
+		A94EF81325A4100000CB769D /* 6out.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7DA25A40FFF00CB769D /* 6out.mp3 */; };
+		A94EF81425A4100000CB769D /* 5say.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7DB25A40FFF00CB769D /* 5say.mp3 */; };
+		A94EF81525A4100000CB769D /* 2out.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7DC25A40FFF00CB769D /* 2out.mp3 */; };
+		A94EF81625A4100000CB769D /* 1say.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7DD25A40FFF00CB769D /* 1say.mp3 */; };
+		A94EF81725A4100000CB769D /* 3say.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7DE25A40FFF00CB769D /* 3say.mp3 */; };
+		A94EF81825A4100000CB769D /* spyWinner.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7DF25A40FFF00CB769D /* spyWinner.mp3 */; };
+		A94EF81925A4100000CB769D /* notgood.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7E125A40FFF00CB769D /* notgood.mp3 */; };
+		A94EF81A25A4100000CB769D /* 2perform.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7E225A40FFF00CB769D /* 2perform.mp3 */; };
+		A94EF81B25A4100000CB769D /* 5perform.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7E325A40FFF00CB769D /* 5perform.mp3 */; };
+		A94EF81C25A4100000CB769D /* 321go.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7E425A40FFF00CB769D /* 321go.m4a */; };
+		A94EF81D25A4100000CB769D /* ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7E525A40FFF00CB769D /* ding.mp3 */; };
+		A94EF81E25A4100000CB769D /* 3perform.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7E625A40FFF00CB769D /* 3perform.mp3 */; };
+		A94EF81F25A4100000CB769D /* right.wav in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7E725A40FFF00CB769D /* right.wav */; };
+		A94EF82025A4100000CB769D /* 6perform.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7E825A40FFF00CB769D /* 6perform.mp3 */; };
+		A94EF82125A4100000CB769D /* 1perform.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7E925A40FFF00CB769D /* 1perform.mp3 */; };
+		A94EF82225A4100000CB769D /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7EA25A40FFF00CB769D /* wrong.mp3 */; };
+		A94EF82325A4100000CB769D /* good.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7EB25A40FFF00CB769D /* good.mp3 */; };
+		A94EF82425A4100000CB769D /* 4perform.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7EC25A40FFF00CB769D /* 4perform.mp3 */; };
 		A9590C0B256B592E00A1CBD4 /* IDETextKeyBindingSet.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9590C0A256B592E00A1CBD4 /* IDETextKeyBindingSet.plist */; };
 		A983CE2D24EE5CC200213D35 /* OpenGLPixelBufferView.m in Sources */ = {isa = PBXBuildFile; fileRef = A983CE2724EE5CC200213D35 /* OpenGLPixelBufferView.m */; };
 		A983CE2E24EE5CC200213D35 /* OpenGLPixelBufferView.m in Sources */ = {isa = PBXBuildFile; fileRef = A983CE2724EE5CC200213D35 /* OpenGLPixelBufferView.m */; };
@@ -345,6 +402,64 @@
 		A949C2C82539C61300CF09A5 /* TextureDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextureDataManager.m; sourceTree = "<group>"; };
 		A94EF7A625A40D2400CB769D /* AudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioPlayer.h; sourceTree = "<group>"; };
 		A94EF7A725A40D2400CB769D /* AudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioPlayer.m; sourceTree = "<group>"; };
+		A94EF7AC25A40F8A00CB769D /* PixelsOperator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PixelsOperator.h; sourceTree = "<group>"; };
+		A94EF7AD25A40F8A00CB769D /* PixelsOperator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PixelsOperator.m; sourceTree = "<group>"; };
+		A94EF7B225A40FFF00CB769D /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start.mp3; sourceTree = "<group>"; };
+		A94EF7B425A40FFF00CB769D /* 开始投票.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "开始投票.m4a"; sourceTree = "<group>"; };
+		A94EF7B525A40FFF00CB769D /* 5号玩家开始比划.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "5号玩家开始比划.m4a"; sourceTree = "<group>"; };
+		A94EF7B625A40FFF00CB769D /* 叮.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "叮.mp3"; sourceTree = "<group>"; };
+		A94EF7B725A40FFF00CB769D /* 1号玩家发言.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "1号玩家发言.m4a"; sourceTree = "<group>"; };
+		A94EF7B825A40FFF00CB769D /* 6号玩家发言.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "6号玩家发言.m4a"; sourceTree = "<group>"; };
+		A94EF7B925A40FFF00CB769D /* 答对了.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "答对了.mp3"; sourceTree = "<group>"; };
+		A94EF7BA25A40FFF00CB769D /* 2号玩家开始比划.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "2号玩家开始比划.m4a"; sourceTree = "<group>"; };
+		A94EF7BB25A40FFF00CB769D /* 做的很棒.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "做的很棒.wav"; sourceTree = "<group>"; };
+		A94EF7BC25A40FFF00CB769D /* 失败.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "失败.mp3"; sourceTree = "<group>"; };
+		A94EF7BD25A40FFF00CB769D /* 再接再厉.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "再接再厉.mp3"; sourceTree = "<group>"; };
+		A94EF7BE25A40FFF00CB769D /* 1号玩家开始比划.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "1号玩家开始比划.m4a"; sourceTree = "<group>"; };
+		A94EF7BF25A40FFF00CB769D /* 2号玩家发言.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "2号玩家发言.m4a"; sourceTree = "<group>"; };
+		A94EF7C025A40FFF00CB769D /* 3号玩家发言.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "3号玩家发言.m4a"; sourceTree = "<group>"; };
+		A94EF7C125A40FFF00CB769D /* 完美搭档.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "完美搭档.mp3"; sourceTree = "<group>"; };
+		A94EF7C225A40FFF00CB769D /* 4号玩家开始比划.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "4号玩家开始比划.m4a"; sourceTree = "<group>"; };
+		A94EF7C325A40FFF00CB769D /* 获胜.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "获胜.mp3"; sourceTree = "<group>"; };
+		A94EF7C425A40FFF00CB769D /* pk发言.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pk发言.m4a"; sourceTree = "<group>"; };
+		A94EF7C525A40FFF00CB769D /* 游戏开始.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "游戏开始.m4a"; sourceTree = "<group>"; };
+		A94EF7C625A40FFF00CB769D /* gamePrepare_old.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gamePrepare_old.mp3; sourceTree = "<group>"; };
+		A94EF7C725A40FFF00CB769D /* 3号玩家开始比划.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "3号玩家开始比划.m4a"; sourceTree = "<group>"; };
+		A94EF7C825A40FFF00CB769D /* 6号玩家开始比划.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "6号玩家开始比划.m4a"; sourceTree = "<group>"; };
+		A94EF7C925A40FFF00CB769D /* 5号玩家发言.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "5号玩家发言.m4a"; sourceTree = "<group>"; };
+		A94EF7CA25A40FFF00CB769D /* 4号玩家发言.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "4号玩家发言.m4a"; sourceTree = "<group>"; };
+		A94EF7CB25A40FFF00CB769D /* gamePrepare.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gamePrepare.mp3; sourceTree = "<group>"; };
+		A94EF7CD25A40FFF00CB769D /* 5out.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 5out.mp3; sourceTree = "<group>"; };
+		A94EF7CE25A40FFF00CB769D /* 6say.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 6say.mp3; sourceTree = "<group>"; };
+		A94EF7CF25A40FFF00CB769D /* 4say.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 4say.mp3; sourceTree = "<group>"; };
+		A94EF7D025A40FFF00CB769D /* noout.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = noout.mp3; sourceTree = "<group>"; };
+		A94EF7D125A40FFF00CB769D /* startpk.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = startpk.mp3; sourceTree = "<group>"; };
+		A94EF7D225A40FFF00CB769D /* startvote.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = startvote.mp3; sourceTree = "<group>"; };
+		A94EF7D325A40FFF00CB769D /* 3out.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 3out.mp3; sourceTree = "<group>"; };
+		A94EF7D425A40FFF00CB769D /* 1out.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1out.mp3; sourceTree = "<group>"; };
+		A94EF7D525A40FFF00CB769D /* pingpiao.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pingpiao.mp3; sourceTree = "<group>"; };
+		A94EF7D625A40FFF00CB769D /* 2say.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 2say.mp3; sourceTree = "<group>"; };
+		A94EF7D725A40FFF00CB769D /* manWinner.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = manWinner.mp3; sourceTree = "<group>"; };
+		A94EF7D825A40FFF00CB769D /* 10s_countdown.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 10s_countdown.mp3; sourceTree = "<group>"; };
+		A94EF7D925A40FFF00CB769D /* 4out.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 4out.mp3; sourceTree = "<group>"; };
+		A94EF7DA25A40FFF00CB769D /* 6out.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 6out.mp3; sourceTree = "<group>"; };
+		A94EF7DB25A40FFF00CB769D /* 5say.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 5say.mp3; sourceTree = "<group>"; };
+		A94EF7DC25A40FFF00CB769D /* 2out.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 2out.mp3; sourceTree = "<group>"; };
+		A94EF7DD25A40FFF00CB769D /* 1say.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1say.mp3; sourceTree = "<group>"; };
+		A94EF7DE25A40FFF00CB769D /* 3say.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 3say.mp3; sourceTree = "<group>"; };
+		A94EF7DF25A40FFF00CB769D /* spyWinner.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = spyWinner.mp3; sourceTree = "<group>"; };
+		A94EF7E125A40FFF00CB769D /* notgood.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = notgood.mp3; sourceTree = "<group>"; };
+		A94EF7E225A40FFF00CB769D /* 2perform.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 2perform.mp3; sourceTree = "<group>"; };
+		A94EF7E325A40FFF00CB769D /* 5perform.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 5perform.mp3; sourceTree = "<group>"; };
+		A94EF7E425A40FFF00CB769D /* 321go.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 321go.m4a; sourceTree = "<group>"; };
+		A94EF7E525A40FFF00CB769D /* ding.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ding.mp3; sourceTree = "<group>"; };
+		A94EF7E625A40FFF00CB769D /* 3perform.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 3perform.mp3; sourceTree = "<group>"; };
+		A94EF7E725A40FFF00CB769D /* right.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = right.wav; sourceTree = "<group>"; };
+		A94EF7E825A40FFF00CB769D /* 6perform.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 6perform.mp3; sourceTree = "<group>"; };
+		A94EF7E925A40FFF00CB769D /* 1perform.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1perform.mp3; sourceTree = "<group>"; };
+		A94EF7EA25A40FFF00CB769D /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wrong.mp3; sourceTree = "<group>"; };
+		A94EF7EB25A40FFF00CB769D /* good.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = good.mp3; sourceTree = "<group>"; };
+		A94EF7EC25A40FFF00CB769D /* 4perform.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 4perform.mp3; sourceTree = "<group>"; };
 		A9590C0A256B592E00A1CBD4 /* IDETextKeyBindingSet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = IDETextKeyBindingSet.plist; sourceTree = "<group>"; };
 		A983CE2724EE5CC200213D35 /* OpenGLPixelBufferView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLPixelBufferView.m; sourceTree = "<group>"; };
 		A983CE2824EE5CC200213D35 /* ShaderUtilities.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ShaderUtilities.c; sourceTree = "<group>"; };
@@ -821,6 +936,7 @@
 		3AE550D323A9189F001D989E /* Objective-C */ = {
 			isa = PBXGroup;
 			children = (
+				B215CC352431BE410017BFD9 /* EasyProgressHud */,
 				3A8F79E32557ECFA00069914 /* HollowOut */,
 				A98671D3255639E9003381A7 /* RectRoundProgress */,
 				A983CE2624EE5CC200213D35 /* OpenGLPixelBufferView */,
@@ -856,10 +972,10 @@
 		3AE550DA23A9189F001D989E /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				A94EF7AB25A40F2B00CB769D /* PixelsOperator */,
 				B26FBCCA2441CDB8003DB3BE /* lottie-ios */,
 				B2169DE124401AF7002CFE3E /* MediaRecorder */,
 				B28472342404B88E00C1194F /* DownloadUpload */,
-				B215CC352431BE410017BFD9 /* EasyProgressHud */,
 				B2B6B1A52408E68100187850 /* Regular */,
 				B2AA0F4123C5869F00BEBA27 /* FMDB */,
 				B27B780423AC61600083E6AE /* AFNetworking */,
@@ -1031,8 +1147,105 @@
 			children = (
 				A94EF7A625A40D2400CB769D /* AudioPlayer.h */,
 				A94EF7A725A40D2400CB769D /* AudioPlayer.m */,
+				A94EF7B125A40FFF00CB769D /* AudioResources */,
 			);
 			path = AudioPlayer;
+			sourceTree = "<group>";
+		};
+		A94EF7AB25A40F2B00CB769D /* PixelsOperator */ = {
+			isa = PBXGroup;
+			children = (
+				A94EF7AC25A40F8A00CB769D /* PixelsOperator.h */,
+				A94EF7AD25A40F8A00CB769D /* PixelsOperator.m */,
+			);
+			path = PixelsOperator;
+			sourceTree = "<group>";
+		};
+		A94EF7B125A40FFF00CB769D /* AudioResources */ = {
+			isa = PBXGroup;
+			children = (
+				A94EF7B225A40FFF00CB769D /* start.mp3 */,
+				A94EF7B325A40FFF00CB769D /* oldAudio */,
+				A94EF7CB25A40FFF00CB769D /* gamePrepare.mp3 */,
+				A94EF7CC25A40FFF00CB769D /* SpyAudio */,
+				A94EF7E025A40FFF00CB769D /* GuessAudio */,
+			);
+			path = AudioResources;
+			sourceTree = "<group>";
+		};
+		A94EF7B325A40FFF00CB769D /* oldAudio */ = {
+			isa = PBXGroup;
+			children = (
+				A94EF7B425A40FFF00CB769D /* 开始投票.m4a */,
+				A94EF7B525A40FFF00CB769D /* 5号玩家开始比划.m4a */,
+				A94EF7B625A40FFF00CB769D /* 叮.mp3 */,
+				A94EF7B725A40FFF00CB769D /* 1号玩家发言.m4a */,
+				A94EF7B825A40FFF00CB769D /* 6号玩家发言.m4a */,
+				A94EF7B925A40FFF00CB769D /* 答对了.mp3 */,
+				A94EF7BA25A40FFF00CB769D /* 2号玩家开始比划.m4a */,
+				A94EF7BB25A40FFF00CB769D /* 做的很棒.wav */,
+				A94EF7BC25A40FFF00CB769D /* 失败.mp3 */,
+				A94EF7BD25A40FFF00CB769D /* 再接再厉.mp3 */,
+				A94EF7BE25A40FFF00CB769D /* 1号玩家开始比划.m4a */,
+				A94EF7BF25A40FFF00CB769D /* 2号玩家发言.m4a */,
+				A94EF7C025A40FFF00CB769D /* 3号玩家发言.m4a */,
+				A94EF7C125A40FFF00CB769D /* 完美搭档.mp3 */,
+				A94EF7C225A40FFF00CB769D /* 4号玩家开始比划.m4a */,
+				A94EF7C325A40FFF00CB769D /* 获胜.mp3 */,
+				A94EF7C425A40FFF00CB769D /* pk发言.m4a */,
+				A94EF7C525A40FFF00CB769D /* 游戏开始.m4a */,
+				A94EF7C625A40FFF00CB769D /* gamePrepare_old.mp3 */,
+				A94EF7C725A40FFF00CB769D /* 3号玩家开始比划.m4a */,
+				A94EF7C825A40FFF00CB769D /* 6号玩家开始比划.m4a */,
+				A94EF7C925A40FFF00CB769D /* 5号玩家发言.m4a */,
+				A94EF7CA25A40FFF00CB769D /* 4号玩家发言.m4a */,
+			);
+			path = oldAudio;
+			sourceTree = "<group>";
+		};
+		A94EF7CC25A40FFF00CB769D /* SpyAudio */ = {
+			isa = PBXGroup;
+			children = (
+				A94EF7CD25A40FFF00CB769D /* 5out.mp3 */,
+				A94EF7CE25A40FFF00CB769D /* 6say.mp3 */,
+				A94EF7CF25A40FFF00CB769D /* 4say.mp3 */,
+				A94EF7D025A40FFF00CB769D /* noout.mp3 */,
+				A94EF7D125A40FFF00CB769D /* startpk.mp3 */,
+				A94EF7D225A40FFF00CB769D /* startvote.mp3 */,
+				A94EF7D325A40FFF00CB769D /* 3out.mp3 */,
+				A94EF7D425A40FFF00CB769D /* 1out.mp3 */,
+				A94EF7D525A40FFF00CB769D /* pingpiao.mp3 */,
+				A94EF7D625A40FFF00CB769D /* 2say.mp3 */,
+				A94EF7D725A40FFF00CB769D /* manWinner.mp3 */,
+				A94EF7D825A40FFF00CB769D /* 10s_countdown.mp3 */,
+				A94EF7D925A40FFF00CB769D /* 4out.mp3 */,
+				A94EF7DA25A40FFF00CB769D /* 6out.mp3 */,
+				A94EF7DB25A40FFF00CB769D /* 5say.mp3 */,
+				A94EF7DC25A40FFF00CB769D /* 2out.mp3 */,
+				A94EF7DD25A40FFF00CB769D /* 1say.mp3 */,
+				A94EF7DE25A40FFF00CB769D /* 3say.mp3 */,
+				A94EF7DF25A40FFF00CB769D /* spyWinner.mp3 */,
+			);
+			path = SpyAudio;
+			sourceTree = "<group>";
+		};
+		A94EF7E025A40FFF00CB769D /* GuessAudio */ = {
+			isa = PBXGroup;
+			children = (
+				A94EF7E125A40FFF00CB769D /* notgood.mp3 */,
+				A94EF7E225A40FFF00CB769D /* 2perform.mp3 */,
+				A94EF7E325A40FFF00CB769D /* 5perform.mp3 */,
+				A94EF7E425A40FFF00CB769D /* 321go.m4a */,
+				A94EF7E525A40FFF00CB769D /* ding.mp3 */,
+				A94EF7E625A40FFF00CB769D /* 3perform.mp3 */,
+				A94EF7E725A40FFF00CB769D /* right.wav */,
+				A94EF7E825A40FFF00CB769D /* 6perform.mp3 */,
+				A94EF7E925A40FFF00CB769D /* 1perform.mp3 */,
+				A94EF7EA25A40FFF00CB769D /* wrong.mp3 */,
+				A94EF7EB25A40FFF00CB769D /* good.mp3 */,
+				A94EF7EC25A40FFF00CB769D /* 4perform.mp3 */,
+			);
+			path = GuessAudio;
 			sourceTree = "<group>";
 		};
 		A9590C09256B590100A1CBD4 /* 快捷键的拷贝 */ = {
@@ -1848,57 +2061,113 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A94EF80025A40FFF00CB769D /* gamePrepare_old.mp3 in Resources */,
+				A94EF80225A4100000CB769D /* 6号玩家开始比划.m4a in Resources */,
+				A94EF81625A4100000CB769D /* 1say.mp3 in Resources */,
 				A949C28625393FA700CF09A5 /* point.vsh in Resources */,
 				B2506D1F23ABA1480034A472 /* select_top_icon@3x.png in Resources */,
 				B243E16423C4557C00B37519 /* CoreFundationReadme in Resources */,
 				A949C28525393FA700CF09A5 /* point.fsh in Resources */,
 				3AD14A2624615273004D54B8 /* words_professions.txt in Resources */,
+				A94EF80825A4100000CB769D /* 4say.mp3 in Resources */,
 				3A99DE1723ABCB83002DDF23 /* TreasureChest.podspec in Resources */,
 				3AD14A2D24615273004D54B8 /* words_medical.txt in Resources */,
 				B215CC482431F5290017BFD9 /* hud_info.png in Resources */,
+				A94EF80E25A4100000CB769D /* pingpiao.mp3 in Resources */,
 				B2506D2023ABA1480034A472 /* select_top_icon@2x.png in Resources */,
+				A94EF7F225A40FFF00CB769D /* 6号玩家发言.m4a in Resources */,
 				3AD14A3524615608004D54B8 /* Lexicon.plist in Resources */,
 				3AD14A2424615273004D54B8 /* words_it.txt in Resources */,
+				A94EF82125A4100000CB769D /* 1perform.mp3 in Resources */,
+				A94EF7FA25A40FFF00CB769D /* 3号玩家发言.m4a in Resources */,
 				B2506D1B23ABA1410034A472 /* select_down_icon@3x.png in Resources */,
 				3AD14A3D24619A44004D54B8 /* words_medical.plist in Resources */,
+				A94EF82425A4100000CB769D /* 4perform.mp3 in Resources */,
 				3AD14A4524619C75004D54B8 /* words_law.plist in Resources */,
+				A94EF82225A4100000CB769D /* wrong.mp3 in Resources */,
 				B2506D1C23ABA1410034A472 /* select_down_icon@2x.png in Resources */,
 				B215CC472431F5290017BFD9 /* hud_error@2x.png in Resources */,
+				A94EF7FE25A40FFF00CB769D /* pk发言.m4a in Resources */,
 				3AD14A4124619BC6004D54B8 /* words_idiom.plist in Resources */,
 				B2506D1323ABA12D0034A472 /* options_none_icon@2x.png in Resources */,
+				A94EF7F325A40FFF00CB769D /* 答对了.mp3 in Resources */,
 				3A40235B23A62ED100BDB4E3 /* Main.storyboard in Resources */,
 				B26F6E24245149B8005EAC38 /* lotties.bundle in Resources */,
+				A94EF80D25A4100000CB769D /* 1out.mp3 in Resources */,
+				A94EF7FC25A40FFF00CB769D /* 4号玩家开始比划.m4a in Resources */,
+				A94EF81F25A4100000CB769D /* right.wav in Resources */,
+				A94EF80A25A4100000CB769D /* startpk.mp3 in Resources */,
 				3AD14A4324619C19004D54B8 /* words_car.plist in Resources */,
 				3AD14A2924615273004D54B8 /* words_foods.txt in Resources */,
+				A94EF80F25A4100000CB769D /* 2say.mp3 in Resources */,
+				A94EF7FB25A40FFF00CB769D /* 完美搭档.mp3 in Resources */,
+				A94EF80B25A4100000CB769D /* startvote.mp3 in Resources */,
+				A94EF81A25A4100000CB769D /* 2perform.mp3 in Resources */,
+				A94EF80C25A4100000CB769D /* 3out.mp3 in Resources */,
+				A94EF7F725A40FFF00CB769D /* 再接再厉.mp3 in Resources */,
 				3A40235823A62ED100BDB4E3 /* Assets.xcassets in Resources */,
 				3AD14A2524615273004D54B8 /* words_car.txt in Resources */,
 				B215CC4B2431F5290017BFD9 /* hud_info@2x.png in Resources */,
+				A94EF7F025A40FFF00CB769D /* 叮.mp3 in Resources */,
 				A918EC102555517F00C5964D /* Controllers.plist in Resources */,
 				3AD14A4D24619EE2004D54B8 /* words_it.plist in Resources */,
+				A94EF81925A4100000CB769D /* notgood.mp3 in Resources */,
+				A94EF7FF25A40FFF00CB769D /* 游戏开始.m4a in Resources */,
 				3AD14A2A24615273004D54B8 /* words_idiom.txt in Resources */,
+				A94EF7EE25A40FFF00CB769D /* 开始投票.m4a in Resources */,
+				A94EF7ED25A40FFF00CB769D /* start.mp3 in Resources */,
 				3AD14A5124619F83004D54B8 /* words_poem.plist in Resources */,
 				3AD14A4F24619F2F004D54B8 /* words_famousperson.plist in Resources */,
+				A94EF81B25A4100000CB769D /* 5perform.mp3 in Resources */,
 				3AD14A2C24615273004D54B8 /* words_animals.txt in Resources */,
 				3AD14A2824615273004D54B8 /* words_famousperson.txt in Resources */,
+				A94EF7F425A40FFF00CB769D /* 2号玩家开始比划.m4a in Resources */,
 				3AD14A4B24619E7B004D54B8 /* words_foods.plist in Resources */,
 				B215CC4A2431F5290017BFD9 /* hud_success@2x.png in Resources */,
 				A9377450256E97EA0085FF21 /* 1.bytes in Resources */,
 				A9590C0B256B592E00A1CBD4 /* IDETextKeyBindingSet.plist in Resources */,
+				A94EF81D25A4100000CB769D /* ding.mp3 in Resources */,
+				A94EF81C25A4100000CB769D /* 321go.m4a in Resources */,
+				A94EF81825A4100000CB769D /* spyWinner.mp3 in Resources */,
+				A94EF7FD25A40FFF00CB769D /* 获胜.mp3 in Resources */,
+				A94EF7F525A40FFF00CB769D /* 做的很棒.wav in Resources */,
 				3AD14A3F24619AB1004D54B8 /* words_toponymy.plist in Resources */,
+				A94EF81425A4100000CB769D /* 5say.mp3 in Resources */,
 				B2506D1423ABA12D0034A472 /* options_none_icon@3x.png in Resources */,
 				3AD14A3B24619735004D54B8 /* words_animals.plist in Resources */,
+				A94EF80525A4100000CB769D /* gamePrepare.mp3 in Resources */,
 				3AD14A2B24615273004D54B8 /* words_law.txt in Resources */,
 				3AD14A2224615273004D54B8 /* words_finance.txt in Resources */,
+				A94EF7EF25A40FFF00CB769D /* 5号玩家开始比划.m4a in Resources */,
+				A94EF81E25A4100000CB769D /* 3perform.mp3 in Resources */,
 				B215CC492431F5290017BFD9 /* hud_error.png in Resources */,
 				B215CC462431F5290017BFD9 /* hud_success.png in Resources */,
+				A94EF7F825A40FFF00CB769D /* 1号玩家开始比划.m4a in Resources */,
+				A94EF80125A4100000CB769D /* 3号玩家开始比划.m4a in Resources */,
+				A94EF81725A4100000CB769D /* 3say.mp3 in Resources */,
+				A94EF81325A4100000CB769D /* 6out.mp3 in Resources */,
 				3AD14A2324615273004D54B8 /* words_toponymy.txt in Resources */,
+				A94EF82025A4100000CB769D /* 6perform.mp3 in Resources */,
+				A94EF7F625A40FFF00CB769D /* 失败.mp3 in Resources */,
+				A94EF81225A4100000CB769D /* 4out.mp3 in Resources */,
+				A94EF81525A4100000CB769D /* 2out.mp3 in Resources */,
 				B2506D0F23AB8AFA0034A472 /* TestData.plist in Resources */,
 				A949C2702539391000CF09A5 /* documentation in Resources */,
 				3A40235A23A62ED100BDB4E3 /* LaunchScreen.storyboard in Resources */,
 				3AD14A4724619CB2004D54B8 /* words_professions.plist in Resources */,
+				A94EF7F925A40FFF00CB769D /* 2号玩家发言.m4a in Resources */,
+				A94EF80425A4100000CB769D /* 4号玩家发言.m4a in Resources */,
+				A94EF82325A4100000CB769D /* good.mp3 in Resources */,
+				A94EF80925A4100000CB769D /* noout.mp3 in Resources */,
+				A94EF7F125A40FFF00CB769D /* 1号玩家发言.m4a in Resources */,
 				B2506D1823ABA1370034A472 /* options_selected_icon@3x.png in Resources */,
 				3AD14A2724615273004D54B8 /* words_poem.txt in Resources */,
+				A94EF81025A4100000CB769D /* manWinner.mp3 in Resources */,
 				B2506D1723ABA1370034A472 /* options_selected_icon@2x.png in Resources */,
+				A94EF80725A4100000CB769D /* 6say.mp3 in Resources */,
+				A94EF81125A4100000CB769D /* 10s_countdown.mp3 in Resources */,
+				A94EF80625A4100000CB769D /* 5out.mp3 in Resources */,
+				A94EF80325A4100000CB769D /* 5号玩家发言.m4a in Resources */,
 				3AD14A4924619E1C004D54B8 /* words_finance.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2052,6 +2321,7 @@
 				B2C459312440524F00117BD7 /* QuadCurveGeometry.m in Sources */,
 				B26FBD8A2441CDB8003DB3BE /* LOTAnimationView.m in Sources */,
 				B26FBD792441CDB8003DB3BE /* LOTAsset.m in Sources */,
+				A94EF7AE25A40F8A00CB769D /* PixelsOperator.m in Sources */,
 				B2BC387323BD976200D5B9C6 /* NSDecimalNumber+Extension.m in Sources */,
 				B26FBD752441CDB8003DB3BE /* LOTLayerGroup.m in Sources */,
 				B26FBD5C2441CDB8003DB3BE /* LOTPathInterpolator.m in Sources */,
