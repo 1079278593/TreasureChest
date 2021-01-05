@@ -7,6 +7,7 @@
 //
 
 #import "AudioPlayer.h"
+#import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import <AudioToolbox/AudioToolbox.h>
 
@@ -46,7 +47,6 @@ static AudioPlayer *manager = nil;
             [[AVAudioSession sharedInstance] setActive:NO error:&error];
         }
         
-        [[GameLiveCenter shareInstance] effectAudioStart:NO];
     }];
 }
 
@@ -70,7 +70,7 @@ static AudioPlayer *manager = nil;
 //    [self systemSoundId:filePath];
 //    return;
     
-    [[GameLiveCenter shareInstance] effectAudioStart:YES];
+
     [self getSystemVolumSlider].value = 1;
     [self deviceSetActive];
     
