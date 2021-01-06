@@ -127,6 +127,8 @@
 		A94EF82225A4100000CB769D /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7EA25A40FFF00CB769D /* wrong.mp3 */; };
 		A94EF82325A4100000CB769D /* good.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7EB25A40FFF00CB769D /* good.mp3 */; };
 		A94EF82425A4100000CB769D /* 4perform.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7EC25A40FFF00CB769D /* 4perform.mp3 */; };
+		A957EF0125A566AD00A7D430 /* BusyLottie.m in Sources */ = {isa = PBXBuildFile; fileRef = A957EF0025A566AD00A7D430 /* BusyLottie.m */; };
+		A957EF9E25A596C300A7D430 /* LottiePlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A957EF9D25A596C300A7D430 /* LottiePlayerView.m */; };
 		A9590C0B256B592E00A1CBD4 /* IDETextKeyBindingSet.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9590C0A256B592E00A1CBD4 /* IDETextKeyBindingSet.plist */; };
 		A983CE2D24EE5CC200213D35 /* OpenGLPixelBufferView.m in Sources */ = {isa = PBXBuildFile; fileRef = A983CE2724EE5CC200213D35 /* OpenGLPixelBufferView.m */; };
 		A983CE2E24EE5CC200213D35 /* OpenGLPixelBufferView.m in Sources */ = {isa = PBXBuildFile; fileRef = A983CE2724EE5CC200213D35 /* OpenGLPixelBufferView.m */; };
@@ -460,6 +462,10 @@
 		A94EF7EA25A40FFF00CB769D /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wrong.mp3; sourceTree = "<group>"; };
 		A94EF7EB25A40FFF00CB769D /* good.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = good.mp3; sourceTree = "<group>"; };
 		A94EF7EC25A40FFF00CB769D /* 4perform.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 4perform.mp3; sourceTree = "<group>"; };
+		A957EEFF25A566AD00A7D430 /* BusyLottie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BusyLottie.h; sourceTree = "<group>"; };
+		A957EF0025A566AD00A7D430 /* BusyLottie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BusyLottie.m; sourceTree = "<group>"; };
+		A957EF9C25A596C300A7D430 /* LottiePlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LottiePlayerView.h; sourceTree = "<group>"; };
+		A957EF9D25A596C300A7D430 /* LottiePlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LottiePlayerView.m; sourceTree = "<group>"; };
 		A9590C0A256B592E00A1CBD4 /* IDETextKeyBindingSet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = IDETextKeyBindingSet.plist; sourceTree = "<group>"; };
 		A983CE2724EE5CC200213D35 /* OpenGLPixelBufferView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLPixelBufferView.m; sourceTree = "<group>"; };
 		A983CE2824EE5CC200213D35 /* ShaderUtilities.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ShaderUtilities.c; sourceTree = "<group>"; };
@@ -836,10 +842,10 @@
 				3A40234723A62ED100BDB4E3 /* AppDelegate.m */,
 				B2506D0A23AB84330034A472 /* PrefixHeader.pch */,
 				3AE550EA23A91A93001D989E /* TreasureChest-Bridging-Header.h */,
+				B2506D0323AB63E40034A472 /* TreasureDemo */,
 				B21EF68624482F0600BEBB9E /* BaseClass */,
 				A918EC13255554FF00C5964D /* Controllers */,
 				B243E07823C4552E00B37519 /* CF-1151.16-源码研究 */,
-				B2506D0323AB63E40034A472 /* TreasureDemo */,
 			);
 			path = TreasureChestDemo;
 			sourceTree = "<group>";
@@ -1042,6 +1048,7 @@
 				A918EC382555671E00C5964D /* TestController.m */,
 				A90ECEE0259577EB005E3EF0 /* TestView.h */,
 				A90ECEE1259577EB005E3EF0 /* TestView.m */,
+				A957EEFE25A5664F00A7D430 /* BusyLottie */,
 				A94EF7A525A40D2400CB769D /* AudioPlayer */,
 			);
 			path = TestController;
@@ -1246,6 +1253,17 @@
 				A94EF7EC25A40FFF00CB769D /* 4perform.mp3 */,
 			);
 			path = GuessAudio;
+			sourceTree = "<group>";
+		};
+		A957EEFE25A5664F00A7D430 /* BusyLottie */ = {
+			isa = PBXGroup;
+			children = (
+				A957EF9C25A596C300A7D430 /* LottiePlayerView.h */,
+				A957EF9D25A596C300A7D430 /* LottiePlayerView.m */,
+				A957EEFF25A566AD00A7D430 /* BusyLottie.h */,
+				A957EF0025A566AD00A7D430 /* BusyLottie.m */,
+			);
+			path = BusyLottie;
 			sourceTree = "<group>";
 		};
 		A9590C09256B590100A1CBD4 /* 快捷键的拷贝 */ = {
@@ -2374,6 +2392,7 @@
 				B2506CEC23AB48E60034A472 /* UIView+Extension.m in Sources */,
 				B2169E09244048EB002CFE3E /* DrawingBoardView.m in Sources */,
 				B2506D0623AB65A90034A472 /* ResidentScrollViewCtl.m in Sources */,
+				A957EF9E25A596C300A7D430 /* LottiePlayerView.m in Sources */,
 				B2BC388023C0385600D5B9C6 /* ShapeViewCtl.m in Sources */,
 				A99F70292535AAD200A136E1 /* CameraController.m in Sources */,
 				B2830EFF23B5F8600049AE99 /* NSString+TextSize.m in Sources */,
@@ -2393,6 +2412,7 @@
 				A94EF7A825A40D2400CB769D /* AudioPlayer.m in Sources */,
 				B2169DE824401B4F002CFE3E /* ScreenRecorder.m in Sources */,
 				B284723A2404B90300C1194F /* URLUploadTask.m in Sources */,
+				A957EF0125A566AD00A7D430 /* BusyLottie.m in Sources */,
 				B26FBD622441CDB8003DB3BE /* LOTNumberInterpolator.m in Sources */,
 				B28491502436EC0B004ECE52 /* UILabel+Insets.m in Sources */,
 				B2506CFC23AB5B4D0034A472 /* CollapsibleView.m in Sources */,
