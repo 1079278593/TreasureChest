@@ -932,16 +932,17 @@
 			children = (
 				3AE550DE23A9189F001D989E /* Macro */,
 				3AE550DB23A9189F001D989E /* Extension */,
-				3AE550D323A9189F001D989E /* Objective-C */,
+				3AE550D323A9189F001D989E /* ViewModule */,
 				3AE550DA23A9189F001D989E /* Tool */,
 			);
 			name = TreasureChest;
 			path = ../TreasureChest;
 			sourceTree = "<group>";
 		};
-		3AE550D323A9189F001D989E /* Objective-C */ = {
+		3AE550D323A9189F001D989E /* ViewModule */ = {
 			isa = PBXGroup;
 			children = (
+				A957EEFE25A5664F00A7D430 /* BusyLottie */,
 				B215CC352431BE410017BFD9 /* EasyProgressHud */,
 				3A8F79E32557ECFA00069914 /* HollowOut */,
 				A98671D3255639E9003381A7 /* RectRoundProgress */,
@@ -954,7 +955,7 @@
 				3AE550D423A9189F001D989E /* FormsView */,
 				3AE550D723A9189F001D989E /* ResidentScrollView */,
 			);
-			path = "Objective-C";
+			path = ViewModule;
 			sourceTree = "<group>";
 		};
 		3AE550D423A9189F001D989E /* FormsView */ = {
@@ -1048,7 +1049,6 @@
 				A918EC382555671E00C5964D /* TestController.m */,
 				A90ECEE0259577EB005E3EF0 /* TestView.h */,
 				A90ECEE1259577EB005E3EF0 /* TestView.m */,
-				A957EEFE25A5664F00A7D430 /* BusyLottie */,
 				A94EF7A525A40D2400CB769D /* AudioPlayer */,
 			);
 			path = TestController;
