@@ -14,6 +14,7 @@
 #import "AudioPlayer.h"
 #import "Lottie.h"
 #import "LottiePlayerView.h"
+#import "TestPytorch.h"
 
 @interface TestController ()
 
@@ -22,6 +23,7 @@
 @property(nonatomic, strong)UIImageView *bgImgView;
 @property(nonatomic, strong)UIImageView *frontImgView;
 @property(nonatomic, strong)LottiePlayerView *lottiePlayerView;
+@property(nonatomic, strong)TestPytorch *pytorch;
 
 
 @end
@@ -41,24 +43,12 @@
     [self.view addSubview:_button];
     _button.frame = CGRectMake(220, 70, 90, 44);
     
-    self.lottiePlayerView = [[LottiePlayerView alloc]init];
-    [self.view addSubview:self.lottiePlayerView];
-    self.lottiePlayerView.frame = CGRectMake(0, 120, KScreenWidth, 400);
-    self.lottiePlayerView.layer.borderWidth = 1;
-    
+    self.pytorch = [[TestPytorch alloc]init];
 }
 
 #pragma mark - < event >
 - (void)buttonEvent:(UIButton *)button {
-    //https://o.yinliqu.com/gift/xiezi2.json
-    //https://o.yinliqu.com/gift/zhizhu2.json
-    //https://o.yinliqu.com/gift/dabai.json
-//    NSString *url = @"https://o.yinliqu.com/gift/xiezi2.json";
-    NSArray *paths = @[@"https://o.yinliqu.com/gift/xiezi2.json",
-                       @"https://o.yinliqu.com/gift/zhizhu2.json",
-                       @"https://o.yinliqu.com/gift/dabai.json"];
-    int index = arc4random() % 3;
-    [self.lottiePlayerView showLottieWithUrl:paths[index]];
+    [self.pytorch testBlob];
 }
 
 #pragma mark - < init view >

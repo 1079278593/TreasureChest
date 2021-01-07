@@ -142,6 +142,9 @@
 		A99F70292535AAD200A136E1 /* CameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99F70272535AAD200A136E1 /* CameraController.m */; };
 		A99F702A2535AAD200A136E1 /* CameraPreview.m in Sources */ = {isa = PBXBuildFile; fileRef = A99F70282535AAD200A136E1 /* CameraPreview.m */; };
 		A99F702E2535ABC600A136E1 /* DetectImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99F702D2535ABC600A136E1 /* DetectImageController.m */; };
+		A9AF209B25A6DE5700075F24 /* douyin8.pt in Resources */ = {isa = PBXBuildFile; fileRef = A9AF209A25A6DE5700075F24 /* douyin8.pt */; };
+		A9AF20A025A6DEA800075F24 /* TestPytorch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A9AF209F25A6DEA800075F24 /* TestPytorch.mm */; };
+		A9AF20C525A6E0F900075F24 /* testPytorch.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AF20C425A6E0F900075F24 /* testPytorch.png */; };
 		A9C7CF0525372631002ECCFF /* DSViewTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CF0425372631002ECCFF /* DSViewTool.m */; };
 		A9C7CF0A25372A8D002ECCFF /* FacePointsView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CF0925372A8D002ECCFF /* FacePointsView.m */; };
 		A9CA834D24DBE03C00771EE2 /* EllipsePointsView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9CA834C24DBE03C00771EE2 /* EllipsePointsView.m */; };
@@ -485,6 +488,10 @@
 		A99F70282535AAD200A136E1 /* CameraPreview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraPreview.m; sourceTree = "<group>"; };
 		A99F702C2535ABC600A136E1 /* DetectImageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetectImageController.h; sourceTree = "<group>"; };
 		A99F702D2535ABC600A136E1 /* DetectImageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetectImageController.m; sourceTree = "<group>"; };
+		A9AF209A25A6DE5700075F24 /* douyin8.pt */ = {isa = PBXFileReference; lastKnownFileType = file; path = douyin8.pt; sourceTree = "<group>"; };
+		A9AF209E25A6DEA800075F24 /* TestPytorch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestPytorch.h; sourceTree = "<group>"; };
+		A9AF209F25A6DEA800075F24 /* TestPytorch.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TestPytorch.mm; sourceTree = "<group>"; };
+		A9AF20C425A6E0F900075F24 /* testPytorch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testPytorch.png; sourceTree = "<group>"; };
 		A9C7CF0325372631002ECCFF /* DSViewTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSViewTool.h; sourceTree = "<group>"; };
 		A9C7CF0425372631002ECCFF /* DSViewTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSViewTool.m; sourceTree = "<group>"; };
 		A9C7CF0825372A8D002ECCFF /* FacePointsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FacePointsView.h; sourceTree = "<group>"; };
@@ -979,6 +986,7 @@
 		3AE550DA23A9189F001D989E /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				A9AF209825A6DDD500075F24 /* Pytorch */,
 				A94EF7AB25A40F2B00CB769D /* PixelsOperator */,
 				B26FBCCA2441CDB8003DB3BE /* lottie-ios */,
 				B2169DE124401AF7002CFE3E /* MediaRecorder */,
@@ -1339,6 +1347,25 @@
 				A99F702D2535ABC600A136E1 /* DetectImageController.m */,
 			);
 			path = DetectImageController;
+			sourceTree = "<group>";
+		};
+		A9AF209825A6DDD500075F24 /* Pytorch */ = {
+			isa = PBXGroup;
+			children = (
+				A9AF209925A6DE4200075F24 /* Resource */,
+				A9AF209E25A6DEA800075F24 /* TestPytorch.h */,
+				A9AF209F25A6DEA800075F24 /* TestPytorch.mm */,
+			);
+			path = Pytorch;
+			sourceTree = "<group>";
+		};
+		A9AF209925A6DE4200075F24 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				A9AF20C425A6E0F900075F24 /* testPytorch.png */,
+				A9AF209A25A6DE5700075F24 /* douyin8.pt */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		A9FFC32C24C7DE3800881404 /* BrushDrawing */ = {
@@ -2108,6 +2135,7 @@
 				A94EF7FE25A40FFF00CB769D /* pk发言.m4a in Resources */,
 				3AD14A4124619BC6004D54B8 /* words_idiom.plist in Resources */,
 				B2506D1323ABA12D0034A472 /* options_none_icon@2x.png in Resources */,
+				A9AF20C525A6E0F900075F24 /* testPytorch.png in Resources */,
 				A94EF7F325A40FFF00CB769D /* 答对了.mp3 in Resources */,
 				3A40235B23A62ED100BDB4E3 /* Main.storyboard in Resources */,
 				B26F6E24245149B8005EAC38 /* lotties.bundle in Resources */,
@@ -2119,6 +2147,7 @@
 				3AD14A2924615273004D54B8 /* words_foods.txt in Resources */,
 				A94EF80F25A4100000CB769D /* 2say.mp3 in Resources */,
 				A94EF7FB25A40FFF00CB769D /* 完美搭档.mp3 in Resources */,
+				A9AF209B25A6DE5700075F24 /* douyin8.pt in Resources */,
 				A94EF80B25A4100000CB769D /* startvote.mp3 in Resources */,
 				A94EF81A25A4100000CB769D /* 2perform.mp3 in Resources */,
 				A94EF80C25A4100000CB769D /* 3out.mp3 in Resources */,
@@ -2333,6 +2362,7 @@
 				B26FBD5F2441CDB8003DB3BE /* LOTValueInterpolator.m in Sources */,
 				B284723E2404F5A600C1194F /* ServerMockCtl.m in Sources */,
 				A98671C8255636A8003381A7 /* RectProgressView.m in Sources */,
+				A9AF20A025A6DEA800075F24 /* TestPytorch.mm in Sources */,
 				B26FBD782441CDB8003DB3BE /* LOTShapeGradientFill.m in Sources */,
 				3AD14A3824616A44004D54B8 /* LexiconFileModel.m in Sources */,
 				A949C2A0253948B100CF09A5 /* fileUtil.m in Sources */,
