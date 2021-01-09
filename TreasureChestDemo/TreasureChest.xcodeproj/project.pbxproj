@@ -143,7 +143,6 @@
 		A99F702A2535AAD200A136E1 /* CameraPreview.m in Sources */ = {isa = PBXBuildFile; fileRef = A99F70282535AAD200A136E1 /* CameraPreview.m */; };
 		A99F702E2535ABC600A136E1 /* DetectImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99F702D2535ABC600A136E1 /* DetectImageController.m */; };
 		A9AF209B25A6DE5700075F24 /* douyin8.pt in Resources */ = {isa = PBXBuildFile; fileRef = A9AF209A25A6DE5700075F24 /* douyin8.pt */; };
-		A9AF20A025A6DEA800075F24 /* TestPytorch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A9AF209F25A6DEA800075F24 /* TestPytorch.mm */; };
 		A9AF20C525A6E0F900075F24 /* testPytorch.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AF20C425A6E0F900075F24 /* testPytorch.png */; };
 		A9C7CF0525372631002ECCFF /* DSViewTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CF0425372631002ECCFF /* DSViewTool.m */; };
 		A9C7CF0A25372A8D002ECCFF /* FacePointsView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CF0925372A8D002ECCFF /* FacePointsView.m */; };
@@ -489,8 +488,6 @@
 		A99F702C2535ABC600A136E1 /* DetectImageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetectImageController.h; sourceTree = "<group>"; };
 		A99F702D2535ABC600A136E1 /* DetectImageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetectImageController.m; sourceTree = "<group>"; };
 		A9AF209A25A6DE5700075F24 /* douyin8.pt */ = {isa = PBXFileReference; lastKnownFileType = file; path = douyin8.pt; sourceTree = "<group>"; };
-		A9AF209E25A6DEA800075F24 /* TestPytorch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestPytorch.h; sourceTree = "<group>"; };
-		A9AF209F25A6DEA800075F24 /* TestPytorch.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TestPytorch.mm; sourceTree = "<group>"; };
 		A9AF20C425A6E0F900075F24 /* testPytorch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testPytorch.png; sourceTree = "<group>"; };
 		A9C7CF0325372631002ECCFF /* DSViewTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSViewTool.h; sourceTree = "<group>"; };
 		A9C7CF0425372631002ECCFF /* DSViewTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSViewTool.m; sourceTree = "<group>"; };
@@ -1353,8 +1350,6 @@
 			isa = PBXGroup;
 			children = (
 				A9AF209925A6DE4200075F24 /* Resource */,
-				A9AF209E25A6DEA800075F24 /* TestPytorch.h */,
-				A9AF209F25A6DEA800075F24 /* TestPytorch.mm */,
 			);
 			path = Pytorch;
 			sourceTree = "<group>";
@@ -2362,7 +2357,6 @@
 				B26FBD5F2441CDB8003DB3BE /* LOTValueInterpolator.m in Sources */,
 				B284723E2404F5A600C1194F /* ServerMockCtl.m in Sources */,
 				A98671C8255636A8003381A7 /* RectProgressView.m in Sources */,
-				A9AF20A025A6DEA800075F24 /* TestPytorch.mm in Sources */,
 				B26FBD782441CDB8003DB3BE /* LOTShapeGradientFill.m in Sources */,
 				3AD14A3824616A44004D54B8 /* LexiconFileModel.m in Sources */,
 				A949C2A0253948B100CF09A5 /* fileUtil.m in Sources */,

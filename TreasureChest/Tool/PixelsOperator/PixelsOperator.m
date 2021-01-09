@@ -7,6 +7,7 @@
 //
 
 #import "PixelsOperator.h"
+#import <Accelerate/Accelerate.h>
 
 @implementation PixelsOperator
 
@@ -110,6 +111,77 @@
     
     NSData *data = [NSData dataWithBytes:tempRawData length:(width * height * 3 * sizeof(unsigned char))];
     return data;
+}
+
+#pragma mark - < private 待封装 >
+///创建CVPixelBuffer，将data指针直接挂上去。  https://blog.csdn.net/whf727/article/details/18706153
+- (CVPixelBufferRef)pixelBufferFaster:(CVPixelBufferRef) imageBuffer {
+    
+    CVPixelBufferRef pxbuffer = NULL;
+    NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
+                             [NSNumber numberWithBool:YES], kCVPixelBufferCGImageCompatibilityKey,
+                             [NSNumber numberWithBool:YES], kCVPixelBufferCGBitmapContextCompatibilityKey,
+                             nil];//[NSNumber numberWithInt : 480],kCVPixelBufferWidthKey,kCVPixelBufferHeightKey
+    size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
+    size_t width = CVPixelBufferGetWidth(imageBuffer);
+    size_t height = CVPixelBufferGetHeight(imageBuffer);
+    
+ 
+    unsigned char*data = [self flipBuffer:imageBuffer];
+    //CVPixelBufferCreateWithBytes这个可以在时间上提高好几个数量级别，这是因为这里没有渲染也没有内存拷贝能耗时的操作而只是将data的指针进行了修改哦。
+    CVPixelBufferCreateWithBytes(kCFAllocatorDefault,width,height,kCVPixelFormatType_32ARGB,data,bytesPerRow,NULL,NULL,(__bridge CFDictionaryRef)options,&pxbuffer);
+    //观察是否有内存释放问题。有内存问题。
+    return pxbuffer;
+
+}
+
+///https://zhuanlan.zhihu.com/p/31001201?from_voters_page=true
+- (unsigned char*) flipBuffer: (CVPixelBufferRef) imageBuffer
+{
+// CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+ CVPixelBufferLockBaseAddress(imageBuffer,0);
+
+ size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
+ size_t width = CVPixelBufferGetWidth(imageBuffer);
+ size_t height = CVPixelBufferGetHeight(imageBuffer);
+ size_t currSize = bytesPerRow*height*sizeof(unsigned char);
+
+ void *srcBuff = CVPixelBufferGetBaseAddress(imageBuffer);
+ unsigned char *outBuff = (unsigned char*)malloc(currSize);
+
+ vImage_Buffer ibuff = { srcBuff, height, width, bytesPerRow};
+ vImage_Buffer ubuff = { outBuff, height, width, bytesPerRow};
+
+ vImage_Error err= vImageHorizontalReflect_ARGB8888(&ibuff, &ubuff, kvImageHighQualityResampling);
+ if (err != kvImageNoError) NSLog(@"%ld", err);
+    
+ return outBuff;
+}
+
+///https://www.it1352.com/917049.html
+- (unsigned char*) rotateBuffer: (CVPixelBufferRef) imageBuffer
+{
+// CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+ CVPixelBufferLockBaseAddress(imageBuffer,0);
+
+ size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
+ size_t width = CVPixelBufferGetWidth(imageBuffer);
+ size_t height = CVPixelBufferGetHeight(imageBuffer);
+ size_t currSize = bytesPerRow*height*sizeof(unsigned char);
+ size_t bytesPerRowOut = 4*height*sizeof(unsigned char);
+
+ void *srcBuff = CVPixelBufferGetBaseAddress(imageBuffer);
+ unsigned char *outBuff = (unsigned char*)malloc(currSize);
+
+ vImage_Buffer ibuff = { srcBuff, height, width, bytesPerRow};
+ vImage_Buffer ubuff = { outBuff, width, height, bytesPerRowOut};
+ Pixel_8888 clear_color = {0};
+ uint8_t rotConst = 1;   // 0, 1, 2, 3 is equal to 0, 90, 180, 270 degrees rotation
+ vImage_Error err = vImageRotate90_ARGB8888(&ibuff, &ubuff, NULL, clear_color, kvImageBackgroundColorFill | kvImageHighQualityResampling);
+// vImage_Error err= vImageRotate90_ARGB8888 (&ibuff, &ubuff, NULL, rotConst, NULL,0);
+ if (err != kvImageNoError) NSLog(@"%ld", err);
+
+ return outBuff;
 }
 
 @end

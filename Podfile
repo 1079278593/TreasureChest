@@ -24,7 +24,7 @@ abstract_target 'abstract_pod' do
     pod 'SDAutoLayout', '~> 2.1.3'
 #    pod 'OAStackView'
 
-    pod 'LibTorch', '~>1.6.0'
+#    pod 'LibTorch', '~>1.6.0'
     
     target 'TreasureChestTests' do
       inherit! :search_paths

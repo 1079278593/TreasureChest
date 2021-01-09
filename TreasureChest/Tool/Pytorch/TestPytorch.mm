@@ -58,5 +58,28 @@
 }
 
 #pragma mark - < private >
+- (void *)loadImageBuffer {
+    UIImage *image = [UIImage imageNamed:@"testPytorch"];
+    CGColorSpaceRef colorSpace = CGImageGetColorSpace(image.CGImage);
+    
+    const size_t width = CGImageGetWidth(image.CGImage);
+    const size_t height = CGImageGetHeight(image.CGImage);
+    const size_t bitsPerComponent = 8;
+    const size_t bytesPerRow = width * 4;      //RGBA
+    
+    void *imgBuffer = nullptr;
+    CGContextRef contextRef = CGBitmapContextCreate(imgBuffer,                  // Pointer to  data
+                                                    width,                        // Width of bitmap
+                                                    height,                       // Height of bitmap
+                                                    bitsPerComponent,             // Bits per component
+                                                    bytesPerRow,                // Bytes per row
+                                                    colorSpace,                   // Colorspace
+                                                    kCGImageAlphaNoneSkipLast |
+                                                    kCGBitmapByteOrderDefault); // Bitmap info flags
+    CGContextDrawImage(contextRef, CGRectMake(0, 0, width, height), image.CGImage);
+    CGContextRelease(contextRef);
+    CGColorSpaceRelease(colorSpace);
+    return imgBuffer;
+}
 
 @end
