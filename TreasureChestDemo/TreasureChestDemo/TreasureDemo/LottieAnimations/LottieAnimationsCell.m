@@ -58,7 +58,8 @@
     
     [self.contentView addSubview:self.playButton];
     [self.playButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.height.equalTo(self.contentView);
+        make.right.bottom.height.equalTo(self.contentView);
+        make.left.equalTo(self.contentView).offset(40);
     }];
 }
 

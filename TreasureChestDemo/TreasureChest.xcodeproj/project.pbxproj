@@ -147,6 +147,8 @@
 		A9C7CF0525372631002ECCFF /* DSViewTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CF0425372631002ECCFF /* DSViewTool.m */; };
 		A9C7CF0A25372A8D002ECCFF /* FacePointsView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CF0925372A8D002ECCFF /* FacePointsView.m */; };
 		A9CA834D24DBE03C00771EE2 /* EllipsePointsView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9CA834C24DBE03C00771EE2 /* EllipsePointsView.m */; };
+		A9CBFA2325B16F0300BD4747 /* ThreadResident.m in Sources */ = {isa = PBXBuildFile; fileRef = A9CBFA2225B16F0300BD4747 /* ThreadResident.m */; };
+		A9CBFA2A25B1822900BD4747 /* ResidentThread.m in Sources */ = {isa = PBXBuildFile; fileRef = A9CBFA2925B1822900BD4747 /* ResidentThread.m */; };
 		A9FFC32F24C7DE6800881404 /* BrushDrawController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FFC32E24C7DE6700881404 /* BrushDrawController.m */; };
 		A9FFC33224C7DEC900881404 /* BrushDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FFC33124C7DEC900881404 /* BrushDrawView.m */; };
 		AE908028BC8135F3E1A005A0 /* Pods_abstract_pod_TreasureChest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D467FA7759BEC599ED70F55C /* Pods_abstract_pod_TreasureChest.framework */; };
@@ -495,6 +497,10 @@
 		A9C7CF0925372A8D002ECCFF /* FacePointsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FacePointsView.m; sourceTree = "<group>"; };
 		A9CA834B24DBE03C00771EE2 /* EllipsePointsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EllipsePointsView.h; sourceTree = "<group>"; };
 		A9CA834C24DBE03C00771EE2 /* EllipsePointsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EllipsePointsView.m; sourceTree = "<group>"; };
+		A9CBFA2125B16F0300BD4747 /* ThreadResident.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadResident.h; sourceTree = "<group>"; };
+		A9CBFA2225B16F0300BD4747 /* ThreadResident.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadResident.m; sourceTree = "<group>"; };
+		A9CBFA2825B1822900BD4747 /* ResidentThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResidentThread.h; sourceTree = "<group>"; };
+		A9CBFA2925B1822900BD4747 /* ResidentThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResidentThread.m; sourceTree = "<group>"; };
 		A9FFC32D24C7DE6700881404 /* BrushDrawController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrushDrawController.h; sourceTree = "<group>"; };
 		A9FFC32E24C7DE6700881404 /* BrushDrawController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrushDrawController.m; sourceTree = "<group>"; };
 		A9FFC33024C7DEC900881404 /* BrushDrawView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrushDrawView.h; sourceTree = "<group>"; };
@@ -983,6 +989,7 @@
 		3AE550DA23A9189F001D989E /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				A9CBFA2025B16EC600BD4747 /* ThreadResident */,
 				A9AF209825A6DDD500075F24 /* Pytorch */,
 				A94EF7AB25A40F2B00CB769D /* PixelsOperator */,
 				B26FBCCA2441CDB8003DB3BE /* lottie-ios */,
@@ -1361,6 +1368,17 @@
 				A9AF209A25A6DE5700075F24 /* douyin8.pt */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		A9CBFA2025B16EC600BD4747 /* ThreadResident */ = {
+			isa = PBXGroup;
+			children = (
+				A9CBFA2125B16F0300BD4747 /* ThreadResident.h */,
+				A9CBFA2225B16F0300BD4747 /* ThreadResident.m */,
+				A9CBFA2825B1822900BD4747 /* ResidentThread.h */,
+				A9CBFA2925B1822900BD4747 /* ResidentThread.m */,
+			);
+			path = ThreadResident;
 			sourceTree = "<group>";
 		};
 		A9FFC32C24C7DE3800881404 /* BrushDrawing */ = {
@@ -2357,6 +2375,7 @@
 				B26FBD5F2441CDB8003DB3BE /* LOTValueInterpolator.m in Sources */,
 				B284723E2404F5A600C1194F /* ServerMockCtl.m in Sources */,
 				A98671C8255636A8003381A7 /* RectProgressView.m in Sources */,
+				A9CBFA2325B16F0300BD4747 /* ThreadResident.m in Sources */,
 				B26FBD782441CDB8003DB3BE /* LOTShapeGradientFill.m in Sources */,
 				3AD14A3824616A44004D54B8 /* LexiconFileModel.m in Sources */,
 				A949C2A0253948B100CF09A5 /* fileUtil.m in Sources */,
@@ -2424,6 +2443,7 @@
 				B299BE5B24513D570096360D /* LottieAnimationsCell.m in Sources */,
 				B28472332403C3AA00C1194F /* URLSessionTaskCtl.m in Sources */,
 				B2C4592F2440524F00117BD7 /* UIBezierPath+Geometry.m in Sources */,
+				A9CBFA2A25B1822900BD4747 /* ResidentThread.m in Sources */,
 				A9CA834D24DBE03C00771EE2 /* EllipsePointsView.m in Sources */,
 				B28472372404B8EE00C1194F /* URLDownloadTask.m in Sources */,
 				A90ECEE2259577EB005E3EF0 /* TestView.m in Sources */,

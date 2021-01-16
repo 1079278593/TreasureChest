@@ -8,6 +8,7 @@
 
 #import "LottieAnimationsCtl.h"
 #import "LottieAnimationsCell.h"
+#import "Lottie.h"
 
 @interface LottieAnimationsCtl () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -24,6 +25,8 @@
     self.datas = [NSMutableArray arrayWithArray:[self getDatas]];
     self.collectionView.frame = CGRectMake(10, 64, KScreenWidth-19, KScreenHeight-64);
     [self.view addSubview:self.collectionView];
+    
+    
 }
 
 - (NSArray *)getDatas {
@@ -57,7 +60,16 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
+    //调试
+    NSLog(@"cell selected");
+    NSString *path = indexPath.row == 0 ? @"https://o.yinliqu.com/gift/dabai.json" : @"https://o.yinliqu.com/gift/lihua2.json";
+    LOTAnimationView *lotView = [[LOTAnimationView alloc] initWithContentsOfURL:[NSURL URLWithString:path]];
+    lotView.contentMode = UIViewContentModeScaleAspectFit;
+    lotView.frame = CGRectMake(60, 100+indexPath.row*210, 200, 200);
+    lotView.backgroundColor = [[UIColor greenColor] colorWithAlphaComponent:0.4];
+    lotView.layer.borderWidth = 1;
+    [self.view addSubview:lotView];
+    [lotView play];
 }
 
 #pragma mark - < init >

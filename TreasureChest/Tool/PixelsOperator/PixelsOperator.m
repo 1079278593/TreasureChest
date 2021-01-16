@@ -135,6 +135,7 @@
 
 }
 
+///参考这个！！！图片编解码
 ///https://zhuanlan.zhihu.com/p/31001201?from_voters_page=true
 - (unsigned char*) flipBuffer: (CVPixelBufferRef) imageBuffer
 {
