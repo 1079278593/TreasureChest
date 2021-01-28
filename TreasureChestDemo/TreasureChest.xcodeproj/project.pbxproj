@@ -144,6 +144,12 @@
 		A99F702E2535ABC600A136E1 /* DetectImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99F702D2535ABC600A136E1 /* DetectImageController.m */; };
 		A9AF209B25A6DE5700075F24 /* douyin8.pt in Resources */ = {isa = PBXBuildFile; fileRef = A9AF209A25A6DE5700075F24 /* douyin8.pt */; };
 		A9AF20C525A6E0F900075F24 /* testPytorch.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AF20C425A6E0F900075F24 /* testPytorch.png */; };
+		A9B35C3C25C2F0A7009453E6 /* CapturePipeline.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B35C3825C2F0A7009453E6 /* CapturePipeline.m */; };
+		A9B35C3D25C2F0A7009453E6 /* CaptureVisionDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B35C3925C2F0A7009453E6 /* CaptureVisionDetector.m */; };
+		A9B35C4A25C2F348009453E6 /* OpenGLRender.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B35C4525C2F348009453E6 /* OpenGLRender.m */; };
+		A9B35C4B25C2F348009453E6 /* faceMask.vsh in Resources */ = {isa = PBXBuildFile; fileRef = A9B35C4825C2F348009453E6 /* faceMask.vsh */; };
+		A9B35C4C25C2F348009453E6 /* faceMask.fsh in Resources */ = {isa = PBXBuildFile; fileRef = A9B35C4925C2F348009453E6 /* faceMask.fsh */; };
+		A9B35C5325C2F448009453E6 /* VertexGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B35C5225C2F448009453E6 /* VertexGenerator.m */; };
 		A9C7CF0525372631002ECCFF /* DSViewTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CF0425372631002ECCFF /* DSViewTool.m */; };
 		A9C7CF0A25372A8D002ECCFF /* FacePointsView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CF0925372A8D002ECCFF /* FacePointsView.m */; };
 		A9CA834D24DBE03C00771EE2 /* EllipsePointsView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9CA834C24DBE03C00771EE2 /* EllipsePointsView.m */; };
@@ -491,6 +497,16 @@
 		A99F702D2535ABC600A136E1 /* DetectImageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetectImageController.m; sourceTree = "<group>"; };
 		A9AF209A25A6DE5700075F24 /* douyin8.pt */ = {isa = PBXFileReference; lastKnownFileType = file; path = douyin8.pt; sourceTree = "<group>"; };
 		A9AF20C425A6E0F900075F24 /* testPytorch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testPytorch.png; sourceTree = "<group>"; };
+		A9B35C3525C2F0A7009453E6 /* CaptureVisionDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureVisionDetector.h; sourceTree = "<group>"; };
+		A9B35C3625C2F0A7009453E6 /* CapturePipeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CapturePipeline.h; sourceTree = "<group>"; };
+		A9B35C3825C2F0A7009453E6 /* CapturePipeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CapturePipeline.m; sourceTree = "<group>"; };
+		A9B35C3925C2F0A7009453E6 /* CaptureVisionDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureVisionDetector.m; sourceTree = "<group>"; };
+		A9B35C4525C2F348009453E6 /* OpenGLRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLRender.m; sourceTree = "<group>"; };
+		A9B35C4625C2F348009453E6 /* OpenGLRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLRender.h; sourceTree = "<group>"; };
+		A9B35C4825C2F348009453E6 /* faceMask.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = faceMask.vsh; sourceTree = "<group>"; };
+		A9B35C4925C2F348009453E6 /* faceMask.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = faceMask.fsh; sourceTree = "<group>"; };
+		A9B35C5125C2F448009453E6 /* VertexGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VertexGenerator.h; sourceTree = "<group>"; };
+		A9B35C5225C2F448009453E6 /* VertexGenerator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VertexGenerator.m; sourceTree = "<group>"; };
 		A9C7CF0325372631002ECCFF /* DSViewTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSViewTool.h; sourceTree = "<group>"; };
 		A9C7CF0425372631002ECCFF /* DSViewTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSViewTool.m; sourceTree = "<group>"; };
 		A9C7CF0825372A8D002ECCFF /* FacePointsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FacePointsView.h; sourceTree = "<group>"; };
@@ -956,7 +972,6 @@
 				B215CC352431BE410017BFD9 /* EasyProgressHud */,
 				3A8F79E32557ECFA00069914 /* HollowOut */,
 				A98671D3255639E9003381A7 /* RectRoundProgress */,
-				A983CE2624EE5CC200213D35 /* OpenGLPixelBufferView */,
 				B2DD689F23B2FB6C00106F4F /* PearlsPackage */,
 				B24A85EE24035B3900D1EECA /* VideoPlayerView */,
 				B2BC387723C0334F00D5B9C6 /* XMShapeView */,
@@ -989,6 +1004,7 @@
 		3AE550DA23A9189F001D989E /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				A9B35C2F25C2EEE6009453E6 /* OpenGL */,
 				A9CBFA2025B16EC600BD4747 /* ThreadResident */,
 				A9AF209825A6DDD500075F24 /* Pytorch */,
 				A94EF7AB25A40F2B00CB769D /* PixelsOperator */,
@@ -1368,6 +1384,48 @@
 				A9AF209A25A6DE5700075F24 /* douyin8.pt */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		A9B35C2F25C2EEE6009453E6 /* OpenGL */ = {
+			isa = PBXGroup;
+			children = (
+				A9B35C4425C2F348009453E6 /* OpenGLRender */,
+				A9B35C3425C2F0A6009453E6 /* Capture */,
+				A983CE2624EE5CC200213D35 /* OpenGLPixelBufferView */,
+			);
+			path = OpenGL;
+			sourceTree = "<group>";
+		};
+		A9B35C3425C2F0A6009453E6 /* Capture */ = {
+			isa = PBXGroup;
+			children = (
+				A9B35C3625C2F0A7009453E6 /* CapturePipeline.h */,
+				A9B35C3825C2F0A7009453E6 /* CapturePipeline.m */,
+				A9B35C3525C2F0A7009453E6 /* CaptureVisionDetector.h */,
+				A9B35C3925C2F0A7009453E6 /* CaptureVisionDetector.m */,
+			);
+			path = Capture;
+			sourceTree = "<group>";
+		};
+		A9B35C4425C2F348009453E6 /* OpenGLRender */ = {
+			isa = PBXGroup;
+			children = (
+				A9B35C4625C2F348009453E6 /* OpenGLRender.h */,
+				A9B35C4525C2F348009453E6 /* OpenGLRender.m */,
+				A9B35C5125C2F448009453E6 /* VertexGenerator.h */,
+				A9B35C5225C2F448009453E6 /* VertexGenerator.m */,
+				A9B35C4725C2F348009453E6 /* Shaders */,
+			);
+			path = OpenGLRender;
+			sourceTree = "<group>";
+		};
+		A9B35C4725C2F348009453E6 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				A9B35C4825C2F348009453E6 /* faceMask.vsh */,
+				A9B35C4925C2F348009453E6 /* faceMask.fsh */,
+			);
+			path = Shaders;
 			sourceTree = "<group>";
 		};
 		A9CBFA2025B16EC600BD4747 /* ThreadResident */ = {
@@ -2141,6 +2199,7 @@
 				B2506D1B23ABA1410034A472 /* select_down_icon@3x.png in Resources */,
 				3AD14A3D24619A44004D54B8 /* words_medical.plist in Resources */,
 				A94EF82425A4100000CB769D /* 4perform.mp3 in Resources */,
+				A9B35C4B25C2F348009453E6 /* faceMask.vsh in Resources */,
 				3AD14A4524619C75004D54B8 /* words_law.plist in Resources */,
 				A94EF82225A4100000CB769D /* wrong.mp3 in Resources */,
 				B2506D1C23ABA1410034A472 /* select_down_icon@2x.png in Resources */,
@@ -2156,6 +2215,7 @@
 				A94EF7FC25A40FFF00CB769D /* 4号玩家开始比划.m4a in Resources */,
 				A94EF81F25A4100000CB769D /* right.wav in Resources */,
 				A94EF80A25A4100000CB769D /* startpk.mp3 in Resources */,
+				A9B35C4C25C2F348009453E6 /* faceMask.fsh in Resources */,
 				3AD14A4324619C19004D54B8 /* words_car.plist in Resources */,
 				3AD14A2924615273004D54B8 /* words_foods.txt in Resources */,
 				A94EF80F25A4100000CB769D /* 2say.mp3 in Resources */,
@@ -2362,6 +2422,7 @@
 				A949C28D25393FEA00CF09A5 /* OpenGLView.m in Sources */,
 				B26FBD802441CDB8003DB3BE /* LOTShapeTransform.m in Sources */,
 				B26FBD872441CDB8003DB3BE /* LOTComposition.m in Sources */,
+				A9B35C3D25C2F0A7009453E6 /* CaptureVisionDetector.m in Sources */,
 				B26FBD672441CDB8003DB3BE /* LOTCircleAnimator.m in Sources */,
 				A99F702E2535ABC600A136E1 /* DetectImageController.m in Sources */,
 				B2169DFF24401E2B002CFE3E /* AudioMixWithVideo.m in Sources */,
@@ -2376,6 +2437,7 @@
 				B284723E2404F5A600C1194F /* ServerMockCtl.m in Sources */,
 				A98671C8255636A8003381A7 /* RectProgressView.m in Sources */,
 				A9CBFA2325B16F0300BD4747 /* ThreadResident.m in Sources */,
+				A9B35C5325C2F448009453E6 /* VertexGenerator.m in Sources */,
 				B26FBD782441CDB8003DB3BE /* LOTShapeGradientFill.m in Sources */,
 				3AD14A3824616A44004D54B8 /* LexiconFileModel.m in Sources */,
 				A949C2A0253948B100CF09A5 /* fileUtil.m in Sources */,
@@ -2442,6 +2504,7 @@
 				B26FBD5D2441CDB8003DB3BE /* LOTSizeInterpolator.m in Sources */,
 				B299BE5B24513D570096360D /* LottieAnimationsCell.m in Sources */,
 				B28472332403C3AA00C1194F /* URLSessionTaskCtl.m in Sources */,
+				A9B35C3C25C2F0A7009453E6 /* CapturePipeline.m in Sources */,
 				B2C4592F2440524F00117BD7 /* UIBezierPath+Geometry.m in Sources */,
 				A9CBFA2A25B1822900BD4747 /* ResidentThread.m in Sources */,
 				A9CA834D24DBE03C00771EE2 /* EllipsePointsView.m in Sources */,
@@ -2453,6 +2516,7 @@
 				B2BC387A23C0337A00D5B9C6 /* BaseShapeView.m in Sources */,
 				B2DD68A523B2FCDF00106F4F /* PearlsPackageCtl.m in Sources */,
 				B26FBD7F2441CDB8003DB3BE /* LOTShapeFill.m in Sources */,
+				A9B35C4A25C2F348009453E6 /* OpenGLRender.m in Sources */,
 				A94EF7A825A40D2400CB769D /* AudioPlayer.m in Sources */,
 				B2169DE824401B4F002CFE3E /* ScreenRecorder.m in Sources */,
 				B284723A2404B90300C1194F /* URLUploadTask.m in Sources */,
