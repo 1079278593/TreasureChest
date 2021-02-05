@@ -8,27 +8,17 @@
 
 #import "TestController.h"
 #import "RectProgressView.h"
-#import "UIView+RoundProgress.h"
-#import "UIView+HollowOut.h"
-#import "TestView.h"
-#import "AudioPlayer.h"
-#import "Lottie.h"
-#import "LottiePlayerView.h"
-#import "sys/utsname.h"
-#import "ThreadResident.h"
-#import "ResidentThread.h"
+#import "OpenGLPixelBufferView.h"
+#import "FaceMaskRenderer.h"
 
 @interface TestController ()
 
 @property(nonatomic, strong)UIButton *button;
-
 @property(nonatomic, strong)UIImageView *bgImgView;
 @property(nonatomic, strong)UIImageView *frontImgView;
-@property(nonatomic, strong)LottiePlayerView *lottiePlayerView;
 
-@property(nonatomic, assign)int index;
-@property(nonatomic, strong)ResidentThread *thread;
-
+@property(nonatomic, strong)OpenGLPixelBufferView *preview;
+@property(nonatomic, strong)FaceMaskRenderer *render;
 
 @end
 
@@ -63,22 +53,25 @@
     [self.view addSubview:button3];
     button3.frame = CGRectMake(220, 270, 90, 44);
     
-    _index = 0;
-    self.thread = [[ResidentThread alloc]init];
-    [self.thread start];
+    self.preview = [[OpenGLPixelBufferView alloc]initWithFrame:CGRectZero];
+    [self.view addSubview:self.preview];
+    self.preview.frame = CGRectMake(0, 200, 200, 200);
+    
+    self.render = [[FaceMaskRenderer alloc]init];
+//    self.render 
 }
 
 #pragma mark - < event >
 - (void)buttonEvent:(UIButton *)button {
-    [self.thread debugActionAdd:-2];
+    
 }
 
 - (void)button2Event:(UIButton *)button {
-    [self.thread debugActionAdd:1];
+
 }
 
 - (void)button3Event:(UIButton *)button {
-    [self.thread debugActionAdd:3];
+
 }
 
 #pragma mark - < init view >

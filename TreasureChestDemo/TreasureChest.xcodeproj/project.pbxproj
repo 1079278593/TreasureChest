@@ -62,6 +62,9 @@
 		A923238224EBB4A100B2CDE1 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = A923238024EBB4A100B2CDE1 /* UIImage+ImageEffects.m */; };
 		A928348F2536947700810734 /* FacePointPathLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A928348E2536947700810734 /* FacePointPathLayer.m */; };
 		A9377450256E97EA0085FF21 /* 1.bytes in Resources */ = {isa = PBXBuildFile; fileRef = A937744F256E97EA0085FF21 /* 1.bytes */; };
+		A947AF7725CBF571005E5E1E /* OpenGLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = A947AF7325CBF570005E5E1E /* OpenGLProgram.m */; };
+		A947AF7825CBF571005E5E1E /* OpenGLRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = A947AF7425CBF570005E5E1E /* OpenGLRenderer.m */; };
+		A947AF7925CBF571005E5E1E /* FaceMaskRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = A947AF7625CBF571005E5E1E /* FaceMaskRenderer.m */; };
 		A949C26C2539359800CF09A5 /* OpenGLController.m in Sources */ = {isa = PBXBuildFile; fileRef = A949C26B2539359800CF09A5 /* OpenGLController.m */; };
 		A949C2702539391000CF09A5 /* documentation in Resources */ = {isa = PBXBuildFile; fileRef = A949C26F2539391000CF09A5 /* documentation */; };
 		A949C28525393FA700CF09A5 /* point.fsh in Resources */ = {isa = PBXBuildFile; fileRef = A949C28325393FA700CF09A5 /* point.fsh */; };
@@ -127,6 +130,7 @@
 		A94EF82225A4100000CB769D /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7EA25A40FFF00CB769D /* wrong.mp3 */; };
 		A94EF82325A4100000CB769D /* good.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7EB25A40FFF00CB769D /* good.mp3 */; };
 		A94EF82425A4100000CB769D /* 4perform.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94EF7EC25A40FFF00CB769D /* 4perform.mp3 */; };
+		A951F18525CBFE2E00E84BEE /* TextureLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = A951F18425CBFE2E00E84BEE /* TextureLoader.m */; };
 		A957EF0125A566AD00A7D430 /* BusyLottie.m in Sources */ = {isa = PBXBuildFile; fileRef = A957EF0025A566AD00A7D430 /* BusyLottie.m */; };
 		A957EF9E25A596C300A7D430 /* LottiePlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A957EF9D25A596C300A7D430 /* LottiePlayerView.m */; };
 		A9590C0B256B592E00A1CBD4 /* IDETextKeyBindingSet.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9590C0A256B592E00A1CBD4 /* IDETextKeyBindingSet.plist */; };
@@ -146,10 +150,8 @@
 		A9AF20C525A6E0F900075F24 /* testPytorch.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AF20C425A6E0F900075F24 /* testPytorch.png */; };
 		A9B35C3C25C2F0A7009453E6 /* CapturePipeline.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B35C3825C2F0A7009453E6 /* CapturePipeline.m */; };
 		A9B35C3D25C2F0A7009453E6 /* CaptureVisionDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B35C3925C2F0A7009453E6 /* CaptureVisionDetector.m */; };
-		A9B35C4A25C2F348009453E6 /* OpenGLRender.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B35C4525C2F348009453E6 /* OpenGLRender.m */; };
-		A9B35C4B25C2F348009453E6 /* faceMask.vsh in Resources */ = {isa = PBXBuildFile; fileRef = A9B35C4825C2F348009453E6 /* faceMask.vsh */; };
-		A9B35C4C25C2F348009453E6 /* faceMask.fsh in Resources */ = {isa = PBXBuildFile; fileRef = A9B35C4925C2F348009453E6 /* faceMask.fsh */; };
-		A9B35C5325C2F448009453E6 /* VertexGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B35C5225C2F448009453E6 /* VertexGenerator.m */; };
+		A9B35C4B25C2F348009453E6 /* universal.vsh in Resources */ = {isa = PBXBuildFile; fileRef = A9B35C4825C2F348009453E6 /* universal.vsh */; };
+		A9B35C4C25C2F348009453E6 /* universal.fsh in Resources */ = {isa = PBXBuildFile; fileRef = A9B35C4925C2F348009453E6 /* universal.fsh */; };
 		A9C7CF0525372631002ECCFF /* DSViewTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CF0425372631002ECCFF /* DSViewTool.m */; };
 		A9C7CF0A25372A8D002ECCFF /* FacePointsView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CF0925372A8D002ECCFF /* FacePointsView.m */; };
 		A9CA834D24DBE03C00771EE2 /* EllipsePointsView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9CA834C24DBE03C00771EE2 /* EllipsePointsView.m */; };
@@ -401,6 +403,12 @@
 		A928348D2536947700810734 /* FacePointPathLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FacePointPathLayer.h; sourceTree = "<group>"; };
 		A928348E2536947700810734 /* FacePointPathLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FacePointPathLayer.m; sourceTree = "<group>"; };
 		A937744F256E97EA0085FF21 /* 1.bytes */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.bytes; sourceTree = "<group>"; };
+		A947AF7125CBF570005E5E1E /* OpenGLRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLRenderer.h; sourceTree = "<group>"; };
+		A947AF7225CBF570005E5E1E /* FaceMaskRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceMaskRenderer.h; sourceTree = "<group>"; };
+		A947AF7325CBF570005E5E1E /* OpenGLProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLProgram.m; sourceTree = "<group>"; };
+		A947AF7425CBF570005E5E1E /* OpenGLRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLRenderer.m; sourceTree = "<group>"; };
+		A947AF7525CBF571005E5E1E /* OpenGLProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLProgram.h; sourceTree = "<group>"; };
+		A947AF7625CBF571005E5E1E /* FaceMaskRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceMaskRenderer.m; sourceTree = "<group>"; };
 		A949C26A2539359800CF09A5 /* OpenGLController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGLController.h; sourceTree = "<group>"; };
 		A949C26B2539359800CF09A5 /* OpenGLController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenGLController.m; sourceTree = "<group>"; };
 		A949C26F2539391000CF09A5 /* documentation */ = {isa = PBXFileReference; lastKnownFileType = text; path = documentation; sourceTree = "<group>"; };
@@ -472,6 +480,8 @@
 		A94EF7EA25A40FFF00CB769D /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wrong.mp3; sourceTree = "<group>"; };
 		A94EF7EB25A40FFF00CB769D /* good.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = good.mp3; sourceTree = "<group>"; };
 		A94EF7EC25A40FFF00CB769D /* 4perform.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 4perform.mp3; sourceTree = "<group>"; };
+		A951F18325CBFE2E00E84BEE /* TextureLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureLoader.h; sourceTree = "<group>"; };
+		A951F18425CBFE2E00E84BEE /* TextureLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextureLoader.m; sourceTree = "<group>"; };
 		A957EEFF25A566AD00A7D430 /* BusyLottie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BusyLottie.h; sourceTree = "<group>"; };
 		A957EF0025A566AD00A7D430 /* BusyLottie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BusyLottie.m; sourceTree = "<group>"; };
 		A957EF9C25A596C300A7D430 /* LottiePlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LottiePlayerView.h; sourceTree = "<group>"; };
@@ -501,12 +511,8 @@
 		A9B35C3625C2F0A7009453E6 /* CapturePipeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CapturePipeline.h; sourceTree = "<group>"; };
 		A9B35C3825C2F0A7009453E6 /* CapturePipeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CapturePipeline.m; sourceTree = "<group>"; };
 		A9B35C3925C2F0A7009453E6 /* CaptureVisionDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureVisionDetector.m; sourceTree = "<group>"; };
-		A9B35C4525C2F348009453E6 /* OpenGLRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLRender.m; sourceTree = "<group>"; };
-		A9B35C4625C2F348009453E6 /* OpenGLRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLRender.h; sourceTree = "<group>"; };
-		A9B35C4825C2F348009453E6 /* faceMask.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = faceMask.vsh; sourceTree = "<group>"; };
-		A9B35C4925C2F348009453E6 /* faceMask.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = faceMask.fsh; sourceTree = "<group>"; };
-		A9B35C5125C2F448009453E6 /* VertexGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VertexGenerator.h; sourceTree = "<group>"; };
-		A9B35C5225C2F448009453E6 /* VertexGenerator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VertexGenerator.m; sourceTree = "<group>"; };
+		A9B35C4825C2F348009453E6 /* universal.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = universal.vsh; sourceTree = "<group>"; };
+		A9B35C4925C2F348009453E6 /* universal.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = universal.fsh; sourceTree = "<group>"; };
 		A9C7CF0325372631002ECCFF /* DSViewTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSViewTool.h; sourceTree = "<group>"; };
 		A9C7CF0425372631002ECCFF /* DSViewTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSViewTool.m; sourceTree = "<group>"; };
 		A9C7CF0825372A8D002ECCFF /* FacePointsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FacePointsView.h; sourceTree = "<group>"; };
@@ -1410,10 +1416,14 @@
 		A9B35C4425C2F348009453E6 /* OpenGLRender */ = {
 			isa = PBXGroup;
 			children = (
-				A9B35C4625C2F348009453E6 /* OpenGLRender.h */,
-				A9B35C4525C2F348009453E6 /* OpenGLRender.m */,
-				A9B35C5125C2F448009453E6 /* VertexGenerator.h */,
-				A9B35C5225C2F448009453E6 /* VertexGenerator.m */,
+				A947AF7125CBF570005E5E1E /* OpenGLRenderer.h */,
+				A947AF7425CBF570005E5E1E /* OpenGLRenderer.m */,
+				A947AF7225CBF570005E5E1E /* FaceMaskRenderer.h */,
+				A947AF7625CBF571005E5E1E /* FaceMaskRenderer.m */,
+				A947AF7525CBF571005E5E1E /* OpenGLProgram.h */,
+				A947AF7325CBF570005E5E1E /* OpenGLProgram.m */,
+				A951F18325CBFE2E00E84BEE /* TextureLoader.h */,
+				A951F18425CBFE2E00E84BEE /* TextureLoader.m */,
 				A9B35C4725C2F348009453E6 /* Shaders */,
 			);
 			path = OpenGLRender;
@@ -1422,8 +1432,8 @@
 		A9B35C4725C2F348009453E6 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
-				A9B35C4825C2F348009453E6 /* faceMask.vsh */,
-				A9B35C4925C2F348009453E6 /* faceMask.fsh */,
+				A9B35C4825C2F348009453E6 /* universal.vsh */,
+				A9B35C4925C2F348009453E6 /* universal.fsh */,
 			);
 			path = Shaders;
 			sourceTree = "<group>";
@@ -2199,7 +2209,7 @@
 				B2506D1B23ABA1410034A472 /* select_down_icon@3x.png in Resources */,
 				3AD14A3D24619A44004D54B8 /* words_medical.plist in Resources */,
 				A94EF82425A4100000CB769D /* 4perform.mp3 in Resources */,
-				A9B35C4B25C2F348009453E6 /* faceMask.vsh in Resources */,
+				A9B35C4B25C2F348009453E6 /* universal.vsh in Resources */,
 				3AD14A4524619C75004D54B8 /* words_law.plist in Resources */,
 				A94EF82225A4100000CB769D /* wrong.mp3 in Resources */,
 				B2506D1C23ABA1410034A472 /* select_down_icon@2x.png in Resources */,
@@ -2215,7 +2225,7 @@
 				A94EF7FC25A40FFF00CB769D /* 4号玩家开始比划.m4a in Resources */,
 				A94EF81F25A4100000CB769D /* right.wav in Resources */,
 				A94EF80A25A4100000CB769D /* startpk.mp3 in Resources */,
-				A9B35C4C25C2F348009453E6 /* faceMask.fsh in Resources */,
+				A9B35C4C25C2F348009453E6 /* universal.fsh in Resources */,
 				3AD14A4324619C19004D54B8 /* words_car.plist in Resources */,
 				3AD14A2924615273004D54B8 /* words_foods.txt in Resources */,
 				A94EF80F25A4100000CB769D /* 2say.mp3 in Resources */,
@@ -2389,6 +2399,7 @@
 				B26FBD692441CDB8003DB3BE /* LOTRenderGroup.m in Sources */,
 				B26FBD8C2441CDB8003DB3BE /* LOTKeypath.m in Sources */,
 				A983CE2D24EE5CC200213D35 /* OpenGLPixelBufferView.m in Sources */,
+				A947AF7925CBF571005E5E1E /* FaceMaskRenderer.m in Sources */,
 				3A1174C9256E5F5C00D6F382 /* BaseNavigationController.m in Sources */,
 				B2055290240756980034310A /* ProductOptionViewFlowLayout.m in Sources */,
 				B27B784523ACD7C00083E6AE /* TabTitleScrollView.m in Sources */,
@@ -2406,6 +2417,7 @@
 				3A2E0A44254EDABD00471A41 /* AutoSizeCell.m in Sources */,
 				B26FBD922441CDB8003DB3BE /* LOTBezierData.m in Sources */,
 				B26FBD6F2441CDB8003DB3BE /* UIColor.m in Sources */,
+				A951F18525CBFE2E00E84BEE /* TextureLoader.m in Sources */,
 				A983CE3124EE5CC200213D35 /* matrix.c in Sources */,
 				3AE550E123A9189F001D989E /* FormsView.m in Sources */,
 				A918EC392555671E00C5964D /* TestController.m in Sources */,
@@ -2433,11 +2445,11 @@
 				B26FBD882441CDB8003DB3BE /* LOTValueCallback.m in Sources */,
 				B26FBD8D2441CDB8003DB3BE /* LOTCacheProvider.m in Sources */,
 				B26FBD892441CDB8003DB3BE /* LOTBlockCallback.m in Sources */,
+				A947AF7825CBF571005E5E1E /* OpenGLRenderer.m in Sources */,
 				B26FBD5F2441CDB8003DB3BE /* LOTValueInterpolator.m in Sources */,
 				B284723E2404F5A600C1194F /* ServerMockCtl.m in Sources */,
 				A98671C8255636A8003381A7 /* RectProgressView.m in Sources */,
 				A9CBFA2325B16F0300BD4747 /* ThreadResident.m in Sources */,
-				A9B35C5325C2F448009453E6 /* VertexGenerator.m in Sources */,
 				B26FBD782441CDB8003DB3BE /* LOTShapeGradientFill.m in Sources */,
 				3AD14A3824616A44004D54B8 /* LexiconFileModel.m in Sources */,
 				A949C2A0253948B100CF09A5 /* fileUtil.m in Sources */,
@@ -2454,6 +2466,7 @@
 				B26FBD5A2441CDB8003DB3BE /* LOTTrimPathNode.m in Sources */,
 				B26FBD632441CDB8003DB3BE /* LOTAnimatorNode.m in Sources */,
 				A949C26C2539359800CF09A5 /* OpenGLController.m in Sources */,
+				A947AF7725CBF571005E5E1E /* OpenGLProgram.m in Sources */,
 				B2DD689023B08C8500106F4F /* XMLabel.m in Sources */,
 				B2C459322440524F00117BD7 /* LineGeometry.m in Sources */,
 				B2BC387D23C037B100D5B9C6 /* XMCircleView.m in Sources */,
@@ -2516,7 +2529,6 @@
 				B2BC387A23C0337A00D5B9C6 /* BaseShapeView.m in Sources */,
 				B2DD68A523B2FCDF00106F4F /* PearlsPackageCtl.m in Sources */,
 				B26FBD7F2441CDB8003DB3BE /* LOTShapeFill.m in Sources */,
-				A9B35C4A25C2F348009453E6 /* OpenGLRender.m in Sources */,
 				A94EF7A825A40D2400CB769D /* AudioPlayer.m in Sources */,
 				B2169DE824401B4F002CFE3E /* ScreenRecorder.m in Sources */,
 				B284723A2404B90300C1194F /* URLUploadTask.m in Sources */,
