@@ -10,6 +10,7 @@
 #import "RectProgressView.h"
 #import "OpenGLPixelBufferView.h"
 #import "FaceMaskRenderer.h"
+#import "FileManager.h"
 
 @interface TestController ()
 
@@ -63,6 +64,13 @@
 
 #pragma mark - < event >
 - (void)buttonEvent:(UIButton *)button {
+    FileManager *manager = [[FileManager alloc]init];
+//    [manager resourcePathFromFaceMaskName:@"怪兽" resourceName:@"split.tnnmodel" url:@""];
+    NSString *lottieUrl = @"http://o.yinliqu.com/default/741b4c9dea5747a995c6d0cd24dda2bd.json";
+    NSString *modelUrl = @"https://o.yinliqu.com/model/android/lime/24.tnnproto";
+    [manager resourcePathFromFaceMaskName:@"怪兽" resourceName:@"text.txt" url:lottieUrl complete:^(NSString * _Nonnull path) {
+        
+    }];
     
 }
 

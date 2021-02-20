@@ -43,7 +43,7 @@ typedef void(^DownloadFail)(void);
 - (void)continueDownload;
 - (void)stopDownload;
 
-- (void)easyDownload:(NSString *)urlPath localPath:(NSString *)localPath;
+- (void)easyDownload:(NSString *)urlPath localPath:(NSString *)localPath isUpdate:(BOOL)isUpdate;
 
 @end
 

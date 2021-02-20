@@ -57,12 +57,15 @@
     [self.downloadTask cancel];
 }
 
-- (void)easyDownload:(NSString *)urlPath localPath:(NSString *)localPath {
+- (void)easyDownload:(NSString *)urlPath localPath:(NSString *)localPath isUpdate:(BOOL)isUpdate {
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlPath]];
     NSURLSession *session = [NSURLSession sharedSession];
     
     NSURLSessionDownloadTask *dataTask = [session downloadTaskWithRequest:request completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error == nil) {
+            if (isUpdate) {
+                [[NSFileManager defaultManager] removeItemAtPath:localPath error:nil];//删除
+            }
             BOOL flag = [[NSFileManager defaultManager] moveItemAtURL:location toURL:[NSURL fileURLWithPath:localPath] error:nil];
             if (flag) {
                 if (self.progressBlock) {
@@ -74,9 +77,11 @@
                 }
             }else {
                 printf("下载成功，移动文件到目标目录失败");
+                self.progressBlock(1);//
             }
         }else {
             printf("下载失败");
+            self.progressBlock(0);
         }
         
     }];
