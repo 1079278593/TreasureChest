@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FileManagerEnums.h"
 
 NS_ASSUME_NONNULL_BEGIN
 /**
@@ -19,7 +20,9 @@ typedef void(^PathBlock)(NSString *path);
 
 @interface FileManager : NSObject
 
-- (void)resourcePathFromFaceMaskName:(NSString *)maskName resourceName:(NSString *)resourceName url:(NSString *)url complete:(PathBlock)block;
++ (instancetype)shareInstance;
+- (void)resourcePathWithType:(FilePathType)type foldName:(NSString *)foldName fileName:(NSString *)fileName url:(NSString *)url complete:(PathBlock)block;
+- (BOOL)deleteWithFileName:(NSString *)fileName type:(FilePathType)type;
 
 @end
 

@@ -61,7 +61,6 @@
 		A923238124EBB4A100B2CDE1 /* UIImageView+LBBlurredImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A923237F24EBB4A100B2CDE1 /* UIImageView+LBBlurredImage.m */; };
 		A923238224EBB4A100B2CDE1 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = A923238024EBB4A100B2CDE1 /* UIImage+ImageEffects.m */; };
 		A9232F3D25E10AA800D8FFC5 /* FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A9232F3C25E10AA800D8FFC5 /* FileManager.m */; };
-		A9232F4225E114FF00D8FFC5 /* FileDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = A9232F4125E114FF00D8FFC5 /* FileDownloader.m */; };
 		A928348F2536947700810734 /* FacePointPathLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A928348E2536947700810734 /* FacePointPathLayer.m */; };
 		A9377450256E97EA0085FF21 /* 1.bytes in Resources */ = {isa = PBXBuildFile; fileRef = A937744F256E97EA0085FF21 /* 1.bytes */; };
 		A947AF7725CBF571005E5E1E /* OpenGLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = A947AF7325CBF570005E5E1E /* OpenGLProgram.m */; };
@@ -387,6 +386,7 @@
 		3AE550D923A9189F001D989E /* ResidentScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResidentScrollView.m; sourceTree = "<group>"; };
 		3AE550DF23A9189F001D989E /* DeviceMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceMacro.h; sourceTree = "<group>"; };
 		3AE550EA23A91A93001D989E /* TreasureChest-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TreasureChest-Bridging-Header.h"; sourceTree = "<group>"; };
+		3AFE5E6525E1FF71007CD8B0 /* FileManagerEnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileManagerEnums.h; sourceTree = "<group>"; };
 		A90ECEE0259577EB005E3EF0 /* TestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
 		A90ECEE1259577EB005E3EF0 /* TestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
 		A90ECEEC25998733005E3EF0 /* NSString+Bundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Bundle.h"; sourceTree = "<group>"; };
@@ -404,8 +404,6 @@
 		A923238024EBB4A100B2CDE1 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		A9232F3B25E10AA800D8FFC5 /* FileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
 		A9232F3C25E10AA800D8FFC5 /* FileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileManager.m; sourceTree = "<group>"; };
-		A9232F4025E114FF00D8FFC5 /* FileDownloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileDownloader.h; sourceTree = "<group>"; };
-		A9232F4125E114FF00D8FFC5 /* FileDownloader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileDownloader.m; sourceTree = "<group>"; };
 		A928348D2536947700810734 /* FacePointPathLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FacePointPathLayer.h; sourceTree = "<group>"; };
 		A928348E2536947700810734 /* FacePointPathLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FacePointPathLayer.m; sourceTree = "<group>"; };
 		A937744F256E97EA0085FF21 /* 1.bytes */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.bytes; sourceTree = "<group>"; };
@@ -1120,8 +1118,7 @@
 			children = (
 				A9232F3B25E10AA800D8FFC5 /* FileManager.h */,
 				A9232F3C25E10AA800D8FFC5 /* FileManager.m */,
-				A9232F4025E114FF00D8FFC5 /* FileDownloader.h */,
-				A9232F4125E114FF00D8FFC5 /* FileDownloader.m */,
+				3AFE5E6525E1FF71007CD8B0 /* FileManagerEnums.h */,
 			);
 			path = FileManager;
 			sourceTree = "<group>";
@@ -2581,7 +2578,6 @@
 				B2C94627242B383C00DC6FC1 /* UIColor+UIImage.m in Sources */,
 				3ACF5DBA247E0EED008ACB52 /* NSObject+Model.m in Sources */,
 				B2169E0524404863002CFE3E /* VideoRecorderCtl.m in Sources */,
-				A9232F4225E114FF00D8FFC5 /* FileDownloader.m in Sources */,
 				B26FBD8E2441CDB8003DB3BE /* LOTAnimatedControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
