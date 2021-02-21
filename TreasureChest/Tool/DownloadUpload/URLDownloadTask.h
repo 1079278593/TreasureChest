@@ -34,8 +34,8 @@ typedef void(^DownloadFail)(void);
 
 @interface URLDownloadTask : NSObject
 
-@property (nonatomic, copy)DownloadFail failBlock;
-@property (nonatomic, copy)DownloadProgress progressBlock;
+@property(nonatomic, copy)DownloadFail failBlock;
+@property(nonatomic, copy)DownloadProgress progressBlock;
 @property(nonatomic, strong)NSURLSessionDownloadTask *downloadTask;
 
 - (void)setupTask:(NSString *)urlPath localPath:(NSString *)localPath;

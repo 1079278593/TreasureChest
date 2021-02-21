@@ -7,6 +7,8 @@
 //
 
 #import "TestController.h"
+#import "Lottie.h"
+
 #import "RectProgressView.h"
 #import "OpenGLPixelBufferView.h"
 #import "FaceMaskRenderer.h"
@@ -18,8 +20,8 @@
 @property(nonatomic, strong)UIImageView *bgImgView;
 @property(nonatomic, strong)UIImageView *frontImgView;
 
-@property(nonatomic, strong)OpenGLPixelBufferView *preview;
-@property(nonatomic, strong)FaceMaskRenderer *render;
+@property(nonatomic, strong)LOTAnimationView *lottieView;
+@property(nonatomic, strong)UIImageView *imgView;
 
 @end
 
@@ -54,12 +56,6 @@
     [self.view addSubview:button3];
     button3.frame = CGRectMake(220, 270, 90, 44);
     
-    self.preview = [[OpenGLPixelBufferView alloc]initWithFrame:CGRectZero];
-    [self.view addSubview:self.preview];
-    self.preview.frame = CGRectMake(0, 200, 200, 200);
-    
-    self.render = [[FaceMaskRenderer alloc]init];
-//    self.render 
 }
 
 #pragma mark - < event >
@@ -76,11 +72,29 @@
 }
 
 - (void)button2Event:(UIButton *)button {
-    [[FileManager shareInstance] deleteWithFileName:@"FaceBox" type:FilePathTypeRoot];
+    [self showLottieWithProgress:0.2];
 }
 
 - (void)button3Event:(UIButton *)button {
-    [[FileManager shareInstance] deleteWithFileName:@"怪兽" type:FilePathTypeFaceBox];
+    [self showLottieWithProgress:0.6];
+}
+
+- (void)showLottieWithProgress:(CGFloat)progress {
+//    NSString *path = [self getDatas].firstObject;
+    
+    [self.lottieView setAnimationProgress:progress];
+    
+//    self.lottieView.layer.presentationLayer drawInContext:<#(nonnull CGContextRef)#>
+//    [self.lottieView play];
+    
+    CGSize size = CGSizeMake(640, 480);
+    UIGraphicsBeginImageContext(size);
+    [self.lottieView.layer renderInContext: UIGraphicsGetCurrentContext()];
+    UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
+    self.imgView.image = viewImage;
+    UIGraphicsEndImageContext();
+    
+//    self.imgView.image = [self pixelBufferFromLayer:self.lottieView.layer];
 }
 
 #pragma mark - < init view >
@@ -89,8 +103,61 @@
     _bgImgView.image = [UIImage imageNamed:@"bgPic"];
     [self.view addSubview:_bgImgView];
     _bgImgView.frame = self.view.bounds;
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"摇摆" ofType:@"json"];
+    LOTComposition *composition = [LOTComposition animationWithFilePath:path];
+    self.lottieView = [[LOTAnimationView alloc]initWithModel:composition inBundle:nil];
+//    [self.view addSubview:self.lottieView];
+    self.lottieView.frame = CGRectMake(0, 80, 640, 480);
+    self.lottieView.userInteractionEnabled = false;
+    
+    self.imgView = [[UIImageView alloc]init];
+    self.imgView.userInteractionEnabled = false;
+    [self.view addSubview:_imgView];
+    _imgView.frame = CGRectMake(10, 90, 150, 150);
+    _imgView.layer.borderWidth = 1;
 }
 
+- (NSArray *)getDatas {
+    NSString *bundlePath = [[ NSBundle mainBundle] pathForResource:@"lotties" ofType :@"bundle"];
+    NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
+    NSArray *lotties = [bundle pathsForResourcesOfType:@"" inDirectory:@""];
+    return lotties;
+}
 
+- (CVPixelBufferRef)pixelBufferFromLayer:(CALayer *)layer {
+    CGSize frameSize = CGSizeMake((int)layer.bounds.size.width,(int)layer.bounds.size.height);
+    NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES],
+                             kCVPixelBufferCGImageCompatibilityKey,
+                             [NSNumber numberWithBool:YES],
+                             kCVPixelBufferCGBitmapContextCompatibilityKey,nil];
+    CVPixelBufferRef pxbuffer = NULL;
+    CVReturn status = CVPixelBufferCreate(kCFAllocatorDefault, frameSize.width, frameSize.height,kCVPixelFormatType_32BGRA, (__bridge CFDictionaryRef)options, &pxbuffer);
+    NSParameterAssert(status == kCVReturnSuccess && pxbuffer != NULL);
+    CVPixelBufferLockBaseAddress(pxbuffer, 0);
+    void *pxdata = CVPixelBufferGetBaseAddress(pxbuffer);
+    CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceRGB();
+    
+    CGContextRef context = CGBitmapContextCreate(pxdata, frameSize.width, frameSize.height,8,
+                                                 CVPixelBufferGetBytesPerRow(pxbuffer),rgbColorSpace,(CGBitmapInfo)kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst);
+
+    /**
+     UIKit － y轴向下
+     Core Graphics(Quartz) － y轴向上
+     OpenGL ES － y轴向上
+     */
+    CGContextTranslateCTM(context, 0, frameSize.height);
+    CGContextScaleCTM(context, 1.0, -1.0);
+    
+    //调试查看
+//    [layer renderInContext:context];
+//    UIImage *viewImage = [UIImage imageWithCGImage:CGBitmapContextCreateImage(context)];
+//    return viewImage;
+    
+    CGColorSpaceRelease(rgbColorSpace);
+    CGContextRelease(context);
+    CVPixelBufferUnlockBaseAddress(pxbuffer, 0);
+    return pxbuffer;
+}
 
 @end

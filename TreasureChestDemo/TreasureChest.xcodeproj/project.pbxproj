@@ -12,6 +12,7 @@
 		3A2E0A44254EDABD00471A41 /* AutoSizeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E0A43254EDABD00471A41 /* AutoSizeCell.m */; };
 		3A2E0A4B254EDAD300471A41 /* AutoSizeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E0A4A254EDAD300471A41 /* AutoSizeModel.m */; };
 		3A2E0A50254EFC0800471A41 /* AutoSizeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E0A4F254EFC0800471A41 /* AutoSizeView.m */; };
+		3A34C6CC25E28BD800AE2BC8 /* 摇摆.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A34C6CB25E28BD700AE2BC8 /* 摇摆.json */; };
 		3A40235823A62ED100BDB4E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A40234023A62ED100BDB4E3 /* Assets.xcassets */; };
 		3A40235923A62ED100BDB4E3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A40234123A62ED100BDB4E3 /* ViewController.m */; };
 		3A40235A23A62ED100BDB4E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A40234223A62ED100BDB4E3 /* LaunchScreen.storyboard */; };
@@ -335,6 +336,7 @@
 		3A2E0A4A254EDAD300471A41 /* AutoSizeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoSizeModel.m; sourceTree = "<group>"; };
 		3A2E0A4E254EFC0800471A41 /* AutoSizeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoSizeView.h; sourceTree = "<group>"; };
 		3A2E0A4F254EFC0800471A41 /* AutoSizeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoSizeView.m; sourceTree = "<group>"; };
+		3A34C6CB25E28BD700AE2BC8 /* 摇摆.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "摇摆.json"; sourceTree = "<group>"; };
 		3A40233F23A62ED100BDB4E3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3A40234023A62ED100BDB4E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A40234123A62ED100BDB4E3 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -906,6 +908,7 @@
 				3A40234623A62ED100BDB4E3 /* main.m */,
 				A937744F256E97EA0085FF21 /* 1.bytes */,
 				3A40234023A62ED100BDB4E3 /* Assets.xcassets */,
+				3A34C6CB25E28BD700AE2BC8 /* 摇摆.json */,
 				A9590C09256B590100A1CBD4 /* 快捷键的拷贝 */,
 				3AD14A1524615273004D54B8 /* lexicon */,
 			);
@@ -2295,6 +2298,7 @@
 				A94EF82025A4100000CB769D /* 6perform.mp3 in Resources */,
 				A94EF7F625A40FFF00CB769D /* 失败.mp3 in Resources */,
 				A94EF81225A4100000CB769D /* 4out.mp3 in Resources */,
+				3A34C6CC25E28BD800AE2BC8 /* 摇摆.json in Resources */,
 				A94EF81525A4100000CB769D /* 2out.mp3 in Resources */,
 				B2506D0F23AB8AFA0034A472 /* TestData.plist in Resources */,
 				A949C2702539391000CF09A5 /* documentation in Resources */,

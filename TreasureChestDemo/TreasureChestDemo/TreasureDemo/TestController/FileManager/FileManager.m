@@ -10,6 +10,7 @@
 #import "URLDownloadTask.h"
 
 static FileManager *manager = nil;
+
 @interface FileManager ()
 
 @end
@@ -54,11 +55,12 @@ static FileManager *manager = nil;
         if ([self isExistFileWithPath:filePath]) {
             block(filePath);
         }else {
+            block(@"");
             URLDownloadTask *task = [[URLDownloadTask alloc]init];
             [task easyDownload:url localPath:filePath isUpdate:YES];
             task.progressBlock = ^(CGFloat progress) {
                 if (progress == 1) {
-                    block(filePath);
+                    NSLog(@"下载完成");
                 }
             };
         }
