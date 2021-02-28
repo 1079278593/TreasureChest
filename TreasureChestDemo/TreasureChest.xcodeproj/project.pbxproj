@@ -13,6 +13,7 @@
 		3A2E0A4B254EDAD300471A41 /* AutoSizeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E0A4A254EDAD300471A41 /* AutoSizeModel.m */; };
 		3A2E0A50254EFC0800471A41 /* AutoSizeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E0A4F254EFC0800471A41 /* AutoSizeView.m */; };
 		3A34C6CC25E28BD800AE2BC8 /* 摇摆.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A34C6CB25E28BD700AE2BC8 /* 摇摆.json */; };
+		3A34C70825EB3EE700AE2BC8 /* LottieLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A34C70625EB3EE700AE2BC8 /* LottieLoader.m */; };
 		3A40235823A62ED100BDB4E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A40234023A62ED100BDB4E3 /* Assets.xcassets */; };
 		3A40235923A62ED100BDB4E3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A40234123A62ED100BDB4E3 /* ViewController.m */; };
 		3A40235A23A62ED100BDB4E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A40234223A62ED100BDB4E3 /* LaunchScreen.storyboard */; };
@@ -337,6 +338,8 @@
 		3A2E0A4E254EFC0800471A41 /* AutoSizeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoSizeView.h; sourceTree = "<group>"; };
 		3A2E0A4F254EFC0800471A41 /* AutoSizeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoSizeView.m; sourceTree = "<group>"; };
 		3A34C6CB25E28BD700AE2BC8 /* 摇摆.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "摇摆.json"; sourceTree = "<group>"; };
+		3A34C70625EB3EE700AE2BC8 /* LottieLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LottieLoader.m; sourceTree = "<group>"; };
+		3A34C70725EB3EE700AE2BC8 /* LottieLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LottieLoader.h; sourceTree = "<group>"; };
 		3A40233F23A62ED100BDB4E3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3A40234023A62ED100BDB4E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A40234123A62ED100BDB4E3 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -873,6 +876,15 @@
 			path = AutoSizeTableView;
 			sourceTree = "<group>";
 		};
+		3A34C70525EB3EE700AE2BC8 /* LottieLoader */ = {
+			isa = PBXGroup;
+			children = (
+				3A34C70625EB3EE700AE2BC8 /* LottieLoader.m */,
+				3A34C70725EB3EE700AE2BC8 /* LottieLoader.h */,
+			);
+			path = LottieLoader;
+			sourceTree = "<group>";
+		};
 		3A40233E23A62ED100BDB4E3 /* TreasureChestDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -1017,6 +1029,8 @@
 		3AE550DA23A9189F001D989E /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				A9232F3A25E10AA800D8FFC5 /* FileManager */,
+				A94EF7A525A40D2400CB769D /* AudioPlayer */,
 				A9B35C2F25C2EEE6009453E6 /* OpenGL */,
 				A9CBFA2025B16EC600BD4747 /* ThreadResident */,
 				A9AF209825A6DDD500075F24 /* Pytorch */,
@@ -1090,8 +1104,7 @@
 				A918EC382555671E00C5964D /* TestController.m */,
 				A90ECEE0259577EB005E3EF0 /* TestView.h */,
 				A90ECEE1259577EB005E3EF0 /* TestView.m */,
-				A9232F3A25E10AA800D8FFC5 /* FileManager */,
-				A94EF7A525A40D2400CB769D /* AudioPlayer */,
+				3A34C70525EB3EE700AE2BC8 /* LottieLoader */,
 			);
 			path = TestController;
 			sourceTree = "<group>";
@@ -2437,6 +2450,7 @@
 				B26FBD922441CDB8003DB3BE /* LOTBezierData.m in Sources */,
 				B26FBD6F2441CDB8003DB3BE /* UIColor.m in Sources */,
 				A951F18525CBFE2E00E84BEE /* TextureLoader.m in Sources */,
+				3A34C70825EB3EE700AE2BC8 /* LottieLoader.m in Sources */,
 				A983CE3124EE5CC200213D35 /* matrix.c in Sources */,
 				3AE550E123A9189F001D989E /* FormsView.m in Sources */,
 				A918EC392555671E00C5964D /* TestController.m in Sources */,
