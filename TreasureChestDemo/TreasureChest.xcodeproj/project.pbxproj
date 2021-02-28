@@ -14,6 +14,10 @@
 		3A2E0A50254EFC0800471A41 /* AutoSizeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E0A4F254EFC0800471A41 /* AutoSizeView.m */; };
 		3A34C6CC25E28BD800AE2BC8 /* 摇摆.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A34C6CB25E28BD700AE2BC8 /* 摇摆.json */; };
 		3A34C70825EB3EE700AE2BC8 /* LottieLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A34C70625EB3EE700AE2BC8 /* LottieLoader.m */; };
+		3A34C70D25EB414500AE2BC8 /* ImageConvertor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3A34C70C25EB414500AE2BC8 /* ImageConvertor.mm */; };
+		3A34C71125EB713100AE2BC8 /* lottie_readme in Resources */ = {isa = PBXBuildFile; fileRef = 3A34C71025EB713100AE2BC8 /* lottie_readme */; };
+		3A34C71625EB903400AE2BC8 /* TextureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A34C71525EB903400AE2BC8 /* TextureModel.m */; };
+		3A34C71B25EB939300AE2BC8 /* LottieLoaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A34C71A25EB939300AE2BC8 /* LottieLoaderManager.m */; };
 		3A40235823A62ED100BDB4E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A40234023A62ED100BDB4E3 /* Assets.xcassets */; };
 		3A40235923A62ED100BDB4E3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A40234123A62ED100BDB4E3 /* ViewController.m */; };
 		3A40235A23A62ED100BDB4E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A40234223A62ED100BDB4E3 /* LaunchScreen.storyboard */; };
@@ -340,6 +344,13 @@
 		3A34C6CB25E28BD700AE2BC8 /* 摇摆.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "摇摆.json"; sourceTree = "<group>"; };
 		3A34C70625EB3EE700AE2BC8 /* LottieLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LottieLoader.m; sourceTree = "<group>"; };
 		3A34C70725EB3EE700AE2BC8 /* LottieLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LottieLoader.h; sourceTree = "<group>"; };
+		3A34C70B25EB414500AE2BC8 /* ImageConvertor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageConvertor.h; sourceTree = "<group>"; };
+		3A34C70C25EB414500AE2BC8 /* ImageConvertor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ImageConvertor.mm; sourceTree = "<group>"; };
+		3A34C71025EB713100AE2BC8 /* lottie_readme */ = {isa = PBXFileReference; lastKnownFileType = text; path = lottie_readme; sourceTree = "<group>"; };
+		3A34C71425EB903400AE2BC8 /* TextureModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureModel.h; sourceTree = "<group>"; };
+		3A34C71525EB903400AE2BC8 /* TextureModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextureModel.m; sourceTree = "<group>"; };
+		3A34C71925EB939300AE2BC8 /* LottieLoaderManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LottieLoaderManager.h; sourceTree = "<group>"; };
+		3A34C71A25EB939300AE2BC8 /* LottieLoaderManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LottieLoaderManager.m; sourceTree = "<group>"; };
 		3A40233F23A62ED100BDB4E3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3A40234023A62ED100BDB4E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A40234123A62ED100BDB4E3 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -879,8 +890,12 @@
 		3A34C70525EB3EE700AE2BC8 /* LottieLoader */ = {
 			isa = PBXGroup;
 			children = (
-				3A34C70625EB3EE700AE2BC8 /* LottieLoader.m */,
+				3A34C71925EB939300AE2BC8 /* LottieLoaderManager.h */,
+				3A34C71A25EB939300AE2BC8 /* LottieLoaderManager.m */,
 				3A34C70725EB3EE700AE2BC8 /* LottieLoader.h */,
+				3A34C70625EB3EE700AE2BC8 /* LottieLoader.m */,
+				3A34C71425EB903400AE2BC8 /* TextureModel.h */,
+				3A34C71525EB903400AE2BC8 /* TextureModel.m */,
 			);
 			path = LottieLoader;
 			sourceTree = "<group>";
@@ -1229,6 +1244,8 @@
 			children = (
 				A94EF7AC25A40F8A00CB769D /* PixelsOperator.h */,
 				A94EF7AD25A40F8A00CB769D /* PixelsOperator.m */,
+				3A34C70B25EB414500AE2BC8 /* ImageConvertor.h */,
+				3A34C70C25EB414500AE2BC8 /* ImageConvertor.mm */,
 			);
 			path = PixelsOperator;
 			sourceTree = "<group>";
@@ -1671,6 +1688,7 @@
 			children = (
 				B26FBD962441D062003DB3BE /* Resource */,
 				B26FBCCB2441CDB8003DB3BE /* Classes */,
+				3A34C71025EB713100AE2BC8 /* lottie_readme */,
 			);
 			path = "lottie-ios";
 			sourceTree = "<group>";
@@ -2259,6 +2277,7 @@
 				A9B35C4C25C2F348009453E6 /* universal.fsh in Resources */,
 				3AD14A4324619C19004D54B8 /* words_car.plist in Resources */,
 				3AD14A2924615273004D54B8 /* words_foods.txt in Resources */,
+				3A34C71125EB713100AE2BC8 /* lottie_readme in Resources */,
 				A94EF80F25A4100000CB769D /* 2say.mp3 in Resources */,
 				A94EF7FB25A40FFF00CB769D /* 完美搭档.mp3 in Resources */,
 				A9AF209B25A6DE5700075F24 /* douyin8.pt in Resources */,
@@ -2478,10 +2497,12 @@
 				B26FBD882441CDB8003DB3BE /* LOTValueCallback.m in Sources */,
 				B26FBD8D2441CDB8003DB3BE /* LOTCacheProvider.m in Sources */,
 				B26FBD892441CDB8003DB3BE /* LOTBlockCallback.m in Sources */,
+				3A34C70D25EB414500AE2BC8 /* ImageConvertor.mm in Sources */,
 				A947AF7825CBF571005E5E1E /* OpenGLRenderer.m in Sources */,
 				B26FBD5F2441CDB8003DB3BE /* LOTValueInterpolator.m in Sources */,
 				B284723E2404F5A600C1194F /* ServerMockCtl.m in Sources */,
 				A98671C8255636A8003381A7 /* RectProgressView.m in Sources */,
+				3A34C71B25EB939300AE2BC8 /* LottieLoaderManager.m in Sources */,
 				A9CBFA2325B16F0300BD4747 /* ThreadResident.m in Sources */,
 				B26FBD782441CDB8003DB3BE /* LOTShapeGradientFill.m in Sources */,
 				3AD14A3824616A44004D54B8 /* LexiconFileModel.m in Sources */,
@@ -2561,6 +2582,7 @@
 				B26FBD8F2441CDB8003DB3BE /* LOTInterpolatorCallback.m in Sources */,
 				B284724124051E2D00C1194F /* URLOfflineDownloadTask.m in Sources */,
 				B2BC387A23C0337A00D5B9C6 /* BaseShapeView.m in Sources */,
+				3A34C71625EB903400AE2BC8 /* TextureModel.m in Sources */,
 				B2DD68A523B2FCDF00106F4F /* PearlsPackageCtl.m in Sources */,
 				B26FBD7F2441CDB8003DB3BE /* LOTShapeFill.m in Sources */,
 				A94EF7A825A40D2400CB769D /* AudioPlayer.m in Sources */,

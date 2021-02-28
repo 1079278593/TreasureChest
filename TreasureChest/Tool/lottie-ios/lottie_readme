@@ -1,0 +1,5 @@
+
+lottie 如果打印如下：
+nil host used in call to allowsSpecificHTTPSCertificateForHost
+nil host used in call to allowsAnyHTTPSCertificateForHost:
+查阅代码，位置：LOTLayerContainer.m的_setImageForAsset()函数，第149行左右
