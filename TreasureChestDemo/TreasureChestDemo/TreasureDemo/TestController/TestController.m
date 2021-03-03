@@ -17,6 +17,7 @@
 #import "TextureModel.h"
 #import "ImageConvertor.h"
 #import "LottieLoaderManager.h"
+#import "DraggableCardController.h"
 
 #define RADIANS_TO_DEGREES(radians) ((radians) * (180.0 / M_PI))
 #define DEGREES_TO_RADIANS(angle) ((angle) / 180.0 * M_PI)
@@ -94,10 +95,8 @@
 }
 
 - (void)button3Event:(UIButton *)button {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSString *lottieUrl = @"http://o.yinliqu.com/default/139d31294b294e88a5b3455538359b12.json";
-        [self loadWithUrl:lottieUrl];
-    });
+    DraggableCardController *controller = [[DraggableCardController alloc]init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)sliderValueChange:(UISlider *)slider {
