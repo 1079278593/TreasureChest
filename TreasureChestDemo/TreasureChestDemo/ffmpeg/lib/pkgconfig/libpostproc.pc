@@ -1,0 +1,14 @@
+prefix=/Users/lan/Desktop/ffmpeg/ffmpeg/mac1
+exec_prefix=${prefix}
+libdir=/Users/lan/Desktop/ffmpeg/ffmpeg/mac1/lib
+includedir=/Users/lan/Desktop/ffmpeg/ffmpeg/mac1/include
+
+Name: libpostproc
+Description: FFmpeg postprocessing library
+Version: 55.8.100
+Requires: libavutil >= 56.55.100
+Requires.private: 
+Conflicts:
+Libs: -L${libdir}  -lpostproc -lm
+Libs.private: 
+Cflags: -I${includedir}
