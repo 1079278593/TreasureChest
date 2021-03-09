@@ -8,7 +8,10 @@
 /**
  水果： http://o.yinliqu.com/default/741b4c9dea5747a995c6d0cd24dda2bd.json
  蝴蝶： http://o.yinliqu.com/default/e5e9ab385df64b5b8ee63c1e85362ada.json
- 烟雾： http://o.yinliqu.com/default/4535e11bcda1477e85b94a87352234b2.json
+ 烟雾： http://o.yinliqu.com/default/4535e11bcda1477e85b94a87352234b2.json  有问题？
+ 爱心： http://o.yinliqu.com/default/eb01b10796f84ca9b80838f6da03a501.json
+ 玫瑰： http://o.yinliqu.com/default/139d31294b294e88a5b3455538359b12.json
+ 气泡： http://o.yinliqu.com/default/e5146d78b8564b3682540ff07efbc2bc.json
  */
 #import <Foundation/Foundation.h>
 #import "TextureModel.h"

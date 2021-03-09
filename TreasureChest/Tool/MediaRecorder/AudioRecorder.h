@@ -12,7 +12,6 @@
 @interface AudioRecorder : NSObject
 
 @property (nonatomic, copy, readonly) NSString *audioPath;
-@property (nonatomic, copy, readonly) NSString *tmpAudioPath;
 @property (nonatomic, strong) AVAudioRecorder *recorder;
 
 + (instancetype)sharedInstance;

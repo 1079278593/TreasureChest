@@ -10,10 +10,7 @@
 
 @interface AudioRecorder ()
 
-@property (nonatomic, strong) AVAudioRecorder *tmpRecorder;
-
 @property (nonatomic, copy) NSString *audioPath;
-@property (nonatomic, copy) NSString *tmpAudioPath;
 
 @end
 
@@ -21,7 +18,6 @@
 
 #pragma mark - Life Cycle
 + (instancetype)sharedInstance {
-    
     static id sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -41,7 +37,6 @@
 #pragma mark - Recorder Event
 ///start or resume a record
 - (void)startRecord {
-
     // Set session category
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
     // Set the session active
@@ -57,6 +52,8 @@
     // Set the session active
     [[AVAudioSession sharedInstance] setActive:YES error:nil];
     [self.recorder stop];
+    NSLog(@"结束录音");
+    [EasyProgress showSuccess:@"结束录音"];
 }
 
 - (void)pauseRecord {
@@ -105,9 +102,7 @@
 
 #pragma mark - Getters
 - (AVAudioRecorder *)recorder {
-    
     if (_recorder == nil) {
-        
         // Set session category
         [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
         // Set the session active
@@ -119,21 +114,6 @@
     return _recorder;
 }
 
-- (AVAudioRecorder *)tmpRecorder {
-    
-    if (_tmpRecorder == nil) {
-        
-        // Set session category
-        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
-        // Set the session active
-        [[AVAudioSession sharedInstance] setActive:YES error:nil];
-        _tmpRecorder.meteringEnabled = YES;// Monitor sound wave
-        _tmpRecorder = [[AVAudioRecorder alloc] initWithURL:[self tmpAudioPathURL] settings:[self recordSetting] error:nil];
-    }
-    
-    return _tmpRecorder;
-}
-
 - (NSString *)audioPath {
     if (_audioPath == nil) {
         NSString *docPath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
@@ -143,21 +123,8 @@
     return _audioPath;
 }
 
-- (NSString *)tmpAudioPath {
-    if (_tmpAudioPath == nil) {
-        NSString *docPath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
-        _tmpAudioPath = [docPath stringByAppendingPathComponent:@"tmpSound.wav"];
-        NSLog(@"%@",_tmpAudioPath);
-    }
-    return _tmpAudioPath;
-}
-
 - (NSURL *)audioPathURL {
     return [NSURL fileURLWithPath:self.audioPath];
-}
-
-- (NSURL *)tmpAudioPathURL {
-    return [NSURL fileURLWithPath:self.tmpAudioPath];
 }
 
 @end
