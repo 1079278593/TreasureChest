@@ -17,6 +17,7 @@
 #import "TextureModel.h"
 #import "ImageConvertor.h"
 #import "AudioRecorder.h"
+#import "WaveButton.h"
 
 #define RADIANS_TO_DEGREES(radians) ((radians) * (180.0 / M_PI))
 #define DEGREES_TO_RADIANS(angle) ((angle) / 180.0 * M_PI)
@@ -24,6 +25,7 @@
 @interface TestController ()
 
 @property(nonatomic, strong)UIButton *button;
+@property(nonatomic, strong)UIButton *button3;
 @property(nonatomic, strong)UIImageView *bgImgView;
 @property(nonatomic, strong)UIImageView *frontImgView;
 @property(nonatomic, strong)UISlider *slider;
@@ -58,17 +60,31 @@
     [self.view addSubview:button2];
     button2.frame = CGRectMake(220, 170, 90, 44);
     
-    UIButton *button3 = [UIButton buttonWithType:UIButtonTypeCustom];
-    button3.layer.borderWidth = 1;
-    [button3 setTitle:@"切换按钮2" forState:UIControlStateNormal];
-    [button3 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [button3 addTarget:self action:@selector(button3Event:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button3];
-    button3.frame = CGRectMake(220, 270, 90, 44);
+    _button3 = [UIButton buttonWithType:UIButtonTypeCustom];
+    _button3.size = CGSizeMake(72, 72);
+    _button3.layer.borderWidth = 12;
+    _button3.layer.cornerRadius = _button3.height/2.0;
+    _button3.layer.masksToBounds = true;
+    _button3.layer.borderColor = [UIColor hexColor:@"#FD3993"].CGColor;
+    [_button3 setTitle:@"按钮3" forState:UIControlStateNormal];
+    [_button3 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_button3 addTarget:self action:@selector(button3Event:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_button3];
+    _button3.frame = CGRectMake(220, 270, _button3.width, _button3.width);
     
     self.slider.frame = CGRectMake(30, KScreenHeight - 160, KScreenWidth - 60, 30);
 
+    [self testMethod];
 }
+
+#pragma mark - < test method >
+- (void)testMethod {
+    WaveButton *waveButton = [[WaveButton alloc]initWithFrame:CGRectMake(30, 300, 110, 110)];
+    [self.view addSubview:waveButton];
+//    waveButton.layer.borderWidth = 1;
+}
+
+
 
 #pragma mark - < event >
 - (void)buttonEvent:(UIButton *)button {

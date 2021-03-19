@@ -43,6 +43,7 @@
     UISlider *slieder = [[UISlider alloc]init];
     slieder.value = 0;
     slieder.frame = CGRectMake(40, KScreenHeight - 100, KScreenWidth - 80, 30);
+//    slieder.thumbTintColor = [UIColor clearColor];
     [self.view addSubview:slieder];
     [slieder addTarget:self action:@selector(sliderValueChange:) forControlEvents:UIControlEventValueChanged];
 }
