@@ -17,7 +17,7 @@
 #import "TextureModel.h"
 #import "ImageConvertor.h"
 #import "AudioRecorder.h"
-#import "WaveButton.h"
+#import "ZScrollLabel.h"
 
 #define RADIANS_TO_DEGREES(radians) ((radians) * (180.0 / M_PI))
 #define DEGREES_TO_RADIANS(angle) ((angle) / 180.0 * M_PI)
@@ -25,7 +25,6 @@
 @interface TestController ()
 
 @property(nonatomic, strong)UIButton *button;
-@property(nonatomic, strong)UIButton *button3;
 @property(nonatomic, strong)UIImageView *bgImgView;
 @property(nonatomic, strong)UIImageView *frontImgView;
 @property(nonatomic, strong)UISlider *slider;
@@ -46,45 +45,44 @@
     
     _button = [UIButton buttonWithType:UIButtonTypeCustom];
     _button.layer.borderWidth = 1;
+    _button.backgroundColor = [UIColor whiteColor];
     [_button setTitle:@"切换按钮1" forState:UIControlStateNormal];
     [_button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [_button addTarget:self action:@selector(buttonEvent:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_button];
-    _button.frame = CGRectMake(220, 70, 90, 44);
+    _button.frame = CGRectMake(300, 70, 90, 44);
     
     UIButton *button2 = [UIButton buttonWithType:UIButtonTypeCustom];
     button2.layer.borderWidth = 1;
+    button2.backgroundColor = [UIColor whiteColor];
     [button2 setTitle:@"切换按钮2" forState:UIControlStateNormal];
     [button2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [button2 addTarget:self action:@selector(button2Event:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button2];
-    button2.frame = CGRectMake(220, 170, 90, 44);
+    button2.frame = CGRectMake(300, 170, 90, 44);
     
-    _button3 = [UIButton buttonWithType:UIButtonTypeCustom];
-    _button3.size = CGSizeMake(72, 72);
-    _button3.layer.borderWidth = 12;
-    _button3.layer.cornerRadius = _button3.height/2.0;
-    _button3.layer.masksToBounds = true;
-    _button3.layer.borderColor = [UIColor hexColor:@"#FD3993"].CGColor;
-    [_button3 setTitle:@"按钮3" forState:UIControlStateNormal];
-    [_button3 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [_button3 addTarget:self action:@selector(button3Event:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_button3];
-    _button3.frame = CGRectMake(220, 270, _button3.width, _button3.width);
+    UIButton *button3 = [UIButton buttonWithType:UIButtonTypeCustom];
+    button3.layer.borderWidth = 1;
+    button3.backgroundColor = [UIColor whiteColor];
+    [button3 setTitle:@"切换按钮2" forState:UIControlStateNormal];
+    [button3 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [button3 addTarget:self action:@selector(button3Event:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button3];
+    button3.frame = CGRectMake(300, 270, 90, 44);
     
     self.slider.frame = CGRectMake(30, KScreenHeight - 160, KScreenWidth - 60, 30);
 
-    [self testMethod];
+    //下面下增加的
+    ZScrollLabel *label = [[ZScrollLabel alloc]init];
+    label.frame = CGRectMake(30, 320, 70, 30);
+    label.layer.borderWidth = 1;
+    label.text = @"滚动1233432";
+    [self.view addSubview:label];
+    
+//    label.scrollDuration = CGFLOAT_MAX;
+//    label.delayInterval = 0.2;
+    [label startScrollAnimation];
 }
-
-#pragma mark - < test method >
-- (void)testMethod {
-    WaveButton *waveButton = [[WaveButton alloc]initWithFrame:CGRectMake(30, 300, 110, 110)];
-    [self.view addSubview:waveButton];
-//    waveButton.layer.borderWidth = 1;
-}
-
-
 
 #pragma mark - < event >
 - (void)buttonEvent:(UIButton *)button {
@@ -112,7 +110,10 @@
 #pragma mark - < init view >
 - (void)initView {
     _bgImgView = [[UIImageView alloc]init];
-    _bgImgView.image = [UIImage imageNamed:@"bgPic"];
+    int index = arc4random() % 7 + 1;
+    NSString *path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"testDemoBg%d",index] ofType:@"jpeg"];
+    _bgImgView.image = [UIImage imageWithContentsOfFile:path];
+//    _bgImgView.image = [UIImage imageNamed:@"bgPic"];
     [self.view addSubview:_bgImgView];
     _bgImgView.frame = self.view.bounds;
     
