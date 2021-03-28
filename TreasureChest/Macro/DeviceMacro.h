@@ -15,6 +15,9 @@
 #define KScreenWidth  ([[UIScreen mainScreen] bounds].size.width)
 #define KStatuBarHeight ([[UIApplication sharedApplication] statusBarFrame].size.height)
 
+//degree
+#define RADIANS_TO_DEGREES(radians) ((radians) * (180.0 / M_PI))
+#define DEGREES_TO_RADIANS(angle) ((angle) / 180.0 * M_PI)
 
 
 #endif /* DeviceMacro_h */

@@ -13,11 +13,8 @@
 		3A2E0A4B254EDAD300471A41 /* AutoSizeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E0A4A254EDAD300471A41 /* AutoSizeModel.m */; };
 		3A2E0A50254EFC0800471A41 /* AutoSizeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E0A4F254EFC0800471A41 /* AutoSizeView.m */; };
 		3A34C6CC25E28BD800AE2BC8 /* 摇摆.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A34C6CB25E28BD700AE2BC8 /* 摇摆.json */; };
-		3A34C70825EB3EE700AE2BC8 /* LottieLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A34C70625EB3EE700AE2BC8 /* LottieLoader.m */; };
 		3A34C70D25EB414500AE2BC8 /* ImageConvertor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3A34C70C25EB414500AE2BC8 /* ImageConvertor.mm */; };
 		3A34C71125EB713100AE2BC8 /* lottie_readme in Resources */ = {isa = PBXBuildFile; fileRef = 3A34C71025EB713100AE2BC8 /* lottie_readme */; };
-		3A34C71625EB903400AE2BC8 /* TextureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A34C71525EB903400AE2BC8 /* TextureModel.m */; };
-		3A34C71B25EB939300AE2BC8 /* LottieLoaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A34C71A25EB939300AE2BC8 /* LottieLoaderManager.m */; };
 		3A40235823A62ED100BDB4E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A40234023A62ED100BDB4E3 /* Assets.xcassets */; };
 		3A40235923A62ED100BDB4E3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A40234123A62ED100BDB4E3 /* ViewController.m */; };
 		3A40235A23A62ED100BDB4E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A40234223A62ED100BDB4E3 /* LaunchScreen.storyboard */; };
@@ -65,6 +62,8 @@
 		3AD14A5124619F83004D54B8 /* words_poem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A5024619F83004D54B8 /* words_poem.plist */; };
 		3AE550E123A9189F001D989E /* FormsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE550D623A9189F001D989E /* FormsView.m */; };
 		3AE550E223A9189F001D989E /* ResidentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE550D923A9189F001D989E /* ResidentScrollView.m */; };
+		3AE852CE2610C09C00AA656C /* LottieLoaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE852CA2610C09C00AA656C /* LottieLoaderManager.m */; };
+		3AE852CF2610C09C00AA656C /* LottieLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE852CB2610C09C00AA656C /* LottieLoader.m */; };
 		3BEFF9DF0E12D318A440735F /* Pods_TreasureChestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140A460F1B11381DEED65D5B /* Pods_TreasureChestTests.framework */; };
 		A90ECEE2259577EB005E3EF0 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = A90ECEE1259577EB005E3EF0 /* TestView.m */; };
 		A90ECEEE25998733005E3EF0 /* NSString+Bundle.m in Sources */ = {isa = PBXBuildFile; fileRef = A90ECEED25998733005E3EF0 /* NSString+Bundle.m */; };
@@ -366,15 +365,9 @@
 		3A2E0A4E254EFC0800471A41 /* AutoSizeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoSizeView.h; sourceTree = "<group>"; };
 		3A2E0A4F254EFC0800471A41 /* AutoSizeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoSizeView.m; sourceTree = "<group>"; };
 		3A34C6CB25E28BD700AE2BC8 /* 摇摆.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "摇摆.json"; sourceTree = "<group>"; };
-		3A34C70625EB3EE700AE2BC8 /* LottieLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LottieLoader.m; sourceTree = "<group>"; };
-		3A34C70725EB3EE700AE2BC8 /* LottieLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LottieLoader.h; sourceTree = "<group>"; };
 		3A34C70B25EB414500AE2BC8 /* ImageConvertor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageConvertor.h; sourceTree = "<group>"; };
 		3A34C70C25EB414500AE2BC8 /* ImageConvertor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ImageConvertor.mm; sourceTree = "<group>"; };
 		3A34C71025EB713100AE2BC8 /* lottie_readme */ = {isa = PBXFileReference; lastKnownFileType = text; path = lottie_readme; sourceTree = "<group>"; };
-		3A34C71425EB903400AE2BC8 /* TextureModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureModel.h; sourceTree = "<group>"; };
-		3A34C71525EB903400AE2BC8 /* TextureModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextureModel.m; sourceTree = "<group>"; };
-		3A34C71925EB939300AE2BC8 /* LottieLoaderManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LottieLoaderManager.h; sourceTree = "<group>"; };
-		3A34C71A25EB939300AE2BC8 /* LottieLoaderManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LottieLoaderManager.m; sourceTree = "<group>"; };
 		3A40233F23A62ED100BDB4E3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3A40234023A62ED100BDB4E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A40234123A62ED100BDB4E3 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -435,6 +428,10 @@
 		3AE550D923A9189F001D989E /* ResidentScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResidentScrollView.m; sourceTree = "<group>"; };
 		3AE550DF23A9189F001D989E /* DeviceMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceMacro.h; sourceTree = "<group>"; };
 		3AE550EA23A91A93001D989E /* TreasureChest-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TreasureChest-Bridging-Header.h"; sourceTree = "<group>"; };
+		3AE852CA2610C09C00AA656C /* LottieLoaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LottieLoaderManager.m; sourceTree = "<group>"; };
+		3AE852CB2610C09C00AA656C /* LottieLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LottieLoader.m; sourceTree = "<group>"; };
+		3AE852CC2610C09C00AA656C /* LottieLoaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LottieLoaderManager.h; sourceTree = "<group>"; };
+		3AE852CD2610C09C00AA656C /* LottieLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LottieLoader.h; sourceTree = "<group>"; };
 		3AFE5E6525E1FF71007CD8B0 /* FileManagerEnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileManagerEnums.h; sourceTree = "<group>"; };
 		A90ECEE0259577EB005E3EF0 /* TestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
 		A90ECEE1259577EB005E3EF0 /* TestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
@@ -941,19 +938,6 @@
 			path = AutoSizeTableView;
 			sourceTree = "<group>";
 		};
-		3A34C70525EB3EE700AE2BC8 /* LottieLoader */ = {
-			isa = PBXGroup;
-			children = (
-				3A34C71925EB939300AE2BC8 /* LottieLoaderManager.h */,
-				3A34C71A25EB939300AE2BC8 /* LottieLoaderManager.m */,
-				3A34C70725EB3EE700AE2BC8 /* LottieLoader.h */,
-				3A34C70625EB3EE700AE2BC8 /* LottieLoader.m */,
-				3A34C71425EB903400AE2BC8 /* TextureModel.h */,
-				3A34C71525EB903400AE2BC8 /* TextureModel.m */,
-			);
-			path = LottieLoader;
-			sourceTree = "<group>";
-		};
 		3A40233E23A62ED100BDB4E3 /* TreasureChestDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -1077,6 +1061,7 @@
 				3AE550DB23A9189F001D989E /* Extension */,
 				3AE550D323A9189F001D989E /* ViewModule */,
 				3AE550DA23A9189F001D989E /* Tool */,
+				3AE852C82610C06700AA656C /* ThirdModule */,
 			);
 			name = TreasureChest;
 			path = ../TreasureChest;
@@ -1123,18 +1108,15 @@
 		3AE550DA23A9189F001D989E /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				3AE852C92610C09C00AA656C /* LottieLoader */,
 				A9232F3A25E10AA800D8FFC5 /* FileManager */,
 				A94EF7A525A40D2400CB769D /* AudioPlayer */,
 				A9B35C2F25C2EEE6009453E6 /* OpenGL */,
 				A9CBFA2025B16EC600BD4747 /* ThreadResident */,
-				A9AF209825A6DDD500075F24 /* Pytorch */,
 				A94EF7AB25A40F2B00CB769D /* PixelsOperator */,
-				B26FBCCA2441CDB8003DB3BE /* lottie-ios */,
 				B2169DE124401AF7002CFE3E /* MediaRecorder */,
 				B28472342404B88E00C1194F /* DownloadUpload */,
 				B2B6B1A52408E68100187850 /* Regular */,
-				B2AA0F4123C5869F00BEBA27 /* FMDB */,
-				B27B780423AC61600083E6AE /* AFNetworking */,
 				B293B5A2242C4FC0009F5887 /* CheckAuthorization */,
 			);
 			path = Tool;
@@ -1179,6 +1161,29 @@
 			path = Macro;
 			sourceTree = "<group>";
 		};
+		3AE852C82610C06700AA656C /* ThirdModule */ = {
+			isa = PBXGroup;
+			children = (
+				B27B780423AC61600083E6AE /* AFNetworking */,
+				B2AA0F4123C5869F00BEBA27 /* FMDB */,
+				B26FBCCA2441CDB8003DB3BE /* lottie-ios */,
+				A9AF209825A6DDD500075F24 /* Pytorch */,
+			);
+			path = ThirdModule;
+			sourceTree = "<group>";
+		};
+		3AE852C92610C09C00AA656C /* LottieLoader */ = {
+			isa = PBXGroup;
+			children = (
+				3AE852CC2610C09C00AA656C /* LottieLoaderManager.h */,
+				3AE852CA2610C09C00AA656C /* LottieLoaderManager.m */,
+				3AE852CD2610C09C00AA656C /* LottieLoader.h */,
+				3AE852CB2610C09C00AA656C /* LottieLoader.m */,
+			);
+			name = LottieLoader;
+			path = ../../../poppy/poppy_iOS/PoppyApp/Poppy_Dev01/FacesBox/Utilities/LottieLoader;
+			sourceTree = "<group>";
+		};
 		A918EC13255554FF00C5964D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -1199,7 +1204,6 @@
 				A90ECEE0259577EB005E3EF0 /* TestView.h */,
 				A90ECEE1259577EB005E3EF0 /* TestView.m */,
 				3A5E735026062EDD00772384 /* resources */,
-				3A34C70525EB3EE700AE2BC8 /* LottieLoader */,
 			);
 			path = TestController;
 			sourceTree = "<group>";
@@ -2612,7 +2616,6 @@
 				B26FBD922441CDB8003DB3BE /* LOTBezierData.m in Sources */,
 				B26FBD6F2441CDB8003DB3BE /* UIColor.m in Sources */,
 				A951F18525CBFE2E00E84BEE /* TextureLoader.m in Sources */,
-				3A34C70825EB3EE700AE2BC8 /* LottieLoader.m in Sources */,
 				A983CE3124EE5CC200213D35 /* matrix.c in Sources */,
 				3AE550E123A9189F001D989E /* FormsView.m in Sources */,
 				A918EC392555671E00C5964D /* TestController.m in Sources */,
@@ -2646,7 +2649,6 @@
 				B26FBD5F2441CDB8003DB3BE /* LOTValueInterpolator.m in Sources */,
 				B284723E2404F5A600C1194F /* ServerMockCtl.m in Sources */,
 				A98671C8255636A8003381A7 /* RectProgressView.m in Sources */,
-				3A34C71B25EB939300AE2BC8 /* LottieLoaderManager.m in Sources */,
 				A9CBFA2325B16F0300BD4747 /* ThreadResident.m in Sources */,
 				B26FBD782441CDB8003DB3BE /* LOTShapeGradientFill.m in Sources */,
 				3AD14A3824616A44004D54B8 /* LexiconFileModel.m in Sources */,
@@ -2727,7 +2729,6 @@
 				B26FBD8F2441CDB8003DB3BE /* LOTInterpolatorCallback.m in Sources */,
 				B284724124051E2D00C1194F /* URLOfflineDownloadTask.m in Sources */,
 				B2BC387A23C0337A00D5B9C6 /* BaseShapeView.m in Sources */,
-				3A34C71625EB903400AE2BC8 /* TextureModel.m in Sources */,
 				A98EFD8925EF6FE900948E06 /* DraggableCardView.m in Sources */,
 				B2DD68A523B2FCDF00106F4F /* PearlsPackageCtl.m in Sources */,
 				A98EFD8825EF6FE900948E06 /* DraggableContainer.m in Sources */,
@@ -2748,11 +2749,13 @@
 				B26FBD6B2441CDB8003DB3BE /* LOTStrokeRenderer.m in Sources */,
 				3AE550E223A9189F001D989E /* ResidentScrollView.m in Sources */,
 				B2169DFD24401E2B002CFE3E /* AudioMixWithAudio.m in Sources */,
+				3AE852CE2610C09C00AA656C /* LottieLoaderManager.m in Sources */,
 				B2AA0F4423C586CE00BEBA27 /* FMDBManager.m in Sources */,
 				A90ECEEE25998733005E3EF0 /* NSString+Bundle.m in Sources */,
 				3AD14A3124615354004D54B8 /* LexiconViewCtl.m in Sources */,
 				B286A9B3242D8DF900E575BF /* EasyAlertView.m in Sources */,
 				B2C459302440524F00117BD7 /* CuvbicCurveGeometry.m in Sources */,
+				3AE852CF2610C09C00AA656C /* LottieLoader.m in Sources */,
 				B2506CF923AB5B370034A472 /* CollapsibleViewModel.m in Sources */,
 				B2CE343E244AAEB9000A32EB /* TestGradientLayer.m in Sources */,
 				A923238124EBB4A100B2CDE1 /* UIImageView+LBBlurredImage.m in Sources */,

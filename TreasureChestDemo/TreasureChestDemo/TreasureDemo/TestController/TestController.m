@@ -13,8 +13,6 @@
 #import "OpenGLPixelBufferView.h"
 #import "FaceMaskRenderer.h"
 #import "FileManager.h"
-#import "LottieLoader.h"
-#import "TextureModel.h"
 #import "ImageConvertor.h"
 #import "AudioRecorder.h"
 #import "ZScrollLabel.h"
@@ -31,8 +29,6 @@
 @property(nonatomic, strong)UIImageView *imgView;
 
 @property(nonatomic, strong)LOTAnimationView *lottieView;
-@property(nonatomic, strong)LottieLoader *lottieLoader;
-@property(nonatomic, strong)NSMutableArray <TextureModel *> *buffers;
 
 @end
 
