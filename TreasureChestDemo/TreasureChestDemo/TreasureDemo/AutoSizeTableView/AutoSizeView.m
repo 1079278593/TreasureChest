@@ -21,13 +21,13 @@
 
 - (instancetype)init {
     if(self == [super init]){
-        [self initView];
+        [self setupSubviews];
     }
     return self;
 }
 
 #pragma mark - < init view >
-- (void)initView {
+- (void)setupSubviews {
     _view1 = [[UIView alloc]init];
     _view1.layer.cornerRadius = 5;
     _view1.backgroundColor = [UIColor greenColor];

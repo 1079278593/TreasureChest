@@ -18,16 +18,16 @@
 
 //- (instancetype)initWithFrame:(CGRect)frame {
 //    if(self == [super initWithFrame:frame]){
-//        [self initView];
+//        [self setupSubviews];
 //        _imageWH = STHeight(13);
 //        _fontSize = STFont(14);
 //        _alignment = ImageAlignmentRight;
-//        [self initView];
+//        [self setupSubviews];
 //    }
 //    return self;
 //}
 //
-//- (void)initView {
+//- (void)setupSubviews {
 //    _selectedLabel = [[UILabel alloc]initWithFontFamily:[UIFont fontWithName:FONT_REGULAR size:_fontSize] text:MSG_EMPTY textAlignment:NSTextAlignmentCenter textColor:c10 backgroundColor:nil multiLine:NO];
 //    [self addSubview:_selectedLabel];
 //

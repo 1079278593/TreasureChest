@@ -20,7 +20,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self initView];
+        [self setupSubviews];
         self.image = [UIImage imageNamed:@"bgPic1"];
         self.backgroundColor = [UIColor lightGrayColor];
     }
@@ -28,7 +28,7 @@
 }
 
 #pragma mark - < init view >
-- (void)initView {
+- (void)setupSubviews {
     
     //mask的frame
     UIBezierPath *maskPath = [UIBezierPath bezierPathWithRect:self.bounds];

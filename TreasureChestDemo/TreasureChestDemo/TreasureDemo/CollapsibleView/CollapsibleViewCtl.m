@@ -19,10 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initView];
+    [self setupSubviews];
 }
 
-- (void)initView {
+- (void)setupSubviews {
     UIButton *allBtn = [[UIButton alloc] init];
     [allBtn setTitle:@"全选" forState:(UIControlStateNormal)];
     [allBtn setTitle:@"反选" forState:(UIControlStateSelected)];

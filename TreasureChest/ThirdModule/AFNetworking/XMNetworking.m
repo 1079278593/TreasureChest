@@ -33,7 +33,8 @@ static NSString *const BaseURL = @"https://www.";
 {
     self = [super init];
     if (self) {
-        self.AFManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:BaseURL]];
+//        self.AFManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:BaseURL]];
+        self.AFManager = [XMNetworking getSessionManager];
         self.AFManager.requestSerializer = [AFHTTPRequestSerializer serializer];
         // FIXME: 此处应该添加一些服务器指定的的请求头信息
         //[self.AFManager.requestSerializer setValue:@"" forHTTPHeaderField:@""];
@@ -54,7 +55,8 @@ static NSString *const BaseURL = @"https://www.";
 {
     
 //    return [self.AFManager GET:URLString parameters:parameters progress:nil success:success failure:failure];
-    return [self.AFManager GET:URLString parameters:parameters headers:nil progress:nil success:success failure:failure];
+    AFHTTPSessionManager *session = [XMNetworking getSessionManager];
+    return [session GET:URLString parameters:parameters headers:nil progress:nil success:success failure:failure];
 }
 
 - (NSURLSessionDataTask *)POST:(NSString *)URLString
@@ -98,6 +100,26 @@ static NSString *const BaseURL = @"https://www.";
     } progress:uploadProgress success:success failure:failure];
     
     return task;
+}
+
+#pragma mark - < header >
+//引力区
++ (AFHTTPSessionManager *)getSessionManager {
+    // 创建请求管理对象
+    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+    session.responseSerializer = [AFJSONResponseSerializer serializer];
+
+    long time = [[NSDate date] timeIntervalSince1970]*1000;
+    [session.requestSerializer setValue:[NSString stringWithFormat:@"%ld",time] forHTTPHeaderField:@"h-time"];  // 请求时间
+    [session.requestSerializer setValue:@"ylq" forHTTPHeaderField:@"h-tenant-code"];                            // 租户编码
+    [session.requestSerializer willChangeValueForKey:@"timeoutInterval"];
+    session.requestSerializer.timeoutInterval = 10.f;                                                           // 设置超时时间
+    [session.requestSerializer didChangeValueForKey:@"timeoutInterval"];
+    //token调试用
+    NSString *token = @"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhcGlfdXVpZCIsImgtdGVuYW50LWNvZGUiOiJnY3loIiwibG9naW5JZCI6IjgyYzgwN2E3NGRjOTQ5NTBhY2ZhOTIzOWNkZGYwZDBlIiwiZXhwIjoxNzM1MDI2OTY2LCJpYXQiOjE1NjIyMjY5NjUzODF9.X9yy2774tYVAyxDGBN3lmZF7SaX1fvTeZLtFwJ4lPoVLKHa3XggQCUal_jALLnWO-fhoCmpHcR9-STdDvPZetA";
+    [session.requestSerializer setValue:token forHTTPHeaderField:@"h-token"];
+    
+    return session;
 }
 
 @end

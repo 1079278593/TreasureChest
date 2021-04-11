@@ -24,12 +24,12 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        [self initView];
+        [self setupSubviews];
     }
     return self;
 }
 
-- (void)initView {
+- (void)setupSubviews {
     _wordLabel = [[UILabel alloc]init];
     _wordLabel.textAlignment = NSTextAlignmentLeft;
     _wordLabel.font = [UIFont systemFontOfSize:14];

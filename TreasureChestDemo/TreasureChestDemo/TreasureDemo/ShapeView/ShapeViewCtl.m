@@ -23,13 +23,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self initView];
+    [self setupSubviews];
     
     self.stackView.frame = CGRectMake(0, 400, KScreenWidth, 100);
     
 }
 
-- (void)initView {
+- (void)setupSubviews {
     _circleView = [[XMCircleView alloc]init];
     _circleView.layer.borderWidth = 1;
     _circleView.frame = CGRectMake(10, 70, 200, 200);

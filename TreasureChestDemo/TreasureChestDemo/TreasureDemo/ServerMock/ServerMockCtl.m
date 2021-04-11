@@ -22,14 +22,14 @@
     imgView.frame = self.view.frame;
     [self.view addSubview:imgView];
     
-    [self initView];
+    [self setupSubviews];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
 //    self.navigationController.navigationBarHidden = true;
 }
 
-- (void)initView {
+- (void)setupSubviews {
     
     UIButton *showButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [showButton setTitle:@"按钮" forState:UIControlStateNormal];

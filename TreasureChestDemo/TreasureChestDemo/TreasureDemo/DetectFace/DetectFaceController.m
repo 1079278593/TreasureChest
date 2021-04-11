@@ -23,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initView];
+    [self setupSubviews];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -48,7 +48,7 @@
 }
 
 #pragma mark - < init view >
-- (void)initView {
+- (void)setupSubviews {
     _imageButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [_imageButton setTitle:@"图片检测" forState:UIControlStateNormal];
     [_imageButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];

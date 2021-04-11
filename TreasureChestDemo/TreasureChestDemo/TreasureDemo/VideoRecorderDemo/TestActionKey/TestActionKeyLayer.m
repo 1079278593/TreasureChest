@@ -42,9 +42,10 @@
     UIBezierPath *path = [UIBezierPath bezierPath];
     [path addArcWithCenter:CGPointMake(frame.size.width/2, frame.size.height/2) radius:frame.size.width*0.48 startAngle:0 endAngle:2*M_PI clockwise:NO];
     
+    self.delegate = self;
     self.path = path.CGPath;
     self.lineWidth = 3;
-    self.delegate = self;
+//    self.delegate = self;
     self.strokeStart = 0;
     self.strokeEnd = 0;
     
@@ -53,9 +54,11 @@
     self.strokeColor = [UIColor greenColor].CGColor;
 }
 
+//属性变化后，会触发actionForKey()，调用super后触发actionForLayer()。看内部文档
 - (id<CAAction>)actionForKey:(NSString *)event{
 //    NSLog(@"TestActionKeyLayer. actionForKey: %@",event);
-    return [super actionForKey:event];
+    id targetAction = [super actionForKey:event];
+    return targetAction;
 }
 
 #pragma mark - < delegate >

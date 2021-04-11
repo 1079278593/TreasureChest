@@ -28,7 +28,7 @@
     [super viewDidLoad];
     
     _datas = [NSMutableArray arrayWithCapacity:0];
-    [self initView];
+    [self setupSubviews];
     self.dictQueryManager = [FMDictManager sharedManager];
     self.ftsDictManager = [FMDBManager sharedManager];
     
@@ -45,7 +45,7 @@
     }];
 }
 
-- (void)initView {
+- (void)setupSubviews {
     
     _textField = [[UITextField alloc]init];
     _textField.placeholder = @"输入关键词";

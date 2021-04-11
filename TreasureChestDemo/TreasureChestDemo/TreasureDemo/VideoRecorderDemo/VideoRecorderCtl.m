@@ -38,7 +38,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self initView];
+    [self setupSubviews];
     
     EasyGraphicsRender *render = [[EasyGraphicsRender alloc]init];
     [render runDrawingActions:^(__kindof UIGraphicsRendererContext * _Nonnull rendererContext) {
@@ -149,7 +149,7 @@
 }
 
 #pragma mark - < init >
-- (void)initView {
+- (void)setupSubviews {
     
     [self.view addSubview:self.timeLabel];
     [self.timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {

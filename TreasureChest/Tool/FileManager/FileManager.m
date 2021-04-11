@@ -13,6 +13,8 @@ static FileManager *manager = nil;
 
 @interface FileManager ()
 
+@property(nonatomic, strong)URLDownloadTask *downloadTask;
+
 @end
 
 @implementation FileManager
@@ -53,19 +55,52 @@ static FileManager *manager = nil;
     NSString *filePath = [NSString stringWithFormat:@"%@/%@/%@",rootPath,foldName,fileName];
     if ([self createFoldWithType:type foldName:foldName]) {
         if ([self isExistFileWithPath:filePath]) {
+//            NSLog(@"FileManager 同步 本地文件存在=%@",fileName);
             block(filePath);
         }else {
-            block(@"");
-            URLDownloadTask *task = [[URLDownloadTask alloc]init];
-            [task easyDownload:url localPath:filePath isUpdate:YES];
-            task.progressBlock = ^(CGFloat progress) {
+            block(@"");//这里不等待，直到下载完成，走上面的分支。
+            [self.downloadTask easyDownload:url localPath:filePath isUpdate:YES];
+            self.downloadTask.progressBlock = ^(CGFloat progress) {
                 if (progress == 1) {
-                    NSLog(@"下载完成");
+//                        NSLog(@"FileManager 同步下载完成");
                 }
             };
         }
     }else {
         block(@"");
+    }
+}
+
+- (void)synResourcePathWithType:(FilePathType)type foldName:(NSString *)foldName fileName:(NSString *)fileName url:(NSString *)url complete:(PathBlock)block {
+    if (fileName.length <=0 ) {
+        block(@"");
+        NSLog(@"FileManager 异步 文件名为空");
+        return;
+    }
+    //这里或者外面，启动loading，待完成后‘结束loading’。
+    NSString *rootPath = [self pathWithType:type];
+    NSString *filePath = [NSString stringWithFormat:@"%@/%@/%@",rootPath,foldName,fileName];
+    if ([self createFoldWithType:type foldName:foldName]) {
+        if ([self isExistFileWithPath:filePath]) {
+            block(filePath);
+            NSLog(@"FileManager 异步 本地文件存在=%@",fileName);
+        }else {
+            self.downloadTask = [[URLDownloadTask alloc]init];
+                [self.downloadTask easyDownload:url localPath:filePath isUpdate:YES];
+                self.downloadTask.progressBlock = ^(CGFloat progress) {
+                    if (progress == 1) {
+                        block(filePath);
+                        NSLog(@"FileManager异步下载完成=%@",fileName);
+                    }
+                    else{
+                        block(@"");
+                        NSLog(@"FileManager异步下载失败=%@",fileName);
+                    }
+                };
+        }
+    }else {
+        NSLog(@"FileManager异步创建路径失败失败=%@",fileName);
+        block(@"-----");
     }
 }
 
@@ -112,7 +147,13 @@ static FileManager *manager = nil;
             return [NSString stringWithFormat:@"%@",KDocument];
             break;
         case FilePathTypeFaceBox:
-            return [NSString stringWithFormat:@"%@",KFaceBoxPath];
+            return [NSString stringWithFormat:@"%@/FaceBox",KDocument];
+            break;
+        case FilePathTypeMusic:
+            return [NSString stringWithFormat:@"%@",KDocument];
+            break;
+        case FilePathTypeVideo:
+            return [NSString stringWithFormat:@"%@",KDocument];
             break;
         default:
             return [NSString stringWithFormat:@"%@",KDocument];
@@ -120,5 +161,11 @@ static FileManager *manager = nil;
     }
 }
 
+- (URLDownloadTask *)downloadTask {
+    if (_downloadTask == nil) {
+        _downloadTask = [[URLDownloadTask alloc]init];
+    }
+    return _downloadTask;
+}
 
 @end

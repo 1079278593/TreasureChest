@@ -55,7 +55,7 @@
 
 
 #pragma mark - < init view >
-- (void)initView {
+- (void)setupSubviews {
 //    [self initNaviView];
 }
 

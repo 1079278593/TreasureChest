@@ -24,7 +24,7 @@ static NSString *CellIdentify = @"CellIdentify";
 
 - (instancetype)init {
     if(self == [super init]){
-        [self initView];
+        [self setupSubviews];
         [self bindModel];
     }
     return self;
@@ -41,7 +41,7 @@ static NSString *CellIdentify = @"CellIdentify";
     }];
 }
 
-- (void)initView {
+- (void)setupSubviews {
     self.tableView.frame = CGRectMake(0, 0, KScreenWidth, KScreenHeight);
 }
 

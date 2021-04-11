@@ -17,12 +17,12 @@
 
 - (instancetype)init {
     if(self == [super init]){
-        [self initView];
+        [self setupSubviews];
     }
     return self;
 }
 
-- (void)initView {
+- (void)setupSubviews {
     NSArray * colors = @[(id)[[UIColor hexColor:@"0xFF6347"] CGColor],
                          (id)[[UIColor hexColor:@"0xFFEC8B"] CGColor],
                          (id)[[UIColor hexColor:@"0x98FB98"] CGColor],

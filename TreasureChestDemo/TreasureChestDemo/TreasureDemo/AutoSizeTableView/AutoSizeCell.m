@@ -27,13 +27,13 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self initView];
+        [self setupSubviews];
     }
     return self;
 }
 
 #pragma mark - < init view >
-- (void)initView {
+- (void)setupSubviews {
     _lineView = [[UIView alloc]init];
     _lineView.backgroundColor = [UIColor grayColor];
     

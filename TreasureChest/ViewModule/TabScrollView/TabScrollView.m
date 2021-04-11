@@ -22,7 +22,7 @@
     if(self == [super initWithFrame:frame]){
         _titles = titles;
         _views = views;
-        [self initView];
+        [self setupSubviews];
     }
     return self;
 }
@@ -31,7 +31,7 @@
 
 
 #pragma mark - init
-- (void)initView {
+- (void)setupSubviews {
     CGFloat titleHeght = 40;
     CGFloat width = CGRectGetWidth(self.frame);
     CGFloat height = CGRectGetHeight(self.frame);

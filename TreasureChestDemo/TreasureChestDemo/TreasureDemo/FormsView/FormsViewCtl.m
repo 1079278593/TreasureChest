@@ -17,10 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    [self initView];
+    [self setupSubviews];
 }
 
-- (void)initView {
+- (void)setupSubviews {
     NSArray *leftTitles = @[@"1dsafdsfsdafdsfsdfsdfsdfssd111",@"2",@"3",@"4",@"5",@"6"];
     
     _formsView = [[FormsView alloc]initWithFrame:CGRectMake(0, 100, KScreenWidth, KScreenHeight - 110) count:leftTitles.count];

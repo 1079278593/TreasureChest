@@ -23,14 +23,14 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self initView];
+        [self setupSubviews];
         self.contentView.layer.borderColor = [UIColor lightGrayColor].CGColor;
         self.contentView.layer.borderWidth = 1;
     }
     return self;
 }
 
-- (void)initView {
+- (void)setupSubviews {
   
         
 }

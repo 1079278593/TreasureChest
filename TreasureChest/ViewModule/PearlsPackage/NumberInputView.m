@@ -23,7 +23,7 @@
     if(self == [super init]){
         _maxCount = 10000;
         _minCount = 1;
-        [self initView];
+        [self setupSubviews];
     }
     return self;
 }
@@ -36,7 +36,7 @@
     return result;
 }
 
-- (void)initView {
+- (void)setupSubviews {
     _leftButton = [[UIButton alloc]init];
     [_leftButton setTitle:@"-" forState:UIControlStateNormal];
     [_leftButton imageLayout:ImageLayoutRight centerPadding:0];

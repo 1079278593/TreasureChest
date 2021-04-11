@@ -32,7 +32,7 @@
 
 - (instancetype)init {
     if(self == [super init]){
-        [self initView];
+        [self setupSubviews];
         //如果drawRect被调用，这里的contents是会被覆盖的。
         self.layer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"testIcon2"].CGImage);
         self.backgroundColor = [UIColor whiteColor];
@@ -103,7 +103,7 @@
 }
 
 #pragma mark - < init >
-- (void)initView {
+- (void)setupSubviews {
 //    self.lotView = [LOTAnimationView animationNamed:@"give_the_thumbs-up"];
 //    self.lotView = [LOTAnimationView animationNamed:@"perchick_tgsticker_sticker"];
 //    self.lotView.loopAnimation = true;

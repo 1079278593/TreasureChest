@@ -27,7 +27,7 @@
     return self;
 }
 
-- (void)initView {
+- (void)setupSubviews {
     
 }
 

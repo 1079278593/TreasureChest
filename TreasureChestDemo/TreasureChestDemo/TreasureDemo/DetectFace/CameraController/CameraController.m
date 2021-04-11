@@ -84,7 +84,7 @@ API_AVAILABLE(ios(11.0))
         [self.captureSession commitConfiguration];
         [self startRuning];
         
-        [self initView];
+        [self setupSubviews];
     });
 }
 
@@ -339,7 +339,7 @@ API_AVAILABLE(ios(11.0))
 }
 
 #pragma mark - < init view >
-- (void)initView {
+- (void)setupSubviews {
     WS(weakSelf)
     dispatch_async(dispatch_get_main_queue(), ^{
         weakSelf.rootPreview = [[UIView alloc]init];

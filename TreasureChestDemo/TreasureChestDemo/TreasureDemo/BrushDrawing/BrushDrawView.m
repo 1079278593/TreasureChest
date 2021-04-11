@@ -29,12 +29,12 @@
         self.userInteractionEnabled = true;
         self.backgroundColor = [UIColor lightGrayColor];
         [self createContext];
-        [self initView];
+        [self setupSubviews];
     }
     return self;
 }
 
-- (void)initView {
+- (void)setupSubviews {
     self.layer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"bgPic1"].CGImage);
     
     //maskLayer加到topImageView的masK。maskLayer有颜色部分将显示被masK遮挡的底层原本颜色。

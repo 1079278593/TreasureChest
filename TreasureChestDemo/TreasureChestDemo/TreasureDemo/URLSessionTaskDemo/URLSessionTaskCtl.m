@@ -32,13 +32,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self initView];
+    [self setupSubviews];
     [self downloadConfig];
     [self downloadBlockCall];
     [self offlineDownloadBlockCall];
 }
 
-- (void)initView {
+- (void)setupSubviews {
     
     self.resourceCover = [[UIImageView alloc]init];
     self.resourceCover.image = [UIImage imageNamed:@"testIcon2"];

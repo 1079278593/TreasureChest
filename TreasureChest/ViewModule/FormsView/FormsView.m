@@ -32,7 +32,7 @@
         _count = count;
         _leftTitleLabels = [NSMutableArray arrayWithCapacity:0];
         _rightTitleLabels = [NSMutableArray arrayWithCapacity:0];
-        [self initView];
+        [self setupSubviews];
     }
     return self;
 }
@@ -97,7 +97,7 @@
 }
 
 #pragma mark - < init view >
-- (void)initView {
+- (void)setupSubviews {
     [self initTitleLabels];
 }
 

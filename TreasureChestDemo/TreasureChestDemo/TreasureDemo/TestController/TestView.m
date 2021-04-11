@@ -18,13 +18,18 @@
 
 - (instancetype)init {
     if(self == [super init]){
-        [self initView];
+        [self setupSubviews];
     }
     return self;
 }
 
+#pragma mark - < public >
++ (void)testMetaClass {
+    NSLog(@"TestView testMetaClass");
+}
+
 #pragma mark - < init view >
-- (void)initView {
+- (void)setupSubviews {
     _containerView = [[UIView alloc]init];
     _containerView.layer.cornerRadius = 5;
     _containerView.backgroundColor = [UIColor whiteColor];

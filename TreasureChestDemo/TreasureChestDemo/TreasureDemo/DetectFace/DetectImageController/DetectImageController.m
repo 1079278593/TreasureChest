@@ -22,7 +22,7 @@ typedef void(^CompletionHandler)(VNRequest * _Nullable request, NSError * _Nulla
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initView];
+    [self setupSubviews];
 }
 
 #pragma mark - < event >
@@ -122,7 +122,7 @@ typedef void(^CompletionHandler)(VNRequest * _Nullable request, NSError * _Nulla
 }
 
 #pragma mark - < init view >
-- (void)initView {
+- (void)setupSubviews {
     [self.view addSubview:self.imageView];
     [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self.view);

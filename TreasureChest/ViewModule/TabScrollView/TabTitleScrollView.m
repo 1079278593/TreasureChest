@@ -29,12 +29,12 @@ static NSString *cursorViewColorString = @"ffffff";
     if(self == [super initWithFrame:frame]){
         _titles = titles;
         _titleButtons = [NSMutableArray arrayWithCapacity:0];
-        [self initView];
+        [self setupSubviews];
     }
     return self;
 }
 
-- (void)initView {
+- (void)setupSubviews {
     self.backgroundColor = [UIColor hexColor:backgroudColorString];
     [self initScrollView];
     [self initScrollViewContents];

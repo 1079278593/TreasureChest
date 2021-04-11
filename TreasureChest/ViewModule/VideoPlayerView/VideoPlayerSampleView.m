@@ -20,13 +20,13 @@
 
 - (instancetype)init {
     if(self == [super init]){
-        [self initView];
+        [self setupSubviews];
         [self blockMethod];
     }
     return self;
 }
 
-- (void)initView {
+- (void)setupSubviews {
     self.playerView = [[VideoPlayerBaseView alloc]init];
     [self addSubview:self.playerView];
     [self.playerView mas_makeConstraints:^(MASConstraintMaker *make) {

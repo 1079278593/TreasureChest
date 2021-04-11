@@ -21,7 +21,7 @@
 
 - (instancetype)init {
     if(self == [super init]){
-        [self initView];
+        [self setupSubviews];
     }
     return self;
 }
@@ -31,8 +31,8 @@
     [self colorAnimationStart];
 }
 
-- (void)initView {
-//    [self showProgressView];
+- (void)setupSubviews {
+    [self showProgressView];//------这里
     [self showColorTransition];
 }
 

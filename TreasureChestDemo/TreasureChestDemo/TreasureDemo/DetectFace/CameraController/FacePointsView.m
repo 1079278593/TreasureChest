@@ -19,7 +19,7 @@
 
 - (instancetype)init {
     if(self == [super init]){
-        [self initView];
+        [self setupSubviews];
     }
     return self;
 }
@@ -85,7 +85,7 @@
 }
 
 #pragma mark - < init view >
-- (void)initView {
+- (void)setupSubviews {
     _dotView = [[UIView alloc]init];
     _dotView.layer.cornerRadius = 2;
     _dotView.backgroundColor = [UIColor redColor];

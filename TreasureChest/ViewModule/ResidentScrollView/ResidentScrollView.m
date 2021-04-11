@@ -26,7 +26,7 @@
         self.userInteractionEnabled = true;
         self.scrollEnabled = false;
         self.delegate = self;
-        [self initView];
+        [self setupSubviews];
     }
     return self;
 }
@@ -50,7 +50,7 @@
     [self bindViewModel];
 }
 
-- (void)initView {
+- (void)setupSubviews {
 }
 
 - (void)bindViewModel

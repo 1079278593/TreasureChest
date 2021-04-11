@@ -29,6 +29,10 @@
 		3A5E735C26062EDD00772384 /* testDemoBg5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3A5E735526062EDD00772384 /* testDemoBg5.jpeg */; };
 		3A5E735D26062EDD00772384 /* testDemoBg2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3A5E735626062EDD00772384 /* testDemoBg2.jpeg */; };
 		3A5E735E26062EDD00772384 /* testDemoBg3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3A5E735726062EDD00772384 /* testDemoBg3.jpeg */; };
+		3A812A0E261206130018E3AE /* EffectFaceMaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A812A0B261206130018E3AE /* EffectFaceMaskModel.m */; };
+		3A812A0F261206130018E3AE /* EffectARealityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A812A0D261206130018E3AE /* EffectARealityModel.m */; };
+		3A812A14261206710018E3AE /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A812A13261206710018E3AE /* BaseModel.m */; };
+		3A812A1926120FA20018E3AE /* EffectResourceDownloador.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A812A1826120FA20018E3AE /* EffectResourceDownloador.m */; };
 		3A8F79D82557EB6E00069914 /* HollowOutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F79D72557EB6E00069914 /* HollowOutView.m */; };
 		3A8F79E02557ECEB00069914 /* UIView+HollowOut.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F79DF2557ECEB00069914 /* UIView+HollowOut.m */; };
 		3A99DE1723ABCB83002DDF23 /* TreasureChest.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 3A99DE1623ABCB83002DDF23 /* TreasureChest.podspec */; };
@@ -64,6 +68,8 @@
 		3AE550E223A9189F001D989E /* ResidentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE550D923A9189F001D989E /* ResidentScrollView.m */; };
 		3AE852CE2610C09C00AA656C /* LottieLoaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE852CA2610C09C00AA656C /* LottieLoaderManager.m */; };
 		3AE852CF2610C09C00AA656C /* LottieLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE852CB2610C09C00AA656C /* LottieLoader.m */; };
+		3AE852D82610C21C00AA656C /* TestSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE852D72610C21C00AA656C /* TestSubView.m */; };
+		3AEE43B4261420710095FA38 /* AutoCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE43B3261420710095FA38 /* AutoCoder.m */; };
 		3BEFF9DF0E12D318A440735F /* Pods_TreasureChestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140A460F1B11381DEED65D5B /* Pods_TreasureChestTests.framework */; };
 		A90ECEE2259577EB005E3EF0 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = A90ECEE1259577EB005E3EF0 /* TestView.m */; };
 		A90ECEEE25998733005E3EF0 /* NSString+Bundle.m in Sources */ = {isa = PBXBuildFile; fileRef = A90ECEED25998733005E3EF0 /* NSString+Bundle.m */; };
@@ -386,6 +392,15 @@
 		3A5E735526062EDD00772384 /* testDemoBg5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testDemoBg5.jpeg; sourceTree = "<group>"; };
 		3A5E735626062EDD00772384 /* testDemoBg2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testDemoBg2.jpeg; sourceTree = "<group>"; };
 		3A5E735726062EDD00772384 /* testDemoBg3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testDemoBg3.jpeg; sourceTree = "<group>"; };
+		3A812A09261206130018E3AE /* EffectsConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EffectsConfig.h; sourceTree = "<group>"; };
+		3A812A0A261206130018E3AE /* EffectARealityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EffectARealityModel.h; sourceTree = "<group>"; };
+		3A812A0B261206130018E3AE /* EffectFaceMaskModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EffectFaceMaskModel.m; sourceTree = "<group>"; };
+		3A812A0C261206130018E3AE /* EffectFaceMaskModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EffectFaceMaskModel.h; sourceTree = "<group>"; };
+		3A812A0D261206130018E3AE /* EffectARealityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EffectARealityModel.m; sourceTree = "<group>"; };
+		3A812A12261206710018E3AE /* BaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		3A812A13261206710018E3AE /* BaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		3A812A1726120FA20018E3AE /* EffectResourceDownloador.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EffectResourceDownloador.h; sourceTree = "<group>"; };
+		3A812A1826120FA20018E3AE /* EffectResourceDownloador.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EffectResourceDownloador.m; sourceTree = "<group>"; };
 		3A8F79D62557EB6E00069914 /* HollowOutView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HollowOutView.h; sourceTree = "<group>"; };
 		3A8F79D72557EB6E00069914 /* HollowOutView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HollowOutView.m; sourceTree = "<group>"; };
 		3A8F79DE2557ECEB00069914 /* UIView+HollowOut.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+HollowOut.h"; sourceTree = "<group>"; };
@@ -432,6 +447,10 @@
 		3AE852CB2610C09C00AA656C /* LottieLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LottieLoader.m; sourceTree = "<group>"; };
 		3AE852CC2610C09C00AA656C /* LottieLoaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LottieLoaderManager.h; sourceTree = "<group>"; };
 		3AE852CD2610C09C00AA656C /* LottieLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LottieLoader.h; sourceTree = "<group>"; };
+		3AE852D62610C21C00AA656C /* TestSubView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestSubView.h; sourceTree = "<group>"; };
+		3AE852D72610C21C00AA656C /* TestSubView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestSubView.m; sourceTree = "<group>"; };
+		3AEE43B2261420710095FA38 /* AutoCoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoCoder.h; sourceTree = "<group>"; };
+		3AEE43B3261420710095FA38 /* AutoCoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoCoder.m; sourceTree = "<group>"; };
 		3AFE5E6525E1FF71007CD8B0 /* FileManagerEnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileManagerEnums.h; sourceTree = "<group>"; };
 		A90ECEE0259577EB005E3EF0 /* TestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
 		A90ECEE1259577EB005E3EF0 /* TestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
@@ -976,6 +995,20 @@
 			path = resources;
 			sourceTree = "<group>";
 		};
+		3A812A08261206130018E3AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3A812A1726120FA20018E3AE /* EffectResourceDownloador.h */,
+				3A812A1826120FA20018E3AE /* EffectResourceDownloador.m */,
+				3A812A09261206130018E3AE /* EffectsConfig.h */,
+				3A812A0A261206130018E3AE /* EffectARealityModel.h */,
+				3A812A0D261206130018E3AE /* EffectARealityModel.m */,
+				3A812A0C261206130018E3AE /* EffectFaceMaskModel.h */,
+				3A812A0B261206130018E3AE /* EffectFaceMaskModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3A8F79E32557ECFA00069914 /* HollowOut */ = {
 			isa = PBXGroup;
 			children = (
@@ -1108,6 +1141,7 @@
 		3AE550DA23A9189F001D989E /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				3AEE43B1261420250095FA38 /* AutoCoder */,
 				3AE852C92610C09C00AA656C /* LottieLoader */,
 				A9232F3A25E10AA800D8FFC5 /* FileManager */,
 				A94EF7A525A40D2400CB769D /* AudioPlayer */,
@@ -1184,6 +1218,15 @@
 			path = ../../../poppy/poppy_iOS/PoppyApp/Poppy_Dev01/FacesBox/Utilities/LottieLoader;
 			sourceTree = "<group>";
 		};
+		3AEE43B1261420250095FA38 /* AutoCoder */ = {
+			isa = PBXGroup;
+			children = (
+				3AEE43B2261420710095FA38 /* AutoCoder.h */,
+				3AEE43B3261420710095FA38 /* AutoCoder.m */,
+			);
+			path = AutoCoder;
+			sourceTree = "<group>";
+		};
 		A918EC13255554FF00C5964D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -1203,6 +1246,9 @@
 				A918EC382555671E00C5964D /* TestController.m */,
 				A90ECEE0259577EB005E3EF0 /* TestView.h */,
 				A90ECEE1259577EB005E3EF0 /* TestView.m */,
+				3AE852D62610C21C00AA656C /* TestSubView.h */,
+				3AE852D72610C21C00AA656C /* TestSubView.m */,
+				3A812A08261206130018E3AE /* Model */,
 				3A5E735026062EDD00772384 /* resources */,
 			);
 			path = TestController;
@@ -1723,6 +1769,8 @@
 				B2506D0823AB83080034A472 /* BaseViewController.m */,
 				3A1174C7256E5F5B00D6F382 /* BaseNavigationController.h */,
 				3A1174C8256E5F5C00D6F382 /* BaseNavigationController.m */,
+				3A812A12261206710018E3AE /* BaseModel.h */,
+				3A812A13261206710018E3AE /* BaseModel.m */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -2596,6 +2644,7 @@
 				B26FBD952441CDB8003DB3BE /* LOTMaskContainer.m in Sources */,
 				B26FBD692441CDB8003DB3BE /* LOTRenderGroup.m in Sources */,
 				B26FBD8C2441CDB8003DB3BE /* LOTKeypath.m in Sources */,
+				3AEE43B4261420710095FA38 /* AutoCoder.m in Sources */,
 				A983CE2D24EE5CC200213D35 /* OpenGLPixelBufferView.m in Sources */,
 				A947AF7925CBF571005E5E1E /* FaceMaskRenderer.m in Sources */,
 				3A1174C9256E5F5C00D6F382 /* BaseNavigationController.m in Sources */,
@@ -2608,6 +2657,7 @@
 				B2C459332440524F00117BD7 /* VectorGeometry.m in Sources */,
 				B2AA0F4723C5BB1300BEBA27 /* DictionaryMainCtl.m in Sources */,
 				B2DD689423B08EF100106F4F /* UIButton+Extension.m in Sources */,
+				3A812A1926120FA20018E3AE /* EffectResourceDownloador.m in Sources */,
 				B26FBD7A2441CDB8003DB3BE /* LOTShapeRepeater.m in Sources */,
 				B2169DE724401B4F002CFE3E /* AudioRecorder.m in Sources */,
 				3A40235923A62ED100BDB4E3 /* ViewController.m in Sources */,
@@ -2653,6 +2703,7 @@
 				B26FBD782441CDB8003DB3BE /* LOTShapeGradientFill.m in Sources */,
 				3AD14A3824616A44004D54B8 /* LexiconFileModel.m in Sources */,
 				A949C2A0253948B100CF09A5 /* fileUtil.m in Sources */,
+				3A812A0E261206130018E3AE /* EffectFaceMaskModel.m in Sources */,
 				B2C459312440524F00117BD7 /* QuadCurveGeometry.m in Sources */,
 				B26FBD8A2441CDB8003DB3BE /* LOTAnimationView.m in Sources */,
 				B26FBD792441CDB8003DB3BE /* LOTAsset.m in Sources */,
@@ -2662,8 +2713,10 @@
 				B26FBD5C2441CDB8003DB3BE /* LOTPathInterpolator.m in Sources */,
 				B26FBD592441CDB8003DB3BE /* LOTRenderNode.m in Sources */,
 				B26FBD902441CDB8003DB3BE /* LOTAnimatedSwitch.m in Sources */,
+				3A812A0F261206130018E3AE /* EffectARealityModel.m in Sources */,
 				B27B780723AC61A50083E6AE /* XMNetworking.m in Sources */,
 				B26FBD5A2441CDB8003DB3BE /* LOTTrimPathNode.m in Sources */,
+				3AE852D82610C21C00AA656C /* TestSubView.m in Sources */,
 				B26FBD632441CDB8003DB3BE /* LOTAnimatorNode.m in Sources */,
 				A949C26C2539359800CF09A5 /* OpenGLController.m in Sources */,
 				A947AF7725CBF571005E5E1E /* OpenGLProgram.m in Sources */,
@@ -2725,6 +2778,7 @@
 				A9CA834D24DBE03C00771EE2 /* EllipsePointsView.m in Sources */,
 				B28472372404B8EE00C1194F /* URLDownloadTask.m in Sources */,
 				A90ECEE2259577EB005E3EF0 /* TestView.m in Sources */,
+				3A812A14261206710018E3AE /* BaseModel.m in Sources */,
 				B283CEED2449BB650021ABB5 /* TestActionProgressAction.m in Sources */,
 				B26FBD8F2441CDB8003DB3BE /* LOTInterpolatorCallback.m in Sources */,
 				B284724124051E2D00C1194F /* URLOfflineDownloadTask.m in Sources */,

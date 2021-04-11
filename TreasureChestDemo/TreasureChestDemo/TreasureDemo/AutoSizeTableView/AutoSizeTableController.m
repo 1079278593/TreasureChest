@@ -24,7 +24,7 @@
     [super viewDidLoad];
     
     [self creatModelsWithCount:10];
-    [self initView];
+    [self setupSubviews];
 }
 
 #pragma mark - < delegate >
@@ -60,7 +60,7 @@
     return height;
 }
 #pragma mark - < init view >
-- (void)initView {
+- (void)setupSubviews {
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
