@@ -9,6 +9,8 @@
 #ifndef ColorMacro_h
 #define ColorMacro_h
 
+#define KRandomColor(a) [UIColor colorWithRed:(arc4random() % 256)/255.0 green:(arc4random() % 256)/255.0 blue:(arc4random() % 256)/255.0 alpha:a]
+
 #define KBackgroundColor  [UIColor hexColor:@"#FCFCFC"]
 #define KTextMainColor  [UIColor hexColor:@"#353648"]
 #define KTextSecondColor  [UIColor hexColor:@"#757685"]

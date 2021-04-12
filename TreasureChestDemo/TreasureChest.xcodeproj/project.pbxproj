@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3A1174C9256E5F5C00D6F382 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1174C8256E5F5C00D6F382 /* BaseNavigationController.m */; };
+		3A2C5EBB2622F43E0090B7E8 /* BaseTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C5EBA2622F43E0090B7E8 /* BaseTabController.m */; };
+		3A2C5EC02622F4EC0090B7E8 /* SecondController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C5EBF2622F4EC0090B7E8 /* SecondController.m */; };
 		3A2E0A36254ED94F00471A41 /* AutoSizeTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E0A35254ED94F00471A41 /* AutoSizeTableController.m */; };
 		3A2E0A44254EDABD00471A41 /* AutoSizeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E0A43254EDABD00471A41 /* AutoSizeCell.m */; };
 		3A2E0A4B254EDAD300471A41 /* AutoSizeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E0A4A254EDAD300471A41 /* AutoSizeModel.m */; };
@@ -362,6 +364,10 @@
 		2A0365CAA1A7ACEC130D7959 /* Pods-abstract_pod-TreasureChest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-abstract_pod-TreasureChest.debug.xcconfig"; path = "Target Support Files/Pods-abstract_pod-TreasureChest/Pods-abstract_pod-TreasureChest.debug.xcconfig"; sourceTree = "<group>"; };
 		3A1174C7256E5F5B00D6F382 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		3A1174C8256E5F5C00D6F382 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		3A2C5EB92622F43E0090B7E8 /* BaseTabController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTabController.h; sourceTree = "<group>"; };
+		3A2C5EBA2622F43E0090B7E8 /* BaseTabController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTabController.m; sourceTree = "<group>"; };
+		3A2C5EBE2622F4EC0090B7E8 /* SecondController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondController.h; sourceTree = "<group>"; };
+		3A2C5EBF2622F4EC0090B7E8 /* SecondController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondController.m; sourceTree = "<group>"; };
 		3A2E0A34254ED94F00471A41 /* AutoSizeTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoSizeTableController.h; sourceTree = "<group>"; };
 		3A2E0A35254ED94F00471A41 /* AutoSizeTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoSizeTableController.m; sourceTree = "<group>"; };
 		3A2E0A42254EDABD00471A41 /* AutoSizeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoSizeCell.h; sourceTree = "<group>"; };
@@ -1235,6 +1241,8 @@
 				A918EC152555551B00C5964D /* ControllersModel.m */,
 				3A40234923A62ED100BDB4E3 /* ViewController.h */,
 				3A40234123A62ED100BDB4E3 /* ViewController.m */,
+				3A2C5EBE2622F4EC0090B7E8 /* SecondController.h */,
+				3A2C5EBF2622F4EC0090B7E8 /* SecondController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1769,6 +1777,8 @@
 				B2506D0823AB83080034A472 /* BaseViewController.m */,
 				3A1174C7256E5F5B00D6F382 /* BaseNavigationController.h */,
 				3A1174C8256E5F5C00D6F382 /* BaseNavigationController.m */,
+				3A2C5EB92622F43E0090B7E8 /* BaseTabController.h */,
+				3A2C5EBA2622F43E0090B7E8 /* BaseTabController.m */,
 				3A812A12261206710018E3AE /* BaseModel.h */,
 				3A812A13261206710018E3AE /* BaseModel.m */,
 			);
@@ -2703,6 +2713,7 @@
 				B26FBD782441CDB8003DB3BE /* LOTShapeGradientFill.m in Sources */,
 				3AD14A3824616A44004D54B8 /* LexiconFileModel.m in Sources */,
 				A949C2A0253948B100CF09A5 /* fileUtil.m in Sources */,
+				3A2C5EC02622F4EC0090B7E8 /* SecondController.m in Sources */,
 				3A812A0E261206130018E3AE /* EffectFaceMaskModel.m in Sources */,
 				B2C459312440524F00117BD7 /* QuadCurveGeometry.m in Sources */,
 				B26FBD8A2441CDB8003DB3BE /* LOTAnimationView.m in Sources */,
@@ -2716,6 +2727,7 @@
 				3A812A0F261206130018E3AE /* EffectARealityModel.m in Sources */,
 				B27B780723AC61A50083E6AE /* XMNetworking.m in Sources */,
 				B26FBD5A2441CDB8003DB3BE /* LOTTrimPathNode.m in Sources */,
+				3A2C5EBB2622F43E0090B7E8 /* BaseTabController.m in Sources */,
 				3AE852D82610C21C00AA656C /* TestSubView.m in Sources */,
 				B26FBD632441CDB8003DB3BE /* LOTAnimatorNode.m in Sources */,
 				A949C26C2539359800CF09A5 /* OpenGLController.m in Sources */,
