@@ -10,6 +10,7 @@
 		3A2C5EAE2621D9990090B7E8 /* TestRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C5EAD2621D9990090B7E8 /* TestRender.m */; };
 		3A2C5EB22621D9BA0090B7E8 /* TestDeep.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C5EB12621D9BA0090B7E8 /* TestDeep.m */; };
 		3A2C5EB72621E36B0090B7E8 /* TestRenderHold.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C5EB62621E36B0090B7E8 /* TestRenderHold.m */; };
+		3A37853626243F8E00E4B809 /* InterpolateGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A37853526243F8E00E4B809 /* InterpolateGenerator.m */; };
 		3A38BDB624879E0E00E6F625 /* TestGCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A38BDB524879E0E00E6F625 /* TestGCD.m */; };
 		3AC6D9D4261805A300D76CFA /* Test_Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC6D9D3261805A300D76CFA /* Test_Block.m */; };
 		3AC6D9DA261ABEA800D76CFA /* Test_ISA.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC6D9D9261ABEA800D76CFA /* Test_ISA.m */; };
@@ -38,6 +39,8 @@
 		3A2C5EB12621D9BA0090B7E8 /* TestDeep.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestDeep.m; sourceTree = "<group>"; };
 		3A2C5EB52621E36B0090B7E8 /* TestRenderHold.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestRenderHold.h; sourceTree = "<group>"; };
 		3A2C5EB62621E36B0090B7E8 /* TestRenderHold.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestRenderHold.m; sourceTree = "<group>"; };
+		3A37853426243F8E00E4B809 /* InterpolateGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterpolateGenerator.h; sourceTree = "<group>"; };
+		3A37853526243F8E00E4B809 /* InterpolateGenerator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterpolateGenerator.m; sourceTree = "<group>"; };
 		3A38BDB424879E0E00E6F625 /* TestGCD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestGCD.h; sourceTree = "<group>"; };
 		3A38BDB524879E0E00E6F625 /* TestGCD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestGCD.m; sourceTree = "<group>"; };
 		3AC6D9D2261805A300D76CFA /* Test_Block.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test_Block.h; sourceTree = "<group>"; };
@@ -110,6 +113,8 @@
 				3A2C5EAD2621D9990090B7E8 /* TestRender.m */,
 				3A2C5EB52621E36B0090B7E8 /* TestRenderHold.h */,
 				3A2C5EB62621E36B0090B7E8 /* TestRenderHold.m */,
+				3A37853426243F8E00E4B809 /* InterpolateGenerator.h */,
+				3A37853526243F8E00E4B809 /* InterpolateGenerator.m */,
 			);
 			path = TestRender;
 			sourceTree = "<group>";
@@ -314,6 +319,7 @@
 				3AC6D9DA261ABEA800D76CFA /* Test_ISA.m in Sources */,
 				3AEE43A32612D7E80095FA38 /* Student.m in Sources */,
 				3AC6D9D4261805A300D76CFA /* Test_Block.m in Sources */,
+				3A37853626243F8E00E4B809 /* InterpolateGenerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

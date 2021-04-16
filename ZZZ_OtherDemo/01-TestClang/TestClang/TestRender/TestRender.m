@@ -8,6 +8,7 @@
 
 #import "TestRender.h"
 #import "TestRenderHold.h"
+#import "InterpolateGenerator.h"
 
 @interface TestRender () 
 
@@ -123,6 +124,8 @@
 //    self.layer.minificationFilter = kCAFilterLinear;
     img.layer.magnificationFilter = kCAFilterLinear;//好像差别不大，kCAFilterNearest比较明显
 }
+
+#pragma mark < 缓冲 >
 /**
  除了+functionWithName:之外，CAMediaTimingFunction同样有另一个构造函数，一个有四个浮点参数的+functionWithControlPoints::::,可以定义两个控制点的x，y分别是cp1x,cp1y,cp2x,cp2y。CAMediaTimingFunction有一个叫做-getControlPointAtIndex:values:的方法，可以用来检索曲线的点。注意values:用浮点数组接收，不是CGPoint。index是从0-3的整数，0,3代表起点和终点，1,2代表起点和终点的控制点。self.layerView.layer.geometryFlipped = YES可以使坐标的原点在左下角，起点和终点的坐标是(0,0)和(1,1)。
  */
@@ -163,12 +166,46 @@
     testLayer.geometryFlipped = YES;
 }
 
+#pragma mark < 自定义缓冲动画 >
+- (void)customPathAnimate {
+    CALayer *testLayer = [[CALayer alloc]init];
+    testLayer.frame = CGRectMake(20, 150, 20, 20);
+    testLayer.backgroundColor = [UIColor yellowColor].CGColor;
+    [self.layer addSublayer:testLayer];
+    
+    //reset ball to top of screen
+    testLayer.position = CGPointMake(60, 150);
+    //set up animation parameters
+    NSValue *fromValue = [NSValue valueWithCGPoint:CGPointMake(60, 150)];
+    NSValue *toValue = [NSValue valueWithCGPoint:CGPointMake(60, 250)];
+    CFTimeInterval duration = 3.0;
+    //generate keyframes
+    NSInteger numFrames = duration * 60;
+    NSMutableArray *frames = [NSMutableArray array];
+    for (int i = 0; i < numFrames; i++) {
+        float time = 1/(float)numFrames * i;
+        //apply easing
+        time = bounceEaseOut(time);//线性转成非线性
+        //add keyframe
+        [frames addObject:[InterpolateGenerator interpolateFromValue:fromValue toValue:toValue time:time]];
+    }
+    //create keyframe animation
+    CAKeyframeAnimation *animation = [CAKeyframeAnimation animation];
+    animation.keyPath = @"position";
+    animation.duration = 3.0;
+//    animation.delegate = self;
+    animation.values = frames;
+    //apply animation
+    [testLayer addAnimation:animation forKey:nil];
+}
+
 #pragma mark - < init view >
 - (void)setupSubview {
     [self testShowLayer];
     [self testShowShadow];
     [self testFilter];
     [self showSystemBezierPath];
+    [self customPathAnimate];
 }
 
 - (TestRenderHold *)renderHold {

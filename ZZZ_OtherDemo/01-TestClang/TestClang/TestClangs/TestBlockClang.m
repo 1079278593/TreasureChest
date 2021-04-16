@@ -28,6 +28,7 @@ int a = 1;
 static int b = 2;
 - (void)test {
     __block int c = 3;
+    __block int c1 = 3;
     static int d = 4;
     NSMutableString *str = [[NSMutableString alloc]initWithString:@"hello"];
     void (^blk)(void) = ^{
