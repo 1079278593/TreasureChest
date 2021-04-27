@@ -54,6 +54,7 @@
 - (void)jumpMethod:(NSInteger)index {
     Class NameClass = NSClassFromString(self.datas[index].className);
     UIViewController *controller = [[NameClass alloc]init];
+    controller.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:controller animated:true];
 }
 

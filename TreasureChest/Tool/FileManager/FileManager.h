@@ -25,6 +25,7 @@ typedef void(^PathBlock)(NSString *path);
 - (void)resourcePathWithType:(FilePathType)type foldName:(NSString *)foldName fileName:(NSString *)fileName url:(NSString *)url complete:(PathBlock)block;
 
 - (void)synResourcePathWithType:(FilePathType)type foldName:(NSString *)foldName fileName:(NSString *)fileName url:(NSString *)url complete:(PathBlock)block;
+- (BOOL)createFoldWithType:(FilePathType)type foldName:(NSString *)foldName;
 - (BOOL)deleteWithFileName:(NSString *)fileName type:(FilePathType)type;
 
 @end

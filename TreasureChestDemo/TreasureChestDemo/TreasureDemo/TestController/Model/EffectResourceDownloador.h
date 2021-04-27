@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EffectResourceDownloador : NSObject
 
-- (void)downloadWith:(EffectARealityModel *)model;
+- (void)startWithRequest;
 
 @end
 

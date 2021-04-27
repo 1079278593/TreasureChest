@@ -62,7 +62,7 @@
     NSURLSession *session = [NSURLSession sharedSession];
     
     NSURLSessionDownloadTask *dataTask = [session downloadTaskWithRequest:request completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        if (error == nil) {
+        if (error == nil && [(NSHTTPURLResponse *)response statusCode] == 200) {
             if (isUpdate) {
                 [[NSFileManager defaultManager] removeItemAtPath:localPath error:nil];//删除
             }

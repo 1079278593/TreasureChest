@@ -8,8 +8,26 @@
 
 #import "EffectResourceDownloador.h"
 #import "FileManager.h"
+#import "XMNetworking.h"
 
 @implementation EffectResourceDownloador
+
+- (void)startWithRequest {
+    NSString *BaseURL_User = @"http://47.107.135.1:7005/api/v1/user";
+    
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithCapacity:0];
+    parameters[@"mobileModel"] = @"ios";
+    parameters[@"appType"] = @1;    //应用类型[1：android，2：ios]
+    
+    NSString *url = [BaseURL_User stringByAppendingString:@"/ar/get"];
+    [[XMNetworking sharedManager] GET:url parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+        id response = responseObject[@"response"];
+        EffectARealityModel *model = [EffectARealityModel mj_objectWithKeyValues:response];
+        [self downloadWith:model];
+        } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
+            
+    }];
+}
 
 - (void)downloadWith:(EffectARealityModel *)model {
     
