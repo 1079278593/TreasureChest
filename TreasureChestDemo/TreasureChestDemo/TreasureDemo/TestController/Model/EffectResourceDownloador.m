@@ -11,7 +11,15 @@
 #import "XMNetworking.h"
 
 @implementation EffectResourceDownloador
-
+/**
+ //1.下载mask的tnn模型:tnnmodel和tnnproto，缩略图(),文件名用name
+ 
+ //2.下载场景
+ 
+ //3.下载lottie
+ 
+ //4.
+ */
 - (void)startWithRequest {
     NSString *BaseURL_User = @"http://47.107.135.1:7005/api/v1/user";
     

@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TestSubView : TestView
+@interface TestSubView : UIView
 
 
 @end

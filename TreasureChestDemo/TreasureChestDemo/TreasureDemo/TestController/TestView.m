@@ -7,6 +7,7 @@
 //
 
 #import "TestView.h"
+#import "TestSubView.h"
 
 @interface TestView ()
 
@@ -27,21 +28,24 @@
 + (void)testMetaClass {
     NSLog(@"TestView testMetaClass");
 }
-
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+}
 #pragma mark - < init view >
 - (void)setupSubviews {
-    _containerView = [[UIView alloc]init];
-    _containerView.layer.cornerRadius = 5;
-    _containerView.backgroundColor = [UIColor whiteColor];
-    [self addSubview:_containerView];
+    TestSubView *testSubView = [[TestSubView alloc]init];
+    testSubView.frame = CGRectMake(0, 0, 50, 50);
+    [self addSubview:testSubView];
+    testSubView.layer.borderWidth = 1;
+    testSubView.layer.borderColor = [UIColor redColor].CGColor;
 }
 
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-    UIView *view = [super hitTest:point withEvent:event];
-    if ([view isKindOfClass:[UIButton class]]) {
-        return nil;
-    }
-    return view;
-}
+//- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+//    UIView *view = [super hitTest:point withEvent:event];
+//    if ([view isKindOfClass:[UIButton class]]) {
+//        return nil;
+//    }
+//    return view;
+//}
 
 @end

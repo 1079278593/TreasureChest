@@ -9,12 +9,24 @@
 import SwiftUI
 
 struct JumpToMemoryKing: View {
+    @State var buttonText = "old text1"
     var body: some View {
-        NavigationView {
-            NavigationLink(destination: MemoryKingView()) {
-                Text("跳转").frame(width: nil, height: 31, alignment: .center)
+        VStack {
+//            NavigationView {
+//                NavigationLink(destination: MemoryKingView()) {
+//                    Text("跳转").frame(width: nil, height: 31, alignment: .center)
+//                }
+//            }
+            Text("341")
+            Button(action: changeText) {
+                Text(buttonText)
+                Text("buttonText")
+//                text = "342"
             }
         }
+    }
+    private func changeText() {
+        buttonText = "new text"
     }
 }
 
