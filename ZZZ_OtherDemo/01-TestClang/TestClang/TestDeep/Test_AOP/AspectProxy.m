@@ -31,7 +31,9 @@
 // 为目标对象中被调用的方法返回一个NSMethodSignature实例
 // 运行时系统要求在执行标准转发时实现这个方法
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)sel{
-    return [self.proxyTarget methodSignatureForSelector:sel];
+//    NSMethodSignature *tmp = [super methodSignatureForSelector:sel];
+    NSMethodSignature *signature = [self.proxyTarget methodSignatureForSelector:sel];
+    return signature;
 }
 
 /**

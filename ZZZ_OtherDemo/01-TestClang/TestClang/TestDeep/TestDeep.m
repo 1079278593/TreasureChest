@@ -16,6 +16,7 @@
 #import "Test_ARC.h"
 #import "Test_MRC.h"
 #import "Test_ISA.h"
+#import "TestKVO.h"
 
 //AOP
 #import "AspectProxy.h"
@@ -40,24 +41,44 @@
 
 #pragma mark - < public >
 - (void)testDeepMethod1 {
-    //1.test msg
-//    [self testMsg];
-    
-    //2.test thread
-    [self testThread];
-    
-    //3.test copy
-//    NSString *originString = @"originString";
-//    [self testCopy:originString];
-    
-    //4.test aop
-//    [self testAOP];
-    
-    //5. test arc/mrc
-//    [self testReferenceCount];
-    
-    //6. test isa
-//    Test_ISA *testISA = [[Test_ISA alloc]init];
+    int type = 3;
+    switch (type) {
+        case 0:
+        {
+            [self testMsg];
+        }
+            break;
+        case 1:
+        {
+            [self testThread];
+        }
+            break;
+        case 2:
+        {
+            NSString *originString = @"originString";
+            [self testCopy:originString];
+        }
+            break;
+        case 3:
+        {
+            [self testAOP];
+        }
+            break;
+        case 4:
+        {
+            [self testReferenceCount];//test arc/mrc
+        }
+            break;
+        case 5:
+        {
+//            Test_ISA *testISA = [[Test_ISA alloc]init];
+            [TestKVO testNoImplementation];
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 - (void)testDeepMethod2 {

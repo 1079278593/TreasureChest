@@ -1,8 +1,8 @@
 //
-//  Test_ISA.h
+//  NSArray+Boundary.h
 //  TestClang
 //
-//  Created by ming on 2021/4/5.
+//  Created by ming on 2021/5/3.
 //  Copyright © 2021 雏虎科技. All rights reserved.
 //
 
@@ -10,9 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Test_ISA : NSObject
-
-+ (void)testNoImplementation;
+@interface NSArray (Boundary)
 
 @end
 

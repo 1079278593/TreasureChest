@@ -7,7 +7,7 @@
 //
 
 #import "TestClang.h"
-
+#import "objc/message.h"
 
 @implementation TestClang
 

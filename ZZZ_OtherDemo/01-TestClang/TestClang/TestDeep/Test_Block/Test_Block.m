@@ -7,6 +7,14 @@
 //
 
 #import "Test_Block.h"
+#import "TestCycle.h"
+
+@interface Test_Block ()
+
+@property (copy,nonatomic) NSString *name;
+@property (strong, nonatomic) TestCycle *stu;
+
+@end
 
 @implementation Test_Block
 
@@ -51,6 +59,22 @@ void func(char a[10]) {
 //    char b[10] = a;//无法将’C语言数组类型变量‘赋值给’C语言数组类型变量‘。
     char c[10] = {3};
     printf("%d",c[0]);
+}
+
+#pragma mark - < 循环引用 >
+//用Instruments查看，待查看
+- (void)testCycleRetain {
+    TestCycle *student = [[TestCycle alloc]init];
+
+    self.name = @"halfrost";
+    self.stu = student;
+
+    student.blockStudy = ^{
+        NSLog(@"my name is = %@",self.name);
+//        NSLog(@"my name is = %@",self);//或者这个
+    };
+
+    student.blockStudy();
 }
 
 @end

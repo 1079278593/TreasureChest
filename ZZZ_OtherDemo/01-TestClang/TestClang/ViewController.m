@@ -10,6 +10,8 @@
 
 #import "TestDeep.h"
 #import "TestRender.h"
+#import "RuntimeApply.h"
+#import "TestBlockClang.h"
 
 #define KRandomColor(a) [UIColor colorWithRed:(arc4random() % 256)/255.0 green:(arc4random() % 256)/255.0 blue:(arc4random() % 256)/255.0 alpha:a]
 
@@ -19,6 +21,7 @@
 @property(nonatomic, strong)UIButton *button1;
 @property(nonatomic, strong)TestDeep *testDeep;
 @property(nonatomic, strong)TestRender *testRender;
+@property(nonatomic, strong)RuntimeApply *runtimeApply;
 
 @end
 
@@ -31,6 +34,9 @@
     self.testRender.frame = CGRectMake(0, CGRectGetHeight(self.view.frame)/2.0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)/2.0);
     self.testRender.backgroundColor = KRandomColor(0.4);
     [self.view addSubview:self.testRender];
+    
+    [self runtimeApply];
+    [self testBlock];
     
     [self setupSubViews];
 }
@@ -48,6 +54,7 @@
 
 - (void)buttonEvent1:(UIButton *)button {
     [self.testDeep testDeepMethod2];
+    [self.runtimeApply test];
 }
 
 #pragma mark - < init view >
@@ -84,6 +91,13 @@
     return _button1;
 }
 
+#pragma mark - < private >
+- (void)testBlock {
+    TestBlockClang *blockClang = [[TestBlockClang alloc]init];
+    [blockClang test];
+}
+
+#pragma mark - < getter >
 - (TestDeep *)testDeep {
     if (_testDeep == nil) {
         _testDeep = [[TestDeep alloc]init];
@@ -96,6 +110,13 @@
         _testRender = [[TestRender alloc]init];
     }
     return _testRender;
+}
+
+- (RuntimeApply *)runtimeApply {
+    if (_runtimeApply == nil) {
+        _runtimeApply = [[RuntimeApply alloc]init];
+    }
+    return _runtimeApply;
 }
 
 @end

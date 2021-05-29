@@ -57,7 +57,7 @@
     
     dispatch_async(queue, ^{
         NSLog(@"[1] 线程：%@",[NSThread currentThread]);
-        // 当前线程没有开启 runloop 所以改方法是没办法执行的
+        // 当前线程没有开启 runloop 所以该方法是没办法执行的
         [self performSelector:@selector(performWithoutRunloop) withObject:nil afterDelay:1];
         NSLog(@"[3]");
         

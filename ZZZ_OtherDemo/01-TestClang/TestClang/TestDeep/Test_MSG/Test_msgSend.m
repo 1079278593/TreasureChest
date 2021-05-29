@@ -16,7 +16,7 @@
     
     [self printMethodList];
     
-    [self testInvocation];
+//    [self testInvocation];
 //    [self testSetValue];
     
     //经过前后打印发现，方法被添加进methodList中了。
@@ -52,7 +52,7 @@
 ///实例方法的添加
 + (BOOL)resolveInstanceMethod:(SEL)sel {
     NSLog(@"阶段1，resolveInstanceMethod：%@",NSStringFromSelector(sel));
-    NSLog(@"阶段1，resolveInstanceMethod：%@",NSStringFromSelector(_cmd));//_cmd感觉像本方法的名称
+    NSLog(@"阶段1，resolveInstanceMethod：%@",NSStringFromSelector(_cmd));//_cmd本方法的名称
     
     /**
      返回值类型：v         —— 代表 void
@@ -95,17 +95,25 @@ void dynamicMethodIMP(id self, SEL _cmd) {
     }
     return [super methodSignatureForSelector:aSelector];
 }
-//处理返回的方法签名
+
+//处理返回的方法签名。（重写下面这个方法，就可以自定义我们自己的转发逻辑了。）
 -(void)forwardInvocation:(NSInvocation *)anInvocation{
     NSLog(@"阶段3，后续处理：%@",NSStringFromSelector(_cmd));
     NSLog(@"阶段3，后续处理：%@",anInvocation);
+    
     
     //方法1：改变消息接受者对象
 //    [anInvocation invokeWithTarget:[[Test_ForwardingTarget alloc]init]];
     
     //方法2：改变消息的SEL
-    anInvocation.selector = @selector(replaceMethod:);
-    [anInvocation invokeWithTarget:self];
+    if ([self respondsToSelector:[anInvocation selector]]) {
+        anInvocation.selector = @selector(replaceMethod:);
+        [anInvocation invokeWithTarget:self];
+    } else {
+        //继承体系中的每个类都有机会处理该方法调用的请求，一直到NSObject根类。
+        [super forwardInvocation:anInvocation];
+    }
+    
 }
 //用新的对象，新的方法替换的方法
 - (void)replaceMethod:(NSString *)para {

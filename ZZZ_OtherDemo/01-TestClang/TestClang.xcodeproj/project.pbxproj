@@ -12,9 +12,14 @@
 		3A2C5EB72621E36B0090B7E8 /* TestRenderHold.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C5EB62621E36B0090B7E8 /* TestRenderHold.m */; };
 		3A37853626243F8E00E4B809 /* InterpolateGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A37853526243F8E00E4B809 /* InterpolateGenerator.m */; };
 		3A38BDB624879E0E00E6F625 /* TestGCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A38BDB524879E0E00E6F625 /* TestGCD.m */; };
+		3A6439A1263FD50D00A345E5 /* RuntimeApply.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6439A0263FD50D00A345E5 /* RuntimeApply.m */; };
+		3A6439A6263FD5AF00A345E5 /* NSArray+Boundary.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6439A5263FD5AF00A345E5 /* NSArray+Boundary.m */; };
+		3A6439AA263FD85100A345E5 /* NSObject+BaseMethodSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6439A9263FD85100A345E5 /* NSObject+BaseMethodSwizzling.m */; };
+		3AA2938F2656A110006224EC /* TestCycle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2938E2656A110006224EC /* TestCycle.m */; };
 		3AC6D9D4261805A300D76CFA /* Test_Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC6D9D3261805A300D76CFA /* Test_Block.m */; };
 		3AC6D9DA261ABEA800D76CFA /* Test_ISA.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC6D9D9261ABEA800D76CFA /* Test_ISA.m */; };
 		3AC6D9E0261BFC8400D76CFA /* TestBlockClang.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC6D9DF261BFC8400D76CFA /* TestBlockClang.m */; };
+		3AEA13AB264B772700E15CC7 /* TestKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AEA13AA264B772700E15CC7 /* TestKVO.m */; };
 		3AEE43A32612D7E80095FA38 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE43A22612D7E80095FA38 /* Student.m */; };
 		3AEE43A82612D8720095FA38 /* AspectProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE43A72612D8720095FA38 /* AspectProxy.m */; };
 		3AEE43AE2612FF220095FA38 /* AuditingInvoker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE43AD2612FF220095FA38 /* AuditingInvoker.m */; };
@@ -28,7 +33,7 @@
 		3AF3A1B824864AC400FB88BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF3A1B724864AC400FB88BC /* main.m */; };
 		3AF3A1C424864B6400FB88BC /* Test_ForwardingTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF3A1BF24864B6300FB88BC /* Test_ForwardingTarget.m */; };
 		3AF3A1C524864B6400FB88BC /* Test_msgSend.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF3A1C024864B6400FB88BC /* Test_msgSend.m */; };
-		3AF3A1C624864B6400FB88BC /* TestClang.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF3A1C124864B6400FB88BC /* TestClang.m */; };
+		3AF3A1C624864B6400FB88BC /* TestClang.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3AF3A1C124864B6400FB88BC /* TestClang.mm */; };
 		3AF3A1C924864C3C00FB88BC /* NSObject+Test_Category_Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF3A1C824864C3C00FB88BC /* NSObject+Test_Category_Property.m */; };
 /* End PBXBuildFile section */
 
@@ -43,12 +48,22 @@
 		3A37853526243F8E00E4B809 /* InterpolateGenerator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterpolateGenerator.m; sourceTree = "<group>"; };
 		3A38BDB424879E0E00E6F625 /* TestGCD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestGCD.h; sourceTree = "<group>"; };
 		3A38BDB524879E0E00E6F625 /* TestGCD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestGCD.m; sourceTree = "<group>"; };
+		3A64399F263FD50D00A345E5 /* RuntimeApply.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeApply.h; sourceTree = "<group>"; };
+		3A6439A0263FD50D00A345E5 /* RuntimeApply.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeApply.m; sourceTree = "<group>"; };
+		3A6439A4263FD5AF00A345E5 /* NSArray+Boundary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Boundary.h"; sourceTree = "<group>"; };
+		3A6439A5263FD5AF00A345E5 /* NSArray+Boundary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Boundary.m"; sourceTree = "<group>"; };
+		3A6439A8263FD85100A345E5 /* NSObject+BaseMethodSwizzling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+BaseMethodSwizzling.h"; sourceTree = "<group>"; };
+		3A6439A9263FD85100A345E5 /* NSObject+BaseMethodSwizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BaseMethodSwizzling.m"; sourceTree = "<group>"; };
+		3AA2938D2656A110006224EC /* TestCycle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCycle.h; sourceTree = "<group>"; };
+		3AA2938E2656A110006224EC /* TestCycle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCycle.m; sourceTree = "<group>"; };
 		3AC6D9D2261805A300D76CFA /* Test_Block.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test_Block.h; sourceTree = "<group>"; };
 		3AC6D9D3261805A300D76CFA /* Test_Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test_Block.m; sourceTree = "<group>"; };
 		3AC6D9D8261ABEA800D76CFA /* Test_ISA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test_ISA.h; sourceTree = "<group>"; };
 		3AC6D9D9261ABEA800D76CFA /* Test_ISA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test_ISA.m; sourceTree = "<group>"; };
 		3AC6D9DE261BFC8400D76CFA /* TestBlockClang.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestBlockClang.h; sourceTree = "<group>"; };
 		3AC6D9DF261BFC8400D76CFA /* TestBlockClang.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestBlockClang.m; sourceTree = "<group>"; };
+		3AEA13A9264B772700E15CC7 /* TestKVO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestKVO.h; sourceTree = "<group>"; };
+		3AEA13AA264B772700E15CC7 /* TestKVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestKVO.m; sourceTree = "<group>"; };
 		3AEE43A12612D7E80095FA38 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		3AEE43A22612D7E80095FA38 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		3AEE43A62612D8720095FA38 /* AspectProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AspectProxy.h; sourceTree = "<group>"; };
@@ -73,7 +88,7 @@
 		3AF3A1BE24864B6300FB88BC /* Test_ForwardingTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test_ForwardingTarget.h; sourceTree = "<group>"; };
 		3AF3A1BF24864B6300FB88BC /* Test_ForwardingTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test_ForwardingTarget.m; sourceTree = "<group>"; };
 		3AF3A1C024864B6400FB88BC /* Test_msgSend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test_msgSend.m; sourceTree = "<group>"; };
-		3AF3A1C124864B6400FB88BC /* TestClang.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestClang.m; sourceTree = "<group>"; };
+		3AF3A1C124864B6400FB88BC /* TestClang.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TestClang.mm; sourceTree = "<group>"; };
 		3AF3A1C224864B6400FB88BC /* Test_msgSend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test_msgSend.h; sourceTree = "<group>"; };
 		3AF3A1C324864B6400FB88BC /* TestClang.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestClang.h; sourceTree = "<group>"; };
 		3AF3A1C724864C3C00FB88BC /* NSObject+Test_Category_Property.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Test_Category_Property.h"; sourceTree = "<group>"; };
@@ -141,11 +156,26 @@
 			path = Test_thread;
 			sourceTree = "<group>";
 		};
+		3A64399E263FD4EE00A345E5 /* RuntimeApply */ = {
+			isa = PBXGroup;
+			children = (
+				3A64399F263FD50D00A345E5 /* RuntimeApply.h */,
+				3A6439A0263FD50D00A345E5 /* RuntimeApply.m */,
+				3A6439A4263FD5AF00A345E5 /* NSArray+Boundary.h */,
+				3A6439A5263FD5AF00A345E5 /* NSArray+Boundary.m */,
+				3A6439A8263FD85100A345E5 /* NSObject+BaseMethodSwizzling.h */,
+				3A6439A9263FD85100A345E5 /* NSObject+BaseMethodSwizzling.m */,
+			);
+			path = RuntimeApply;
+			sourceTree = "<group>";
+		};
 		3AC6D9D12618058900D76CFA /* Test_Block */ = {
 			isa = PBXGroup;
 			children = (
 				3AC6D9D2261805A300D76CFA /* Test_Block.h */,
 				3AC6D9D3261805A300D76CFA /* Test_Block.m */,
+				3AA2938D2656A110006224EC /* TestCycle.h */,
+				3AA2938E2656A110006224EC /* TestCycle.m */,
 			);
 			path = Test_Block;
 			sourceTree = "<group>";
@@ -155,6 +185,8 @@
 			children = (
 				3AC6D9D8261ABEA800D76CFA /* Test_ISA.h */,
 				3AC6D9D9261ABEA800D76CFA /* Test_ISA.m */,
+				3AEA13A9264B772700E15CC7 /* TestKVO.h */,
+				3AEA13AA264B772700E15CC7 /* TestKVO.m */,
 			);
 			path = Test_ISA;
 			sourceTree = "<group>";
@@ -163,7 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				3AF3A1C324864B6400FB88BC /* TestClang.h */,
-				3AF3A1C124864B6400FB88BC /* TestClang.m */,
+				3AF3A1C124864B6400FB88BC /* TestClang.mm */,
 				3AC6D9DE261BFC8400D76CFA /* TestBlockClang.h */,
 				3AC6D9DF261BFC8400D76CFA /* TestBlockClang.m */,
 			);
@@ -218,6 +250,7 @@
 				3AF3A1A624864ABD00FB88BC /* AppDelegate.m */,
 				3AF3A1AB24864ABD00FB88BC /* ViewController.h */,
 				3AF3A1AC24864ABD00FB88BC /* ViewController.m */,
+				3A64399E263FD4EE00A345E5 /* RuntimeApply */,
 				3A2C5EAB2621D9630090B7E8 /* TestRender */,
 				3AC6D9DD261BFC4000D76CFA /* TestClangs */,
 				3A2C5EA82621D90A0090B7E8 /* TestDeep */,
@@ -310,16 +343,21 @@
 				3AF3A1A724864ABD00FB88BC /* AppDelegate.m in Sources */,
 				3AF3A1C924864C3C00FB88BC /* NSObject+Test_Category_Property.m in Sources */,
 				3A2C5EB22621D9BA0090B7E8 /* TestDeep.m in Sources */,
-				3AF3A1C624864B6400FB88BC /* TestClang.m in Sources */,
+				3AF3A1C624864B6400FB88BC /* TestClang.mm in Sources */,
 				3A2C5EB72621E36B0090B7E8 /* TestRenderHold.m in Sources */,
+				3AEA13AB264B772700E15CC7 /* TestKVO.m in Sources */,
+				3A6439A6263FD5AF00A345E5 /* NSArray+Boundary.m in Sources */,
 				3AF3A1B824864AC400FB88BC /* main.m in Sources */,
 				3A2C5EAE2621D9990090B7E8 /* TestRender.m in Sources */,
 				3AC6D9E0261BFC8400D76CFA /* TestBlockClang.m in Sources */,
 				3AF3A1C424864B6400FB88BC /* Test_ForwardingTarget.m in Sources */,
 				3AC6D9DA261ABEA800D76CFA /* Test_ISA.m in Sources */,
+				3AA2938F2656A110006224EC /* TestCycle.m in Sources */,
+				3A6439AA263FD85100A345E5 /* NSObject+BaseMethodSwizzling.m in Sources */,
 				3AEE43A32612D7E80095FA38 /* Student.m in Sources */,
 				3AC6D9D4261805A300D76CFA /* Test_Block.m in Sources */,
 				3A37853626243F8E00E4B809 /* InterpolateGenerator.m in Sources */,
+				3A6439A1263FD50D00A345E5 /* RuntimeApply.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
