@@ -356,8 +356,8 @@ API_AVAILABLE(ios(11.0))
 }
 
 - (void)configPreviewLayer:(CameraPreview *)preview {
-    preview.previewLayer.session = _captureSession;
-    preview.previewLayer.connection.videoOrientation = AVCaptureVideoOrientationPortrait;
+    preview.previewLayer.session = _captureSession; //here!!!!!
+//    preview.previewLayer.connection.videoOrientation = AVCaptureVideoOrientationLandscapeLeft;
 
     [CATransaction begin];
     [CATransaction setDisableActions:YES];

@@ -87,7 +87,7 @@
     _videoConnection = [videoOut connectionWithMediaType:AVMediaTypeVideo];
     
     //这里的分辨率可以考虑根据设备来设置合适的,比如：AVCaptureSessionPreset1280x720、AVCaptureSessionPreset640x480
-    _captureSession.sessionPreset = AVCaptureSessionPreset640x480;
+    _captureSession.sessionPreset = self.sessionPreset == nil ? AVCaptureSessionPreset640x480 : self.sessionPreset;
     
     /*
     * CMTime的scale，默认给1000。

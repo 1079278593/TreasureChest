@@ -68,11 +68,10 @@
 		3AD14A5124619F83004D54B8 /* words_poem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A5024619F83004D54B8 /* words_poem.plist */; };
 		3AE550E123A9189F001D989E /* FormsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE550D623A9189F001D989E /* FormsView.m */; };
 		3AE550E223A9189F001D989E /* ResidentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE550D923A9189F001D989E /* ResidentScrollView.m */; };
-		3AE852CE2610C09C00AA656C /* LottieLoaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE852CA2610C09C00AA656C /* LottieLoaderManager.m */; };
-		3AE852CF2610C09C00AA656C /* LottieLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE852CB2610C09C00AA656C /* LottieLoader.m */; };
 		3AE852D82610C21C00AA656C /* TestSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE852D72610C21C00AA656C /* TestSubView.m */; };
 		3AEE43B4261420710095FA38 /* AutoCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE43B3261420710095FA38 /* AutoCoder.m */; };
 		3BEFF9DF0E12D318A440735F /* Pods_TreasureChestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140A460F1B11381DEED65D5B /* Pods_TreasureChestTests.framework */; };
+		548FCF9026841C2D0047F823 /* WhiteBalanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 548FCF8F26841C2D0047F823 /* WhiteBalanceController.m */; };
 		A90ECEE2259577EB005E3EF0 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = A90ECEE1259577EB005E3EF0 /* TestView.m */; };
 		A90ECEEE25998733005E3EF0 /* NSString+Bundle.m in Sources */ = {isa = PBXBuildFile; fileRef = A90ECEED25998733005E3EF0 /* NSString+Bundle.m */; };
 		A918EC102555517F00C5964D /* Controllers.plist in Resources */ = {isa = PBXBuildFile; fileRef = A918EC0F2555517F00C5964D /* Controllers.plist */; };
@@ -458,6 +457,8 @@
 		3AEE43B2261420710095FA38 /* AutoCoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoCoder.h; sourceTree = "<group>"; };
 		3AEE43B3261420710095FA38 /* AutoCoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoCoder.m; sourceTree = "<group>"; };
 		3AFE5E6525E1FF71007CD8B0 /* FileManagerEnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileManagerEnums.h; sourceTree = "<group>"; };
+		548FCF8E26841C2D0047F823 /* WhiteBalanceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WhiteBalanceController.h; sourceTree = "<group>"; };
+		548FCF8F26841C2D0047F823 /* WhiteBalanceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhiteBalanceController.m; sourceTree = "<group>"; };
 		A90ECEE0259577EB005E3EF0 /* TestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
 		A90ECEE1259577EB005E3EF0 /* TestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
 		A90ECEEC25998733005E3EF0 /* NSString+Bundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Bundle.h"; sourceTree = "<group>"; };
@@ -1233,6 +1234,15 @@
 			path = AutoCoder;
 			sourceTree = "<group>";
 		};
+		548FCF8D26841C080047F823 /* WhiteBalanceController */ = {
+			isa = PBXGroup;
+			children = (
+				548FCF8E26841C2D0047F823 /* WhiteBalanceController.h */,
+				548FCF8F26841C2D0047F823 /* WhiteBalanceController.m */,
+			);
+			path = WhiteBalanceController;
+			sourceTree = "<group>";
+		};
 		A918EC13255554FF00C5964D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -1572,6 +1582,7 @@
 				A991632E25306570005454BA /* DetectFaceController.h */,
 				A991632F25306570005454BA /* DetectFaceController.m */,
 				A949C26F2539391000CF09A5 /* documentation */,
+				548FCF8D26841C080047F823 /* WhiteBalanceController */,
 				A99F702B2535AB9F00A136E1 /* DetectImageController */,
 				A99F70242535AAD200A136E1 /* CameraController */,
 				A943BF5C253884ED00D3775A /* OpenGLDemo */,
@@ -2765,6 +2776,7 @@
 				B26FBD842441CDB8003DB3BE /* LOTRadialGradientLayer.m in Sources */,
 				B26FBD662441CDB8003DB3BE /* LOTPolygonAnimator.m in Sources */,
 				B2CE3441244AAFC9000A32EB /* TestLayerView.m in Sources */,
+				548FCF9026841C2D0047F823 /* WhiteBalanceController.m in Sources */,
 				B26FBD612441CDB8003DB3BE /* LOTArrayInterpolator.m in Sources */,
 				B26FBD852441CDB8003DB3BE /* UIColor+Expanded.m in Sources */,
 				B2AA0F4A23C5D12A00BEBA27 /* FMDictManager.m in Sources */,
@@ -2815,13 +2827,11 @@
 				B26FBD6B2441CDB8003DB3BE /* LOTStrokeRenderer.m in Sources */,
 				3AE550E223A9189F001D989E /* ResidentScrollView.m in Sources */,
 				B2169DFD24401E2B002CFE3E /* AudioMixWithAudio.m in Sources */,
-				3AE852CE2610C09C00AA656C /* LottieLoaderManager.m in Sources */,
 				B2AA0F4423C586CE00BEBA27 /* FMDBManager.m in Sources */,
 				A90ECEEE25998733005E3EF0 /* NSString+Bundle.m in Sources */,
 				3AD14A3124615354004D54B8 /* LexiconViewCtl.m in Sources */,
 				B286A9B3242D8DF900E575BF /* EasyAlertView.m in Sources */,
 				B2C459302440524F00117BD7 /* CuvbicCurveGeometry.m in Sources */,
-				3AE852CF2610C09C00AA656C /* LottieLoader.m in Sources */,
 				B2506CF923AB5B370034A472 /* CollapsibleViewModel.m in Sources */,
 				B2CE343E244AAEB9000A32EB /* TestGradientLayer.m in Sources */,
 				A923238124EBB4A100B2CDE1 /* UIImageView+LBBlurredImage.m in Sources */,

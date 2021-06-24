@@ -24,7 +24,7 @@
 		<key>className</key>
 		<string>DetectFaceController</string>
 		<key>classTitle</key>
-		<string>特征点识别</string>
+		<string>特征点识别（相机）</string>
 	</dict>
 	<dict>
 		<key>className</key>

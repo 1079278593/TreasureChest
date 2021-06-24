@@ -10,12 +10,14 @@
 #import "DetectImageController.h"
 #import "CameraController.h"
 #import "OpenGLController.h"
+#import "WhiteBalanceController.h"
 
 @interface DetectFaceController ()
 
 @property(nonatomic, strong)UIButton *imageButton;
 @property(nonatomic, strong)UIButton *cameraButton;
 @property(nonatomic, strong)UIButton *openGLButton;
+@property(nonatomic, strong)UIButton *whiteBalanceButton;
 
 @end
 
@@ -44,6 +46,11 @@
 
 - (void)openGLButtonEvent:(UIButton *)button {
     OpenGLController *controller = [[OpenGLController alloc]init];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)whiteBalanceButtonEvent:(UIButton *)button {
+    WhiteBalanceController *controller = [[WhiteBalanceController alloc]init];
     [self.navigationController pushViewController:controller animated:YES];
 }
 
@@ -82,6 +89,18 @@
         make.centerX.equalTo(self.view);
         make.top.equalTo(self.cameraButton.mas_bottom).offset(10);
         make.width.equalTo(@100);
+        make.height.equalTo(@45);
+    }];
+    
+    _whiteBalanceButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_whiteBalanceButton setTitle:@"white balance" forState:UIControlStateNormal];
+    [_whiteBalanceButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_whiteBalanceButton addTarget:self action:@selector(whiteBalanceButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_whiteBalanceButton];
+    [_whiteBalanceButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(self.openGLButton.mas_bottom).offset(10);
+        make.width.equalTo(@140);
         make.height.equalTo(@45);
     }];
 }

@@ -25,6 +25,7 @@
 @property(nonatomic, strong)AVCaptureVideoDataOutput *videoOutput;
 @property(nonatomic, strong)AVCaptureDevice *videoDevice;
 @property(nonatomic, strong)AVCaptureConnection *videoConnection;
+@property(nonatomic, assign)AVCaptureSessionPreset sessionPreset;
 
 - (void)prepareRunning;
 - (void)startRunning;

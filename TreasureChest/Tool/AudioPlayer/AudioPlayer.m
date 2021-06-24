@@ -185,6 +185,55 @@ static AudioPlayer *manager = nil;
  AVAudioSessionErrorCodeUnspecified                  = 'what'            0x77686174, 2003329396
 */
 
+#pragma mark - < audio 被中断情况：闹钟、电话、耳机插拔 >
+- (void)addInterruperObserver {
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter addObserver:self selector:@selector(audioRouteChangeNotification:) name:AVAudioSessionRouteChangeNotification object:nil];
+    [notificationCenter addObserver:self selector:@selector(audioInterruptionNotification:) name:AVAudioSessionInterruptionNotification object:nil];
+}
 
+- (void)audioInterruptionNotification:(NSNotification *)notification {
+    NSDictionary *dict = notification.userInfo;
+    int interruptionStatus = [dict[AVAudioSessionInterruptionTypeKey] intValue];
+    int resumeStatus = [dict[AVAudioSessionInterruptionOptionKey] intValue];
+    if (interruptionStatus == AVAudioSessionInterruptionTypeBegan) {
+        NSLog(@"myprint：interruptionStatus begin");
+    }else {
+        NSLog(@"myprint：interruptionStatus end");
+    }
+    if (resumeStatus == AVAudioSessionInterruptionOptionShouldResume) {
+        NSLog(@"myprint：interruptionStatus resume");
+        //这里做恢复，目前测了闹钟是会走这里。电话还没测，微信语音不会走这里(不会中断)
+    }
+}
+
+- (void)audioRouteChangeNotification:(NSNotification *)notification {
+    /* Known values of route:
+     * "Headset"
+     * "Headphone"
+     * "Speaker"
+     * "SpeakerAndMicrophone"
+     * "HeadphonesAndMicrophone"
+     * "HeadsetInOut"
+     * "ReceiverAndMicrophone"
+     * "Lineout"
+     */
+    
+    NSDictionary *dic = notification.userInfo;
+    int changeReason = [dic[AVAudioSessionRouteChangeReasonKey] intValue];
+    NSLog(@"myprint：audioStatusChanged reason:%d",changeReason);
+    //等于AVAudioSessionRouteChangeReasonOldDeviceUnavailable表示旧输出不可用
+    if (changeReason == AVAudioSessionRouteChangeReasonOldDeviceUnavailable) {
+        AVAudioSessionRouteDescription *routeDescription = dic[AVAudioSessionRouteChangePreviousRouteKey];
+        AVAudioSessionPortDescription *portDescription = [routeDescription.outputs firstObject];
+
+        if ([portDescription.portType isEqualToString:@"Headphones"]) {
+            // to do something，原设备为耳机则暂停
+        }
+    }
+    if (changeReason == AVAudioSessionRouteChangeReasonCategoryChange) {
+        
+    }
+}
 
 @end
