@@ -17,7 +17,6 @@
 @property(nonatomic, strong)CameraPreview *preview;
 @property(nonatomic, strong)UILabel *gainView;
 @property(nonatomic, strong)UILabel *grayGainView;
-@property(nonatomic, strong)UILabel *currentGainView;
 
 @end
 
@@ -71,12 +70,6 @@
         
         AVCaptureWhiteBalanceGains grayBalanceGain = self.capturePipeline.videoDevice.grayWorldDeviceWhiteBalanceGains;
         AVCaptureWhiteBalanceGains suitableGain = {MIN(grayBalanceGain.redGain, maxgain), MIN(grayBalanceGain.greenGain, maxgain), MIN(grayBalanceGain.blueGain, maxgain)};
-        AVCaptureWhiteBalanceTemperatureAndTintValues grayTemperature = [self.capturePipeline.videoDevice temperatureAndTintValuesForDeviceWhiteBalanceGains:suitableGain];
-        NSString *grayResult = [NSString stringWithFormat:@"gray balance gains:\n red: %f\n green: %f\n blue: %f\n temperature:%f\n tint:%f",suitableGain.redGain,suitableGain.greenGain,suitableGain.blueGain,grayTemperature.temperature,grayTemperature.tint];
-        self.grayGainView.text = grayResult;
-        
-        grayBalanceGain = self.capturePipeline.videoDevice;
-        suitableGain = {MIN(grayBalanceGain.redGain, maxgain), MIN(grayBalanceGain.greenGain, maxgain), MIN(grayBalanceGain.blueGain, maxgain)};
         AVCaptureWhiteBalanceTemperatureAndTintValues grayTemperature = [self.capturePipeline.videoDevice temperatureAndTintValuesForDeviceWhiteBalanceGains:suitableGain];
         NSString *grayResult = [NSString stringWithFormat:@"gray balance gains:\n red: %f\n green: %f\n blue: %f\n temperature:%f\n tint:%f",suitableGain.redGain,suitableGain.greenGain,suitableGain.blueGain,grayTemperature.temperature,grayTemperature.tint];
         self.grayGainView.text = grayResult;
@@ -135,14 +128,6 @@
     self.grayGainView.font = [UIFont systemFontOfSize:19];
     [self.view addSubview:self.grayGainView];
     self.grayGainView.frame = CGRectMake(20, self.gainView.bottom+10, 300, 140);
-    
-    self.currentGainView = [[UILabel alloc]init];
-    self.currentGainView.layer.borderWidth = 1;
-    self.currentGainView.textColor = [UIColor redColor];
-    self.currentGainView.numberOfLines = 6;
-    self.currentGainView.font = [UIFont systemFontOfSize:19];
-    [self.view addSubview:self.currentGainView];
-    self.currentGainView.frame = CGRectMake(20, self.grayGainView.bottom+10, 300, 140);
 }
 
 @end
