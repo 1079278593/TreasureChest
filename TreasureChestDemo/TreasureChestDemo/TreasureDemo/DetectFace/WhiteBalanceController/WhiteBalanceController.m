@@ -36,16 +36,16 @@
     [self.capturePipeline startRunning];
     self.preview.previewLayer.session = self.capturePipeline.captureSession;
     
-//    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-//    button.layer.borderWidth = 1;
-//    [button setTitle:@"拍照" forState:UIControlStateNormal];
-//    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//    [button addTarget:self action:@selector(buttonEvent:) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:button];
-//    [button mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.centerX.bottom.equalTo(self.view);
-//        make.width.height.equalTo(@80);
-//    }];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.layer.borderWidth = 1;
+    [button setTitle:@"拍照" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(buttonEvent:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
+    [button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.bottom.equalTo(self.view);
+        make.width.height.equalTo(@80);
+    }];
     
     
 }
@@ -79,19 +79,30 @@
 - (void)capturePipelineDidCapturePhoto:(AVCapturePhoto *)photo {
     NSData *data = [photo fileDataRepresentation];
     UIImage *image = [UIImage imageWithData:data];
-    
-    [self saveToAlbumWithImage:image];
+    UIImage *resultImage = [self image:image addWaterMarkWithString:@""];
+    [self saveToAlbumWithImage:resultImage];
 }
 
 #pragma mark - < save photo >
-////使用该方法不会模糊，根据屏幕密度计算
-//- (UIImage *)convertViewToImage:(UIImage *)image {
-//
-////    UIGraphicsBeginImageContextWithOptions(image.size, NO, 0.0);
-////    image draw
-////    [self.gainView.layer renderInContext:UIGraphicsGetCurrentContext()];
-////    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-//}
+//使用该方法不会模糊，根据屏幕密度计算
+- (UIImage *)image:(UIImage *)image addWaterMarkWithString:(NSString *)string{
+    //开启一个图形上下文
+    UIGraphicsBeginImageContext(image.size);
+    //绘制上下文：1.绘制图片
+    [image drawAtPoint:CGPointMake(0, 20)];
+    //绘制上下文：2.添加文字到上下文
+    NSDictionary *dict=@{NSFontAttributeName:[UIFont systemFontOfSize:30.0],
+                         NSForegroundColorAttributeName:[UIColor redColor],
+//                         NSFontAttributeName:[UIFont fontWithName:@"AmericanTypewriter" size:10]
+                         };
+    [self.gainView.text drawAtPoint:CGPointMake(30, 60) withAttributes:dict];
+    [self.grayGainView.text drawAtPoint:CGPointMake(30, 360) withAttributes:dict];
+    //从图形上下文中获取合成的图片
+    UIImage *watermarkImage=UIGraphicsGetImageFromCurrentImageContext();
+    //关闭上下文
+    UIGraphicsEndImageContext();
+    return watermarkImage;
+}
 
 - (void)saveToAlbumWithImage:(UIImage *)image {
     PHPhotoLibrary *photoLibrary = [PHPhotoLibrary sharedPhotoLibrary];
