@@ -8,7 +8,7 @@
 
 #import "CapturePipeline.h"
 
-@interface CapturePipeline () <AVCaptureVideoDataOutputSampleBufferDelegate,AVCaptureMetadataOutputObjectsDelegate> {
+@interface CapturePipeline () <AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureMetadataOutputObjectsDelegate, AVCapturePhotoCaptureDelegate> {
     dispatch_queue_t bufferQueue;
 }
 
@@ -67,9 +67,18 @@
 //    }
 }
 
+- (void)capturePhoto {
+    AVCapturePhotoSettings *set = [AVCapturePhotoSettings photoSettings];
+    [self.photoOutput capturePhotoWithSettings:set delegate:self];
+}
+
 #pragma mark - < camera >
 - (void)setupSession {
-    AVCaptureDevice *videoDevice = [AVCaptureDevice defaultDeviceWithDeviceType:AVCaptureDeviceTypeBuiltInWideAngleCamera mediaType:AVMediaTypeVideo position:AVCaptureDevicePositionFront];
+    AVCaptureDevicePosition position = self.devicePostion == 0 ? AVCaptureDevicePositionFront : self.devicePostion;
+    AVCaptureSessionPreset preset = self.sessionPreset == nil ? AVCaptureSessionPreset640x480 : self.sessionPreset;
+    AVCaptureVideoOrientation oritentation = self.orientation == 0 ? AVCaptureVideoOrientationLandscapeRight : self.orientation;
+    
+    AVCaptureDevice *videoDevice = [AVCaptureDevice defaultDeviceWithDeviceType:AVCaptureDeviceTypeBuiltInWideAngleCamera mediaType:AVMediaTypeVideo position:position];
     self.videoDevice = videoDevice;
     AVCaptureDeviceInput *videoIn = [[AVCaptureDeviceInput alloc]initWithDevice:videoDevice error:nil];
     if ([_captureSession canAddInput:videoIn]) {
@@ -84,10 +93,18 @@
         [_captureSession addOutput:videoOut];
     }
     
+    //静态图
+    self.photoOutput = [[AVCapturePhotoOutput alloc] init];
+    if ([_captureSession canAddOutput:self.photoOutput]) {
+        [_captureSession addOutput:self.photoOutput];
+    }
+    [self.photoOutput.connections.lastObject setVideoOrientation:oritentation];
+
+    
     _videoConnection = [videoOut connectionWithMediaType:AVMediaTypeVideo];
     
     //这里的分辨率可以考虑根据设备来设置合适的,比如：AVCaptureSessionPreset1280x720、AVCaptureSessionPreset640x480
-    _captureSession.sessionPreset = self.sessionPreset == nil ? AVCaptureSessionPreset640x480 : self.sessionPreset;
+    _captureSession.sessionPreset = preset;
     
     /*
     * CMTime的scale，默认给1000。
@@ -137,6 +154,14 @@
     if ( connection == _videoConnection ) {
         if ([self.delegate respondsToSelector:@selector(capturePipelineDidOutputSampleBuffer:)]) {
             [self.delegate capturePipelineDidOutputSampleBuffer:sampleBuffer];
+        }
+    }
+}
+
+- (void)captureOutput:(AVCapturePhotoOutput *)output didFinishProcessingPhoto:(AVCapturePhoto *)photo error:(NSError *)error {
+    if (!error) {
+        if ([self.delegate respondsToSelector:@selector(capturePipelineDidCapturePhoto:)]) {
+            [self.delegate capturePipelineDidCapturePhoto:photo];
         }
     }
 }

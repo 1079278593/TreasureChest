@@ -214,7 +214,7 @@ static NSString *kPlistPacketTypeConnect = @"Connect";
   return self;
 }
 
-
+// mac端调用，iPhone不走这个类
 - (void)listenOnQueue:(dispatch_queue_t)queue onStart:(void(^)(NSError*))onStart onEnd:(void(^)(NSError*))onEnd {
   if (channel_) {
     if (onStart) onStart(nil);
@@ -222,6 +222,7 @@ static NSString *kPlistPacketTypeConnect = @"Connect";
   }
   channel_ = [PTUSBChannel new];
   NSError *error = nil;
+  // 创建socket，与系统的usbmuxd连接，建立io channel：channel_
   if ([channel_ openOnQueue:queue error:&error onEnd:onEnd]) {
     [channel_ listenWithBroadcastHandler:^(NSDictionary *packet) { [self handleBroadcastPacket:packet]; } callback:onStart];
   } else if (onStart) {
@@ -336,7 +337,14 @@ static NSString *kPlistPacketTypeConnect = @"Connect";
   return dispatch_io_get_descriptor(channel_);
 }
 
+/**
+ iTunes使用 usbmux 与 iphone 通信, 它提供了一个USB - TCP的转换服务， 这个服务在Mac端是由/System/Library/PrivateFrameworks/MobileDevice.framework/Resources/usbmuxd提供的, 当然, 开机自动启动。
 
+ 它创建了一个Unix Domain Socket 在 /var/run/usbmuxd. usbmuxd服务程序监控iPhone在USB口上的连接,
+ 当它监控到iPhone以用户模式连接到USB, (相对的是recovery模式),
+ usbmuxd服务程序就会连接到这个/var/run/usbmuxd的TCP端口,
+ 并开始成为一个USB - TCP 请求转发器
+ */
 - (BOOL)openOnQueue:(dispatch_queue_t)queue error:(NSError**)error onEnd:(void(^)(NSError*))onEnd {
   assert(queue != nil);
   assert(channel_ == nil);
@@ -452,26 +460,25 @@ static NSString *kPlistPacketTypeConnect = @"Connect";
   assert(isReadingPackets_ == NO);
   
   [self scheduleReadPacketWithCallback:^(NSError *error, NSDictionary *packet, uint32_t packetTag) {
-    // Interpret the package we just received
-    if (packetTag == 0) {
-      // Broadcast message
-      if (broadcastHandler) broadcastHandler(packet);
-		} else if (self->responseQueue_) {
-      // Reply
-      NSNumber *key = [NSNumber numberWithUnsignedInt:packetTag];
-			void(^requestCallback)(NSError*,NSDictionary*) = [self->responseQueue_ objectForKey:key];
-      if (requestCallback) {
-				[self->responseQueue_ removeObjectForKey:key];
-        requestCallback(error, packet);
-      } else {
-        NSLog(@"Warning: Ignoring reply packet for which there is no registered callback. Packet => %@", packet);
+      // Interpret the package we just received：解释我们刚收到的包裹
+      if (packetTag == 0) {
+          // Broadcast message
+          if (broadcastHandler) broadcastHandler(packet);
+      } else if (self->responseQueue_) {
+          // Reply
+          NSNumber *key = [NSNumber numberWithUnsignedInt:packetTag];
+          void(^requestCallback)(NSError*,NSDictionary*) = [self->responseQueue_ objectForKey:key];
+          if (requestCallback) {
+              [self->responseQueue_ removeObjectForKey:key];
+              requestCallback(error, packet);
+          } else {
+              NSLog(@"Warning: Ignoring reply packet for which there is no registered callback. Packet => %@", packet);
+          }
       }
-    }
-    
-    // Schedule reading another incoming package
-		if (self->autoReadPackets_) {
-      [self scheduleReadPacketWithBroadcastHandler:broadcastHandler];
-    }
+      // Schedule reading another incoming package：安排阅读另一个传入包
+      if (self->autoReadPackets_) {
+          [self scheduleReadPacketWithBroadcastHandler:broadcastHandler];
+      }
   }];
 }
 

@@ -275,24 +275,31 @@ static const uint8_t kUserInfoKey;
   
   int on = 1;
   
+  // 可通过这个函数设置Socket 的选项，即socket的属性，包括端口重用，收发数据时延等。
   if (setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, &on, sizeof(on)) == -1) {
     close(fd);
     if (callback) callback([NSError errorWithDomain:NSPOSIXErrorDomain code:errno userInfo:nil]);
     return;
   }
   
+  /**
+   fcntl是计算机中的一种函数，通过fcntl可以改变已打开的文件性质。fcntl针对描述符提供控制。参数fd是被参数cmd操作的描述符。针对cmd的值，fcntl能够接受第三个参数int arg。
+   fcntl的返回值与命令有关。如果出错，所有命令都返回－1，如果成功则返回某个其他值。
+   */
   if (fcntl(fd, F_SETFL, O_NONBLOCK) == -1) {
     close(fd);
     if (callback) callback([NSError errorWithDomain:NSPOSIXErrorDomain code:errno userInfo:nil]);
     return;
   }
   
+  // 将主机的IP地址和某个端口绑定到Socket
   if (bind(fd, (struct sockaddr*)&addr, socklen) != 0) {
     close(fd);
     if (callback) callback([NSError errorWithDomain:NSPOSIXErrorDomain code:errno userInfo:nil]);
     return;
   }
   
+  //socket() 函数创建的 socket 默认是一个主动类型的，listen() 函数将 socket 变为被动类型的，等待客户的连接请求。
   if (listen(fd, 512) != 0) {
     close(fd);
     if (callback) callback([NSError errorWithDomain:NSPOSIXErrorDomain code:errno userInfo:nil]);
@@ -303,7 +310,7 @@ static const uint8_t kUserInfoKey;
   
   dispatch_source_set_event_handler(dispatchObj_source_, ^{
     unsigned long nconns = dispatch_source_get_data(self->dispatchObj_source_);
-    while ([self acceptIncomingConnection:fd] && --nconns);
+    while ([self acceptIncomingConnection:fd] && --nconns);//接收连接请求
   });
   
   dispatch_source_set_cancel_handler(self->dispatchObj_source_, ^{

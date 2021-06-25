@@ -7,7 +7,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface PTAppDelegate () {
-  // If the remote connection is over USB transport...
+  // If the remote connection is over USB transport...如果远程连接是通过USB传输
   NSNumber *connectingToDeviceID_;
   NSNumber *connectedDeviceID_;
   NSDictionary *connectedDeviceProperties_;
@@ -68,6 +68,7 @@
   [self.window makeFirstResponder:inputTextField_];
   
   // Start listening for device attached/detached notifications
+  // 由mac来监听设备(手机或者其他外设)的’连接‘和’断开‘。iPhone端不需要监听
   [self startListeningForDevices];
   
   // Start trying to connect to local IPv4 port (defined in PTExampleProtocol.h)
@@ -237,7 +238,7 @@
 
     dispatch_async(self->notConnectedQueue_, ^{
       if (!self->connectingToDeviceID_ || ![deviceID isEqualToNumber:self->connectingToDeviceID_]) {
-        [self disconnectFromCurrentChannel];
+        [self disconnectFromCurrentChannel];//断开上一次的设备。
 				self->connectingToDeviceID_ = deviceID;
 				self->connectedDeviceProperties_ = [note.userInfo objectForKey:PTUSBHubNotificationKeyProperties];
         [self enqueueConnectToUSBDevice];
