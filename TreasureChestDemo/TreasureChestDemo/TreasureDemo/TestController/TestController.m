@@ -91,7 +91,6 @@
     [_button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [_button addTarget:self action:@selector(buttonEvent:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_button];
-    _button.frame = CGRectMake(300, 70, 90, 44);
     
     UIButton *button2 = [UIButton buttonWithType:UIButtonTypeCustom];
     button2.layer.borderWidth = 1;
@@ -100,7 +99,6 @@
     [button2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [button2 addTarget:self action:@selector(button2Event:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button2];
-    button2.frame = CGRectMake(300, 170, 90, 44);
     
     UIButton *button3 = [UIButton buttonWithType:UIButtonTypeCustom];
     button3.layer.borderWidth = 1;
@@ -109,6 +107,9 @@
     [button3 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [button3 addTarget:self action:@selector(button3Event:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button3];
+    
+    _button.frame = CGRectMake(300, 70, 90, 44);
+    button2.frame = CGRectMake(300, 170, 90, 44);
     button3.frame = CGRectMake(300, 270, 90, 44);
     
     self.slider.frame = CGRectMake(30, KScreenHeight - 160, KScreenWidth - 60, 30);
