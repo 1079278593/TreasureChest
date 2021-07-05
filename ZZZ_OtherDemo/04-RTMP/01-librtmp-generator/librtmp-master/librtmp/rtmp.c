@@ -23,15 +23,17 @@
  *  http://www.gnu.org/copyleft/lgpl.html
  */
 
+#define _GNU_SOURCE
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
 #include <time.h>
-#include <limits.h>
+#include <fcntl.h>
 
 #include "rtmp_sys.h"
 #include "log.h"
+#include <limits.h>
 
 #ifdef CRYPTO
 #ifdef USE_POLARSSL
@@ -317,13 +319,14 @@ RTMP_TLS_FreeServerContext(void *ctx)
 RTMP *
 RTMP_Alloc()
 {
-    printf("try my static .a is manully");
   return calloc(1, sizeof(RTMP));
 }
 
 void
 RTMP_Free(RTMP *r)
 {
+  if (r->reqs != NULL)
+    free(r->reqs);
   free(r);
 }
 
@@ -338,15 +341,16 @@ RTMP_Init(RTMP *r)
   memset(r, 0, sizeof(RTMP));
   r->m_sb.sb_socket = -1;
   r->m_inChunkSize = RTMP_DEFAULT_CHUNKSIZE;
-  r->m_outChunkSize = RTMP_DEFAULT_CHUNKSIZE;
+  r->m_outChunkSize = 1360;//RTMP_DEFAULT_CHUNKSIZE;
   r->m_nBufferMS = 30000;
   r->m_nClientBW = 2500000;
   r->m_nClientBW2 = 2;
   r->m_nServerBW = 2500000;
   r->m_fAudioCodecs = 3191.0;
   r->m_fVideoCodecs = 252.0;
-  r->Link.timeout = 30;
+  r->Link.timeout = 3;//30;
   r->Link.swfAge = 30;
+  r->reqs = calloc(1, sizeof(*r->reqs));
 }
 
 void
@@ -904,6 +908,155 @@ finish:
   return ret;
 }
 
+static int
+add_addr_info_async(RTMP *r, struct sockaddr_in *service, AVal *host, int port)
+{
+  char *hostname;
+  int ret = TRUE;
+  if (host->av_val[host->av_len])
+    {
+      hostname = malloc(host->av_len+1);
+      memcpy(hostname, host->av_val, host->av_len);
+      hostname[host->av_len] = '\0';
+    }
+  else
+    {
+      hostname = host->av_val;
+    }
+
+  service->sin_addr.s_addr = inet_addr(hostname);
+  if (service->sin_addr.s_addr == INADDR_NONE)
+    {
+      r->reqs->ar_name = strdup(hostname);
+      ret = getaddrinfo_a(GAI_NOWAIT, &r->reqs, 1, NULL);
+      if (ret)
+    {
+      RTMP_Log(RTMP_LOGERROR, "getaddrinfo_a() failed: %s\n", gai_strerror(ret));
+      ret = -1;
+    }
+    else
+    {
+      r->resolve_dns = 1;
+      ret = 0;
+    }
+
+    }
+
+    service->sin_port = htons(port);
+
+  if (hostname != host->av_val)
+    free(hostname);
+  return ret;
+}
+
+static void set_nonblocking(int sock)
+{
+  int flags = fcntl(sock, F_GETFL, 0);
+  fcntl(sock, F_SETFL, flags | O_NONBLOCK);
+}
+
+static void set_blocking(int sock)
+{
+  int flags = fcntl(sock, F_GETFL, 0);
+  fcntl(sock, F_SETFL, flags & ~O_NONBLOCK);
+}
+
+int
+RTMP_Connect00(RTMP *r, struct sockaddr * service)
+{
+  int on = 1;
+  int ret;
+  r->m_sb.sb_timedout = FALSE;
+  r->m_pausing = 0;
+  r->m_fDuration = 0.0;
+
+  struct timeval timeout;
+  timeout.tv_sec = 1;
+  timeout.tv_usec = 0;
+  fd_set writefds;
+  int error = -1;
+  socklen_t len = sizeof(error);
+
+  r->m_sb.sb_socket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+  if (r->m_sb.sb_socket != -1)
+    {
+        set_nonblocking(r->m_sb.sb_socket);
+        if (connect(r->m_sb.sb_socket, service, sizeof(struct sockaddr)) < 0)
+    	{
+            r->connect = 1;
+
+            while (1)
+            {
+            if (r->connect != 1) {
+                break;
+            }
+            FD_ZERO(&writefds);
+            FD_SET(r->m_sb.sb_socket, &writefds);
+            ret = select(r->m_sb.sb_socket + 1, NULL, &writefds, NULL, &timeout );
+            if (ret > 0)
+            {
+                ret = getsockopt(r->m_sb.sb_socket, SOL_SOCKET, SO_ERROR, &error, (socklen_t *)&len);
+                if (ret < 0 || error != 0)
+                {
+                    error = -1;
+                }
+                else
+                {
+                    error = 0;
+                }
+                break;
+            }
+
+            }
+    	}
+        else
+        {
+            error = 0;
+        }
+
+        set_blocking(r->m_sb.sb_socket);
+        if (error != 0)
+        {
+            int err = GetSockError();
+            RTMP_Log(RTMP_LOGERROR, "%s, failed to connect socket. %d (%s)",
+                __FUNCTION__, err, strerror(err));
+            RTMP_Close(r);
+            return FALSE;
+        }
+          if (r->Link.socksport)
+    	{
+    	  RTMP_Log(RTMP_LOGDEBUG, "%s ... SOCKS negotiation", __FUNCTION__);
+    	  if (!SocksNegotiate(r))
+    	    {
+    	      RTMP_Log(RTMP_LOGERROR, "%s, SOCKS negotiation failed.", __FUNCTION__);
+    	      RTMP_Close(r);
+    	      return FALSE;
+    	    }
+    	}
+    }
+  else
+    {
+      RTMP_Log(RTMP_LOGERROR, "%s, failed to create socket. Error: %d", __FUNCTION__,
+	  GetSockError());
+      return FALSE;
+    }
+
+  /* set timeout */
+  {
+    SET_RCVTIMEO(tv, r->Link.timeout);
+    if (setsockopt
+        (r->m_sb.sb_socket, SOL_SOCKET, SO_RCVTIMEO, (char *)&tv, sizeof(tv)))
+      {
+        RTMP_Log(RTMP_LOGERROR, "%s, Setting socket timeout to %ds failed!",
+	    __FUNCTION__, r->Link.timeout);
+      }
+  }
+
+  setsockopt(r->m_sb.sb_socket, IPPROTO_TCP, TCP_NODELAY, (char *) &on, sizeof(on));
+
+  return TRUE;
+}
+
 int
 RTMP_Connect0(RTMP *r, struct sockaddr * service)
 {
@@ -947,6 +1100,13 @@ RTMP_Connect0(RTMP *r, struct sockaddr * service)
     SET_RCVTIMEO(tv, r->Link.timeout);
     if (setsockopt
         (r->m_sb.sb_socket, SOL_SOCKET, SO_RCVTIMEO, (char *)&tv, sizeof(tv)))
+      {
+        RTMP_Log(RTMP_LOGERROR, "%s, Setting socket timeout to %ds failed!",
+	    __FUNCTION__, r->Link.timeout);
+      }
+
+    if (setsockopt
+        (r->m_sb.sb_socket, SOL_SOCKET, SO_SNDTIMEO, (char *)&tv, sizeof(tv)))
       {
         RTMP_Log(RTMP_LOGERROR, "%s, Setting socket timeout to %ds failed!",
 	    __FUNCTION__, r->Link.timeout);
@@ -1029,30 +1189,100 @@ RTMP_Connect1(RTMP *r, RTMPPacket *cp)
   return TRUE;
 }
 
+static int
+RTMP_ResolveDNSResult(RTMP *r, struct sockaddr_in *service)
+{
+    int ret = gai_error(r->reqs);
+    struct addrinfo *res;
+    char host[NI_MAXHOST];
+
+    if (!ret) {
+        res = r->reqs->ar_result;
+
+        ret = getnameinfo(res->ai_addr, res->ai_addrlen,
+                          host, sizeof(host),
+                          NULL, 0, NI_NUMERICHOST);
+        if (ret) {
+            RTMP_Log(RTMP_LOGERROR, "getnameinfo() failed: %s\n", gai_strerror(ret));
+            ret  = 0;
+        }
+        else
+        {
+            RTMP_Log(RTMP_LOGDEBUG, "dns of %s\n", host);
+            ret = 1;
+            service->sin_addr.s_addr = inet_addr(host);
+            if (service->sin_addr.s_addr == INADDR_NONE)
+                ret = 0;
+        }
+
+    } else {
+        RTMP_Log(RTMP_LOGERROR, "gai_error %s\n", gai_strerror(ret));
+        ret = 0;
+    }
+    return ret;
+}
+
+int
+RTMP_ResolveDNSCancel(RTMP *r)
+{
+    r->resolve_dns = 0;
+    r->connect = 0;
+    return TRUE;
+}
+
+int
+RTMP_ResolveDNS(RTMP *r)
+{
+    if (!r->Link.hostname.av_len)
+      return FALSE;
+
+    struct sockaddr_in *service = &r->service;
+
+    memset(service, 0, sizeof(struct sockaddr_in));
+    service->sin_family = AF_INET;
+
+    int ret  = 0;
+    if (r->Link.socksport)
+      {
+        /* Connect via SOCKS */
+        ret = add_addr_info_async(r, service, &r->Link.sockshost, r->Link.socksport);
+      }
+    else
+      {
+        /* Connect directly */
+        ret = add_addr_info_async(r, service, &r->Link.hostname, r->Link.port);
+      }
+
+    if (ret == 0)
+      {
+        while (1)
+        {
+        if (r->resolve_dns == 0)
+            {
+                int retult;
+                //retult = gai_cancel(r->reqs);
+                retult = gai_cancel(NULL);
+                RTMP_Log(RTMP_LOGDEBUG, "%d, %s: %s\n", retult, r->reqs->ar_name, gai_strerror(retult));
+
+                break;
+            }
+        if (ret = RTMP_ResolveDNSResult(r, service))
+            break;
+        sleep(1);
+        }
+      }
+    else if (ret == -1)
+      {
+        ret = 0;
+      }
+
+    return ret;
+}
+
 int
 RTMP_Connect(RTMP *r, RTMPPacket *cp)
 {
-  struct sockaddr_in service;
-  if (!r->Link.hostname.av_len)
-    return FALSE;
-
-  memset(&service, 0, sizeof(struct sockaddr_in));
-  service.sin_family = AF_INET;
-
-  if (r->Link.socksport)
-    {
-      /* Connect via SOCKS */
-      if (!add_addr_info(&service, &r->Link.sockshost, r->Link.socksport))
-	return FALSE;
-    }
-  else
-    {
-      /* Connect directly */
-      if (!add_addr_info(&service, &r->Link.hostname, r->Link.port))
-	return FALSE;
-    }
-
-  if (!RTMP_Connect0(r, (struct sockaddr *)&service))
+  if (!RTMP_Connect00(r, (struct sockaddr *)&r->service))
     return FALSE;
 
   r->m_bSendCounter = TRUE;
@@ -1586,6 +1816,24 @@ SendConnectPacket(RTMP *r, RTMPPacket *cp)
 
   if (cp)
     return RTMP_SendPacket(r, cp, TRUE);
+
+  if((r->Link.protocol & RTMP_FEATURE_WRITE) && r->m_outChunkSize != RTMP_DEFAULT_CHUNKSIZE)
+  {
+      packet.m_nChannel = 0x02;
+      packet.m_headerType = RTMP_PACKET_SIZE_LARGE;
+      packet.m_packetType = RTMP_PACKET_TYPE_CHUNK_SIZE;
+      packet.m_nTimeStamp = 0;
+      packet.m_nInfoField2 = 0;
+      packet.m_hasAbsTimestamp = 0;
+      packet.m_body = pbuf + RTMP_MAX_HEADER_SIZE;
+      packet.m_nBodySize = 4;
+
+      enc = packet.m_body;
+      AMF_EncodeInt32(enc, pend, r->m_outChunkSize);
+
+      if(!RTMP_SendPacket(r, &packet, FALSE))
+          return 0;
+  }
 
   packet.m_nChannel = 0x03;	/* control channel (invoke) */
   packet.m_headerType = RTMP_PACKET_SIZE_LARGE;
@@ -5180,10 +5428,4 @@ RTMP_Write(RTMP *r, const char *buf, int size)
 	}
     }
   return size+s2;
-}
-
-// TODO: test static bundle is compile success, can remove me after someday.
-char* RTMP_MyPrintTip(void) {
-    char *tip = "Generate bundle success. This method is test for static bundle";
-    return tip;
 }

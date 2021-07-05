@@ -80,7 +80,7 @@
 
 - (void)pushFullVideoData:(NSData *)fullVideo chunkSize:(NSUInteger)size{
     NSUInteger length = [fullVideo length];
-    NSUInteger chunkSize = 10 * 5120;
+    NSUInteger chunkSize = size;//10*5120
     NSUInteger offset = 0;
 
     // 将整视频切片后推送
