@@ -29,6 +29,7 @@
 #define CRYPTO
 #endif
 
+#include "netdb.h"
 #include <errno.h>
 #include <stdint.h>
 #include <stddef.h>
@@ -280,6 +281,11 @@ extern "C"
     RTMPPacket m_write;
     RTMPSockBuf m_sb;
     RTMP_LNK Link;
+
+    struct gaicb *reqs;
+    int resolve_dns;
+    int connect;
+    struct sockaddr_in service;
   } RTMP;
 
   int RTMP_ParseURL(const char *url, int *protocol, AVal *host,
@@ -309,6 +315,8 @@ extern "C"
 			int dStart,
 			int dStop, int bLiveStream, long int timeout);
 
+  int RTMP_ResolveDNSCancel(RTMP *r);
+  int RTMP_ResolveDNS(RTMP *r);
   int RTMP_Connect(RTMP *r, RTMPPacket *cp);
   struct sockaddr;
   int RTMP_Connect0(RTMP *r, struct sockaddr *svc);
@@ -371,8 +379,6 @@ extern "C"
   int RTMP_HashSWF(const char *url, unsigned int *size, unsigned char *hash,
 		   int age);
 
-/* test static bundle is compile success*/
-  char* RTMP_MyPrintTip(void);
 #ifdef __cplusplus
 };
 #endif

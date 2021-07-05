@@ -25,11 +25,11 @@
 #include <string.h>
 #include <ctype.h>
 #include <time.h>
-#include <limits.h>
 
 #include "rtmp_sys.h"
 #include "log.h"
 #include "http.h"
+#include <limits.h>
 
 #ifdef CRYPTO
 #ifdef USE_POLARSSL
