@@ -25,6 +25,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		54E615DC2693E92D002EB8B8 /* getaddrinfo_a.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = getaddrinfo_a.c; sourceTree = "<group>"; };
+		54E615DD2693E936002EB8B8 /* gai_misc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gai_misc.c; sourceTree = "<group>"; };
+		54E615DE2693E936002EB8B8 /* gai_error.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gai_error.c; sourceTree = "<group>"; };
+		54E615DF2693E936002EB8B8 /* gai_cancel.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gai_cancel.c; sourceTree = "<group>"; };
+		54E615E02693E936002EB8B8 /* gai_misc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gai_misc.h; sourceTree = "<group>"; };
 		76FACC99145BB33D00B3F6C3 /* librtmp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = librtmp.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		76FACC9C145BB33D00B3F6C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		76FACCA0145BB33D00B3F6C3 /* librtmp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "librtmp-Prefix.pch"; sourceTree = "<group>"; };
@@ -59,6 +64,11 @@
 		76FACC8E145BB33D00B3F6C3 = {
 			isa = PBXGroup;
 			children = (
+				54E615DC2693E92D002EB8B8 /* getaddrinfo_a.c */,
+				54E615DF2693E936002EB8B8 /* gai_cancel.c */,
+				54E615DE2693E936002EB8B8 /* gai_error.c */,
+				54E615DD2693E936002EB8B8 /* gai_misc.c */,
+				54E615E02693E936002EB8B8 /* gai_misc.h */,
 				76FACC9E145BB33D00B3F6C3 /* librtmp */,
 				76FACC9B145BB33D00B3F6C3 /* Frameworks */,
 				76FACC9A145BB33D00B3F6C3 /* Products */,
