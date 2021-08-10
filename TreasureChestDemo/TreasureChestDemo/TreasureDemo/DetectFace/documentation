@@ -13,3 +13,31 @@ https://www.jianshu.com/p/300647f00b4c
 
 纹理翻转策略（1.解压时翻转；2.设置旋转矩阵统一变量；3.顶点和纹理映射关系颠倒）
 https://www.jianshu.com/p/14577842f4d1
+
+光圈和快门：
+https://jingyan.baidu.com/article/3c343ff71493890d3779630c.html
+
+Coded Aperture（光圈）
+https://zhuanlan.zhihu.com/p/68991464
+
+理解亮度直方图：
+参考1：https://baijiahao.baidu.com/s?id=1596739433503109140&wfr=spider&for=pc
+参考2：https://zhuanlan.zhihu.com/p/24507450
+
+折线图：
+https://github.com/iambluebird/CAMChart-OC
+
+
+
+
+
+------------------------------专有名词：
+
+1.
+CCT是correlated colour temperature的缩写，意思是相关色温。
+色温是指当一标准黑体被加热时，随着温度的升高，其颜色由深红至浅红至橙黄至白至蓝白至蓝色的变化，利用黑体的这一特征，当待测光源与黑体在某一温度下的光色相同时，该黑体的温度即为待测光源的色温。
+
+2.
+光圈（Aperture）：光圈是用来调节进入镜头光量多少装置；
+快门（Shutter）：快门则用来控制光线进入镜头的时间；
+不同的光圈快门组合，会产生不同的曝光值。

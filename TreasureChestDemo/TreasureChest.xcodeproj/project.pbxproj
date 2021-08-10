@@ -71,6 +71,20 @@
 		3AE852D82610C21C00AA656C /* TestSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE852D72610C21C00AA656C /* TestSubView.m */; };
 		3AEE43B4261420710095FA38 /* AutoCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE43B3261420710095FA38 /* AutoCoder.m */; };
 		3BEFF9DF0E12D318A440735F /* Pods_TreasureChestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140A460F1B11381DEED65D5B /* Pods_TreasureChestTests.framework */; };
+		5470604926C26DA000C4ABDB /* CAMCoordinateAxisKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5470602B26C26DA000C4ABDB /* CAMCoordinateAxisKit.m */; };
+		5470604A26C26DA000C4ABDB /* CAMTextKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5470602D26C26DA000C4ABDB /* CAMTextKit.m */; };
+		5470604B26C26DA000C4ABDB /* CAMColorKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5470603126C26DA000C4ABDB /* CAMColorKit.m */; };
+		5470604C26C26DA000C4ABDB /* CAMBaseChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 5470603426C26DA000C4ABDB /* CAMBaseChart.m */; };
+		5470604D26C26DA000C4ABDB /* CAMLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 5470603626C26DA000C4ABDB /* CAMLineChart.m */; };
+		5470604E26C26DA000C4ABDB /* CAMUICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5470603926C26DA000C4ABDB /* CAMUICountingLabel.m */; };
+		5470604F26C26DA000C4ABDB /* CAMCircleProgressChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 5470603A26C26DA000C4ABDB /* CAMCircleProgressChart.m */; };
+		5470605026C26DA000C4ABDB /* CAMXYAxisProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5470603E26C26DA000C4ABDB /* CAMXYAxisProfile.m */; };
+		5470605126C26DA000C4ABDB /* CAMLineChartProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5470604026C26DA000C4ABDB /* CAMLineChartProfile.m */; };
+		5470605226C26DA000C4ABDB /* CAMCircleAxisProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5470604126C26DA000C4ABDB /* CAMCircleAxisProfile.m */; };
+		5470605326C26DA000C4ABDB /* CAMChartProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5470604326C26DA000C4ABDB /* CAMChartProfile.m */; };
+		5470605426C26DA000C4ABDB /* CAMChartProfileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5470604526C26DA000C4ABDB /* CAMChartProfileManager.m */; };
+		5470605526C26DA000C4ABDB /* CAMCircleProgressChartProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5470604826C26DA000C4ABDB /* CAMCircleProgressChartProfile.m */; };
+		5470605826C26E9900C4ABDB /* BrightnessHistogram.m in Sources */ = {isa = PBXBuildFile; fileRef = 5470605726C26E9900C4ABDB /* BrightnessHistogram.m */; };
 		548FCF9026841C2D0047F823 /* WhiteBalanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 548FCF8F26841C2D0047F823 /* WhiteBalanceController.m */; };
 		A90ECEE2259577EB005E3EF0 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = A90ECEE1259577EB005E3EF0 /* TestView.m */; };
 		A90ECEEE25998733005E3EF0 /* NSString+Bundle.m in Sources */ = {isa = PBXBuildFile; fileRef = A90ECEED25998733005E3EF0 /* NSString+Bundle.m */; };
@@ -457,6 +471,36 @@
 		3AEE43B2261420710095FA38 /* AutoCoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoCoder.h; sourceTree = "<group>"; };
 		3AEE43B3261420710095FA38 /* AutoCoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoCoder.m; sourceTree = "<group>"; };
 		3AFE5E6525E1FF71007CD8B0 /* FileManagerEnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileManagerEnums.h; sourceTree = "<group>"; };
+		5470602B26C26DA000C4ABDB /* CAMCoordinateAxisKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAMCoordinateAxisKit.m; sourceTree = "<group>"; };
+		5470602C26C26DA000C4ABDB /* CAMColorKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMColorKit.h; sourceTree = "<group>"; };
+		5470602D26C26DA000C4ABDB /* CAMTextKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAMTextKit.m; sourceTree = "<group>"; };
+		5470602E26C26DA000C4ABDB /* CAMMacroDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMMacroDefinition.h; sourceTree = "<group>"; };
+		5470602F26C26DA000C4ABDB /* CAMCoordinateAxisKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMCoordinateAxisKit.h; sourceTree = "<group>"; };
+		5470603026C26DA000C4ABDB /* CAMTextKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMTextKit.h; sourceTree = "<group>"; };
+		5470603126C26DA000C4ABDB /* CAMColorKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAMColorKit.m; sourceTree = "<group>"; };
+		5470603226C26DA000C4ABDB /* CAMChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMChart.h; sourceTree = "<group>"; };
+		5470603426C26DA000C4ABDB /* CAMBaseChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAMBaseChart.m; sourceTree = "<group>"; };
+		5470603526C26DA000C4ABDB /* CAMUICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMUICountingLabel.h; sourceTree = "<group>"; };
+		5470603626C26DA000C4ABDB /* CAMLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAMLineChart.m; sourceTree = "<group>"; };
+		5470603726C26DA000C4ABDB /* CAMCircleProgressChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMCircleProgressChart.h; sourceTree = "<group>"; };
+		5470603826C26DA000C4ABDB /* CAMBaseChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMBaseChart.h; sourceTree = "<group>"; };
+		5470603926C26DA000C4ABDB /* CAMUICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAMUICountingLabel.m; sourceTree = "<group>"; };
+		5470603A26C26DA000C4ABDB /* CAMCircleProgressChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAMCircleProgressChart.m; sourceTree = "<group>"; };
+		5470603B26C26DA000C4ABDB /* CAMLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMLineChart.h; sourceTree = "<group>"; };
+		5470603D26C26DA000C4ABDB /* CAMChartProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMChartProfile.h; sourceTree = "<group>"; };
+		5470603E26C26DA000C4ABDB /* CAMXYAxisProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAMXYAxisProfile.m; sourceTree = "<group>"; };
+		5470603F26C26DA000C4ABDB /* CAMChartProfileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMChartProfileManager.h; sourceTree = "<group>"; };
+		5470604026C26DA000C4ABDB /* CAMLineChartProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAMLineChartProfile.m; sourceTree = "<group>"; };
+		5470604126C26DA000C4ABDB /* CAMCircleAxisProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAMCircleAxisProfile.m; sourceTree = "<group>"; };
+		5470604226C26DA000C4ABDB /* CAMCircleProgressChartProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMCircleProgressChartProfile.h; sourceTree = "<group>"; };
+		5470604326C26DA000C4ABDB /* CAMChartProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAMChartProfile.m; sourceTree = "<group>"; };
+		5470604426C26DA000C4ABDB /* CAMXYAxisProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMXYAxisProfile.h; sourceTree = "<group>"; };
+		5470604526C26DA000C4ABDB /* CAMChartProfileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAMChartProfileManager.m; sourceTree = "<group>"; };
+		5470604626C26DA000C4ABDB /* CAMCircleAxisProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMCircleAxisProfile.h; sourceTree = "<group>"; };
+		5470604726C26DA000C4ABDB /* CAMLineChartProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMLineChartProfile.h; sourceTree = "<group>"; };
+		5470604826C26DA000C4ABDB /* CAMCircleProgressChartProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAMCircleProgressChartProfile.m; sourceTree = "<group>"; };
+		5470605626C26E9900C4ABDB /* BrightnessHistogram.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrightnessHistogram.h; sourceTree = "<group>"; };
+		5470605726C26E9900C4ABDB /* BrightnessHistogram.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrightnessHistogram.m; sourceTree = "<group>"; };
 		548FCF8E26841C2D0047F823 /* WhiteBalanceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WhiteBalanceController.h; sourceTree = "<group>"; };
 		548FCF8F26841C2D0047F823 /* WhiteBalanceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhiteBalanceController.m; sourceTree = "<group>"; };
 		A90ECEE0259577EB005E3EF0 /* TestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
@@ -971,9 +1015,9 @@
 				3A40234723A62ED100BDB4E3 /* AppDelegate.m */,
 				B2506D0A23AB84330034A472 /* PrefixHeader.pch */,
 				3AE550EA23A91A93001D989E /* TreasureChest-Bridging-Header.h */,
+				A918EC13255554FF00C5964D /* Controllers */,
 				B2506D0323AB63E40034A472 /* TreasureDemo */,
 				B21EF68624482F0600BEBB9E /* BaseClass */,
-				A918EC13255554FF00C5964D /* Controllers */,
 				B243E07823C4552E00B37519 /* CF-1151.16-源码研究 */,
 			);
 			path = TreasureChestDemo;
@@ -1148,6 +1192,7 @@
 		3AE550DA23A9189F001D989E /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				5470602926C26DA000C4ABDB /* CAMChart */,
 				3AEE43B1261420250095FA38 /* AutoCoder */,
 				3AE852C92610C09C00AA656C /* LottieLoader */,
 				A9232F3A25E10AA800D8FFC5 /* FileManager */,
@@ -1234,11 +1279,72 @@
 			path = AutoCoder;
 			sourceTree = "<group>";
 		};
+		5470602926C26DA000C4ABDB /* CAMChart */ = {
+			isa = PBXGroup;
+			children = (
+				5470603226C26DA000C4ABDB /* CAMChart.h */,
+				5470602A26C26DA000C4ABDB /* Kits */,
+				5470603326C26DA000C4ABDB /* Charts */,
+				5470603C26C26DA000C4ABDB /* Profile */,
+			);
+			path = CAMChart;
+			sourceTree = "<group>";
+		};
+		5470602A26C26DA000C4ABDB /* Kits */ = {
+			isa = PBXGroup;
+			children = (
+				5470602E26C26DA000C4ABDB /* CAMMacroDefinition.h */,
+				5470603026C26DA000C4ABDB /* CAMTextKit.h */,
+				5470602D26C26DA000C4ABDB /* CAMTextKit.m */,
+				5470602C26C26DA000C4ABDB /* CAMColorKit.h */,
+				5470603126C26DA000C4ABDB /* CAMColorKit.m */,
+				5470602F26C26DA000C4ABDB /* CAMCoordinateAxisKit.h */,
+				5470602B26C26DA000C4ABDB /* CAMCoordinateAxisKit.m */,
+			);
+			path = Kits;
+			sourceTree = "<group>";
+		};
+		5470603326C26DA000C4ABDB /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				5470603826C26DA000C4ABDB /* CAMBaseChart.h */,
+				5470603426C26DA000C4ABDB /* CAMBaseChart.m */,
+				5470603B26C26DA000C4ABDB /* CAMLineChart.h */,
+				5470603626C26DA000C4ABDB /* CAMLineChart.m */,
+				5470603526C26DA000C4ABDB /* CAMUICountingLabel.h */,
+				5470603926C26DA000C4ABDB /* CAMUICountingLabel.m */,
+				5470603726C26DA000C4ABDB /* CAMCircleProgressChart.h */,
+				5470603A26C26DA000C4ABDB /* CAMCircleProgressChart.m */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
+		5470603C26C26DA000C4ABDB /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				5470603D26C26DA000C4ABDB /* CAMChartProfile.h */,
+				5470604326C26DA000C4ABDB /* CAMChartProfile.m */,
+				5470604426C26DA000C4ABDB /* CAMXYAxisProfile.h */,
+				5470603E26C26DA000C4ABDB /* CAMXYAxisProfile.m */,
+				5470604726C26DA000C4ABDB /* CAMLineChartProfile.h */,
+				5470604026C26DA000C4ABDB /* CAMLineChartProfile.m */,
+				5470604626C26DA000C4ABDB /* CAMCircleAxisProfile.h */,
+				5470604126C26DA000C4ABDB /* CAMCircleAxisProfile.m */,
+				5470603F26C26DA000C4ABDB /* CAMChartProfileManager.h */,
+				5470604526C26DA000C4ABDB /* CAMChartProfileManager.m */,
+				5470604226C26DA000C4ABDB /* CAMCircleProgressChartProfile.h */,
+				5470604826C26DA000C4ABDB /* CAMCircleProgressChartProfile.m */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		548FCF8D26841C080047F823 /* WhiteBalanceController */ = {
 			isa = PBXGroup;
 			children = (
 				548FCF8E26841C2D0047F823 /* WhiteBalanceController.h */,
 				548FCF8F26841C2D0047F823 /* WhiteBalanceController.m */,
+				5470605626C26E9900C4ABDB /* BrightnessHistogram.h */,
+				5470605726C26E9900C4ABDB /* BrightnessHistogram.m */,
 			);
 			path = WhiteBalanceController;
 			sourceTree = "<group>";
@@ -2647,10 +2753,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5470605026C26DA000C4ABDB /* CAMXYAxisProfile.m in Sources */,
 				B27B784823ACE22A0083E6AE /* TabScrollViewCtl.m in Sources */,
 				A9C7CF0525372631002ECCFF /* DSViewTool.m in Sources */,
 				B2506D0223AB5BA80034A472 /* CollapsibleModel.m in Sources */,
 				B299BE5724513C510096360D /* LottieAnimationsCtl.m in Sources */,
+				5470605526C26DA000C4ABDB /* CAMCircleProgressChartProfile.m in Sources */,
 				3A2E0A50254EFC0800471A41 /* AutoSizeView.m in Sources */,
 				B26FBD772441CDB8003DB3BE /* LOTShapeTrimPath.m in Sources */,
 				A91C062F24E7B49D00E9F5B6 /* MediaRecorder.m in Sources */,
@@ -2667,7 +2775,9 @@
 				B26FBD8C2441CDB8003DB3BE /* LOTKeypath.m in Sources */,
 				3AEE43B4261420710095FA38 /* AutoCoder.m in Sources */,
 				A983CE2D24EE5CC200213D35 /* OpenGLPixelBufferView.m in Sources */,
+				5470604D26C26DA000C4ABDB /* CAMLineChart.m in Sources */,
 				A947AF7925CBF571005E5E1E /* FaceMaskRenderer.m in Sources */,
+				5470604A26C26DA000C4ABDB /* CAMTextKit.m in Sources */,
 				3A1174C9256E5F5C00D6F382 /* BaseNavigationController.m in Sources */,
 				B2055290240756980034310A /* ProductOptionViewFlowLayout.m in Sources */,
 				B27B784523ACD7C00083E6AE /* TabTitleScrollView.m in Sources */,
@@ -2676,8 +2786,11 @@
 				B293B5A5242C4FE6009F5887 /* CheckAuthorization.m in Sources */,
 				A98671DD25563A9F003381A7 /* UIView+RoundProgress.m in Sources */,
 				B2C459332440524F00117BD7 /* VectorGeometry.m in Sources */,
+				5470605226C26DA000C4ABDB /* CAMCircleAxisProfile.m in Sources */,
 				B2AA0F4723C5BB1300BEBA27 /* DictionaryMainCtl.m in Sources */,
 				B2DD689423B08EF100106F4F /* UIButton+Extension.m in Sources */,
+				5470605426C26DA000C4ABDB /* CAMChartProfileManager.m in Sources */,
+				5470604926C26DA000C4ABDB /* CAMCoordinateAxisKit.m in Sources */,
 				3A812A1926120FA20018E3AE /* EffectResourceDownloador.m in Sources */,
 				B26FBD7A2441CDB8003DB3BE /* LOTShapeRepeater.m in Sources */,
 				B2169DE724401B4F002CFE3E /* AudioRecorder.m in Sources */,
@@ -2751,6 +2864,7 @@
 				3A2E0A4B254EDAD300471A41 /* AutoSizeModel.m in Sources */,
 				B26FBD932441CDB8003DB3BE /* LOTLayerContainer.m in Sources */,
 				B26FBD942441CDB8003DB3BE /* LOTCompositionContainer.m in Sources */,
+				5470604C26C26DA000C4ABDB /* CAMBaseChart.m in Sources */,
 				B26FBD6C2441CDB8003DB3BE /* LOTFillRenderer.m in Sources */,
 				B2830F0223B5F8890049AE99 /* UILabel+TextSize.m in Sources */,
 				3A40235D23A62ED100BDB4E3 /* AppDelegate.m in Sources */,
@@ -2763,6 +2877,7 @@
 				B2BC388323C03E1100D5B9C6 /* XMDashLineView.m in Sources */,
 				3A5E734B26062D0700772384 /* ZScrollLabel.m in Sources */,
 				B26FBD602441CDB8003DB3BE /* LOTTransformInterpolator.m in Sources */,
+				5470605826C26E9900C4ABDB /* BrightnessHistogram.m in Sources */,
 				B283CEE92449B0D90021ABB5 /* TestActionKeyLayer.m in Sources */,
 				B26FBD722441CDB8003DB3BE /* LOTMask.m in Sources */,
 				B2DD68A223B2FC7D00106F4F /* XMSelectedButton.m in Sources */,
@@ -2782,6 +2897,7 @@
 				B2AA0F4A23C5D12A00BEBA27 /* FMDictManager.m in Sources */,
 				B26FBD742441CDB8003DB3BE /* LOTAssetGroup.m in Sources */,
 				B26FBD7D2441CDB8003DB3BE /* LOTShapePath.m in Sources */,
+				5470604E26C26DA000C4ABDB /* CAMUICountingLabel.m in Sources */,
 				3A8F79D82557EB6E00069914 /* HollowOutView.m in Sources */,
 				A949C2C92539C61300CF09A5 /* TextureDataManager.m in Sources */,
 				B2D1BCC723D165E10000B413 /* DictionaryMainCell.m in Sources */,
@@ -2799,12 +2915,14 @@
 				A9B35C3C25C2F0A7009453E6 /* CapturePipeline.m in Sources */,
 				B2C4592F2440524F00117BD7 /* UIBezierPath+Geometry.m in Sources */,
 				A9CBFA2A25B1822900BD4747 /* ResidentThread.m in Sources */,
+				5470604F26C26DA000C4ABDB /* CAMCircleProgressChart.m in Sources */,
 				A9CA834D24DBE03C00771EE2 /* EllipsePointsView.m in Sources */,
 				B28472372404B8EE00C1194F /* URLDownloadTask.m in Sources */,
 				A90ECEE2259577EB005E3EF0 /* TestView.m in Sources */,
 				3A812A14261206710018E3AE /* BaseModel.m in Sources */,
 				B283CEED2449BB650021ABB5 /* TestActionProgressAction.m in Sources */,
 				B26FBD8F2441CDB8003DB3BE /* LOTInterpolatorCallback.m in Sources */,
+				5470604B26C26DA000C4ABDB /* CAMColorKit.m in Sources */,
 				B284724124051E2D00C1194F /* URLOfflineDownloadTask.m in Sources */,
 				B2BC387A23C0337A00D5B9C6 /* BaseShapeView.m in Sources */,
 				A98EFD8925EF6FE900948E06 /* DraggableCardView.m in Sources */,
@@ -2812,6 +2930,7 @@
 				A98EFD8825EF6FE900948E06 /* DraggableContainer.m in Sources */,
 				A98EFD8A25EF6FE900948E06 /* DraggableCardController.m in Sources */,
 				B26FBD7F2441CDB8003DB3BE /* LOTShapeFill.m in Sources */,
+				5470605326C26DA000C4ABDB /* CAMChartProfile.m in Sources */,
 				A94EF7A825A40D2400CB769D /* AudioPlayer.m in Sources */,
 				B2169DE824401B4F002CFE3E /* ScreenRecorder.m in Sources */,
 				B284723A2404B90300C1194F /* URLUploadTask.m in Sources */,
@@ -2827,6 +2946,7 @@
 				B26FBD6B2441CDB8003DB3BE /* LOTStrokeRenderer.m in Sources */,
 				3AE550E223A9189F001D989E /* ResidentScrollView.m in Sources */,
 				B2169DFD24401E2B002CFE3E /* AudioMixWithAudio.m in Sources */,
+				5470605126C26DA000C4ABDB /* CAMLineChartProfile.m in Sources */,
 				B2AA0F4423C586CE00BEBA27 /* FMDBManager.m in Sources */,
 				A90ECEEE25998733005E3EF0 /* NSString+Bundle.m in Sources */,
 				3AD14A3124615354004D54B8 /* LexiconViewCtl.m in Sources */,
@@ -3030,7 +3150,7 @@
 					"$(PROJECT_DIR)/TreasureChestDemo/ffmpeg/lib",
 				);
 				INFOPLIST_FILE = Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3064,7 +3184,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TreasureChestDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

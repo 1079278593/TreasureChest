@@ -24,6 +24,19 @@
     NSString *path = [[NSBundle mainBundle]pathForResource:@"Controllers" ofType:@"plist"];
     self.datas = [ControllersModel mj_objectArrayWithFile:path];
     self.tableView.frame = CGRectMake(0, 64, KScreenWidth, KScreenHeight-64);
+    
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter addObserver:self selector:@selector(willResignActiveNotification) name:UIApplicationWillResignActiveNotification object:nil];
+    [notificationCenter addObserver:self selector:@selector(didBecomeActiveNotification) name:UIApplicationDidBecomeActiveNotification object:nil];
+    
+}
+
+- (void)willResignActiveNotification {
+    NSLog(@"myprint: active willResignActiveNotification");
+}
+
+- (void)didBecomeActiveNotification {
+    NSLog(@"myprint: active didBecomeActiveNotification");
 }
 
 #pragma mark - table
