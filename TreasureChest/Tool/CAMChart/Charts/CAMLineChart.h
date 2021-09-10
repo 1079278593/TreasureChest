@@ -42,6 +42,8 @@
 
  @param chartData array of CGFloat values
  */
--(void)addChartData:(NSArray*)chartData;
+- (void)addChartData:(NSArray*)chartData;
+
+- (void)removeAllChartDatas;
 
 @end

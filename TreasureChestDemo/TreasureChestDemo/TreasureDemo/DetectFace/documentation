@@ -24,10 +24,11 @@ https://zhuanlan.zhihu.com/p/68991464
 参考1：https://baijiahao.baidu.com/s?id=1596739433503109140&wfr=spider&for=pc
 参考2：https://zhuanlan.zhihu.com/p/24507450
 
-折线图：
+折线图sdk：
 https://github.com/iambluebird/CAMChart-OC
 
-
+YUV和RGB互转：
+https://www.cnblogs.com/dwdxdy/p/3713990.html
 
 
 
@@ -41,3 +42,6 @@ CCT是correlated colour temperature的缩写，意思是相关色温。
 光圈（Aperture）：光圈是用来调节进入镜头光量多少装置；
 快门（Shutter）：快门则用来控制光线进入镜头的时间；
 不同的光圈快门组合，会产生不同的曝光值。
+
+3.
+直方图分为四个基本类型：RGB直方图、通道直方图、明度直方图和颜色直方图。

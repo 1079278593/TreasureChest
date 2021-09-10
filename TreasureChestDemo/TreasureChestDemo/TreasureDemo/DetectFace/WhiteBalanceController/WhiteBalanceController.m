@@ -16,6 +16,7 @@
 
 @property(nonatomic, strong)CapturePipeline *capturePipeline;
 @property(nonatomic, strong)CameraPreview *preview;
+@property(nonatomic, strong)UIButton *captureBtn;
 @property(nonatomic, strong)UITextView *gainView;
 @property(nonatomic, strong)UITextView *grayGainView;
 
@@ -27,6 +28,8 @@
 @property(nonatomic, strong)UILabel *ISOLabel;
 
 @property(nonatomic, strong)CAMLineChart *lineCharView;
+@property(nonatomic, strong)BrightnessHistogram *lineHistogram;
+@property(nonatomic, assign)BOOL isNeedShowHistogram;
 
 @end
 /**
@@ -54,6 +57,7 @@
     [self.capturePipeline startRunning];
     self.preview.previewLayer.session = self.capturePipeline.captureSession;
     
+    self.lineHistogram = [[BrightnessHistogram alloc]init];
     self.apertureLabel.text = [NSString stringWithFormat:@"光圈(只读)：%.3f",self.capturePipeline.videoDevice.lensAperture];
 }
 
@@ -71,11 +75,12 @@
 //    [self.capturePipeline capturePhoto];//拍照。
     
     if (_lineCharView == nil) {
-        _lineCharView = [BrightnessHistogram getHistogramChartViewWithFrame:CGRectMake(0, self.preview.bottom, KScreenWidth, KScreenHeight-self.preview.bottom)];
+        _lineCharView = [self.lineHistogram getHistogramChartViewWithFrame:CGRectMake(0, self.preview.bottom, KScreenWidth, KScreenHeight-self.preview.bottom)];
         [self.view addSubview:_lineCharView];
     }
     self.lineCharView.hidden = button.selected;
     button.selected = !button.selected;
+    self.isNeedShowHistogram = button.selected;
 }
 
 - (void)sliderValueTouchUp:(UISlider *)slider {
@@ -120,6 +125,24 @@
 #pragma mark - < delegate >
 - (void)capturePipelineDidOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer {
     [self refreshWhitebalance];
+    NSArray *arr;
+    if (self.isNeedShowHistogram) {
+        CVImageBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+        arr = [self.lineHistogram brightnessFromPixelBuffer:pixelBuffer];
+//        arr = [self.lineHistogram brightnessWithVImageFromPixelBuffer:pixelBuffer];//方案可行，计算可能哪里出问题了，性能也不错，才54%
+    }
+    static BOOL isSkip = NO;//增加‘跳帧’，优化方向还可以是：压缩图片。
+    if (!isSkip) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (self.captureBtn.selected && arr) {
+                [self.lineCharView removeAllChartDatas];
+                [self.lineCharView addChartData:arr];
+                [self.lineCharView drawChartWithAnimationDisplay:NO];
+            }
+        });
+    }
+    isSkip = !isSkip;
+    
 }
 
 - (void)capturePipelineDidCapturePhoto:(AVCapturePhoto *)photo {
@@ -212,6 +235,8 @@
         });
     }];
 }
+
+
 
 #pragma mark - < init >
 - (void)setupSubview {
@@ -308,16 +333,16 @@
         make.top.equalTo(self.shutterLabel.mas_bottom);
     }];
     
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.layer.borderWidth = 1;
-    button.layer.borderColor = [UIColor redColor].CGColor;
-    button.layer.cornerRadius = 40;
-    [button setTitle:@"亮度" forState:UIControlStateNormal];
-    [button setTitle:@"隐藏亮度" forState:UIControlStateSelected];
-    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(buttonEvent:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
-    [button mas_makeConstraints:^(MASConstraintMaker *make) {
+    _captureBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _captureBtn.layer.borderWidth = 1;
+    _captureBtn.layer.borderColor = [UIColor redColor].CGColor;
+    _captureBtn.layer.cornerRadius = 40;
+    [_captureBtn setTitle:@"亮度" forState:UIControlStateNormal];
+    [_captureBtn setTitle:@"隐藏亮度" forState:UIControlStateSelected];
+    [_captureBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [_captureBtn addTarget:self action:@selector(buttonEvent:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_captureBtn];
+    [_captureBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view).offset(10);
         make.bottom.equalTo(self.preview).offset(-10);
         make.width.height.equalTo(@80);

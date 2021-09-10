@@ -13,7 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BrightnessHistogram : NSObject
 
-+ (CAMLineChart*)getHistogramChartViewWithFrame:(CGRect)frame;
+- (CAMLineChart*)getHistogramChartViewWithFrame:(CGRect)frame;
+- (NSMutableArray *)brightnessFromPixelBuffer:(CVImageBufferRef)imageBuffer;
+- (NSMutableArray *)brightnessWithVImageFromPixelBuffer:(CVImageBufferRef)imageBuffer;
+
+
+- (NSMutableArray *)getTestDatas;
 
 @end
 

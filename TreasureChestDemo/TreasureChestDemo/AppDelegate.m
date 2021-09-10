@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "PixelsOperator.h"//test
 
 @interface AppDelegate ()
 
@@ -19,7 +20,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //测试3
-    
     return YES;
 }
 

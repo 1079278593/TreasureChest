@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PixelsOperator : NSObject
 
++ (void)testVImage;
+
 @end
 
 NS_ASSUME_NONNULL_END

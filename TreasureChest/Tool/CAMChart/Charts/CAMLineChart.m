@@ -57,11 +57,16 @@
     [self.multiChartDatas addObject:chartData];
 }
 
+- (void)removeAllChartDatas {
+    [self.multiChartDatas removeAllObjects];
+}
+
 - (void)drawChart {
     [super drawChart];
 }
 
 - (void)drawChartWithAnimationDisplay:(BOOL)animationDisplay {
+    [self setNeedsDisplay];//刷新坐标轴标签。
     [super drawChartWithAnimationDisplay:animationDisplay];
 
     [self resetOldDatas];
@@ -79,8 +84,17 @@
  清理上一次绘制时的历史数据，尤其是已绘制图层需要清理掉
  */
 - (void)resetOldDatas {
-    _xPositions = [NSMutableArray new];
-    _chartLines = [NSMutableArray new];
+    if(_xPositions){
+        [_xPositions removeAllObjects];
+    }else{
+        _xPositions = [NSMutableArray new];
+    }
+    
+    if(_chartLines){
+        [_chartLines removeAllObjects];
+    }else{
+        _chartLines = [NSMutableArray new];
+    }
     
     if(_chartLineLayers){
         for (CALayer *layer in _chartLineLayers) {
