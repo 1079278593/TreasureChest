@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>sectionTitle</key>
+		<string>系统</string>
+		<key>datas</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>日志分享</string>
+				<key>target</key>
+				<string></string>
+				<key>showType</key>
+				<string>4</string>
+				<key>isHideCenter</key>
+				<false/>
+				<key>width</key>
+				<integer>0</integer>
+				<key>height</key>
+				<integer>0</integer>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>sectionTitle</key>
+		<string>Camera</string>
+		<key>datas</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>相机监控</string>
+				<key>target</key>
+				<string>Testing_ControlView</string>
+				<key>showType</key>
+				<string>1</string>
+				<key>isHideCenter</key>
+				<true/>
+				<key>width</key>
+				<integer>650</integer>
+				<key>height</key>
+				<integer>500</integer>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>
