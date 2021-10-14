@@ -6,7 +6,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ImageConvertor.h"//用于压缩图片
 
 NS_ASSUME_NONNULL_BEGIN
 

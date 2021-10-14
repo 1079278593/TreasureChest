@@ -41,7 +41,7 @@
 
         if (centerFrameImage != NULL) {
             UIImage *image = [[UIImage alloc] initWithCGImage:centerFrameImage];
-            image = [ImageConvertor scaleImage:image maxLength:maxLength];//压缩图片size，GIF限制最长边长度为300
+            image = [self scaleImage:image maxLength:maxLength];//压缩图片size，GIF限制最长边长度为300
             [images addObject:image];
             CGImageRelease(centerFrameImage);
         }
@@ -100,6 +100,23 @@
     CFRelease(destinationRef);
     
     return gifPath;
+}
+
++ (UIImage *)scaleImage:(UIImage *)imgage maxLength:(CGFloat)length {
+    CGFloat fixelW = CGImageGetWidth(imgage.CGImage);
+    CGFloat fixelH = CGImageGetHeight(imgage.CGImage);
+    if (MAX(fixelW, fixelH) < length) {
+        return imgage;
+    }
+
+    CGFloat sacale = length/MAX(fixelW, fixelH);
+    CGSize size = CGSizeMake(fixelW * sacale, fixelH * sacale);
+    
+    UIGraphicsBeginImageContext(size);
+    [imgage drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return scaledImage;
 }
 
 @end

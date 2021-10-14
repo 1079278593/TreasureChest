@@ -8,7 +8,7 @@
 # 参考：https://segmentfault.com/a/1190000012269307
 
 Pod::Spec.new do |s|
-  s.name             = 'OCLibrary'
+  s.name             = 'OCBaseLibrary'
   s.version          = '1.0.0'
   s.summary          = 'All library or extentison'
 
@@ -37,12 +37,7 @@ Contains all library or extentison.
   # s.resources = 'Resources/MyRes.bundle'
 
   # dependency：依赖的三方库，pod库或者可以是自身的subspec
-  s.dependency 'AFNetworking'   # 或者：s.dependency 'AFNetworking', '~>3.1.0'
-  s.dependency 'MBProgressHUD'
-  s.dependency 'Masonry'
-  s.dependency 'ReactiveObjC'
-  s.dependency 'MJExtension'
-  s.dependency 'OCBaseLibrary'
+  # s.dependency 'AFNetworking'   # 或者：s.dependency 'AFNetworking', '~>3.1.0'
   
   # 依赖的系统框架
   #s.frameworks = 'AVFoundation', 'CoreGraphics'
