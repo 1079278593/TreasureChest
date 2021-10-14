@@ -75,6 +75,13 @@
 		3AE852D82610C21C00AA656C /* TestSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE852D72610C21C00AA656C /* TestSubView.m */; };
 		3AEE43B4261420710095FA38 /* AutoCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE43B3261420710095FA38 /* AutoCoder.m */; };
 		3BEFF9DF0E12D318A440735F /* Pods_TreasureChestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140A460F1B11381DEED65D5B /* Pods_TreasureChestTests.framework */; };
+		546FC4662718001200601E0C /* TestingDatas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 546FC45C2718001200601E0C /* TestingDatas.plist */; };
+		546FC4672718001200601E0C /* TestingCenterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 546FC4602718001200601E0C /* TestingCenterModel.m */; };
+		546FC4682718001200601E0C /* Testing_CenterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 546FC4612718001200601E0C /* Testing_CenterController.xib */; };
+		546FC4692718001200601E0C /* Testing_ControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 546FC4622718001200601E0C /* Testing_ControlView.xib */; };
+		546FC46A2718001200601E0C /* TestingUniform.m in Sources */ = {isa = PBXBuildFile; fileRef = 546FC4632718001200601E0C /* TestingUniform.m */; };
+		546FC46B2718001200601E0C /* Testing_CenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 546FC4642718001200601E0C /* Testing_CenterController.m */; };
+		546FC46C2718001200601E0C /* Testing_ControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 546FC4652718001200601E0C /* Testing_ControlView.m */; };
 		5470604926C26DA000C4ABDB /* CAMCoordinateAxisKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5470602B26C26DA000C4ABDB /* CAMCoordinateAxisKit.m */; };
 		5470604A26C26DA000C4ABDB /* CAMTextKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5470602D26C26DA000C4ABDB /* CAMTextKit.m */; };
 		5470604B26C26DA000C4ABDB /* CAMColorKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5470603126C26DA000C4ABDB /* CAMColorKit.m */; };
@@ -480,6 +487,17 @@
 		3AEE43B2261420710095FA38 /* AutoCoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoCoder.h; sourceTree = "<group>"; };
 		3AEE43B3261420710095FA38 /* AutoCoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoCoder.m; sourceTree = "<group>"; };
 		3AFE5E6525E1FF71007CD8B0 /* FileManagerEnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileManagerEnums.h; sourceTree = "<group>"; };
+		546FC45B2718001200601E0C /* TestingCenterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestingCenterModel.h; sourceTree = "<group>"; };
+		546FC45C2718001200601E0C /* TestingDatas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestingDatas.plist; sourceTree = "<group>"; };
+		546FC45D2718001200601E0C /* Testing_CenterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Testing_CenterController.h; sourceTree = "<group>"; };
+		546FC45E2718001200601E0C /* TestingUniform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestingUniform.h; sourceTree = "<group>"; };
+		546FC45F2718001200601E0C /* Testing_ControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Testing_ControlView.h; sourceTree = "<group>"; };
+		546FC4602718001200601E0C /* TestingCenterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestingCenterModel.m; sourceTree = "<group>"; };
+		546FC4612718001200601E0C /* Testing_CenterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Testing_CenterController.xib; sourceTree = "<group>"; };
+		546FC4622718001200601E0C /* Testing_ControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Testing_ControlView.xib; sourceTree = "<group>"; };
+		546FC4632718001200601E0C /* TestingUniform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestingUniform.m; sourceTree = "<group>"; };
+		546FC4642718001200601E0C /* Testing_CenterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Testing_CenterController.m; sourceTree = "<group>"; };
+		546FC4652718001200601E0C /* Testing_ControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Testing_ControlView.m; sourceTree = "<group>"; };
 		5470602B26C26DA000C4ABDB /* CAMCoordinateAxisKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAMCoordinateAxisKit.m; sourceTree = "<group>"; };
 		5470602C26C26DA000C4ABDB /* CAMColorKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMColorKit.h; sourceTree = "<group>"; };
 		5470602D26C26DA000C4ABDB /* CAMTextKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAMTextKit.m; sourceTree = "<group>"; };
@@ -1174,6 +1192,7 @@
 		3AE550D323A9189F001D989E /* ViewModule */ = {
 			isa = PBXGroup;
 			children = (
+				546FC45A2718001200601E0C /* ControlView */,
 				3A5E734826062CE600772384 /* ScrollLabel */,
 				A98EFD6425EF6FE900948E06 /* DraggableCard */,
 				A957EEFE25A5664F00A7D430 /* BusyLottie */,
@@ -1297,6 +1316,24 @@
 				3AEE43B3261420710095FA38 /* AutoCoder.m */,
 			);
 			path = AutoCoder;
+			sourceTree = "<group>";
+		};
+		546FC45A2718001200601E0C /* ControlView */ = {
+			isa = PBXGroup;
+			children = (
+				546FC45B2718001200601E0C /* TestingCenterModel.h */,
+				546FC45C2718001200601E0C /* TestingDatas.plist */,
+				546FC45D2718001200601E0C /* Testing_CenterController.h */,
+				546FC45E2718001200601E0C /* TestingUniform.h */,
+				546FC45F2718001200601E0C /* Testing_ControlView.h */,
+				546FC4602718001200601E0C /* TestingCenterModel.m */,
+				546FC4612718001200601E0C /* Testing_CenterController.xib */,
+				546FC4622718001200601E0C /* Testing_ControlView.xib */,
+				546FC4632718001200601E0C /* TestingUniform.m */,
+				546FC4642718001200601E0C /* Testing_CenterController.m */,
+				546FC4652718001200601E0C /* Testing_ControlView.m */,
+			);
+			path = ControlView;
 			sourceTree = "<group>";
 		};
 		5470602926C26DA000C4ABDB /* CAMChart */ = {
@@ -2562,6 +2599,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A94EF80025A40FFF00CB769D /* gamePrepare_old.mp3 in Resources */,
+				546FC4662718001200601E0C /* TestingDatas.plist in Resources */,
 				A94EF80225A4100000CB769D /* 6号玩家开始比划.m4a in Resources */,
 				A98EFD8425EF6FE900948E06 /* image_4.jpg in Resources */,
 				A94EF81625A4100000CB769D /* 1say.mp3 in Resources */,
@@ -2606,6 +2644,7 @@
 				A94EF81F25A4100000CB769D /* right.wav in Resources */,
 				A94EF80A25A4100000CB769D /* startpk.mp3 in Resources */,
 				A9B35C4C25C2F348009453E6 /* universal.fsh in Resources */,
+				546FC4682718001200601E0C /* Testing_CenterController.xib in Resources */,
 				3AD14A4324619C19004D54B8 /* words_car.plist in Resources */,
 				3AD14A2924615273004D54B8 /* words_foods.txt in Resources */,
 				3A34C71125EB713100AE2BC8 /* lottie_readme in Resources */,
@@ -2642,6 +2681,7 @@
 				A9590C0B256B592E00A1CBD4 /* IDETextKeyBindingSet.plist in Resources */,
 				A98EFD8025EF6FE900948E06 /* image_2.jpg in Resources */,
 				A94EF81D25A4100000CB769D /* ding.mp3 in Resources */,
+				546FC4692718001200601E0C /* Testing_ControlView.xib in Resources */,
 				A94EF81C25A4100000CB769D /* 321go.m4a in Resources */,
 				3A5E735D26062EDD00772384 /* testDemoBg2.jpeg in Resources */,
 				A94EF81825A4100000CB769D /* spyWinner.mp3 in Resources */,
@@ -2833,6 +2873,8 @@
 				B26FBD832441CDB8003DB3BE /* LOTBezierPath.m in Sources */,
 				B26FBD822441CDB8003DB3BE /* CGGeometry+LOTAdditions.m in Sources */,
 				A923238224EBB4A100B2CDE1 /* UIImage+ImageEffects.m in Sources */,
+				546FC46A2718001200601E0C /* TestingUniform.m in Sources */,
+				546FC46C2718001200601E0C /* Testing_ControlView.m in Sources */,
 				A9FFC32F24C7DE6800881404 /* BrushDrawController.m in Sources */,
 				B27B784B23ADB2080083E6AE /* UIColor+Hex.m in Sources */,
 				B24A85FB24039EB000D1EECA /* VideoPlayerBaseView.m in Sources */,
@@ -2840,6 +2882,7 @@
 				B2506D0923AB83080034A472 /* BaseViewController.m in Sources */,
 				A949C28D25393FEA00CF09A5 /* OpenGLView.m in Sources */,
 				B26FBD802441CDB8003DB3BE /* LOTShapeTransform.m in Sources */,
+				546FC46B2718001200601E0C /* Testing_CenterController.m in Sources */,
 				B26FBD872441CDB8003DB3BE /* LOTComposition.m in Sources */,
 				A9B35C3D25C2F0A7009453E6 /* CaptureVisionDetector.m in Sources */,
 				B26FBD672441CDB8003DB3BE /* LOTCircleAnimator.m in Sources */,
@@ -2975,6 +3018,7 @@
 				B2AA0F4423C586CE00BEBA27 /* FMDBManager.m in Sources */,
 				A90ECEEE25998733005E3EF0 /* NSString+Bundle.m in Sources */,
 				3AD14A3124615354004D54B8 /* LexiconViewCtl.m in Sources */,
+				546FC4672718001200601E0C /* TestingCenterModel.m in Sources */,
 				B286A9B3242D8DF900E575BF /* EasyAlertView.m in Sources */,
 				B2C459302440524F00117BD7 /* CuvbicCurveGeometry.m in Sources */,
 				B2506CF923AB5B370034A472 /* CollapsibleViewModel.m in Sources */,
