@@ -97,6 +97,58 @@
         make.height.equalTo(@230);
     }];
     self.videoView.hidden = true;
+    
+    UIButton *button1 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button1 setTitle:@"按钮1" forState:UIControlStateNormal];
+    [button1 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [button1 addTarget:self action:@selector(button1Event:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button1];
+    [button1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.videoView);
+        make.top.equalTo(self.videoView.mas_bottom).offset(3);
+        make.width.height.equalTo(@50);
+    }];
+    
+    UIButton *button2 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button2 setTitle:@"按钮2" forState:UIControlStateNormal];
+    [button2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [button2 addTarget:self action:@selector(button2Event:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button2];
+    [button2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.videoView);
+        make.top.equalTo(button1.mas_bottom).offset(3);
+        make.width.height.equalTo(@50);
+    }];
+    
+    UIButton *button3 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button3 setTitle:@"按钮3" forState:UIControlStateNormal];
+    [button3 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [button3 addTarget:self action:@selector(button3Event:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button3];
+    [button3 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.videoView);
+        make.top.equalTo(button2.mas_bottom).offset(3);
+        make.width.height.equalTo(@50);
+    }];
+}
+
+#pragma mark - < event >
+- (void)button1Event:(UIButton *)button {
+    self.videoView.hidden = false;
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"video2" ofType:@"mp4"];
+    [self.videoView setupPlayer:path];
+}
+
+- (void)button2Event:(UIButton *)button {
+    self.videoView.hidden = false;
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"video4" ofType:@"mp4"];
+    [self.videoView setupPlayer:path];
+}
+
+- (void)button3Event:(UIButton *)button {
+    self.videoView.hidden = false;
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"video6" ofType:@"mp4"];
+    [self.videoView setupPlayer:path];
 }
 
 #pragma mark - <  >

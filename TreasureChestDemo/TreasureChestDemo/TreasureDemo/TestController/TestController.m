@@ -9,6 +9,7 @@
 #import "TestController.h"
 #import "Lottie.h"
 #import "XMNetworking.h"
+#import "Test2Controller.h"
 
 #import "RectProgressView.h"
 #import "OpenGLPixelBufferView.h"
@@ -16,7 +17,8 @@
 #import "FileManager.h"
 #import "TestSubView.h"
 #import "TestView.h"
-#import "EffectResourceDownloador.h"
+
+//#import "EffectResourceDownloador.h"
 
 @interface TestController ()
 
@@ -43,7 +45,8 @@
 #pragma mark - < event >
 
 - (void)buttonEvent:(UIButton *)button {
-
+    Test2Controller *controller = [[Test2Controller alloc]init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)button2Event:(UIButton *)button {
@@ -75,7 +78,7 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"testDemoBg%d",index] ofType:@"jpeg"];
     _bgImgView.image = [UIImage imageWithContentsOfFile:path];
 //    _bgImgView.image = [UIImage imageNamed:@"bgPic"];
-    [self.view addSubview:_bgImgView];
+//    [self.view addSubview:_bgImgView];
     _bgImgView.frame = self.view.bounds;
     
     self.imgView = [[UIImageView alloc]init];

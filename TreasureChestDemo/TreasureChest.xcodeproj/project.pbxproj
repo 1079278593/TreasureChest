@@ -66,6 +66,10 @@
 		3AD14A4D24619EE2004D54B8 /* words_it.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A4C24619EE2004D54B8 /* words_it.plist */; };
 		3AD14A4F24619F2F004D54B8 /* words_famousperson.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A4E24619F2F004D54B8 /* words_famousperson.plist */; };
 		3AD14A5124619F83004D54B8 /* words_poem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A5024619F83004D54B8 /* words_poem.plist */; };
+		3ADB62EE26C8A3F00030ACBE /* Controllers_zcam.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3ADB62ED26C8A3F00030ACBE /* Controllers_zcam.plist */; };
+		3ADB62F126C8A5170030ACBE /* Test2Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB62F026C8A5170030ACBE /* Test2Controller.m */; };
+		3ADB62F526C8A68C0030ACBE /* panorama_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADB62F326C8A68A0030ACBE /* panorama_down.png */; };
+		3ADB62F626C8A68C0030ACBE /* panorama_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADB62F426C8A68B0030ACBE /* panorama_up.png */; };
 		3AE550E123A9189F001D989E /* FormsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE550D623A9189F001D989E /* FormsView.m */; };
 		3AE550E223A9189F001D989E /* ResidentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE550D923A9189F001D989E /* ResidentScrollView.m */; };
 		3AE852D82610C21C00AA656C /* TestSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE852D72610C21C00AA656C /* TestSubView.m */; };
@@ -456,6 +460,11 @@
 		3AD14A4C24619EE2004D54B8 /* words_it.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = words_it.plist; sourceTree = "<group>"; };
 		3AD14A4E24619F2F004D54B8 /* words_famousperson.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = words_famousperson.plist; sourceTree = "<group>"; };
 		3AD14A5024619F83004D54B8 /* words_poem.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = words_poem.plist; sourceTree = "<group>"; };
+		3ADB62ED26C8A3F00030ACBE /* Controllers_zcam.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Controllers_zcam.plist; sourceTree = "<group>"; };
+		3ADB62EF26C8A5170030ACBE /* Test2Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test2Controller.h; sourceTree = "<group>"; };
+		3ADB62F026C8A5170030ACBE /* Test2Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test2Controller.m; sourceTree = "<group>"; };
+		3ADB62F326C8A68A0030ACBE /* panorama_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = panorama_down.png; sourceTree = "<group>"; };
+		3ADB62F426C8A68B0030ACBE /* panorama_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = panorama_up.png; sourceTree = "<group>"; };
 		3AE550D523A9189F001D989E /* FormsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormsView.h; sourceTree = "<group>"; };
 		3AE550D623A9189F001D989E /* FormsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormsView.m; sourceTree = "<group>"; };
 		3AE550D823A9189F001D989E /* ResidentScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResidentScrollView.h; sourceTree = "<group>"; };
@@ -1138,6 +1147,17 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		3ADB62F226C8A6460030ACBE /* testPanorama */ = {
+			isa = PBXGroup;
+			children = (
+				3ADB62EF26C8A5170030ACBE /* Test2Controller.h */,
+				3ADB62F026C8A5170030ACBE /* Test2Controller.m */,
+				3ADB62F326C8A68A0030ACBE /* panorama_down.png */,
+				3ADB62F426C8A68B0030ACBE /* panorama_up.png */,
+			);
+			path = testPanorama;
+			sourceTree = "<group>";
+		};
 		3AE550CF23A9189F001D989E /* TreasureChest */ = {
 			isa = PBXGroup;
 			children = (
@@ -1353,6 +1373,7 @@
 			isa = PBXGroup;
 			children = (
 				A918EC0F2555517F00C5964D /* Controllers.plist */,
+				3ADB62ED26C8A3F00030ACBE /* Controllers_zcam.plist */,
 				A918EC142555551B00C5964D /* ControllersModel.h */,
 				A918EC152555551B00C5964D /* ControllersModel.m */,
 				3A40234923A62ED100BDB4E3 /* ViewController.h */,
@@ -1368,6 +1389,7 @@
 			children = (
 				A918EC372555671E00C5964D /* TestController.h */,
 				A918EC382555671E00C5964D /* TestController.m */,
+				3ADB62F226C8A6460030ACBE /* testPanorama */,
 				A90ECEE0259577EB005E3EF0 /* TestView.h */,
 				A90ECEE1259577EB005E3EF0 /* TestView.m */,
 				3AE852D62610C21C00AA656C /* TestSubView.h */,
@@ -1641,12 +1663,12 @@
 		A98EFD6425EF6FE900948E06 /* DraggableCard */ = {
 			isa = PBXGroup;
 			children = (
-				A98EFD6525EF6FE900948E06 /* DraggableCardController.h */,
-				A98EFD6625EF6FE900948E06 /* Resources */,
 				A98EFD7325EF6FE900948E06 /* CustomCardView.h */,
-				A98EFD7425EF6FE900948E06 /* CardCore */,
-				A98EFD7A25EF6FE900948E06 /* DraggableCardController.m */,
 				A98EFD7B25EF6FE900948E06 /* CustomCardView.m */,
+				A98EFD6525EF6FE900948E06 /* DraggableCardController.h */,
+				A98EFD7A25EF6FE900948E06 /* DraggableCardController.m */,
+				A98EFD6625EF6FE900948E06 /* Resources */,
+				A98EFD7425EF6FE900948E06 /* CardCore */,
 			);
 			path = DraggableCard;
 			sourceTree = "<group>";
@@ -1673,11 +1695,11 @@
 		A98EFD7425EF6FE900948E06 /* CardCore */ = {
 			isa = PBXGroup;
 			children = (
-				A98EFD7525EF6FE900948E06 /* DraggableContainer.m */,
-				A98EFD7625EF6FE900948E06 /* DraggableCardView.m */,
 				A98EFD7725EF6FE900948E06 /* DraggableConfig.h */,
 				A98EFD7825EF6FE900948E06 /* DraggableContainer.h */,
+				A98EFD7525EF6FE900948E06 /* DraggableContainer.m */,
 				A98EFD7925EF6FE900948E06 /* DraggableCardView.h */,
+				A98EFD7625EF6FE900948E06 /* DraggableCardView.m */,
 			);
 			path = CardCore;
 			sourceTree = "<group>";
@@ -2551,6 +2573,7 @@
 				3AD14A2624615273004D54B8 /* words_professions.txt in Resources */,
 				A94EF80825A4100000CB769D /* 4say.mp3 in Resources */,
 				3A99DE1723ABCB83002DDF23 /* TreasureChest.podspec in Resources */,
+				3ADB62F526C8A68C0030ACBE /* panorama_down.png in Resources */,
 				3AD14A2D24615273004D54B8 /* words_medical.txt in Resources */,
 				B215CC482431F5290017BFD9 /* hud_info.png in Resources */,
 				A98EFD8725EF6FE900948E06 /* image_6.jpg in Resources */,
@@ -2615,6 +2638,7 @@
 				3AD14A4B24619E7B004D54B8 /* words_foods.plist in Resources */,
 				B215CC4A2431F5290017BFD9 /* hud_success@2x.png in Resources */,
 				A9377450256E97EA0085FF21 /* 1.bytes in Resources */,
+				3ADB62F626C8A68C0030ACBE /* panorama_up.png in Resources */,
 				A9590C0B256B592E00A1CBD4 /* IDETextKeyBindingSet.plist in Resources */,
 				A98EFD8025EF6FE900948E06 /* image_2.jpg in Resources */,
 				A94EF81D25A4100000CB769D /* ding.mp3 in Resources */,
@@ -2660,6 +2684,7 @@
 				3A5E735A26062EDD00772384 /* testDemoBg7.jpeg in Resources */,
 				A98EFD8225EF6FE900948E06 /* image_3.jpg in Resources */,
 				A94EF7F125A40FFF00CB769D /* 1号玩家发言.m4a in Resources */,
+				3ADB62EE26C8A3F00030ACBE /* Controllers_zcam.plist in Resources */,
 				A98EFD7E25EF6FE900948E06 /* image_8.jpg in Resources */,
 				B2506D1823ABA1370034A472 /* options_selected_icon@3x.png in Resources */,
 				3AD14A2724615273004D54B8 /* words_poem.txt in Resources */,
@@ -2955,6 +2980,7 @@
 				B2506CF923AB5B370034A472 /* CollapsibleViewModel.m in Sources */,
 				B2CE343E244AAEB9000A32EB /* TestGradientLayer.m in Sources */,
 				A923238124EBB4A100B2CDE1 /* UIImageView+LBBlurredImage.m in Sources */,
+				3ADB62F126C8A5170030ACBE /* Test2Controller.m in Sources */,
 				B24A85FE24039F1300D1EECA /* VideoPlayerSampleView.m in Sources */,
 				B2B6B1A82408E71C00187850 /* RegularOperate.m in Sources */,
 				3A2E0A36254ED94F00471A41 /* AutoSizeTableController.m in Sources */,
