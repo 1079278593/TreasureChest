@@ -37,9 +37,7 @@ Contains All library or extension.
   s.dependency 'Kingfisher'
   s.dependency 'MBProgressHUD'
   s.dependency 'SnapKit'
-  
-  # 这个依赖于本地是否有下载了相关的库       (frameworks文件夹和库源码文件夹'即Classes和Assets上层文件夹')
-#  s.vendored_frameworks = 'frameworks/MBProgressHUD.framework', 'frameworks/SnapKit.framework'
-
-
+  s.dependency 'Alamofire', '= 5.3.0'
+  s.dependency 'MBProgressHUD'
+  s.dependency 'HandyJSON'
 end
