@@ -4,7 +4,7 @@
 //
 //  Created by jf on 2020/8/15.
 //  Copyright © 2020 YLQTec. All rights reserved.
-//
+//  有点重复，统一用CapturePipeline+detect
 
 #import "BaseViewController.h"
 
