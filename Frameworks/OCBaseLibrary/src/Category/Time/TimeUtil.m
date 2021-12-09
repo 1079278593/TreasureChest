@@ -10,7 +10,7 @@
 
 @implementation TimeUtil
 
-+(NSString *)generateAll : (NSString *)timestamp{
++ (NSString *)generateAll:(NSString *)timestamp {
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterMediumStyle];
     [formatter setTimeStyle:NSDateFormatterShortStyle];
@@ -22,7 +22,7 @@
 }
 
 //注意时间戳是秒的还是毫秒的
-+(NSString *)generateDate:(NSString *)timestamp format:(NSString *)formatStr{
++ (NSString *)generateDate:(NSString *)timestamp format:(NSString *)formatStr {
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterMediumStyle];
     [formatter setTimeStyle:NSDateFormatterShortStyle];
@@ -33,7 +33,7 @@
     return dateStr;
 }
 
-+(NSString *)generateDate_CH : (NSString *)timestamp{
++ (NSString *)generateDate_CH:(NSString *)timestamp {
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterMediumStyle];
     [formatter setTimeStyle:NSDateFormatterShortStyle];
@@ -44,7 +44,7 @@
     return dateStr;
 }
 
-+(NSString *)generateDate_EN:(NSString *)timestamp{
++ (NSString *)generateDate_EN:(NSString *)timestamp {
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterMediumStyle];
     [formatter setTimeStyle:NSDateFormatterShortStyle];
@@ -55,7 +55,7 @@
     return dateStr;
 }
 
-+(NSString *)generateTime : (NSString *)timestamp{
++ (NSString *)generateTime:(NSString *)timestamp {
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterMediumStyle];
     [formatter setTimeStyle:NSDateFormatterShortStyle];
@@ -66,7 +66,7 @@
     return timeString;
 }
 
-+(NSString *)getTomorrowDate{
++ (NSString *)getTomorrowDate {
     NSDate* dat = [NSDate dateWithTimeIntervalSinceNow:0];
     NSTimeInterval timeInterval=[dat timeIntervalSince1970];
     timeInterval += 3600 * 24;
@@ -81,7 +81,7 @@
     return dateStr;
 }
 
-+ (NSString *)getTodayDate{
++ (NSString *)getTodayDate {
     NSDate* dat = [NSDate dateWithTimeIntervalSinceNow:0];
     NSTimeInterval timeInterval=[dat timeIntervalSince1970];
     
@@ -95,7 +95,7 @@
     return dateStr;
 }
 
-+(NSString *)getLastDate{
++ (NSString *)getLastDate {
     NSDate* dat = [NSDate dateWithTimeIntervalSinceNow:0];
     NSTimeInterval timeInterval=[dat timeIntervalSince1970];
     timeInterval -= 3600 * 24;
@@ -110,9 +110,7 @@
     return dateStr;
 }
 
-
-
-+ (NSString *)getLastDates:(int)day format:(NSString *)format{
++ (NSString *)getLastDates:(int)day format:(NSString *)format {
     NSDate* dat = [NSDate dateWithTimeIntervalSinceNow:0];
     NSTimeInterval timeInterval=[dat timeIntervalSince1970];
     timeInterval -=  3600 * 24  * (day-1);
@@ -127,8 +125,7 @@
     return dateStr;
 }
 
-
-+(NSString *)formateTime : (NSString *)timestamp{
++ (NSString *)formateTime : (NSString *)timestamp {
     NSTimeInterval currentTime = [[NSDate date] timeIntervalSince1970];
     NSTimeInterval createTime = [timestamp longLongValue]/1000;
     NSTimeInterval time = currentTime - createTime;
@@ -161,8 +158,7 @@
     return [NSString stringWithFormat:@"%ld年前",years];
 }
 
-//引力区
-+(NSString *)formateTimeYinLiQu:(NSString *)timestamp {
++ (NSString *)formateTimeYinLiQu:(NSString *)timestamp {
     NSTimeInterval currentTime = [[NSDate date] timeIntervalSince1970];
     NSTimeInterval createTime = [timestamp longLongValue]/1000;
     NSTimeInterval time = currentTime - createTime;
@@ -189,7 +185,7 @@
     return [self generateDate:timestamp format:@"yyyy年MM月dd日"];
 }
 
-+(NSString *)formateAge:(long)timestamp {
++ (NSString *)formateAge:(long)timestamp {
     NSTimeInterval currentTime = [[NSDate date] timeIntervalSince1970];
     NSTimeInterval createTime = timestamp/1000;
     NSTimeInterval time = currentTime - createTime;
@@ -197,21 +193,20 @@
     return [NSString stringWithFormat:@"%ld",years];
 }
 
-+(NSString *)getCurrentTimeStamp{
++ (NSString *)getCurrentTimeStamp {
     NSDate* dat = [NSDate dateWithTimeIntervalSinceNow:0];
     NSTimeInterval a=[dat timeIntervalSince1970]*1000;
     return [NSString stringWithFormat:@"%f", a];
 }
 
-+(NSString *)getTimeStampWithDays:(int)days{
++ (NSString *)getTimeStampWithDays:(int)days {
     NSDate* dat = [NSDate dateWithTimeIntervalSinceNow:0];
     NSTimeInterval a=[dat timeIntervalSince1970]*1000;
     a += 3600 * 24 * 1000 * days;
     return [NSString stringWithFormat:@"%f", a];
 }
 
-
-+(NSString *)getCurrentWeek:(NSDate *)date{
++ (NSString *)getCurrentWeek:(NSDate *)date {
     long now = [[self getCurrentTimeStamp] longLongValue];
     long time = [date timeIntervalSince1970]*1000;
     long per = 3600 * 24 * 1000;
@@ -233,7 +228,7 @@
 }
 
 
-+(NSMutableArray *)getOneWeeks{
++ (NSMutableArray *)getOneWeeks {
     NSMutableArray *datas =[[NSMutableArray alloc]init];
     NSDate* dat = [NSDate dateWithTimeIntervalSinceNow:0];
     NSTimeInterval timeInterval=[dat timeIntervalSince1970]*1000;
@@ -250,8 +245,7 @@
     return datas;
 }
 
-
-+(long)getTimeStamp:(NSString *)dateStr format:(NSString *)format{
++ (long)getTimeStamp:(NSString *)dateStr format:(NSString *)format {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterMediumStyle];
     [formatter setTimeStyle:NSDateFormatterShortStyle];
@@ -261,12 +255,12 @@
     return (long)timeSp;
 }
 
-+(NSString *)getCallTime:(long)count{
++ (NSString *)getCallTime:(long)count {
     return [self generateDate:[NSString stringWithFormat:@"%ld",count * 1000] format:@"mm:ss"];
 }
 
 
-//+(NSString *)generateCourseDate:(NSString *)date{
+//+ (NSString *)generateCourseDate:(NSString *)date{
 //    if(!IS_NS_STRING_EMPTY(date) && [date containsString:@"-"]){
 //        NSArray *dates = [date componentsSeparatedByString:@"-"];
 //        int year = [dates[0] intValue];
@@ -279,7 +273,7 @@
 //    return MSG_EMPTY;
 //}
 
-+(NSUInteger)getMaxDay:(NSString *)year month:(NSString *)month{
++ (NSUInteger)getMaxDay:(NSString *)year month:(NSString *)month {
     NSString *dateStr =[NSString stringWithFormat:@"%@-%@",year,month];
     NSDateFormatter * dateFormatter = [[NSDateFormatter alloc]init];
     [dateFormatter setDateFormat:@"yyyy-MM"];
@@ -291,7 +285,7 @@
     return monthRange.length;
 }
 
-+(BOOL)isYesterday:(NSString *)timestamp {
++ (BOOL)isYesterday:(NSString *)timestamp {
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterMediumStyle];
     [formatter setTimeStyle:NSDateFormatterShortStyle];
@@ -308,7 +302,7 @@
     }
 }
 
-+(BOOL)isThisYear:(NSString *)timestamp {
++ (BOOL)isThisYear:(NSString *)timestamp {
     
     NSCalendar *calendar = [NSCalendar currentCalendar];
     int unit = NSCalendarUnitYear;

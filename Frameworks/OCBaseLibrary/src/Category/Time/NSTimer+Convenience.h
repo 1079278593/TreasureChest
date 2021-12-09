@@ -1,16 +1,16 @@
 //
 //  NSTimer+Convenience.h
-//  Poppy_Dev01
+//  TreasureChest
 //
-//  Created by Jesse Huang on 2020/7/27.
-//  Copyright © 2020 YLQTec. All rights reserved.
+//  Created by xiao ming on 2019/11/13.
+//  Copyright © 2019 xiao ming. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSTimer (Convenience) 
+@interface NSTimer (Convenience)
 /**
  *  无参数无返回值Block
  */
