@@ -10,6 +10,12 @@
 	</dict>
 	<dict>
 		<key>className</key>
+		<string>HttpWebController</string>
+		<key>classTitle</key>
+		<string>https服务</string>
+	</dict>
+	<dict>
+		<key>className</key>
 		<string>BrushDrawController</string>
 		<key>classTitle</key>
 		<string>笔刷绘制</string>

@@ -1,6 +1,6 @@
 # Uncomment the next line to define a global platform for your project
 use_frameworks!
-platform :ios, '12.0'
+platform :ios, '13.0'
 inhibit_all_warnings!
 source 'https://github.com/CocoaPods/Specs.git'
 
@@ -25,7 +25,11 @@ abstract_target 'abstract_pod' do
     pod 'MSWeakTimer'
     pod 'MJRefresh', '3.2.0'
     pod 'SDAutoLayout', '~> 2.1.3'
+    pod 'OCBaseLibrary', :path => './Frameworks/OCBaseLibrary', :inhibit_warnings => false
 #    pod 'OAStackView'
+
+    pod 'CocoaLumberjack'
+    pod 'CocoaAsyncSocket'
 
 #    pod 'LibTorch', '~>1.6.0'
     

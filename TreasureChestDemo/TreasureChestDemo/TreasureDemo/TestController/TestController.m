@@ -18,8 +18,6 @@
 #import "TestSubView.h"
 #import "TestView.h"
 
-//#import "EffectResourceDownloador.h"
-
 @interface TestController ()
 
 @property(nonatomic, strong)UIButton *button;
@@ -118,8 +116,7 @@
     self.slider.frame = CGRectMake(30, KScreenHeight - 160, KScreenWidth - 60, 30);
     
     TestView *testSubView = [[TestView alloc]init];
-    testSubView.frame = CGRectMake(0, 0, 100, 100);
-    testSubView.center = button2.center;
+    testSubView.frame = CGRectMake(30, 80, 300, 300);
     [self.view addSubview:testSubView];
     testSubView.layer.borderWidth = 1;
 }

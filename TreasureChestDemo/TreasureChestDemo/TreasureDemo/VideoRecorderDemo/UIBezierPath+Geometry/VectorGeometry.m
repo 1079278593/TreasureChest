@@ -49,6 +49,7 @@ CGFloat GetTwoVectorAngle(CGPoint startVector , CGPoint endVector)
     return M_PI * getRotateAngle(endVector.x, endVector.y, startVector.x, startVector.y)/180;
 }
 
+#pragma mark - < private >
 CGFloat GetTwoVectorAngle1(CGPoint startVector , CGPoint endVector)
 {
     if (endVector.y >= 0) {

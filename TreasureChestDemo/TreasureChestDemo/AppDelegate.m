@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "PixelsOperator.h"//test
+#import "HttpsServerManager.h"
+#import "NetworkTool.h"
 
 @interface AppDelegate ()
 
@@ -20,6 +22,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //测试3
+    
+//    [NetworkTool tryOpenNetworkPermission];
+    
+    //https服务开启
+    [[HttpsServerManager shareInstance] configLocalHttpServer];
+    
     return YES;
 }
 

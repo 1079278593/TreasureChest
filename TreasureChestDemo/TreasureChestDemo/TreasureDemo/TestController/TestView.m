@@ -11,7 +11,7 @@
 
 @interface TestView ()
 
-@property(nonatomic, strong)UIView *containerView;
+@property(nonatomic, strong)UIImageView *containerView;
 
 @end
 
@@ -30,14 +30,23 @@
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
+    NSLog(@"touch began");
+}
+
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"touch move");
 }
 #pragma mark - < init view >
 - (void)setupSubviews {
-    TestSubView *testSubView = [[TestSubView alloc]init];
-    testSubView.frame = CGRectMake(0, 0, 50, 50);
-    [self addSubview:testSubView];
-    testSubView.layer.borderWidth = 1;
-    testSubView.layer.borderColor = [UIColor redColor].CGColor;
+    _containerView = [[UIImageView alloc]init];
+    [self addSubview:_containerView];
+    _containerView.layer.borderWidth = 1;
+    _containerView.layer.borderColor = [UIColor redColor].CGColor;
+    [_containerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        int padding = 0;
+        make.edges.mas_equalTo(UIEdgeInsetsMake(padding, padding, padding, padding));
+    }];
+    _containerView.image = [UIImage imageNamed:@"hsiWheelColorSpec"];
 }
 
 //- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
