@@ -138,6 +138,7 @@
 		54924F6F27B39B7100E12575 /* HttpsServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 54924F6E27B39B7100E12575 /* HttpsServerManager.m */; };
 		54924F7527B39BEA00E12575 /* NetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 54924F7327B39BEA00E12575 /* NetworkTool.m */; };
 		54924F7827B3A64B00E12575 /* OTAConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 54924F7727B3A64B00E12575 /* OTAConnection.m */; };
+		54924F8F27BDDCD800E12575 /* EasyGCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 54924F8E27BDDCD800E12575 /* EasyGCDAsyncSocket.m */; };
 		A90ECEE2259577EB005E3EF0 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = A90ECEE1259577EB005E3EF0 /* TestView.m */; };
 		A90ECEEE25998733005E3EF0 /* NSString+Bundle.m in Sources */ = {isa = PBXBuildFile; fileRef = A90ECEED25998733005E3EF0 /* NSString+Bundle.m */; };
 		A918EC102555517F00C5964D /* Controllers.plist in Resources */ = {isa = PBXBuildFile; fileRef = A918EC0F2555517F00C5964D /* Controllers.plist */; };
@@ -642,6 +643,8 @@
 		54924F7427B39BEA00E12575 /* NetworkTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkTool.h; sourceTree = "<group>"; };
 		54924F7627B3A64B00E12575 /* OTAConnection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTAConnection.h; sourceTree = "<group>"; };
 		54924F7727B3A64B00E12575 /* OTAConnection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTAConnection.m; sourceTree = "<group>"; };
+		54924F8D27BDDCD800E12575 /* EasyGCDAsyncSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasyGCDAsyncSocket.h; sourceTree = "<group>"; };
+		54924F8E27BDDCD800E12575 /* EasyGCDAsyncSocket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyGCDAsyncSocket.m; sourceTree = "<group>"; };
 		A90ECEE0259577EB005E3EF0 /* TestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
 		A90ECEE1259577EB005E3EF0 /* TestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
 		A90ECEEC25998733005E3EF0 /* NSString+Bundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Bundle.h"; sourceTree = "<group>"; };
@@ -1683,6 +1686,15 @@
 			path = NetworkTool;
 			sourceTree = "<group>";
 		};
+		54924F8C27BDDC9600E12575 /* TestGCDSockect */ = {
+			isa = PBXGroup;
+			children = (
+				54924F8D27BDDCD800E12575 /* EasyGCDAsyncSocket.h */,
+				54924F8E27BDDCD800E12575 /* EasyGCDAsyncSocket.m */,
+			);
+			path = TestGCDSockect;
+			sourceTree = "<group>";
+		};
 		A918EC13255554FF00C5964D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -1703,6 +1715,7 @@
 			children = (
 				A918EC372555671E00C5964D /* TestController.h */,
 				A918EC382555671E00C5964D /* TestController.m */,
+				54924F8C27BDDC9600E12575 /* TestGCDSockect */,
 				3ADB62F226C8A6460030ACBE /* testPanorama */,
 				A90ECEE0259577EB005E3EF0 /* TestView.h */,
 				A90ECEE1259577EB005E3EF0 /* TestView.m */,
@@ -3152,6 +3165,7 @@
 				B2DD689423B08EF100106F4F /* UIButton+Extension.m in Sources */,
 				5470605426C26DA000C4ABDB /* CAMChartProfileManager.m in Sources */,
 				54924F6427B3966000E12575 /* DAVResponse.m in Sources */,
+				54924F8F27BDDCD800E12575 /* EasyGCDAsyncSocket.m in Sources */,
 				5470604926C26DA000C4ABDB /* CAMCoordinateAxisKit.m in Sources */,
 				54924F4D27B3966000E12575 /* HTTPDynamicFileResponse.m in Sources */,
 				3A812A1926120FA20018E3AE /* EffectResourceDownloador.m in Sources */,

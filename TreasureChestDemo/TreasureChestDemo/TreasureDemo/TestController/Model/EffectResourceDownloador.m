@@ -28,7 +28,7 @@
     parameters[@"appType"] = @1;    //应用类型[1：android，2：ios]
     
     NSString *url = [BaseURL_User stringByAppendingString:@"/ar/get"];
-    [[XMNetworking sharedManager] GET:url parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+    [[XMNetworking shareInstance] GET:url parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
         id response = responseObject[@"response"];
         EffectARealityModel *model = [EffectARealityModel mj_objectWithKeyValues:response];
         [self downloadWith:model];

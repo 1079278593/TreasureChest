@@ -11,6 +11,16 @@
 
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
+#ifdef DEBUG
+
+#define DebugOTAStart YES
+
+#else
+
+#define DebugOTAStart NO
+
+#endif
+
 //#import <CommonCrypto/CommonHMAC.h>//官方加密解密
 
 //将头文件的引用放在下面，为了避免将其认为是C文件，因为项目中用了c文件。

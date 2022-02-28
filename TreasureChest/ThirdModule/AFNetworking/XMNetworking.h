@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface XMNetworking : NSObject
 
-+ (instancetype)sharedManager;
++ (instancetype)shareInstance;
 
 - (NSURLSessionDataTask *)GET:(NSString *)URLString
                    parameters:(id)parameters
@@ -44,6 +44,11 @@ NS_ASSUME_NONNULL_BEGIN
                     parameters:(id)parameters
                        success:(void (^)(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject))success
                        failure:(void (^)(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error))failure;
+
+- (NSURLSessionDataTask *)POST:(NSString *)URLString
+                    body:(id)parameters
+                       success:(void (^)(id _Nullable responseObject))success
+                       failure:(void (^)(NSError * _Nonnull error))failure;
 
 
 /**

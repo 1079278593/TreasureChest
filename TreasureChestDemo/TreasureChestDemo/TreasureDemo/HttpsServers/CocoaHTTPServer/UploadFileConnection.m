@@ -94,14 +94,17 @@
     }
     if( [method isEqualToString:@"GET"] && [path hasPrefix:@"/upload/"] ) {
         // let download the uploaded files
-        return [[HTTPFileResponse alloc] initWithFilePath: [[config documentRoot] stringByAppendingString:path] forConnection:self];
+        NSString *saveReceivedFilePath = [self firmwarePath];
+        return [[HTTPFileResponse alloc] initWithFilePath: [saveReceivedFilePath stringByAppendingString:path] forConnection:self];
+//        return [[HTTPFileResponse alloc] initWithFilePath: [[config documentRoot] stringByAppendingString:path] forConnection:self];
     }
     if( [method isEqualToString:@"GET"] && ([path hasPrefix:@"/upgrade/"] || [path hasPrefix:@"/upgrade"]) ) {
         // let download the uploaded files
 //        return [[HTTPFileResponse alloc] initWithFilePath: [[config documentRoot] stringByAppendingString:path] forConnection:self];
         
         //将文件返回
-        NSString *filPth = [@"/Users/imvt/Desktop" stringByAppendingString:@"/apps.pem"];
+//        NSString *filPth = [@"/Users/imvt/Desktop" stringByAppendingString:@"/apps.pem"];
+        NSString *filPth = [NSString stringWithFormat:@"%@/lighting.bin",[config documentRoot]];
         return [[HTTPFileResponse alloc] initWithFilePath: filPth forConnection:self];
     }
     
@@ -140,6 +143,7 @@
     }
     //    NSString* uploadDirPath = [[config documentRoot] stringByAppendingPathComponent:@"upload"];
     NSString *uploadDirPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    uploadDirPath = [NSString stringWithFormat:@"%@/%@",uploadDirPath,@"lighting/upload"];
     
     BOOL isDir = YES;
     if (![[NSFileManager defaultManager]fileExistsAtPath:uploadDirPath isDirectory:&isDir ]) {
@@ -160,7 +164,7 @@
     }
 }
 
-- (void)processContent:(NSData*) data WithHeader:(MultipartMessageHeader*)header {
+- (void)processContent:(NSData*)data WithHeader:(MultipartMessageHeader*)header {
     // here we just write the output from parser to the file.
     if( storeFile ) {
         [storeFile writeData:data];
@@ -171,14 +175,25 @@
     // as the file part is over, we close the file.
     [storeFile closeFile];
     storeFile = nil;
+    NSLog(@"----1-----upload EndOfPartWithHeader");//这里可以作为结束的标志时间点
 }
 
-- (void) processPreambleData:(NSData*) data {
+- (void) processPreambleData:(NSData*)data {
     // if we are interested in preamble data, we could process it here.
+    NSLog(@"----2-----upload EprocessPreambleData");
 }
 
-- (void) processEpilogueData:(NSData*) data {
+- (void) processEpilogueData:(NSData*)data {
     // if we are interested in epilogue data, we could process it here.
+    NSLog(@"----3-----upload EprocessEpilogueData");
+}
+
+///保存传入手机的文件，到
+- (NSString *)firmwarePath {
+    NSString *uploadDirPath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+//    uploadDirPath = [NSString stringWithFormat:@"%@/",uploadDirPath]
+    
+    return uploadDirPath;
 }
 
 @end
