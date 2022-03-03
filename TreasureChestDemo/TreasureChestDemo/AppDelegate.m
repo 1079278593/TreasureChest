@@ -26,7 +26,7 @@
 //    [NetworkTool tryOpenNetworkPermission];
     
     //https服务开启
-    [[HttpsServerManager shareInstance] configLocalHttpServer];
+//    [[HttpsServerManager shareInstance] configLocalHttpServer];
     
     return YES;
 }

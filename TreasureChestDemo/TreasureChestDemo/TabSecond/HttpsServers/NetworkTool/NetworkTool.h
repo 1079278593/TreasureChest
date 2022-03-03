@@ -19,6 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString*)getIPAddressString;
 + (NSDictionary *)getIPAddressesDict;
 
+///系统方式获取
++ (NSArray *)sysGetIpAddresses;
+
 + (void)getHistoryWifiList:(void (^)(NSArray <NSString *> *array))completionHandler;
 + (void)switchHotspotWithSSID:(NSString *)ssid passphrase:(NSString *)passphrase completionHandler:(void (^)(NSError * error))completionHandler;
 

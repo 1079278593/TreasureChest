@@ -18,8 +18,6 @@
 #import "TestSubView.h"
 #import "TestView.h"
 
-#import "EasyGCDAsyncSocket.h"
-
 @interface TestController ()
 
 @property(nonatomic, strong)UIButton *button;
@@ -29,8 +27,6 @@
 @property(nonatomic, strong)UIImageView *imgView;
 
 @property(nonatomic, strong)LOTAnimationView *lottieView;
-
-@property(nonatomic, strong)EasyGCDAsyncSocket *socket;
 
 @end
 
@@ -42,8 +38,6 @@
     [self setupSubviews];
     [self testView];
     [self testMethod];
-    
-    self.socket = [[EasyGCDAsyncSocket alloc]init];
 }
 
 #pragma mark - < event >
@@ -54,11 +48,9 @@
 }
 
 - (void)button2Event:(UIButton *)button {
-    
 }
 
 - (void)button3Event:(UIButton *)button {
-    
 }
 
 - (void)sliderValueChange:(UISlider *)slider {

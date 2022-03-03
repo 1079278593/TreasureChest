@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-
 #import "ControllersModel.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -21,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSString *path = [[NSBundle mainBundle]pathForResource:@"Controllers" ofType:@"plist"];
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"Controllers_tab1" ofType:@"plist"];
 //    NSString *path = [[NSBundle mainBundle]pathForResource:@"Controllers_zcam" ofType:@"plist"];
     self.datas = [ControllersModel mj_objectArrayWithFile:path];
     self.tableView.frame = CGRectMake(0, 64, KScreenWidth, KScreenHeight-64);
