@@ -75,6 +75,19 @@
 		3AE852D82610C21C00AA656C /* TestSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE852D72610C21C00AA656C /* TestSubView.m */; };
 		3AEE43B4261420710095FA38 /* AutoCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE43B3261420710095FA38 /* AutoCoder.m */; };
 		3BEFF9DF0E12D318A440735F /* Pods_TreasureChestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140A460F1B11381DEED65D5B /* Pods_TreasureChestTests.framework */; };
+		5414EC1327CDB1C6005E42CD /* EasySocketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5414EC1127CDB1C6005E42CD /* EasySocketModel.m */; };
+		5414EC1727CDB345005E42CD /* SocketClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5414EC1627CDB345005E42CD /* SocketClient.m */; };
+		5414EC1A27CDBA05005E42CD /* SocketServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5414EC1927CDBA05005E42CD /* SocketServer.m */; };
+		5414EC2227CDC217005E42CD /* Controllers_tab2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5414EC2127CDC216005E42CD /* Controllers_tab2.plist */; };
+		5414EC2627CDC623005E42CD /* SocketController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5414EC2427CDC623005E42CD /* SocketController.m */; };
+		5414EC2727CDC623005E42CD /* SocketController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5414EC2527CDC623005E42CD /* SocketController.xib */; };
+		5414EC3527CF4117005E42CD /* network.c in Sources */ = {isa = PBXBuildFile; fileRef = 5414EC2927CF4117005E42CD /* network.c */; };
+		5414EC3627CF4117005E42CD /* transmit.c in Sources */ = {isa = PBXBuildFile; fileRef = 5414EC2E27CF4117005E42CD /* transmit.c */; };
+		5414EC3727CF4117005E42CD /* receive.c in Sources */ = {isa = PBXBuildFile; fileRef = 5414EC3027CF4117005E42CD /* receive.c */; };
+		5414EC3827CF4117005E42CD /* tod.c in Sources */ = {isa = PBXBuildFile; fileRef = 5414EC3127CF4117005E42CD /* tod.c */; };
+		5414EC3927CF4117005E42CD /* misc.c in Sources */ = {isa = PBXBuildFile; fileRef = 5414EC3227CF4117005E42CD /* misc.c */; };
+		5414EC3A27CF4117005E42CD /* artnet.c in Sources */ = {isa = PBXBuildFile; fileRef = 5414EC3427CF4117005E42CD /* artnet.c */; };
+		5414EC3F27CF415E005E42CD /* ArtNetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5414EC3E27CF415E005E42CD /* ArtNetController.m */; };
 		5465B3FA278EDC7B005228C6 /* CIEColorSpace.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5465B3F9278EDC7B005228C6 /* CIEColorSpace.plist */; };
 		5465B3FD278EE3AB005228C6 /* DrawXYColorSpaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5465B3FC278EE3AB005228C6 /* DrawXYColorSpaceView.m */; };
 		5465B403278EE427005228C6 /* xyCoordinateScala.png in Resources */ = {isa = PBXBuildFile; fileRef = 5465B3FF278EE427005228C6 /* xyCoordinateScala.png */; };
@@ -141,7 +154,7 @@
 		54924F8F27BDDCD800E12575 /* EasyGCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 54924F8E27BDDCD800E12575 /* EasyGCDAsyncSocket.m */; };
 		A90ECEE2259577EB005E3EF0 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = A90ECEE1259577EB005E3EF0 /* TestView.m */; };
 		A90ECEEE25998733005E3EF0 /* NSString+Bundle.m in Sources */ = {isa = PBXBuildFile; fileRef = A90ECEED25998733005E3EF0 /* NSString+Bundle.m */; };
-		A918EC102555517F00C5964D /* Controllers.plist in Resources */ = {isa = PBXBuildFile; fileRef = A918EC0F2555517F00C5964D /* Controllers.plist */; };
+		A918EC102555517F00C5964D /* Controllers_tab1.plist in Resources */ = {isa = PBXBuildFile; fileRef = A918EC0F2555517F00C5964D /* Controllers_tab1.plist */; };
 		A918EC162555551B00C5964D /* ControllersModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A918EC152555551B00C5964D /* ControllersModel.m */; };
 		A918EC392555671E00C5964D /* TestController.m in Sources */ = {isa = PBXBuildFile; fileRef = A918EC382555671E00C5964D /* TestController.m */; };
 		A91C062F24E7B49D00E9F5B6 /* MediaRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = A91C062E24E7B49D00E9F5B6 /* MediaRecorder.m */; };
@@ -529,6 +542,30 @@
 		3AEE43B2261420710095FA38 /* AutoCoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoCoder.h; sourceTree = "<group>"; };
 		3AEE43B3261420710095FA38 /* AutoCoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoCoder.m; sourceTree = "<group>"; };
 		3AFE5E6525E1FF71007CD8B0 /* FileManagerEnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileManagerEnums.h; sourceTree = "<group>"; };
+		5414EC1127CDB1C6005E42CD /* EasySocketModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasySocketModel.m; sourceTree = "<group>"; };
+		5414EC1227CDB1C6005E42CD /* EasySocketModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasySocketModel.h; sourceTree = "<group>"; };
+		5414EC1527CDB345005E42CD /* SocketClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocketClient.h; sourceTree = "<group>"; };
+		5414EC1627CDB345005E42CD /* SocketClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocketClient.m; sourceTree = "<group>"; };
+		5414EC1827CDBA05005E42CD /* SocketServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocketServer.h; sourceTree = "<group>"; };
+		5414EC1927CDBA05005E42CD /* SocketServer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocketServer.m; sourceTree = "<group>"; };
+		5414EC2127CDC216005E42CD /* Controllers_tab2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Controllers_tab2.plist; sourceTree = "<group>"; };
+		5414EC2327CDC623005E42CD /* SocketController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocketController.h; sourceTree = "<group>"; };
+		5414EC2427CDC623005E42CD /* SocketController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocketController.m; sourceTree = "<group>"; };
+		5414EC2527CDC623005E42CD /* SocketController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SocketController.xib; sourceTree = "<group>"; };
+		5414EC2927CF4117005E42CD /* network.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = network.c; sourceTree = "<group>"; };
+		5414EC2A27CF4117005E42CD /* tod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tod.h; sourceTree = "<group>"; };
+		5414EC2B27CF4117005E42CD /* misc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = misc.h; sourceTree = "<group>"; };
+		5414EC2C27CF4117005E42CD /* private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = private.h; sourceTree = "<group>"; };
+		5414EC2D27CF4117005E42CD /* artnet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = artnet.h; sourceTree = "<group>"; };
+		5414EC2E27CF4117005E42CD /* transmit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = transmit.c; sourceTree = "<group>"; };
+		5414EC2F27CF4117005E42CD /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		5414EC3027CF4117005E42CD /* receive.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = receive.c; sourceTree = "<group>"; };
+		5414EC3127CF4117005E42CD /* tod.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tod.c; sourceTree = "<group>"; };
+		5414EC3227CF4117005E42CD /* misc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = misc.c; sourceTree = "<group>"; };
+		5414EC3327CF4117005E42CD /* packets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = packets.h; sourceTree = "<group>"; };
+		5414EC3427CF4117005E42CD /* artnet.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = artnet.c; sourceTree = "<group>"; };
+		5414EC3D27CF415E005E42CD /* ArtNetController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArtNetController.h; sourceTree = "<group>"; };
+		5414EC3E27CF415E005E42CD /* ArtNetController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArtNetController.m; sourceTree = "<group>"; };
 		5465B3F9278EDC7B005228C6 /* CIEColorSpace.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CIEColorSpace.plist; sourceTree = "<group>"; };
 		5465B3FB278EE3AB005228C6 /* DrawXYColorSpaceView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawXYColorSpaceView.h; sourceTree = "<group>"; };
 		5465B3FC278EE3AB005228C6 /* DrawXYColorSpaceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawXYColorSpaceView.m; sourceTree = "<group>"; };
@@ -649,7 +686,7 @@
 		A90ECEE1259577EB005E3EF0 /* TestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
 		A90ECEEC25998733005E3EF0 /* NSString+Bundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Bundle.h"; sourceTree = "<group>"; };
 		A90ECEED25998733005E3EF0 /* NSString+Bundle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Bundle.m"; sourceTree = "<group>"; };
-		A918EC0F2555517F00C5964D /* Controllers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Controllers.plist; sourceTree = "<group>"; };
+		A918EC0F2555517F00C5964D /* Controllers_tab1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Controllers_tab1.plist; sourceTree = "<group>"; };
 		A918EC142555551B00C5964D /* ControllersModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControllersModel.h; sourceTree = "<group>"; };
 		A918EC152555551B00C5964D /* ControllersModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ControllersModel.m; sourceTree = "<group>"; };
 		A918EC372555671E00C5964D /* TestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestController.h; sourceTree = "<group>"; };
@@ -1158,7 +1195,8 @@
 				B2506D0A23AB84330034A472 /* PrefixHeader.pch */,
 				3AE550EA23A91A93001D989E /* TreasureChest-Bridging-Header.h */,
 				A918EC13255554FF00C5964D /* Controllers */,
-				B2506D0323AB63E40034A472 /* TreasureDemo */,
+				5414EC3B27CF413A005E42CD /* TabSecond */,
+				B2506D0323AB63E40034A472 /* TabFirst */,
 				B21EF68624482F0600BEBB9E /* BaseClass */,
 				B243E07823C4552E00B37519 /* CF-1151.16-源码研究 */,
 			);
@@ -1346,6 +1384,7 @@
 		3AE550DA23A9189F001D989E /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				54924F8C27BDDC9600E12575 /* EasyGCDAsyncSocket */,
 				5470602926C26DA000C4ABDB /* CAMChart */,
 				3AEE43B1261420250095FA38 /* AutoCoder */,
 				3AE852C92610C09C00AA656C /* LottieLoader */,
@@ -1404,6 +1443,7 @@
 		3AE852C82610C06700AA656C /* ThirdModule */ = {
 			isa = PBXGroup;
 			children = (
+				5414EC2827CF4117005E42CD /* artnet */,
 				B27B780423AC61600083E6AE /* AFNetworking */,
 				B2AA0F4123C5869F00BEBA27 /* FMDB */,
 				B26FBCCA2441CDB8003DB3BE /* lottie-ios */,
@@ -1431,6 +1471,82 @@
 				3AEE43B3261420710095FA38 /* AutoCoder.m */,
 			);
 			path = AutoCoder;
+			sourceTree = "<group>";
+		};
+		5414EC1427CDB309005E42CD /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				5414EC2327CDC623005E42CD /* SocketController.h */,
+				5414EC2427CDC623005E42CD /* SocketController.m */,
+				5414EC2527CDC623005E42CD /* SocketController.xib */,
+				5414EC1D27CDC032005E42CD /* view */,
+				5414EC1C27CDC00E005E42CD /* client */,
+				5414EC1B27CDBFC4005E42CD /* server */,
+			);
+			path = Socket;
+			sourceTree = "<group>";
+		};
+		5414EC1B27CDBFC4005E42CD /* server */ = {
+			isa = PBXGroup;
+			children = (
+				5414EC1827CDBA05005E42CD /* SocketServer.h */,
+				5414EC1927CDBA05005E42CD /* SocketServer.m */,
+			);
+			path = server;
+			sourceTree = "<group>";
+		};
+		5414EC1C27CDC00E005E42CD /* client */ = {
+			isa = PBXGroup;
+			children = (
+				5414EC1527CDB345005E42CD /* SocketClient.h */,
+				5414EC1627CDB345005E42CD /* SocketClient.m */,
+			);
+			path = client;
+			sourceTree = "<group>";
+		};
+		5414EC1D27CDC032005E42CD /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		5414EC2827CF4117005E42CD /* artnet */ = {
+			isa = PBXGroup;
+			children = (
+				5414EC2D27CF4117005E42CD /* artnet.h */,
+				5414EC3427CF4117005E42CD /* artnet.c */,
+				5414EC2B27CF4117005E42CD /* misc.h */,
+				5414EC3227CF4117005E42CD /* misc.c */,
+				5414EC2A27CF4117005E42CD /* tod.h */,
+				5414EC3127CF4117005E42CD /* tod.c */,
+				5414EC2F27CF4117005E42CD /* common.h */,
+				5414EC3327CF4117005E42CD /* packets.h */,
+				5414EC2C27CF4117005E42CD /* private.h */,
+				5414EC2E27CF4117005E42CD /* transmit.c */,
+				5414EC2927CF4117005E42CD /* network.c */,
+				5414EC3027CF4117005E42CD /* receive.c */,
+			);
+			path = artnet;
+			sourceTree = "<group>";
+		};
+		5414EC3B27CF413A005E42CD /* TabSecond */ = {
+			isa = PBXGroup;
+			children = (
+				54924F0927B3931C00E12575 /* HttpsServers */,
+				5414EC1427CDB309005E42CD /* Socket */,
+				5414EC3C27CF4149005E42CD /* ArtNet */,
+			);
+			path = TabSecond;
+			sourceTree = "<group>";
+		};
+		5414EC3C27CF4149005E42CD /* ArtNet */ = {
+			isa = PBXGroup;
+			children = (
+				5414EC3D27CF415E005E42CD /* ArtNetController.h */,
+				5414EC3E27CF415E005E42CD /* ArtNetController.m */,
+			);
+			path = ArtNet;
 			sourceTree = "<group>";
 		};
 		5465B3FE278EE3F9005228C6 /* DrawXYColorSpace */ = {
@@ -1686,19 +1802,22 @@
 			path = NetworkTool;
 			sourceTree = "<group>";
 		};
-		54924F8C27BDDC9600E12575 /* TestGCDSockect */ = {
+		54924F8C27BDDC9600E12575 /* EasyGCDAsyncSocket */ = {
 			isa = PBXGroup;
 			children = (
 				54924F8D27BDDCD800E12575 /* EasyGCDAsyncSocket.h */,
 				54924F8E27BDDCD800E12575 /* EasyGCDAsyncSocket.m */,
+				5414EC1227CDB1C6005E42CD /* EasySocketModel.h */,
+				5414EC1127CDB1C6005E42CD /* EasySocketModel.m */,
 			);
-			path = TestGCDSockect;
+			path = EasyGCDAsyncSocket;
 			sourceTree = "<group>";
 		};
 		A918EC13255554FF00C5964D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A918EC0F2555517F00C5964D /* Controllers.plist */,
+				A918EC0F2555517F00C5964D /* Controllers_tab1.plist */,
+				5414EC2127CDC216005E42CD /* Controllers_tab2.plist */,
 				3ADB62ED26C8A3F00030ACBE /* Controllers_zcam.plist */,
 				A918EC142555551B00C5964D /* ControllersModel.h */,
 				A918EC152555551B00C5964D /* ControllersModel.m */,
@@ -1715,7 +1834,6 @@
 			children = (
 				A918EC372555671E00C5964D /* TestController.h */,
 				A918EC382555671E00C5964D /* TestController.m */,
-				54924F8C27BDDC9600E12575 /* TestGCDSockect */,
 				3ADB62F226C8A6460030ACBE /* testPanorama */,
 				A90ECEE0259577EB005E3EF0 /* TestView.h */,
 				A90ECEE1259577EB005E3EF0 /* TestView.m */,
@@ -2296,11 +2414,10 @@
 			path = CollapsibleTableView;
 			sourceTree = "<group>";
 		};
-		B2506D0323AB63E40034A472 /* TreasureDemo */ = {
+		B2506D0323AB63E40034A472 /* TabFirst */ = {
 			isa = PBXGroup;
 			children = (
 				A918EC3E2555714800C5964D /* TestController */,
-				54924F0927B3931C00E12575 /* HttpsServers */,
 				A94EF79F25A40C9300CB769D /* ResidentScrollView */,
 				A94EF7A025A40CAC00CB769D /* CollapsibleView */,
 				A94EF7A125A40CBB00CB769D /* TabScrollView */,
@@ -2318,7 +2435,7 @@
 				B2D1BCC423D1658F0000B413 /* DictDemoView */,
 				3AD14A2E2461532E004D54B8 /* Lexicon */,
 			);
-			path = TreasureDemo;
+			path = TabFirst;
 			sourceTree = "<group>";
 		};
 		B2506D1023ABA10F0034A472 /* Resource */ = {
@@ -2955,7 +3072,7 @@
 				B215CC4B2431F5290017BFD9 /* hud_info@2x.png in Resources */,
 				A94EF7F025A40FFF00CB769D /* 叮.mp3 in Resources */,
 				3A5E735826062EDD00772384 /* testDemoBg1.jpeg in Resources */,
-				A918EC102555517F00C5964D /* Controllers.plist in Resources */,
+				A918EC102555517F00C5964D /* Controllers_tab1.plist in Resources */,
 				3AD14A4D24619EE2004D54B8 /* words_it.plist in Resources */,
 				A94EF81925A4100000CB769D /* notgood.mp3 in Resources */,
 				A94EF7FF25A40FFF00CB769D /* 游戏开始.m4a in Resources */,
@@ -3002,9 +3119,11 @@
 				B215CC492431F5290017BFD9 /* hud_error.png in Resources */,
 				5465B40E278FF592005228C6 /* stellar_xy_cct_curve.json in Resources */,
 				B215CC462431F5290017BFD9 /* hud_success.png in Resources */,
+				5414EC2227CDC217005E42CD /* Controllers_tab2.plist in Resources */,
 				A94EF7F825A40FFF00CB769D /* 1号玩家开始比划.m4a in Resources */,
 				54924F6927B396B800E12575 /* Web in Resources */,
 				A94EF80125A4100000CB769D /* 3号玩家开始比划.m4a in Resources */,
+				5414EC2727CDC623005E42CD /* SocketController.xib in Resources */,
 				A98EFD8525EF6FE900948E06 /* image_5.jpg in Resources */,
 				A94EF81725A4100000CB769D /* 3say.mp3 in Resources */,
 				A94EF81325A4100000CB769D /* 6out.mp3 in Resources */,
@@ -3123,8 +3242,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5414EC3827CF4117005E42CD /* tod.c in Sources */,
 				5470605026C26DA000C4ABDB /* CAMXYAxisProfile.m in Sources */,
 				B27B784823ACE22A0083E6AE /* TabScrollViewCtl.m in Sources */,
+				5414EC3927CF4117005E42CD /* misc.c in Sources */,
 				A9C7CF0525372631002ECCFF /* DSViewTool.m in Sources */,
 				B2506D0223AB5BA80034A472 /* CollapsibleModel.m in Sources */,
 				B299BE5724513C510096360D /* LottieAnimationsCtl.m in Sources */,
@@ -3154,6 +3275,7 @@
 				B2055290240756980034310A /* ProductOptionViewFlowLayout.m in Sources */,
 				B27B784523ACD7C00083E6AE /* TabTitleScrollView.m in Sources */,
 				B26FBD6A2441CDB8003DB3BE /* LOTGradientFillRender.m in Sources */,
+				5414EC1A27CDBA05005E42CD /* SocketServer.m in Sources */,
 				54924F5327B3966000E12575 /* WebSocket.m in Sources */,
 				3A8F79E02557ECEB00069914 /* UIView+HollowOut.m in Sources */,
 				54924F5A27B3966000E12575 /* DDRange.m in Sources */,
@@ -3192,6 +3314,7 @@
 				A9FFC32F24C7DE6800881404 /* BrushDrawController.m in Sources */,
 				B27B784B23ADB2080083E6AE /* UIColor+Hex.m in Sources */,
 				B24A85FB24039EB000D1EECA /* VideoPlayerBaseView.m in Sources */,
+				5414EC3627CF4117005E42CD /* transmit.c in Sources */,
 				54924F4F27B3966000E12575 /* HTTPAsyncFileResponse.m in Sources */,
 				A928348F2536947700810734 /* FacePointPathLayer.m in Sources */,
 				54924F7527B39BEA00E12575 /* NetworkTool.m in Sources */,
@@ -3230,6 +3353,7 @@
 				54924F6127B3966000E12575 /* UploadFileConnection.m in Sources */,
 				B26FBD792441CDB8003DB3BE /* LOTAsset.m in Sources */,
 				A94EF7AE25A40F8A00CB769D /* PixelsOperator.m in Sources */,
+				5414EC3527CF4117005E42CD /* network.c in Sources */,
 				B2BC387323BD976200D5B9C6 /* NSDecimalNumber+Extension.m in Sources */,
 				B26FBD752441CDB8003DB3BE /* LOTLayerGroup.m in Sources */,
 				B26FBD5C2441CDB8003DB3BE /* LOTPathInterpolator.m in Sources */,
@@ -3255,10 +3379,12 @@
 				B26FBD932441CDB8003DB3BE /* LOTLayerContainer.m in Sources */,
 				B26FBD942441CDB8003DB3BE /* LOTCompositionContainer.m in Sources */,
 				5470604C26C26DA000C4ABDB /* CAMBaseChart.m in Sources */,
+				5414EC2627CDC623005E42CD /* SocketController.m in Sources */,
 				B26FBD6C2441CDB8003DB3BE /* LOTFillRenderer.m in Sources */,
 				B2830F0223B5F8890049AE99 /* UILabel+TextSize.m in Sources */,
 				3A40235D23A62ED100BDB4E3 /* AppDelegate.m in Sources */,
 				A918EC162555551B00C5964D /* ControllersModel.m in Sources */,
+				5414EC1327CDB1C6005E42CD /* EasySocketModel.m in Sources */,
 				B215CC3E2431BEC80017BFD9 /* MBProgressHUD.m in Sources */,
 				B26FBD812441CDB8003DB3BE /* LOTShapeStroke.m in Sources */,
 				5465B43527912BE5005228C6 /* CoordinatesView.m in Sources */,
@@ -3284,6 +3410,7 @@
 				54924F6227B3966000E12575 /* DAVConnection.m in Sources */,
 				B26FBD662441CDB8003DB3BE /* LOTPolygonAnimator.m in Sources */,
 				54924F5427B3966000E12575 /* MultipartMessageHeaderField.m in Sources */,
+				5414EC1727CDB345005E42CD /* SocketClient.m in Sources */,
 				B2CE3441244AAFC9000A32EB /* TestLayerView.m in Sources */,
 				548FCF9026841C2D0047F823 /* WhiteBalanceController.m in Sources */,
 				B26FBD612441CDB8003DB3BE /* LOTArrayInterpolator.m in Sources */,
@@ -3314,11 +3441,13 @@
 				A9CBFA2A25B1822900BD4747 /* ResidentThread.m in Sources */,
 				5470604F26C26DA000C4ABDB /* CAMCircleProgressChart.m in Sources */,
 				A9CA834D24DBE03C00771EE2 /* EllipsePointsView.m in Sources */,
+				5414EC3727CF4117005E42CD /* receive.c in Sources */,
 				B28472372404B8EE00C1194F /* URLDownloadTask.m in Sources */,
 				A90ECEE2259577EB005E3EF0 /* TestView.m in Sources */,
 				3A812A14261206710018E3AE /* BaseModel.m in Sources */,
 				B283CEED2449BB650021ABB5 /* TestActionProgressAction.m in Sources */,
 				B26FBD8F2441CDB8003DB3BE /* LOTInterpolatorCallback.m in Sources */,
+				5414EC3F27CF415E005E42CD /* ArtNetController.m in Sources */,
 				5470604B26C26DA000C4ABDB /* CAMColorKit.m in Sources */,
 				B284724124051E2D00C1194F /* URLOfflineDownloadTask.m in Sources */,
 				B2BC387A23C0337A00D5B9C6 /* BaseShapeView.m in Sources */,
@@ -3369,6 +3498,7 @@
 				B2C94627242B383C00DC6FC1 /* UIColor+UIImage.m in Sources */,
 				3ACF5DBA247E0EED008ACB52 /* NSObject+Model.m in Sources */,
 				B2169E0524404863002CFE3E /* VideoRecorderCtl.m in Sources */,
+				5414EC3A27CF4117005E42CD /* artnet.c in Sources */,
 				B26FBD8E2441CDB8003DB3BE /* LOTAnimatedControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
