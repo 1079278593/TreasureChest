@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreMedia/CoreMedia.h>
 #import "LFVideoFrame.h"
+
 typedef struct HW_ENCODER_CONFIGURATION {
     int fps;
     int width;
@@ -15,10 +16,15 @@ typedef struct HW_ENCODER_CONFIGURATION {
     int bitRate;
     int keyframeInterval;
 } HWEncodeConfiguration;
+
 NS_ASSUME_NONNULL_BEGIN
+
 @protocol VideoHWEncoderDelegate;
+
 @interface VideoHWEncoder : NSObject
+
 @property(nonatomic, weak) id<VideoHWEncoderDelegate> delegate;
+
 - (instancetype)initWithConfig:(HWEncodeConfiguration)config;
 - (HWEncodeConfiguration *)config;
 
@@ -27,9 +33,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)encode:(CMSampleBufferRef)sampleBuffer timeStamp:(uint64_t)timeStamp;
 
 @end
+
 @protocol VideoHWEncoderDelegate <NSObject>
 
 -(void)encodedVideo:(VideoHWEncoder *)encoder videoFrame:(LFVideoFrame *)videoFrame;
 
 @end
+
 NS_ASSUME_NONNULL_END

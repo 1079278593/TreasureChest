@@ -8,6 +8,10 @@
 
 import UIKit
 
+public let KMainScreenSize = UIScreen.main.bounds.size
+public let KMainScreenWidth = UIScreen.main.bounds.width
+public let KMainScreenHeight = UIScreen.main.bounds.height
+
 public extension UIView {
     var x: CGFloat {
         get {

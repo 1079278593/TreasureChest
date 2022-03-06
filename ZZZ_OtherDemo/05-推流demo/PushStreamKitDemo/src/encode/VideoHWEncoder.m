@@ -7,11 +7,7 @@
 
 #import "VideoHWEncoder.h"
 #import <VideoToolbox/VideoToolbox.h>
-@interface VideoHWEncoder()
-@end
- 
-@implementation VideoHWEncoder
-{
+@interface VideoHWEncoder() {
     NSUInteger _frameID;
     VTCompressionSessionRef compressSession;
     HWEncodeConfiguration _configuration;
@@ -19,8 +15,12 @@
     NSData *sps;
     NSData *pps;
 }
-- (instancetype)init
-{
+
+@end
+ 
+@implementation VideoHWEncoder
+
+- (instancetype)init {
     self = [super init];
     if (self) {
         _configuration.fps = 20;
@@ -32,8 +32,8 @@
     }
     return self;
 }
-- (instancetype)initWithConfig:(HWEncodeConfiguration)config
-{
+
+- (instancetype)initWithConfig:(HWEncodeConfiguration)config {
     self = [super init];
     if (self) {
         _configuration = config;
@@ -42,11 +42,48 @@
     return self;
 }
 
-- (HWEncodeConfiguration *)config
-{
+- (void)dealloc {
+    [self close];
+}
+
+#pragma mark - < public >
+- (HWEncodeConfiguration *)config {
     return &_configuration;
 }
-- (void) setupCompressionSession {
+
+- (void)encode:(CMSampleBufferRef)sampleBuffer timeStamp:(uint64_t)timestamp {
+    
+    dispatch_sync(aQuene, ^{
+        _frameID++;
+        // Get the CV Image buffer
+        CVImageBufferRef imageBuffer = (CVImageBufferRef)CMSampleBufferGetImageBuffer(sampleBuffer);
+        
+        // Create properties
+        CMTime presentationTimeStamp = CMTimeMake(_frameID, 1000);
+        //CMTime duration = CMTimeMake(1, DURATION);
+        VTEncodeInfoFlags flags;
+        NSDictionary *properties = nil;
+        if (_frameID % (int32_t)_configuration.keyframeInterval == 0) {
+            properties = @{(__bridge NSString *)kVTEncodeFrameOptionKey_ForceKeyFrame: @YES};
+        }
+        NSNumber *timeNumber = @(timestamp);
+        // Pass it to the encoder
+        OSStatus statusCode = VTCompressionSessionEncodeFrame(compressSession,
+                                                              imageBuffer,
+                                                              presentationTimeStamp,
+                                                              kCMTimeInvalid,
+                                                              (__bridge CFDictionaryRef)properties, (__bridge void *)timeNumber, &flags);
+        // Check for error
+        if (statusCode != noErr) {
+            NSLog(@"H264: VTCompressionSessionEncodeFrame failed with %d", (int)statusCode);
+            return;
+        }
+        NSLog(@"H264: VTCompressionSessionEncodeFrame Success");
+    });
+}
+
+#pragma mark - < encoder >
+- (void)setupCompressionSession {
     aQuene = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     // 1. 第几帧数据
     _frameID = 0;
@@ -77,8 +114,8 @@
     VTSessionSetProperty(compressSession, kVTCompressionPropertyKey_MaxKeyFrameInterval, frameIntervalRef);
     // 8.基本设置结束, 准备进行编码
     VTCompressionSessionPrepareToEncodeFrames(compressSession);
-
 }
+
 // 编码完成回调
 void didCompressH2641(void *outputCallbackRefCon, void *sourceFrameRefCon, OSStatus status, VTEncodeInfoFlags infoFlags, CMSampleBufferRef sampleBuffer) {
     // 1.判断状态是否等于没有错误
@@ -155,8 +192,19 @@ void didCompressH2641(void *outputCallbackRefCon, void *sourceFrameRefCon, OSSta
     }
 }
 
-- (void)gotSpsPps:(NSData*)sps pps:(NSData*)pps
-{
+#pragma mark - < close >
+- (void) close {
+    // Mark the completion
+    VTCompressionSessionCompleteFrames(compressSession, kCMTimeInvalid);
+    
+    // End the session
+    VTCompressionSessionInvalidate(compressSession);
+    CFRelease(compressSession);
+    compressSession = NULL;
+}
+
+#pragma mark - < 写入文件用 >
+- (void)gotSpsPps:(NSData*)sps pps:(NSData*)pps {
     // 1.拼接NALU的header
     const char bytes[] = "\x00\x00\x00\x01";
     size_t length = (sizeof bytes) - 1;
@@ -169,8 +217,8 @@ void didCompressH2641(void *outputCallbackRefCon, void *sourceFrameRefCon, OSSta
 //    [self.fileHandle writeData:pps];
 
 }
-- (void)gotEncodedData:(NSData*)data isKeyFrame:(BOOL)isKeyFrame
-{
+
+- (void)gotEncodedData:(NSData*)data isKeyFrame:(BOOL)isKeyFrame {
 //    if (self.fileHandle != NULL)
 //    {
 //        const char bytes[] = "\x00\x00\x00\x01";
@@ -180,51 +228,5 @@ void didCompressH2641(void *outputCallbackRefCon, void *sourceFrameRefCon, OSSta
 //        [self.fileHandle writeData:data];
 //    }
 }
-- (void)encode:(CMSampleBufferRef)sampleBuffer timeStamp:(uint64_t)timestamp
-{
-    
-    dispatch_sync(aQuene, ^{
-        _frameID++;
-        // Get the CV Image buffer
-        CVImageBufferRef imageBuffer = (CVImageBufferRef)CMSampleBufferGetImageBuffer(sampleBuffer);
-        
-        // Create properties
-        CMTime presentationTimeStamp = CMTimeMake(_frameID, 1000);
-        //CMTime duration = CMTimeMake(1, DURATION);
-        VTEncodeInfoFlags flags;
-        NSDictionary *properties = nil;
-        if (_frameID % (int32_t)_configuration.keyframeInterval == 0) {
-            properties = @{(__bridge NSString *)kVTEncodeFrameOptionKey_ForceKeyFrame: @YES};
-        }
-        NSNumber *timeNumber = @(timestamp);
-        // Pass it to the encoder
-        OSStatus statusCode = VTCompressionSessionEncodeFrame(compressSession,
-                                                              imageBuffer,
-                                                              presentationTimeStamp,
-                                                              kCMTimeInvalid,
-                                                              (__bridge CFDictionaryRef)properties, (__bridge void *)timeNumber, &flags);
-        // Check for error
-        if (statusCode != noErr) {
-            NSLog(@"H264: VTCompressionSessionEncodeFrame failed with %d", (int)statusCode);
-            return;
-        }
-        NSLog(@"H264: VTCompressionSessionEncodeFrame Success");
-    });
-}
 
-- (void) close
-{
-    // Mark the completion
-    VTCompressionSessionCompleteFrames(compressSession, kCMTimeInvalid);
-    
-    // End the session
-    VTCompressionSessionInvalidate(compressSession);
-    CFRelease(compressSession);
-    compressSession = NULL;
-}
-
-- (void)dealloc
-{
-    [self close];
-}
 @end

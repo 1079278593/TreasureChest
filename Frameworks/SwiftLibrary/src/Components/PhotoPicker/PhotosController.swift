@@ -9,20 +9,15 @@
 import UIKit
 import Photos
 
-let KMainScreenWidth = UIScreen.main.bounds.width
-let KMainScreenHeight = UIScreen.main.bounds.height
-
-let isIphoneX = KMainScreenHeight >= 812 ? true : false
-
-let KStatusBarHeight: CGFloat = isIphoneX ? 44.0 : 20.0
-let KNaviBarHeight: CGFloat = 44.0
-let KNaviAreaHeight: CGFloat = KNaviBarHeight + KStatusBarHeight
-
 public protocol PhotosChoosedDelegate:class {
     func choosedPhoto(image: UIImage?)
 }
 
 public class PhotosController: UIViewController {
+    
+    private let KMainScreenWidth = UIScreen.main.bounds.width
+    private let KMainScreenHeight = UIScreen.main.bounds.height
+    private let KNaviAreaHeight: CGFloat = 44.0 + UIScreen.main.bounds.height >= 812 ? 44.0 : 20.0
     
     weak var delegate: PhotosChoosedDelegate?
     
