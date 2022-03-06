@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>className</key>
+		<string>HttpWebController</string>
+		<key>classTitle</key>
+		<string>https服务</string>
+	</dict>
+	<dict>
+		<key>className</key>
+		<string>SocketController</string>
+		<key>classTitle</key>
+		<string>原生socket</string>
+	</dict>
+	<dict>
+		<key>className</key>
+		<string>ArtNetController</string>
+		<key>classTitle</key>
+		<string>ArtNet</string>
+	</dict>
+</array>
+</plist>
