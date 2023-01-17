@@ -22,12 +22,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self loadLocalHttpServer];
+    
+    [[HttpsServerManager shareInstance] startServer];
+    
+//    [self loadLocalHttpServer];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self showNaviViewBackButton];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [[HttpsServerManager shareInstance]stopServer];
 }
 
 #pragma mark - < <#expression#> >

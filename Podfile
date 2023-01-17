@@ -30,7 +30,9 @@ abstract_target 'abstract_pod' do
 
     pod 'CocoaLumberjack'
     pod 'CocoaAsyncSocket'
-
+    pod "GCDWebServer", "~> 3.0"
+    pod 'RealReachability/Ping'
+    
 #    pod 'LibTorch', '~>1.6.0'
     
     target 'TreasureChestTests' do

@@ -18,11 +18,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HttpsServerManager : NSObject
 
-@property(nonatomic,strong)HTTPServer *localHttpServer;
-@property(nonatomic,copy)NSString *port;
+@property(nonatomic, strong)HTTPServer *localHttpServer;
+
+@property(nonatomic, copy)NSString *ip;
+@property(nonatomic, copy)NSString *port;
 
 + (instancetype)shareInstance;
-- (void)configLocalHttpServer;
+
+- (void)startServer;
+- (void)stopServer;
+
+- (NSString *)getServerUrl;
 
 @end
 

@@ -17,6 +17,10 @@
 #import "FileManager.h"
 #import "TestSubView.h"
 #import "TestView.h"
+#import "URLDownloadTask.h"
+
+#import "GCDWebServer.h"
+#import "GCDWebServerDataResponse.h"
 
 @interface TestController ()
 
@@ -28,6 +32,9 @@
 
 @property(nonatomic, strong)LOTAnimationView *lottieView;
 
+@property(nonatomic, strong)URLDownloadTask *downloadTask;
+@property(nonatomic, strong)GCDWebServer* webServer;
+
 @end
 
 @implementation TestController
@@ -38,6 +45,7 @@
     [self setupSubviews];
     [self testView];
     [self testMethod];
+    
 }
 
 #pragma mark - < event >
@@ -48,9 +56,32 @@
 }
 
 - (void)button2Event:(UIButton *)button {
+    NSString *path = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).firstObject;
+    path = [NSString stringWithFormat:@"%@/tmp",path];
+    self.downloadTask = [[URLDownloadTask alloc] init];
+    NSString *serverIP = @"https://192.168.31.131:54887/firmware/spwy.bin";
+    [self.downloadTask easyDownload:serverIP localPath:path isUpdate:YES];
+    self.downloadTask.progressBlock = ^(CGFloat progress) {
+        NSLog(@"progress: %f",progress);
+    };
 }
 
 - (void)button3Event:(UIButton *)button {
+    // Create server
+      _webServer = [[GCDWebServer alloc] init];
+      
+      // Add a handler to respond to GET requests on any URL
+      [_webServer addDefaultHandlerForMethod:@"GET"
+                                requestClass:[GCDWebServerRequest class]
+                                processBlock:^GCDWebServerResponse *(GCDWebServerRequest* request) {
+        
+        return [GCDWebServerDataResponse responseWithHTML:@"<html><body><p>Hello World</p></body></html>"];
+        
+      }];
+      
+      // Start server on port 8080
+      [_webServer startWithPort:8080 bonjourName:nil];
+      NSLog(@"Visit %@ in your web browser", _webServer.serverURL);
 }
 
 - (void)sliderValueChange:(UISlider *)slider {

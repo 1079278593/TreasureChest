@@ -20,5 +20,17 @@
 		<key>classTitle</key>
 		<string>ArtNet</string>
 	</dict>
+	<dict>
+		<key>className</key>
+		<string>UDPSocketController</string>
+		<key>classTitle</key>
+		<string>UdpSocket</string>
+	</dict>
+	<dict>
+		<key>className</key>
+		<string>PingController</string>
+		<key>classTitle</key>
+		<string>Ping</string>
+	</dict>
 </array>
 </plist>

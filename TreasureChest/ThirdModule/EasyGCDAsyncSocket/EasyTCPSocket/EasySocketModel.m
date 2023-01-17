@@ -58,4 +58,15 @@
     _contents = nil;
 }
 
+- (BOOL)isValidResponse:(NSString *)response {
+    BOOL isValid = ([response containsString:@"mode"] ||
+                    [response containsString:@"sw"] ||
+                    [response containsString:@"temp"] ||
+                    [response containsString:@"upgrade"] ||
+                    [response containsString:@"ctrl"] ||
+                    [response containsString:@"act"]
+                    );
+    return isValid;
+}
+
 @end

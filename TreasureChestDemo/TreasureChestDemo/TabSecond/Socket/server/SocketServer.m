@@ -34,7 +34,9 @@
 #pragma mark - < public >
 - (void)startServer {
     //1. 创建socket
-    self.serverId = socket(AF_INET, SOCK_STREAM, 0);
+    //第二个参数：SOCK_DGRAM~udp是数据报格式的； SOCK_STREAM~tcp;
+//    self.serverId = socket(AF_INET, SOCK_STREAM, 0);
+    self.serverId = socket(AF_INET, SOCK_DGRAM, 0);//udp监听失败
     if (self.serverId == -1) {
         NSLog(@"服务端：---创建socket 失败");
         return;

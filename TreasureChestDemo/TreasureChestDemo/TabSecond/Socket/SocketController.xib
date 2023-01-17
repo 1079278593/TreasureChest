@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -28,7 +28,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wsu-E8-R41" userLabel="Server">
-                    <rect key="frame" x="0.0" y="69" width="414" height="250"/>
+                    <rect key="frame" x="0.0" y="69" width="414" height="150"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5NL-fa-Ec4">
                             <rect key="frame" x="12" y="12" width="290" height="34"/>
@@ -50,7 +50,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WT8-md-Gyp">
-                            <rect key="frame" x="12" y="58" width="390" height="180"/>
+                            <rect key="frame" x="12" y="58" width="390" height="80"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -60,7 +60,7 @@
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="WT8-md-Gyp" secondAttribute="bottom" constant="12" id="2dY-L4-ImT"/>
                         <constraint firstAttribute="trailing" secondItem="WT8-md-Gyp" secondAttribute="trailing" constant="12" id="8na-M2-j9n"/>
-                        <constraint firstAttribute="height" constant="250" id="G5r-Xr-1wz"/>
+                        <constraint firstAttribute="height" constant="150" id="G5r-Xr-1wz"/>
                         <constraint firstAttribute="trailing" secondItem="XRt-sD-RzV" secondAttribute="trailing" constant="12" id="GO1-gY-Odx"/>
                         <constraint firstItem="XRt-sD-RzV" firstAttribute="leading" secondItem="5NL-fa-Ec4" secondAttribute="trailing" constant="20" id="GVg-H6-IgM"/>
                         <constraint firstItem="5NL-fa-Ec4" firstAttribute="top" secondItem="Wsu-E8-R41" secondAttribute="top" constant="12" id="Vx4-Lp-RYf"/>
@@ -71,7 +71,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oQF-Rp-vBc" userLabel="Client">
-                    <rect key="frame" x="0.0" y="379" width="414" height="250"/>
+                    <rect key="frame" x="0.0" y="279" width="414" height="150"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XeY-8h-0dx">
                             <rect key="frame" x="12" y="12" width="290" height="34"/>
@@ -93,7 +93,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuO-Oq-LNl">
-                            <rect key="frame" x="12" y="58" width="390" height="180"/>
+                            <rect key="frame" x="12" y="58" width="390" height="80"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -105,7 +105,7 @@
                         <constraint firstItem="XeY-8h-0dx" firstAttribute="top" secondItem="oQF-Rp-vBc" secondAttribute="top" constant="12" id="SQC-RD-qE3"/>
                         <constraint firstItem="XeY-8h-0dx" firstAttribute="leading" secondItem="oQF-Rp-vBc" secondAttribute="leading" constant="12" id="Z5K-X0-Vil"/>
                         <constraint firstItem="Xee-yS-8Bj" firstAttribute="leading" secondItem="XeY-8h-0dx" secondAttribute="trailing" constant="20" id="fhz-XA-HZj"/>
-                        <constraint firstAttribute="height" constant="250" id="fxG-my-8eb"/>
+                        <constraint firstAttribute="height" constant="150" id="fxG-my-8eb"/>
                         <constraint firstItem="xuO-Oq-LNl" firstAttribute="leading" secondItem="oQF-Rp-vBc" secondAttribute="leading" constant="12" id="hCm-Pm-LZ5"/>
                         <constraint firstAttribute="trailing" secondItem="xuO-Oq-LNl" secondAttribute="trailing" constant="12" id="jP1-oY-LqC"/>
                         <constraint firstItem="Xee-yS-8Bj" firstAttribute="top" secondItem="oQF-Rp-vBc" secondAttribute="top" constant="12" id="mzY-vr-nJd"/>
@@ -113,9 +113,8 @@
                         <constraint firstAttribute="trailing" secondItem="Xee-yS-8Bj" secondAttribute="trailing" constant="12" id="yaa-h1-7yb"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAP-MS-fsm">
-                    <rect key="frame" x="13" y="671" width="82" height="31"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAP-MS-fsm">
+                    <rect key="frame" x="20" y="510" width="82" height="31"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="启动服务"/>
                     <connections>
@@ -123,7 +122,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bac-Fm-lhK">
-                    <rect key="frame" x="186" y="671" width="96" height="31"/>
+                    <rect key="frame" x="189" y="510" width="96" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="启动客户端"/>
@@ -136,10 +135,12 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Wsu-E8-R41" secondAttribute="trailing" id="GTa-wq-z9F"/>
+                <constraint firstItem="JAP-MS-fsm" firstAttribute="top" secondItem="oQF-Rp-vBc" secondAttribute="bottom" constant="81" id="GkS-WP-h5L"/>
                 <constraint firstItem="oQF-Rp-vBc" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="QQI-fR-7A4"/>
                 <constraint firstItem="Wsu-E8-R41" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="25" id="UMA-Sv-eGO"/>
                 <constraint firstItem="Wsu-E8-R41" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="ZVO-Ek-5nm"/>
                 <constraint firstItem="oQF-Rp-vBc" firstAttribute="top" secondItem="WT8-md-Gyp" secondAttribute="bottom" constant="72" id="bCh-vZ-lcP"/>
+                <constraint firstItem="JAP-MS-fsm" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="nuB-PA-8LL"/>
                 <constraint firstItem="oQF-Rp-vBc" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="xe4-Ai-9zF"/>
             </constraints>
             <point key="canvasLocation" x="139" y="76"/>

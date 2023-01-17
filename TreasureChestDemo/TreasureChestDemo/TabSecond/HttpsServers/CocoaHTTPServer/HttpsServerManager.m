@@ -40,6 +40,20 @@ static HttpsServerManager *manager = nil;
     return self;
 }
 
+#pragma mark - < public >
+- (void)startServer {
+    [self configLocalHttpServer];
+}
+
+- (void)stopServer {
+    [self.localHttpServer stop];
+    _localHttpServer = nil;
+}
+
+- (NSString *)getServerUrl {
+    return [NSString stringWithFormat:@"https://%@:%@",self.ip,self.port];
+}
+
 #pragma mark - < 搭建本地服务器 并且启动 >
 - (void)configLocalHttpServer {
     _localHttpServer = [[HTTPServer alloc] init];
@@ -59,11 +73,11 @@ static HttpsServerManager *manager = nil;
         [_localHttpServer setDocumentRoot:webLocalPath];//设置服务器的根目录
         [_localHttpServer setConnectionClass:[UploadFileConnection class]];
         NSLog(@"搭建服务：webLocalPath:%@",webLocalPath);
-        [self startServer];
+        [self startLocalServer];
     }
 }
 
-- (void)startServer {
+- (void)startLocalServer {
     NSError *error;
     if([_localHttpServer start:&error]){
         NSString *ip = [NetworkTool getIPAddress:YES];

@@ -1,0 +1,7 @@
+
+GCDAsyncSocket.m -> 函数setupReadTimerWithTimeout() -> 5787行
+改之前：if (timeout >= 0.0)
+改之后：if (timeout >= 4.0)
+同类型函数：setupWriteTimerWithTimeout()
+（可以增加打印查看。）
+

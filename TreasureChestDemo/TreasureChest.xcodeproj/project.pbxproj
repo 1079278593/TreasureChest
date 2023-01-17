@@ -75,7 +75,6 @@
 		3AE852D82610C21C00AA656C /* TestSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE852D72610C21C00AA656C /* TestSubView.m */; };
 		3AEE43B4261420710095FA38 /* AutoCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE43B3261420710095FA38 /* AutoCoder.m */; };
 		3BEFF9DF0E12D318A440735F /* Pods_TreasureChestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140A460F1B11381DEED65D5B /* Pods_TreasureChestTests.framework */; };
-		5414EC1327CDB1C6005E42CD /* EasySocketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5414EC1127CDB1C6005E42CD /* EasySocketModel.m */; };
 		5414EC1727CDB345005E42CD /* SocketClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5414EC1627CDB345005E42CD /* SocketClient.m */; };
 		5414EC1A27CDBA05005E42CD /* SocketServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5414EC1927CDBA05005E42CD /* SocketServer.m */; };
 		5414EC2227CDC217005E42CD /* Controllers_tab2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5414EC2127CDC216005E42CD /* Controllers_tab2.plist */; };
@@ -151,7 +150,17 @@
 		54924F6F27B39B7100E12575 /* HttpsServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 54924F6E27B39B7100E12575 /* HttpsServerManager.m */; };
 		54924F7527B39BEA00E12575 /* NetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 54924F7327B39BEA00E12575 /* NetworkTool.m */; };
 		54924F7827B3A64B00E12575 /* OTAConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 54924F7727B3A64B00E12575 /* OTAConnection.m */; };
-		54924F8F27BDDCD800E12575 /* EasyGCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 54924F8E27BDDCD800E12575 /* EasyGCDAsyncSocket.m */; };
+		549D2A6F27F6F23C00AF4B0F /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D2A5F27F6F23C00AF4B0F /* SRWebSocket.m */; };
+		549D2A7027F6F23C00AF4B0F /* EasySocketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D2A6527F6F23C00AF4B0F /* EasySocketModel.m */; };
+		549D2A7127F6F23C00AF4B0F /* HttpRequestQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D2A6627F6F23C00AF4B0F /* HttpRequestQueue.m */; };
+		549D2A7227F6F23C00AF4B0F /* EasyGCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D2A6727F6F23C00AF4B0F /* EasyGCDAsyncSocket.m */; };
+		549D2A7327F6F23C00AF4B0F /* EasyGCDSoketReadme in Resources */ = {isa = PBXBuildFile; fileRef = 549D2A6827F6F23C00AF4B0F /* EasyGCDSoketReadme */; };
+		549D2A7427F6F23C00AF4B0F /* EasyUDPSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D2A6A27F6F23C00AF4B0F /* EasyUDPSocket.m */; };
+		549D2A7527F6F23C00AF4B0F /* EasyWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D2A6D27F6F23C00AF4B0F /* EasyWebSocket.m */; };
+		549D2A7927F6F3A500AF4B0F /* UDPSocketController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D2A7827F6F3A500AF4B0F /* UDPSocketController.m */; };
+		549D2A7C27F70E0100AF4B0F /* UDPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D2A7B27F70E0100AF4B0F /* UDPServer.m */; };
+		54F0176228E54750006E9683 /* SimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F0176128E54750006E9683 /* SimplePing.m */; };
+		54F0176628E5478F006E9683 /* PingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F0176528E5478F006E9683 /* PingController.m */; };
 		A90ECEE2259577EB005E3EF0 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = A90ECEE1259577EB005E3EF0 /* TestView.m */; };
 		A90ECEEE25998733005E3EF0 /* NSString+Bundle.m in Sources */ = {isa = PBXBuildFile; fileRef = A90ECEED25998733005E3EF0 /* NSString+Bundle.m */; };
 		A918EC102555517F00C5964D /* Controllers_tab1.plist in Resources */ = {isa = PBXBuildFile; fileRef = A918EC0F2555517F00C5964D /* Controllers_tab1.plist */; };
@@ -542,8 +551,6 @@
 		3AEE43B2261420710095FA38 /* AutoCoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoCoder.h; sourceTree = "<group>"; };
 		3AEE43B3261420710095FA38 /* AutoCoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoCoder.m; sourceTree = "<group>"; };
 		3AFE5E6525E1FF71007CD8B0 /* FileManagerEnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileManagerEnums.h; sourceTree = "<group>"; };
-		5414EC1127CDB1C6005E42CD /* EasySocketModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasySocketModel.m; sourceTree = "<group>"; };
-		5414EC1227CDB1C6005E42CD /* EasySocketModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasySocketModel.h; sourceTree = "<group>"; };
 		5414EC1527CDB345005E42CD /* SocketClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocketClient.h; sourceTree = "<group>"; };
 		5414EC1627CDB345005E42CD /* SocketClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocketClient.m; sourceTree = "<group>"; };
 		5414EC1827CDBA05005E42CD /* SocketServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocketServer.h; sourceTree = "<group>"; };
@@ -680,8 +687,27 @@
 		54924F7427B39BEA00E12575 /* NetworkTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkTool.h; sourceTree = "<group>"; };
 		54924F7627B3A64B00E12575 /* OTAConnection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTAConnection.h; sourceTree = "<group>"; };
 		54924F7727B3A64B00E12575 /* OTAConnection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTAConnection.m; sourceTree = "<group>"; };
-		54924F8D27BDDCD800E12575 /* EasyGCDAsyncSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasyGCDAsyncSocket.h; sourceTree = "<group>"; };
-		54924F8E27BDDCD800E12575 /* EasyGCDAsyncSocket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyGCDAsyncSocket.m; sourceTree = "<group>"; };
+		549D2A5F27F6F23C00AF4B0F /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
+		549D2A6027F6F23C00AF4B0F /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
+		549D2A6227F6F23C00AF4B0F /* HttpRequestQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpRequestQueue.h; sourceTree = "<group>"; };
+		549D2A6327F6F23C00AF4B0F /* EasySocketModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasySocketModel.h; sourceTree = "<group>"; };
+		549D2A6427F6F23C00AF4B0F /* EasyGCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyGCDAsyncSocket.h; sourceTree = "<group>"; };
+		549D2A6527F6F23C00AF4B0F /* EasySocketModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasySocketModel.m; sourceTree = "<group>"; };
+		549D2A6627F6F23C00AF4B0F /* HttpRequestQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpRequestQueue.m; sourceTree = "<group>"; };
+		549D2A6727F6F23C00AF4B0F /* EasyGCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyGCDAsyncSocket.m; sourceTree = "<group>"; };
+		549D2A6827F6F23C00AF4B0F /* EasyGCDSoketReadme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EasyGCDSoketReadme; sourceTree = "<group>"; };
+		549D2A6A27F6F23C00AF4B0F /* EasyUDPSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyUDPSocket.m; sourceTree = "<group>"; };
+		549D2A6B27F6F23C00AF4B0F /* EasyUDPSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyUDPSocket.h; sourceTree = "<group>"; };
+		549D2A6D27F6F23C00AF4B0F /* EasyWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyWebSocket.m; sourceTree = "<group>"; };
+		549D2A6E27F6F23C00AF4B0F /* EasyWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyWebSocket.h; sourceTree = "<group>"; };
+		549D2A7727F6F3A500AF4B0F /* UDPSocketController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UDPSocketController.h; sourceTree = "<group>"; };
+		549D2A7827F6F3A500AF4B0F /* UDPSocketController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UDPSocketController.m; sourceTree = "<group>"; };
+		549D2A7A27F70E0100AF4B0F /* UDPServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UDPServer.h; sourceTree = "<group>"; };
+		549D2A7B27F70E0100AF4B0F /* UDPServer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UDPServer.m; sourceTree = "<group>"; };
+		54F0176028E54750006E9683 /* SimplePing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplePing.h; sourceTree = "<group>"; };
+		54F0176128E54750006E9683 /* SimplePing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimplePing.m; sourceTree = "<group>"; };
+		54F0176428E5478F006E9683 /* PingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PingController.h; sourceTree = "<group>"; };
+		54F0176528E5478F006E9683 /* PingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PingController.m; sourceTree = "<group>"; };
 		A90ECEE0259577EB005E3EF0 /* TestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
 		A90ECEE1259577EB005E3EF0 /* TestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
 		A90ECEEC25998733005E3EF0 /* NSString+Bundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Bundle.h"; sourceTree = "<group>"; };
@@ -1194,6 +1220,7 @@
 				3A40234723A62ED100BDB4E3 /* AppDelegate.m */,
 				B2506D0A23AB84330034A472 /* PrefixHeader.pch */,
 				3AE550EA23A91A93001D989E /* TreasureChest-Bridging-Header.h */,
+				54F0175F28E54750006E9683 /* Ping */,
 				A918EC13255554FF00C5964D /* Controllers */,
 				5414EC3B27CF413A005E42CD /* TabSecond */,
 				B2506D0323AB63E40034A472 /* TabFirst */,
@@ -1384,7 +1411,6 @@
 		3AE550DA23A9189F001D989E /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				54924F8C27BDDC9600E12575 /* EasyGCDAsyncSocket */,
 				5470602926C26DA000C4ABDB /* CAMChart */,
 				3AEE43B1261420250095FA38 /* AutoCoder */,
 				3AE852C92610C09C00AA656C /* LottieLoader */,
@@ -1443,6 +1469,7 @@
 		3AE852C82610C06700AA656C /* ThirdModule */ = {
 			isa = PBXGroup;
 			children = (
+				549D2A5D27F6F23C00AF4B0F /* EasyGCDAsyncSocket */,
 				5414EC2827CF4117005E42CD /* artnet */,
 				B27B780423AC61600083E6AE /* AFNetworking */,
 				B2AA0F4123C5869F00BEBA27 /* FMDB */,
@@ -1533,6 +1560,8 @@
 		5414EC3B27CF413A005E42CD /* TabSecond */ = {
 			isa = PBXGroup;
 			children = (
+				54F0176328E5477A006E9683 /* PingController */,
+				549D2A7627F6F38A00AF4B0F /* UDPSocket */,
 				54924F0927B3931C00E12575 /* HttpsServers */,
 				5414EC1427CDB309005E42CD /* Socket */,
 				5414EC3C27CF4149005E42CD /* ArtNet */,
@@ -1802,15 +1831,85 @@
 			path = NetworkTool;
 			sourceTree = "<group>";
 		};
-		54924F8C27BDDC9600E12575 /* EasyGCDAsyncSocket */ = {
+		549D2A5D27F6F23C00AF4B0F /* EasyGCDAsyncSocket */ = {
 			isa = PBXGroup;
 			children = (
-				54924F8D27BDDCD800E12575 /* EasyGCDAsyncSocket.h */,
-				54924F8E27BDDCD800E12575 /* EasyGCDAsyncSocket.m */,
-				5414EC1227CDB1C6005E42CD /* EasySocketModel.h */,
-				5414EC1127CDB1C6005E42CD /* EasySocketModel.m */,
+				549D2A5E27F6F23C00AF4B0F /* WebSocket */,
+				549D2A6127F6F23C00AF4B0F /* EasyTCPSocket */,
+				549D2A6927F6F23C00AF4B0F /* EasyUDPSokcet */,
+				549D2A6C27F6F23C00AF4B0F /* EasyWebSocket */,
 			);
 			path = EasyGCDAsyncSocket;
+			sourceTree = "<group>";
+		};
+		549D2A5E27F6F23C00AF4B0F /* WebSocket */ = {
+			isa = PBXGroup;
+			children = (
+				549D2A5F27F6F23C00AF4B0F /* SRWebSocket.m */,
+				549D2A6027F6F23C00AF4B0F /* SRWebSocket.h */,
+			);
+			path = WebSocket;
+			sourceTree = "<group>";
+		};
+		549D2A6127F6F23C00AF4B0F /* EasyTCPSocket */ = {
+			isa = PBXGroup;
+			children = (
+				549D2A6827F6F23C00AF4B0F /* EasyGCDSoketReadme */,
+				549D2A6427F6F23C00AF4B0F /* EasyGCDAsyncSocket.h */,
+				549D2A6727F6F23C00AF4B0F /* EasyGCDAsyncSocket.m */,
+				549D2A6327F6F23C00AF4B0F /* EasySocketModel.h */,
+				549D2A6527F6F23C00AF4B0F /* EasySocketModel.m */,
+				549D2A6227F6F23C00AF4B0F /* HttpRequestQueue.h */,
+				549D2A6627F6F23C00AF4B0F /* HttpRequestQueue.m */,
+			);
+			path = EasyTCPSocket;
+			sourceTree = "<group>";
+		};
+		549D2A6927F6F23C00AF4B0F /* EasyUDPSokcet */ = {
+			isa = PBXGroup;
+			children = (
+				549D2A6B27F6F23C00AF4B0F /* EasyUDPSocket.h */,
+				549D2A6A27F6F23C00AF4B0F /* EasyUDPSocket.m */,
+				549D2A7A27F70E0100AF4B0F /* UDPServer.h */,
+				549D2A7B27F70E0100AF4B0F /* UDPServer.m */,
+			);
+			path = EasyUDPSokcet;
+			sourceTree = "<group>";
+		};
+		549D2A6C27F6F23C00AF4B0F /* EasyWebSocket */ = {
+			isa = PBXGroup;
+			children = (
+				549D2A6D27F6F23C00AF4B0F /* EasyWebSocket.m */,
+				549D2A6E27F6F23C00AF4B0F /* EasyWebSocket.h */,
+			);
+			path = EasyWebSocket;
+			sourceTree = "<group>";
+		};
+		549D2A7627F6F38A00AF4B0F /* UDPSocket */ = {
+			isa = PBXGroup;
+			children = (
+				549D2A7727F6F3A500AF4B0F /* UDPSocketController.h */,
+				549D2A7827F6F3A500AF4B0F /* UDPSocketController.m */,
+			);
+			path = UDPSocket;
+			sourceTree = "<group>";
+		};
+		54F0175F28E54750006E9683 /* Ping */ = {
+			isa = PBXGroup;
+			children = (
+				54F0176028E54750006E9683 /* SimplePing.h */,
+				54F0176128E54750006E9683 /* SimplePing.m */,
+			);
+			path = Ping;
+			sourceTree = "<group>";
+		};
+		54F0176328E5477A006E9683 /* PingController */ = {
+			isa = PBXGroup;
+			children = (
+				54F0176428E5478F006E9683 /* PingController.h */,
+				54F0176528E5478F006E9683 /* PingController.m */,
+			);
+			path = PingController;
 			sourceTree = "<group>";
 		};
 		A918EC13255554FF00C5964D /* Controllers */ = {
@@ -3025,6 +3124,7 @@
 				3AD14A2D24615273004D54B8 /* words_medical.txt in Resources */,
 				B215CC482431F5290017BFD9 /* hud_info.png in Resources */,
 				A98EFD8725EF6FE900948E06 /* image_6.jpg in Resources */,
+				549D2A7327F6F23C00AF4B0F /* EasyGCDSoketReadme in Resources */,
 				A94EF80E25A4100000CB769D /* pingpiao.mp3 in Resources */,
 				B2506D2023ABA1480034A472 /* select_top_icon@2x.png in Resources */,
 				A94EF7F225A40FFF00CB769D /* 6号玩家发言.m4a in Resources */,
@@ -3259,6 +3359,7 @@
 				A983CE2F24EE5CC200213D35 /* ShaderUtilities.c in Sources */,
 				B26FBD912441CDB8003DB3BE /* LOTKeyframe.m in Sources */,
 				B2830EFC23B5E7DB0049AE99 /* FormsViewCtl.m in Sources */,
+				549D2A7927F6F3A500AF4B0F /* UDPSocketController.m in Sources */,
 				3A40235C23A62ED100BDB4E3 /* main.m in Sources */,
 				B26FBD702441CDB8003DB3BE /* NSValue+Compat.m in Sources */,
 				B26FBD952441CDB8003DB3BE /* LOTMaskContainer.m in Sources */,
@@ -3278,6 +3379,7 @@
 				5414EC1A27CDBA05005E42CD /* SocketServer.m in Sources */,
 				54924F5327B3966000E12575 /* WebSocket.m in Sources */,
 				3A8F79E02557ECEB00069914 /* UIView+HollowOut.m in Sources */,
+				54F0176628E5478F006E9683 /* PingController.m in Sources */,
 				54924F5A27B3966000E12575 /* DDRange.m in Sources */,
 				B293B5A5242C4FE6009F5887 /* CheckAuthorization.m in Sources */,
 				A98671DD25563A9F003381A7 /* UIView+RoundProgress.m in Sources */,
@@ -3287,7 +3389,6 @@
 				B2DD689423B08EF100106F4F /* UIButton+Extension.m in Sources */,
 				5470605426C26DA000C4ABDB /* CAMChartProfileManager.m in Sources */,
 				54924F6427B3966000E12575 /* DAVResponse.m in Sources */,
-				54924F8F27BDDCD800E12575 /* EasyGCDAsyncSocket.m in Sources */,
 				5470604926C26DA000C4ABDB /* CAMCoordinateAxisKit.m in Sources */,
 				54924F4D27B3966000E12575 /* HTTPDynamicFileResponse.m in Sources */,
 				3A812A1926120FA20018E3AE /* EffectResourceDownloador.m in Sources */,
@@ -3302,6 +3403,7 @@
 				A951F18525CBFE2E00E84BEE /* TextureLoader.m in Sources */,
 				A983CE3124EE5CC200213D35 /* matrix.c in Sources */,
 				3AE550E123A9189F001D989E /* FormsView.m in Sources */,
+				549D2A6F27F6F23C00AF4B0F /* SRWebSocket.m in Sources */,
 				A918EC392555671E00C5964D /* TestController.m in Sources */,
 				54924F5627B3966000E12575 /* MultipartMessageHeader.m in Sources */,
 				A9FFC33224C7DEC900881404 /* BrushDrawView.m in Sources */,
@@ -3313,6 +3415,7 @@
 				546FC46C2718001200601E0C /* Testing_ControlView.m in Sources */,
 				A9FFC32F24C7DE6800881404 /* BrushDrawController.m in Sources */,
 				B27B784B23ADB2080083E6AE /* UIColor+Hex.m in Sources */,
+				549D2A7127F6F23C00AF4B0F /* HttpRequestQueue.m in Sources */,
 				B24A85FB24039EB000D1EECA /* VideoPlayerBaseView.m in Sources */,
 				5414EC3627CF4117005E42CD /* transmit.c in Sources */,
 				54924F4F27B3966000E12575 /* HTTPAsyncFileResponse.m in Sources */,
@@ -3347,6 +3450,7 @@
 				3AD14A3824616A44004D54B8 /* LexiconFileModel.m in Sources */,
 				A949C2A0253948B100CF09A5 /* fileUtil.m in Sources */,
 				3A2C5EC02622F4EC0090B7E8 /* SecondController.m in Sources */,
+				549D2A7427F6F23C00AF4B0F /* EasyUDPSocket.m in Sources */,
 				3A812A0E261206130018E3AE /* EffectFaceMaskModel.m in Sources */,
 				B2C459312440524F00117BD7 /* QuadCurveGeometry.m in Sources */,
 				B26FBD8A2441CDB8003DB3BE /* LOTAnimationView.m in Sources */,
@@ -3357,6 +3461,7 @@
 				B2BC387323BD976200D5B9C6 /* NSDecimalNumber+Extension.m in Sources */,
 				B26FBD752441CDB8003DB3BE /* LOTLayerGroup.m in Sources */,
 				B26FBD5C2441CDB8003DB3BE /* LOTPathInterpolator.m in Sources */,
+				549D2A7C27F70E0100AF4B0F /* UDPServer.m in Sources */,
 				54924F6F27B39B7100E12575 /* HttpsServerManager.m in Sources */,
 				B26FBD592441CDB8003DB3BE /* LOTRenderNode.m in Sources */,
 				B26FBD902441CDB8003DB3BE /* LOTAnimatedSwitch.m in Sources */,
@@ -3365,6 +3470,7 @@
 				B27B780723AC61A50083E6AE /* XMNetworking.m in Sources */,
 				54924F5B27B3966000E12575 /* HTTPServer.m in Sources */,
 				B26FBD5A2441CDB8003DB3BE /* LOTTrimPathNode.m in Sources */,
+				549D2A7027F6F23C00AF4B0F /* EasySocketModel.m in Sources */,
 				3A2C5EBB2622F43E0090B7E8 /* BaseTabController.m in Sources */,
 				3AE852D82610C21C00AA656C /* TestSubView.m in Sources */,
 				B26FBD632441CDB8003DB3BE /* LOTAnimatorNode.m in Sources */,
@@ -3384,7 +3490,6 @@
 				B2830F0223B5F8890049AE99 /* UILabel+TextSize.m in Sources */,
 				3A40235D23A62ED100BDB4E3 /* AppDelegate.m in Sources */,
 				A918EC162555551B00C5964D /* ControllersModel.m in Sources */,
-				5414EC1327CDB1C6005E42CD /* EasySocketModel.m in Sources */,
 				B215CC3E2431BEC80017BFD9 /* MBProgressHUD.m in Sources */,
 				B26FBD812441CDB8003DB3BE /* LOTShapeStroke.m in Sources */,
 				5465B43527912BE5005228C6 /* CoordinatesView.m in Sources */,
@@ -3465,6 +3570,7 @@
 				B28491502436EC0B004ECE52 /* UILabel+Insets.m in Sources */,
 				B2506CFC23AB5B4D0034A472 /* CollapsibleView.m in Sources */,
 				54924F4E27B3966000E12575 /* HTTPFileResponse.m in Sources */,
+				549D2A7527F6F23C00AF4B0F /* EasyWebSocket.m in Sources */,
 				B26FBD5B2441CDB8003DB3BE /* LOTColorInterpolator.m in Sources */,
 				B26FBD732441CDB8003DB3BE /* LOTLayer.m in Sources */,
 				A99F702A2535AAD200A136E1 /* CameraPreview.m in Sources */,
@@ -3490,6 +3596,7 @@
 				B24A85FE24039F1300D1EECA /* VideoPlayerSampleView.m in Sources */,
 				B2B6B1A82408E71C00187850 /* RegularOperate.m in Sources */,
 				3A2E0A36254ED94F00471A41 /* AutoSizeTableController.m in Sources */,
+				54F0176228E54750006E9683 /* SimplePing.m in Sources */,
 				B26FBD7B2441CDB8003DB3BE /* LOTShapeRectangle.m in Sources */,
 				A991633025306570005454BA /* DetectFaceController.m in Sources */,
 				54924F5527B3966000E12575 /* MultipartFormDataParser.m in Sources */,
@@ -3499,6 +3606,7 @@
 				3ACF5DBA247E0EED008ACB52 /* NSObject+Model.m in Sources */,
 				B2169E0524404863002CFE3E /* VideoRecorderCtl.m in Sources */,
 				5414EC3A27CF4117005E42CD /* artnet.c in Sources */,
+				549D2A7227F6F23C00AF4B0F /* EasyGCDAsyncSocket.m in Sources */,
 				B26FBD8E2441CDB8003DB3BE /* LOTAnimatedControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

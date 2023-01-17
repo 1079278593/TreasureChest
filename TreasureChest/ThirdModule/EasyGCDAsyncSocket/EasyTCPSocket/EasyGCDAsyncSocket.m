@@ -10,12 +10,13 @@
 #import <GCDAsyncSocket.h>
 #import "EasySocketModel.h"
 
-#define KSendTag 1000
-#define KSendPollingTag 1001    //用于轮询获取设备状态(tag没什么用，read和write的tag无法对应)
+#define KSendGetTag 1000
+#define KSendPostTag 1000
+#define KReadBaseTag 1001
 
-#define KConnectTimeout 10
-#define KReadTimeout 0.5
-#define KWriteTimeout 0.7     //如果太短，可能会写失败
+#define KConnectTimeout -1
+#define KReadTimeout 0.6        //这个对延迟影响很重要，太长就明显卡
+#define KWriteTimeout 0.6       //如果太短，可能会写失败
 
 NSString *SocketRequestTypeStringMap[] = {
     [SocketRequestTypeGet] = @"GET",
@@ -29,6 +30,7 @@ NSString *SocketRequestTypeStringMap[] = {
 @property(nonatomic, assign)NSUInteger port;
 @property(nonatomic, strong)NSString *userAgent;
 
+@property(nonatomic, assign)NSUInteger readTag;             //!< 每当切换host时，readTag++
 @property(nonatomic, strong)EasySocketModel *socketModel;
 
 @end
@@ -63,40 +65,36 @@ static EasyGCDAsyncSocket *manager = nil;
 //        NSDictionary *cfg = @{@"Int":@(0),@"cct":@(7000),@"mg":@(0)};
 //        NSDictionary *dict = @{@"mode":@"CCT",@"cfg":cfg};
 //        [self socketRequestWithDict:dict path:@"/light/mode"];
+        self.readTag = KReadBaseTag;
     }
     return self;
 }
 
 #pragma mark - < public >
 - (void)connectWithHost:(NSString *)host port:(NSUInteger)port {
+    BOOL isHostChanged = ![self.host isEqualToString:host];
     self.host = host;
     self.port = port;
     
+    if (isHostChanged) {
+        self.readTag++;//
+    }
+
     if (!self.socket.isConnected){
+        NSLog(@"EasySocket：连接中------%@---%lu",host,port);
         NSError *error;
         [self.socket connectToHost:host onPort:port withTimeout:KConnectTimeout error:&error];
         if (error) NSLog(@"EasySocket：%@",error);
     }
 }
 
-- (void)reconnect {
-    NSError *error;
-    [self.socket connectToHost:self.host onPort:self.port withTimeout:KConnectTimeout error:&error];
-}
-
-- (void)disconnect {
-    [self.socket disconnect];
-    self.socket = nil;
-}
-
 - (void)requestWithType:(SocketRequestType)type dict:(NSDictionary *)dict path:(NSString *)path {
-    if (![self.socket isConnected]) {
-        [self reconnect];
-    }
-    NSString *body = [dict mj_JSONString];
+    NSLog(@"EasySocket：write request type:%@",((type == SocketRequestTypeGet) ? @"get" : @"post") );
+    long sendTag = type == SocketRequestTypeGet ? KSendGetTag : KSendPostTag;
     
+    NSString *body = [dict mj_JSONString];
     NSData *data = [self socketContentsWithType:type path:path body:body];
-    [self.socket writeData:data withTimeout:KWriteTimeout tag:KSendTag];
+    [self.socket writeData:data withTimeout:KWriteTimeout tag:sendTag];
 }
 
 //wifi请求返回，有效的数据中：包含的字段
@@ -111,6 +109,20 @@ static EasyGCDAsyncSocket *manager = nil;
     return isValid;
 }
 
+- (void)cleanup {
+    [self.socket disconnect];
+    self.socket = nil;
+}
+
+- (void)disconnect {
+    [self.socket disconnect];
+}
+
+//- (void)reconnect {
+//    [self.socket disconnect];
+//    [self.socket connectToHost:self.host onPort:self.port withTimeout:KConnectTimeout error:nil];
+//}
+
 #pragma mark - < delegate >
 //已经连接到服务器
 - (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(nonnull NSString *)host port:(uint16_t)port{
@@ -120,36 +132,74 @@ static EasyGCDAsyncSocket *manager = nil;
     //连接成功或者收到消息，必须开始read，否则将无法收到消息,
     //不read的话，缓存区将会被关闭
     // -1 表示无限时长 ,永久不失效
-    [self.socket readDataWithTimeout:KReadTimeout tag:KSendTag];
+    [self.socket readDataWithTimeout:KReadTimeout tag:self.readTag];
+    
+    [self processConnect:YES];
 }
 
 // 连接断开
 - (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err{
-    NSLog(@"EasySocket：断开 socket连接 原因:%@",err);
+    NSLog(@"EasySocket：断开 code:%lu 原因:%@",err.code,err);
+    NSString *log;
     if (err.code == 32) {
-        //管道破裂，重新创建
-        [self disconnect];
-        [self reconnect];
+        log = @"管道破裂，重新创建";
     }
+    if (err.code == 53) {
+        log = @"Software caused connection abort";
+        //NSPOSIXErrorDomain Code=53 "Software caused connection abort" UserInfo={NSLocalizedDescription=Software caused connection abort,
+    }
+    if (err.code == 7) {
+        log = @"Socket closed by remote peer";
+    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [EasyProgress showFail:log];
+    });
+   
+    
+    [self disconnect];
+    
+    [self processConnect:NO];
 }
 
 //已经接收服务器返回来的数据
 - (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag {
+//    if (tag == KSendPostTag) {
+//        NSLog(@"EasySocket：post的 丢弃");
+//        return;
+//    }
+    
+    if (self.readTag != tag) {
+        NSLog(@"EasySocket：tag不一致，丢弃");
+        return;
+    }
+    
     [self.socketModel decodeWithResponseData:data];
+//    NSLog(@"EasySocket：接收到 数据: ");
 //    NSLog(@"EasySocket：接收到: %ld 长度的数据,data = %@",data.length,self.socketModel.response);
 
     NSString *result = self.socketModel.responseContent;
     [self postSocketMessage:result];
     
-    [self.socket readDataWithTimeout:KReadTimeout tag:KSendTag];
+    [self.socket readDataWithTimeout:KReadTimeout tag:self.readTag];
 }
 
 //消息发送成功 代理函数 向服务器 发送消息
 - (void)socket:(GCDAsyncSocket *)sock didWriteDataWithTag:(long)tag{
-    NSLog(@"EasySocket：%ld 发送数据成功",tag);
+    NSLog(@"EasySocket：write 发送数据成功");
+    [self.socket readDataWithTimeout:KReadTimeout tag:self.readTag];//必须read,否则阻塞。但是读取的值不处理
 }
 
 #pragma mark - < private >
+- (void)processConnect:(BOOL)isConnect {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        //两种方式：代理或者通知
+        if ([self.delegate respondsToSelector:@selector(socketConnect:)]) {
+            [self.delegate socketConnect:isConnect];
+        }
+        [[NSNotificationCenter defaultCenter] postNotificationName:KNotificationSocketConnect object:@(isConnect)];
+    });
+}
+
 - (void)postSocketMessage:(NSString *)message {
     //两种方式：代理或者通知
     if ([self.delegate respondsToSelector:@selector(socketReceivedData:)]) {
@@ -184,6 +234,7 @@ static EasyGCDAsyncSocket *manager = nil;
                   @"Content-Length: %lu\r\n"
                   @"Accept-Encoding: gzip, deflate\r\n"
                   @"Connection: keep-alive\r\n"
+                  @"Cookie: 12432432\n"
                   @"\r\n"
                   @"%@\r\n"
                   @"\r\n",

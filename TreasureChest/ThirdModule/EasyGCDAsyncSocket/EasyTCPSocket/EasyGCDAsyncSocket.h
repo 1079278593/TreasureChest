@@ -10,7 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-#define KNotificationSocketMessage @"socket message"        //socket收到的数据，或者用代理方式
+#define KNotificationSocketMessage @"socket message"            //socket收到的数据，或者用代理方式
+#define KNotificationSocketConnect @"socket connect status"     //socket 断开或者连接状态：YES~连接，NO~断开
 
 typedef enum : NSUInteger {
     SocketRequestTypeGet = 0,           //!< get方式
@@ -22,6 +23,7 @@ extern NSString * _Nonnull SocketRequestTypeStringMap[];
 @protocol EasySocketDelegate <NSObject>
 
 - (void)socketReceivedData:(NSString *)data;
+- (void)socketConnect:(BOOL)isConnect;
 
 @end
 
@@ -32,11 +34,13 @@ extern NSString * _Nonnull SocketRequestTypeStringMap[];
 
 + (instancetype)shareInstance;
 - (void)connectWithHost:(NSString *)host port:(NSUInteger)port;
-- (void)reconnect;
-- (void)disconnect;
 - (void)requestWithType:(SocketRequestType)type dict:(NSDictionary *)dict path:(NSString *)path;
 - (BOOL)isValidResponse:(NSString *)response;   ///wifi请求返回，有效的数据中：包含的字段
-///
+
+- (void)cleanup;
+- (void)disconnect;
+//- (void)reconnect;
+
 @end
 
 NS_ASSUME_NONNULL_END
