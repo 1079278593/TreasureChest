@@ -57,6 +57,7 @@
          * [_udpSocket beginReceiving:&error]此方法是持续接收,像本Demo是用来聊天,自然是要持续接收信息,故使用此方法进行接收数据
          */
         [_udpSocket beginReceiving:&error];
+        NSLog(@"监听成功");
     }
 }
 
@@ -64,6 +65,16 @@
     [_udpSocket sendData:data toHost:self.host port:self.port withTimeout:-1 tag:0];
 }
 
+- (void)switchHost:(NSString *)host sendData:(NSData *)data {
+    NSError * error = nil;
+//    if (![_udpSocket connectToHost:host onPort:self.port error:&error]) {
+//        NSLog(@"Error connecting: %@", error);
+////        return;
+//    }
+    
+
+    [_udpSocket sendData:data toHost:host port:self.port withTimeout:-1 tag:0];
+}
 #pragma mark - < delegate >
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didConnectToAddress:(NSData *)address {
     NSLog(@"didConnectToAddress");
@@ -88,7 +99,7 @@
 }
 
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext {
-    NSString *log = [NSString stringWithFormat:@"接收到%@的消息:%@",address,data];
+    NSString *log = [NSString stringWithFormat:@"接收到%@的消息:%@",[GCDAsyncUdpSocket hostFromAddress:address],data];
     NSLog(@"%@",log);
     [self showLog:log];
 }

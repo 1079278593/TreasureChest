@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34CB867BBBCACB4318E9E046 /* Pods_TreasureChestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0248CC9B91AF54DAC7C299FF /* Pods_TreasureChestTests.framework */; };
 		3A1174C9256E5F5C00D6F382 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1174C8256E5F5C00D6F382 /* BaseNavigationController.m */; };
 		3A2C5EBB2622F43E0090B7E8 /* BaseTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C5EBA2622F43E0090B7E8 /* BaseTabController.m */; };
 		3A2C5EC02622F4EC0090B7E8 /* SecondController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C5EBF2622F4EC0090B7E8 /* SecondController.m */; };
@@ -74,7 +75,6 @@
 		3AE550E223A9189F001D989E /* ResidentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE550D923A9189F001D989E /* ResidentScrollView.m */; };
 		3AE852D82610C21C00AA656C /* TestSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE852D72610C21C00AA656C /* TestSubView.m */; };
 		3AEE43B4261420710095FA38 /* AutoCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE43B3261420710095FA38 /* AutoCoder.m */; };
-		3BEFF9DF0E12D318A440735F /* Pods_TreasureChestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140A460F1B11381DEED65D5B /* Pods_TreasureChestTests.framework */; };
 		5414EC1727CDB345005E42CD /* SocketClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5414EC1627CDB345005E42CD /* SocketClient.m */; };
 		5414EC1A27CDBA05005E42CD /* SocketServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5414EC1927CDBA05005E42CD /* SocketServer.m */; };
 		5414EC2227CDC217005E42CD /* Controllers_tab2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5414EC2127CDC216005E42CD /* Controllers_tab2.plist */; };
@@ -120,6 +120,9 @@
 		5470605526C26DA000C4ABDB /* CAMCircleProgressChartProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5470604826C26DA000C4ABDB /* CAMCircleProgressChartProfile.m */; };
 		5470605826C26E9900C4ABDB /* BrightnessHistogram.m in Sources */ = {isa = PBXBuildFile; fileRef = 5470605726C26E9900C4ABDB /* BrightnessHistogram.m */; };
 		54736E492786DD5700C1DCFF /* hsiWheelColorSpec.png in Resources */ = {isa = PBXBuildFile; fileRef = 54736E482786DD5700C1DCFF /* hsiWheelColorSpec.png */; };
+		5480AB2829934CED00100E3B /* openai.py in Resources */ = {isa = PBXBuildFile; fileRef = 5480AB2729934CED00100E3B /* openai.py */; };
+		5480AB2B29934D4A00100E3B /* OpenaiInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 5480AB2A29934D4A00100E3B /* OpenaiInterface.m */; };
+		5480AB322993541B00100E3B /* Python.framework in Resources */ = {isa = PBXBuildFile; fileRef = 5480AB312993541B00100E3B /* Python.framework */; };
 		5482FA73278EB3DC0003032D /* CIEColorSpaceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5482FA72278EB3DC0003032D /* CIEColorSpaceModel.m */; };
 		548FCF9026841C2D0047F823 /* WhiteBalanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 548FCF8F26841C2D0047F823 /* WhiteBalanceController.m */; };
 		54924F0C27B3959F00E12575 /* HttpWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54924F0B27B3959F00E12575 /* HttpWebController.m */; };
@@ -447,8 +450,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0248CC9B91AF54DAC7C299FF /* Pods_TreasureChestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TreasureChestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		060FD3C655ABBD95AB81CCF8 /* Pods-TreasureChestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreasureChestTests.release.xcconfig"; path = "Target Support Files/Pods-TreasureChestTests/Pods-TreasureChestTests.release.xcconfig"; sourceTree = "<group>"; };
-		140A460F1B11381DEED65D5B /* Pods_TreasureChestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TreasureChestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A0365CAA1A7ACEC130D7959 /* Pods-abstract_pod-TreasureChest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-abstract_pod-TreasureChest.debug.xcconfig"; path = "Target Support Files/Pods-abstract_pod-TreasureChest/Pods-abstract_pod-TreasureChest.debug.xcconfig"; sourceTree = "<group>"; };
 		3A1174C7256E5F5B00D6F382 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		3A1174C8256E5F5C00D6F382 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
@@ -628,6 +631,11 @@
 		5470605626C26E9900C4ABDB /* BrightnessHistogram.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrightnessHistogram.h; sourceTree = "<group>"; };
 		5470605726C26E9900C4ABDB /* BrightnessHistogram.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrightnessHistogram.m; sourceTree = "<group>"; };
 		54736E482786DD5700C1DCFF /* hsiWheelColorSpec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hsiWheelColorSpec.png; sourceTree = "<group>"; };
+		5480AB2429934C7800100E3B /* Python3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python3.framework; path = Library/Frameworks/Python3.framework; sourceTree = DEVELOPER_DIR; };
+		5480AB2729934CED00100E3B /* openai.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = openai.py; sourceTree = "<group>"; };
+		5480AB2929934D4A00100E3B /* OpenaiInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenaiInterface.h; sourceTree = "<group>"; };
+		5480AB2A29934D4A00100E3B /* OpenaiInterface.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenaiInterface.m; sourceTree = "<group>"; };
+		5480AB312993541B00100E3B /* Python.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Python.framework; sourceTree = "<group>"; };
 		5482FA71278EB3DC0003032D /* CIEColorSpaceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CIEColorSpaceModel.h; sourceTree = "<group>"; };
 		5482FA72278EB3DC0003032D /* CIEColorSpaceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CIEColorSpaceModel.m; sourceTree = "<group>"; };
 		548FCF8E26841C2D0047F823 /* WhiteBalanceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WhiteBalanceController.h; sourceTree = "<group>"; };
@@ -1182,7 +1190,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BEFF9DF0E12D318A440735F /* Pods_TreasureChestTests.framework in Frameworks */,
+				34CB867BBBCACB4318E9E046 /* Pods_TreasureChestTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1192,8 +1200,9 @@
 		0AD0C4D640D67BE6A57334DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				140A460F1B11381DEED65D5B /* Pods_TreasureChestTests.framework */,
+				5480AB2429934C7800100E3B /* Python3.framework */,
 				D467FA7759BEC599ED70F55C /* Pods_abstract_pod_TreasureChest.framework */,
+				0248CC9B91AF54DAC7C299FF /* Pods_TreasureChestTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1220,7 +1229,7 @@
 				3A40234723A62ED100BDB4E3 /* AppDelegate.m */,
 				B2506D0A23AB84330034A472 /* PrefixHeader.pch */,
 				3AE550EA23A91A93001D989E /* TreasureChest-Bridging-Header.h */,
-				54F0175F28E54750006E9683 /* Ping */,
+				5480AB2629934C8F00100E3B /* 待归类 */,
 				A918EC13255554FF00C5964D /* Controllers */,
 				5414EC3B27CF413A005E42CD /* TabSecond */,
 				B2506D0323AB63E40034A472 /* TabFirst */,
@@ -1692,6 +1701,17 @@
 				5470604826C26DA000C4ABDB /* CAMCircleProgressChartProfile.m */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		5480AB2629934C8F00100E3B /* 待归类 */ = {
+			isa = PBXGroup;
+			children = (
+				54F0175F28E54750006E9683 /* Ping */,
+				5480AB2729934CED00100E3B /* openai.py */,
+				5480AB2929934D4A00100E3B /* OpenaiInterface.h */,
+				5480AB2A29934D4A00100E3B /* OpenaiInterface.m */,
+			);
+			path = "待归类";
 			sourceTree = "<group>";
 		};
 		548FCF8D26841C080047F823 /* WhiteBalanceController */ = {
@@ -2912,6 +2932,7 @@
 		B2B835E42397D21E00A562DB = {
 			isa = PBXGroup;
 			children = (
+				5480AB312993541B00100E3B /* Python.framework */,
 				3A99DE1623ABCB83002DDF23 /* TreasureChest.podspec */,
 				3A40233E23A62ED100BDB4E3 /* TreasureChestDemo */,
 				3AE550CF23A9189F001D989E /* TreasureChest */,
@@ -3106,6 +3127,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5480AB322993541B00100E3B /* Python.framework in Resources */,
 				A94EF80025A40FFF00CB769D /* gamePrepare_old.mp3 in Resources */,
 				546FC4662718001200601E0C /* TestingDatas.plist in Resources */,
 				A94EF80225A4100000CB769D /* 6号玩家开始比划.m4a in Resources */,
@@ -3218,6 +3240,7 @@
 				5465B3FA278EDC7B005228C6 /* CIEColorSpace.plist in Resources */,
 				B215CC492431F5290017BFD9 /* hud_error.png in Resources */,
 				5465B40E278FF592005228C6 /* stellar_xy_cct_curve.json in Resources */,
+				5480AB2829934CED00100E3B /* openai.py in Resources */,
 				B215CC462431F5290017BFD9 /* hud_success.png in Resources */,
 				5414EC2227CDC217005E42CD /* Controllers_tab2.plist in Resources */,
 				A94EF7F825A40FFF00CB769D /* 1号玩家开始比划.m4a in Resources */,
@@ -3361,6 +3384,7 @@
 				B2830EFC23B5E7DB0049AE99 /* FormsViewCtl.m in Sources */,
 				549D2A7927F6F3A500AF4B0F /* UDPSocketController.m in Sources */,
 				3A40235C23A62ED100BDB4E3 /* main.m in Sources */,
+				5480AB2B29934D4A00100E3B /* OpenaiInterface.m in Sources */,
 				B26FBD702441CDB8003DB3BE /* NSValue+Compat.m in Sources */,
 				B26FBD952441CDB8003DB3BE /* LOTMaskContainer.m in Sources */,
 				5482FA73278EB3DC0003032D /* CIEColorSpaceModel.m in Sources */,
@@ -3774,7 +3798,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 68WRCFG276;
+				DEVELOPMENT_TEAM = 2P64WGQM23;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TreasureChestDemo/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
@@ -3822,7 +3846,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 68WRCFG276;
+				DEVELOPMENT_TEAM = 2P64WGQM23;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TreasureChestDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = Resources/Info.plist;

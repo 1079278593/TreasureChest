@@ -24,7 +24,7 @@ abstract_target 'abstract_pod' do
     pod 'ReactiveObjC', '3.1.0'
     pod 'MSWeakTimer'
     pod 'MJRefresh', '3.2.0'
-    pod 'SDAutoLayout', '~> 2.1.3'
+#    pod 'SDAutoLayout', '~> 2.1.3'
     pod 'OCBaseLibrary', :path => './Frameworks/OCBaseLibrary', :inhibit_warnings => false
 #    pod 'OAStackView'
 
