@@ -8,6 +8,12 @@
 
 import UIKit
 
+public var KRandomColor: UIColor {
+    get {
+        UIColor(red: CGFloat(arc4random() % 256)/255.0, green: CGFloat(arc4random() % 256)/255.0, blue: CGFloat(arc4random() % 256)/255.0, alpha: 0.4)
+    }
+}
+
 public extension UIColor {
     static let designKit = DesignKitPalette.self
 

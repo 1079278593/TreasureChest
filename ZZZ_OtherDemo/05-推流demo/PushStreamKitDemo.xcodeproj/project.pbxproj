@@ -47,7 +47,6 @@
 		1B63117725D13D2E00664046 /* Capture.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B63117625D13D2E00664046 /* Capture.m */; };
 		1B63117C25D14BCF00664046 /* CaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B63117B25D14BCF00664046 /* CaptureViewController.m */; };
 		1B96717425D21B250081F365 /* CapturePreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B96717325D21B250081F365 /* CapturePreviewView.m */; };
-		1BE95AAE25D2308B001AB9D8 /* H264HwEncoderImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE95AAD25D2308B001AB9D8 /* H264HwEncoderImpl.m */; };
 		1BE95AB425D23D4C001AB9D8 /* VideoHWEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE95AB325D23D4C001AB9D8 /* VideoHWEncoder.m */; };
 		1BE95ABB25D2836A001AB9D8 /* AudioHWEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE95ABA25D2836A001AB9D8 /* AudioHWEncoder.m */; };
 /* End PBXBuildFile section */
@@ -257,8 +256,6 @@
 		1B63117B25D14BCF00664046 /* CaptureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaptureViewController.m; sourceTree = "<group>"; };
 		1B96717225D21B250081F365 /* CapturePreviewView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CapturePreviewView.h; sourceTree = "<group>"; };
 		1B96717325D21B250081F365 /* CapturePreviewView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CapturePreviewView.m; sourceTree = "<group>"; };
-		1BE95AAC25D2308B001AB9D8 /* H264HwEncoderImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = H264HwEncoderImpl.h; sourceTree = "<group>"; };
-		1BE95AAD25D2308B001AB9D8 /* H264HwEncoderImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = H264HwEncoderImpl.m; sourceTree = "<group>"; };
 		1BE95AB225D23D4C001AB9D8 /* VideoHWEncoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoHWEncoder.h; sourceTree = "<group>"; };
 		1BE95AB325D23D4C001AB9D8 /* VideoHWEncoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoHWEncoder.m; sourceTree = "<group>"; };
 		1BE95AB925D2836A001AB9D8 /* AudioHWEncoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioHWEncoder.h; sourceTree = "<group>"; };
@@ -648,8 +645,6 @@
 		1B8879EB25E509DB00B21F48 /* encode */ = {
 			isa = PBXGroup;
 			children = (
-				1BE95AAC25D2308B001AB9D8 /* H264HwEncoderImpl.h */,
-				1BE95AAD25D2308B001AB9D8 /* H264HwEncoderImpl.m */,
 				1BE95AB225D23D4C001AB9D8 /* VideoHWEncoder.h */,
 				1BE95AB325D23D4C001AB9D8 /* VideoHWEncoder.m */,
 				1BE95AB925D2836A001AB9D8 /* AudioHWEncoder.h */,
@@ -737,7 +732,6 @@
 				1B618F4425E52930001D272F /* LFStreamRtmpSocket.m in Sources */,
 				1B618F4025E52930001D272F /* LFLiveVideoConfiguration.m in Sources */,
 				1B618F4625E52930001D272F /* LFLiveDebug.m in Sources */,
-				1BE95AAE25D2308B001AB9D8 /* H264HwEncoderImpl.m in Sources */,
 				1B618F4225E52930001D272F /* LFStreamingBuffer.m in Sources */,
 				1B618F3F25E52930001D272F /* NSMutableArray+LFAdd.m in Sources */,
 				1B618F4525E52930001D272F /* LFVideoFrame.m in Sources */,
@@ -896,7 +890,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2P64WGQM23;
+				DEVELOPMENT_TEAM = 68WRCFG276;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/PushStreamKitDemo/FFmpeg-iOS/include";
 				INFOPLIST_FILE = PushStreamKitDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -919,7 +913,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2P64WGQM23;
+				DEVELOPMENT_TEAM = 68WRCFG276;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/PushStreamKitDemo/FFmpeg-iOS/include";
 				INFOPLIST_FILE = PushStreamKitDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
