@@ -7,20 +7,9 @@
 //
 
 #import "TestController.h"
-#import "Lottie.h"
 #import "XMNetworking.h"
 #import "Test2Controller.h"
-
-#import "RectProgressView.h"
-#import "OpenGLPixelBufferView.h"
-#import "FaceMaskRenderer.h"
-#import "FileManager.h"
-#import "TestSubView.h"
-#import "TestView.h"
-#import "URLDownloadTask.h"
-
-#import "GCDWebServer.h"
-#import "GCDWebServerDataResponse.h"
+#import "DownloadViewController.h"
 
 @interface TestController ()
 
@@ -30,11 +19,6 @@
 @property(nonatomic, strong)UISlider *slider;
 @property(nonatomic, strong)UIImageView *imgView;
 
-@property(nonatomic, strong)LOTAnimationView *lottieView;
-
-@property(nonatomic, strong)URLDownloadTask *downloadTask;
-@property(nonatomic, strong)GCDWebServer* webServer;
-
 @end
 
 @implementation TestController
@@ -43,9 +27,6 @@
     [super viewDidLoad];
     
     [self setupSubviews];
-    [self testView];
-    [self testMethod];
-    
 }
 
 #pragma mark - < event >
@@ -56,32 +37,12 @@
 }
 
 - (void)button2Event:(UIButton *)button {
-    NSString *path = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).firstObject;
-    path = [NSString stringWithFormat:@"%@/tmp",path];
-    self.downloadTask = [[URLDownloadTask alloc] init];
-    NSString *serverIP = @"https://192.168.31.131:54887/firmware/spwy.bin";
-    [self.downloadTask easyDownload:serverIP localPath:path isUpdate:YES];
-    self.downloadTask.progressBlock = ^(CGFloat progress) {
-        NSLog(@"progress: %f",progress);
-    };
+    DownloadViewController *controller = [[DownloadViewController alloc]init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)button3Event:(UIButton *)button {
-    // Create server
-      _webServer = [[GCDWebServer alloc] init];
-      
-      // Add a handler to respond to GET requests on any URL
-      [_webServer addDefaultHandlerForMethod:@"GET"
-                                requestClass:[GCDWebServerRequest class]
-                                processBlock:^GCDWebServerResponse *(GCDWebServerRequest* request) {
-        
-        return [GCDWebServerDataResponse responseWithHTML:@"<html><body><p>Hello World</p></body></html>"];
-        
-      }];
-      
-      // Start server on port 8080
-      [_webServer startWithPort:8080 bonjourName:nil];
-      NSLog(@"Visit %@ in your web browser", _webServer.serverURL);
+
 }
 
 - (void)sliderValueChange:(UISlider *)slider {
@@ -90,24 +51,9 @@
 }
 
 #pragma mark - < test >
-- (void)testView {
-//    dispatch_queue_t
-}
-
-- (void)testMethod {
-//    [self request];
-}
 
 #pragma mark - < init view >
 - (void)setupSubviews {
-    _bgImgView = [[UIImageView alloc]init];
-    int index = arc4random() % 7 + 1;
-    NSString *path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"testDemoBg%d",index] ofType:@"jpeg"];
-    _bgImgView.image = [UIImage imageWithContentsOfFile:path];
-//    _bgImgView.image = [UIImage imageNamed:@"bgPic"];
-//    [self.view addSubview:_bgImgView];
-    _bgImgView.frame = self.view.bounds;
-    
     self.imgView = [[UIImageView alloc]init];
     self.imgView.userInteractionEnabled = false;
     [self.view addSubview:_imgView];
@@ -117,7 +63,7 @@
     _button = [UIButton buttonWithType:UIButtonTypeCustom];
     _button.layer.borderWidth = 1;
     _button.backgroundColor = [UIColor whiteColor];
-    [_button setTitle:@"切换按钮1" forState:UIControlStateNormal];
+    [_button setTitle:@"跳转页面1" forState:UIControlStateNormal];
     [_button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [_button addTarget:self action:@selector(buttonEvent:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_button];
@@ -125,7 +71,7 @@
     UIButton *button2 = [UIButton buttonWithType:UIButtonTypeCustom];
     button2.layer.borderWidth = 1;
     button2.backgroundColor = [UIColor whiteColor];
-    [button2 setTitle:@"切换按钮2" forState:UIControlStateNormal];
+    [button2 setTitle:@"跳转页面2" forState:UIControlStateNormal];
     [button2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [button2 addTarget:self action:@selector(button2Event:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button2];
@@ -143,18 +89,6 @@
     button3.frame = CGRectMake(300, 270, 90, 44);
     
     self.slider.frame = CGRectMake(30, KScreenHeight - 160, KScreenWidth - 60, 30);
-    
-    TestView *testSubView = [[TestView alloc]init];
-    testSubView.frame = CGRectMake(30, 80, 300, 300);
-    [self.view addSubview:testSubView];
-    testSubView.layer.borderWidth = 1;
-}
-
-- (NSArray *)getDatas {
-    NSString *bundlePath = [[ NSBundle mainBundle] pathForResource:@"lotties" ofType :@"bundle"];
-    NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
-    NSArray *lotties = [bundle pathsForResourcesOfType:@"" inDirectory:@""];
-    return lotties;
 }
 
 - (UISlider *)slider {

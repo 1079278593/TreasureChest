@@ -32,5 +32,11 @@
 		<key>classTitle</key>
 		<string>Ping</string>
 	</dict>
+	<dict>
+		<key>className</key>
+		<string>SocketHttpsController</string>
+		<key>classTitle</key>
+		<string>socket_http转https</string>
+	</dict>
 </array>
 </plist>

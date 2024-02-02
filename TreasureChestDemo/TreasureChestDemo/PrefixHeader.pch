@@ -39,6 +39,7 @@
 #import "NSString+TextSize.h"
 #import "UIView+Extension.h"
 #import "NSDecimalNumber+Extension.h"
+#import "UIView+Extension.h"
 
 #pragma mark - <  >
 #import "FMDBManager.h"

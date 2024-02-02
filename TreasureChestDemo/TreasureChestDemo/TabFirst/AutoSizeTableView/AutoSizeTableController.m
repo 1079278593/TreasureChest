@@ -7,7 +7,7 @@
 //
 
 #import "AutoSizeTableController.h"
-#import "UIView+SDAutoLayout.h"
+#import <SDAutoLayout/SDAutoLayout.h>
 #import "UITableView+SDAutoTableViewCellHeight.h"
 #import "AutoSizeCell.h"
 #import "AutoSizeModel.h"

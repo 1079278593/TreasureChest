@@ -24,7 +24,7 @@ abstract_target 'abstract_pod' do
     pod 'ReactiveObjC', '3.1.0'
     pod 'MSWeakTimer'
     pod 'MJRefresh', '3.2.0'
-#    pod 'SDAutoLayout', '~> 2.1.3'
+    pod 'SDAutoLayout', '~> 2.1.3'
     pod 'OCBaseLibrary', :path => './Frameworks/OCBaseLibrary', :inhibit_warnings => false
 #    pod 'OAStackView'
 
@@ -68,4 +68,13 @@ abstract_target 'abstract_pod' do
   
 end
 
-
+#规定target最小为iOS11
+post_install do |installer|
+  installer.generated_projects.each do |project|
+    project.targets.each do |target|
+      target.build_configurations.each do |config|
+            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '11.0'
+       end
+    end
+  end
+end

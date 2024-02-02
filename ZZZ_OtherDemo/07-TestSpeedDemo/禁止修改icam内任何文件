@@ -1,0 +1,5 @@
+
+禁止修改icam内任何东西
+icam文件夹内的文件是引用的AwesomeCamera的icam，用于测试 typec和camera间传输速率。
+
+本地注释版本，是备份的，随便改，不影响项目的文件。

@@ -7,18 +7,17 @@
 //
 
 #import "PingController.h"
-#import "SimplePing.h"
-#import "MSWeakTimer.h"
-#import <RealReachability/PingHelper.h>
+#import "PingManager.h"
+#import "CameraStatusLoop.h"
 
-@interface PingController () <SimplePingDelegate>
+@interface PingController ()
 
-@property(nonatomic, strong)SimplePing *ping;
+@property(nonatomic, strong)UITextField *textfield;
+@property(nonatomic, strong)UIButton *startButton;
+@property(nonatomic, strong)UIButton *startIpsButton;
 
-@property(nonatomic, strong)MSWeakTimer *timer;
-@property(nonatomic, assign)NSInteger countDown;
-
-@property(nonatomic, strong)PingHelper *pingHelper;
+@property(nonatomic, strong)UIButton *checkReachableBtn;
+@property(nonatomic, strong)CameraStatusLoop *statusLoop;
 
 @end
 
@@ -27,71 +26,63 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    [self setupSubViews];
     
-    NSString *host = @"192.168.9.78";//hostName 参数可以是主机DNS域名,IPv4,IPv6地址的字符串形式.
+    NSString *host = @"192.168.31.231";//hostName 参数可以是主机DNS域名,IPv4,IPv6地址的字符串形式.
+//    host = @"localhost";
+//    host = @"10.98.32.1";
+    self.textfield.text = host;
+}
+
+#pragma mark - < event >
+- (void)startEvent:(UIButton *)button {
+    [[PingManager shareInstance] startWithHost:self.textfield.text];
+}
+
+- (void)startIpsEvent:(UIButton *)button {
+//    NSMutableSet *ips = [[NSMutableSet alloc] initWithObjects:@"10.98.32.1", @"10.98.33.1", @"localhost", @"192.168.31.231", nil];
+//    NSMutableSet *ips = [[NSMutableSet alloc] initWithObjects:@"10.98.32.1", nil];//成功
+//    NSMutableSet *ips = [[NSMutableSet alloc] initWithObjects:@"10.98.33.1", nil];
+    NSMutableSet *ips = [[NSMutableSet alloc] initWithObjects:@"localhost", nil];
+    [[PingManager shareInstance] reachabilitiesFromHosts:ips];
+}
+
+- (void)checkReachableBtnEvent:(UIButton *)button {
+    if (_statusLoop == nil) {
+        _statusLoop = [[CameraStatusLoop alloc]init];
+    }
+    [_statusLoop checkHosts:@[self.textfield.text]];
+}
+
+#pragma mark - < init view >
+- (void)setupSubViews {
+    self.textfield = [[UITextField alloc]init];
+    self.textfield.frame = CGRectMake(100, 100, 200, 45);
+    [self.view addSubview:self.textfield];
+    self.textfield.textColor = [UIColor redColor];
+    self.textfield.layer.borderWidth = 1;
+    self.textfield.layer.borderColor = KRandomColor(0.8).CGColor;
     
-//    [self initReachilablePingWithHost:host];
-    [self initSimplePingWithHost:host];
-}
-
-
-#pragma mark - < timer >
-- (void)startTimer {
-    [self.timer invalidate];
-    self.timer = [MSWeakTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerFire) userInfo:nil repeats:YES dispatchQueue:dispatch_get_main_queue()];
-    [self.timer fire];
-}
-
-- (void)timerFire {
-    [_ping sendPingWithData:nil];
-}
-
-#pragma mark - < simple ping >
-- (void)initSimplePingWithHost:(NSString *)host {
-    _ping = [[SimplePing alloc]initWithHostName:host];
-    _ping.delegate = self;
-    _ping.addressStyle = SimplePingAddressStyleICMPv4;
-    [_ping start];
-}
-
-#pragma mark - < reachilable ping >
-- (void)initReachilablePingWithHost:(NSString *)host {
-    self.pingHelper = [[PingHelper alloc]init];
-    self.pingHelper.host = host;
-    [self.pingHelper pingWithBlock:^(BOOL isSuccess) {
-        NSLog(@"3424");
-    }];
-}
-
-#pragma mark - < delegate >
-- (void)simplePing:(SimplePing *)pinger didStartWithAddress:(NSData *)address {
-    NSLog(@"~~~DidStart~~~: %s--- %@", __func__, self);
-//    [pinger sendPingWithData:nil];
-    [self startTimer];
-}
-
-- (void)simplePing:(SimplePing *)pinger didFailWithError:(NSError *)error {
-    NSLog(@"~~~DidFail~~~: %s", __func__);
-}
-
-- (void)simplePing:(SimplePing *)pinger didSendPacket:(NSData *)packet sequenceNumber:(uint16_t)sequenceNumber {
-    NSLog(@"DidSend---seq:%d, packet:%lu",sequenceNumber,(unsigned long)packet.length);
-}
-
-- (void)simplePing:(SimplePing *)pinger didFailToSendPacket:(NSData *)packet sequenceNumber:(uint16_t)sequenceNumber error:(NSError *)error {
-    NSLog(@"~~~DidFailSend~~~: %s", __func__);
-}
-
-- (void)simplePing:(SimplePing *)pinger didReceivePingResponsePacket:(NSData *)packet sequenceNumber:(uint16_t)sequenceNumber {
-    NSLog(@"~~~DidReceived~~~: %s", __func__);
-}
-
-- (void)simplePing:(SimplePing *)pinger didReceiveUnexpectedPacket:(NSData *)packet {
-    NSLog(@"~~~DidReceived unexpect~~~: %s", __func__);
-    NSString *tmp = [[NSString alloc]initWithData:packet encoding:NSUTF8StringEncoding];
+    _startButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_startButton setTitle:@"startTextfield" forState:UIControlStateNormal];
+    _startButton.backgroundColor = [UIColor lightGrayColor];
+    _startButton.frame = CGRectMake(100, 170, 120, 45);
+    [self.view addSubview:_startButton];
+    [_startButton addTarget:self action:@selector(startEvent:) forControlEvents:UIControlEventTouchUpInside];
     
-    tmp = @"342";
+    _startIpsButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_startIpsButton setTitle:@"start ips" forState:UIControlStateNormal];
+    _startIpsButton.backgroundColor = [UIColor lightGrayColor];
+    _startIpsButton.frame = CGRectMake(100, 270, 120, 45);
+    [self.view addSubview:_startIpsButton];
+    [_startIpsButton addTarget:self action:@selector(startIpsEvent:) forControlEvents:UIControlEventTouchUpInside];
+    
+    _checkReachableBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_checkReachableBtn setTitle:@"reachable" forState:UIControlStateNormal];
+    _checkReachableBtn.backgroundColor = [UIColor lightGrayColor];
+    _checkReachableBtn.frame = CGRectMake(100, 370, 120, 45);
+    [self.view addSubview:_checkReachableBtn];
+    [_checkReachableBtn addTarget:self action:@selector(checkReachableBtnEvent:) forControlEvents:UIControlEventTouchUpInside];
 }
-
 
 @end

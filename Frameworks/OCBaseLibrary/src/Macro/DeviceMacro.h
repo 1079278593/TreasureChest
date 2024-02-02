@@ -11,9 +11,19 @@
 #ifndef DeviceMacro_h
 #define DeviceMacro_h
 
+#define IsPhoneX KScreenWidth >=375.0f && KScreenHeight >= 812.0f
+#define IsIpad ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+
 #define KScreenHeight ([[UIScreen mainScreen] bounds].size.height)
 #define KScreenWidth  ([[UIScreen mainScreen] bounds].size.width)
-#define KStatuBarHeight ([[UIApplication sharedApplication] statusBarFrame].size.height)
+
+#define KStatusBarHeight ([[UIApplication sharedApplication] statusBarFrame].size.height)   //!< 刘海屏44，其它20
+#define KStatusBarHeightNormal (20)    //
+#define KNaviBarHeight (44)
+#define KTopBarSafeHeight KStatusBarHeight + KNaviBarHeight
+
+#define KTabBarHeight (CGFloat)(IsPhoneX ? (49.0 + 34.0) : (49.0))
+#define KBottomSafeHeight (CGFloat)(IsPhoneX?(34.0):(0))
 
 //degree
 #define RADIANS_TO_DEGREES(radians) ((radians) * (180.0 / M_PI))
@@ -25,6 +35,8 @@
 //‘##’ 在宏的定义中可以起到拼接的作用
 #define WeakSelf(type)  __weak typeof(type) weak##type = type;
 #define StrongSelf(type)  __strong typeof(type) type = weak##type;
+
+
 
 /** 暂时放这
  typedef NS_ENUM(NSInteger, StatusType) {

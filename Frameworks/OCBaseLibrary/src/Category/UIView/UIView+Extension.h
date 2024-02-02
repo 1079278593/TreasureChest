@@ -10,19 +10,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-#define IsPhoneX KScreenWidth >=375.0f && KScreenHeight >= 812.0f
-
-#define KScreenHeight ([[UIScreen mainScreen] bounds].size.height)
-#define KScreenWidth  ([[UIScreen mainScreen] bounds].size.width)
-
-#define KStatusBarHeight ([[UIApplication sharedApplication] statusBarFrame].size.height)   //!< 刘海屏44，其它20
-#define KStatusBarHeightNormal (20)    //
-#define KNaviBarHeight (44)
-#define KTopBarSafeHeight KStatusBarHeight + KNaviBarHeight
-
-#define KTabBarHeight (CGFloat)(IsPhoneX ? (49.0 + 34.0) : (49.0))
-#define KBottomSafeHeight (CGFloat)(IsPhoneX?(34.0):(0))
-
 @interface UIView (Extension)
 
 @property (nonatomic, assign) CGFloat x;
