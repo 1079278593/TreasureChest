@@ -17,6 +17,7 @@
 
 @property(nonatomic, strong)GCDAsyncSocket *httpSocket;
 @property(nonatomic, strong)GCDAsyncSocket *httpsSocket;
+@property(nonatomic, strong)NSMutableArray *sameSockets;//需要持有，不然立马回被断开
 
 @property(nonatomic, strong)MSWeakTimer *timer;
 @property(nonatomic, assign)BOOL isUsbAvaliable;
@@ -36,6 +37,7 @@
                 [weakSelf.delegate networkChange:ssid];
             }
         }];
+        self.sameSockets = [NSMutableArray arrayWithCapacity:0];
     }
     return self;
 }
@@ -65,6 +67,13 @@
         [self connectWithSocket:self.httpSocket toHost:host port:80];
         [self connectWithSocket:self.httpsSocket toHost:host port:443];
     }
+}
+
+//测试多个socket连接相同的host,
+- (void)tryConnectedHost:(NSString *)host {
+    GCDAsyncSocket *socket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
+    [self connectWithSocket:socket toHost:host port:80];
+    [self.sameSockets addObject:socket];
 }
 
 #pragma mark - < timer >

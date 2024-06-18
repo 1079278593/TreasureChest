@@ -4,9 +4,9 @@
 <array>
 	<dict>
 		<key>className</key>
-		<string>DetectFaceController</string>
+		<string>MetalViewController</string>
 		<key>classTitle</key>
-		<string>特征点识别（相机）</string>
+		<string>metal渲染</string>
 	</dict>
 </array>
 </plist>

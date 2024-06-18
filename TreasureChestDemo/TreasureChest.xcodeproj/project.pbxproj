@@ -67,7 +67,6 @@
 		3AD14A4D24619EE2004D54B8 /* words_it.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A4C24619EE2004D54B8 /* words_it.plist */; };
 		3AD14A4F24619F2F004D54B8 /* words_famousperson.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A4E24619F2F004D54B8 /* words_famousperson.plist */; };
 		3AD14A5124619F83004D54B8 /* words_poem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AD14A5024619F83004D54B8 /* words_poem.plist */; };
-		3ADB62EE26C8A3F00030ACBE /* Controllers_zcam.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3ADB62ED26C8A3F00030ACBE /* Controllers_zcam.plist */; };
 		3ADB62F126C8A5170030ACBE /* Test2Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB62F026C8A5170030ACBE /* Test2Controller.m */; };
 		3ADB62F526C8A68C0030ACBE /* panorama_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADB62F326C8A68A0030ACBE /* panorama_down.png */; };
 		3ADB62F626C8A68C0030ACBE /* panorama_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADB62F426C8A68B0030ACBE /* panorama_up.png */; };
@@ -103,6 +102,12 @@
 		5465B40F278FF592005228C6 /* stellar_xycctpath_未使用.json in Resources */ = {isa = PBXBuildFile; fileRef = 5465B40C278FF592005228C6 /* stellar_xycctpath_未使用.json */; };
 		5465B411278FF5B5005228C6 /* stellar_xyshape_未使用.json in Resources */ = {isa = PBXBuildFile; fileRef = 5465B410278FF5B5005228C6 /* stellar_xyshape_未使用.json */; };
 		5465B43527912BE5005228C6 /* CoordinatesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5465B43427912BE5005228C6 /* CoordinatesView.m */; };
+		5469474E2BA181AC009EF05C /* Controllers_tab3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5469474D2BA181AC009EF05C /* Controllers_tab3.plist */; };
+		546947512BA181F1009EF05C /* ThirdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 546947502BA181F1009EF05C /* ThirdController.m */; };
+		546947542BA184BF009EF05C /* ControllerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 546947532BA184BF009EF05C /* ControllerTableView.m */; };
+		546947582BA18882009EF05C /* MetalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 546947572BA18882009EF05C /* MetalViewController.m */; };
+		5469475B2BA18B25009EF05C /* EasyMetalRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 5469475A2BA18B25009EF05C /* EasyMetalRender.m */; };
+		5469475E2BA1A173009EF05C /* EasyShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 5469475D2BA1A172009EF05C /* EasyShader.metal */; };
 		546FC4662718001200601E0C /* TestingDatas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 546FC45C2718001200601E0C /* TestingDatas.plist */; };
 		546FC4672718001200601E0C /* TestingCenterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 546FC4602718001200601E0C /* TestingCenterModel.m */; };
 		546FC4682718001200601E0C /* Testing_CenterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 546FC4612718001200601E0C /* Testing_CenterController.xib */; };
@@ -551,7 +556,6 @@
 		3AD14A4C24619EE2004D54B8 /* words_it.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = words_it.plist; sourceTree = "<group>"; };
 		3AD14A4E24619F2F004D54B8 /* words_famousperson.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = words_famousperson.plist; sourceTree = "<group>"; };
 		3AD14A5024619F83004D54B8 /* words_poem.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = words_poem.plist; sourceTree = "<group>"; };
-		3ADB62ED26C8A3F00030ACBE /* Controllers_zcam.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Controllers_zcam.plist; sourceTree = "<group>"; };
 		3ADB62EF26C8A5170030ACBE /* Test2Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test2Controller.h; sourceTree = "<group>"; };
 		3ADB62F026C8A5170030ACBE /* Test2Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test2Controller.m; sourceTree = "<group>"; };
 		3ADB62F326C8A68A0030ACBE /* panorama_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = panorama_down.png; sourceTree = "<group>"; };
@@ -561,10 +565,6 @@
 		3AE550D823A9189F001D989E /* ResidentScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResidentScrollView.h; sourceTree = "<group>"; };
 		3AE550D923A9189F001D989E /* ResidentScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResidentScrollView.m; sourceTree = "<group>"; };
 		3AE550EA23A91A93001D989E /* TreasureChest-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TreasureChest-Bridging-Header.h"; sourceTree = "<group>"; };
-		3AE852CA2610C09C00AA656C /* LottieLoaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LottieLoaderManager.m; sourceTree = "<group>"; };
-		3AE852CB2610C09C00AA656C /* LottieLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LottieLoader.m; sourceTree = "<group>"; };
-		3AE852CC2610C09C00AA656C /* LottieLoaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LottieLoaderManager.h; sourceTree = "<group>"; };
-		3AE852CD2610C09C00AA656C /* LottieLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LottieLoader.h; sourceTree = "<group>"; };
 		3AE852D62610C21C00AA656C /* TestSubView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestSubView.h; sourceTree = "<group>"; };
 		3AE852D72610C21C00AA656C /* TestSubView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestSubView.m; sourceTree = "<group>"; };
 		3AEE43B2261420710095FA38 /* AutoCoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoCoder.h; sourceTree = "<group>"; };
@@ -615,6 +615,17 @@
 		5465B410278FF5B5005228C6 /* stellar_xyshape_未使用.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "stellar_xyshape_未使用.json"; sourceTree = "<group>"; };
 		5465B43327912BE5005228C6 /* CoordinatesView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoordinatesView.h; sourceTree = "<group>"; };
 		5465B43427912BE5005228C6 /* CoordinatesView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoordinatesView.m; sourceTree = "<group>"; };
+		5469474D2BA181AC009EF05C /* Controllers_tab3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Controllers_tab3.plist; sourceTree = "<group>"; };
+		5469474F2BA181F1009EF05C /* ThirdController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdController.h; sourceTree = "<group>"; };
+		546947502BA181F1009EF05C /* ThirdController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdController.m; sourceTree = "<group>"; };
+		546947522BA184BF009EF05C /* ControllerTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControllerTableView.h; sourceTree = "<group>"; };
+		546947532BA184BF009EF05C /* ControllerTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ControllerTableView.m; sourceTree = "<group>"; };
+		546947562BA18882009EF05C /* MetalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetalViewController.h; sourceTree = "<group>"; };
+		546947572BA18882009EF05C /* MetalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MetalViewController.m; sourceTree = "<group>"; };
+		546947592BA18B25009EF05C /* EasyMetalRender.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasyMetalRender.h; sourceTree = "<group>"; };
+		5469475A2BA18B25009EF05C /* EasyMetalRender.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyMetalRender.m; sourceTree = "<group>"; };
+		5469475C2BA19FDE009EF05C /* EasyShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasyShaderTypes.h; sourceTree = "<group>"; };
+		5469475D2BA1A172009EF05C /* EasyShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = EasyShader.metal; sourceTree = "<group>"; };
 		546FC45B2718001200601E0C /* TestingCenterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestingCenterModel.h; sourceTree = "<group>"; };
 		546FC45C2718001200601E0C /* TestingDatas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestingDatas.plist; sourceTree = "<group>"; };
 		546FC45D2718001200601E0C /* Testing_CenterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Testing_CenterController.h; sourceTree = "<group>"; };
@@ -1280,8 +1291,8 @@
 				3A40234723A62ED100BDB4E3 /* AppDelegate.m */,
 				B2506D0A23AB84330034A472 /* PrefixHeader.pch */,
 				3AE550EA23A91A93001D989E /* TreasureChest-Bridging-Header.h */,
-				5480AB2629934C8F00100E3B /* 待归类 */,
 				A918EC13255554FF00C5964D /* Controllers */,
+				5469474C2BA1812F009EF05C /* TabThird */,
 				5414EC3B27CF413A005E42CD /* TabSecond */,
 				B2506D0323AB63E40034A472 /* TabFirst */,
 				B21EF68624482F0600BEBB9E /* BaseClass */,
@@ -1419,6 +1430,7 @@
 		3AE550CF23A9189F001D989E /* TreasureChest */ = {
 			isa = PBXGroup;
 			children = (
+				5480AB2629934C8F00100E3B /* 待归类 */,
 				3AE550DE23A9189F001D989E /* Macro */,
 				3AE550DB23A9189F001D989E /* Extension */,
 				3AE550D323A9189F001D989E /* ViewModule */,
@@ -1474,7 +1486,6 @@
 				547E8ACE2AD247750025AB8A /* Timer */,
 				5470602926C26DA000C4ABDB /* CAMChart */,
 				3AEE43B1261420250095FA38 /* AutoCoder */,
-				3AE852C92610C09C00AA656C /* LottieLoader */,
 				A9232F3A25E10AA800D8FFC5 /* FileManager */,
 				A94EF7A525A40D2400CB769D /* AudioPlayer */,
 				A9B35C2F25C2EEE6009453E6 /* OpenGL */,
@@ -1536,18 +1547,6 @@
 				A9AF209825A6DDD500075F24 /* Pytorch */,
 			);
 			path = ThirdModule;
-			sourceTree = "<group>";
-		};
-		3AE852C92610C09C00AA656C /* LottieLoader */ = {
-			isa = PBXGroup;
-			children = (
-				3AE852CC2610C09C00AA656C /* LottieLoaderManager.h */,
-				3AE852CA2610C09C00AA656C /* LottieLoaderManager.m */,
-				3AE852CD2610C09C00AA656C /* LottieLoader.h */,
-				3AE852CB2610C09C00AA656C /* LottieLoader.m */,
-			);
-			name = LottieLoader;
-			path = ../../../poppy/poppy_iOS/PoppyApp/Poppy_Dev01/FacesBox/Utilities/LottieLoader;
 			sourceTree = "<group>";
 		};
 		3AEE43B1261420250095FA38 /* AutoCoder */ = {
@@ -1700,6 +1699,27 @@
 				5465B43427912BE5005228C6 /* CoordinatesView.m */,
 			);
 			path = CoordinatesView;
+			sourceTree = "<group>";
+		};
+		5469474C2BA1812F009EF05C /* TabThird */ = {
+			isa = PBXGroup;
+			children = (
+				546947552BA18866009EF05C /* Metal */,
+			);
+			path = TabThird;
+			sourceTree = "<group>";
+		};
+		546947552BA18866009EF05C /* Metal */ = {
+			isa = PBXGroup;
+			children = (
+				546947562BA18882009EF05C /* MetalViewController.h */,
+				546947572BA18882009EF05C /* MetalViewController.m */,
+				546947592BA18B25009EF05C /* EasyMetalRender.h */,
+				5469475A2BA18B25009EF05C /* EasyMetalRender.m */,
+				5469475C2BA19FDE009EF05C /* EasyShaderTypes.h */,
+				5469475D2BA1A172009EF05C /* EasyShader.metal */,
+			);
+			path = Metal;
 			sourceTree = "<group>";
 		};
 		546FC45A2718001200601E0C /* ControlView */ = {
@@ -2077,13 +2097,17 @@
 			children = (
 				A918EC0F2555517F00C5964D /* Controllers_tab1.plist */,
 				5414EC2127CDC216005E42CD /* Controllers_tab2.plist */,
-				3ADB62ED26C8A3F00030ACBE /* Controllers_zcam.plist */,
+				5469474D2BA181AC009EF05C /* Controllers_tab3.plist */,
 				A918EC142555551B00C5964D /* ControllersModel.h */,
 				A918EC152555551B00C5964D /* ControllersModel.m */,
 				3A40234923A62ED100BDB4E3 /* ViewController.h */,
 				3A40234123A62ED100BDB4E3 /* ViewController.m */,
 				3A2C5EBE2622F4EC0090B7E8 /* SecondController.h */,
 				3A2C5EBF2622F4EC0090B7E8 /* SecondController.m */,
+				5469474F2BA181F1009EF05C /* ThirdController.h */,
+				546947502BA181F1009EF05C /* ThirdController.m */,
+				546947522BA184BF009EF05C /* ControllerTableView.h */,
+				546947532BA184BF009EF05C /* ControllerTableView.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -3335,6 +3359,7 @@
 				B215CC4B2431F5290017BFD9 /* hud_info@2x.png in Resources */,
 				A94EF7F025A40FFF00CB769D /* 叮.mp3 in Resources */,
 				3A5E735826062EDD00772384 /* testDemoBg1.jpeg in Resources */,
+				5469474E2BA181AC009EF05C /* Controllers_tab3.plist in Resources */,
 				A918EC102555517F00C5964D /* Controllers_tab1.plist in Resources */,
 				3AD14A4D24619EE2004D54B8 /* words_it.plist in Resources */,
 				A94EF81925A4100000CB769D /* notgood.mp3 in Resources */,
@@ -3409,7 +3434,6 @@
 				3A5E735A26062EDD00772384 /* testDemoBg7.jpeg in Resources */,
 				A98EFD8225EF6FE900948E06 /* image_3.jpg in Resources */,
 				A94EF7F125A40FFF00CB769D /* 1号玩家发言.m4a in Resources */,
-				3ADB62EE26C8A3F00030ACBE /* Controllers_zcam.plist in Resources */,
 				A98EFD7E25EF6FE900948E06 /* image_8.jpg in Resources */,
 				5465B40F278FF592005228C6 /* stellar_xycctpath_未使用.json in Resources */,
 				5465B40D278FF592005228C6 /* stellar_xy_gamut_shape.json in Resources */,
@@ -3512,6 +3536,7 @@
 				5414EC3927CF4117005E42CD /* misc.c in Sources */,
 				A9C7CF0525372631002ECCFF /* DSViewTool.m in Sources */,
 				B2506D0223AB5BA80034A472 /* CollapsibleModel.m in Sources */,
+				546947582BA18882009EF05C /* MetalViewController.m in Sources */,
 				B299BE5724513C510096360D /* LottieAnimationsCtl.m in Sources */,
 				5470605526C26DA000C4ABDB /* CAMCircleProgressChartProfile.m in Sources */,
 				3A2E0A50254EFC0800471A41 /* AutoSizeView.m in Sources */,
@@ -3653,7 +3678,9 @@
 				B2BC387D23C037B100D5B9C6 /* XMCircleView.m in Sources */,
 				B26FBD6E2441CDB8003DB3BE /* UIBezierPath.m in Sources */,
 				A9232F3D25E10AA800D8FFC5 /* FileManager.m in Sources */,
+				546947542BA184BF009EF05C /* ControllerTableView.m in Sources */,
 				3A2E0A4B254EDAD300471A41 /* AutoSizeModel.m in Sources */,
+				546947512BA181F1009EF05C /* ThirdController.m in Sources */,
 				B26FBD932441CDB8003DB3BE /* LOTLayerContainer.m in Sources */,
 				B26FBD942441CDB8003DB3BE /* LOTCompositionContainer.m in Sources */,
 				546389592B60DDA300993560 /* SocketHttpsController.m in Sources */,
@@ -3678,6 +3705,7 @@
 				B283CEE92449B0D90021ABB5 /* TestActionKeyLayer.m in Sources */,
 				B26FBD722441CDB8003DB3BE /* LOTMask.m in Sources */,
 				B2DD68A223B2FC7D00106F4F /* XMSelectedButton.m in Sources */,
+				5469475E2BA1A173009EF05C /* EasyShader.metal in Sources */,
 				B26FBD642441CDB8003DB3BE /* LOTPathAnimator.m in Sources */,
 				B27B784223ACD6D70083E6AE /* TabScrollView.m in Sources */,
 				B2169DFE24401E2B002CFE3E /* MediaMixtureManager.m in Sources */,
@@ -3744,6 +3772,7 @@
 				A94EF7A825A40D2400CB769D /* AudioPlayer.m in Sources */,
 				B2169DE824401B4F002CFE3E /* ScreenRecorder.m in Sources */,
 				B284723A2404B90300C1194F /* URLUploadTask.m in Sources */,
+				5469475B2BA18B25009EF05C /* EasyMetalRender.m in Sources */,
 				A957EF0125A566AD00A7D430 /* BusyLottie.m in Sources */,
 				B26FBD622441CDB8003DB3BE /* LOTNumberInterpolator.m in Sources */,
 				B28491502436EC0B004ECE52 /* UILabel+Insets.m in Sources */,

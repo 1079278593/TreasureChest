@@ -6,6 +6,7 @@
 //
 
 #import "ViewController.h"
+#import "StreamPlayer.h"
 
 #import "ICamController.h"
 #import "ICamServer.h"
@@ -25,6 +26,8 @@
 @property(nonatomic, assign)long long sumA ;//用于统计a的数量
 @property(nonatomic, assign)int loop;//5秒一次loop，
 @property(nonatomic, assign)long loopA;//5秒一次loop，
+
+@property(strong, nonatomic)StreamPlayer *streamPlayer;
 
 @end
 
@@ -118,6 +121,15 @@
 - (void)iCamControllerDidDisconnectedClent {
     int a = 1;
     NSLog(@"tspeed iCamControllerDidDisconnectedClent");
+}
+
+#pragma mark - < stream player >
+- (void)startStreamPlayer {
+    [self.streamPlayer stop];
+    
+    self.streamPlayer = [[StreamPlayer alloc] initWithHost:self.textField.text delegate:self];
+    
+    [self.streamPlayer start];
 }
 
 - (void)setupSubViews {

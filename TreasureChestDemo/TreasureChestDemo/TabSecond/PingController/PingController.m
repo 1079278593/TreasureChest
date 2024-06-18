@@ -9,12 +9,16 @@
 #import "PingController.h"
 #import "PingManager.h"
 #import "CameraStatusLoop.h"
+#import "GCDAsyncSocket.h"
 
 @interface PingController ()
 
 @property(nonatomic, strong)UITextField *textfield;
 @property(nonatomic, strong)UIButton *startButton;
 @property(nonatomic, strong)UIButton *startIpsButton;
+
+//测试socket已连接，另外创建socket连接相同的IP和port看看会怎么样
+@property(nonatomic, strong)UIButton *trySameIpButton;
 
 @property(nonatomic, strong)UIButton *checkReachableBtn;
 @property(nonatomic, strong)CameraStatusLoop *statusLoop;
@@ -48,10 +52,11 @@
 }
 
 - (void)checkReachableBtnEvent:(UIButton *)button {
-    if (_statusLoop == nil) {
-        _statusLoop = [[CameraStatusLoop alloc]init];
-    }
-    [_statusLoop checkHosts:@[self.textfield.text]];
+    [self.statusLoop checkHosts:@[self.textfield.text]];
+}
+
+- (void)trySameBtnEvent:(UIButton *)button {
+    [self.statusLoop tryConnectedHost:self.textfield.text];
 }
 
 #pragma mark - < init view >
@@ -83,6 +88,20 @@
     _checkReachableBtn.frame = CGRectMake(100, 370, 120, 45);
     [self.view addSubview:_checkReachableBtn];
     [_checkReachableBtn addTarget:self action:@selector(checkReachableBtnEvent:) forControlEvents:UIControlEventTouchUpInside];
+    
+    _trySameIpButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_trySameIpButton setTitle:@"->try same" forState:UIControlStateNormal];
+    _trySameIpButton.backgroundColor = [UIColor lightGrayColor];
+    _trySameIpButton.frame = CGRectMake(260, 370, 120, 45);
+    [self.view addSubview:_trySameIpButton];
+    [_trySameIpButton addTarget:self action:@selector(trySameBtnEvent:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (CameraStatusLoop *)statusLoop {
+    if (_statusLoop == nil) {
+        _statusLoop = [[CameraStatusLoop alloc]init];
+    }
+    return _statusLoop;
 }
 
 @end

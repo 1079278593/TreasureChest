@@ -37,6 +37,8 @@ typedef NS_ENUM(NSUInteger, SessionLoopStatus) {
 ///传入所有要尝试的host，内部会尝试80和443，看看哪个host的哪个端口可行
 - (void)checkHosts:(NSArray *)hosts;
 
+- (void)tryConnectedHost:(NSString *)host;
+
 @end
 
 NS_ASSUME_NONNULL_END

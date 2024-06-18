@@ -1,19 +1,19 @@
 //
-//  SecondController.m
+//  ThirdController.m
 //  TreasureChest
 //
-//  Created by ming on 2021/4/11.
-//  Copyright © 2021 xiao ming. All rights reserved.
+//  Created by imvt on 2024/3/13.
+//  Copyright © 2024 xiao ming. All rights reserved.
 //
 
-#import "SecondController.h"
+#import "ThirdController.h"
 #import "ControllerTableView.h"
 
-@interface SecondController ()
+@interface ThirdController ()
 
 @end
 
-@implementation SecondController
+@implementation ThirdController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,7 +39,7 @@
     [self.view addSubview:tableView];
     tableView.frame = CGRectMake(0, 64, KScreenWidth, KScreenHeight-64);
     
-    [tableView showWithTabType:TabType_second];
+    [tableView showWithTabType:TabType_third];
 }
 
 @end
