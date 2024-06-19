@@ -2,7 +2,7 @@
 use_frameworks!
 platform :ios, '13.0'
 inhibit_all_warnings!
-source 'https://github.com/CocoaPods/Specs.git'
+#source 'https://github.com/CocoaPods/Specs.git'
 
 workspace ‘TreasureChest.xcworkspace’
 #project ‘TreasureChestSwiftDemo/TreasureChestSwiftDemo.xcodeproj’
