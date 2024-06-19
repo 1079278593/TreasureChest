@@ -1,1 +1,24 @@
 *.framework filter=lfs diff=lfs merge=lfs -text
+
+
+#大文件
+#1. 先下载https://repo1.maven.org/maven2/com/madgag/bfg/1.13.0/bfg-1.13.0.jar
+#2. 项目路径执行：java -jar bfg-1.13.0.jar --strip-blobs-bigger-than 100M .
+
+#3. 清理 Git 的引用和垃圾收集 
+#执行：git reflog expire --expire=now --all
+#     git gc --prune=now --aggressive
+
+#4. 使用Git LFS:
+#执行：git lfs install
+#     git lfs track "*.psd"  #这里改成需要的文件类型、名称
+#     git add .gitattributes
+#     git add <large-file>
+#     git commit -m "Add large file with Git LFS"
+#     git push --force
+
+#上面并不一定成功（commit了多次）
+#查找所有大于 100MB 的文件： 
+# 执行：git rev-list --objects --all | grep "$(git verify-pack -v .git/objects/pack/pack-*.idx | sort -k 3 -n | tail -n 5 | awk '{print$1}')"
+# 然后再执行下面，其实上面有相同的命令
+# java -jar bfg-1.13.0.jar --strip-blobs-bigger-than 100M .
